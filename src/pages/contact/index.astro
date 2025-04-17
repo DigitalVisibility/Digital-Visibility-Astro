@@ -242,6 +242,8 @@ import Footer from '../../components/Footer.astro';
   <meta name="ai-expertise" content="SEO+AEO+GEO, digital marketing, app development, product design, AI integration, business optimization">
   <meta name="ai-keywords" content="contact Digital Visibility, book consultation Swansea, digital marketing services Wales, app development consultation, product design inquiry, free strategy session, digital visibility expert consultation, SEO consultation Swansea, AI marketing consultation, business hours digital agency Swansea, contact form digital marketing, schedule meeting digital visibility, book appointment marketing agency Wales, contact Darran Goulding, digital marketing expert contact, app development inquiry, product design consultation, business consultation Swansea, marketing strategy session, digital transformation meeting, AI integration consultation, website optimization inquiry, PPC campaign consultation, content marketing inquiry, UX design consultation, product engineering contact, CAD design inquiry, contact Digital Visibility Swansea">
 
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
+
   <Navigation slot="nav" />
   
   <!-- Hero Section -->
@@ -319,7 +321,8 @@ import Footer from '../../components/Footer.astro';
             </div>
             
             <!-- Cloudflare Turnstile Widget -->
-            <div class="cf-turnstile mb-4" data-sitekey="0x4AAAAAAAQ1YlJFSBGYSW0" data-callback="javascriptCallback"></div>
+            <div id="turnstile-container" class="mb-4"></div>
+            <input type="hidden" name="cf-turnstile-response" id="cf-turnstile-response">
             
             <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition-colors">
               Send Message
@@ -530,15 +533,15 @@ import Footer from '../../components/Footer.astro';
   
   <script>
     // Turnstile callback function
-    window.javascriptCallback = function(token) {
-      // You can use the token in your form or store it
-      console.log(`Turnstile token: ${token}`);
-      // Add the token to a hidden field if needed
-      const tokenInput = document.createElement('input');
-      tokenInput.type = 'hidden';
-      tokenInput.name = 'cf-turnstile-response';
-      tokenInput.value = token;
-      document.getElementById('form').appendChild(tokenInput);
+    window.onloadTurnstileCallback = function() {
+      turnstile.render('#turnstile-container', {
+        sitekey: '0x4AAAAAAAQ1YlJFSBGYSW0',
+        callback: function(token) {
+          // Set the token in our hidden field
+          console.log(`Turnstile token: ${token}`);
+          document.getElementById('cf-turnstile-response').value = token;
+        }
+      });
     }
 
     // Initialize Lucide icons
