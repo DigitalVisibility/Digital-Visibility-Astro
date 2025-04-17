@@ -1,0 +1,4 @@
+name = "digital-visibility-astro"
+
+[site]
+bucket = "./dist"

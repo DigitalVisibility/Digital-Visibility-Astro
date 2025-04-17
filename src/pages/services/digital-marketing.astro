@@ -1,0 +1,473 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<MainLayout title="Digital Marketing - Digital Visibility">
+  <!-- Digital Marketing Service Page Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Digital Visibility - Digital Marketing Services",
+    "description": "Human-powered, AI-accelerated digital marketing services including SEO+AEO+GEO, PPC, social media, content marketing, email marketing, and analytics to drive engagement and boost ROI.",
+    "url": "https://digitalvisibility.com/services/digital-marketing/",
+    "logo": "https://digitalvisibility.com/logo.png",
+    "image": "https://digitalvisibility.com/Complete-Digital-Marketing.webp",
+    "telephone": "+4401792002497",
+    "email": "support@digitalvisibility.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "235 Peniel Green Road",
+      "addressLocality": "Llansamlet",
+      "addressRegion": "Swansea",
+      "postalCode": "SA7 9BA",
+      "addressCountry": "Wales, UK"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "51.6553959",
+      "longitude": "-3.9336144"
+    },
+    "openingHours": [
+      "Mo-Fr 08:00-20:00",
+      "Sa 09:00-17:00",
+      "Su 10:00-16:00"
+    ],
+    "priceRange": "£40-£800",
+    "currenciesAccepted": "GBP",
+    "paymentAccepted": "Cash, Credit Card, Bank Transfer, Direct Debit",
+    "areaServed": [
+      {
+        "@type": "Place",
+        "name": "Swansea"
+      },
+      {
+        "@type": "Place",
+        "name": "Wales"
+      },
+      {
+        "@type": "Place",
+        "name": "United Kingdom"
+      },
+      {
+        "@type": "Place",
+        "name": "Global"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Digital Marketing",
+    "provider": {
+      "@type": "Organization",
+      "name": "Digital Visibility",
+      "url": "https://digitalvisibility.com"
+    },
+    "description": "Drive engagement, boost conversions, and increase ROI with our data-driven digital marketing services optimized by artificial intelligence.",
+    "offers": {
+      "@type": "Offer",
+      "price": "40.00",
+      "priceCurrency": "GBP",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "40.00",
+        "priceCurrency": "GBP",
+        "unitText": "hour"
+      }
+    },
+    "serviceOutput": {
+      "@type": "Thing",
+      "name": "Improved Digital Visibility and Marketing ROI"
+    },
+    "termsOfService": "https://digitalvisibility.com/terms-conditions/"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Service",
+          "name": "Search Engine Optimization",
+          "description": "Improve your website's visibility in search results with our AI-powered SEO strategies that adapt to algorithm changes.",
+          "offers": {
+            "@type": "Offer",
+            "price": "40.00",
+            "priceCurrency": "GBP",
+            "unitText": "hour"
+          },
+          "serviceType": "SEO"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Service",
+          "name": "PPC & Paid Media",
+          "description": "Maximize your advertising ROI with targeted paid campaigns across search, social, and display networks.",
+          "offers": {
+            "@type": "Offer",
+            "price": "40.00",
+            "priceCurrency": "GBP",
+            "unitText": "hour"
+          },
+          "serviceType": "PPC Advertising"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Service",
+          "name": "Social Media Marketing",
+          "description": "Build brand awareness and engagement with strategic social media marketing across all major platforms.",
+          "offers": {
+            "@type": "Offer",
+            "price": "40.00",
+            "priceCurrency": "GBP",
+            "unitText": "hour"
+          },
+          "serviceType": "Social Media Marketing"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Service",
+          "name": "Content Marketing",
+          "description": "Engage your audience with valuable, relevant content that drives traffic and nurtures leads through the sales funnel.",
+          "offers": {
+            "@type": "Offer",
+            "price": "40.00",
+            "priceCurrency": "GBP",
+            "unitText": "hour"
+          },
+          "serviceType": "Content Marketing"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Service",
+          "name": "Email Marketing",
+          "description": "Nurture customer relationships and drive conversions with personalized, automated email marketing campaigns.",
+          "offers": {
+            "@type": "Offer",
+            "price": "40.00",
+            "priceCurrency": "GBP",
+            "unitText": "hour"
+          },
+          "serviceType": "Email Marketing"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Service",
+          "name": "Analytics & Reporting",
+          "description": "Make data-driven decisions with comprehensive analytics and actionable insights on your marketing performance.",
+          "offers": {
+            "@type": "Offer",
+            "price": "40.00",
+            "priceCurrency": "GBP",
+            "unitText": "hour"
+          },
+          "serviceType": "Analytics Services"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- AI Optimization Meta Tags for Enhanced AI Engine Recognition -->
+  <meta name="ai-purpose" content="digital marketing services, SEO, PPC, social media marketing, content marketing, email marketing, analytics">
+  <meta name="ai-target" content="business owners, marketing managers, entrepreneurs, Swansea businesses, Welsh companies, UK enterprises, global businesses seeking digital growth">
+  <meta name="ai-content-type" content="service page, digital marketing information, marketing services">
+  <meta name="ai-business-type" content="digital marketing agency, SEO company, social media marketing, PPC advertising, content creation service">
+  <meta name="ai-service-area" content="Swansea, Llansamlet, South Wales, West Wales, United Kingdom, global clients">
+  <meta name="ai-technology" content="AI-powered marketing, data-driven strategies, predictive analytics, automated campaigns">
+  <meta name="ai-keywords" content="digital marketing services Swansea, SEO agency Wales, PPC management UK, social media marketing Wales, content marketing services Swansea, email marketing agency UK, AI-powered digital marketing, digital visibility experts, marketing ROI optimization, local SEO Swansea, search engine optimization Wales, paid advertising management, Google Ads specialist Swansea, Facebook advertising agency Wales, Instagram marketing UK, TikTok advertising Swansea, Twitter marketing services, LinkedIn advertising for Welsh businesses, content strategy development, blog writing services Wales, email automation specialists UK, marketing analytics Swansea, data-driven marketing Wales, digital marketing for small businesses, enterprise digital marketing solutions, affordable digital marketing Swansea, Welsh marketing agency, campaign performance tracking, conversion rate optimization services, Swansea web traffic experts, lead generation marketing Wales, AI marketing technology">
+
+  <Navigation slot="nav" />
+  
+  <!-- Hero Section -->
+  <section class="bg-white py-12 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            AI-Powered Digital Marketing
+          </h1>
+          <p class="text-xl text-gray-600 mb-8">
+            Drive engagement, boost conversions, and increase ROI with our data-driven digital marketing services optimized by artificial intelligence.
+          </p>
+          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="/contact/" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-md inline-flex items-center transition-colors">Book a free Consultation
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="#strategies" class="border border-blue-600 text-blue-600 hover:bg-blue-50 font-medium px-6 py-3 rounded-md transition-colors">Our Strategies</a>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <img src="/Complete-Digital-Marketing.webp" alt="Digital Marketing" class="rounded-lg shadow-xl max-w-[90%] ml-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="strategies" class="bg-gray-50 py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Digital Marketing Services</h2>
+        <p class="text-xl text-gray-600">Comprehensive strategies powered by human expertise & optimized with AI</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- SEO Marketing -->
+        <div class="service-card">
+          <div class="flex items-center mb-4">
+            <i data-lucide="search" class="text-primary-600 w-8 h-8 mr-3"></i>
+            <h3 class="text-xl font-bold">Search Engine Optimization</h3>
+          </div>
+          <p class="text-gray-600 mb-6">
+            Improve your website's visibility in search results with our AI-powered SEO strategies that adapt to algorithm changes.
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>Technical SEO audits and optimization</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>Content strategy and optimization</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>Link building and authority building</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- PPC Advertising -->
+        <div class="service-card">
+          <div class="flex items-center mb-4">
+            <i data-lucide="mouse-pointer-click" class="text-primary-600 w-8 h-8 mr-3"></i>
+            <h3 class="text-xl font-bold">PPC & Paid Media</h3>
+          </div>
+          <p class="text-gray-600 mb-6">
+            Maximize your advertising ROI with targeted paid campaigns across search, social, and display networks.
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>Google Ads and Microsoft Advertising</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>Social media advertising</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>AI-powered budget optimization</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social Media Marketing -->
+        <div class="service-card">
+          <div class="flex items-center mb-4">
+            <i data-lucide="message-circle" class="text-primary-600 w-8 h-8 mr-3"></i>
+            <h3 class="text-xl font-bold">Social Media Marketing</h3>
+          </div>
+          <p class="text-gray-600 mb-6">
+            Build brand awareness and engagement with strategic social media marketing across all major platforms.
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>Content creation and scheduling</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>Community management</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>Analytics and performance reporting</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Content Marketing -->
+        <div class="service-card">
+          <div class="flex items-center mb-4">
+            <i data-lucide="file-text" class="text-primary-600 w-8 h-8 mr-3"></i>
+            <h3 class="text-xl font-bold">Content Marketing</h3>
+          </div>
+          <p class="text-gray-600 mb-6">
+            Engage your audience with valuable, relevant content that drives traffic and nurtures leads through the sales funnel.
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>AI-assisted content creation</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>Editorial calendars and strategies</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>Comprehensive content distribution</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Email Marketing -->
+        <div class="service-card">
+          <div class="flex items-center mb-4">
+            <i data-lucide="mail" class="text-primary-600 w-8 h-8 mr-3"></i>
+            <h3 class="text-xl font-bold">Email Marketing</h3>
+          </div>
+          <p class="text-gray-600 mb-6">
+            Nurture customer relationships and drive conversions with personalized, automated email marketing campaigns.
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>Campaign development and automation</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>AI-driven personalization</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>Performance analysis and optimization</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Analytics & Reporting -->
+        <div class="service-card">
+          <div class="flex items-center mb-4">
+            <i data-lucide="bar-chart" class="text-primary-600 w-8 h-8 mr-3"></i>
+            <h3 class="text-xl font-bold">Analytics & Reporting</h3>
+          </div>
+          <p class="text-gray-600 mb-6">
+            Make data-driven decisions with comprehensive analytics and actionable insights on your marketing performance.
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>Custom KPI dashboards</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>AI-powered predictive analytics</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
+              <span>Regular performance reporting</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="bg-white py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Proven Marketing Process</h2>
+        <p class="text-xl text-gray-600">From strategy to implementation to optimization</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Step 1 -->
+        <div class="text-center">
+          <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-primary-600">1</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Discovery & Analysis</h3>
+          <p class="text-gray-600">
+            We analyze your business goals, target audience, and current performance to establish a baseline.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="text-center">
+          <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-primary-600">2</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Strategy Development</h3>
+          <p class="text-gray-600">
+            We create a customized marketing strategy aligned with your business objectives and budget.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="text-center">
+          <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-primary-600">3</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Implementation</h3>
+          <p class="text-gray-600">
+            Our team executes the strategy, launching campaigns across all relevant platforms.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="text-center">
+          <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-primary-600">4</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Optimization & Scaling</h3>
+          <p class="text-gray-600">
+            We continuously analyze results and optimize campaigns to maximize ROI and scale success.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-primary-600 py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Digital Marketing?</h2>
+      <p class="text-xl text-primary-100 mb-8">
+        Let's create a data-driven, AI-powered marketing strategy that delivers real results for your business.
+      </p>
+      <a href="/contact/" class="inline-block bg-white text-primary-600 font-medium px-8 py-3 rounded-md hover:bg-primary-50 transition">
+        Schedule a Free Consultation
+      </a>
+	        <a href="/Pricing/" class="inline-block bg-white text-primary-600 font-medium px-8 py-3 rounded-md hover:bg-primary-50 transition">
+        Subscribe to Get Started Today!
+      </a>
+	        <p class="text-lg text-primary-100">
+        <br/>Need other digital solutions too? Explore our <a href="/services/app-development/" class="text-white hover:text-primary-50 underline">App Development</a> and <a href="/services/product-design/" class="text-white hover:text-primary-50 underline">Product Design</a> services.
+      </p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</MainLayout>

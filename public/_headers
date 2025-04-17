@@ -1,0 +1,13 @@
+# Headers for all pages
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  
+# Don't process these files
+/js/AnalyzerLead.js
+  Content-Type: application/javascript
+  X-Robots-Tag: noindex
+  
+/js/lead-api.js
+  Content-Type: application/javascript
+  X-Robots-Tag: noindex

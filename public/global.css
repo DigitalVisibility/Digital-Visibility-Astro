@@ -1,0 +1,83 @@
+/* Global Styles for Digital Visibility Scanner */
+
+/* Scanner-specific styles */
+.indicator-icon {
+  display: inline-flex;
+}
+
+/* Results styling */
+.result-section {
+  margin-bottom: 2rem;
+}
+
+.result-section h3 {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.result-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.schema-type-badge {
+  display: inline-block;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Scan log styles */
+.scan-log-container {
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid #e9ecef;
+}
+
+.scan-log {
+  margin-bottom: 0.5rem;
+  font-family: monospace;
+  font-size: 0.875rem;
+}
+
+/* Progress bars */
+.progress-container {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 1s ease-in-out;
+}

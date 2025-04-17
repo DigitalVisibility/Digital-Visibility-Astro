@@ -1,0 +1,38 @@
+---
+// Main layout component that will be used across all pages
+const { title = "Digital Visibility - AI Powered Business Optimization" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <link rel="stylesheet" href="/styles/global.css">
+    <meta name="description" content="Digital Visibility provides AI-powered business optimization services including digital marketing, app development, and product design.">
+    <meta name="keywords" content="AI, digital marketing, app development, product design, business optimization">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <slot name="head"/>
+</head>
+<body>
+    <slot name="nav"/>
+    
+    <main>
+        <slot />
+    </main>
+
+    <slot name="footer"/>
+
+    <!-- Either add is:inline or remove if not yet created -->
+    <!-- <script is:inline src="/scripts/app.js"></script> -->
+    <script is:inline src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script is:inline>
+        // Initialize Lucide icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    </script>
+    <slot name="scripts"/>
+</body>
+</html>

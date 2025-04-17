@@ -1,0 +1,416 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+
+// Simple admin code validation
+const ADMIN_CODE = "098765"; // Matching the admin override code
+---
+
+<MainLayout title="Admin Reset Tool | Digital Visibility">
+  <!-- SEO and Canonical Tags -->
+  <meta name="robots" content="noindex, nofollow" slot="head">
+  
+  <Navigation />
+  
+  <div class="py-16 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold mb-6 text-center">Admin Reset Tool</h1>
+        
+        <div id="adminLoginForm">
+          <p class="mb-4">Enter your admin code to access the reset tools.</p>
+          <div class="mb-4">
+            <label for="adminCode" class="block text-sm font-medium text-gray-700 mb-1">Admin Code</label>
+            <input 
+              type="password" 
+              id="adminCode" 
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Enter admin code"
+            >
+          </div>
+          <button 
+            id="adminLoginButton"
+            class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          >
+            Verify Admin Access
+          </button>
+        </div>
+        
+        <div id="resetTools" class="hidden">
+          <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6">
+            <p>Admin access verified. You can now use the reset tools.</p>
+          </div>
+          
+          <div class="space-y-6">
+            <!-- View Usage Statistics -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+              <h2 class="text-xl font-semibold mb-4">Usage Statistics</h2>
+              <p class="mb-4">View current usage statistics for all users who have analyzed websites.</p>
+              <div id="usageStats" class="bg-gray-50 p-4 rounded-lg text-sm font-mono overflow-auto max-h-60">
+                <p class="text-gray-500 italic">Loading usage statistics...</p>
+              </div>
+              <button 
+                id="refreshStatsButton"
+                class="mt-4 bg-gray-600 text-white py-2 px-4 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+              >
+                Refresh Statistics
+              </button>
+            </div>
+            
+            <!-- Reset Usage by Email -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+              <h2 class="text-xl font-semibold mb-4">Reset Usage by Email</h2>
+              <p class="mb-4">This will reset the usage count for a specific email address, allowing that user to perform more analyses.</p>
+              <div class="mb-4">
+                <label for="emailToReset" class="block text-sm font-medium text-gray-700 mb-1">Email to Reset</label>
+                <input 
+                  type="email" 
+                  id="emailToReset" 
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="user@example.com"
+                >
+              </div>
+              <button 
+                id="resetEmailButton"
+                class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                Reset Email Usage
+              </button>
+            </div>
+            
+            <!-- Reset Specific URL Usage -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+              <h2 class="text-xl font-semibold mb-4">Reset Usage for URL Domain</h2>
+              <p class="mb-4">This will reset the usage count for a specific domain, allowing users to analyze it again.</p>
+              <div class="mb-4">
+                <label for="urlToReset" class="block text-sm font-medium text-gray-700 mb-1">Domain to Reset</label>
+                <input 
+                  type="text" 
+                  id="urlToReset" 
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="example.com"
+                >
+              </div>
+              <button 
+                id="resetUrlButton"
+                class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                Reset Domain Usage
+              </button>
+            </div>
+            
+            <!-- Reset All Usage Data -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+              <h2 class="text-xl font-semibold mb-4">Reset All Usage Data</h2>
+              <p class="mb-4">This will reset all usage counters and tracking data. Use with caution.</p>
+              <button 
+                id="resetAllButton"
+                class="bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+              >
+                Reset All Usage Data
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <Footer />
+  
+  <script>
+    // Functions for secure email ID generation and normalization (same as in test.astro)
+    async function generateUserId(email) {
+      try {
+        // Normalize email (lowercase, trim)
+        const normalizedEmail = email.toLowerCase().trim();
+        
+        // Use SubtleCrypto for secure hashing when available
+        if (window.crypto && window.crypto.subtle) {
+          const encoder = new TextEncoder();
+          const data = encoder.encode(normalizedEmail);
+          const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+          
+          // Convert to hex string
+          return Array.from(new Uint8Array(hashBuffer))
+            .map(b => b.toString(16).padStart(2, '0'))
+            .join('');
+        } else {
+          // Fallback for older browsers (less secure)
+          let hash = 0;
+          for (let i = 0; i < normalizedEmail.length; i++) {
+            const char = normalizedEmail.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convert to 32bit integer
+          }
+          return 'legacy_' + hash.toString(16);
+        }
+      } catch (error) {
+        console.error('Error generating user ID:', error);
+        return 'fallback_' + Date.now() + '_' + Math.random().toString(36).substring(2);
+      }
+    }
+
+    // Normalize URL to domain only
+    function normalizeDomain(url) {
+      return url.replace(/^https?:\/\//i, '')
+                .replace(/^www\./i, '')
+                .split('/')[0]
+                .toLowerCase();
+    }
+
+    // DOM elements
+    const adminLoginForm = document.getElementById('adminLoginForm');
+    const resetTools = document.getElementById('resetTools');
+    const adminCode = document.getElementById('adminCode') as HTMLInputElement;
+    const adminLoginButton = document.getElementById('adminLoginButton');
+    const usageStats = document.getElementById('usageStats');
+    const refreshStatsButton = document.getElementById('refreshStatsButton');
+    const emailToReset = document.getElementById('emailToReset') as HTMLInputElement;
+    const urlToReset = document.getElementById('urlToReset') as HTMLInputElement;
+    const resetEmailButton = document.getElementById('resetEmailButton');
+    const resetUrlButton = document.getElementById('resetUrlButton');
+    const resetAllButton = document.getElementById('resetAllButton');
+    
+    // Load and display usage statistics
+    async function loadUsageStatistics() {
+      try {
+        // Get all localStorage keys
+        const keys = Object.keys(localStorage);
+        
+        // Filter for analyzer usage keys
+        const usageKeys = keys.filter(key => key.startsWith('analyzer_usage_'));
+        
+        if (usageKeys.length === 0) {
+          usageStats.innerHTML = '<p class="text-gray-500">No usage data found.</p>';
+          return;
+        }
+        
+        // Collect usage data
+        const users: Array<{
+          id: string;
+          count: number;
+          email: string;
+          lastUsed: string;
+          urls: Record<string, number>;
+        }> = [];
+        const domains: Record<string, number> = {};
+        
+        for (const key of usageKeys) {
+          try {
+            const usageData = JSON.parse(localStorage.getItem(key));
+            
+            // User ID is the part after 'analyzer_usage_'
+            const userId = key.replace('analyzer_usage_', '');
+            
+            // Try to find the email that matches this hash
+            // Note: This is just for admin UI, actual reset works by hash
+            let email = 'Unknown user';
+            
+            // Try to find related email in localStorage
+            for (const k of keys) {
+              if (k === 'analyzer_last_email') {
+                email = localStorage.getItem(k) || 'Unknown user';
+                break;
+              }
+            }
+            
+            users.push({
+              id: userId,
+              count: usageData.count || 0,
+              email: email,
+              lastUsed: usageData.lastUsed ? new Date(usageData.lastUsed).toLocaleString() : 'Unknown',
+              urls: usageData.urls || {}
+            });
+            
+            // Aggregate domain stats
+            if (usageData.urls) {
+              for (const url in usageData.urls) {
+                domains[url] = (domains[url] || 0) + usageData.urls[url];
+              }
+            }
+          } catch (e) {
+            console.error(`Error parsing usage data for key ${key}:`, e);
+          }
+        }
+        
+        // Generate HTML for user stats
+        let userHtml = '<h3 class="font-bold mb-2">User Usage</h3>';
+        users.forEach(user => {
+          userHtml += `<div class="mb-3 pb-2 border-b border-gray-200">
+            <div><span class="font-semibold">Email:</span> ${user.email}</div>
+            <div><span class="font-semibold">Total Uses:</span> ${user.count}/5</div>
+            <div><span class="font-semibold">Last Used:</span> ${user.lastUsed}</div>
+            <div><span class="font-semibold">Analyzed URLs:</span></div>
+            <ul class="ml-4">
+              ${Object.entries(user.urls).map(([url, count]) => 
+                `<li>${url}: ${count} times</li>`).join('')}
+            </ul>
+          </div>`;
+        });
+        
+        // Generate HTML for domain stats
+        let domainHtml = '<h3 class="font-bold mt-4 mb-2">Domain Usage</h3>';
+        Object.entries(domains)
+          .sort((a, b) => b[1] - a[1]) // Sort by most used
+          .forEach(([domain, count]) => {
+            domainHtml += `<div>${domain}: ${count} analyses</div>`;
+          });
+        
+        // Update UI
+        if (usageStats) {
+          usageStats.innerHTML = userHtml + domainHtml;
+        }
+      } catch (error: any) {
+        console.error('Error loading usage statistics:', error);
+        if (usageStats) {
+          usageStats.innerHTML = `<p class="text-red-500">Error loading usage data: ${error.message || 'Unknown error'}</p>`;
+        }
+      }
+    }
+    
+    // Admin code verification
+    adminLoginButton?.addEventListener('click', async () => {
+      const enteredCode = adminCode?.value || '';
+      
+      if (enteredCode === '098765') { // Must match ADMIN_CODE
+        adminLoginForm?.classList.add('hidden');
+        resetTools?.classList.remove('hidden');
+        
+        // Load initial statistics
+        await loadUsageStatistics();
+      } else {
+        alert('Invalid admin code. Please try again.');
+      }
+    });
+    
+    // Refresh usage statistics
+    refreshStatsButton?.addEventListener('click', async () => {
+      if (usageStats) {
+        usageStats.innerHTML = '<p class="text-gray-500 italic">Refreshing usage statistics...</p>';
+      }
+      await loadUsageStatistics();
+    });
+    
+    // Reset email usage
+    resetEmailButton?.addEventListener('click', async () => {
+      const email = emailToReset?.value.trim() || '';
+      
+      if (!email) {
+        alert('Please enter an email address to reset.');
+        return;
+      }
+      
+      try {
+        // Generate the user ID from email
+        const userId = await generateUserId(email);
+        const storageKey = `analyzer_usage_${userId}`;
+        
+        // Delete the user's usage data
+        if (localStorage.getItem(storageKey)) {
+          localStorage.removeItem(storageKey);
+          alert(`Usage reset for ${email}. This user can now perform more analyses.`);
+        } else {
+          alert(`No usage data found for ${email}.`);
+        }
+        
+        // Refresh stats
+        await loadUsageStatistics();
+        
+      } catch (error) {
+        console.error('Error resetting email usage:', error);
+        alert(`Error resetting email usage: ${error.message}`);
+      }
+    });
+    
+    // Reset domain usage
+    resetUrlButton?.addEventListener('click', async () => {
+      const domain = urlToReset?.value.trim() || '';
+      
+      if (!domain) {
+        alert('Please enter a domain to reset.');
+        return;
+      }
+      
+      try {
+        // Get all storage keys for usage tracking
+        const keys = Object.keys(localStorage).filter(key => key.startsWith('analyzer_usage_'));
+        let resetCount = 0;
+        const normalizedDomain = normalizeDomain(domain);
+        
+        // For each user's usage data
+        for (const key of keys) {
+          try {
+            const usageData = JSON.parse(localStorage.getItem(key));
+            let modified = false;
+            
+            // Check if this user has accessed the domain
+            if (usageData.urls) {
+              for (const url in usageData.urls) {
+                if (url.includes(normalizedDomain)) {
+                  // Reset the counter for this domain
+                  delete usageData.urls[url];
+                  // Adjust the total count
+                  usageData.count -= usageData.urls[url] || 0;
+                  resetCount++;
+                  modified = true;
+                }
+              }
+            }
+            
+            // If we modified this user's data, save it back
+            if (modified) {
+              localStorage.setItem(key, JSON.stringify(usageData));
+            }
+          } catch (e) {
+            console.error(`Error processing key ${key}:`, e);
+          }
+        }
+        
+        // Update UI with results
+        if (resetCount > 0) {
+          alert(`Reset ${resetCount} usages of ${domain}. Users can now analyze this domain again.`);
+        } else {
+          alert(`No usage data found for ${domain}.`);
+        }
+        
+        // Refresh stats
+        await loadUsageStatistics();
+        
+      } catch (error) {
+        console.error('Error resetting domain usage:', error);
+        alert(`Error resetting domain usage: ${error.message}`);
+      }
+    });
+    
+    // Reset all usage data
+    resetAllButton?.addEventListener('click', async () => {
+      if (confirm('Are you sure you want to reset ALL usage data? This cannot be undone.')) {
+        try {
+          // Get all storage keys
+          const keys = Object.keys(localStorage);
+          let resetCount = 0;
+          
+          // Find all analyzer usage keys
+          keys.forEach(key => {
+            if (key.startsWith('analyzer_') || key.includes('usage')) {
+              localStorage.removeItem(key);
+              resetCount++;
+            }
+          });
+          
+          // Update UI with results
+          alert(`Reset ${resetCount} usage items. All counters have been cleared.`);
+          
+          // Refresh stats
+          await loadUsageStatistics();
+          
+        } catch (error) {
+          console.error('Error resetting all usage data:', error);
+          alert(`Error resetting all usage data: ${error.message}`);
+        }
+      }
+    });
+  </script>
+</MainLayout>

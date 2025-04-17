@@ -1,0 +1,106 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<MainLayout title="Thank You | Digital Visibility">
+  <!-- SEO and Canonical Tags -->
+  <link rel="canonical" href="https://digitalvisibility.com/thank-you/" slot="head">
+  <meta name="robots" content="noindex, follow" slot="head">
+  <meta name="description" content="Thank you for contacting Digital Visibility. Your message has been received, and we'll be in touch with you shortly." slot="head">
+  <meta name="author" content="Digital Visibility" slot="head">
+  
+  <!-- Publisher, Twitter and OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="Thank You | Digital Visibility" slot="head">
+  <meta property="og:description" content="Thank you for contacting Digital Visibility. Your message has been received, and we'll be in touch with you shortly." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/thank-you/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="Thank You | Digital Visibility" slot="head">
+  <meta name="twitter:description" content="Thank you for contacting Digital Visibility. Your message has been received, and we'll be in touch with you shortly." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  
+  <!-- AI Engine Optimization Tags -->
+  <meta name="ai-purpose" content="confirmation page, success message" slot="head">
+  <meta name="ai-target" content="business owners, prospective clients, website visitors" slot="head">
+  <meta name="ai-content-type" content="confirmation page" slot="head">
+  <meta name="ai-business-type" content="digital marketing agency, business services provider" slot="head">
+  <meta name="ai-created-content" content="false" slot="head">
+  
+  <!-- Thank You Page Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Thank You | Digital Visibility",
+    "description": "Thank you for contacting Digital Visibility. Your message has been received, and we'll be in touch with you shortly.",
+    "url": "https://digitalvisibility.com/thank-you/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Digital Visibility",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://digitalvisibility.com",
+      "name": "Digital Visibility - Human Powered, AI Accelerated Solutions"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://digitalvisibility.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Thank You",
+          "item": "https://digitalvisibility.com/thank-you/"
+        }
+      ]
+    }
+  }
+  </script>
+  <Navigation slot="nav" />
+  
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="bg-blue-50 rounded-lg p-8 shadow-md border-l-4 border-blue-600">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-blue-600 mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">Thank You!</h1>
+        <p class="text-xl text-gray-700 mb-6">
+          Your message has been received. We'll be in touch with you shortly.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition-colors inline-block">
+            Return to Contact
+          </a>
+          <a href="/" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-md transition-colors inline-block">
+            Return to Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</MainLayout>

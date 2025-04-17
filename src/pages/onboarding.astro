@@ -1,0 +1,433 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<MainLayout title="Digital Visibility - Website Information Form">
+  <!-- SEO and Canonical Tags -->
+  <link rel="canonical" href="https://digitalvisibility.com/onboarding/" slot="head">
+  <meta name="robots" content="noindex, follow" slot="head">
+  <meta name="description" content="Complete Digital Visibility's website information form to help us create your custom website. The more details you provide, the better we can tailor the website to your needs." slot="head">
+  <meta name="author" content="Digital Visibility" slot="head">
+  
+  <!-- Publisher, Twitter and OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="Digital Visibility - Website Information Form" slot="head">
+  <meta property="og:description" content="Complete Digital Visibility's website information form to help us create your custom website. The more details you provide, the better we can tailor the website to your needs." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/onboarding/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="Digital Visibility - Website Information Form" slot="head">
+  <meta name="twitter:description" content="Complete Digital Visibility's website information form to help us create your custom website. The more details you provide, the better we can tailor the website to your needs." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  
+  <!-- AI Engine Optimization Tags -->
+  <meta name="ai-purpose" content="client onboarding, information collection" slot="head">
+  <meta name="ai-target" content="business owners, new clients, website clients" slot="head">
+  <meta name="ai-content-type" content="form, client intake" slot="head">
+  <meta name="ai-business-type" content="digital marketing agency, business services provider" slot="head">
+  <meta name="ai-created-content" content="false" slot="head">
+  
+  <!-- Onboarding Page Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Digital Visibility - Website Information Form",
+    "description": "Complete Digital Visibility's website information form to help us create your custom website. The more details you provide, the better we can tailor the website to your needs.",
+    "url": "https://digitalvisibility.com/onboarding/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Digital Visibility",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://digitalvisibility.com",
+      "name": "Digital Visibility - Human Powered, AI Accelerated Solutions"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://digitalvisibility.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Onboarding",
+          "item": "https://digitalvisibility.com/onboarding/"
+        }
+      ]
+    },
+    "mainEntity": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "support@digitalvisibility.com"
+    }
+  }
+  </script>
+  <Navigation slot="nav" />
+  
+  <div class="container max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg my-12">
+    <header class="text-center mb-8 pb-6 border-b-2 border-gray-100">
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">Website Information Form</h1>
+      <p class="text-xl text-gray-600">Please complete this form to help us create your custom website. The more details you provide, the better we can tailor the website to your needs.</p>
+    </header>
+    
+    <form id="websiteForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
+      <input type="hidden" name="access_key" value="04b98b5a-c1af-43bf-a223-9f711109ac82">
+      <input type="hidden" name="subject" value="New Website Information Form Submission - Digital Visibility">
+      <input type="hidden" name="from_name" value="Digital Visibility Website Form">
+      <input type="hidden" name="to_email" value="support@digitalvisibility.com">
+      <input type="hidden" name="redirect" value="https://web3forms.com/success">
+      
+      <div class="section border-b border-gray-100 pb-8">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6 pb-2 border-b border-gray-100">1. Business Information</h2>
+        
+        <div class="mb-6">
+          <label for="businessName" class="block mb-2 font-semibold text-gray-800 after:content-['*'] after:text-red-500 after:ml-1">Business Name</label>
+          <input type="text" id="businessName" name="businessName" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" required>
+        </div>
+        
+        <div class="mb-6">
+          <label for="businessDescription" class="block mb-2 font-semibold text-gray-800 after:content-['*'] after:text-red-500 after:ml-1">Business Description</label>
+          <textarea id="businessDescription" name="businessDescription" placeholder="Please provide a brief overview of your business..." class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 min-h-[120px]" required></textarea>
+        </div>
+        
+        <div class="mb-6">
+          <label for="mission" class="block mb-2 font-semibold text-gray-800">Mission Statement/Company Values</label>
+          <textarea id="mission" name="mission" placeholder="What is your business mission or core values?" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 min-h-[120px]"></textarea>
+        </div>
+        
+        <div class="mb-6">
+          <label for="usp" class="block mb-2 font-semibold text-gray-800 after:content-['*'] after:text-red-500 after:ml-1">Unique Selling Proposition</label>
+          <textarea id="usp" name="usp" placeholder="What makes your business stand out from competitors?" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 min-h-[120px]" required></textarea>
+          <span class="text-sm text-gray-500 mt-1 block">This helps us highlight what makes your business special.</span>
+        </div>
+        
+        <div class="mb-6">
+          <label for="targetAudience" class="block mb-2 font-semibold text-gray-800 after:content-['*'] after:text-red-500 after:ml-1">Target Audience</label>
+          <textarea id="targetAudience" name="targetAudience" placeholder="Who are your ideal customers?" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 min-h-[120px]" required></textarea>
+        </div>
+      </div>
+      
+      <div class="section border-b border-gray-100 pb-8">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6 pb-2 border-b border-gray-100">2. Contact Information</h2>
+        
+        <div class="mb-6">
+          <label for="contactName" class="block mb-2 font-semibold text-gray-800 after:content-['*'] after:text-red-500 after:ml-1">Primary Contact Name</label>
+          <input type="text" id="contactName" name="contactName" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" required>
+        </div>
+        
+        <div class="mb-6">
+          <label for="contactEmail" class="block mb-2 font-semibold text-gray-800 after:content-['*'] after:text-red-500 after:ml-1">Email Address</label>
+          <input type="email" id="contactEmail" name="contactEmail" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" required>
+        </div>
+        
+        <div class="mb-6">
+          <label for="contactPhone" class="block mb-2 font-semibold text-gray-800 after:content-['*'] after:text-red-500 after:ml-1">Phone Number</label>
+          <input type="tel" id="contactPhone" name="contactPhone" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" required>
+        </div>
+        
+        <div class="mb-6">
+          <label for="businessAddress" class="block mb-2 font-semibold text-gray-800">Business Address</label>
+          <textarea id="businessAddress" name="businessAddress" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"></textarea>
+        </div>
+        
+        <div class="mb-6">
+          <label for="businessHours" class="block mb-2 font-semibold text-gray-800">Business Hours</label>
+          <textarea id="businessHours" name="businessHours" placeholder="e.g., Monday-Friday: 8AM-6PM" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"></textarea>
+        </div>
+        
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold text-gray-800">Social Media Profiles</label>
+          <input type="url" placeholder="Facebook" name="facebook" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 mb-3">
+          <input type="url" placeholder="Instagram" name="instagram" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 mb-3">
+          <input type="url" placeholder="LinkedIn" name="linkedin" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 mb-3">
+          <input type="url" placeholder="Twitter" name="twitter" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 mb-3">
+          <input type="url" placeholder="Other" name="otherSocial" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+        </div>
+      </div>
+      
+      <div class="section border-b border-gray-100 pb-8">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6 pb-2 border-b border-gray-100">3. Products & Services Information</h2>
+        
+        <div class="mb-6">
+          <label for="servicesOffered" class="block mb-2 font-semibold text-gray-800 after:content-['*'] after:text-red-500 after:ml-1">Main Products/Services Offered</label>
+          <textarea id="servicesOffered" name="servicesOffered" placeholder="Please list and describe your main products or services..." class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 min-h-[120px]" required></textarea>
+        </div>
+        
+        <div class="mb-6">
+          <label for="serviceAreas" class="block mb-2 font-semibold text-gray-800">Geographic Service Areas</label>
+          <textarea id="serviceAreas" name="serviceAreas" placeholder="Which geographic locations do you serve? (Local, national, international, etc.)" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"></textarea>
+        </div>
+        
+        <div class="mb-6">
+          <label for="pricing" class="block mb-2 font-semibold text-gray-800">Pricing Information</label>
+          <textarea id="pricing" name="pricing" placeholder="Would you like to include pricing on the website? If so, please provide details..." class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"></textarea>
+          <span class="text-sm text-gray-500 mt-1 block">This is optional. You can choose to have visitors contact you for quotes instead.</span>
+        </div>
+        
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold text-gray-800">Would you like to include the following on your services page?</label>
+          
+          <div class="space-y-3 mt-3">
+            <label class="flex items-center">
+              <input type="checkbox" name="features" value="processDescription" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Process Description (how you work)</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="features" value="guarantees" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Guarantees/Warranties</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="features" value="certifications" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Certifications/Qualifications</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="features" value="testimonials" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Client Testimonials</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="features" value="beforeAfter" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Before/After Project Photos</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section border-b border-gray-100 pb-8">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6 pb-2 border-b border-gray-100">4. Website Design Preferences</h2>
+        
+        <div class="bg-blue-50 p-4 border-l-4 border-blue-500 rounded mb-6">
+          <p class="text-gray-700">It would be helpful to share websites you like the design or features of. You can list URLs below or email them separately.</p>
+        </div>
+        
+        <div class="mb-6">
+          <label for="websiteExamples" class="block mb-2 font-semibold text-gray-800">Website Examples You Like</label>
+          <textarea id="websiteExamples" name="websiteExamples" placeholder="Please list any websites you like the design or functionality of..." class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"></textarea>
+        </div>
+        
+        <div class="mb-6">
+          <label for="colorPreferences" class="block mb-2 font-semibold text-gray-800">Color Preferences</label>
+          <textarea id="colorPreferences" name="colorPreferences" placeholder="Do you have specific brand colors you'd like to use?" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"></textarea>
+        </div>
+        
+        <div class="mb-6">
+          <label for="stylePreferences" class="block mb-2 font-semibold text-gray-800">Style Preferences</label>
+          <select id="stylePreferences" name="stylePreferences" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+            <option value="">-- Select Style --</option>
+            <option value="modern">Modern/Sleek</option>
+            <option value="professional">Professional/Corporate</option>
+            <option value="friendly">Friendly/Approachable</option>
+            <option value="minimalist">Minimalist/Clean</option>
+            <option value="bold">Bold/Impactful</option>
+            <option value="creative">Creative/Artistic</option>
+            <option value="luxury">Luxury/Premium</option>
+            <option value="other">Other (please specify in comments)</option>
+          </select>
+        </div>
+        
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold text-gray-800">What features would you like on your website?</label>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+            <label class="flex items-center">
+              <input type="checkbox" name="websiteFeatures" value="contactForm" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Contact Form</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="websiteFeatures" value="quoteRequest" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Quote Request Form</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="websiteFeatures" value="gallery" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Project/Product Gallery</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="websiteFeatures" value="blog" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Blog/News Section</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="websiteFeatures" value="faq" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>FAQ Section</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="websiteFeatures" value="testimonials" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Testimonials/Reviews</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="websiteFeatures" value="map" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Google Map Integration</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="websiteFeatures" value="booking" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Online Booking/Scheduling</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="websiteFeatures" value="newsletter" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Newsletter Signup</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="websiteFeatures" value="ecommerce" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>E-commerce/Online Store</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section border-b border-gray-100 pb-8">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6 pb-2 border-b border-gray-100">5. Content & Assets</h2>
+        
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold text-gray-800">Do you have the following available to provide?</label>
+          
+          <div class="space-y-3 mt-3">
+            <label class="flex items-center">
+              <input type="checkbox" name="assets" value="logo" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Company Logo</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="assets" value="photos" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Professional Photos</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="assets" value="videos" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Videos</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="assets" value="content" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Written Content</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="assets" value="testimonials" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Customer Testimonials</span>
+            </label>
+          </div>
+          <span class="text-sm text-gray-500 mt-3 block">Don't worry if you don't have these - we can create professional content for you.</span>
+        </div>
+        
+        <div class="mb-6">
+          <label for="contentPreference" class="block mb-2 font-semibold text-gray-800">Content Creation Preference</label>
+          <select id="contentPreference" name="contentPreference" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+            <option value="">-- Select Preference --</option>
+            <option value="providedByClient">I will provide specific direction and materials</option>
+            <option value="createdByDesigner">I'd like your designers to create content with minimal input</option>
+            <option value="collaboration">I'd like a collaborative approach</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="section border-b border-gray-100 pb-8">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6 pb-2 border-b border-gray-100">6. Technical Information</h2>
+        
+        <div class="mb-6">
+          <label for="domainName" class="block mb-2 font-semibold text-gray-800">Current Domain Name (if applicable)</label>
+          <input type="text" id="domainName" name="domainName" placeholder="e.g., www.yourbusiness.com" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+          <span class="text-sm text-gray-500 mt-1 block">If you don't have a domain yet, we can discuss options.</span>
+        </div>
+        
+        <div class="mb-6">
+          <label class="block mb-2 font-semibold text-gray-800">Do you need any of the following?</label>
+          
+          <div class="space-y-3 mt-3">
+            <label class="flex items-center">
+              <input type="checkbox" name="technical" value="newDomain" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>New Domain Registration</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="technical" value="emailAccounts" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Professional Email Accounts</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="technical" value="analytics" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Google Analytics Setup</span>
+            </label>
+            
+            <label class="flex items-center">
+              <input type="checkbox" name="technical" value="thirdParty" class="mr-3 h-5 w-5 text-blue-600 focus:ring-blue-500">
+              <span>Integration with Third-Party Tools (please specify below)</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="mb-6">
+          <label for="integrations" class="block mb-2 font-semibold text-gray-800">Third-Party Integrations Needed</label>
+          <textarea id="integrations" name="integrations" placeholder="e.g., CRM, accounting software, scheduling tools, etc." class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"></textarea>
+        </div>
+      </div>
+      
+      <div class="section pb-8">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6 pb-2 border-b border-gray-100">7. Additional Information</h2>
+        
+        <div class="mb-6">
+          <label for="competitors" class="block mb-2 font-semibold text-gray-800">Main Competitors</label>
+          <textarea id="competitors" name="competitors" placeholder="Please list your main competitors and their websites if known..." class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"></textarea>
+        </div>
+        
+        <div class="mb-6">
+          <label for="timeline" class="block mb-2 font-semibold text-gray-800">Timeline Requirements</label>
+          <textarea id="timeline" name="timeline" placeholder="Do you have any specific timeline requirements for your website launch?" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"></textarea>
+        </div>
+        
+        <div class="mb-6">
+          <label for="budget" class="block mb-2 font-semibold text-gray-800">Budget Range</label>
+          <select id="budget" name="budget" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+            <option value="">-- Select Budget Range --</option>
+            <option value="under1000">Under £1,000</option>
+            <option value="1000-3000">£1,000 - £3,000</option>
+            <option value="3000-5000">£3,000 - £5,000</option>
+            <option value="5000-10000">£5,000 - £10,000</option>
+            <option value="10000plus">£10,000+</option>
+            <option value="notSure">Not sure yet</option>
+          </select>
+        </div>
+        
+        <div class="mb-6">
+          <label for="additionalInfo" class="block mb-2 font-semibold text-gray-800">Additional Comments or Requirements</label>
+          <textarea id="additionalInfo" name="additionalInfo" placeholder="Is there anything else you'd like us to know?" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 min-h-[120px]"></textarea>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-all shadow-lg hover:shadow-xl">Submit Information</button>
+      </div>
+    </form>
+  </div>
+  
+  <Footer />
+</MainLayout>
