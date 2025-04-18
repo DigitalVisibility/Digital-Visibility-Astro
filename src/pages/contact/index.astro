@@ -289,7 +289,7 @@ import Footer from '../../components/Footer.astro';
           <h2 class="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
           <p class="text-gray-700 mb-6">Let us know what you're looking to achieve — whether it's boosting your online visibility, developing a custom app, or creating a physical product. We'll have the right expert call you back today.</p>
           
-          <form class="space-y-4" action="https://api.web3forms.com/submit" method="POST">
+          <form class="space-y-4" action="https://api.web3forms.com/submit" method="POST" id="contactForm">
             <!-- Web3Forms Access Key -->
             <input type="hidden" name="access_key" value="04b98b5a-c1af-43bf-a223-9f711109ac82">
             
@@ -323,7 +323,7 @@ import Footer from '../../components/Footer.astro';
             <div>
               <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
               <p class="text-sm text-gray-500 mb-2">Please share which service you're interested in (digital marketing, app development, or product design) so we can connect you with the right specialist.</p>
-              <textarea id="message" name="message" rows="4" placeholder="I'm looking for help with... [VERSION 7] (e.g., boosting my online visibility, creating a custom app, designing a new product)" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
+              <textarea id="message" name="message" rows="4" placeholder="I'm looking for help with... [VERSION 8] (e.g., boosting my online visibility, creating a custom app, designing a new product)" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
             </div>
             
             <!-- Cloudflare Turnstile Widget with callback for Web3Forms -->
@@ -539,6 +539,38 @@ import Footer from '../../components/Footer.astro';
       if (typeof window.lucide !== 'undefined') {
         lucide.createIcons();
       }
+
+      // Add form submission handler
+      const form = document.getElementById('contactForm');
+      if (form) {
+        form.addEventListener('submit', function(event) {
+          // Prevent the default form submission
+          event.preventDefault();
+          
+          // Get the Turnstile token
+          const token = document.querySelector('.cf-turnstile iframe')?.getAttribute('data-token');
+          
+          // Set the token in the hidden field
+          if (token) {
+            document.getElementById('cf-turnstile-response').value = token;
+            console.log('Token set from iframe data-token attribute:', token);
+          } else {
+            // Alternative approach - try to get token from Turnstile directly
+            try {
+              const turnstileResponse = turnstile.getResponse();
+              if (turnstileResponse) {
+                document.getElementById('cf-turnstile-response').value = turnstileResponse;
+                console.log('Token retrieved from turnstile.getResponse()');
+              }
+            } catch (e) {
+              console.log('Could not get token from turnstile.getResponse()', e);
+            }
+          }
+          
+          // Now submit the form
+          form.submit();
+        });
+      }
     });
 
     // Turnstile callback function to populate the hidden field for Web3Forms
@@ -547,8 +579,8 @@ import Footer from '../../components/Footer.astro';
       const inputField = document.getElementById('cf-turnstile-response');
       if (inputField) {
         inputField.value = token;
+        console.log('Turnstile token received in callback:', token);
       }
-      console.log('Turnstile token received and stored for Web3Forms');
     };
   </script>
 </MainLayout>
