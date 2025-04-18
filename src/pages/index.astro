@@ -38,6 +38,9 @@ export const prerender = false;
   <meta name="publisher" content="Digital Visibility Limited" slot="head">
   <meta name="author" content="Darran Goulding" slot="head">
   
+  <!-- Cloudflare Turnstile Script -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
+  
   <!-- Schema markup for improved SEO and AI visibility -->
   <script type="application/ld+json">
   {
@@ -1110,7 +1113,7 @@ export const prerender = false;
                   
                   <!-- Cloudflare Turnstile widget -->
                   <div class="mt-3">
-                    <div id="lead-turnstile-container"></div>
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAABLjSEqx_MGVFkGW" data-theme="light"></div>
                     <input type="hidden" name="cf-turnstile-response" id="leadTurnstileResponse">
                   </div>
                   
@@ -2618,18 +2621,7 @@ export const prerender = false;
         const backToStep1Button = document.getElementById('leadBackToStep1Button');
         const originalAnalyzerContainer = document.getElementById('originalAnalyzerContainer');
         
-        // Initialize Cloudflare Turnstile (if in production)
-        if (window.turnstile) {
-          window.turnstile.ready(function() {
-            turnstile.render('#lead-turnstile-container', {
-              // For development, use a dummy token
-              sitekey: '1x00000000000000000000AA',
-              callback: function(token) {
-                document.getElementById('leadTurnstileResponse').value = token;
-              }
-            });
-          });
-        }
+        // Cloudflare Turnstile is now initialized through direct implementation with data-sitekey
         
         // URL Form submission (Step 1 to Step 2)
         initialUrlForm.addEventListener('submit', function(e) {
