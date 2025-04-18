@@ -1651,33 +1651,6 @@ export const prerender = false;
                                              .toLowerCase();
                     
                     // Check total usage limit
-                    const totalLimit = 5;
-                    const urlLimit = 3; // Max per domain
-                    
-                    // Check if total limit reached
-                    if (usageData.count >= totalLimit) {
-                      return { allowed: false, remaining: 0 };
-                    }
-                    
-                    // Check if URL limit reached
-                    if ((usageData.urls[normalizedUrl] || 0) >= urlLimit) {
-                      const remainingTotal = totalLimit - usageData.count;
-                      return { 
-                        allowed: false, 
-                        remaining: remainingTotal,
-                        message: `You've reached the maximum analyses for ${normalizedUrl}. Try a different website.`
-                      };
-                    }
-                    
-                    // Update counters
-                    usageData.count += 1;
-                    usageData.urls[normalizedUrl] = (usageData.urls[normalizedUrl] || 0) + 1;
-                    usageData.lastUsed = Date.now();
-                    
-                    // Save updated data
-                    localStorage.setItem(storageKey, JSON.stringify(usageData));
-                    
-                    // Return remaining usage count
                     const remaining = totalLimit - usageData.count;
                     return { allowed: true, remaining };
                   } catch (error) {
@@ -1761,8 +1734,6 @@ export const prerender = false;
                         window.location.href = '/';
                         
                         // Prevent form submission
-                        e.preventDefault();
-                        e.stopPropagation();
                         return false;
                       }
                       
@@ -1772,9 +1743,6 @@ export const prerender = false;
                       // Before proceeding, check if analysis is blocked
                       if (localStorage.getItem('analyzer_blocked') === 'true') {
                         // Analysis is blocked, don't proceed
-                        e.preventDefault();
-                        e.stopPropagation();
-                        
                         // Show limit reached message and redirect
                         alert('You have reached the maximum number of free analyses. Returning to home page.');
                         
@@ -1784,13 +1752,81 @@ export const prerender = false;
                         return false;
                       }
                       
-                      // If original handler exists, call it
-                      if (typeof originalSubmit === 'function') {
-                        return originalSubmit.call(this, e);
+                      // Show spinner to indicate processing
+                      const contactButtonText = document.getElementById('leadContactButtonText');
+                      const contactButtonSpinner = document.getElementById('leadContactButtonSpinner');
+                      const submitButton = document.getElementById('leadSubmitContactButton') as HTMLButtonElement;
+                      
+                      if (contactButtonText && contactButtonSpinner && submitButton) {
+                        contactButtonText.textContent = 'Sending...';
+                        contactButtonSpinner.classList.remove('hidden');
+                        submitButton.disabled = true;
                       }
                       
-                      // Otherwise submit the form manually
-                      return true;
+                      // Collect form data for Web3Forms submission
+                      const formData = new FormData(leadContactForm);
+                      
+                      // Make sure the analyzed URL is in the form data
+                      const analyzedUrlField = document.getElementById('leadAnalyzedUrlField') as HTMLInputElement;
+                      if (analyzedUrlField) {
+                        analyzedUrlField.value = url;
+                      }
+                      
+                      try {
+                        // Submit form data to Web3Forms
+                        const response = await fetch('https://api.web3forms.com/submit', {
+                          method: 'POST',
+                          body: formData
+                        });
+                        
+                        const data = await response.json();
+                        console.log('Form submission successful:', data);
+                        
+                        // Hide lead generation form and show the original analyzer form
+                        const leadGenSteps = document.getElementById('leadGenSteps');
+                        if (leadGenSteps) {
+                          leadGenSteps.classList.add('hidden');
+                        }
+                        
+                        // Show original analyzer with URL prefilled
+                        const originalAnalyzerContainer = document.getElementById('originalAnalyzerContainer');
+                        if (originalAnalyzerContainer) {
+                          originalAnalyzerContainer.classList.remove('hidden');
+                          
+                          // Set the URL in the original form
+                          const originalUrlInput = document.getElementById('urlInput') as HTMLInputElement;
+                          if (originalUrlInput) {
+                            // Set the URL from the first step
+                            originalUrlInput.value = url;
+                            
+                            // Optional: Automatically trigger the analysis
+                            setTimeout(() => {
+                              // Create and dispatch a submit event on the analyze form
+                              const analyzeForm = document.getElementById('analyzeForm');
+                              if (analyzeForm) {
+                                // Let the user see the form before automatically submitting
+                                analyzeForm.dispatchEvent(new Event('submit'));
+                              }
+                            }, 500); // Give a slight delay to ensure DOM is ready
+                          }
+                        }
+                        
+                        // Update UI with usage count
+                        updateUsageUI(usageResult.remaining);
+                        
+                      } catch (error) {
+                        console.error('Error:', error);
+                        alert('There was an error submitting the form. Please try again.');
+                        
+                        // Reset button state
+                        if (contactButtonText && contactButtonSpinner && submitButton) {
+                          contactButtonText.textContent = 'Get Free Analysis';
+                          contactButtonSpinner.classList.add('hidden');
+                          submitButton.disabled = false;
+                        }
+                      }
+                      
+                      return false;
                     };
                   }
                   
@@ -1843,25 +1879,32 @@ export const prerender = false;
                         // Set blocked state
                         localStorage.setItem('analyzer_blocked', 'true');
                         
-                        // Show limit message and redirect
+                        // Show limit reached message and redirect
                         alert(usageResult.message || 'You have reached the maximum number of free analyses. Returning to home page.');
                         
                         // Redirect to home page
                         window.location.href = '/';
                         
-                        return;
+                        // Prevent any further execution
+                        e.preventDefault();
+                        e.stopPropagation();
+                        return false;
                       }
                       
-                      // Set the URL in the original input and trigger analysis
-                      const originalUrlInput = document.getElementById('urlInput');
+                      // Set the URL in the original form
+                      const originalUrlInput = document.getElementById('urlInput') as HTMLInputElement;
                       if (originalUrlInput) {
+                        // Set the URL from the first step
                         originalUrlInput.value = url;
-                        // Submit the original form to trigger the analysis
-                        setTimeout(function() {
-                          const analyzeButton = document.getElementById('analyzeButton');
-                          if (analyzeButton) analyzeButton.click();
-                        }, 100);
                       }
+                      
+                      // Trigger the original form to trigger the analysis
+                      setTimeout(function() {
+                        const analyzeButton = document.getElementById('analyzeButton') as HTMLButtonElement;
+                        if (analyzeButton) {
+                          analyzeButton.click();
+                        }
+                      }, 100);
                       
                       // Update UI with remaining uses
                       updateUsageUI(usageResult.remaining);
@@ -2628,7 +2671,7 @@ export const prerender = false;
           e.preventDefault();
           
           // Get URL
-          const url = initialUrlInput.value.trim();
+          const url = initialUrlInput?.value?.trim() || '';
           
           // Validate URL
           if (!url) {
@@ -2666,74 +2709,8 @@ export const prerender = false;
           });
         }
         
-        // Contact form submission
-        contactForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          // Show spinner
-          const contactButtonText = document.getElementById('leadContactButtonText');
-          const contactButtonSpinner = document.getElementById('leadContactButtonSpinner');
-          const submitButton = document.getElementById('leadSubmitContactButton');
-          
-          if (contactButtonText && contactButtonSpinner && submitButton) {
-            contactButtonText.textContent = 'Sending...';
-            contactButtonSpinner.classList.remove('hidden');
-            submitButton.disabled = true;
-          }
-          
-          // Collect form data
-          const formData = new FormData(contactForm);
-          
-          // Submit form data to Web3Forms
-          fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formData
-          })
-          .then(response => response.json())
-          .then(data => {
-            console.log('Form submission successful:', data);
-            
-            // Hide lead generation form and show the original analyzer form
-            const leadGenSteps = document.getElementById('leadGenSteps');
-            if (leadGenSteps) {
-              leadGenSteps.classList.add('hidden');
-            }
-            
-            // Show original analyzer with URL prefilled
-            if (originalAnalyzerContainer) {
-              originalAnalyzerContainer.classList.remove('hidden');
-              
-              // Set the URL in the original form
-              const originalUrlInput = document.getElementById('urlInput');
-              if (originalUrlInput) {
-                // Set the URL from the first step
-                originalUrlInput.value = initialUrlInput.value;
-                
-                // Optional: Automatically trigger the analysis
-                // This will use the original analyzeWebsite function
-                setTimeout(() => {
-                  // Create and dispatch a submit event on the analyze form
-                  const analyzeForm = document.getElementById('analyzeForm');
-                  if (analyzeForm) {
-                    // Let the user see the form before automatically submitting
-                    analyzeForm.dispatchEvent(new Event('submit'));
-                  }
-                }, 500); // Give a slight delay to ensure DOM is ready
-              }
-            }
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            alert('There was an error submitting the form. Please try again.');
-            
-            // Reset button state
-            if (contactButtonText && contactButtonSpinner && submitButton) {
-              contactButtonText.textContent = 'Get Free Analysis';
-              contactButtonSpinner.classList.add('hidden');
-              submitButton.disabled = false;
-            }
-          });
-        });
+        // We're now handling the contact form submission in the onsubmit handler
+        // to ensure proper validation and tracking before submission
       }
       const secondResultsCard = document.getElementById('secondResultsCard');
       
@@ -2796,13 +2773,14 @@ export const prerender = false;
         
         // Get URL
         let url = '';
-        if (urlInput) {
-          url = urlInput.value.trim();
+        if (websiteUrlInput) {
+          const urlValue = (websiteUrlInput as HTMLInputElement)?.value?.trim() || '';
+          url = urlValue;
           
           // Add protocol if missing
           if (!url.startsWith('http://') && !url.startsWith('https://')) {
             url = 'https://' + url;
-            urlInput.value = url;
+            (websiteUrlInput as HTMLInputElement).value = url;
           }
         }
         
@@ -3302,19 +3280,19 @@ export const prerender = false;
       
       // Hide error message
       function hideError() {
-        errorAlert.classList.add('hidden');
+        if (errorAlert) errorAlert.classList.add('hidden');
       }
       
       // Set loading state
       function setLoading(isLoading) {
         if (isLoading) {
-          buttonText.textContent = 'Analyzing...';
-          buttonSpinner.classList.remove('hidden');
-          analyzeButton.disabled = true;
+          if (buttonText) (buttonText as HTMLElement).textContent = 'Analyzing...';
+          if (buttonSpinner) buttonSpinner.classList.remove('hidden');
+          if (analyzeButton) (analyzeButton as HTMLButtonElement).disabled = true;
         } else {
-          buttonText.textContent = 'Analyze Website';
-          buttonSpinner.classList.add('hidden');
-          analyzeButton.disabled = false;
+          if (buttonText) (buttonText as HTMLElement).textContent = 'Analyze Website';
+          if (buttonSpinner) buttonSpinner.classList.add('hidden');
+          if (analyzeButton) (analyzeButton as HTMLButtonElement).disabled = false;
         }
       }
       
@@ -3387,7 +3365,7 @@ export const prerender = false;
         e.preventDefault();
         
         // Get URL input
-        const url = websiteUrlInput.value.trim();
+        const url = websiteUrlInput ? (websiteUrlInput as HTMLInputElement).value.trim() : '';
         
         // Validate URL
         if (!url) {
@@ -3478,8 +3456,8 @@ export const prerender = false;
       
       // Show error message
       function showError(message) {
-        errorMessage.textContent = message;
-        errorAlert.classList.remove('hidden');
+        if (errorMessage) (errorMessage as HTMLElement).textContent = message;
+        if (errorAlert) errorAlert.classList.remove('hidden');
         
         // Hide error after 5 seconds
         setTimeout(function() {
@@ -3489,19 +3467,19 @@ export const prerender = false;
       
       // Hide error message
       function hideError() {
-        errorAlert.classList.add('hidden');
+        if (errorAlert) errorAlert.classList.add('hidden');
       }
       
       // Set loading state
       function setLoading(isLoading) {
         if (isLoading) {
-          buttonText.textContent = 'Analyzing...';
-          buttonSpinner.classList.remove('hidden');
-          analyzeButton.disabled = true;
+          if (buttonText) (buttonText as HTMLElement).textContent = 'Analyzing...';
+          if (buttonSpinner) buttonSpinner.classList.remove('hidden');
+          if (analyzeButton) (analyzeButton as HTMLButtonElement).disabled = true;
         } else {
-          buttonText.textContent = 'Analyze Website';
-          buttonSpinner.classList.add('hidden');
-          analyzeButton.disabled = false;
+          if (buttonText) (buttonText as HTMLElement).textContent = 'Analyze Website';
+          if (buttonSpinner) buttonSpinner.classList.add('hidden');
+          if (analyzeButton) (analyzeButton as HTMLButtonElement).disabled = false;
         }
       }
       
