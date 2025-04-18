@@ -204,7 +204,7 @@ import Footer from '../../components/Footer.astro';
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
   
   <!-- Cloudflare Turnstile Script -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer slot="head"></script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
@@ -242,7 +242,7 @@ import Footer from '../../components/Footer.astro';
   <meta name="ai-expertise" content="SEO+AEO+GEO, digital marketing, app development, product design, AI integration, business optimization">
   <meta name="ai-keywords" content="contact Digital Visibility, book consultation Swansea, digital marketing services Wales, app development consultation, product design inquiry, free strategy session, digital visibility expert consultation, SEO consultation Swansea, AI marketing consultation, business hours digital agency Swansea, contact form digital marketing, schedule meeting digital visibility, book appointment marketing agency Wales, contact Darran Goulding, digital marketing expert contact, app development inquiry, product design consultation, business consultation Swansea, marketing strategy session, digital transformation meeting, AI integration consultation, website optimization inquiry, PPC campaign consultation, content marketing inquiry, UX design consultation, product engineering contact, CAD design inquiry, contact Digital Visibility Swansea">
 
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer slot="head"></script>
 
   <Navigation slot="nav" />
   
@@ -534,12 +534,19 @@ import Footer from '../../components/Footer.astro';
   <script>
     // Turnstile callback function
     window.onloadTurnstileCallback = function() {
-      turnstile.render('#turnstile-container', {
+      window.turnstileWidgetId = turnstile.render('#turnstile-container', {
         sitekey: '0x4AAAAAAAQ1YlJFSBGYSW0',
         callback: function(token) {
           // Set the token in our hidden field
           console.log(`Turnstile token: ${token}`);
-          document.getElementById('cf-turnstile-response').value = token;
+          const tokenInput = document.getElementById('cf-turnstile-response');
+          if (tokenInput) tokenInput.value = token;
+        },
+        'expired-callback': function() {
+          // Reset the token when it expires
+          const tokenInput = document.getElementById('cf-turnstile-response');
+          if (tokenInput) tokenInput.value = '';
+          console.log('Turnstile token expired');
         }
       });
     }
@@ -554,32 +561,101 @@ import Footer from '../../components/Footer.astro';
       const form = document.getElementById('form');
       const result = document.getElementById('result');
       
-      form.addEventListener('submit', function(e) {
-        // Set replyto field to match email input
-        const emailInput = document.getElementById('email');
-        const replytoInput = document.getElementById('replyto');
-        if (emailInput && replytoInput) {
-          replytoInput.value = emailInput.value;
-        }
-
-        // Optional form validation here
-        const formData = new FormData(form);
-        const object = {};
-        formData.forEach((value, key) => {
-          object[key] = value;
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault(); // Prevent default form submission
+          
+          // Set replyto field to match email input
+          const emailInput = document.getElementById('email');
+          const replytoInput = document.getElementById('replyto');
+          if (emailInput && replytoInput) {
+            replytoInput.value = emailInput.value;
+          }
+          
+          // Validate Turnstile token
+          const turnstileToken = document.getElementById('cf-turnstile-response');
+          if (!turnstileToken || !turnstileToken.value) {
+            // Token is missing or empty
+            if (result) {
+              result.innerHTML = "<p class='text-red-500'>Please complete the security check before submitting.</p>";
+            } else {
+              alert('Please complete the security check before submitting.');
+            }
+            
+            // Reset Turnstile widget
+            if (window.turnstile && window.turnstileWidgetId) {
+              turnstile.reset(window.turnstileWidgetId);
+            }
+            
+            return false;
+          }
+          
+          // Create form data for submission
+          const formData = new FormData(form);
+          const object = {};
+          formData.forEach((value, key) => {
+            object[key] = value;
+          });
+          const json = JSON.stringify(object);
+          
+          // Show submitting status
+          if (result) {
+            result.innerHTML = "<p class='text-gray-700'>Submitting...</p>";
+          }
+          
+          // Log form data for debugging
+          console.log('Form data:', json);
+          
+          // Submit form data via fetch API
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: json
+          })
+          .then(async (response) => {
+            let data = await response.json();
+            if (response.status === 200) {
+              if (result) {
+                result.innerHTML = "<p class='text-green-500'>Form submitted successfully!</p>";
+              }
+              form.reset();
+              
+              // Reset Turnstile widget after successful submission
+              if (window.turnstile && window.turnstileWidgetId) {
+                turnstile.reset(window.turnstileWidgetId);
+              }
+              
+              // Redirect after successful submission (if redirect is specified)
+              if (data.redirect) {
+                window.location.href = data.redirect;
+              }
+            } else {
+              console.log(data);
+              if (result) {
+                result.innerHTML = "<p class='text-red-500'>Error: " + data.message + "</p>";
+              } else {
+                alert('Error: ' + data.message);
+              }
+              
+              // Reset Turnstile widget on error
+              if (window.turnstile && window.turnstileWidgetId) {
+                turnstile.reset(window.turnstileWidgetId);
+              }
+            }
+          })
+          .catch(error => {
+            console.log(error);
+            if (result) {
+              result.innerHTML = "<p class='text-red-500'>Something went wrong. Please try again later.</p>";
+            } else {
+              alert('Something went wrong. Please try again later.');
+            }
+          });
         });
-        const json = JSON.stringify(object);
-
-        // Only show status locally - this code doesn't affect form submission
-        const isLocalhost = window.location.hostname === 'localhost' || 
-                          window.location.hostname === '127.0.0.1';
-        if (isLocalhost && result) {
-          result.innerHTML = "<p class='text-gray-700'>Submitting...</p>";
-        }
-
-        // This doesn't prevent form submission - just logs data
-        console.log('Form data:', json);
-      });
+      }
     });
   </script>
 </MainLayout>
