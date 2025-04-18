@@ -36,6 +36,9 @@ import Footer from '../components/Footer.astro';
   <meta name="ai-business-type" content="digital marketing agency, business services provider" slot="head">
   <meta name="ai-created-content" content="false" slot="head">
   
+  <!-- Cloudflare Turnstile Script -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
+  
   <!-- Onboarding Page Schema -->
   <script type="application/ld+json">
   {
@@ -94,7 +97,7 @@ import Footer from '../components/Footer.astro';
       <input type="hidden" name="subject" value="New Website Information Form Submission - Digital Visibility">
       <input type="hidden" name="from_name" value="Digital Visibility Website Form">
       <input type="hidden" name="to_email" value="support@digitalvisibility.com">
-      <input type="hidden" name="redirect" value="https://web3forms.com/success">
+      <input type="hidden" name="redirect" value="https://digitalvisibility.com/thank-you/">
       
       <div class="section border-b border-gray-100 pb-8">
         <h2 class="text-2xl font-semibold text-gray-900 mb-6 pb-2 border-b border-gray-100">1. Business Information</h2>
@@ -421,6 +424,11 @@ import Footer from '../components/Footer.astro';
           <label for="additionalInfo" class="block mb-2 font-semibold text-gray-800">Additional Comments or Requirements</label>
           <textarea id="additionalInfo" name="additionalInfo" placeholder="Is there anything else you'd like us to know?" class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 min-h-[120px]"></textarea>
         </div>
+      </div>
+      
+      <!-- Cloudflare Turnstile Widget -->
+      <div class="mb-8 flex justify-center">
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAABLjSEqx_MGVFkGW" data-theme="light"></div>
       </div>
       
       <div class="text-center">
