@@ -204,6 +204,7 @@ import Footer from '../../components/Footer.astro';
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
   
   <!-- Cloudflare Turnstile Script -->
+  <!-- Cloudflare Turnstile script - exactly as their docs -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
@@ -242,6 +243,7 @@ import Footer from '../../components/Footer.astro';
   <meta name="ai-expertise" content="SEO+AEO+GEO, digital marketing, app development, product design, AI integration, business optimization">
   <meta name="ai-keywords" content="contact Digital Visibility, book consultation Swansea, digital marketing services Wales, app development consultation, product design inquiry, free strategy session, digital visibility expert consultation, SEO consultation Swansea, AI marketing consultation, business hours digital agency Swansea, contact form digital marketing, schedule meeting digital visibility, book appointment marketing agency Wales, contact Darran Goulding, digital marketing expert contact, app development inquiry, product design consultation, business consultation Swansea, marketing strategy session, digital transformation meeting, AI integration consultation, website optimization inquiry, PPC campaign consultation, content marketing inquiry, UX design consultation, product engineering contact, CAD design inquiry, contact Digital Visibility Swansea">
 
+  <!-- Cloudflare Turnstile script - exactly as their docs -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
 
   <Navigation slot="nav" />
@@ -290,15 +292,22 @@ import Footer from '../../components/Footer.astro';
           <h2 class="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
           <p class="text-gray-700 mb-6">Let us know what you're looking to achieve — whether it's boosting your online visibility, developing a custom app, or creating a physical product. We'll have the right expert call you back today.</p>
           
-          <form class="space-y-4" action="https://api.web3forms.com/submit" method="POST" id="form">
+          <form class="space-y-4" action="https://api.web3forms.com/submit" method="POST">
             <!-- Web3Forms Access Key -->
             <input type="hidden" name="access_key" value="04b98b5a-c1af-43bf-a223-9f711109ac82">
-            <!-- Optional: Subject field for the email you'll receive -->
+            
+            <!-- Destination email -->
+            <input type="hidden" name="to_email" value="support@digitalvisibility.com">
+            
+            <!-- Subject line for the email -->
             <input type="hidden" name="subject" value="New Contact Form Submission from Digital Visibility Website">
-            <!-- Optional: For spam prevention -->
+            
+            <!-- Honeypot field for spam prevention -->
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            
             <!-- Success redirect URL -->
             <input type="hidden" name="redirect" value="/thank-you">
+            
             <div>
               <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
               <input type="text" id="name" name="name" placeholder="John Smith" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
@@ -317,21 +326,15 @@ import Footer from '../../components/Footer.astro';
             <div>
               <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
               <p class="text-sm text-gray-500 mb-2">Please share which service you're interested in (digital marketing, app development, or product design) so we can connect you with the right specialist.</p>
-              <textarea id="message" name="message" rows="4" placeholder="I'm looking for help with... [VERSION 1] (e.g., boosting my online visibility, creating a custom app, designing a new product)" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
+              <textarea id="message" name="message" rows="4" placeholder="I'm looking for help with... [VERSION 3] (e.g., boosting my online visibility, creating a custom app, designing a new product)" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
             </div>
             
-            <!-- Cloudflare Turnstile Widget -->
+            <!-- Cloudflare Turnstile Widget - exactly as in their documentation -->
             <div class="cf-turnstile mb-4" data-sitekey="0x4AAAAAAAQ1YlJFSBGYSW0"></div>
-            <input type="hidden" name="cf-turnstile-response" id="cf-turnstile-response">
             
             <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition-colors">
               Send Message
             </button>
-            <div id="result" class="mt-3"></div>
-            <!-- Recommended by Web3Forms to prevent spam -->
-            <input type="hidden" name="from_name" value="Digital Visibility Website">
-            <input type="hidden" name="to_email" value="support@digitalvisibility.com">
-            <input type="hidden" name="replyto" id="replyto" style="display: none">
           </form>
         </div>
         
@@ -540,83 +543,7 @@ import Footer from '../../components/Footer.astro';
         lucide.createIcons();
       }
       
-      // Web3Forms implementation
-      const form = document.getElementById('form');
-      const result = document.getElementById('result');
-      
-      if (form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault(); // Prevent default form submission
-          
-          // Set replyto field to match email input
-          const emailInput = document.getElementById('email');
-          const replytoInput = document.getElementById('replyto');
-          if (emailInput && replytoInput) {
-            replytoInput.value = emailInput.value;
-          }
-          
-          // Form validation happens automatically - Turnstile adds its response directly to the form data
-          
-          // Create form data for submission
-          const formData = new FormData(form);
-          const object = {};
-          formData.forEach((value, key) => {
-            object[key] = value;
-          });
-          const json = JSON.stringify(object);
-          
-          // Show submitting status
-          if (result) {
-            result.innerHTML = "<p class='text-gray-700'>Submitting...</p>";
-          }
-          
-          // Log form data for debugging
-          console.log('Form data:', json);
-          
-          // Submit form data via fetch API
-          fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            },
-            body: json
-          })
-          .then(async (response) => {
-            let data = await response.json();
-            if (response.status === 200) {
-              if (result) {
-                result.innerHTML = "<p class='text-green-500'>Form submitted successfully!</p>";
-              }
-              form.reset();
-              
-              // Refresh page content after submission
-              
-              // Redirect after successful submission (if redirect is specified)
-              if (data.redirect) {
-                window.location.href = data.redirect;
-              }
-            } else {
-              console.log(data);
-              if (result) {
-                result.innerHTML = "<p class='text-red-500'>Error: " + data.message + "</p>";
-              } else {
-                alert('Error: ' + data.message);
-              }
-              
-              // Log the error for debugging
-            }
-          })
-          .catch(error => {
-            console.log(error);
-            if (result) {
-              result.innerHTML = "<p class='text-red-500'>Something went wrong. Please try again later.</p>";
-            } else {
-              alert('Something went wrong. Please try again later.');
-            }
-          });
-        });
-      }
+      // No custom JavaScript needed - Web3Forms and Cloudflare Turnstile handle everything
     });
   </script>
 </MainLayout>
