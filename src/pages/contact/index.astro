@@ -328,8 +328,6 @@ import Footer from '../../components/Footer.astro';
             
             <!-- Cloudflare Turnstile Widget - STANDARD IMPLEMENTATION EXACTLY AS DOCUMENTED -->
             <div class="cf-turnstile" data-sitekey="0x4AAAAAABLjSEqx_MGVFkGW" data-theme="light"></div>
-            <!-- Hidden field for the Turnstile token - REQUIRED by Web3Forms -->
-            <input type="hidden" name="cf-turnstile-response" id="cf-turnstile-response">
             
             <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition-colors">
               Send Message
@@ -534,15 +532,11 @@ import Footer from '../../components/Footer.astro';
   <Footer />
   
   <script>
-    // Turnstile automatically populates the hidden input field with the name cf-turnstile-response
-
     // Initialize Lucide icons
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof window.lucide !== 'undefined') {
         lucide.createIcons();
       }
-      
-      // No custom JavaScript needed - Web3Forms and Cloudflare Turnstile handle everything
     });
   </script>
 </MainLayout>
