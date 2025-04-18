@@ -203,29 +203,8 @@ import Footer from '../../components/Footer.astro';
   <link rel="canonical" href="https://digitalvisibility.com/contact/" slot="head">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
   
-  <!-- Cloudflare Turnstile Script -->
-  <!-- Cloudflare Turnstile script with explicit rendering exactly as in their docs -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer slot="head"></script>
-  
-  <!-- Turnstile explicit rendering setup script as shown in Cloudflare docs Image 3 -->
-  <script slot="head">
-    window.onloadTurnstileCallback = function() {
-      window.turnstileWidgetId = turnstile.render('#turnstile-container', {
-        sitekey: '0x4AAAAAAAQ1YlJFSBGYSW0',
-        callback: function(token) {
-          // When the user completes the Turnstile challenge, this callback will be invoked
-          document.getElementById('cf-turnstile-response').value = token;
-        },
-      });
-    };
-
-    // Initialize the widget when the page loads
-    window.addEventListener('DOMContentLoaded', function() {
-      if (typeof turnstile !== 'undefined') {
-        onloadTurnstileCallback();
-      }
-    });
-  </script>
+  <!-- Cloudflare Turnstile Script - STANDARD IMPLEMENTATION AS DOCUMENTED -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
@@ -344,12 +323,12 @@ import Footer from '../../components/Footer.astro';
             <div>
               <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
               <p class="text-sm text-gray-500 mb-2">Please share which service you're interested in (digital marketing, app development, or product design) so we can connect you with the right specialist.</p>
-              <textarea id="message" name="message" rows="4" placeholder="I'm looking for help with... [VERSION 5] (e.g., boosting my online visibility, creating a custom app, designing a new product)" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
+              <textarea id="message" name="message" rows="4" placeholder="I'm looking for help with... [VERSION 6] (e.g., boosting my online visibility, creating a custom app, designing a new product)" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
             </div>
             
-            <!-- Cloudflare Turnstile Widget with explicit rendering container -->
-            <div id="turnstile-container" class="mb-4"></div>
-            <!-- This field will be populated with the Turnstile token when the challenge is completed -->
+            <!-- Cloudflare Turnstile Widget - STANDARD IMPLEMENTATION EXACTLY AS DOCUMENTED -->
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAAQ1YlJFSBGYSW0" data-theme="light"></div>
+            <!-- Hidden field for the Turnstile token - REQUIRED by Web3Forms -->
             <input type="hidden" name="cf-turnstile-response" id="cf-turnstile-response">
             
             <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition-colors">
