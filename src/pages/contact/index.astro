@@ -204,7 +204,7 @@ import Footer from '../../components/Footer.astro';
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
   
   <!-- Cloudflare Turnstile Script -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer slot="head"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
@@ -242,7 +242,7 @@ import Footer from '../../components/Footer.astro';
   <meta name="ai-expertise" content="SEO+AEO+GEO, digital marketing, app development, product design, AI integration, business optimization">
   <meta name="ai-keywords" content="contact Digital Visibility, book consultation Swansea, digital marketing services Wales, app development consultation, product design inquiry, free strategy session, digital visibility expert consultation, SEO consultation Swansea, AI marketing consultation, business hours digital agency Swansea, contact form digital marketing, schedule meeting digital visibility, book appointment marketing agency Wales, contact Darran Goulding, digital marketing expert contact, app development inquiry, product design consultation, business consultation Swansea, marketing strategy session, digital transformation meeting, AI integration consultation, website optimization inquiry, PPC campaign consultation, content marketing inquiry, UX design consultation, product engineering contact, CAD design inquiry, contact Digital Visibility Swansea">
 
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer slot="head"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
 
   <Navigation slot="nav" />
   
@@ -321,7 +321,7 @@ import Footer from '../../components/Footer.astro';
             </div>
             
             <!-- Cloudflare Turnstile Widget -->
-            <div id="turnstile-container" class="mb-4"></div>
+            <div class="cf-turnstile mb-4" data-sitekey="0x4AAAAAAAQ1YlJFSBGYSW0"></div>
             <input type="hidden" name="cf-turnstile-response" id="cf-turnstile-response">
             
             <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition-colors">
@@ -532,24 +532,7 @@ import Footer from '../../components/Footer.astro';
   <Footer />
   
   <script>
-    // Turnstile callback function
-    window.onloadTurnstileCallback = function() {
-      window.turnstileWidgetId = turnstile.render('#turnstile-container', {
-        sitekey: '0x4AAAAAAAQ1YlJFSBGYSW0',
-        callback: function(token) {
-          // Set the token in our hidden field
-          console.log(`Turnstile token: ${token}`);
-          const tokenInput = document.getElementById('cf-turnstile-response');
-          if (tokenInput) tokenInput.value = token;
-        },
-        'expired-callback': function() {
-          // Reset the token when it expires
-          const tokenInput = document.getElementById('cf-turnstile-response');
-          if (tokenInput) tokenInput.value = '';
-          console.log('Turnstile token expired');
-        }
-      });
-    }
+    // Turnstile automatically populates the hidden input field with the name cf-turnstile-response
 
     // Initialize Lucide icons
     document.addEventListener('DOMContentLoaded', () => {
@@ -572,23 +555,7 @@ import Footer from '../../components/Footer.astro';
             replytoInput.value = emailInput.value;
           }
           
-          // Validate Turnstile token
-          const turnstileToken = document.getElementById('cf-turnstile-response');
-          if (!turnstileToken || !turnstileToken.value) {
-            // Token is missing or empty
-            if (result) {
-              result.innerHTML = "<p class='text-red-500'>Please complete the security check before submitting.</p>";
-            } else {
-              alert('Please complete the security check before submitting.');
-            }
-            
-            // Reset Turnstile widget
-            if (window.turnstile && window.turnstileWidgetId) {
-              turnstile.reset(window.turnstileWidgetId);
-            }
-            
-            return false;
-          }
+          // Form validation happens automatically - Turnstile adds its response directly to the form data
           
           // Create form data for submission
           const formData = new FormData(form);
@@ -623,10 +590,7 @@ import Footer from '../../components/Footer.astro';
               }
               form.reset();
               
-              // Reset Turnstile widget after successful submission
-              if (window.turnstile && window.turnstileWidgetId) {
-                turnstile.reset(window.turnstileWidgetId);
-              }
+              // Refresh page content after submission
               
               // Redirect after successful submission (if redirect is specified)
               if (data.redirect) {
@@ -640,10 +604,7 @@ import Footer from '../../components/Footer.astro';
                 alert('Error: ' + data.message);
               }
               
-              // Reset Turnstile widget on error
-              if (window.turnstile && window.turnstileWidgetId) {
-                turnstile.reset(window.turnstileWidgetId);
-              }
+              // Log the error for debugging
             }
           })
           .catch(error => {
