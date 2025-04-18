@@ -331,6 +331,8 @@ import Footer from '../../components/Footer.astro';
             
             <!-- Cloudflare Turnstile Widget - exactly as in their documentation -->
             <div class="cf-turnstile mb-4" data-sitekey="0x4AAAAAAAQ1YlJFSBGYSW0"></div>
+            <!-- THIS FIELD IS REQUIRED BY WEB3FORMS - their docs explicitly mention this -->
+            <input type="hidden" name="cf-turnstile-response" id="cf-turnstile-response">
             
             <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition-colors">
               Send Message
