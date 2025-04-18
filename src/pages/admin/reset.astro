@@ -57,6 +57,35 @@ const ADMIN_CODE = "098765"; // Matching the admin override code
                 Refresh Statistics
               </button>
             </div>
+
+            <!-- View Lead Contact Information -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+              <h2 class="text-xl font-semibold mb-4">Lead Contact Information</h2>
+              <p class="mb-4">View contact information for leads who have submitted the website analyzer form.</p>
+              <div id="leadContactData" class="bg-gray-50 p-4 rounded-lg text-sm font-mono overflow-auto max-h-80">
+                <p class="text-gray-500 italic">Loading lead contact data...</p>
+              </div>
+              <div class="flex space-x-4 mt-4">
+                <button 
+                  id="refreshLeadsButton"
+                  class="bg-gray-600 text-white py-2 px-4 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                >
+                  Refresh Leads
+                </button>
+                <button 
+                  id="downloadLeadsCsvButton"
+                  class="bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                >
+                  Download as CSV
+                </button>
+                <button 
+                  id="clearLeadsButton"
+                  class="bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                >
+                  Clear All Leads
+                </button>
+              </div>
+            </div>
             
             <!-- Reset Usage by Email -->
             <div class="bg-white border border-gray-200 rounded-lg p-6">
@@ -163,15 +192,21 @@ const ADMIN_CODE = "098765"; // Matching the admin override code
     // DOM elements
     const adminLoginForm = document.getElementById('adminLoginForm');
     const resetTools = document.getElementById('resetTools');
-    const adminCode = document.getElementById('adminCode') as HTMLInputElement;
+    const adminCode = document.getElementById('adminCode');
     const adminLoginButton = document.getElementById('adminLoginButton');
     const usageStats = document.getElementById('usageStats');
     const refreshStatsButton = document.getElementById('refreshStatsButton');
-    const emailToReset = document.getElementById('emailToReset') as HTMLInputElement;
-    const urlToReset = document.getElementById('urlToReset') as HTMLInputElement;
+    const emailToReset = document.getElementById('emailToReset');
+    const urlToReset = document.getElementById('urlToReset');
     const resetEmailButton = document.getElementById('resetEmailButton');
     const resetUrlButton = document.getElementById('resetUrlButton');
     const resetAllButton = document.getElementById('resetAllButton');
+    
+    // Lead contact data elements
+    const leadContactData = document.getElementById('leadContactData');
+    const refreshLeadsButton = document.getElementById('refreshLeadsButton');
+    const downloadLeadsCsvButton = document.getElementById('downloadLeadsCsvButton');
+    const clearLeadsButton = document.getElementById('clearLeadsButton');
     
     // Load and display usage statistics
     async function loadUsageStatistics() {
@@ -270,16 +305,18 @@ const ADMIN_CODE = "098765"; // Matching the admin override code
       }
     }
     
-    // Admin code verification
+    // Login validation
     adminLoginButton?.addEventListener('click', async () => {
-      const enteredCode = adminCode?.value || '';
+      const code = adminCode?.value || '';
       
-      if (enteredCode === '098765') { // Must match ADMIN_CODE
+      if (code === ADMIN_CODE) {
+        // Hide login form, show tools
         adminLoginForm?.classList.add('hidden');
         resetTools?.classList.remove('hidden');
         
-        // Load initial statistics
+        // Load initial data
         await loadUsageStatistics();
+        await loadLeadContactData();
       } else {
         alert('Invalid admin code. Please try again.');
       }
@@ -291,6 +328,141 @@ const ADMIN_CODE = "098765"; // Matching the admin override code
         usageStats.innerHTML = '<p class="text-gray-500 italic">Refreshing usage statistics...</p>';
       }
       await loadUsageStatistics();
+      await loadLeadContactData();
+    });
+
+    // Load and display lead contact information
+    async function loadLeadContactData() {
+      try {
+        // Get lead data from localStorage
+        const leadsDataJson = localStorage.getItem('analyzer_leads');
+        
+        if (!leadsDataJson) {
+          leadContactData.innerHTML = '<p class="text-gray-500 italic">No lead contact data found.</p>';
+          return;
+        }
+        
+        const leadsData = JSON.parse(leadsDataJson);
+        
+        if (!leadsData || !Array.isArray(leadsData) || leadsData.length === 0) {
+          leadContactData.innerHTML = '<p class="text-gray-500 italic">No lead contact data found.</p>';
+          return;
+        }
+        
+        // Generate HTML for lead data
+        let html = '<div class="space-y-6">';
+        
+        // Create table for leads
+        html += `
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Business</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">URL</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+        `;
+        
+        // Add each lead
+        leadsData.forEach((lead, index) => {
+          const rowClass = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
+          const date = new Date(lead.timestamp);
+          const formattedDate = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+          
+          html += `
+            <tr class="${rowClass}">
+              <td class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">${lead.name || '-'}</td>
+              <td class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">${lead.email || '-'}</td>
+              <td class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">${lead.businessName || '-'}</td>
+              <td class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">${lead.phone || '-'}</td>
+              <td class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">${lead.url || '-'}</td>
+              <td class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">${formattedDate || '-'}</td>
+            </tr>
+          `;
+        });
+        
+        html += '</tbody></table>';
+        html += '</div>';
+        
+        leadContactData.innerHTML = html;
+      } catch (error) {
+        console.error('Error loading lead contact data:', error);
+        leadContactData.innerHTML = `<p class="text-red-500">Error loading lead data: ${error.message}</p>`;
+      }
+    }
+    
+    // Download leads as CSV
+    downloadLeadsCsvButton?.addEventListener('click', () => {
+      try {
+        const leadsDataJson = localStorage.getItem('analyzer_leads');
+        
+        if (!leadsDataJson) {
+          alert('No lead data to download');
+          return;
+        }
+        
+        const leadsData = JSON.parse(leadsDataJson);
+        
+        if (!leadsData || !Array.isArray(leadsData) || leadsData.length === 0) {
+          alert('No lead data to download');
+          return;
+        }
+        
+        // Create CSV content
+        const headers = ['Name', 'Email', 'Business Name', 'Phone', 'URL', 'Date', 'Timestamp'];
+        let csvContent = headers.join(',') + '\n';
+        
+        leadsData.forEach(lead => {
+          const date = new Date(lead.timestamp);
+          const formattedDate = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+          
+          // Escape fields with quotes if they contain commas
+          const row = [
+            `"${(lead.name || '').replace(/"/g, '""')}"`,
+            `"${(lead.email || '').replace(/"/g, '""')}"`,
+            `"${(lead.businessName || '').replace(/"/g, '""')}"`,
+            `"${(lead.phone || '').replace(/"/g, '""')}"`,
+            `"${(lead.url || '').replace(/"/g, '""')}"`,
+            `"${formattedDate}"`,
+            lead.timestamp
+          ];
+          
+          csvContent += row.join(',') + '\n';
+        });
+        
+        // Create a download link
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.setAttribute('href', url);
+        link.setAttribute('download', `digital-visibility-leads-${new Date().toISOString().slice(0, 10)}.csv`);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } catch (error) {
+        console.error('Error downloading leads as CSV:', error);
+        alert(`Error downloading leads: ${error.message}`);
+      }
+    });
+    
+    // Clear all leads
+    clearLeadsButton?.addEventListener('click', () => {
+      if (confirm('Are you sure you want to clear ALL lead contact data? This cannot be undone.')) {
+        localStorage.removeItem('analyzer_leads');
+        alert('All lead contact data has been cleared.');
+        loadLeadContactData();
+      }
+    });
+    
+    // Refresh leads
+    refreshLeadsButton?.addEventListener('click', async () => {
+      await loadLeadContactData();
     });
     
     // Reset email usage
