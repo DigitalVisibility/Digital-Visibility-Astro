@@ -309,7 +309,7 @@ const ADMIN_CODE = "098765"; // Matching the admin override code
     adminLoginButton?.addEventListener('click', async () => {
       const code = adminCode?.value || '';
       
-      if (code === ADMIN_CODE) {
+      if (code === '098765') { // Hardcoded admin code
         // Hide login form, show tools
         adminLoginForm?.classList.add('hidden');
         resetTools?.classList.remove('hidden');
