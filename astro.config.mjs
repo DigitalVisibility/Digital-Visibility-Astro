@@ -9,6 +9,12 @@ export default defineConfig({
   adapter: cloudflare(),
   // This ensures URLs match your current structure
   trailingSlash: 'always',
+  // Configure Sharp image optimization service
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp'
+    }
+  },
   build: {
     format: 'directory',
     assets: 'assets'
