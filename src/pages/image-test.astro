@@ -50,7 +50,6 @@ import { Image } from 'astro:assets';
     
     /* Hero section styles */
     .hero { position: relative; padding: 4rem 0; }
-    }
     .hero-flex {
       display: flex;
       flex-direction: column;
@@ -1145,9 +1144,9 @@ import { Image } from 'astro:assets';
   <script>
     // Wait for DOM to be fully loaded
     document.addEventListener('DOMContentLoaded', function() {
-      // Initialize Lucide icons
-      if (typeof window.lucide !== 'undefined') {
-        lucide.createIcons();
+      // Initialize Lucide icons - using window['lucide'] to avoid TypeScript errors
+      if (typeof window['lucide'] !== 'undefined') {
+        window['lucide'].createIcons();
       }
     });
   </script>
