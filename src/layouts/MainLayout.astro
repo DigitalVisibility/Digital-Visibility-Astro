@@ -24,15 +24,9 @@ const { title = "Digital Visibility - AI Powered Business Optimization" } = Astr
 
     <slot name="footer"/>
 
-    <!-- Either add is:inline or remove if not yet created -->
-    <!-- <script is:inline src="/scripts/app.js"></script> -->
-    <script is:inline src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script is:inline>
-        // Initialize Lucide icons
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
-    </script>
+    <!-- Defer non-critical scripts to reduce render delay -->
+    <!-- Only load Lucide after the page has finished rendering -->
+    <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" onload="lucide && lucide.createIcons()"></script>
     <slot name="scripts"/>
 </body>
 </html>

@@ -18,21 +18,49 @@ export default defineConfig({
   },
   build: {
     // Basic build settings
-    assets: 'assets'
+    assets: 'assets',
+    // Inlining smaller assets reduces HTTP requests
+    inlineStylesheets: 'auto'
   },
-  // Allow scripts to use the is:inline directive
+  // Script optimization to reduce render delay
   scripts: {
-    allowInlineScripts: true
+    allowInlineScripts: true,
+    // Prevent hoisting which can cause render delays
+    hoist: false
   },
   vite: {
-    // External scripts that should not be processed
+    // Optimize build process
     build: {
+      // Optimize for production
+      minify: 'terser',
+      // CSS code splitting can cause render delays, disable it
+      cssCodeSplit: false,
+      // External scripts that should not be processed
       rollupOptions: {
         external: [
           '/js/AnalyzerLead.js',
           '/js/lead-api.js'
-        ]
+        ],
+        output: {
+          // Create separate chunks for critical and non-critical JS
+          manualChunks: {
+            'critical': ['src/critical-path-components.js'],
+            'vendor': ['lucide']
+          }
+        }
       }
+    },
+    // Optimize CSS
+    css: {
+      // Faster CSS processing
+      postcss: {
+        plugins: []
+      }
+    },
+    // Reduce unnecessary processing
+    optimizeDeps: {
+      // Exclude scripts that don't need processing
+      exclude: ['lucide']
     }
   }
 });
