@@ -1,0 +1,111 @@
+---
+/* Performance optimized test page */
+import MainLayout from '../layouts/MainLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+
+// Site is now statically rendered
+export const prerender = true;
+---
+
+<MainLayout title="Digital Visibility - Performance Test">
+  <!-- Only essential metadata -->
+  <link rel="canonical" href="https://digitalvisibility.com/performance-test/" slot="head">
+  
+  <!-- Defer non-critical scripts -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
+  
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://challenges.cloudflare.com" crossorigin slot="head">
+  <link rel="dns-prefetch" href="https://challenges.cloudflare.com" slot="head">
+  
+  <Navigation slot="nav" />
+  
+  <!-- Hero Section - Only this section is optimized -->
+  <section class="bg-white py-12 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Transform Your Digital Presence: Human Powered Digital Solutions, Accelerated With AI
+          </h1>
+          <p class="text-xl text-gray-600 mb-8">
+            We've ranked #1, #2, and #3 for our main niche in just ONE week using our proven AI optimization techniques SEO+AEO+GEO.
+            Let us do the same for your business.
+          </p>
+          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="#services-overview" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-md inline-flex items-center transition-colors">
+              Explore Services
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="#free-website" class="border border-blue-600 text-blue-600 hover:bg-blue-50 font-medium px-6 py-3 rounded-md transition-colors">
+              Free Website Offer
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/2 relative">
+          <!-- Optimized responsive image using Astro Image component -->
+          <picture class="block mt-[-384px] rounded-lg shadow-xl max-w-[90%] ml-auto overflow-hidden">
+            <!-- Mobile image (up to 640px) -->
+            <source
+              media="(max-width: 640px)"
+              srcset="/digital-visibility-square-mobile.webp"
+              width="400"
+              height="400"
+            />
+            <!-- Tablet image (641px - 1024px) -->
+            <source
+              media="(min-width: 641px) and (max-width: 1024px)"
+              srcset="/digital-visibility-square-tablet.webp"
+              width="600"
+              height="600"
+            />
+            <!-- Desktop image (1025px and above) -->
+            <Image
+              src="/digital-visibility-square-desktop.webp"
+              width={800}
+              height={800}
+              alt="AI Business Optimization"
+              class="rounded-lg shadow-xl max-w-full"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
+          
+          <!-- Proven Results Card - Linked to Bio Page -->
+          <a href="/about/darran-goulding/" class="group block absolute -bottom-84 right-[-10px] transition-all duration-300 hover:transform hover:translate-y-[-5px] hover:shadow-xl">
+            <div class="bg-blue-50 p-6 rounded-md shadow-lg max-w-[300px] transition-colors duration-300 group-hover:bg-blue-100">
+              <div class="flex items-center text-blue-500 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1h-2a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1h-2a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                </svg>
+                <span class="font-semibold">Proven Results</span>
+              </div>
+              <h3 class="text-2xl font-bold text-blue-600 group-hover:text-blue-700">Top 3 Rankings</h3>
+              <p class="text-md text-gray-600">in just 1 week</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Basic Hero Image Explanation -->
+  <section class="bg-blue-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold text-gray-900">Performance Test Page</h2>
+        <p class="mt-4 text-lg text-gray-600">
+          This page has been optimized for performance testing with minimal content.
+          It maintains the exact same hero image positioning (mt-[-384px]) and card placement (-bottom-84)
+          that you specified as important in your design.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</MainLayout>
