@@ -50,79 +50,289 @@ import { Image } from 'astro:assets';
     
     /* Hero section styles */
     .hero { position: relative; padding: 4rem 0; }
-    .hero-flex { display: flex; flex-direction: column; gap: 2rem; }
-    @media (min-width: 768px) {
-      .hero-flex { flex-direction: row; align-items: center; }
-      .hero-content { width: 50%; }
-      .hero-image-container { width: 50%; position: relative; }
     }
-    .hero-heading { font-size: 2.5rem; font-weight: bold; margin-bottom: 1.5rem; }
-    .hero-text { font-size: 1.25rem; color: #4b5563; margin-bottom: 2rem; }
-    .card { 
-      position: absolute; 
-      right: -10px; 
-      bottom: -84px; /* Maintaining your preferred card positioning */
-      background-color: #ebf5ff; 
-      padding: 1.5rem; 
-      border-radius: 0.375rem; 
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); 
-      max-width: 300px; 
-      transition: all 0.3s;
+    .hero-flex {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
-    .card-title { display: flex; align-items: center; color: #2563eb; margin-bottom: 0.5rem; }
-    .card-title svg { margin-right: 0.5rem; }
-    .card-heading { font-size: 1.5rem; font-weight: bold; color: #1d4ed8; }
-    .card-text { font-size: 0.875rem; color: #4b5563; }
-    .button { 
-      display: inline-block; 
-      padding: 0.75rem 1.5rem; 
-      background-color: #2563eb; 
-      color: white; 
-      font-weight: 500; 
-      border-radius: 0.375rem; 
-      text-decoration: none; 
-      transition: background-color 0.2s;
+    .hero-content {
+      margin-bottom: 2.5rem;
     }
-    .button:hover { background-color: #1d4ed8; }
-    .button-outline { 
-      background-color: transparent; 
-      border: 1px solid #2563eb; 
-      color: #2563eb; 
-      margin-left: 1rem;
+    .hero-heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      color: var(--gray-900);
     }
-    .button-outline:hover { background-color: #ebf5ff; }
+    .hero-text {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: var(--gray-600);
+    }
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--blue-600);
+      color: white;
+      font-weight: 500;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .button:hover {
+      background-color: var(--blue-700);
+      transform: translateY(-2px);
+    }
+    .button-outline {
+      background-color: transparent;
+      color: var(--blue-600);
+      border: 1px solid var(--blue-600);
+    }
+    .button-outline:hover {
+      background-color: var(--blue-50);
+    }
+    .hero-image-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin-top: 3rem;
+    }
+    .card {
+      position: absolute;
+      bottom: -84px; /* Exact positioning as per your preference */
+      right: -10px;
+      background-color: var(--blue-50);
+      padding: 1.5rem;
+      border-radius: 0.375rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: block;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      background-color: var(--blue-100);
+    }
+    .card-title {
+      display: flex;
+      align-items: center;
+      color: var(--blue-500);
+      margin-bottom: 0.5rem;
+    }
+    .card-title svg {
+      margin-right: 0.5rem;
+    }
+    .card-heading {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--blue-600);
+      margin: 0.5rem 0;
+    }
+    .card-text {
+      color: var(--gray-600);
+      margin: 0;
+    }
     
-    /* Content section styles */
-    .info-section { background-color: #f3f4f6; padding: 4rem 0; text-align: center; }
-    .info-heading { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; }
-    .info-text { font-size: 1.125rem; color: #4b5563; max-width: 800px; margin: 0 auto; }
+    /* Services section */
+    .services-section {
+      padding: 4rem 0;
+      background-color: white;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .services-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .services-heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--gray-900);
+    }
+    .services-subheading {
+      font-size: 1.25rem;
+      color: var(--gray-600);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .service-card {
+      background-color: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+      border-top-width: 4px;
+      border-top-style: solid;
+    }
+    .service-card:hover {
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    .border-blue {
+      border-top-color: var(--blue-600);
+    }
+    .border-purple {
+      border-top-color: var(--purple-600);
+    }
+    .service-card-content {
+      padding: 2rem;
+    }
+    .service-card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .service-icon {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.75rem;
+    }
+    .blue {
+      color: var(--blue-600);
+    }
+    .purple {
+      color: var(--purple-600);
+    }
+    .service-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin: 0;
+    }
+    .service-description {
+      color: var(--gray-700);
+      margin-bottom: 1.5rem;
+    }
+    .service-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .service-feature-item {
+      display: flex;
+      align-items: flex-start;
+    }
+    .feature-icon {
+      color: var(--green-500);
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-right: 0.5rem;
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+    }
+    .feature-text {
+      color: var(--gray-700);
+    }
+    .promo-box {
+      background-color: var(--blue-50);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--blue-500);
+    }
+    .promo-title {
+      font-weight: 700;
+      color: var(--gray-900);
+      margin: 0 0 0.25rem 0;
+    }
+    .promo-subtitle {
+      color: var(--gray-700);
+      font-size: 0.875rem;
+      margin: 0;
+    }
+    .service-button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background-color: var(--blue-600);
+      color: white;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .blue-gradient:hover {
+      background-color: var(--blue-700);
+    }
+    .purple-gradient:hover {
+      background-color: var(--purple-700);
+    }
+    .button-text {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .button-icon {
+      height: 1.25rem;
+      width: 1.25rem;
+      margin-left: 0.5rem;
+      transition: transform 0.3s;
+    }
+    .service-button:hover .button-icon {
+      transform: translateX(4px);
+    }
+    
+    /* Info section */
+    .info-section {
+      padding: 4rem 0;
+      background-color: var(--gray-100);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .info-heading {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--gray-900);
+    }
+    .info-text {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      max-width: 800px;
+    }
     
     /* Footer styles */
     .footer {
-      background-color: #1e3a8a;
+      background-color: var(--gray-800);
       color: white;
-      padding: 3rem 0;
+      padding: 4rem 0 2rem;
     }
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       gap: 2rem;
-    }
-    @media (min-width: 640px) {
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (min-width: 1024px) {
-      .footer-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
+      margin-bottom: 3rem;
     }
     .footer-heading {
-      font-weight: 600;
-      font-size: 1.125rem;
-      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: white;
     }
     .footer-list {
       list-style: none;
@@ -130,28 +340,68 @@ import { Image } from 'astro:assets';
       margin: 0;
     }
     .footer-item {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
     .footer-link {
-      color: #cbd5e1;
+      color: var(--gray-300);
       text-decoration: none;
       transition: color 0.2s;
     }
     .footer-link:hover {
       color: white;
-      text-decoration: underline;
     }
     .footer-bottom {
-      border-top: 1px solid #475569;
-      margin-top: 2rem;
+      border-top: 1px solid var(--gray-700);
       padding-top: 2rem;
       text-align: center;
-      color: #cbd5e1;
-      font-size: 0.875rem;
+      color: var(--gray-400);
+    }
+    
+    /* Add responsive design */
+    @media (min-width: 640px) {
+      .button-group {
+        flex-direction: row;
+        gap: 1rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .hero-flex {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      .hero-content {
+        width: 50%;
+        padding-right: 2rem;
+        margin-bottom: 0;
+      }
+      .hero-image-container {
+        width: 50%;
+        margin-top: 0;
+      }
+      .hero-heading {
+        font-size: 3rem;
+      }
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Lucide Icons (loaded with defer to prevent render blocking) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  
   <!-- Navigation Bar -->
   <header class="nav-container">
     <div class="container">
@@ -169,6 +419,7 @@ import { Image } from 'astro:assets';
   </header>
   
   <div class="container">
+    <!-- Hero Section - using your exact content and layout preferences -->
     <section class="hero">
       <div class="hero-flex">
         <div class="hero-content">
@@ -177,13 +428,20 @@ import { Image } from 'astro:assets';
             We've ranked #1, #2, and #3 for our main niche in just ONE week using our proven AI optimization techniques SEO+AEO+GEO.
             Let us do the same for your business.
           </p>
-          <div>
-            <a href="#services" class="button">Explore Services</a>
-            <a href="#free-website" class="button button-outline">Free Website Offer</a>
+          <div class="button-group">
+            <a href="#services-overview" class="button">
+              Explore Services
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="#free-website" class="button button-outline">
+              Free Website Offer
+            </a>
           </div>
         </div>
         <div class="hero-image-container">
-          <!-- Optimized responsive image using Astro Image component -->
+          <!-- Optimized responsive image using exact positioning (mt-[-384px]) as per your preferences -->
           <picture class="mt-[-384px] block rounded-lg shadow-xl max-w-[90%] ml-auto overflow-hidden">
             <!-- Mobile image (up to 640px) -->
             <source
@@ -211,8 +469,8 @@ import { Image } from 'astro:assets';
             />
           </picture>
           
-          <!-- Proven Results Card - Linked to Bio Page -->
-          <a href="#" class="card">
+          <!-- Proven Results Card positioned exactly as you prefer (-bottom-84) -->
+          <a href="/about/darran-goulding/" class="card -bottom-84 right-[-10px]">
             <div class="card-title">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1h-2a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1h-2a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
@@ -226,6 +484,100 @@ import { Image } from 'astro:assets';
       </div>
     </section>
   </div>
+  
+  <!-- Services Overview Section - from your actual site -->
+  <section id="services-overview" class="services-section">
+    <div class="container">
+      <div class="services-header">
+        <h2 class="services-heading">Our Core Services</h2>
+        <p class="services-subheading">Comprehensive solutions to power your business growth in both digital and physical world</p>
+      </div>
+      
+      <div class="services-grid">
+        <!-- Digital Marketing Services Card -->
+        <div class="service-card border-blue">
+          <div class="service-card-content">
+            <div class="service-card-header">
+              <i data-lucide="trending-up" class="service-icon blue"></i>
+              <h3 class="service-title">Digital Marketing Services</h3>
+            </div>
+            
+            <p class="service-description">Expert human-driven digital marketing solutions accelerated by AI technology - delivering engagement, visibility, and measurable ROI with a personal touch.</p>
+            
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <i data-lucide="check-circle-2" class="feature-icon"></i>
+                <span class="feature-text"><strong>SEO+AEO+GEO Optimization</strong> - Be found everywhere your customers search</span>
+              </li>
+              <li class="service-feature-item">
+                <i data-lucide="check-circle-2" class="feature-icon"></i>
+                <span class="feature-text"><strong>Featured Snippets & AI Answers</strong> - Appear in premium positions across search engines</span>
+              </li>
+              <li class="service-feature-item">
+                <i data-lucide="check-circle-2" class="feature-icon"></i>
+                <span class="feature-text"><strong>Data-Driven Results</strong> - Measurable growth in traffic, leads and sales</span>
+              </li>
+            </ul>
+            
+            <div class="promo-box">
+              <p class="promo-title">FREE Custom Business Website worth £2,995</p>
+              <p class="promo-subtitle">With 12-month subscription</p>
+            </div>
+            
+            <a href="/services/digital-marketing/" class="service-button blue-gradient">
+              <span class="button-text">
+                Explore Digital Marketing
+                <svg xmlns="http://www.w3.org/2000/svg" class="button-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- App Development Card -->
+        <div class="service-card border-purple">
+          <div class="service-card-content">
+            <div class="service-card-header">
+              <i data-lucide="smartphone" class="service-icon purple"></i>
+              <h3 class="service-title">Mobile App Development</h3>
+            </div>
+            
+            <p class="service-description">Custom mobile applications that deliver exceptional user experiences, built by experienced developers and enhanced with AI technology for smarter functionality.</p>
+            
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <i data-lucide="check-circle-2" class="feature-icon"></i>
+                <span class="feature-text"><strong>Cross-Platform Development</strong> - iOS, Android & Progressive Web Apps</span>
+              </li>
+              <li class="service-feature-item">
+                <i data-lucide="check-circle-2" class="feature-icon"></i>
+                <span class="feature-text"><strong>AI Integration & Smart Features</strong> - Voice, image recognition & more</span>
+              </li>
+              <li class="service-feature-item">
+                <i data-lucide="check-circle-2" class="feature-icon"></i>
+                <span class="feature-text"><strong>Maintenance & Growth</strong> - Ongoing support and enhancement</span>
+              </li>
+            </ul>
+            
+            <div class="promo-box">
+              <p class="promo-title">FREE Functional Prototype</p>
+              <p class="promo-subtitle">With any app development project</p>
+            </div>
+            
+            <a href="/services/app-development/" class="service-button purple-gradient">
+              <span class="button-text">
+                Explore App Development
+                <svg xmlns="http://www.w3.org/2000/svg" class="button-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   
   <section class="info-section">
     <div class="container">
@@ -292,5 +644,16 @@ import { Image } from 'astro:assets';
       </div>
     </div>
   </footer>
+
+  <!-- Initialize Lucide icons once DOM is loaded -->
+  <script>
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize Lucide icons
+      if (typeof window.lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
+  </script>
 </body>
 </html>
