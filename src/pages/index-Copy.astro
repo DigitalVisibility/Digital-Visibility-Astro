@@ -16,8 +16,9 @@ export const prerender = false;
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   <meta http-equiv="X-Robots-Tag" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   
-  <!-- Preload critical LCP image for faster rendering -->
+  <!-- Critical preloads for LCP -->
   <link rel="preload" as="image" href="/digital-visibility-square-mobile.webp" fetchpriority="high" slot="head">
+  <link rel="preload" as="font" href="/fonts/inter-var-latin.woff2" crossorigin slot="head">
   
   <!-- Publisher, Twitter and OpenGraph Tags -->
   <meta property="og:locale" content="en_GB" slot="head">
@@ -386,20 +387,21 @@ export const prerender = false;
     <span id="errorMessage" class="block text-center"></span>
   </div>
 
-  <!-- Hero Section with inlined CSS for critical rendering path optimization -->
+  <!-- Ultra-optimized Hero Section with absolutely minimal rendering overhead -->
+  <!-- All critical CSS inlined, no external assets for immediate display -->
   <section style="background-color: white; padding-top: 3rem; padding-bottom: 6rem; margin: 0;">
     <div style="max-width: 80rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem;">
       <div style="display: flex; flex-direction: column; align-items: center; position: relative;">
-        <!-- Mobile layout first -->
-        <div style="margin-bottom: 2.5rem; padding-right: 0; width: 100%; z-index: 2;">
-          <h1 style="font-size: 2.25rem; font-weight: 700; color: #111827; margin-bottom: 1.5rem; line-height: 1.2; position: relative;">
+        <!-- Critical content first - heading and text -->
+        <div style="margin-bottom: 2.5rem; width: 100%; z-index: 2;">
+          <h1 style="font-size: 2.25rem; font-weight: 700; color: #111827; margin-bottom: 1.5rem; line-height: 1.2;">
             Transform Your Digital Presence: Human Powered Digital Solutions, Accelerated With AI
           </h1>
-          <p style="font-size: 1.25rem; color: #4B5563; margin-bottom: 2rem; position: relative;">
+          <p style="font-size: 1.25rem; color: #4B5563; margin-bottom: 2rem;">
             We've ranked #1, #2, and #3 for our main niche in just ONE week using our proven AI optimization techniques SEO+AEO+GEO.
             Let us do the same for your business.
           </p>
-          <div style="display: flex; flex-direction: column; gap: 1rem; position: relative;">
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
             <a href="#services-overview" style="background-color: #2563EB; color: white; font-weight: 500; padding: 0.75rem 1.5rem; border-radius: 0.375rem; display: inline-flex; align-items: center; width: fit-content;">
               Explore Services
               <svg xmlns="http://www.w3.org/2000/svg" style="height: 1rem; width: 1rem; margin-left: 0.5rem;" viewBox="0 0 20 20" fill="currentColor">
@@ -412,26 +414,26 @@ export const prerender = false;
           </div>
         </div>
         
-        <!-- Image container with proper positioning and z-index -->
-        <div style="position: relative; width: 100%; z-index: 1;">
-          <!-- Tiny base64 placeholder that loads immediately while the main image loads -->
-          <picture>
-            <source media="(min-width: 1024px)" srcset="/digital-visibility-square-desktop.webp" type="image/webp">
-            <source media="(min-width: 640px)" srcset="/digital-visibility-square-tablet.webp" type="image/webp">
-            <source media="(max-width: 639px)" srcset="/digital-visibility-square-mobile.webp" type="image/webp">
-            <!-- Embedded tiny image placeholder for instant display during loading -->
-            <img 
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%230f2e68'/%3E%3C/svg%3E" 
-              data-src="/digital-visibility-square-mobile.webp" 
-              alt="AI Business Optimization - Digital Visibility" 
-              style="background-size: cover; border-radius: 0.5rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); max-width: 90%; margin-left: auto;" 
-              width="600" 
-              height="600" 
-              loading="eager" 
-              fetchpriority="high"
-              onload="this.src=this.getAttribute('data-src');"
-            >
-          </picture>
+        <!-- Minimal LCP image approach with user's preferred positioning -->
+        <div style="position: relative; width: 100%; z-index: 1; margin-top: -384px;">
+          <!-- Pure SVG placeholder directly embedded - no network request needed -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" style="border-radius: 0.5rem; max-width: 90%; margin-left: auto; display: block;">
+            <rect width="600" height="600" fill="#0f2e68"/>
+          </svg>
+
+          <!-- Image will replace SVG when loaded, with precise positioning to match user preferences -->
+          <img 
+            src="/digital-visibility-square-mobile.webp"
+            srcset="/digital-visibility-square-mobile.webp 600w, /digital-visibility-square-tablet.webp 800w, /digital-visibility-square-desktop.webp 1200w"
+            sizes="(min-width: 1024px) 1200px, (min-width: 640px) 800px, 600px"
+            alt="Digital Visibility - AI Business Optimization" 
+            style="position: absolute; top: 0; left: 0; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); max-width: 90%; margin-left: auto;" 
+            width="600" 
+            height="600" 
+            fetchpriority="high"
+            loading="eager"
+            onload="this.style.opacity='1';"
+          >
           
           <!-- Proven Results Card - Linked to Bio Page -->
           <a href="/about/darran-goulding/" style="display: block; position: absolute; bottom: -84px; right: -10px;">
@@ -802,7 +804,7 @@ export const prerender = false;
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div class="space-y-6 md:sticky md:top-24">
           <!-- Left side content: Benefits & Features -->
-          <div class="bg-white rounded-xl shadow-lg p-8 md:block hidden">
+          <div class="py-12 px-8 md:px-12 bg-white rounded-xl shadow-lg text-center mb-8 md:mb-0 relative -bottom-84" style="z-index: 2">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <!-- Feature 1 -->
               <div class="flex items-start">
