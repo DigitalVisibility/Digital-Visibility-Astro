@@ -16,6 +16,9 @@ export const prerender = false;
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   <meta http-equiv="X-Robots-Tag" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   
+  <!-- Preload critical LCP image for faster rendering -->
+  <link rel="preload" as="image" href="/digital-visibility-square-mobile.webp" fetchpriority="high" slot="head">
+  
   <!-- Publisher, Twitter and OpenGraph Tags -->
   <meta property="og:locale" content="en_GB" slot="head">
   <meta property="og:type" content="website" slot="head">
@@ -38,8 +41,8 @@ export const prerender = false;
   <meta name="publisher" content="Digital Visibility Limited" slot="head">
   <meta name="author" content="Darran Goulding" slot="head">
   
-  <!-- Cloudflare Turnstile Script -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
+  <!-- Cloudflare Turnstile Script - Moved to end of body to avoid render blocking -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   
   <!-- Schema markup for improved SEO and AI visibility -->
   <script type="application/ld+json">
@@ -411,11 +414,23 @@ export const prerender = false;
         
         <!-- Image container with proper positioning and z-index -->
         <div style="position: relative; width: 100%; z-index: 1;">
+          <!-- Tiny base64 placeholder that loads immediately while the main image loads -->
           <picture>
-            <source media="(min-width: 1024px)" srcset="/digital-visibility-square-desktop.webp">
-            <source media="(min-width: 640px)" srcset="/digital-visibility-square-tablet.webp">
-            <source media="(max-width: 639px)" srcset="/digital-visibility-square-mobile.webp">
-            <img src="/digital-visibility-square-desktop.webp" alt="AI Business Optimization" style="border-radius: 0.5rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); max-width: 90%; margin-left: auto;" width="600" height="600" loading="eager" fetchpriority="high">
+            <source media="(min-width: 1024px)" srcset="/digital-visibility-square-desktop.webp" type="image/webp">
+            <source media="(min-width: 640px)" srcset="/digital-visibility-square-tablet.webp" type="image/webp">
+            <source media="(max-width: 639px)" srcset="/digital-visibility-square-mobile.webp" type="image/webp">
+            <!-- Embedded tiny image placeholder for instant display during loading -->
+            <img 
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%230f2e68'/%3E%3C/svg%3E" 
+              data-src="/digital-visibility-square-mobile.webp" 
+              alt="AI Business Optimization - Digital Visibility" 
+              style="background-size: cover; border-radius: 0.5rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); max-width: 90%; margin-left: auto;" 
+              width="600" 
+              height="600" 
+              loading="eager" 
+              fetchpriority="high"
+              onload="this.src=this.getAttribute('data-src');"
+            >
           </picture>
           
           <!-- Proven Results Card - Linked to Bio Page -->
