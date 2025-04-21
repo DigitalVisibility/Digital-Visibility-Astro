@@ -10,8 +10,45 @@ import { Image } from 'astro:assets';
   <link rel="canonical" href="https://digitalvisibility.com/image-test/">
   <meta name="description" content="Digital Visibility provides AI-powered business optimization with human expertise - test page with 100% performance score">
   <style>
+    /* Base styles */
     body { font-family: system-ui, sans-serif; margin: 0; padding: 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    
+    /* Navigation styles */
+    .nav-container { 
+      position: relative;
+      z-index: 50;
+      padding: 1rem 0;
+      background-color: white;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo { 
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-link {
+      color: #1f2937;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: #2563eb;
+    }
+    
+    /* Hero section styles */
     .hero { position: relative; padding: 4rem 0; }
     .hero-flex { display: flex; flex-direction: column; gap: 2rem; }
     @media (min-width: 768px) {
@@ -55,12 +92,82 @@ import { Image } from 'astro:assets';
       margin-left: 1rem;
     }
     .button-outline:hover { background-color: #ebf5ff; }
+    
+    /* Content section styles */
     .info-section { background-color: #f3f4f6; padding: 4rem 0; text-align: center; }
     .info-heading { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; }
     .info-text { font-size: 1.125rem; color: #4b5563; max-width: 800px; margin: 0 auto; }
+    
+    /* Footer styles */
+    .footer {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 3rem 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+    }
+    @media (min-width: 640px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .footer-heading {
+      font-weight: 600;
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+    .footer-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-item {
+      margin-bottom: 0.5rem;
+    }
+    .footer-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-link:hover {
+      color: white;
+      text-decoration: underline;
+    }
+    .footer-bottom {
+      border-top: 1px solid #475569;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      text-align: center;
+      color: #cbd5e1;
+      font-size: 0.875rem;
+    }
   </style>
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <header class="nav-container">
+    <div class="container">
+      <div class="nav-content">
+        <a href="/" class="nav-logo">Digital Visibility</a>
+        <nav class="nav-links">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/services" class="nav-link">Services</a>
+          <a href="/about" class="nav-link">About</a>
+          <a href="/blog" class="nav-link">Blog</a>
+          <a href="/contact" class="nav-link">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
   <div class="container">
     <section class="hero">
       <div class="hero-flex">
@@ -124,11 +231,66 @@ import { Image } from 'astro:assets';
     <div class="container">
       <h2 class="info-heading">Performance Optimized</h2>
       <p class="info-text">
-        This page achieved a perfect 100/100 performance score, demonstrating our commitment to delivering
+        This page achieved a perfect 99/100 performance score, demonstrating our commitment to delivering
         lightning-fast websites. We've maintained your exact layout preferences including the image positioned 
         with mt-[-384px] and card positioned with bottom-84 for the perfect visual balance.
       </p>
     </div>
   </section>
+  
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1: Company Info -->
+        <div>
+          <h3 class="footer-heading">Digital Visibility</h3>
+          <ul class="footer-list">
+            <li class="footer-item"><a href="/about" class="footer-link">About Us</a></li>
+            <li class="footer-item"><a href="/team" class="footer-link">Our Team</a></li>
+            <li class="footer-item"><a href="/careers" class="footer-link">Careers</a></li>
+            <li class="footer-item"><a href="/contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Column 2: Services -->
+        <div>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-list">
+            <li class="footer-item"><a href="/services/digital-marketing" class="footer-link">Digital Marketing</a></li>
+            <li class="footer-item"><a href="/services/app-development" class="footer-link">App Development</a></li>
+            <li class="footer-item"><a href="/services/product-design" class="footer-link">Product Design</a></li>
+            <li class="footer-item"><a href="/services/ai-platforms" class="footer-link">AI Platforms</a></li>
+          </ul>
+        </div>
+        
+        <!-- Column 3: Resources -->
+        <div>
+          <h3 class="footer-heading">Resources</h3>
+          <ul class="footer-list">
+            <li class="footer-item"><a href="/blog" class="footer-link">Blog</a></li>
+            <li class="footer-item"><a href="/case-studies" class="footer-link">Case Studies</a></li>
+            <li class="footer-item"><a href="/guides" class="footer-link">Guides</a></li>
+            <li class="footer-item"><a href="/webinars" class="footer-link">Webinars</a></li>
+          </ul>
+        </div>
+        
+        <!-- Column 4: Legal -->
+        <div>
+          <h3 class="footer-heading">Legal</h3>
+          <ul class="footer-list">
+            <li class="footer-item"><a href="/privacy" class="footer-link">Privacy Policy</a></li>
+            <li class="footer-item"><a href="/terms" class="footer-link">Terms of Service</a></li>
+            <li class="footer-item"><a href="/cookies" class="footer-link">Cookie Policy</a></li>
+            <li class="footer-item"><a href="/gdpr" class="footer-link">GDPR Compliance</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Digital Visibility. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
