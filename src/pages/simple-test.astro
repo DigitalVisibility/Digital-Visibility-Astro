@@ -1,0 +1,66 @@
+---
+// Super simplified test page with direct HTML image
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Performance Test</title>
+  <style>
+    /* Only essential inline styles */
+    body { font-family: system-ui, sans-serif; margin: 0; }
+    .hero { background: white; padding: 4rem 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    .flex { display: flex; flex-direction: column; }
+    @media (min-width: 768px) { .flex { flex-direction: row; } }
+    .content { margin-bottom: 2rem; }
+    @media (min-width: 768px) { 
+      .content { width: 50%; padding-right: 2rem; margin-bottom: 0; }
+      .image-container { width: 50%; position: relative; }
+    }
+    h1 { font-size: 2.5rem; color: #333; margin-bottom: 1rem; }
+    p { font-size: 1.25rem; color: #666; margin-bottom: 2rem; }
+    .image-wrapper { position: relative; margin-top: -384px; display: block; }
+    img { max-width: 90%; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+    .card { position: absolute; bottom: -84px; right: -10px; background: #ebf5ff; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); max-width: 300px; }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <div class="flex">
+        <div class="content">
+          <h1>Transform Your Digital Presence: Human Powered Digital Solutions, Accelerated With AI</h1>
+          <p>We've ranked #1, #2, and #3 for our main niche in just ONE week using our proven AI optimization techniques.</p>
+        </div>
+        <div class="image-container">
+          <div class="image-wrapper">
+            <!-- Direct HTML image with explicit width/height, no Astro Image -->
+            <img 
+              src="/digital-visibility-square-mobile.webp"
+              width="400"
+              height="400"
+              alt="Digital Visibility"
+              loading="eager"
+              fetchpriority="high"
+              decoding="sync"
+            >
+          </div>
+          <div class="card">
+            <div style="display:flex; align-items:center; margin-bottom:0.5rem; color:#2563eb;">
+              <svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor" style="margin-right:0.5rem;">
+                <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1h-2a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1h-2a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+              </svg>
+              <span style="font-weight:600;">Proven Results</span>
+            </div>
+            <h3 style="font-size:1.5rem; font-weight:700; color:#1d4ed8; margin:0.5rem 0;">Top 3 Rankings</h3>
+            <p style="font-size:0.875rem; color:#4b5563; margin:0;">in just 1 week</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
