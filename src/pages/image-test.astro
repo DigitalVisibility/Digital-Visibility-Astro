@@ -188,6 +188,12 @@ import { Image } from 'astro:assets';
     .border-purple {
       border-top-color: var(--purple-600);
     }
+    .border-emerald {
+      border-top-color: var(--emerald-600);
+    }
+    .border-amber {
+      border-top-color: var(--amber-600);
+    }
     .service-card-content {
       padding: 2rem;
     }
@@ -206,6 +212,12 @@ import { Image } from 'astro:assets';
     }
     .purple {
       color: var(--purple-600);
+    }
+    .emerald {
+      color: var(--emerald-600);
+    }
+    .amber {
+      color: var(--amber-600);
     }
     .service-title {
       font-size: 1.5rem;
@@ -247,6 +259,10 @@ import { Image } from 'astro:assets';
       margin-bottom: 1.5rem;
       border-left: 4px solid var(--blue-500);
     }
+    .amber-promo {
+      background-color: var(--amber-50);
+      border-left: 4px solid var(--amber-500);
+    }
     .promo-title {
       font-weight: 700;
       color: var(--gray-900);
@@ -281,6 +297,12 @@ import { Image } from 'astro:assets';
     .purple-gradient:hover {
       background-color: var(--purple-700);
     }
+    .emerald-gradient:hover {
+      background-color: var(--emerald-700);
+    }
+    .amber-gradient:hover {
+      background-color: var(--amber-700);
+    }
     .button-text {
       position: relative;
       z-index: 10;
@@ -296,6 +318,259 @@ import { Image } from 'astro:assets';
     }
     .service-button:hover .button-icon {
       transform: translateX(4px);
+    }
+    
+    /* Marketing section */
+    .marketing-section {
+      padding: 6rem 0;
+      background-color: white;
+      border-top: 8px solid var(--blue-100);
+      position: relative;
+      overflow: hidden;
+    }
+    .marketing-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .marketing-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background-color: var(--blue-100);
+      color: var(--blue-800);
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    .marketing-heading {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .text-blue {
+      color: var(--blue-600);
+    }
+    .marketing-subheading {
+      font-size: 1.25rem;
+      color: var(--gray-700);
+      max-width: 48rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .marketing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+    .marketing-card {
+      background-color: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      padding: 2rem;
+      border: 1px solid var(--blue-200);
+      border-left: 4px solid var(--blue-500);
+      transform: translateY(0);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .marketing-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+    .marketing-card-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background-color: var(--blue-100);
+      color: var(--blue-800);
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .marketing-card-heading {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+    }
+    .marketing-card-icon {
+      color: var(--blue-600);
+      width: 1.75rem;
+      height: 1.75rem;
+      margin-right: 0.75rem;
+    }
+    .marketing-card-text {
+      color: var(--gray-700);
+      margin-bottom: 1.5rem;
+    }
+    .marketing-highlight {
+      font-weight: 600;
+      color: var(--blue-700);
+    }
+    .marketing-feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .marketing-feature-item {
+      display: flex;
+      align-items: flex-start;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      background: linear-gradient(to right, var(--blue-50), transparent);
+    }
+    .marketing-feature-icon {
+      color: var(--green-500);
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+    }
+    .marketing-feature-title {
+      display: block;
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+    .marketing-feature-text {
+      color: var(--gray-600);
+      margin-top: 0.25rem;
+      font-size: 0.875rem;
+    }
+    .marketing-button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .marketing-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 1.5rem;
+      font-weight: 700;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .marketing-button:hover {
+      transform: translateY(-2px);
+    }
+    .blue-button {
+      background-color: var(--blue-600);
+      color: white;
+    }
+    .blue-button:hover {
+      background-color: var(--blue-700);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .outline-button {
+      border: 2px solid var(--blue-600);
+      color: var(--blue-600);
+    }
+    .outline-button:hover {
+      background-color: var(--blue-50);
+    }
+    .marketing-image-container {
+      position: relative;
+    }
+    .marketing-image {
+      display: block;
+      margin-top: 5rem;
+    }
+    .marketing-img {
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      transform: translateY(0);
+      transition: transform 0.5s;
+    }
+    .marketing-img:hover {
+      transform: scale(1.05);
+    }
+    .success-card {
+      position: absolute;
+      top: 60%;
+      right: -1.5rem;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      border-top: 4px solid var(--blue-500);
+      max-width: 280px;
+      transform: translateY(0);
+      transition: transform 0.3s;
+    }
+    .success-card:hover {
+      transform: scale(1.05);
+    }
+    .success-card-header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .success-card-icon-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      background-color: var(--blue-100);
+      border-radius: 9999px;
+      margin-bottom: 0.5rem;
+    }
+    .success-card-icon {
+      color: var(--blue-600);
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    .success-card-heading {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+    .success-metrics {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .success-metric {
+      margin-bottom: 0.5rem;
+    }
+    .success-metric-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.25rem;
+    }
+    .success-metric-title {
+      font-weight: 500;
+    }
+    .success-metric-value {
+      color: var(--green-600);
+      font-weight: 700;
+    }
+    .success-metric-bar-bg {
+      width: 100%;
+      height: 0.5rem;
+      background-color: var(--gray-200);
+      border-radius: 9999px;
+    }
+    .success-metric-bar {
+      height: 0.5rem;
+      background-color: var(--green-500);
+      border-radius: 9999px;
+    }
+    .success-card-footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--gray-600);
+      margin-top: 1rem;
     }
     
     /* Info section */
@@ -388,6 +663,12 @@ import { Image } from 'astro:assets';
       }
       .footer-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+      .marketing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .marketing-button-group {
+        flex-direction: row;
       }
     }
     
@@ -539,31 +820,26 @@ import { Image } from 'astro:assets';
         <div class="service-card border-purple">
           <div class="service-card-content">
             <div class="service-card-header">
-              <i data-lucide="smartphone" class="service-icon purple"></i>
-              <h3 class="service-title">Mobile App Development</h3>
+              <i data-lucide="code" class="service-icon purple"></i>
+              <h3 class="service-title">App Development Services</h3>
             </div>
             
-            <p class="service-description">Custom mobile applications that deliver exceptional user experiences, built by experienced developers and enhanced with AI technology for smarter functionality.</p>
+            <p class="service-description">Custom mobile and web applications built to transform your business processes and enhance customer engagement.</p>
             
             <ul class="service-features">
               <li class="service-feature-item">
                 <i data-lucide="check-circle-2" class="feature-icon"></i>
-                <span class="feature-text"><strong>Cross-Platform Development</strong> - iOS, Android & Progressive Web Apps</span>
+                <span class="feature-text"><strong>Mobile App Development</strong> - iOS, Android & cross-platform</span>
               </li>
               <li class="service-feature-item">
                 <i data-lucide="check-circle-2" class="feature-icon"></i>
-                <span class="feature-text"><strong>AI Integration & Smart Features</strong> - Voice, image recognition & more</span>
+                <span class="feature-text"><strong>Web Applications</strong> - Powerful, responsive solutions</span>
               </li>
               <li class="service-feature-item">
                 <i data-lucide="check-circle-2" class="feature-icon"></i>
-                <span class="feature-text"><strong>Maintenance & Growth</strong> - Ongoing support and enhancement</span>
+                <span class="feature-text"><strong>AI & Automation</strong> - Smart apps that work for you</span>
               </li>
             </ul>
-            
-            <div class="promo-box">
-              <p class="promo-title">FREE Functional Prototype</p>
-              <p class="promo-subtitle">With any app development project</p>
-            </div>
             
             <a href="/services/app-development/" class="service-button purple-gradient">
               <span class="button-text">
@@ -573,6 +849,226 @@ import { Image } from 'astro:assets';
                 </svg>
               </span>
             </a>
+          </div>
+        </div>
+        
+        <!-- Physical Product Design Card -->
+        <div class="service-card border-emerald">
+          <div class="service-card-content">
+            <div class="service-card-header">
+              <i data-lucide="pen-tool" class="service-icon emerald"></i>
+              <h3 class="service-title">Physical Product Design</h3>
+            </div>
+            
+            <p class="service-description">End-to-end product design and development services to bring your physical product ideas to life with precision engineering.</p>
+            
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <i data-lucide="check-circle-2" class="feature-icon"></i>
+                <span class="feature-text"><strong>CAD Design</strong> - Professional 3D modeling & engineering</span>
+              </li>
+              <li class="service-feature-item">
+                <i data-lucide="check-circle-2" class="feature-icon"></i>
+                <span class="feature-text"><strong>CAE & Simulation</strong> - Performance testing & analysis</span>
+              </li>
+              <li class="service-feature-item">
+                <i data-lucide="check-circle-2" class="feature-icon"></i>
+                <span class="feature-text"><strong>Prototyping & 3D Printing</strong> - Rapid iteration & validation</span>
+              </li>
+            </ul>
+            
+            <a href="/services/product-design/" class="service-button emerald-gradient">
+              <span class="button-text">
+                Explore Product Design
+                <svg xmlns="http://www.w3.org/2000/svg" class="button-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- AI Platform Card -->
+        <div class="service-card border-amber">
+          <div class="service-card-content">
+            <div class="service-card-header">
+              <i data-lucide="sparkles" class="service-icon amber"></i>
+              <h3 class="service-title">AI App Platform</h3>
+            </div>
+            
+            <p class="service-description">Our powerful AI-powered platform with 50+ applications to streamline your business operations and marketing efforts.</p>
+            
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <i data-lucide="check-circle-2" class="feature-icon"></i>
+                <span class="feature-text"><strong>Content Creation Tools</strong> - AI-generated marketing assets</span>
+              </li>
+              <li class="service-feature-item">
+                <i data-lucide="check-circle-2" class="feature-icon"></i>
+                <span class="feature-text"><strong>AEO Optimization</strong> - Ready-made templates & tools</span>
+              </li>
+              <li class="service-feature-item">
+                <i data-lucide="check-circle-2" class="feature-icon"></i>
+                <span class="feature-text"><strong>Business Growth</strong> - Automation & productivity tools</span>
+              </li>
+            </ul>
+            
+            <div class="promo-box amber-promo">
+              <p class="promo-title">FREE AI Authority Funnel worth £1,995</p>
+              <p class="promo-subtitle">With 12-month subscription</p>
+            </div>
+            
+            <a href="/apps/apps-platform/" class="service-button amber-gradient">
+              <span class="button-text">
+                Explore AI Platform
+                <svg xmlns="http://www.w3.org/2000/svg" class="button-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Digital Marketing Services Section -->
+  <section id="digital-marketing" class="marketing-section">
+    <div class="container">
+      <div class="marketing-header">
+        <div class="marketing-badge">UNLOCK YOUR BUSINESS POTENTIAL</div>
+        <h2 class="marketing-heading">Complete Digital <span class="text-blue">Visibility</span></h2>
+        <p class="marketing-subheading">Expert human-driven digital marketing solutions accelerated by AI technology - delivering engagement, visibility, and measurable ROI with a personal touch</p>
+      </div>
+
+      <div class="marketing-grid">
+        <div class="marketing-content">
+          <div class="marketing-card">
+            <div class="marketing-card-badge">OUR INTEGRATED APPROACH</div>
+            <h3 class="marketing-card-heading">
+              <i data-lucide="search" class="marketing-card-icon"></i>
+              Dominate Search & AI Platforms
+            </h3>
+            <p class="marketing-card-text">While others focus solely on Google optimization, our human experts ensure your business <span class="marketing-highlight">captures visibility across every channel</span> where your customers are searching - driving more qualified traffic and higher conversions.</p>
+            
+            <ul class="marketing-feature-list">
+              <li class="marketing-feature-item">
+                <i data-lucide="check-circle-2" class="marketing-feature-icon"></i>
+                <div>
+                  <span class="marketing-feature-title">SEO Optimization</span>
+                  <p class="marketing-feature-text">Rank higher in Google and other search engines with proven technical strategies</p>
+                </div>
+              </li>
+              <li class="marketing-feature-item">
+                <i data-lucide="check-circle-2" class="marketing-feature-icon"></i>
+                <div>
+                  <span class="marketing-feature-title">AEO Optimization</span>
+                  <p class="marketing-feature-text">Secure featured positions in AI assistants like ChatGPT, Claude and Perplexity</p>
+                </div>
+              </li>
+              <li class="marketing-feature-item">
+                <i data-lucide="check-circle-2" class="marketing-feature-icon"></i>
+                <div>
+                  <span class="marketing-feature-title">GEO Targeting</span>
+                  <p class="marketing-feature-text">Dominate local searches with precise location-based optimization strategies</p>
+                </div>
+              </li>
+              <li class="marketing-feature-item">
+                <i data-lucide="check-circle-2" class="marketing-feature-icon"></i>
+                <div>
+                  <span class="marketing-feature-title">Measurable ROI</span>
+                  <p class="marketing-feature-text">Transparent performance tracking with clear business metrics and results</p>
+                </div>
+              </li>
+            </ul>
+            
+            <div class="marketing-button-group">
+              <a href="/services/digital-marketing/" class="marketing-button blue-button">
+                <span class="button-text">
+                  See Our Digital Marketing Services
+                  <svg xmlns="http://www.w3.org/2000/svg" class="button-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </a>
+              <a href="#ai-visibility-analyzer" class="marketing-button outline-button">
+                Try Free Analyzer
+                <i data-lucide="arrow-right" class="button-icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="marketing-image-container">
+          <!-- Optimized responsive image with your preferred layout -->
+          <picture class="marketing-image">
+            <!-- Mobile image (up to 640px) -->
+            <source
+              media="(max-width: 640px)"
+              srcset="/human-ai-advantage-mobile.webp"
+              width="400"
+              height="300"
+            />
+            <!-- Tablet image (641px - 1024px) -->
+            <source
+              media="(min-width: 641px) and (max-width: 1024px)"
+              srcset="/human-ai-advantage-tablet.webp"
+              width="600"
+              height="450"
+            />
+            <!-- Desktop image (1025px and above) -->
+            <Image
+              src="/human-ai-advantage-desktop.webp"
+              width={800}
+              height={600}
+              alt="Digital Marketing Services"
+              class="marketing-img"
+              loading="lazy"
+            />
+          </picture>
+          
+          <!-- Success Rates Card -->
+          <div class="success-card">
+            <div class="success-card-header">
+              <div class="success-card-icon-container">
+                <i data-lucide="trending-up" class="success-card-icon"></i>
+              </div>
+              <h3 class="success-card-heading">Human + AI Advantage</h3>
+            </div>
+            
+            <div class="success-metrics">
+              <div class="success-metric">
+                <div class="success-metric-header">
+                  <span class="success-metric-title">SERP Rankings</span>
+                  <span class="success-metric-value">+156%</span>
+                </div>
+                <div class="success-metric-bar-bg">
+                  <div class="success-metric-bar" style="width: 75%"></div>
+                </div>
+              </div>
+              
+              <div class="success-metric">
+                <div class="success-metric-header">
+                  <span class="success-metric-title">Website Traffic</span>
+                  <span class="success-metric-value">+208%</span>
+                </div>
+                <div class="success-metric-bar-bg">
+                  <div class="success-metric-bar" style="width: 85%"></div>
+                </div>
+              </div>
+              
+              <div class="success-metric">
+                <div class="success-metric-header">
+                  <span class="success-metric-title">Conversion Rate</span>
+                  <span class="success-metric-value">+94%</span>
+                </div>
+                <div class="success-metric-bar-bg">
+                  <div class="success-metric-bar" style="width: 65%"></div>
+                </div>
+              </div>
+            </div>
+            
+            <p class="success-card-footer">Average results from our last 15 clients</p>
           </div>
         </div>
       </div>
