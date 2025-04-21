@@ -3,8 +3,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
-// Add static routes to handle requests for old JavaScript files
-export const prerender = false;
+// Site is now statically rendered
+export const prerender = true;
 ---
 
 <MainLayout title="Digital Visibility - Human Powered, AI Accelerated Solutions">
@@ -16,365 +16,8 @@ export const prerender = false;
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   <meta http-equiv="X-Robots-Tag" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   
-  <!-- Publisher, Twitter and OpenGraph Tags -->
-  <meta property="og:locale" content="en_GB" slot="head">
-  <meta property="og:type" content="website" slot="head">
-  <meta property="og:title" content="Digital Visibility - Human Powered, AI Accelerated Solutions" slot="head">
-  <meta property="og:description" content="Human-powered digital solutions, accelerated with AI. Digital marketing with SEO+AEO+GEO, app development, and physical product design services in Swansea, Wales, and globally." slot="head">
-  <meta property="og:url" content="https://digitalvisibility.com/" slot="head">
-  <meta property="og:site_name" content="Digital Visibility" slot="head">
-  <meta property="og:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
-  <meta property="og:image:width" content="1200" slot="head">
-  <meta property="og:image:height" content="630" slot="head">
-  <meta property="og:image:type" content="image/png" slot="head">
-  
-  <meta name="twitter:card" content="summary_large_image" slot="head">
-  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
-  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
-  <meta name="twitter:title" content="Digital Visibility - Human Powered, AI Accelerated Solutions" slot="head">
-  <meta name="twitter:description" content="Human-powered digital solutions, accelerated with AI. Digital marketing with SEO+AEO+GEO, app development, and physical product design services in Swansea, Wales, and globally." slot="head">
-  <meta name="twitter:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
-  
-  <meta name="publisher" content="Digital Visibility Limited" slot="head">
-  <meta name="author" content="Darran Goulding" slot="head">
-  
   <!-- Cloudflare Turnstile Script -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
-  
-  <!-- Schema markup for improved SEO and AI visibility -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Digital Visibility",
-    "alternateName": "Digital Visibility Limited",
-    "legalName": "Digital Visibility Limited",
-    "url": "https://digitalvisibility.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://digitalvisibility.com/digital-visibility-logo-f.png",
-      "width": "180",
-      "height": "60"
-    },
-    "slogan": "Human Powered Digital Solutions, Accelerated With AI",
-    "description": "Everything you need to create a truly professional digital presence. Our services combine human expertise with AI technology, including digital marketing with SEO+AEO+GEO optimization, app development, physical product design with CAD/CAE capabilities, and an AI applications platform with 50+ business tools.",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://digitalvisibility.com"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "235 Peniel Green Road",
-      "addressLocality": "Llansamlet, Swansea",
-      "addressRegion": "Wales",
-      "postalCode": "SA7 9BA",
-      "addressCountry": "United Kingdom"
-    },
-    "contactPoint": [
-      {
-        "@type": "ContactPoint",
-        "telephone": "+4401792002497",
-        "email": "support@digitalvisibility.com",
-        "contactType": "Customer Support",
-        "availableLanguage": ["English", "Welsh"],
-        "hoursAvailable": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:00",
-          "closes": "20:00"
-        }
-      }
-    ],
-    "sameAs": [
-      "https://www.facebook.com/people/Digital-Visibility/61572995410124/",
-      "https://www.linkedin.com/company/digitalvisibilityuk/",
-      "https://x.com/DigitalVisUK",
-      "https://www.instagram.com/digitalvisibilityuk/",
-      "https://www.tiktok.com/@digitalvisibilityuk",
-      "https://uk.pinterest.com/digitalvisibilityuk/"
-    ],
-    "knowsAbout": [
-      "Search Engine Optimization (SEO)",
-	  "Answer Engine Optimization (AEO)",
-      "AI Search Engine Optimization",
-	  "Generative Engine Optimization (GEO)",
-      "Geo-targeting",
-      "Digital Marketing",
-	  "Social Media Marketing (SMM)",
-      "App Development",
-      "Mobile Applications",
-      "Product Design",
-      "CAD/CAE Engineering",
-      "3D Printing",
-      "AI-powered Business Tools",
-	  "Website Design",
-      "Web Development",
-      "Conversion Rate Optimization",
-      "Business Analytics"
-    ],
-    "foundingDate": "2023-01-01",
-    "founder": {
-      "@type": "Person",
-      "name": "Darran Goulding",
-      "jobTitle": "CEO & Founder",
-      "url": "https://digitalvisibility.com/about/darran-goulding/"
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Swansea",
-        "sameAs": "https://en.wikipedia.org/wiki/Swansea"
-      },
-      {
-        "@type": "City",
-        "name": "Cardiff",
-        "sameAs": "https://en.wikipedia.org/wiki/Cardiff"
-      },
-      {
-        "@type": "AdministrativeArea",
-        "name": "Wales",
-        "sameAs": "https://en.wikipedia.org/wiki/Wales"
-      },
-      {
-        "@type": "Country",
-        "name": "United Kingdom",
-        "sameAs": "https://en.wikipedia.org/wiki/United_Kingdom"
-      },
-      {
-        "@type": "Place",
-        "name": "Global",
-        "description": "Services available worldwide via remote collaboration"
-      }
-    ],
-    "award": [
-      "Ranked #1 in digital visibility specialists in Swansea",
-      "Top 3 Rankings in just 1 week using proprietary AI optimization techniques"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Digital Visibility Services",
-      "description": "Flexible digital marketing services at £40 per hour with no minimum commitment and no upper limit. Choose any number of hours based on your specific business needs.",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Digital Marketing",
-            "description": "Expert human-driven digital marketing solutions accelerated by AI technology - delivering engagement, visibility, and measurable ROI with a personal touch.",
-            "url": "https://digitalvisibility.com/services/digital-marketing/",
-            "offers": {
-              "@type": "Offer",
-              "description": "FREE Custom Business Website (up to 7 pages) with 5+ hour package subscription for 12 months",
-              "price": "40",
-              "priceCurrency": "GBP/hour",
-
-              "availability": "https://schema.org/InStock"
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Apps Development",
-            "description": "Custom mobile and web applications built to transform your business processes and enhance customer engagement.",
-            "url": "https://digitalvisibility.com/services/app-development/"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Product Design & Engineering",
-            "description": "End-to-end product design and development services to bring your physical product ideas to life with precision engineering.",
-            "url": "https://digitalvisibility.com/services/product-design/"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Business Growth Services",
-            "description": "Our done-for-you digital marketing services to streamline your business growth and online presence.",
-            "url": "https://digitalvisibility.com/services/",
-            "offers": {
-              "@type": "Offer",
-              "description": "FREE AI Authority Funnel worth £1,995 with 3+ hour package subscription for 12 months",
-              "price": "40",
-              "priceCurrency": "GBP/hour",
-
-              "availability": "https://schema.org/InStock"
-            }
-          }
-        }
-      ]
-    },
-    "potentialAction": [
-      {
-        "@type": "UseAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://digitalvisibility.com/#ai-analyzer"
-        },
-        "name": "Try our FREE AI Search Engine Visibility Analyzer"
-      },
-      {
-        "@type": "ReserveAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://digitalvisibility.com/contact/"
-        },
-        "name": "Book a Free Consultation"
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://digitalvisibility.com",
-    "name": "Digital Visibility - Human Powered, AI Accelerated Solutions",
-    "description": "Everything you need to create a truly professional digital presence. Our human-driven services, accelerated with AI, include digital marketing, app development, product design, and business tools.",
-    "inLanguage": "en-GB",
-    "datePublished": "2023-01-01",
-    "dateModified": "2025-04-12",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://digitalvisibility.com/search?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Digital Visibility Limited",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://digitalvisibility.com/digital-visibility-logo-f.png",
-        "width": "180",
-        "height": "60"
-      }
-    },
-    "copyrightHolder": {
-      "@type": "Organization",
-      "name": "Digital Visibility Limited"
-    },
-    "copyrightYear": "2024",
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": ["h1", "h2", ".hero-text", ".main-content p"]
-    }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Digital Visibility",
-    "image": "https://digitalvisibility.com/digital-visibility.webp",
-    "priceRange": "£40 per hour with flexible packages",
-    "description": "Everything you need to create a truly professional digital presence. Our human-powered services, accelerated with AI, combine digital marketing, app development, product design, and business optimization tools.",
-    "brand": {
-      "@type": "Brand",
-      "name": "Digital Visibility",
-      "logo": "https://digitalvisibility.com/digital-visibility-logo-f.png",
-      "slogan": "Human Powered Digital Solutions, Accelerated With AI"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "235 Peniel Green Road",
-      "addressLocality": "Llansamlet, Swansea",
-      "addressRegion": "Wales",
-      "postalCode": "SA7 9BA",
-      "addressCountry": "United Kingdom"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "51.6214",
-      "longitude": "-3.9436"
-    },
-    "url": "https://digitalvisibility.com",
-    "telephone": "+4401792002497",
-    "email": "support@digitalvisibility.com",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday"],
-        "opens": "09:00",
-        "closes": "17:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Sunday"],
-        "opens": "10:00",
-        "closes": "16:00"
-      }
-    ],
-    "serviceArea": [
-      {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates", 
-          "latitude": "51.6214",
-          "longitude": "-3.9436"
-        },
-        "geoRadius": "50000"
-      },
-      {
-        "@type": "Place",
-        "name": "Global",
-        "description": "Services available worldwide via remote collaboration"
-      }
-    ],
-    "makesOffer": [
-      {
-        "@type": "Offer",
-        "name": "FREE Custom Business Website",
-        "description": "FREE Custom Business Website worth £2,995 (up to 7 pages) with 5+ hour package subscription for 12 months",
-        "url": "https://digitalvisibility.com/services/digital-marketing/"
-      },
-      {
-        "@type": "Offer",
-        "name": "FREE AI Authority Funnel",
-        "description": "FREE AI Authority Funnel worth £1,995 with 3+ hour package subscription for 12 months",
-        "url": "https://digitalvisibility.com/services/digital-marketing/"
-      }
-    ],
-    "hasCredential": [
-      {
-        "@type": "EducationalOccupationalCredential",
-        "name": "Digital Marketing Specialists",
-        "credentialCategory": "Professional Certificate"
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        "name": "Certified Product Engineers",
-        "credentialCategory": "Professional Certificate"
-      }
-    ],
-    "keywords": "digital visibility, SEO Swansea, AEO Swansea, GEO Swansea, Search Engine Optimization, Answer Engine Optimization, Ask Engine Optimization, AI Engine Optimization, Generative Engine Optimization, search engine optimization swansea, seo south wales, AEO west wales, GEO UK, digital marketing Wales, app development UK, product design Swansea, AI business tools, Welsh business services, business optimization, AI-powered business optimization in Swansea, digital marketing services South Wales, SEO+AEO+GEO optimization for Welsh businesses, app development company in Wales, physical product design services Swansea, CAD design services South Wales, mobile app development Swansea, free website offer, boost organic traffic,  AI business applications for UK companies"
-  }
-  </script>
-
-
-  <!-- AI Optimization Meta Tags for Enhanced AI Engine Recognition -->
-  <meta name="ai-generated" content="false">
-  <meta name="ai-purpose" content="business services, digital marketing, app development, product design">
-  <meta name="ai-target" content="business owners, marketers, entrepreneurs, product developers">
-  <meta name="ai-keywords" content="digital visibility, SEO, AEO, GEO targeting, app development, physical product design, CAD/CAE, AI business tools">
-  <meta name="ai-content-type" content="business services, technology, marketing">
-  <meta name="ai-business-type" content="digital services, professional services">
-  <meta name="ai-service-area" content="Swansea, Llansamlet, Wales, UK, Global">
   
   <Navigation slot="nav" />
   
@@ -408,10 +51,36 @@ export const prerender = false;
           </div>
         </div>
         <div class="md:w-1/2 relative">
-          <img src="/digital-visibility-square.webp" alt="AI Business Optimization" class="rounded-lg shadow-xl max-w-[90%] ml-auto">
+          <!-- Optimized responsive image using Astro Image component -->
+          <picture class="block mt-[-384px] rounded-lg shadow-xl max-w-[90%] ml-auto overflow-hidden">
+            <!-- Mobile image (up to 640px) -->
+            <source
+              media="(max-width: 640px)"
+              srcset="/cdn-cgi/image/width=400,height=400,quality=85,format=auto/digital-visibility-square-mobile.webp"
+              width="400"
+              height="400"
+            />
+            <!-- Tablet image (641px - 1024px) -->
+            <source
+              media="(min-width: 641px) and (max-width: 1024px)"
+              srcset="/cdn-cgi/image/width=600,height=600,quality=85,format=auto/digital-visibility-square-tablet.webp"
+              width="600"
+              height="600"
+            />
+            <!-- Desktop image (1025px and above) -->
+            <img
+              src="/cdn-cgi/image/width=800,height=800,quality=85,format=auto/digital-visibility-square-desktop.webp"
+              width="800"
+              height="800"
+              alt="AI Business Optimization"
+              class="rounded-lg shadow-xl max-w-full"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
           
           <!-- Proven Results Card - Linked to Bio Page -->
-          <a href="/about/darran-goulding/" class="group block absolute bottom-[-10px] right-[-10px] transition-all duration-300 hover:transform hover:translate-y-[-5px] hover:shadow-xl">
+          <a href="/about/darran-goulding/" class="group block absolute -bottom-84 right-[-10px] transition-all duration-300 hover:transform hover:translate-y-[-5px] hover:shadow-xl">
             <div class="bg-blue-50 p-6 rounded-md shadow-lg max-w-[300px] transition-colors duration-300 group-hover:bg-blue-100">
               <div class="flex items-center text-blue-500 mb-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor">
@@ -665,7 +334,31 @@ export const prerender = false;
         </div>
         
         <div class="relative">
-          <img src="/human+ai advantage.webp" alt="Digital Marketing Services" class="rounded-lg shadow-xl transform transition duration-500 hover:scale-105 mt-[80px]">
+          <!-- Optimized responsive image using Astro Image component -->
+          <picture class="block">
+            <!-- Mobile image (up to 640px) -->
+            <source
+              media="(max-width: 640px)"
+              srcset="/cdn-cgi/image/width=400,height=300,quality=85,format=auto/human-ai-advantage-mobile.webp"
+              width="400"
+              height="300"
+            />
+            <!-- Tablet image (641px - 1024px) -->
+            <source
+              media="(min-width: 641px) and (max-width: 1024px)"
+              srcset="/cdn-cgi/image/width=600,height=450,quality=85,format=auto/human-ai-advantage-tablet.webp"
+              width="600"
+              height="450"
+            />
+            <!-- Desktop image (1025px and above) -->
+            <img
+              src="/cdn-cgi/image/width=800,height=600,quality=85,format=auto/human-ai-advantage-desktop.webp"
+              width="800"
+              height="600"
+              alt="Digital Marketing Services"
+              class="rounded-lg shadow-xl transform transition duration-500 hover:scale-105 mt-[80px]"
+              loading="lazy"
+            />
           
           <!-- Success Rates Card -->
           <div class="absolute top-[60%] -right-6 bg-white p-6 rounded-lg shadow-xl border-t-4 border-blue-500 max-w-[280px] transform transition duration-300 hover:scale-105">
@@ -1026,9 +719,9 @@ export const prerender = false;
                 <form id="leadUrlForm" class="flex flex-col gap-4">
                   <div class="relative flex-grow">
                     <input 
-                      type="url" 
+                      type="text" 
                       id="leadInitialUrlInput" 
-                      placeholder="Enter website URL (e.g., https://example.com)" 
+                      placeholder="Enter website URL (e.g., example.com)" 
                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       required
                     >
@@ -1053,7 +746,6 @@ export const prerender = false;
               <div id="leadStep2" class="lead-step hidden">
                 <div class="mb-4 p-4 bg-blue-50 rounded-lg">
                   <p class="text-blue-800">Ready to analyze: <span id="leadUrlToAnalyze" class="font-semibold"></span></p>
-                  <p class="mt-2 text-xs bg-green-200 inline-block px-2 py-1 rounded text-green-800 font-bold">UPDATED: Contact details are stored locally for marketing</p>
                 </div>
                 
                 <form id="leadContactForm" class="flex flex-col gap-4">
@@ -1161,7 +853,7 @@ export const prerender = false;
                       <input 
                         type="url" 
                         id="urlInput" 
-                        placeholder="Enter website URL (e.g., https://example.com)" 
+                        placeholder="Enter website URL (e.g., example.com)" 
                         class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         required
                       >
@@ -1436,7 +1128,7 @@ export const prerender = false;
                     <input 
                       type="url" 
                       id="additional-url" 
-                      placeholder="Enter website URL (e.g., https://example.com)" 
+                      placeholder="Enter website URL (e.g., example.com)" 
                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       required
                     >
@@ -1555,7 +1247,7 @@ export const prerender = false;
                       <input 
                         type="url" 
                         id="additional-url" 
-                        placeholder="Enter website URL (e.g., https://example.com)" 
+                        placeholder="Enter website URL (e.g., example.com)" 
                         class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         required
                       >
@@ -1637,6 +1329,11 @@ export const prerender = false;
                 async function trackUsage(email, url) {
                   try {
                     if (!email || !url) return { allowed: false, remaining: 0 };
+                    
+                    // Format URL if needed (ensure https:// is present)
+                    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                      url = 'https://' + url;
+                    }
                     
                     // Generate consistent user ID
                     const userId = await generateUserId(email);
@@ -1770,11 +1467,17 @@ export const prerender = false;
                       e.preventDefault();
                       
                       const email = (document.getElementById('leadEmailInput') as HTMLInputElement).value;
-                      const url = (document.getElementById('leadInitialUrlInput') as HTMLInputElement).value;
+                      let url = (document.getElementById('leadInitialUrlInput') as HTMLInputElement).value.trim();
                       
                       if (!email || !url) {
                         alert('Please enter both email and URL');
                         return false;
+                      }
+                      
+                      // Format URL (add https:// if missing)
+                      if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                        url = 'https://' + url;
+                        (document.getElementById('leadInitialUrlInput') as HTMLInputElement).value = url;
                       }
                       
                       // Get the Turnstile token (if present)
@@ -2252,7 +1955,31 @@ export const prerender = false;
         </div>
         
         <div class="relative">
-          <img src="/mobile-app.webp" alt="Mobile App Development" class="rounded-lg shadow-lg">
+          <!-- Optimized responsive image using Astro Image component -->
+          <picture class="block">
+            <!-- Mobile image (up to 640px) -->
+            <source
+              media="(max-width: 640px)"
+              srcset="/cdn-cgi/image/width=400,height=300,quality=85,format=auto/mobile-app-mobile.webp"
+              width="400"
+              height="300"
+            />
+            <!-- Tablet image (641px - 1024px) -->
+            <source
+              media="(min-width: 641px) and (max-width: 1024px)"
+              srcset="/cdn-cgi/image/width=600,height=450,quality=85,format=auto/mobile-app-tablet.webp"
+              width="600"
+              height="450"
+            />
+            <!-- Desktop image (1025px and above) -->
+            <img
+              src="/cdn-cgi/image/width=800,height=600,quality=85,format=auto/mobile-app-desktop.webp"
+              width="800"
+              height="600"
+              alt="Mobile App Development"
+              class="rounded-lg shadow-lg"
+              loading="lazy"
+            />
           
           <!-- Award Winning Card -->
           <div class="absolute bottom-[-10px] right-[-10px] bg-blue-50 p-5 rounded-md shadow-lg max-w-[250px]">
@@ -2278,7 +2005,31 @@ export const prerender = false;
 
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div class="relative">
-          <img src="/Digital-Visibility-product-design-and-3D-printing-image.webp" alt="Product Design and Development" class="rounded-lg shadow-lg">
+          <!-- Optimized responsive image using Astro Image component -->
+          <picture class="block">
+            <!-- Mobile image (up to 640px) -->
+            <source
+              media="(max-width: 640px)"
+              srcset="/cdn-cgi/image/width=400,height=300,quality=85,format=auto/digital-visibility-product-design-and-3D-printing-image-mobile.webp"
+              width="400"
+              height="300"
+            />
+            <!-- Tablet image (641px - 1024px) -->
+            <source
+              media="(min-width: 641px) and (max-width: 1024px)"
+              srcset="/cdn-cgi/image/width=600,height=450,quality=85,format=auto/digital-visibility-product-design-and-3D-printing-image-tablet.webp"
+              width="600"
+              height="450"
+            />
+            <!-- Desktop image (1025px and above) -->
+            <img
+              src="/cdn-cgi/image/width=800,height=600,quality=85,format=auto/digital-visibility-product-design-and-3D-printing-image-desktop.webp"
+              width="800"
+              height="600"
+              alt="Product Design and Development"
+              class="rounded-lg shadow-lg"
+              loading="lazy"
+            />
           
           <!-- Industry Leader Card -->
           <div class="absolute bottom-[-10px] right-[-10px] bg-blue-50 p-5 rounded-md shadow-lg max-w-[250px]">
@@ -2392,7 +2143,31 @@ export const prerender = false;
         </div>
         
         <div class="relative">
-          <img src="/app-platform.webp" alt="AI-Powered Business Tools" class="rounded-lg shadow-lg">
+          <!-- Optimized responsive image using Astro Image component -->
+          <picture class="block">
+            <!-- Mobile image (up to 640px) -->
+            <source
+              media="(max-width: 640px)"
+              srcset="/cdn-cgi/image/width=400,height=300,quality=85,format=auto/app-platform-mobile.webp"
+              width="400"
+              height="300"
+            />
+            <!-- Tablet image (641px - 1024px) -->
+            <source
+              media="(min-width: 641px) and (max-width: 1024px)"
+              srcset="/cdn-cgi/image/width=600,height=450,quality=85,format=auto/app-platform-tablet.webp"
+              width="600"
+              height="450"
+            />
+            <!-- Desktop image (1025px and above) -->
+            <img
+              src="/cdn-cgi/image/width=800,height=600,quality=85,format=auto/app-platform-desktop.webp"
+              width="800"
+              height="600"
+              alt="AI-Powered Business Tools"
+              class="rounded-lg shadow-lg"
+              loading="lazy"
+            />
           
           <!-- Powerful Tools Card -->
           <div class="absolute bottom-[-10px] right-[-10px] bg-blue-50 p-5 rounded-md shadow-lg max-w-[250px]">
@@ -2618,7 +2393,31 @@ export const prerender = false;
   <section class="bg-white py-12 border-t border-gray-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center gap-8">
-        <img src="/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp" alt="Darran Goulding Royal Academy of Engineering Image" class="w-32 h-32 rounded-full">
+        <!-- Optimized responsive image using Astro Image component -->
+        <picture class="block w-32 h-32 rounded-full overflow-hidden">
+          <!-- Mobile image (up to 640px) -->
+            <source
+              media="(max-width: 640px)"
+              srcset="/cdn-cgi/image/width=128,height=128,quality=85,format=auto/Darran-Goulding-Royal-Academy-of-Engineering-image-mobile.webp"
+              width="128"
+              height="128"
+            />
+          <!-- Tablet image (641px - 1024px) -->
+            <source
+              media="(min-width: 641px) and (max-width: 1024px)"
+              srcset="/cdn-cgi/image/width=128,height=128,quality=85,format=auto/Darran-Goulding-Royal-Academy-of-Engineering-image-tablet.webp"
+              width="128"
+              height="128"
+            />
+          <!-- Desktop image (1025px and above) -->
+            <img
+              src="/cdn-cgi/image/width=128,height=128,quality=85,format=auto/Darran-Goulding-Royal-Academy-of-Engineering-image-desktop.webp"
+              width="128"
+              height="128"
+              alt="Darran Goulding Royal Academy of Engineering Image"
+              class="w-32 h-32 rounded-full"
+              loading="lazy"
+            />
         <div>
           <h3 class="text-2xl font-bold mb-2">Darran Goulding <a href="/about/darran-goulding/" class="text-sm font-normal bg-gray-100 hover:bg-gray-200 text-gray-700 hover:text-gray-900 px-2 py-1 rounded ml-2 transition-colors duration-200">Bio</a></h3>
           <p class="text-gray-600 mb-3">
@@ -2710,7 +2509,7 @@ export const prerender = false;
           e.preventDefault();
           
           // Get URL
-          const url = initialUrlInput.value.trim();
+          let url = initialUrlInput.value.trim();
           
           // Validate URL
           if (!url) {
@@ -2719,20 +2518,26 @@ export const prerender = false;
           }
           
           // Format URL (add https:// if missing)
-          let formattedUrl = url;
           if (!url.startsWith('http://') && !url.startsWith('https://')) {
-            formattedUrl = 'https://' + url;
-            initialUrlInput.value = formattedUrl;
+            url = 'https://' + url;
+            initialUrlInput.value = url;
+          }
+          
+          // Validate URL format with a simple regex
+          const urlPattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w.-]*)*\/?$/;
+          if (!urlPattern.test(url)) {
+            alert('Please enter a valid website URL.');
+            return;
           }
           
           // Show the URL in step 2
           if (urlToAnalyze) {
-            urlToAnalyze.textContent = formattedUrl;
+            urlToAnalyze.textContent = url;
           }
           
           // Set the hidden field value
           if (analyzedUrlField) {
-            analyzedUrlField.value = formattedUrl;
+            analyzedUrlField.value = url;
           }
           
           // Hide step 1, show step 2
