@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^7.0.2",
-    "@astrojs/image": "^0.17.3",
     "@astrojs/tailwind": "^5.0.4",
     "astro": "^3.6.4",
     "lucide-astro": "^0.299.0",

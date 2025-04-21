@@ -9,11 +9,10 @@ export default defineConfig({
   adapter: cloudflare(),
   // This ensures URLs match your current structure
   trailingSlash: 'always',
-  // Configure Sharp image optimization service
+  // Enable built-in image optimization
   image: {
-    service: {
-      entrypoint: 'astro/assets/services/sharp'
-    }
+    // No need to specify service for Astro 3.x which uses Sharp by default
+    // when available in node_modules
   },
   build: {
     format: 'directory',
