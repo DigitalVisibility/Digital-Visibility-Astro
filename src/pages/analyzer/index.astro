@@ -1600,11 +1600,6 @@ export const prerender = true;
             
             // Store complete lead data for admin page
             try {
-              // Get existing leads data or initialize new array
-              const existingLeadsJson = localStorage.getItem('analyzer_leads') || '[]';
-              const existingLeads = JSON.parse(existingLeadsJson);
-              
-              // Create new lead object with all form fields
               // Safe access to the URL input value
               let urlValue = '';
               if (initialUrlInput && 'value' in initialUrlInput) {
@@ -1621,11 +1616,48 @@ export const prerender = true;
                 consent: formEntries['consent'] ? true : false
               };
               
-              // Add new lead to the beginning of the array
+              // Save lead data to both localStorage AND centralized storage
+              // 1. First save to local storage for backward compatibility
+              const existingLeadsJson = localStorage.getItem('analyzer_leads') || '[]';
+              const existingLeads = JSON.parse(existingLeadsJson);
               existingLeads.unshift(newLead);
-              
-              // Store updated leads data back to localStorage
               localStorage.setItem('analyzer_leads', JSON.stringify(existingLeads));
+              
+              // 2. Then save to centralized storage using Cloudflare Workers
+              // This uses a Cloudflare Worker endpoint that saves data to KV storage
+              fetch('https://lead-collection.darrangoulding.workers.dev/store-lead', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'API-Key': 'dv_analyzer_key_2025' // Simple API key for basic security
+                },
+                body: JSON.stringify({
+                  lead: newLead,
+                  timestamp: new Date().toISOString(),
+                  source: window.location.hostname
+                })
+              }).then(response => {
+                if (!response.ok) {
+                  throw new Error(`API error: ${response.status}`);
+                }
+                return response.json();
+              }).then(data => {
+                console.log('Lead data sent to Cloudflare storage successfully', data);
+                // Generate a shared storage key for other browsers to access
+                try {
+                  // Create a master leads key that we'll check in the admin page
+                  const masterKey = 'analyzer_master_' + newLead.email.replace(/[^a-zA-Z0-9]/g, '');
+                  localStorage.setItem(masterKey, JSON.stringify({ 
+                    timestamp: new Date().toISOString(),
+                    leadId: data.leadId || 'unknown'
+                  }));
+                } catch (e) {
+                  console.error('Error storing master key:', e);
+                }
+              }).catch(error => {
+                console.error('Error sending lead data to Cloudflare storage:', error);
+              });
+              
               console.log('Lead data saved successfully:', newLead);
             } catch (error) {
               console.error('Error saving lead data to localStorage:', error);

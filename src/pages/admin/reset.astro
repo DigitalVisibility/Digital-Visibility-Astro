@@ -334,18 +334,72 @@ const ADMIN_CODE = "098765"; // Matching the admin override code
     // Load and display lead contact information
     async function loadLeadContactData() {
       try {
-        // Get lead data from localStorage
-        const leadsDataJson = localStorage.getItem('analyzer_leads');
+        leadContactData.innerHTML = '<p class="text-gray-500 italic">Loading lead data from all sources...</p>';
         
-        if (!leadsDataJson) {
-          leadContactData.innerHTML = '<p class="text-gray-500 italic">No lead contact data found.</p>';
-          return;
+        // 1. First get local lead data from localStorage
+        const leadsDataJson = localStorage.getItem('analyzer_leads');
+        let localLeads = [];
+        
+        if (leadsDataJson) {
+          try {
+            const parsedData = JSON.parse(leadsDataJson);
+            if (Array.isArray(parsedData)) {
+              localLeads = parsedData;
+            }
+          } catch (e) {
+            console.error('Error parsing local leads data:', e);
+          }
         }
         
-        const leadsData = JSON.parse(leadsDataJson);
+        // 2. Then fetch centralized lead data from Cloudflare Worker
+        let cloudflareLeads = [];
+        try {
+          const response = await fetch('https://lead-collection.darrangoulding.workers.dev/get-leads?key=dv_analyzer_key_2025');
+          if (response.ok) {
+            const data = await response.json();
+            if (data.success && Array.isArray(data.leads)) {
+              cloudflareLeads = data.leads;
+            }
+          }
+        } catch (e) {
+          console.error('Error fetching leads from Cloudflare:', e);
+        }
         
-        if (!leadsData || !Array.isArray(leadsData) || leadsData.length === 0) {
-          leadContactData.innerHTML = '<p class="text-gray-500 italic">No lead contact data found.</p>';
+        // 3. Combine both sources of leads
+        // Create a map to avoid duplicates (using email as key)
+        const combinedLeadsMap = new Map();
+        
+        // Add Cloudflare leads first (they're more important as they're centralized)
+        cloudflareLeads.forEach(lead => {
+          const key = lead.email || lead.leadId;
+          combinedLeadsMap.set(key, {
+            name: lead.name || '',
+            email: lead.email || '',
+            businessName: lead.businessName || '',
+            phone: lead.phone || '',
+            url: lead.url || '',
+            timestamp: lead.timestamp || new Date().toISOString(),
+            source: 'Cloudflare'
+          });
+        });
+        
+        // Then add local leads if they're not already in the map
+        localLeads.forEach(lead => {
+          const key = lead.email || Math.random().toString();
+          if (!combinedLeadsMap.has(key)) {
+            combinedLeadsMap.set(key, {
+              ...lead,
+              source: 'Local'
+            });
+          }
+        });
+        
+        // Convert map back to array and sort by timestamp (newest first)
+        const combinedLeads = Array.from(combinedLeadsMap.values())
+          .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+        
+        if (combinedLeads.length === 0) {
+          leadContactData.innerHTML = '<p class="text-gray-500 italic">No lead contact data found in any source.</p>';
           return;
         }
         
@@ -363,16 +417,18 @@ const ADMIN_CODE = "098765"; // Matching the admin override code
                 <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
                 <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">URL</th>
                 <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Source</th>
               </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
         `;
         
         // Add each lead
-        leadsData.forEach((lead, index) => {
+        combinedLeads.forEach((lead, index) => {
           const rowClass = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
           const date = new Date(lead.timestamp);
           const formattedDate = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+          const sourceClass = lead.source === 'Cloudflare' ? 'text-blue-600' : 'text-gray-500';
           
           html += `
             <tr class="${rowClass}">
@@ -382,6 +438,7 @@ const ADMIN_CODE = "098765"; // Matching the admin override code
               <td class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">${lead.phone || '-'}</td>
               <td class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">${lead.url || '-'}</td>
               <td class="px-3 py-2 whitespace-nowrap text-sm text-gray-900">${formattedDate || '-'}</td>
+              <td class="px-3 py-2 whitespace-nowrap text-sm ${sourceClass}">${lead.source || 'Local'}</td>
             </tr>
           `;
         });
@@ -397,46 +454,113 @@ const ADMIN_CODE = "098765"; // Matching the admin override code
     }
     
     // Download leads as CSV
-    downloadLeadsCsvButton?.addEventListener('click', () => {
+    downloadLeadsCsvButton?.addEventListener('click', async () => {
       try {
-        const leadsDataJson = localStorage.getItem('analyzer_leads');
+        // Show loading state
+        downloadLeadsCsvButton.textContent = 'Loading...';
+        downloadLeadsCsvButton.disabled = true;
         
-        if (!leadsDataJson) {
-          alert('No lead data to download');
-          return;
+        // 1. First get local lead data from localStorage
+        const leadsDataJson = localStorage.getItem('analyzer_leads');
+        let localLeads = [];
+        
+        if (leadsDataJson) {
+          try {
+            const parsedData = JSON.parse(leadsDataJson);
+            if (Array.isArray(parsedData)) {
+              localLeads = parsedData;
+            }
+          } catch (e) {
+            console.error('Error parsing local leads data:', e);
+          }
         }
         
-        const leadsData = JSON.parse(leadsDataJson);
+        // 2. Then fetch centralized lead data from Cloudflare Worker
+        let cloudflareLeads = [];
+        try {
+          const response = await fetch('https://lead-collection.darrangoulding.workers.dev/get-leads?key=dv_analyzer_key_2025');
+          if (response.ok) {
+            const data = await response.json();
+            if (data.success && Array.isArray(data.leads)) {
+              cloudflareLeads = data.leads;
+            }
+          }
+        } catch (e) {
+          console.error('Error fetching leads from Cloudflare:', e);
+        }
         
-        if (!leadsData || !Array.isArray(leadsData) || leadsData.length === 0) {
-          alert('No lead data to download');
+        // 3. Combine both sources of leads
+        // Create a map to avoid duplicates (using email as key)
+        const combinedLeadsMap = new Map();
+        
+        // Add Cloudflare leads first (they're more important as they're centralized)
+        cloudflareLeads.forEach(lead => {
+          const key = lead.email || lead.leadId;
+          combinedLeadsMap.set(key, {
+            name: lead.name || '',
+            email: lead.email || '',
+            businessName: lead.businessName || '',
+            phone: lead.phone || '',
+            url: lead.url || '',
+            timestamp: lead.timestamp || new Date().toISOString(),
+            source: 'Cloudflare'
+          });
+        });
+        
+        // Then add local leads if they're not already in the map
+        localLeads.forEach(lead => {
+          const key = lead.email || Math.random().toString();
+          if (!combinedLeadsMap.has(key)) {
+            combinedLeadsMap.set(key, {
+              ...lead,
+              source: 'Local'
+            });
+          }
+        });
+        
+        // Convert map back to array and sort by timestamp (newest first)
+        const combinedLeads = Array.from(combinedLeadsMap.values())
+          .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+        
+        if (combinedLeads.length === 0) {
+          alert('No lead data available to download');
+          downloadLeadsCsvButton.textContent = 'Download as CSV';
+          downloadLeadsCsvButton.disabled = false;
           return;
         }
         
         // Create CSV content
         const headers = ['Name', 'Email', 'Business Name', 'Phone', 'URL', 'Date', 'Timestamp'];
-        let csvContent = headers.join(',') + '\n';
+        // Generate CSV content
+        let csv = 'Name,Email,Business,Phone,URL,Date,Source\n';
         
-        leadsData.forEach(lead => {
+        combinedLeads.forEach(lead => {
           const date = new Date(lead.timestamp);
           const formattedDate = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
           
-          // Escape fields with quotes if they contain commas
-          const row = [
-            `"${(lead.name || '').replace(/"/g, '""')}"`,
-            `"${(lead.email || '').replace(/"/g, '""')}"`,
-            `"${(lead.businessName || '').replace(/"/g, '""')}"`,
-            `"${(lead.phone || '').replace(/"/g, '""')}"`,
-            `"${(lead.url || '').replace(/"/g, '""')}"`,
-            `"${formattedDate}"`,
-            lead.timestamp
-          ];
+          // Escape CSV values properly
+          const escapeCsv = (val) => {
+            if (!val) return '';
+            return '"' + val.toString().replace(/"/g, '""') + '"';
+          };
           
-          csvContent += row.join(',') + '\n';
+          csv += [
+            escapeCsv(lead.name),
+            escapeCsv(lead.email),
+            escapeCsv(lead.businessName),
+            escapeCsv(lead.phone),
+            escapeCsv(lead.url),
+            escapeCsv(formattedDate),
+            escapeCsv(lead.source || 'Local')
+          ].join(',') + '\n';
         });
         
+        // Reset button state
+        downloadLeadsCsvButton.textContent = 'Download as CSV';
+        downloadLeadsCsvButton.disabled = false;
+        
         // Create a download link
-        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.setAttribute('href', url);
@@ -452,11 +576,39 @@ const ADMIN_CODE = "098765"; // Matching the admin override code
     });
     
     // Clear all leads
-    clearLeadsButton?.addEventListener('click', () => {
-      if (confirm('Are you sure you want to clear ALL lead contact data? This cannot be undone.')) {
-        localStorage.removeItem('analyzer_leads');
-        alert('All lead contact data has been cleared.');
-        loadLeadContactData();
+    clearLeadsButton?.addEventListener('click', async () => {
+      if (confirm('Are you sure you want to delete ALL lead data? This cannot be undone.')) {
+        try {
+          // Clear local storage leads
+          localStorage.removeItem('analyzer_leads');
+          
+          // Clear Cloudflare leads by sending a request to a special endpoint
+          try {
+            const response = await fetch('https://lead-collection.darrangoulding.workers.dev/clear-leads?key=dv_analyzer_key_2025', {
+              method: 'POST'
+            });
+            
+            if (!response.ok) {
+              throw new Error(`Failed to clear centralized leads: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            if (!data.success) {
+              throw new Error(data.error || 'Unknown error');
+            }
+          } catch (e) {
+            console.error('Error clearing centralized leads:', e);
+            alert(`Note: Local leads were cleared but there was an error clearing centralized leads: ${e.message}`);
+            loadLeadContactData();
+            return;
+          }
+          
+          alert('All lead data has been cleared from all storage locations.');
+          loadLeadContactData();
+        } catch (error) {
+          console.error('Error clearing leads:', error);
+          alert(`Error clearing leads: ${error.message}`);
+        }
       }
     });
     
