@@ -1625,23 +1625,40 @@ export const prerender = true;
               
               // 2. Then save to centralized storage using Cloudflare Workers
               // This uses a Cloudflare Worker endpoint that saves data to KV storage
+              console.log('Sending data to Cloudflare Worker:', newLead);
+              
+              // Create payload for Cloudflare Worker
+              const payload = {
+                lead: newLead,
+                timestamp: new Date().toISOString(),
+                source: window.location.hostname,
+                apiKey: 'dv_analyzer_key_2025' // Include API key in body
+              };
+              
+              // Log the URL and payload for debugging
+              console.log('Cloudflare Worker URL:', 'https://lead-collection.darrangoulding.workers.dev/store-lead');
+              console.log('Payload:', payload);
+              
               fetch('https://lead-collection.darrangoulding.workers.dev/store-lead', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
                   'API-Key': 'dv_analyzer_key_2025' // Simple API key for basic security
                 },
-                body: JSON.stringify({
-                  lead: newLead,
-                  timestamp: new Date().toISOString(),
-                  source: window.location.hostname
-                })
-              }).then(response => {
+                body: JSON.stringify(payload)
+              })
+              .then(response => {
+                console.log('Cloudflare Worker response status:', response.status);
+                console.log('Cloudflare Worker response headers:', [...response.headers.entries()]);
                 if (!response.ok) {
-                  throw new Error(`API error: ${response.status}`);
+                  return response.text().then(text => {
+                    console.error('Cloudflare Worker error response:', text);
+                    throw new Error(`API error: ${response.status} - ${text}`);
+                  });
                 }
                 return response.json();
-              }).then(data => {
+              })
+              .then(data => {
                 console.log('Lead data sent to Cloudflare storage successfully', data);
                 // Generate a shared storage key for other browsers to access
                 try {
@@ -1656,6 +1673,8 @@ export const prerender = true;
                 }
               }).catch(error => {
                 console.error('Error sending lead data to Cloudflare storage:', error);
+                // Create a fallback notification for debugging
+                alert('Debug: Failed to send lead data to cloud storage. Check console for details.');
               });
               
               console.log('Lead data saved successfully:', newLead);

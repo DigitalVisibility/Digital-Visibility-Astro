@@ -15,15 +15,36 @@
 const API_KEY = 'dv_analyzer_key_2025';
 
 async function handleLeadStorage(request) {
-  // Verify the API key
+  // Verify the API key - check both header and request body
   const apiKey = request.headers.get('API-Key');
-  if (apiKey !== API_KEY) {
+  let isAuthorized = apiKey === API_KEY;
+  
+  // If not authorized by header, check if we can get it from body
+  if (!isAuthorized) {
+    try {
+      // Clone the request since we'll need to read it again later
+      const clonedRequest = request.clone();
+      const body = await clonedRequest.json();
+      if (body.apiKey === API_KEY) {
+        isAuthorized = true;
+      }
+    } catch (e) {
+      console.error('Error checking body for API key:', e);
+    }
+  }
+  
+  if (!isAuthorized) {
     return new Response(JSON.stringify({ 
       success: false, 
       error: 'Unauthorized' 
     }), {
       status: 401,
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*', 
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, API-Key'
+      }
     });
   }
 
