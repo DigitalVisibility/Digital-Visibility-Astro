@@ -5,12 +5,24 @@ const { title = "Digital Visibility - AI Powered Business Optimization" } = Astr
 
 <!DOCTYPE html>
 <html lang="en">
+<!-- Cloudflare Early Hints Support -->
+<!-- Early hints preloads -->
+<!-- Early hints preconnect -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Preload critical fonts for better performance -->
+    
+    <!-- Cloudflare optimization hints -->
+    <meta http-equiv="Cache-Control" content="public, max-age=86400">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="cf-2fa-verify" content="true">
+
+    <!-- Preload critical resources for better LCP -->
+    <link rel="preload" href="/styles/global.css" as="style">
+    <link rel="preload" href="/scripts/lucide-icons.min.js" as="script">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://imagedelivery.net" crossorigin>
     <title>{title}</title>
     <link rel="stylesheet" href="/styles/global.css">
     <meta name="description" content="Digital Visibility provides AI-powered business optimization services including digital marketing, app development, and product design.">
@@ -29,11 +41,33 @@ const { title = "Digital Visibility - AI Powered Business Optimization" } = Astr
 
     <!-- Either add is:inline or remove if not yet created -->
     <!-- <script is:inline src="/scripts/app.js"></script> -->
-    <script is:inline src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script defer src="/scripts/lucide-icons.min.js"></script>
     <script is:inline>
-        // Initialize Lucide icons
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
+        // Optimize icon initialization to reduce LCP time
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof window.lucide !== 'undefined') {
+                // Create above-the-fold icons immediately
+                window.lucide.createIcons();
+                
+                // Optimize by removing unused icons
+                var unusedIcons = document.querySelectorAll('.icon:not(.essential-icon)'); 
+                unusedIcons.forEach(function(icon) {
+                    if (!isInViewport(icon)) {
+                        icon.setAttribute('data-lazy-load', 'true');
+                    }
+                });
+            }
+        });
+        
+        // Helper function to check if element is in viewport
+        function isInViewport(element) {
+            var rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
         }
     </script>
     <slot name="scripts"/>

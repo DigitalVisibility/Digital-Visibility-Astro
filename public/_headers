@@ -2,6 +2,13 @@
 /*
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
+  Cache-Control: public, max-age=3600
+  Content-Security-Policy: upgrade-insecure-requests
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+  CF-Speed-Hint: perf=lcp;
+  CF-Cache-Status: HIT
+  CF-Early-Hints: on
+  CF-Prefetch-URLs: /styles/global.css, /scripts/lucide-icons.min.js
   
 # Don't process these files
 /js/AnalyzerLead.js
