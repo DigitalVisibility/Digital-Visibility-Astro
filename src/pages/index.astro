@@ -48,7 +48,20 @@
            </div>
          </div>
          <div class="md:w-1/2 relative">
-           <img src="/digital-visibility-square.webp" alt="AI Business Optimization" class="rounded-lg shadow-xl max-w-[90%] ml-auto">
+           <!-- Hero image using picture element for optimal LCP performance -->
+            <picture>
+              <!-- Match breakpoints to your design - mobile first */-->
+              <source media="(max-width: 639px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/9cdf56ec-7cf9-4c7f-67c1-2a6646022f00/public?width=480" />
+              <source media="(min-width: 640px) and (max-width: 767px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/9cdf56ec-7cf9-4c7f-67c1-2a6646022f00/public?width=640" />
+              <source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/9cdf56ec-7cf9-4c7f-67c1-2a6646022f00/public?width=768" />
+              <source media="(min-width: 1024px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/9cdf56ec-7cf9-4c7f-67c1-2a6646022f00/public?width=1024" />
+              <img 
+                src="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/9cdf56ec-7cf9-4c7f-67c1-2a6646022f00/public" 
+                alt="AI Business Optimization" 
+                class="rounded-lg shadow-xl max-w-[90%] ml-auto"
+              />
+            </picture>
+
  
            <!-- Proven Results Card - Linked to Bio Page -->
            <a href="/about/darran-goulding/" class="group block absolute bottom-[-10px] right-[-10px] transition-all duration-300 hover:transform hover:translate-y-[-5px] hover:shadow-xl">
@@ -301,7 +314,20 @@
          </div>
  
          <div class="relative">
-           <img src="/human-ai-advantage-mobile.webp" alt="Digital Marketing Services" class="rounded-lg shadow-xl transform transition duration-500 hover:scale-105 mt-[80px]">
+           <!-- Below-the-fold image with lazy loading -->
+            <picture>
+              <!-- Match breakpoints to your design - this specific section uses flex-col to flex-row at md (768px) -->
+              <source media="(max-width: 639px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/f2591854-d03e-4d93-cd92-155582686e00/public?width=480" />
+              <source media="(min-width: 640px) and (max-width: 767px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/f2591854-d03e-4d93-cd92-155582686e00/public?width=640" />
+              <source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/f2591854-d03e-4d93-cd92-155582686e00/public?width=720" />
+              <source media="(min-width: 1024px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/f2591854-d03e-4d93-cd92-155582686e00/public?width=960" />
+              <img 
+                src="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/f2591854-d03e-4d93-cd92-155582686e00/public" 
+                alt="Digital Marketing Services" 
+                loading="lazy"
+                class="rounded-lg shadow-xl transform transition duration-500 hover:scale-105 mt-[80px]"
+              />
+            </picture>
  
            <!-- Success Rates Card -->
            <div class="absolute top-[60%] -right-6 bg-white p-6 rounded-lg shadow-xl border-t-4 border-blue-500 max-w-[280px] transform transition duration-300 hover:scale-105">
@@ -342,129 +368,131 @@
            </div>
          </div>
        </div>
+     </div>
+   </section>
+ 
+   <!-- AI Visibility Analyzer Section -->
+   <section id="ai-analyzer" class="bg-blue-50 py-16 border-b border-blue-100 relative overflow-hidden">
+     <!-- Background decoration elements -->
+     <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full opacity-30 transform translate-x-1/3 -translate-y-1/3"></div>
+     <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-100 rounded-full opacity-20 transform -translate-x-1/3 translate-y-1/3"></div>
+ 
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+       <div class="text-center mb-10">
+         <div class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-3">FREE TOOL</div>
+         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">AI Visibility Analyzer</h2>
+         <p class="text-xl text-gray-700 max-w-3xl mx-auto">Our expert-built analyzer evaluates your website's readiness for both traditional search engines AND AI platforms like ChatGPT, revealing hidden opportunities your competition is missing.</p>
+       </div>
+ 
+       <div class="grid md:grid-cols-2 gap-12 items-start">
+         <div class="space-y-6 md:sticky md:top-24">
+           <!-- Left side content: Benefits & Features -->
+           <div class="bg-white rounded-xl shadow-lg p-8 md:block hidden">
+             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+               <!-- Feature 1 -->
+               <div class="flex items-start">
+                 <div class="bg-blue-100 p-3 rounded-full mr-4">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                   </svg>
+                 </div>
+                 <div>
+                   <h3 class="font-bold text-gray-900 text-lg mb-1">Human-Led Analysis</h3>
+                   <p class="text-gray-600 text-sm">Our experts personally review each analysis, combining AI power with human expertise.</p>
+                 </div>
+               </div>
+ 
+               <!-- Feature 2 -->
+               <div class="flex items-start">
+                 <div class="bg-blue-100 p-3 rounded-full mr-4">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                   </svg>
+                 </div>
+                 <div>
+                   <h3 class="font-bold text-gray-900 text-lg mb-1">Actionable Strategy</h3>
+                   <p class="text-gray-600 text-sm">Receive a prioritized roadmap of improvements with clear, specific actions to boost visibility.</p>
+                 </div>
+               </div>
+ 
+               <!-- Feature 3 -->
+               <div class="flex items-start">
+                 <div class="bg-blue-100 p-3 rounded-full mr-4">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                   </svg>
+                 </div>
+                 <div>
+                   <h3 class="font-bold text-gray-900 text-lg mb-1">Competitive Edge</h3>
+                   <p class="text-gray-600 text-sm">See exactly how you compare to top competitors and discover opportunities they're not.</p>
+                 </div>
+               </div>
+ 
+               <!-- Feature 4: Testimonial -->
+               <div class="flex items-start col-span-full md:col-span-1">
+                 <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                   </svg>
+                 </div>
+                 <div>
+                   <div class="font-medium text-yellow-600 text-sm mb-1">⭐⭐⭐⭐⭐</div>
+                   <p class="text-gray-700 text-sm italic">"The analyzer provided critical areas we were missing. After implementing the recommendations, our traffic jumped 74% in just weeks!"</p>
+                   <p class="text-gray-500 text-xs mt-1">— Sarah T, Marketing Director</p>
+                 </div>
+               </div>
+             </div>
+           </div>
+ 
+           <!-- Mobile view features -->
+           <div class="md:hidden space-y-4">
+             <div class="flex items-center">
+               <div class="bg-blue-100 p-2 rounded-full mr-3">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                 </svg>
+               </div>
+               <p class="text-gray-700 font-medium">Human-Led AI Analysis</p>
+             </div>
+             <div class="flex items-center">
+               <div class="bg-blue-100 p-2 rounded-full mr-3">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                 </svg>
+               </div>
+               <p class="text-gray-700 font-medium">Actionable Strategy Roadmap</p>
+             </div>
+             <div class="flex items-center">
+               <div class="bg-blue-100 p-2 rounded-full mr-3">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                 </svg>
+               </div>
+               <p class="text-gray-700 font-medium">Competitive Edge Insights</p>
+             </div>
+           </div>
+         </div>
+ 
+         <!-- Right side: Analyzer Form & Results -->
+         <div id="analyzerSection" class="bg-white rounded-xl shadow-lg overflow-hidden">
+           <div class="p-8">
+             <h3 id="analyzerHeading" class="text-2xl font-bold text-gray-900 mb-6">Get Your Free Visibility Analysis</h3>
+             <p class="text-gray-600 mb-6">Discover how to improve your position with both traditional search engines like Google and AI search engine platforms like Microsoft Bing & ChatGPT.</p>
+ 
+             <!-- Multi-step Analyzer Form -->
 
-  <!-- AI Visibility Analyzer Section -->
-  <section id="ai-analyzer" class="bg-blue-50 py-16 border-b border-blue-100 relative overflow-hidden">
-    <!-- Background decoration elements -->
-    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full opacity-30 transform translate-x-1/3 -translate-y-1/3"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-100 rounded-full opacity-20 transform -translate-x-1/3 translate-y-1/3"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center mb-10">
-        <div class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-3">FREE TOOL</div>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">AI Visibility Analyzer</h2>
-        <p class="text-xl text-gray-700 max-w-3xl mx-auto">Our expert-built analyzer evaluates your website's readiness for both traditional search engines AND AI platforms like ChatGPT, revealing hidden opportunities your competition is missing.</p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 gap-12 items-start">
-        <div class="space-y-6 md:sticky md:top-24">
-          <!-- Left side content: Benefits & Features -->
-          <div class="bg-white rounded-xl shadow-lg p-8 md:block hidden">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <!-- Feature 1 -->
-              <div class="flex items-start">
-                <div class="bg-blue-100 p-3 rounded-full mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="font-bold text-gray-900 text-lg mb-1">Human-Led Analysis</h3>
-                  <p class="text-gray-600 text-sm">Our experts personally review each analysis, combining AI power with human expertise.</p>
-                </div>
-              </div>
-              
-              <!-- Feature 2 -->
-              <div class="flex items-start">
-                <div class="bg-blue-100 p-3 rounded-full mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="font-bold text-gray-900 text-lg mb-1">Actionable Strategy</h3>
-                  <p class="text-gray-600 text-sm">Receive a prioritized roadmap of improvements with clear, specific actions to boost visibility.</p>
-                </div>
-              </div>
-              
-              <!-- Feature 3 -->
-              <div class="flex items-start">
-                <div class="bg-blue-100 p-3 rounded-full mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="font-bold text-gray-900 text-lg mb-1">Competitive Edge</h3>
-                  <p class="text-gray-600 text-sm">See exactly how you compare to top competitors and discover opportunities they're not.</p>
-                </div>
-              </div>
-              
-              <!-- Feature 4: Testimonial -->
-              <div class="flex items-start col-span-full md:col-span-1">
-                <div class="bg-yellow-100 p-3 rounded-full mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                  </svg>
-                </div>
-                <div>
-                  <div class="font-medium text-yellow-600 text-sm mb-1">⭐⭐⭐⭐⭐</div>
-                  <p class="text-gray-700 text-sm italic">"The analyzer provided critical areas we were missing. After implementing the recommendations, our traffic jumped 74% in just weeks!"</p>
-                  <p class="text-gray-500 text-xs mt-1">— Sarah T, Marketing Director</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Mobile view features -->
-          <div class="md:hidden space-y-4">
-            <div class="flex items-center">
-              <div class="bg-blue-100 p-2 rounded-full mr-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              <p class="text-gray-700 font-medium">Human-Led AI Analysis</p>
-            </div>
-            <div class="flex items-center">
-              <div class="bg-blue-100 p-2 rounded-full mr-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <p class="text-gray-700 font-medium">Actionable Strategy Roadmap</p>
-            </div>
-            <div class="flex items-center">
-              <div class="bg-blue-100 p-2 rounded-full mr-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
-              </div>
-              <p class="text-gray-700 font-medium">Competitive Edge Insights</p>
-            </div>
-          </div>
-		            </div>
-		          <!-- Right side: Analyzer Form & Results -->
-          <div id="analyzerSection" class="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div class="p-8">
-              <h3 id="analyzerHeading" class="text-2xl font-bold text-gray-900 mb-6">Get Your Free Visibility Analysis</h3>
-              <p class="text-gray-600 mb-6">Discover how to improve your position with both traditional search engines like Google and AI search engine platforms like Microsoft Bing & ChatGPT.</p>
-              
-              <!-- Multi-step Analyzer Form -->
 
-
-                  <a href="/analyzer/" class="group inline-flex items-center justify-center px-6 py-4 text-white font-bold bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg overflow-hidden">
-                <span class="relative z-10 flex items-center">
-                  Get Your Free Website SEO Analysis
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </span>
-                <span class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-              </a>
+                 <a href="/analyzer/" class="group inline-flex items-center justify-center px-6 py-4 text-white font-bold bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg overflow-hidden">
+               <span class="relative z-10 flex items-center">
+                 Get Your Free Website SEO Analysis
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                 </svg>
+               </span>
+               <span class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+             </a>
 
     </div>
-				      </div>
     </div>
     </div>
     </div>
@@ -555,17 +583,17 @@
          <h3 class="text-2xl font-bold mb-4">Choose Your Perfect Website Solution</h3>
          <div class="grid md:grid-cols-2 gap-6 mb-6">
            <div class="bg-white/10 p-6 rounded-lg">
-             <h4 class="text-xl font-bold mb-2">Brand New Website</h4>
+             <h4 class="text-xl font-bold text-gray-900 mb-2">Brand New Website</h4>
              <p class="mb-4">We'll create a lightning-fast, fully optimized website on our premium hosting platform with blazing speeds and maximum performance.</p>
              <div class="flex items-center text-green-300 font-medium">
                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                 <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                </svg>
                Includes free premium hosting
              </div>
            </div>
            <div class="bg-white/10 p-6 rounded-lg">
-             <h4 class="text-xl font-bold mb-2">Existing Site Optimization</h4>
+             <h4 class="text-xl font-bold text-gray-900 mb-2">Existing Site Optimization</h4>
              <p class="mb-4">We can upgrade and optimize your existing website on your current platform, improving performance while working within your platform's limitations.</p>
              <div class="flex items-center text-yellow-300 font-medium">
                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
@@ -651,7 +679,20 @@
          </div>
  
          <div class="relative">
-           <img src="/mobile-app.webp" alt="Mobile App Development" class="rounded-lg shadow-lg">
+            <!-- Below-the-fold image with lazy loading -->
+            <picture>
+              <!-- Mobile App Development image with proper breakpoints -->
+              <source media="(max-width: 639px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/67311c6a-81f4-472f-d2d0-dc9649486900/public?width=480" />
+              <source media="(min-width: 640px) and (max-width: 767px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/67311c6a-81f4-472f-d2d0-dc9649486900/public?width=640" />
+              <source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/67311c6a-81f4-472f-d2d0-dc9649486900/public?width=720" />
+              <source media="(min-width: 1024px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/67311c6a-81f4-472f-d2d0-dc9649486900/public?width=960" />
+              <img 
+                src="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/67311c6a-81f4-472f-d2d0-dc9649486900/public" 
+                alt="Mobile App Development" 
+                loading="lazy"
+                class="rounded-lg shadow-lg"
+              />
+            </picture>
  
            <!-- Award Winning Card -->
            <div class="absolute bottom-[-10px] right-[-10px] bg-blue-50 p-5 rounded-md shadow-lg max-w-[250px]">
@@ -677,7 +718,20 @@
  
        <div class="grid md:grid-cols-2 gap-12 items-start">
          <div class="relative">
-           <img src="/Digital-Visibility-product-design-and-3D-printing-image.webp" alt="Product Design and Development" class="rounded-lg shadow-lg">
+            <!-- Below-the-fold image with lazy loading -->
+            <picture>
+              <!-- Product Design image with optimal sizes -->
+              <source media="(max-width: 639px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/6be96110-bf92-4c2a-de4d-0dc3b0f5f400/public?width=480" />
+              <source media="(min-width: 640px) and (max-width: 767px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/6be96110-bf92-4c2a-de4d-0dc3b0f5f400/public?width=640" />
+              <source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/6be96110-bf92-4c2a-de4d-0dc3b0f5f400/public?width=720" />
+              <source media="(min-width: 1024px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/6be96110-bf92-4c2a-de4d-0dc3b0f5f400/public?width=960" />
+              <img 
+                src="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/6be96110-bf92-4c2a-de4d-0dc3b0f5f400/public" 
+                alt="Product Design and Development" 
+                loading="lazy"
+                class="rounded-lg shadow-lg"
+              />
+            </picture>
  
            <!-- Industry Leader Card -->
            <div class="absolute bottom-[-10px] right-[-10px] bg-blue-50 p-5 rounded-md shadow-lg max-w-[250px]">
@@ -791,7 +845,20 @@
          </div>
  
          <div class="relative">
-           <img src="/app-platform.webp" alt="AI-Powered Business Tools" class="rounded-lg shadow-lg">
+            <!-- Below-the-fold image with lazy loading -->
+            <picture>
+              <!-- AI Platform image sized appropriately -->
+              <source media="(max-width: 639px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/9d732b04-1e28-446a-79ff-465163713e00/public?width=480" />
+              <source media="(min-width: 640px) and (max-width: 767px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/9d732b04-1e28-446a-79ff-465163713e00/public?width=640" />
+              <source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/9d732b04-1e28-446a-79ff-465163713e00/public?width=720" />
+              <source media="(min-width: 1024px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/9d732b04-1e28-446a-79ff-465163713e00/public?width=960" />
+              <img 
+                src="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/9d732b04-1e28-446a-79ff-465163713e00/public" 
+                alt="AI-Powered Business Tools" 
+                loading="lazy"
+                class="rounded-lg shadow-lg"
+              />
+            </picture>
  
            <!-- Powerful Tools Card -->
            <div class="absolute bottom-[-10px] right-[-10px] bg-blue-50 p-5 rounded-md shadow-lg max-w-[250px]">
@@ -1017,7 +1084,21 @@
    <section class="bg-white py-12 border-t border-gray-200">
      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
        <div class="flex flex-col md:flex-row items-center gap-8">
-         <img src="/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp" alt="Darran Goulding Royal Academy of Engineering Image" class="w-32 h-32 rounded-full">
+         <picture>
+             <!-- Profile image with perfect 1:1 aspect ratio and proper CSS for roundness -->
+             <source media="(max-width: 639px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/ef6f4c50-87ad-45a0-39fd-00ec1e5cf200/public?width=96&height=96&fit=cover" />
+             <source media="(min-width: 640px) and (max-width: 767px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/ef6f4c50-87ad-45a0-39fd-00ec1e5cf200/public?width=128&height=128&fit=cover" />
+             <source media="(min-width: 768px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/ef6f4c50-87ad-45a0-39fd-00ec1e5cf200/public?width=128&height=128&fit=cover" />
+             <img 
+               src="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/ef6f4c50-87ad-45a0-39fd-00ec1e5cf200/public?width=128&height=128&fit=cover" 
+               alt="Darran Goulding Royal Academy of Engineering Image" 
+               loading="lazy"
+               class="w-32 h-32 rounded-full object-cover object-center"
+               width="128"
+               height="128"
+             />
+           </picture>
+
          <div>
            <h3 class="text-2xl font-bold mb-2">Darran Goulding <a href="/about/darran-goulding/" class="text-sm font-normal bg-gray-100 hover:bg-gray-200 text-gray-700 hover:text-gray-900 px-2 py-1 rounded ml-2 transition-colors duration-200">Bio</a></h3>
            <p class="text-gray-600 mb-3">
