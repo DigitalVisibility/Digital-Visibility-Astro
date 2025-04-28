@@ -1639,18 +1639,50 @@ export const prerender = true;
               console.log('Cloudflare Worker URL:', 'https://lead-collection.darrangoulding.workers.dev/store-lead');
               console.log('Payload:', payload);
               
-              fetch('https://lead-collection.darrangoulding.workers.dev/store-lead', {
-                method: 'POST',
+              // Add more robust debugging for the network request
+              console.log('Initiating Cloudflare Worker request...');
+              
+              // First try a simple check to see if the Worker is reachable
+              fetch('https://lead-collection.darrangoulding.workers.dev/', {
+                method: 'GET',
                 headers: {
-                  'Content-Type': 'application/json',
-                  'API-Key': 'dv_analyzer_key_2025' // Simple API key for basic security
-                },
-                body: JSON.stringify(payload)
+                  'Accept': 'application/json'
+                }
+              })
+              .then(response => {
+                console.log('Cloudflare Worker reachability status:', response.status);
+                if (!response.ok) {
+                  console.warn('Cloudflare Worker may not be properly accessible. Status:', response.status);
+                }
+                // Now attempt the actual data POST
+                return fetch('https://lead-collection.darrangoulding.workers.dev/store-lead', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'API-Key': 'dv_analyzer_key_2025', // Simple API key for basic security
+                    'Access-Control-Allow-Origin': '*' // Request CORS support
+                  },
+                  body: JSON.stringify(payload)
+                });
+              })
+              .catch(error => {
+                console.error('Initial Cloudflare Worker check failed:', error);
+                // Still try the actual request even if the check failed
+                return fetch('https://lead-collection.darrangoulding.workers.dev/store-lead', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'API-Key': 'dv_analyzer_key_2025', // Simple API key for basic security
+                    'Access-Control-Allow-Origin': '*' // Request CORS support
+                  },
+                  body: JSON.stringify(payload)
+                });
               })
               .then(response => {
                 console.log('Cloudflare Worker response status:', response.status);
                 console.log('Cloudflare Worker response headers:', [...response.headers.entries()]);
                 if (!response.ok) {
+                  throw new Error(`API error: ${response.status}`);
                   return response.text().then(text => {
                     console.error('Cloudflare Worker error response:', text);
                     throw new Error(`API error: ${response.status} - ${text}`);
