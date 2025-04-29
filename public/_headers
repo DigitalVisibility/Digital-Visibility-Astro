@@ -8,7 +8,7 @@
   CF-Speed-Hint: perf=lcp;
   CF-Cache-Status: HIT
   CF-Early-Hints: on
-  CF-Prefetch-URLs: /styles/global.css, /scripts/lucide-icons.min.js
+  CF-Prefetch-URLs: /scripts/lucide-icons.min.js
   
 # Don't process these files
 /js/AnalyzerLead.js
