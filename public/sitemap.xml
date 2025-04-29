@@ -116,9 +116,9 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- Individual Blog Posts (add your actual blog posts) -->
+  <!-- Individual Blog Posts -->
   <url>
-    <loc>https://digitalvisibility.com/blog/ai-revolutionizing-website-design/</loc>
+    <loc>https://digitalvisibility.com/blog/how-ai-is-revolutionizing-website-design/</loc>
     <lastmod>2025-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
