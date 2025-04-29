@@ -28,6 +28,44 @@ const { title = "Digital Visibility - AI Powered Business Optimization" } = Astr
     <meta name="description" content="Digital Visibility provides AI-powered business optimization services including digital marketing, app development, and product design.">
     <meta name="keywords" content="AI, digital marketing, app development, product design, business optimization">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <!-- Sitemap and Robots References -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    
+    <!-- Schema.org WebSite markup with sitemap reference -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://digitalvisibility.com",
+      "name": "Digital Visibility - Human Powered, AI Accelerated Solutions",
+      "description": "Human-powered digital solutions, accelerated with AI. Digital marketing with SEO+AEO+GEO, app development, and physical product design services in Swansea, Wales, and globally.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://digitalvisibility.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "siteMapLink": "https://digitalvisibility.com/sitemap.xml",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Digital Visibility Limited",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/digital-visibility-logo-f.png",
+          "width": "180",
+          "height": "60"
+        }
+      },
+      "inLanguage": "en-GB",
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Digital Visibility Limited"
+      },
+      "copyrightYear": "2025",
+      "datePublished": "2023-01-01",
+      "dateModified": "2025-04-29"
+    }
+    </script>
     <slot name="head"/>
 </head>
 <body>

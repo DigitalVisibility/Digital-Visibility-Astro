@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Page-level blocking (if needed in future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Important pages for search engines
+Allow: /sitemap.xml
+Allow: /index.html
+Allow: /analyzer/
+
+# Point to the sitemap
+Sitemap: https://digitalvisibility.com/sitemap.xml
+
+# Crawl-delay directive (optional)
+# Crawl-delay: 10
+
+# Define sitemaps
+# Add additional sitemaps if you create section-specific ones in the future
+# Sitemap: https://digitalvisibility.com/post-sitemap.xml
+# Sitemap: https://digitalvisibility.com/page-sitemap.xml

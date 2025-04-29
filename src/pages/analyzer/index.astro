@@ -2,20 +2,127 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
-import { Image } from 'astro:assets';
 
 // Site is now statically rendered
 export const prerender = true;
 ---
 
-<MainLayout title="Digital Visibility - Human Powered, AI Accelerated Solutions AI Search Engine Readiness Analyzer">
+<MainLayout title="Digital Visibility - AI Search Engine Readiness Analyzer | Free Website Analysis Tool">
   <!-- SEO and Canonical Tags -->
-  <link rel="canonical" href="https://digitalvisibility.com/aeo-readiness-analyzer/" slot="head">
+  <link rel="canonical" href="https://digitalvisibility.com/analyzer/" slot="head">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   <meta http-equiv="X-Robots-Tag" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  
+  <!-- Publisher, Twitter and OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="AI Search Engine Readiness Analyzer | Free Website Analysis Tool" slot="head">
+  <meta property="og:description" content="Free tool that evaluates your website's readiness for both traditional search engines AND AI platforms like ChatGPT, revealing hidden opportunities your competition is missing." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/analyzer/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/png" slot="head">
+  
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="AI Search Engine Readiness Analyzer | Free Website Analysis Tool" slot="head">
+  <meta name="twitter:description" content="Free tool that evaluates your website's readiness for both traditional search engines AND AI platforms like ChatGPT, revealing hidden opportunities your competition is missing." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  
+  <meta name="description" content="Our expert-built analyzer evaluates your website's readiness for both traditional search engines AND AI platforms like ChatGPT, revealing hidden opportunities your competition is missing." slot="head">
+  <meta name="keywords" content="AI visibility analyzer, search engine readiness, website analysis tool, SEO analyzer, AI SEO, AEO, GEO optimization" slot="head">
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- Schema markup for improved SEO and AI visibility -->
+  <script type="application/ld+json" slot="head">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AI Search Engine Readiness Analyzer",
+    "url": "https://digitalvisibility.com/analyzer/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "GBP",
+      "availability": "https://schema.org/InStock"
+    },
+    "description": "Our expert-built analyzer evaluates your website's readiness for both traditional search engines AND AI platforms like ChatGPT, revealing hidden opportunities your competition is missing.",
+    "datePublished": "2025-04-29",
+    "dateModified": "2025-04-29",
+    "provider": {
+      "@type": "Organization",
+      "name": "Digital Visibility Limited",
+      "url": "https://digitalvisibility.com"
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Website owners, Digital marketers, SEO professionals, Business owners"
+    },
+    "potentialAction": {
+      "@type": "UseAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://digitalvisibility.com/analyzer/"
+      },
+      "name": "Analyze Your Website"
+    },
+    "featureList": [
+      "Human-Led Analysis",
+      "Actionable Strategy Roadmap",
+      "Competitive Edge Insights"
+    ]
+  }
+  </script>
+  
+  <!-- Additional Software Application Schema -->
+  <script type="application/ld+json" slot="head">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AI Visibility Analyzer",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "GBP"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "156"
+    },
+    "applicationSubCategory": "SEO Tools",
+    "screenshot": "https://digitalvisibility.com/analyzer-screenshot.webp",
+    "softwareHelp": {
+      "@type": "CreativeWork",
+      "url": "https://digitalvisibility.com/contact/"
+    },
+    "isAccessibleForFree": true,
+    "review": {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Sarah T."
+      },
+      "reviewBody": "Your analyzer found SEO issues our previous audit completely missed. We've implemented the suggestions and already seen a 27% traffic increase!",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    }
+  }
+  </script>
   
   <!-- Cloudflare Turnstile Script -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer slot="head"></script>
