@@ -1,8 +1,8 @@
 import crypto from 'crypto';
 
 // Facebook Conversions API Configuration
-const FB_PIXEL_ID = '1075086131348964'; // Your pixel ID from the Meta Pixel Code
-const FB_ACCESS_TOKEN = 'EAAOUROB6GeMBOxXJgzYPfvZCriTHKnkT6n99AbkACH2WSZAnqOGeM4xk7ZB91ChCCZB8DHLB5N7RiuiHfZAZCLZBeX2H8br1s3bhvzVtHFwMJ8eiGReS9orWf0dHgxwSl4JQIo9Ofsq6uegIJcoGDFjQ3iN76kVK8NXngXlapJAo3GBkrT74iEhtILVZBlGu2wZDZD';
+const FB_PIXEL_ID = '1089849532958260'; // Traffic pixel ID for ad campaigns
+const FB_ACCESS_TOKEN = 'EAAOUROB6GeMBO3ohlUWdyl4sqgE1ZCUrKr95DaVg9gvvmgxIRbZCFGk0txPExGg8ktY7b2DDXiVfp6Rs9QZAf1KqOBt1ZCcSnuEEvmKGmgNsHnZBhgVN9lDaSalUnxT50i1tHfiDro8K5YPeLkcw9UvZCmguGARdwx60EcItLmllROCiYfNUFxEZAhiHOaqPwZDZD';
 const FB_API_VERSION = 'v21.0';
 const FB_ENDPOINT = `https://graph.facebook.com/${FB_API_VERSION}/${FB_PIXEL_ID}/events`;
 
