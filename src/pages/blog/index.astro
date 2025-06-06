@@ -5,13 +5,27 @@ import Footer from '../../components/Footer.astro';
 
 // Categories for the blog
 const categories = [
-  { name: 'All', slug: 'all', count: 2 },
+  { name: 'All', slug: 'all', count: 3 },
+  { name: 'AI Automation', slug: 'ai-automation', count: 1 },
   { name: 'Web Design', slug: 'web-design', count: 1 },
   { name: 'SEO', slug: 'seo', count: 1 }
 ];
 
 // Featured blog posts
 const featuredPosts = [
+  {
+    title: "Why UK Businesses Are Ditching Zapier for AI Conversation Automation",
+    slug: "why-uk-businesses-ditching-zapier-ai-conversation-automation",
+    excerpt: "Discover why forward-thinking UK businesses are moving beyond traditional workflow builders like Zapier to revolutionary AI conversation automation. Learn how talking to AI is replacing complex drag-and-drop workflows.",
+    category: "AI Automation",
+    categorySlug: "ai-automation",
+    image: "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/63f967f0-ffcd-4712-4019-1247367b3500/public",
+    alt: "AI conversation automation interface showing natural language commands replacing complex workflow builders",
+    date: "June 6, 2025",
+    author: "Darran Goulding",
+    authorImage: "/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
+    featured: true
+  },
   {
     title: "10 Essential SEO Strategies for 2025",
     slug: "10-essential-seo-strategies-2025",
