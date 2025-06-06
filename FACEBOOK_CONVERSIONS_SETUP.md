@@ -14,7 +14,7 @@ Your Facebook Conversions API is now fully implemented with both server-side tra
 ### 1. Server-Side API Endpoint
 - **Location**: `/src/pages/api/facebook-conversions.js`
 - **URL**: `https://digitalvisibility.com/api/facebook-conversions`
-- **Pixel ID**: 1089849532958260 (Traffic pixel for ad campaigns)
+- **Pixel ID**: 1075086131348964 (Free website offer pixel - working configuration)
 - **Features**: 
   - Secure data hashing (SHA-256)
   - Event deduplication
@@ -38,7 +38,7 @@ Your Facebook Conversions API is now fully implemented with both server-side tra
 
 ### Step 1: Enable Facebook Test Events
 1. Go to [Facebook Events Manager](https://business.facebook.com/events_manager2/)
-2. Select your Traffic Pixel (ID: 1089849532958260)
+2. Select your Free Website Offer Pixel (ID: 1075086131348964)
 3. Click **"Test Events"** tab
 4. Copy your **Test Event Code**
 
@@ -196,7 +196,7 @@ Should return:
 ```json
 {
   "status": "Facebook Conversions API endpoint is running",
-  "pixel_id": "1089849532958260",
+  "pixel_id": "1075086131348964",
   "api_version": "v21.0"
 }
 ```
