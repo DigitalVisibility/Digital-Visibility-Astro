@@ -5,25 +5,45 @@ import Footer from "../../components/Footer.astro";
 
 // Site is now statically rendered
 export const prerender = true;
+
+const meta = {
+  title: "Digital Visibility - AI Search Engine Readiness Analyzer | Free Website Analysis Tool",
+  description: "Our expert-built analyzer evaluates your website's readiness for both traditional search engines AND AI platforms like ChatGPT, revealing hidden opportunities your competition is missing.",
+  keywords: "AI visibility analyzer, search engine readiness, website analysis tool, SEO analyzer, AI SEO, AEO, GEO optimization, free SEO tool, website audit tool, AI search optimization checker, ChatGPT optimization analyzer, Perplexity SEO check, AI content analyzer, website performance tester, SEO readiness test, AEO analyzer tool, GEO analyzer tool, search visibility checker, AI ranking factors, website grader, SEO audit free, AI search audit, website health check, digital visibility analyzer, search engine compatibility, AI platform readiness, competitive analysis tool, website optimization checker, content optimization analyzer, technical SEO analyzer, AI SEO checker, free website analyzer, online SEO analyzer, website evaluation tool, search optimization test, AI optimization scanner, website diagnostic tool, SEO performance analyzer, AI visibility test, search readiness assessment, website improvement tool, SEO opportunity finder, AI search compatibility, website scoring tool, SEO assessment free, AI platform optimizer, digital presence analyzer, search engine test, website review tool, SEO health checker, AI readiness assessment, Swansea SEO analyzer, Wales website analyzer, UK SEO tool",
+  image: "https://digitalvisibility.com/digital-visibility-logo-f.png"
+};
 ---
 
-<MainLayout title="Digital Visibility - AI Search Engine Readiness Analyzer | Free Website Analysis Tool">
-  <!-- SEO and Canonical Tags -->
+<MainLayout title={meta.title}>
+  <!-- Comprehensive Meta Tags -->
+  <meta name="description" content={meta.description} slot="head">
+  <meta name="keywords" content={meta.keywords} slot="head">
   <link rel="canonical" href="https://digitalvisibility.com/analyzer/" slot="head">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   <meta http-equiv="X-Robots-Tag" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- Geographic and Local SEO Tags -->
+  <meta name="geo.region" content="GB-WLS" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6429;-3.9372" slot="head">
+  <meta name="ICBM" content="51.6429, -3.9372" slot="head">
+  <meta name="location" content="Swansea, Wales, United Kingdom" slot="head">
+  <meta name="region" content="South Wales" slot="head">
+  <meta name="country" content="United Kingdom" slot="head">
+  <meta name="language" content="en-GB" slot="head">
   
   <!-- Publisher, Twitter and OpenGraph Tags -->
   <meta property="og:locale" content="en_GB" slot="head">
   <meta property="og:type" content="website" slot="head">
   <meta property="og:title" content="AI Search Engine Readiness Analyzer | Free Website Analysis Tool" slot="head">
-  <meta property="og:description" content="Free tool that evaluates your website's readiness for both traditional search engines AND AI platforms like ChatGPT, revealing hidden opportunities your competition is missing." slot="head">
+  <meta property="og:description" content={meta.description} slot="head">
   <meta property="og:url" content="https://digitalvisibility.com/analyzer/" slot="head">
   <meta property="og:site_name" content="Digital Visibility" slot="head">
-  <meta property="og:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  <meta property="og:image" content={meta.image} slot="head">
   <meta property="og:image:width" content="1200" slot="head">
   <meta property="og:image:height" content="630" slot="head">
   <meta property="og:image:type" content="image/png" slot="head">
@@ -32,95 +52,203 @@ export const prerender = true;
   <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
   <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
   <meta name="twitter:title" content="AI Search Engine Readiness Analyzer | Free Website Analysis Tool" slot="head">
-  <meta name="twitter:description" content="Free tool that evaluates your website's readiness for both traditional search engines AND AI platforms like ChatGPT, revealing hidden opportunities your competition is missing." slot="head">
-  <meta name="twitter:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  <meta name="twitter:description" content={meta.description} slot="head">
+  <meta name="twitter:image" content={meta.image} slot="head">
   
-  <meta name="description" content="Our expert-built analyzer evaluates your website's readiness for both traditional search engines AND AI platforms like ChatGPT, revealing hidden opportunities your competition is missing." slot="head">
-  <meta name="keywords" content="AI visibility analyzer, search engine readiness, website analysis tool, SEO analyzer, AI SEO, AEO, GEO optimization" slot="head">
   <meta name="publisher" content="Digital Visibility Limited" slot="head">
-  <meta name="author" content="Darran Goulding" slot="head">
   
-  <!-- Schema markup for improved SEO and AI visibility -->
+  <!-- Advanced AI and NLP Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="website analysis, SEO assessment, AI readiness check, optimization recommendations" slot="head">
+  <meta name="ai-target" content="website owners, digital marketers, SEO professionals, business owners, entrepreneurs, marketing managers" slot="head">
+  <meta name="ai-content-type" content="web application, analysis tool, free tool, diagnostic service" slot="head">
+  <meta name="ai-keywords" content={meta.keywords} slot="head">
+  <meta name="ai-business-type" content="digital marketing agency, SEO service provider, web analysis tool" slot="head">
+  <meta name="ai-service-area" content="Swansea, South Wales, United Kingdom, global online services" slot="head">
+  <meta name="ai-industry" content="digital marketing, SEO, web analytics, AI optimization, website analysis" slot="head">
+  <meta name="ai-features" content="free analysis, AI readiness check, SEO audit, performance testing, competitive analysis" slot="head">
+  <meta name="ai-pricing" content="free tool, no cost, complimentary analysis" slot="head">
+  <meta name="ai-entity-type" content="WebApplication, SoftwareApplication, Tool, Service" slot="head">
+  <meta name="ai-semantic-keywords" content="AI website analyzer Wales, SEO analysis tool UK, free website checker Swansea, AI optimization analyzer, search readiness tool" slot="head">
+  <meta name="ai-nlp-focus" content="tool features, analysis capabilities, optimization recommendations, performance metrics" slot="head">
+  <meta name="ai-response-style" content="analytical, diagnostic, recommendation-focused, actionable insights" slot="head">
+  <meta name="ai-content-depth" content="comprehensive analysis, detailed metrics, actionable recommendations" slot="head">
+  
+  <!-- Enhanced Schema Markup with @graph -->
   <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "AI Search Engine Readiness Analyzer",
-    "url": "https://digitalvisibility.com/analyzer/",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web browser",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "GBP",
-      "availability": "https://schema.org/InStock"
-    },
-    "description": "Our expert-built analyzer evaluates your website's readiness for both traditional search engines AND AI platforms like ChatGPT, revealing hidden opportunities your competition is missing.",
-    "datePublished": "2025-04-29",
-    "dateModified": "2025-04-29",
-    "provider": {
-      "@type": "Organization",
-      "name": "Digital Visibility Limited",
-      "url": "https://digitalvisibility.com"
-    },
-    "audience": {
-      "@type": "Audience",
-      "audienceType": "Website owners, Digital marketers, SEO professionals, Business owners"
-    },
-    "potentialAction": {
-      "@type": "UseAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://digitalvisibility.com/analyzer/"
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/analyzer/#webpage",
+        "url": "https://digitalvisibility.com/analyzer/",
+        "name": "AI Search Engine Readiness Analyzer | Free Website Analysis Tool",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "datePublished": "2025-04-29",
+        "dateModified": "2025-04-29",
+        "description": "Free tool that evaluates your website's readiness for both traditional search engines AND AI platforms like ChatGPT, revealing hidden opportunities your competition is missing.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Analyzer",
+              "item": "https://digitalvisibility.com/analyzer"
+            }
+          ]
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "contentUrl": "https://digitalvisibility.com/digital-visibility-logo-f.png"
+        },
+        "about": {
+          "@type": "WebApplication",
+          "@id": "https://digitalvisibility.com/analyzer/#webapplication"
+        }
       },
-      "name": "Analyze Your Website"
-    },
-    "featureList": [
-      "Human-Led Analysis",
-      "Actionable Strategy Roadmap",
-      "Competitive Edge Insights"
-    ]
-  }
-  </script>
-  
-  <!-- Additional Software Application Schema -->
-  <script type="application/ld+json" slot="head">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "AI Visibility Analyzer",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web browser",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "GBP"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "156"
-    },
-    "applicationSubCategory": "SEO Tools",
-    "screenshot": "https://digitalvisibility.com/analyzer-screenshot.webp",
-    "softwareHelp": {
-      "@type": "CreativeWork",
-      "url": "https://digitalvisibility.com/contact/"
-    },
-    "isAccessibleForFree": true,
-    "review": {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Sarah T."
+      {
+        "@type": "WebApplication",
+        "@id": "https://digitalvisibility.com/analyzer/#webapplication",
+        "name": "AI Search Engine Readiness Analyzer",
+        "url": "https://digitalvisibility.com/analyzer/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "GBP",
+          "availability": "https://schema.org/InStock"
+        },
+        "description": "Our expert-built analyzer evaluates your website's readiness for both traditional search engines AND AI platforms like ChatGPT, revealing hidden opportunities your competition is missing. Get a free comprehensive analysis with actionable recommendations.",
+        "datePublished": "2025-04-29",
+        "dateModified": "2025-04-29",
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "creator": {
+          "@type": "Person",
+          "@id": "https://digitalvisibility.com/about/darran-goulding/#person"
+        },
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Website owners, Digital marketers, SEO professionals, Business owners"
+        },
+        "potentialAction": {
+          "@type": "UseAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://digitalvisibility.com/analyzer/"
+          },
+          "name": "Analyze Your Website"
+        },
+        "featureList": [
+          "Human-Led Analysis",
+          "Actionable Strategy Roadmap",
+          "Competitive Edge Insights",
+          "AI Platform Readiness Check",
+          "Performance Optimization Analysis",
+          "Citation and Reference Analysis",
+          "Authority and Trust Signal Assessment",
+          "Free Comprehensive Report",
+          "No Registration Required",
+          "Instant Results"
+        ]
       },
-      "reviewBody": "Your analyzer found SEO issues our previous audit completely missed. We've implemented the suggestions and already seen a 27% traffic increase!",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://digitalvisibility.com/analyzer/#software",
+        "name": "AI Visibility Analyzer",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "GBP"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "156",
+          "bestRating": "5"
+        },
+        "applicationSubCategory": "SEO Tools",
+        "screenshot": "https://digitalvisibility.com/analyzer-screenshot.webp",
+        "softwareHelp": {
+          "@type": "CreativeWork",
+          "url": "https://digitalvisibility.com/contact/"
+        },
+        "isAccessibleForFree": true,
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Sarah T."
+            },
+            "reviewBody": "Your analyzer found SEO issues our previous audit completely missed. We've implemented the suggestions and already seen a 27% traffic increase!",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            }
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Mark Johnson"
+            },
+            "reviewBody": "The AI readiness insights were eye-opening. We had no idea we were missing so many opportunities with AI search engines.",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does the AI Search Engine Readiness Analyzer check?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our analyzer evaluates your website across multiple dimensions including traditional SEO factors, AI platform optimization (AEO), performance metrics, content structure, authority signals, and technical implementation. It provides a comprehensive assessment of how well your site performs for both traditional search engines and AI platforms like ChatGPT, Perplexity, and Claude."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the website analyzer really free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, our AI Search Engine Readiness Analyzer is completely free to use. There are no hidden charges, no credit card required, and no obligation to purchase any services. We provide this tool to help businesses understand their digital visibility opportunities."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does the analysis take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The initial automated analysis provides instant results within seconds. For websites that qualify, our team also provides a human-led review with additional insights and recommendations, typically delivered within 24-48 hours."
+            }
+          }
+        ]
       }
-    }
+    ]
   }
   </script>
   

@@ -2,235 +2,341 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
+
+const meta = {
+  title: "Human-Powered, AI-Accelerated Business Apps Platform - Digital Visibility",
+  description: "Access 50+ human-crafted business tools accelerated with AI. Our platform combines digital marketing, content creation, and business optimization tools in one solution.",
+  keywords: "business apps platform, AI tools, business optimization, digital marketing tools, content creation, AEO tools, AI-powered apps, marketing automation platform, business growth tools, content creation software, social media optimization tools, SEO tools, AEO optimization platform, AI content generator, image editing AI, video creation tools, business productivity apps, marketing suite, all-in-one business platform, affordable marketing tools, small business tools, entrepreneur tools, digital marketing software, AI marketing platform, content management system, social media manager, email marketing tools, customer relationship management, business analytics tools, AI research assistant, humanizer tool, deep research tool, conversational AI, business automation, marketing dashboard, AI-accelerated tools, human-powered AI, Swansea business tools, Wales marketing platform, UK business apps, digital transformation tools, business intelligence platform, marketing technology stack, SaaS platform, cloud-based business tools, web-based applications, no-code tools, drag-and-drop editor, visual content creator, brand management tools, campaign management, marketing workflow automation",
+  image: "https://digitalvisibility.com/super-ai-agent-app.webp"
+};
 ---
 
-<MainLayout title="Human-Powered, AI-Accelerated Business Apps Platform - Digital Visibility">
-  <!-- SEO and Canonical Tags -->
+<MainLayout title={meta.title}>
+  <!-- Comprehensive Meta Tags -->
+  <meta name="description" content={meta.description} slot="head">
+  <meta name="keywords" content={meta.keywords} slot="head">
   <link rel="canonical" href="https://digitalvisibility.com/apps/apps-platform/" slot="head">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
-  <meta name="description" content="Access 50+ human-crafted business tools accelerated with AI. Our platform combines digital marketing, content creation, and business optimization tools in one solution." slot="head">
-  <meta name="keywords" content="business apps platform, AI tools, business optimization, digital marketing tools, content creation, AEO tools" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-Robots-Tag" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   <meta name="author" content="Digital Visibility" slot="head">
+  
+  <!-- Geographic and Local SEO Tags -->
+  <meta name="geo.region" content="GB-WLS" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6429;-3.9372" slot="head">
+  <meta name="ICBM" content="51.6429, -3.9372" slot="head">
+  <meta name="location" content="Swansea, Wales, United Kingdom" slot="head">
+  <meta name="region" content="South Wales" slot="head">
+  <meta name="country" content="United Kingdom" slot="head">
+  <meta name="language" content="en-GB" slot="head">
   
   <!-- Publisher, Twitter and OpenGraph Tags -->
   <meta property="og:locale" content="en_GB" slot="head">
   <meta property="og:type" content="website" slot="head">
-  <meta property="og:title" content="Human-Powered, AI-Accelerated Business Apps Platform - Digital Visibility" slot="head">
-  <meta property="og:description" content="Access 50+ human-crafted business tools accelerated with AI. Our platform combines digital marketing, content creation, and business optimization tools in one solution." slot="head">
+  <meta property="og:title" content={meta.title} slot="head">
+  <meta property="og:description" content={meta.description} slot="head">
   <meta property="og:url" content="https://digitalvisibility.com/apps/apps-platform/" slot="head">
   <meta property="og:site_name" content="Digital Visibility" slot="head">
-  <meta property="og:image" content="https://digitalvisibility.com/super-ai-agent-app.webp" slot="head">
+  <meta property="og:image" content={meta.image} slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/webp" slot="head">
   <meta property="article:publisher" content="https://www.facebook.com/DigitalVisibilityUK" slot="head">
   <meta property="article:modified_time" content="2025-04-13T00:00:00+00:00" slot="head">
   
   <meta name="twitter:card" content="summary_large_image" slot="head">
   <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
   <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
-  <meta name="twitter:title" content="Human-Powered, AI-Accelerated Business Apps Platform - Digital Visibility" slot="head">
-  <meta name="twitter:description" content="Access 50+ human-crafted business tools accelerated with AI. Our platform combines digital marketing, content creation, and business optimization tools in one solution." slot="head">
-  <meta name="twitter:image" content="https://digitalvisibility.com/super-ai-agent-app.webp" slot="head">
+  <meta name="twitter:title" content={meta.title} slot="head">
+  <meta name="twitter:description" content={meta.description} slot="head">
+  <meta name="twitter:image" content={meta.image} slot="head">
   
   <meta name="publisher" content="Digital Visibility Limited" slot="head">
   
-  <!-- AI Engine Optimization Tags -->
-  <meta name="ai-purpose" content="business tools platform, apps catalogue, business optimization, content creation" slot="head">
-  <meta name="ai-target" content="business owners, marketers, entrepreneurs, content creators" slot="head">
-  <meta name="ai-content-type" content="product information, service description" slot="head">
-  <meta name="ai-keywords" content="human-powered AI tools, AI accelerated business apps, business productivity, content creation tools, AEO optimization, social media tools" slot="head">
-  <meta name="ai-business-type" content="digital marketing agency, business services provider" slot="head">
+  <!-- Advanced AI and NLP Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="business tools platform, apps catalogue, business optimization, content creation, marketing automation" slot="head">
+  <meta name="ai-target" content="business owners, marketers, entrepreneurs, content creators, small businesses, startups, digital agencies, freelancers" slot="head">
+  <meta name="ai-content-type" content="product information, service description, software platform, SaaS offering" slot="head">
+  <meta name="ai-keywords" content={meta.keywords} slot="head">
+  <meta name="ai-business-type" content="digital marketing agency, business services provider, SaaS platform, software company" slot="head">
   <meta name="ai-created-content" content="false" slot="head">
+  <meta name="ai-service-area" content="Swansea, South Wales, United Kingdom, global online services" slot="head">
+  <meta name="ai-industry" content="digital marketing, software development, business services, technology, AI tools" slot="head">
+  <meta name="ai-features" content="50+ business apps, AI-powered tools, content creation, social media optimization, business automation, marketing analytics" slot="head">
+  <meta name="ai-pricing" content="£40 per month, no contracts, cancel anytime, affordable pricing" slot="head">
+  <meta name="ai-entity-type" content="SoftwareApplication, Product, Service, Platform" slot="head">
+  <meta name="ai-semantic-keywords" content="AI business platform Wales, marketing automation tools UK, content creation software Swansea, business optimization suite, all-in-one marketing platform" slot="head">
+  <meta name="ai-nlp-focus" content="product features, platform capabilities, business benefits, tool descriptions, pricing information" slot="head">
+  <meta name="ai-response-style" content="informative, feature-rich, benefit-focused, conversion-oriented" slot="head">
+  <meta name="ai-content-depth" content="comprehensive platform overview, detailed app descriptions, clear pricing structure" slot="head">
   
-  <!-- Apps Platform Schema -->
-  <script type="application/ld+json">
+  <!-- Enhanced Schema Markup with @graph -->
+  <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Digital Visibility Business Apps Platform",
-    "applicationCategory": ["BusinessApplication", "DesignApplication", "WebApplication"],
-    "operatingSystem": "Web-based",
-    "offers": {
-      "@type": "Offer",
-      "price": "40.00",
-      "priceCurrency": "GBP",
-      "availability": "https://schema.org/InStock",
-      "description": "Monthly subscription, cancel anytime, no contract"
-    },
-    "description": "A comprehensive suite of 50+ human-powered, AI-accelerated business tools for marketing, content creation, and business optimization.",
-    "screenshot": "https://digitalvisibility.com/super-ai-agent-app.webp",
-    "softwareVersion": "2.0",
-    "creator": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "url": "https://digitalvisibility.com"
-    },
-
-    "hasPart": [
+    "@graph": [
       {
-        "@type": "SoftwareApplication",
-        "name": "Conversational Images",
-        "applicationCategory": "DesignApplication",
-        "operatingSystem": "Web-based",
-        "description": "Upload or create images and modify them through simple conversation. Describe your vision and watch as AI edits, enhances, or refines images to match your creative ideas."
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/apps/apps-platform/#webpage",
+        "url": "https://digitalvisibility.com/apps/apps-platform/",
+        "name": "Human-Powered, AI-Accelerated Business Apps Platform - Digital Visibility",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "datePublished": "2024-01-01",
+        "dateModified": "2025-04-13",
+        "description": "Access 50+ human-crafted business tools accelerated with AI. Our platform combines digital marketing, content creation, and business optimization tools in one affordable solution.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Apps Platform",
+              "item": "https://digitalvisibility.com/apps/apps-platform"
+            }
+          ]
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "contentUrl": "https://digitalvisibility.com/super-ai-agent-app.webp"
+        },
+        "about": {
+          "@type": "SoftwareApplication",
+          "@id": "https://digitalvisibility.com/apps/apps-platform/#software"
+        }
       },
       {
         "@type": "SoftwareApplication",
-        "name": "Blogs Manager",
-        "applicationCategory": "ContentApplication",
+        "@id": "https://digitalvisibility.com/apps/apps-platform/#software",
+        "name": "Digital Visibility Business Apps Platform",
+        "applicationCategory": ["BusinessApplication", "DesignApplication", "WebApplication"],
         "operatingSystem": "Web-based",
-        "description": "Create and share blog posts with ease using our intuitive platform. Our AI assistant helps complete your writing, making content creation more efficient and enjoyable."
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "Humanizer",
-        "applicationCategory": "ContentApplication",
-        "operatingSystem": "Web-based",
-        "description": "Transform AI-generated text into authentic, human-like writing with natural flow and subtle imperfections. Create engaging content that's undetectable as AI and resonates with your audience."
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "Deep Research",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web-based",
-        "description": "Streamline research, summarize complex topics, and uncover key insights with our AI research assistant. Ideal for academic work, market analysis, and knowledge-building projects."
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "Super Agent",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web-based",
-        "description": "Complete tasks effortlessly through simple messaging with your AI assistant. Connect via platform or WhatsApp for faster task handling and smarter automated workflows."
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "AEO Content Optimizer",
-        "applicationCategory": "SEOApplication",
-        "operatingSystem": "Web-based",
-        "description": "Enhance your content's visibility across all AI platforms with our comprehensive optimization suite. Transform existing content into AI-recommended material through advanced natural language processing."
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "Twitter (X) AEO Optimizer",
-        "applicationCategory": "SocialApplication",
-        "operatingSystem": "Web-based",
-        "description": "Create AI Engine Optimized profiles and content for Twitter (X) that enhance visibility, engagement, and discoverability on AI-driven platforms."
-      }
-    ]
-  }
-  </script>
-
-  <!-- Platform as Product Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Digital Visibility Business Apps Platform",
-    "description": "Access 50+ human-powered, AI-accelerated tools to boost your business growth. Our all-in-one platform combines marketing, content creation, and business optimization tools at an affordable price.",
-    "image": "https://digitalvisibility.com/super-ai-agent-app.webp",
-
-    "brand": {
-      "@type": "Brand",
-      "name": "Digital Visibility"
-    },
-    "offers": {
-      "@type": "Offer",
-      "url": "https://digitalvisibility.com/apps/apps-platform/",
-      "price": "40.00",
-      "priceCurrency": "GBP",
-      "availability": "https://schema.org/InStock",
-      "description": "Monthly subscription, cancel anytime, no contract",
-      "seller": {
-        "@type": "Organization",
-        "name": "Digital Visibility Limited"
-      }
-    },
-
-  }
-  </script>
-  
-  <!-- Content Categories Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": [
-      {
-        "@type": "ItemList",
-        "name": "Content Creation Tools",
-        "description": "Human-powered, AI-accelerated content creation tools for business marketing",
-        "itemListElement": [
+        "offers": {
+          "@type": "Offer",
+          "price": "40.00",
+          "priceCurrency": "GBP",
+          "availability": "https://schema.org/InStock",
+          "description": "Monthly subscription, cancel anytime, no contract",
+          "priceValidUntil": "2025-12-31"
+        },
+        "description": "A comprehensive suite of 50+ human-powered, AI-accelerated business tools for marketing, content creation, and business optimization. Transform your digital presence with our all-in-one platform designed for businesses in Swansea, Wales, UK and globally.",
+        "screenshot": "https://digitalvisibility.com/super-ai-agent-app.webp",
+        "softwareVersion": "2.0",
+        "creator": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "127",
+          "bestRating": "5"
+        },
+        "featureList": [
+          "50+ AI-powered business tools",
+          "Content creation suite",
+          "Social media optimization",
+          "AEO and SEO tools",
+          "Business automation",
+          "Marketing analytics",
+          "Customer management",
+          "No contracts required",
+          "Monthly subscription",
+          "24/7 platform access"
+        ],
+        "hasPart": [
           {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "AI Hero Image Generator",
-            "description": "Transform your website's visual impact with our AI-accelerated hero image generator."
+            "@type": "SoftwareApplication",
+            "name": "Conversational Images",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Web-based",
+            "description": "Upload or create images and modify them through simple conversation. Describe your vision and watch as AI edits, enhances, or refines images to match your creative ideas."
           },
           {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "AI Movie Generator",
-            "description": "Collaborate with AI to create amazing movies and marketing videos."
+            "@type": "SoftwareApplication",
+            "name": "Blogs Manager",
+            "applicationCategory": "ContentApplication",
+            "operatingSystem": "Web-based",
+            "description": "Create and share blog posts with ease using our intuitive platform. Our AI assistant helps complete your writing, making content creation more efficient and enjoyable."
           },
           {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "AEO Content Optimizer",
-            "description": "Enhance your content's visibility across all AI platforms with our optimization suite."
-          }
-        ]
-      },
-      {
-        "@type": "ItemList",
-        "name": "Social Media Tools",
-        "description": "Human-powered, AI-accelerated social media optimization tools",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Twitter (X) AEO Optimizer",
-            "description": "Create AI Engine Optimized profiles and content for Twitter (X)."
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "YouTube AEO Optimizer",
-            "description": "Design AI Engine Optimized YouTube profiles and content strategies."
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Instagram AEO Optimizer",
-            "description": "Maximize your Instagram impact with AI-powered content optimization."
-          }
-        ]
-      },
-      {
-        "@type": "ItemList",
-        "name": "Business Tools",
-        "description": "Human-powered, AI-accelerated business optimization tools",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Super Agent",
-            "description": "Complete tasks effortlessly through simple messaging with your AI assistant."
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Deep Research",
-            "description": "Streamline research, summarize complex topics, and uncover key insights."
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
+            "@type": "SoftwareApplication",
             "name": "Humanizer",
-            "description": "Transform AI-generated text into authentic, human-like writing."
+            "applicationCategory": "ContentApplication",
+            "operatingSystem": "Web-based",
+            "description": "Transform AI-generated text into authentic, human-like writing with natural flow and subtle imperfections. Create engaging content that's undetectable as AI and resonates with your audience."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Deep Research",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web-based",
+            "description": "Streamline research, summarize complex topics, and uncover key insights with our AI research assistant. Ideal for academic work, market analysis, and knowledge-building projects."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Super Agent",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web-based",
+            "description": "Complete tasks effortlessly through simple messaging with your AI assistant. Connect via platform or WhatsApp for faster task handling and smarter automated workflows."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "AEO Content Optimizer",
+            "applicationCategory": "SEOApplication",
+            "operatingSystem": "Web-based",
+            "description": "Enhance your content's visibility across all AI platforms with our comprehensive optimization suite. Transform existing content into AI-recommended material through advanced natural language processing."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Twitter (X) AEO Optimizer",
+            "applicationCategory": "SocialApplication",
+            "operatingSystem": "Web-based",
+            "description": "Create AI Engine Optimized profiles and content for Twitter (X) that enhance visibility, engagement, and discoverability on AI-driven platforms."
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "@id": "https://digitalvisibility.com/apps/apps-platform/#product",
+        "name": "Digital Visibility Business Apps Platform",
+        "description": "Access 50+ human-powered, AI-accelerated tools to boost your business growth. Our all-in-one platform combines marketing, content creation, and business optimization tools at an affordable price. Perfect for businesses in Swansea, South Wales, UK and beyond.",
+        "image": "https://digitalvisibility.com/super-ai-agent-app.webp",
+        "brand": {
+          "@type": "Brand",
+          "name": "Digital Visibility"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://digitalvisibility.com/apps/apps-platform/",
+          "price": "40.00",
+          "priceCurrency": "GBP",
+          "availability": "https://schema.org/InStock",
+          "description": "Monthly subscription, cancel anytime, no contract",
+          "priceValidUntil": "2025-12-31",
+          "seller": {
+            "@type": "Organization",
+            "@id": "https://digitalvisibility.com/#organization"
+          }
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Sarah Jenkins"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "datePublished": "2024-11-20",
+            "reviewBody": "The Digital Visibility apps platform has transformed how we handle our marketing. The AI tools save us hours every week and the results speak for themselves - our traffic has doubled!"
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Digital Visibility Apps Platform Categories",
+        "description": "Complete suite of business optimization tools organized by category",
+        "itemListElement": [
+          {
+            "@type": "ItemList",
+            "name": "Content Creation Tools",
+            "description": "Human-powered, AI-accelerated content creation tools for business marketing",
+            "numberOfItems": 15,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "AI Hero Image Generator",
+                "description": "Transform your website's visual impact with our AI-accelerated hero image generator."
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "AI Movie Generator",
+                "description": "Collaborate with AI to create amazing movies and marketing videos."
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "AEO Content Optimizer",
+                "description": "Enhance your content's visibility across all AI platforms with our optimization suite."
+              }
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "name": "Social Media Tools",
+            "description": "Human-powered, AI-accelerated social media optimization tools",
+            "numberOfItems": 12,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Twitter (X) AEO Optimizer",
+                "description": "Create AI Engine Optimized profiles and content for Twitter (X)."
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "YouTube AEO Optimizer",
+                "description": "Design AI Engine Optimized YouTube profiles and content strategies."
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Instagram AEO Optimizer",
+                "description": "Maximize your Instagram impact with AI-powered content optimization."
+              }
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "name": "Business Tools",
+            "description": "Human-powered, AI-accelerated business optimization tools",
+            "numberOfItems": 10,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Super Agent",
+                "description": "Complete tasks effortlessly through simple messaging with your AI assistant."
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Deep Research",
+                "description": "Streamline research, summarize complex topics, and uncover key insights."
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Humanizer",
+                "description": "Transform AI-generated text into authentic, human-like writing."
+              }
+            ]
           }
         ]
       }
     ]
   }
   </script>
+  
   <Navigation slot="nav" />
   
   <!-- Hero Section -->

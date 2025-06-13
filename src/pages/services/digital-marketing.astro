@@ -5,203 +5,335 @@ import Footer from '../../components/Footer.astro';
 ---
 
 <MainLayout title="Digital Marketing - Digital Visibility">
-  <!-- Digital Marketing Service Page Schema -->
+  <!-- Enhanced Digital Marketing Service Page Schema with @graph -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Digital Visibility - Digital Marketing Services",
-    "description": "Human-powered, AI-accelerated digital marketing services including SEO+AEO+GEO, PPC, social media, content marketing, email marketing, and analytics to drive engagement and boost ROI.",
-    "url": "https://digitalvisibility.com/services/digital-marketing/",
-    "logo": "https://digitalvisibility.com/logo.png",
-    "image": "https://digitalvisibility.com/Complete-Digital-Marketing.webp",
-    "telephone": "+4401792002497",
-    "email": "support@digitalvisibility.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "235 Peniel Green Road",
-      "addressLocality": "Llansamlet",
-      "addressRegion": "Swansea",
-      "postalCode": "SA7 9BA",
-      "addressCountry": "GB"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "51.6553959",
-      "longitude": "-3.9336144"
-    },
-    "openingHours": [
-      "Mo-Fr 08:00-20:00",
-      "Sa 09:00-17:00",
-      "Su 10:00-16:00"
-    ],
-    "priceRange": "£40-£800",
-    "currenciesAccepted": "GBP",
-    "paymentAccepted": "Cash, Credit Card, Bank Transfer, Direct Debit",
-    "areaServed": [
+    "@graph": [
       {
-        "@type": "Place",
-        "name": "Swansea"
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/services/digital-marketing/#webpage",
+        "url": "https://digitalvisibility.com/services/digital-marketing/",
+        "name": "AI-Powered Digital Marketing Services | SEO, PPC, Social Media | Digital Visibility",
+        "description": "Transform your business with AI-powered digital marketing services from Digital Visibility. Expert SEO, PPC, social media marketing, content creation, email campaigns, and analytics. Human expertise optimized with AI for maximum ROI. Serving Swansea, Wales, and globally.",
+        "keywords": ["digital marketing services", "SEO agency Wales", "PPC management", "social media marketing", "content marketing", "email marketing", "AI-powered marketing", "digital visibility", "marketing ROI", "Swansea marketing agency", "Welsh digital marketing", "Google Ads specialist", "Facebook advertising", "Instagram marketing", "LinkedIn advertising", "TikTok marketing", "content strategy", "marketing analytics", "conversion optimization"],
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "about": {
+          "@id": "https://digitalvisibility.com/services/digital-marketing/#service"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://digitalvisibility.com/services/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Digital Marketing",
+              "item": "https://digitalvisibility.com/services/digital-marketing/"
+            }
+          ]
+        }
       },
       {
-        "@type": "Place",
-        "name": "Wales"
+        "@type": "ProfessionalService",
+        "@id": "https://digitalvisibility.com/services/digital-marketing/#service",
+        "name": "Digital Visibility - Digital Marketing Services",
+        "alternateName": "Digital Marketing Agency Swansea",
+        "description": "Human-powered, AI-accelerated digital marketing services including SEO+AEO+GEO, PPC, social media, content marketing, email marketing, and analytics to drive engagement and boost ROI.",
+        "url": "https://digitalvisibility.com/services/digital-marketing/",
+        "logo": "https://digitalvisibility.com/logo.webp",
+        "image": "https://digitalvisibility.com/Complete-Digital-Marketing.webp",
+        "telephone": "+4401792002497",
+        "email": "support@digitalvisibility.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "235 Peniel Green Road",
+          "addressLocality": "Llansamlet",
+          "addressRegion": "Swansea",
+          "postalCode": "SA7 9BA",
+          "addressCountry": "GB"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "51.6399",
+          "longitude": "-3.8936"
+        },
+        "openingHours": [
+          "Mo-Fr 08:00-20:00",
+          "Sa 09:00-17:00",
+          "Su 10:00-16:00"
+        ],
+        "priceRange": "£40/hour - Special packages available",
+        "currenciesAccepted": "GBP",
+        "paymentAccepted": "Cash, Credit Card, Bank Transfer, Direct Debit",
+        "areaServed": [
+          {
+            "@type": "GeoCircle",
+            "name": "Swansea area",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": "51.6214",
+              "longitude": "-3.9436"
+            },
+            "geoRadius": "50000"
+          },
+          {
+            "@type": "Place",
+            "name": "Wales"
+          },
+          {
+            "@type": "Place",
+            "name": "United Kingdom"
+          },
+          {
+            "@type": "Place",
+            "name": "Global Remote Services"
+          }
+        ],
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "GBP",
+          "lowPrice": "40",
+          "highPrice": "800",
+          "offerCount": "6",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "SEO Services",
+              "description": "Search Engine Optimization services including technical SEO, content optimization, and link building",
+              "price": "40.00",
+              "priceCurrency": "GBP",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "40.00",
+                "priceCurrency": "GBP",
+                "unitText": "hour"
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "PPC Management",
+              "description": "Pay-Per-Click advertising management across Google Ads, Bing Ads, and social media platforms",
+              "price": "40.00",
+              "priceCurrency": "GBP",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "40.00",
+                "priceCurrency": "GBP",
+                "unitText": "hour"
+              }
+            }
+          ]
+        },
+        "serviceOutput": {
+          "@type": "Thing",
+          "name": "Improved Digital Visibility and Marketing ROI",
+          "description": "Increased website traffic, higher conversion rates, improved brand awareness, and measurable ROI"
+        },
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/"
       },
       {
-        "@type": "Place",
-        "name": "United Kingdom"
-      },
-      {
-        "@type": "Place",
-        "name": "Global"
+        "@type": "ItemList",
+        "@id": "https://digitalvisibility.com/services/digital-marketing/#services-list",
+        "name": "Digital Marketing Services Offered",
+        "description": "Comprehensive list of digital marketing services provided by Digital Visibility",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Service",
+              "@id": "https://digitalvisibility.com/services/digital-marketing/#seo",
+              "name": "Search Engine Optimization (SEO)",
+              "description": "Improve your website's visibility in search results with our AI-powered SEO strategies that adapt to algorithm changes.",
+              "offers": {
+                "@type": "Offer",
+                "price": "40.00",
+                "priceCurrency": "GBP",
+                "unitText": "hour"
+              },
+              "serviceType": "SEO Services",
+              "provider": {
+                "@id": "https://digitalvisibility.com/#organization"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Service",
+              "@id": "https://digitalvisibility.com/services/digital-marketing/#ppc",
+              "name": "PPC & Paid Media",
+              "description": "Maximize your advertising ROI with targeted paid campaigns across search, social, and display networks.",
+              "offers": {
+                "@type": "Offer",
+                "price": "40.00",
+                "priceCurrency": "GBP",
+                "unitText": "hour"
+              },
+              "serviceType": "PPC Advertising",
+              "provider": {
+                "@id": "https://digitalvisibility.com/#organization"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Service",
+              "@id": "https://digitalvisibility.com/services/digital-marketing/#social-media",
+              "name": "Social Media Marketing",
+              "description": "Build brand awareness and engagement with strategic social media marketing across all major platforms.",
+              "offers": {
+                "@type": "Offer",
+                "price": "40.00",
+                "priceCurrency": "GBP",
+                "unitText": "hour"
+              },
+              "serviceType": "Social Media Marketing",
+              "provider": {
+                "@id": "https://digitalvisibility.com/#organization"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Service",
+              "@id": "https://digitalvisibility.com/services/digital-marketing/#content",
+              "name": "Content Marketing",
+              "description": "Engage your audience with valuable, relevant content that drives traffic and nurtures leads through the sales funnel.",
+              "offers": {
+                "@type": "Offer",
+                "price": "40.00",
+                "priceCurrency": "GBP",
+                "unitText": "hour"
+              },
+              "serviceType": "Content Marketing",
+              "provider": {
+                "@id": "https://digitalvisibility.com/#organization"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "Service",
+              "@id": "https://digitalvisibility.com/services/digital-marketing/#email",
+              "name": "Email Marketing",
+              "description": "Nurture customer relationships and drive conversions with personalized, automated email marketing campaigns.",
+              "offers": {
+                "@type": "Offer",
+                "price": "40.00",
+                "priceCurrency": "GBP",
+                "unitText": "hour"
+              },
+              "serviceType": "Email Marketing",
+              "provider": {
+                "@id": "https://digitalvisibility.com/#organization"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "Service",
+              "@id": "https://digitalvisibility.com/services/digital-marketing/#analytics",
+              "name": "Analytics & Reporting",
+              "description": "Make data-driven decisions with comprehensive analytics and actionable insights on your marketing performance.",
+              "offers": {
+                "@type": "Offer",
+                "price": "40.00",
+                "priceCurrency": "GBP",
+                "unitText": "hour"
+              },
+              "serviceType": "Analytics Services",
+              "provider": {
+                "@id": "https://digitalvisibility.com/#organization"
+              }
+            }
+          }
+        ]
       }
     ]
   }
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Digital Marketing",
-    "provider": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "url": "https://digitalvisibility.com"
-    },
-    "description": "Drive engagement, boost conversions, and increase ROI with our data-driven digital marketing services optimized by artificial intelligence.",
-    "offers": {
-      "@type": "Offer",
-      "price": "40.00",
-      "priceCurrency": "GBP",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "price": "40.00",
-        "priceCurrency": "GBP",
-        "unitText": "hour"
-      }
-    },
-    "serviceOutput": {
-      "@type": "Thing",
-      "name": "Improved Digital Visibility and Marketing ROI"
-    },
-    "termsOfService": "https://digitalvisibility.com/terms-conditions/"
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "Service",
-          "name": "Search Engine Optimization",
-          "description": "Improve your website's visibility in search results with our AI-powered SEO strategies that adapt to algorithm changes.",
-          "offers": {
-            "@type": "Offer",
-            "price": "40.00",
-            "priceCurrency": "GBP",
-            "unitText": "hour"
-          },
-          "serviceType": "SEO"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "Service",
-          "name": "PPC & Paid Media",
-          "description": "Maximize your advertising ROI with targeted paid campaigns across search, social, and display networks.",
-          "offers": {
-            "@type": "Offer",
-            "price": "40.00",
-            "priceCurrency": "GBP",
-            "unitText": "hour"
-          },
-          "serviceType": "PPC Advertising"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "Service",
-          "name": "Social Media Marketing",
-          "description": "Build brand awareness and engagement with strategic social media marketing across all major platforms.",
-          "offers": {
-            "@type": "Offer",
-            "price": "40.00",
-            "priceCurrency": "GBP",
-            "unitText": "hour"
-          },
-          "serviceType": "Social Media Marketing"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "item": {
-          "@type": "Service",
-          "name": "Content Marketing",
-          "description": "Engage your audience with valuable, relevant content that drives traffic and nurtures leads through the sales funnel.",
-          "offers": {
-            "@type": "Offer",
-            "price": "40.00",
-            "priceCurrency": "GBP",
-            "unitText": "hour"
-          },
-          "serviceType": "Content Marketing"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 5,
-        "item": {
-          "@type": "Service",
-          "name": "Email Marketing",
-          "description": "Nurture customer relationships and drive conversions with personalized, automated email marketing campaigns.",
-          "offers": {
-            "@type": "Offer",
-            "price": "40.00",
-            "priceCurrency": "GBP",
-            "unitText": "hour"
-          },
-          "serviceType": "Email Marketing"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 6,
-        "item": {
-          "@type": "Service",
-          "name": "Analytics & Reporting",
-          "description": "Make data-driven decisions with comprehensive analytics and actionable insights on your marketing performance.",
-          "offers": {
-            "@type": "Offer",
-            "price": "40.00",
-            "priceCurrency": "GBP",
-            "unitText": "hour"
-          },
-          "serviceType": "Analytics Services"
-        }
-      }
-    ]
-  }
-  </script>
-
+  <!-- SEO and Canonical Tags -->
+  <link rel="canonical" href="https://digitalvisibility.com/services/digital-marketing/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  
+  <!-- Main Meta Description and Keywords -->
+  <meta name="description" content="Transform your business with AI-powered digital marketing services from Digital Visibility. Expert SEO, PPC, social media marketing, content creation, email campaigns, and analytics. Human expertise optimized with AI for maximum ROI. Serving Swansea, Wales, and globally. Book your free consultation today." slot="head">
+  <meta name="keywords" content="digital marketing services Swansea, SEO agency Wales, PPC management UK, social media marketing Wales, content marketing services, email marketing agency UK, AI-powered digital marketing, digital visibility experts, marketing ROI optimization, local SEO Swansea, search engine optimization Wales, paid advertising management, Google Ads specialist Swansea, Facebook advertising agency Wales, Instagram marketing UK, TikTok advertising Swansea, LinkedIn advertising Welsh businesses, content strategy development, blog writing services Wales, email automation specialists UK, marketing analytics Swansea, data-driven marketing Wales, digital marketing small businesses, enterprise digital marketing solutions, affordable digital marketing Swansea, Welsh marketing agency, conversion rate optimization, web traffic experts Swansea, lead generation marketing Wales, AI marketing technology, PPC campaign management, social media content creation, marketing automation services, digital advertising agency, online marketing consultants" slot="head">
+  
+  <!-- Publisher, Twitter and OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="AI-Powered Digital Marketing Services | SEO, PPC, Social Media | Digital Visibility" slot="head">
+  <meta property="og:description" content="Transform your business with AI-powered digital marketing from Digital Visibility. Expert SEO, PPC, social media, content marketing, and analytics. Serving Swansea, Wales, and globally." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/services/digital-marketing/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/Complete-Digital-Marketing.webp" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/webp" slot="head">
+  
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="AI-Powered Digital Marketing Services | Digital Visibility" slot="head">
+  <meta name="twitter:description" content="Transform your business with AI-powered digital marketing. Expert SEO, PPC, social media, content marketing, and analytics. Book your free consultation today." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/Complete-Digital-Marketing.webp" slot="head">
+  
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- Geographic Meta Tags -->
+  <meta name="geo.region" content="GB-SWA" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6399;-3.8936" slot="head">
+  <meta name="ICBM" content="51.6399, -3.8936" slot="head">
+  
   <!-- AI Optimization Meta Tags for Enhanced AI Engine Recognition -->
-  <meta name="ai-purpose" content="digital marketing services, SEO, PPC, social media marketing, content marketing, email marketing, analytics">
-  <meta name="ai-target" content="business owners, marketing managers, entrepreneurs, Swansea businesses, Welsh companies, UK enterprises, global businesses seeking digital growth">
-  <meta name="ai-content-type" content="service page, digital marketing information, marketing services">
-  <meta name="ai-business-type" content="digital marketing agency, SEO company, social media marketing, PPC advertising, content creation service">
-  <meta name="ai-service-area" content="Swansea, Llansamlet, South Wales, West Wales, United Kingdom, global clients">
-  <meta name="ai-technology" content="AI-powered marketing, data-driven strategies, predictive analytics, automated campaigns">
-  <meta name="ai-keywords" content="digital marketing services Swansea, SEO agency Wales, PPC management UK, social media marketing Wales, content marketing services Swansea, email marketing agency UK, AI-powered digital marketing, digital visibility experts, marketing ROI optimization, local SEO Swansea, search engine optimization Wales, paid advertising management, Google Ads specialist Swansea, Facebook advertising agency Wales, Instagram marketing UK, TikTok advertising Swansea, Twitter marketing services, LinkedIn advertising for Welsh businesses, content strategy development, blog writing services Wales, email automation specialists UK, marketing analytics Swansea, data-driven marketing Wales, digital marketing for small businesses, enterprise digital marketing solutions, affordable digital marketing Swansea, Welsh marketing agency, campaign performance tracking, conversion rate optimization services, Swansea web traffic experts, lead generation marketing Wales, AI marketing technology">
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="digital marketing services, SEO, PPC, social media marketing, content marketing, email marketing, analytics" slot="head">
+  <meta name="ai-target" content="business owners, marketing managers, entrepreneurs, Swansea businesses, Welsh companies, UK enterprises, global businesses seeking digital growth" slot="head">
+  <meta name="ai-content-type" content="service page, digital marketing information, marketing services" slot="head">
+  <meta name="ai-business-type" content="digital marketing agency, SEO company, social media marketing, PPC advertising, content creation service" slot="head">
+  <meta name="ai-service-area" content="Swansea, Llansamlet, South Wales, West Wales, United Kingdom, global clients" slot="head">
+  <meta name="ai-technology" content="AI-powered marketing, data-driven strategies, predictive analytics, automated campaigns" slot="head">
+  <meta name="ai-keywords" content="digital marketing services Swansea, SEO agency Wales, PPC management UK, social media marketing Wales, content marketing services Swansea, email marketing agency UK, AI-powered digital marketing, digital visibility experts, marketing ROI optimization, local SEO Swansea, search engine optimization Wales, paid advertising management, Google Ads specialist Swansea, Facebook advertising agency Wales, Instagram marketing UK, TikTok advertising Swansea, Twitter marketing services, LinkedIn advertising for Welsh businesses, content strategy development, blog writing services Wales, email automation specialists UK, marketing analytics Swansea, data-driven marketing Wales, digital marketing for small businesses, enterprise digital marketing solutions, affordable digital marketing Swansea, Welsh marketing agency, campaign performance tracking, conversion rate optimization services, Swansea web traffic experts, lead generation marketing Wales, AI marketing technology" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="professional digital marketing services page, comprehensive marketing solutions" slot="head">
+  <meta name="ai-industry" content="digital marketing, online advertising, SEO services, PPC advertising, social media marketing, content marketing" slot="head">
+  <meta name="ai-services" content="search engine optimization, pay-per-click advertising, social media management, content creation, email marketing campaigns, marketing analytics, conversion optimization, local SEO, technical SEO, link building, Google Ads management, Facebook advertising, Instagram marketing, LinkedIn advertising, TikTok marketing, content strategy, blog writing, email automation, marketing reporting" slot="head">
+  <meta name="ai-audience" content="small businesses, medium enterprises, large corporations, startups, e-commerce businesses, B2B companies, B2C companies, local businesses, marketing managers, business owners" slot="head">
+  <meta name="ai-intent" content="hire digital marketing agency, improve online presence, increase website traffic, generate leads, boost sales, improve ROI, get marketing consultation" slot="head">
+  <meta name="ai-unique-value" content="human-powered AI-accelerated marketing, data-driven strategies, transparent reporting, local expertise with global reach, comprehensive marketing solutions, affordable pricing at £40/hour" slot="head">
 
   <Navigation slot="nav" />
   

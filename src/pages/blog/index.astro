@@ -3,6 +3,20 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 
+// SEO Meta Data
+export const meta = {
+  title: "Digital Visibility Blog - AI Automation, Web Design & SEO Insights",
+  description: "Expert insights on AI conversation automation, SEO strategies for 2025, and revolutionary web design techniques. Learn from Royal Academy Award winner Darran Goulding and the Digital Visibility team.",
+  keywords: "AI conversation automation blog, SEO strategies 2025, web design trends, digital marketing insights, Claude MCP tutorials, business automation tips, Swansea tech blog, UK digital agency blog, AI workflow optimization, SEO best practices, website design innovation, digital transformation insights, marketing technology blog, business efficiency tips, AI implementation guides",
+  canonical: "https://digitalvisibility.com/blog/",
+  ogTitle: "Digital Visibility Blog | AI Automation, Web Design & SEO Insights",
+  ogDescription: "Expert insights on AI conversation automation, SEO strategies, and web design innovation. Learn from industry leaders transforming UK businesses.",
+  ogImage: "https://digitalvisibility.com/blog-og-image.webp",
+  twitterTitle: "Digital Visibility Blog | Expert Digital Marketing Insights",
+  twitterDescription: "AI automation, SEO strategies, and web design trends from UK's leading digital agency.",
+  twitterImage: "https://digitalvisibility.com/blog-twitter-image.webp"
+};
+
 // Categories for the blog
 const categories = [
   { name: 'All', slug: 'all', count: 3 },
@@ -58,15 +72,69 @@ const featuredPosts = [
 const recentPosts = featuredPosts;
 ---
 
-<MainLayout title="Digital Visibility Blog - Web Design and SEO Insights" 
-  description="Discover the future of website design with AI and master essential SEO strategies for 2025. Expert insights on digital visibility for your business."
-  metaOgImage="/blog/blog-og-image.webp"
-  metaTwitterImage="/blog/blog-twitter-image.webp"
+<MainLayout title={meta.title} 
+  description={meta.description}
+  metaOgImage={meta.ogImage}
+  metaTwitterImage={meta.twitterImage}
 >
-  <Navigation slot="nav" />
+  <!-- SEO and Canonical Tags -->
+  <link rel="canonical" href={meta.canonical} slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  
+  <!-- Main Meta Tags -->
+  <meta name="keywords" content={meta.keywords} slot="head">
+  
+  <!-- Publisher and Author Tags -->
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- Geographic Meta Tags -->
+  <meta name="geo.region" content="GB-SWA" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6399;-3.8936" slot="head">
+  <meta name="ICBM" content="51.6399, -3.8936" slot="head">
+  
+  <!-- Enhanced Open Graph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content={meta.ogTitle} slot="head">
+  <meta property="og:description" content={meta.ogDescription} slot="head">
+  <meta property="og:url" content={meta.canonical} slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/webp" slot="head">
+  
+  <!-- Enhanced Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content={meta.twitterTitle} slot="head">
+  <meta name="twitter:description" content={meta.twitterDescription} slot="head">
+  
+  <!-- AI Optimization Meta Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="blog content, industry insights, educational articles, business tips" slot="head">
+  <meta name="ai-target" content="business owners, marketers, developers, entrepreneurs, digital professionals, UK businesses" slot="head">
+  <meta name="ai-content-type" content="blog listing page, article directory, content hub" slot="head">
+  <meta name="ai-business-type" content="digital agency blog, marketing insights platform, business education resource" slot="head">
+  <meta name="ai-service-area" content="Swansea, Wales, United Kingdom, global audience" slot="head">
+  <meta name="ai-expertise" content="AI automation, SEO strategies, web design, digital marketing, business transformation" slot="head">
+  <meta name="ai-keywords" content="AI conversation automation insights, Claude MCP tutorials, SEO best practices 2025, web design trends, digital marketing strategies, business automation guides, UK tech blog, Welsh digital agency insights" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="professional blog, industry insights, educational content platform" slot="head">
+  <meta name="ai-industry" content="digital marketing, web development, AI technology, business automation" slot="head">
+  <meta name="ai-topics" content="AI conversation automation, Claude MCP implementation, SEO strategies, web design innovation, digital transformation, marketing technology, business efficiency" slot="head">
+  <meta name="ai-audience" content="business owners, CTOs, marketing managers, web developers, entrepreneurs, digital professionals" slot="head">
+  <meta name="ai-intent" content="learn industry trends, discover best practices, get expert insights, stay updated on digital innovations" slot="head">
+  <meta name="ai-unique-value" content="Royal Academy Award winner insights, real implementation case studies, UK-focused digital expertise, proven strategies with measurable results" slot="head">
   
   <!-- RSS Feed Link for discoverability -->
   <link rel="alternate" type="application/rss+xml" title="Digital Visibility Blog RSS Feed" href="/feed.xml" slot="head" />
+  
+  <Navigation slot="nav" />
   
   <!-- Hero Section -->
   <section class="py-16 relative" style="background-image: url('/digital visibility blog background.webp'); background-size: cover; background-position: center;">
@@ -279,55 +347,135 @@ const recentPosts = featuredPosts;
     });
   </script>
   
-  <!-- Structured Data for Blog -->
+  <!-- Enhanced Blog Schema with @graph -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Blog",
-      "headline": "Digital Visibility Blog - Web Design and SEO Insights",
-      "description": "Discover the future of website design with AI and master essential SEO strategies for 2025. Expert insights on digital visibility for your business.",
-      "url": "https://digitalvisibility.com/blog/",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Digital Visibility",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://digitalvisibility.com/logo.png"
-        }
-      },
-      "blogPost": [
+      "@graph": [
         {
-          "@type": "BlogPosting",
-          "headline": "10 Essential SEO Strategies for 2025",
-          "description": "Discover the most effective SEO tactics for 2025 to keep your website visible and attract more visitors. Learn practical implementation strategies for these modern SEO approaches.",
-          "url": "https://digitalvisibility.com/blog/10-essential-seo-strategies-2025/",
-          "datePublished": "2025-04-29T00:00:00+00:00",
-          "author": {
-            "@type": "Person",
-            "name": "Darran Goulding"
+          "@type": "WebPage",
+          "@id": "https://digitalvisibility.com/blog/#webpage",
+          "url": "https://digitalvisibility.com/blog/",
+          "name": "Digital Visibility Blog - AI Automation, Web Design & SEO Insights",
+          "description": "Expert insights on AI conversation automation, SEO strategies for 2025, and revolutionary web design techniques. Learn from Royal Academy Award winner Darran Goulding.",
+          "keywords": ["AI automation", "SEO strategies", "web design", "digital marketing", "Claude MCP", "business automation"],
+          "isPartOf": {
+            "@id": "https://digitalvisibility.com/#website"
           },
-          "image": {
-            "@type": "ImageObject",
-            "url": "https://huskycarecorner.com/autopilot/3/10-key-seo-strategies-for-2025-implementation-wct.jpg",
-            "width": 1200,
-            "height": 630
+          "about": {
+            "@id": "https://digitalvisibility.com/blog/#blog"
+          },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://digitalvisibility.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://digitalvisibility.com/blog/"
+              }
+            ]
           }
         },
         {
-          "@type": "BlogPosting",
-          "headline": "How AI is Revolutionizing Website Design in 2025",
-          "description": "Discover how artificial intelligence is transforming web design, making websites more personalized, accessible, and efficient. Learn about the latest AI tools and trends reshaping the digital landscape.",
-          "url": "https://digitalvisibility.com/blog/how-ai-is-revolutionizing-website-design/",
-          "datePublished": "2025-04-29T00:00:00+00:00",
-          "author": {
-            "@type": "Person",
-            "name": "Darran Goulding"
+          "@type": "Blog",
+          "@id": "https://digitalvisibility.com/blog/#blog",
+          "url": "https://digitalvisibility.com/blog/",
+          "name": "Digital Visibility Blog",
+          "description": "Expert insights on AI conversation automation, SEO strategies, and web design innovation from UK's leading digital agency.",
+          "publisher": {
+            "@id": "https://digitalvisibility.com/#organization"
           },
-          "image": {
-            "@type": "ImageObject",
-            "url": "https://huskycarecorner.com/autopilot/3/how-ai-is-revolutionising-web-design-mmu.jpg",
-            "width": 1200,
-            "height": 630
+          "blogPost": [
+            {
+              "@type": "BlogPosting",
+              "@id": "https://digitalvisibility.com/blog/why-uk-businesses-ditching-zapier-ai-conversation-automation/",
+              "headline": "Why UK Businesses Are Ditching Zapier for AI Conversation Automation",
+              "description": "Discover why forward-thinking UK businesses are moving beyond traditional workflow builders like Zapier to revolutionary AI conversation automation.",
+              "url": "https://digitalvisibility.com/blog/why-uk-businesses-ditching-zapier-ai-conversation-automation/",
+              "datePublished": "2025-06-06T00:00:00+00:00",
+              "author": {
+                "@type": "Person",
+                "@id": "https://digitalvisibility.com/about/darran-goulding/#person",
+                "name": "Darran Goulding",
+                "url": "https://digitalvisibility.com/about/darran-goulding/"
+              },
+              "publisher": {
+                "@id": "https://digitalvisibility.com/#organization"
+              },
+              "image": {
+                "@type": "ImageObject",
+                "url": "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/63f967f0-ffcd-4712-4019-1247367b3500/public",
+                "width": 1200,
+                "height": 630
+              },
+              "articleSection": "AI Automation",
+              "keywords": ["AI automation", "Claude MCP", "Zapier alternative", "conversation automation", "workflow automation"]
+            },
+            {
+              "@type": "BlogPosting",
+              "@id": "https://digitalvisibility.com/blog/10-essential-seo-strategies-2025/",
+              "headline": "10 Essential SEO Strategies for 2025",
+              "description": "Discover the most effective SEO tactics for 2025 to keep your website visible and attract more visitors. Learn practical implementation strategies.",
+              "url": "https://digitalvisibility.com/blog/10-essential-seo-strategies-2025/",
+              "datePublished": "2025-04-29T00:00:00+00:00",
+              "author": {
+                "@type": "Person",
+                "@id": "https://digitalvisibility.com/about/darran-goulding/#person",
+                "name": "Darran Goulding"
+              },
+              "publisher": {
+                "@id": "https://digitalvisibility.com/#organization"
+              },
+              "image": {
+                "@type": "ImageObject",
+                "url": "https://huskycarecorner.com/autopilot/3/10-key-seo-strategies-for-2025-implementation-wct.jpg",
+                "width": 1200,
+                "height": 630
+              },
+              "articleSection": "SEO",
+              "keywords": ["SEO strategies", "search engine optimization", "2025 SEO", "digital marketing", "website visibility"]
+            },
+            {
+              "@type": "BlogPosting",
+              "@id": "https://digitalvisibility.com/blog/how-ai-is-revolutionizing-website-design/",
+              "headline": "How AI is Revolutionizing Website Design in 2025",
+              "description": "Discover how artificial intelligence is transforming web design, making websites more personalized, accessible, and efficient.",
+              "url": "https://digitalvisibility.com/blog/how-ai-is-revolutionizing-website-design/",
+              "datePublished": "2025-04-29T00:00:00+00:00",
+              "author": {
+                "@type": "Person",
+                "@id": "https://digitalvisibility.com/about/darran-goulding/#person",
+                "name": "Darran Goulding"
+              },
+              "publisher": {
+                "@id": "https://digitalvisibility.com/#organization"
+              },
+              "image": {
+                "@type": "ImageObject",
+                "url": "https://huskycarecorner.com/autopilot/3/how-ai-is-revolutionising-web-design-mmu.jpg",
+                "width": 1200,
+                "height": 630
+              },
+              "articleSection": "Web Design",
+              "keywords": ["AI web design", "website design", "artificial intelligence", "web development", "UX design"]
+            }
+          ]
+        },
+        {
+          "@type": "CollectionPage",
+          "@id": "https://digitalvisibility.com/blog/#collectionpage",
+          "url": "https://digitalvisibility.com/blog/",
+          "name": "Digital Visibility Blog Articles",
+          "description": "Collection of expert articles on AI automation, SEO strategies, and web design from Digital Visibility",
+          "mainEntity": {
+            "@id": "https://digitalvisibility.com/blog/#blog"
           }
         }
       ]

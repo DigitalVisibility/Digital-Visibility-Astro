@@ -4,134 +4,388 @@ import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 ---
 
-<MainLayout title="About Digital Visibility | Concept to Creation | SEO+AEO+GEO">
-  <!-- About Page Schema -->
-  <script type="application/ld+json">
+<MainLayout title="About Digital Visibility | Award-Winning Digital Agency in Swansea">
+  <!-- SEO and Canonical Tags -->
+  <link rel="canonical" href="https://digitalvisibility.com/about/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow" slot="head">
+  <meta http-equiv="X-Robots-Tag" content="index, follow" slot="head">
+  
+  <!-- Core Meta Tags -->
+  <meta name="keywords" content="Digital Visibility about us, Swansea digital agency team, Darran Goulding Royal Academy of Engineering, Welsh digital marketing experts, people-powered digital solutions, AI-accelerated marketing agency, digital transformation specialists Wales, SEO AEO GEO company Swansea, award-winning digital agency South Wales, business transformation experts UK, digital marketing values, innovation-driven company Wales, forward-thinking digital agency, results-focused marketing team, integrity-based business services Swansea, continuous improvement agency, concept to creation company, digital product development Wales, app development team Swansea, product design specialists UK" slot="head">
+  <meta name="description" content="Meet Digital Visibility - Swansea's award-winning digital agency. Led by Royal Academy of Engineering winner Darran Goulding, our people-powered team delivers complete digital transformation with SEO+AEO+GEO, app development & product design. Proven results, innovative solutions." slot="head">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/about/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:title" content="About Digital Visibility | People-Powered Digital Solutions | Swansea" slot="head">
+  <meta property="og:description" content="Award-winning Swansea digital agency combining human expertise with AI acceleration. Led by Royal Academy of Engineering winner Darran Goulding. Complete digital transformation from concept to creation." slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:alt" content="Digital Visibility Team - Award-Winning Digital Agency in Swansea" slot="head">
+  <meta property="og:locale" content="en_GB" slot="head">
+  
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="About Digital Visibility | Award-Winning Swansea Digital Agency" slot="head">
+  <meta name="twitter:description" content="People-powered digital solutions accelerated with AI. Led by Royal Academy winner Darran Goulding. Complete transformation from concept to creation." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp" slot="head">
+  <meta name="twitter:image:alt" content="Digital Visibility Team" slot="head">
+  
+  <!-- AI-Specific Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="company-information,team-expertise,business-values,development-process,agency-overview" slot="head">
+  <meta name="ai-target" content="potential-clients,business-partners,job-seekers,investors,marketing-professionals" slot="head">
+  <meta name="ai-keywords" content="Digital Visibility team, Darran Goulding inventor, Royal Academy Engineering award, people-powered digital agency, Swansea marketing experts, Wales digital transformation, AI-accelerated solutions, forward-thinking agency, results-focused team, integrity-based services, continuous improvement culture, innovation-driven company" slot="head">
+  <meta name="ai-content-type" content="about page, company information, team profiles, business values, agency overview" slot="head">
+  <meta name="ai-service-area" content="Swansea, Llansamlet, South Wales, West Wales, Cardiff, Newport, Bristol, United Kingdom, International" slot="head">
+  <meta name="ai-business-type" content="Digital Marketing Agency, Software Development Company, Product Design Consultancy, Business Transformation Specialists" slot="head">
+  <meta name="ai-company-values" content="forward-thinking, people-driven, results-focused, continuous-improvement, integrity, innovation" slot="head">
+  
+  <!-- Geolocation & Local Business Tags -->
+  <meta name="geo.region" content="GB-SWA" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6553959;-3.9336144" slot="head">
+  <meta name="ICBM" content="51.6553959, -3.9336144" slot="head">
+  
+  <!-- Trust & Authority Signals -->
+  <meta name="author" content="Digital Visibility Team" slot="head">
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  
+  <!-- Enhanced Schema markup for E-E-A-T and comprehensive company information -->
+  <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Digital Visibility",
-    "description": "A people-powered digital marketing and product development agency specializing in SEO, AEO, GEO, app development, and physical product design.",
-    "url": "https://digitalvisibility.com/about/",
-    "logo": "https://digitalvisibility.com/logo.png",
-    "image": "https://digitalvisibility.com/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
-    "telephone": "+4401792002497",
-    "email": "support@digitalvisibility.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "235 Peniel Green Road",
-      "addressLocality": "Llansamlet",
-      "addressRegion": "Swansea",
-      "postalCode": "SA7 9BA",
-      "addressCountry": "GB"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "51.6553959",
-      "longitude": "-3.9336144"
-    },
-    "foundingDate": "2023-01-01",
-    "founder": {
-      "@type": "Person",
-      "name": "Darran Goulding",
-      "jobTitle": "Founder & Chief Innovation Officer",
-      "url": "https://digitalvisibility.com/about/darran-goulding/",
-      "image": "https://digitalvisibility.com/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
-      "description": "Award-winning inventor and digital transformation specialist with over 15 years of experience in AI integration and business optimization."
-    },
-    "slogan": "Human Powered Digital Solutions, Accelerated With AI",
-    "areaServed": [
+    "@graph": [
       {
-        "@type": "Place",
-        "name": "Swansea"
+        "@type": "AboutPage",
+        "@id": "https://digitalvisibility.com/about/#webpage",
+        "url": "https://digitalvisibility.com/about/",
+        "name": "About Digital Visibility - Award-Winning Digital Agency in Swansea",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
+          "width": "1200",
+          "height": "630",
+          "caption": "Darran Goulding - Royal Academy of Engineering Award Winner"
+        },
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-01-22",
+        "description": "Learn about Digital Visibility, Swansea's award-winning digital agency. Our people-powered approach combines human expertise with AI acceleration to deliver complete digital transformation.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About",
+              "item": "https://digitalvisibility.com/about/"
+            }
+          ]
+        },
+        "mainEntity": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization",
+          "name": "Digital Visibility",
+          "alternateName": ["Digital Visibility Limited", "Digital Visibility Ltd"],
+          "legalName": "Digital Visibility Limited",
+          "description": "Digital Visibility is a people-powered digital marketing and product development agency based in Swansea, Wales. We specialize in complete business transformation through SEO+AEO+GEO optimization, custom app development, and physical product design. Our integrated approach combines human expertise with AI acceleration to deliver measurable results and sustainable growth for businesses across the UK and globally.",
+          "url": "https://digitalvisibility.com/about/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://digitalvisibility.com/digital-visibility-logo-f.png",
+            "width": "180",
+            "height": "60"
+          },
+          "image": [
+            {
+              "@type": "ImageObject",
+              "url": "https://digitalvisibility.com/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
+              "caption": "Darran Goulding receiving Royal Academy of Engineering Award"
+            },
+            {
+              "@type": "ImageObject", 
+              "url": "https://digitalvisibility.com/digital-visibility-team.webp",
+              "caption": "Digital Visibility Team"
+            }
+          ],
+          "telephone": "+44-01792-002497",
+          "email": "support@digitalvisibility.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "235 Peniel Green Road",
+            "addressLocality": "Llansamlet",
+            "addressRegion": "Swansea",
+            "postalCode": "SA7 9BA",
+            "addressCountry": "GB"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "51.6553959",
+            "longitude": "-3.9336144"
+          },
+          "foundingDate": "2023-01-01",
+          "founders": [
+            {
+              "@type": "Person",
+              "@id": "https://digitalvisibility.com/about/darran-goulding/#person",
+              "name": "Darran Goulding",
+              "jobTitle": "Founder & Chief Innovation Officer",
+              "url": "https://digitalvisibility.com/about/darran-goulding/",
+              "image": "https://digitalvisibility.com/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
+              "description": "Award-winning inventor and digital transformation specialist with over 15 years of experience in AI integration and business optimization. Recipient of a 2025 Royal Academy of Engineering award for innovation in product development.",
+              "sameAs": [
+                "https://www.linkedin.com/in/darrangoulding/",
+                "https://x.com/DarranGoulding"
+              ],
+              "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "Swansea University"
+              },
+              "award": [
+                {
+                  "@type": "Award",
+                  "name": "Royal Academy of Engineering Award 2025",
+                  "description": "Recognition for innovation in product development and engineering",
+                  "url": "https://enterprisehub.raeng.org.uk/regional-talent-engines"
+                }
+              ],
+              "knowsAbout": ["Digital Marketing", "AI Integration", "Product Development", "Business Strategy", "Engineering", "Innovation Management"]
+            }
+          ],
+          "slogan": "Human Powered Digital Solutions, Accelerated With AI",
+          "makesOffer": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Digital Marketing Services",
+                "description": "Comprehensive digital marketing including SEO, AEO, GEO, social media, and content creation"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "App Development",
+                "description": "Custom mobile and web application development"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Product Design & Engineering",
+                "description": "Physical product design with CAD/CAE and prototyping"
+              }
+            }
+          ],
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Swansea"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Wales"
+            },
+            {
+              "@type": "Country",
+              "name": "United Kingdom"
+            },
+            {
+              "@type": "Place",
+              "name": "International",
+              "description": "Remote services available globally"
+            }
+          ],
+          "award": [
+            {
+              "@type": "Award",
+              "name": "Royal Academy of Engineering Award 2025",
+              "description": "Excellence in innovation and product development"
+            },
+            {
+              "@type": "Award", 
+              "name": "#1 Digital Visibility Specialist in Swansea",
+              "description": "Achieved top rankings in just one week"
+            }
+          ],
+          "memberOf": [
+            {
+              "@type": "Organization",
+              "name": "Swansea Business Club"
+            },
+            {
+              "@type": "Organization",
+              "name": "Welsh Digital Marketing Association"
+            }
+          ],
+          "funder": [
+            {
+              "@type": "Organization",
+              "name": "Swansea Council",
+              "url": "https://www.swansea.gov.uk/businessfunding"
+            },
+            {
+              "@type": "Organization",
+              "name": "Royal Academy of Engineering",
+              "url": "https://enterprisehub.raeng.org.uk/"
+            }
+          ]
+        }
       },
       {
-        "@type": "Place",
-        "name": "Wales"
+        "@type": "ItemList",
+        "@id": "https://digitalvisibility.com/about/#values",
+        "name": "Digital Visibility Core Values",
+        "description": "The six core values that guide everything we do at Digital Visibility",
+        "numberOfItems": 6,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Thing",
+              "name": "Forward Thinking",
+              "description": "We constantly push boundaries to stay ahead of digital trends, anticipating changes before they happen to keep our clients at the forefront of innovation."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Thing",
+              "name": "People-Driven",
+              "description": "We believe in the power of human expertise. While we leverage AI and technology, it's our team's knowledge and creativity that truly deliver results."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Thing",
+              "name": "Results-Focused",
+              "description": "We measure success through tangible outcomes — visibility improvements, conversion rates, and business growth metrics that demonstrate real-world impact."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Thing",
+              "name": "Continuous Improvement",
+              "description": "We never settle, constantly refining our methodologies and expanding our capabilities to deliver ever-improving results for our clients."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "Thing",
+              "name": "Integrity",
+              "description": "We maintain the highest ethical standards in all our work, providing transparent reporting and honest recommendations that truly serve our clients' best interests."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "Thing",
+              "name": "Innovation",
+              "description": "We embrace emerging technologies and methodologies, continuously creating new approaches to solving business challenges across both digital and physical products."
+            }
+          }
+        ]
       },
       {
-        "@type": "Place",
-        "name": "United Kingdom"
+        "@type": "HowTo",
+        "@id": "https://digitalvisibility.com/about/#process",
+        "name": "How Digital Visibility Works - Our Process",
+        "description": "Our four-step process to transform your business from concept to success",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Idea Breakthrough",
+            "text": "Turn your idea into gold! We validate your concept with market research to avoid costly mistakes and find your winning edge in the market.",
+            "position": 1
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Stunning Creation",
+            "text": "Stand out from the crowd! Our design & development team builds eye-catching products that work flawlessly and keep customers coming back for more.",
+            "position": 2
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Smooth Launch",
+            "text": "No stress, just success! We handle the technical headaches of launching your product and set up systems that run like clockwork, freeing you to focus on growth.",
+            "position": 3
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Explosive Growth",
+            "text": "Our specialty: making sales soar! Our proven digital marketing strategies put your product in front of eager buyers and turn visitors into paying customers.",
+            "position": 4
+          }
+        ]
       },
       {
-        "@type": "Place",
-        "name": "Global"
+        "@type": "Product",
+        "@id": "https://digitalvisibility.com/about/#anti-damp-vent",
+        "name": "Revolutionary Anti-Damp Vent",
+        "description": "Innovative ventilation solution designed to prevent damp and mold in homes, improving health and property condition",
+        "brand": {
+          "@type": "Brand",
+          "name": "Digital Visibility"
+        },
+        "manufacturer": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "isRelatedTo": [
+          {
+            "@type": "Thing",
+            "name": "Home Ventilation"
+          },
+          {
+            "@type": "Thing",
+            "name": "Damp Prevention"
+          },
+          {
+            "@type": "Thing",
+            "name": "Property Maintenance"
+          }
+        ],
+        "keywords": "anti-damp vent, home ventilation, mold prevention, property health, innovative vent design",
+        "award": "Patent Pending",
+        "funder": [
+          {
+            "@type": "Organization",
+            "name": "Swansea Council Business Funding"
+          },
+          {
+            "@type": "Organization",
+            "name": "Royal Academy of Engineering"
+          }
+        ]
       }
     ]
   }
   </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "Thing",
-          "name": "Forward Thinking",
-          "description": "We constantly push boundaries to stay ahead of digital trends, anticipating changes before they happen to keep our clients at the forefront of innovation."
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "Thing",
-          "name": "People-Driven",
-          "description": "We believe in the power of human expertise. While we leverage AI and technology, it's our team's knowledge and creativity that truly deliver results."
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "Thing",
-          "name": "Results-Focused",
-          "description": "We measure success through tangible outcomes — visibility improvements, conversion rates, and business growth metrics that demonstrate real-world impact."
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "item": {
-          "@type": "Thing",
-          "name": "Continuous Improvement",
-          "description": "We never settle, constantly refining our methodologies and expanding our capabilities to deliver ever-improving results for our clients."
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 5,
-        "item": {
-          "@type": "Thing",
-          "name": "Integrity",
-          "description": "We maintain the highest ethical standards in all our work, providing transparent reporting and honest recommendations that truly serve our clients' best interests."
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 6,
-        "item": {
-          "@type": "Thing",
-          "name": "Innovation",
-          "description": "We embrace emerging technologies and methodologies, continuously creating new approaches to solving business challenges across both digital and physical products."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- AI Optimization Meta Tags for Enhanced AI Engine Recognition -->
-  <meta name="ai-purpose" content="company information, business values, team expertise, development process">
-  <meta name="ai-target" content="potential clients, business partners, job seekers, investors, Swansea businesses, Welsh companies, UK enterprises, global businesses">
-  <meta name="ai-content-type" content="about page, company information, team description">
-  <meta name="ai-business-type" content="digital marketing agency, app development company, product design firm, SEO services provider, AI optimization specialists">
-  <meta name="ai-service-area" content="Swansea, Llansamlet, South Wales, West Wales, United Kingdom, global">
-  <meta name="ai-company-values" content="forward thinking, people-driven, results-focused, continuous improvement, integrity, innovation">
-  <meta name="ai-keywords" content="digital marketing agency Swansea, Darran Goulding inventor, Royal Academy of Engineering award winner, digital transformation specialist Wales, people-powered digital agency, SEO+AEO+GEO company, AI marketing Swansea, digital marketing team Wales, software development agency Swansea, product design expertise Wales, digital visibility experts, innovation-driven company, business transformation specialists, digital marketing values, cross-functional team Swansea, UX designers Wales, software engineers UK, Welsh marketing agency, business process optimization Swansea, digital marketing innovation, customer-focused digital agency Wales, integrity-based business services, human-powered digital solutions, AI-accelerated marketing agency, digital product development Swansea, concept to creation company Wales, app development specialists">
 
   <Navigation slot="nav" />
   
@@ -154,8 +408,6 @@ import Footer from '../../components/Footer.astro';
       </div>
     </div>
   </section>
-
-
 
   <!-- Core Values -->
   <section class="py-16 bg-gray-50">
@@ -507,8 +759,6 @@ import Footer from '../../components/Footer.astro';
     </div>
   </section>
 
-
-
   <!-- Our Expertise - With "hooks" highlighting our unique selling points -->
   <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -576,8 +826,6 @@ import Footer from '../../components/Footer.astro';
       </div>
     </div>
   </section>
-
-
 
   <!-- Primary CTA Section -->
   <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">

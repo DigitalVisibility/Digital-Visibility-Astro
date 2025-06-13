@@ -2,93 +2,241 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+
+const meta = {
+  title: "Privacy Policy - Digital Visibility",
+  description: "Digital Visibility's privacy policy details how we collect, use, and protect your information. Learn about our commitment to your privacy and data security.",
+  keywords: "privacy policy, data protection, digital visibility, information collection, personal data, cookies, GDPR compliance, data rights, data security, UK privacy policy, Wales data protection, Swansea privacy policy, digital marketing privacy, website privacy, online privacy, data collection policy, information security, user privacy rights, cookie policy, personal information protection, data processing, privacy notice, data controller, data subject rights, privacy compliance, UK GDPR, Welsh privacy laws, privacy regulations, data retention, third-party sharing, data deletion, privacy settings, consent management, privacy controls, data breach policy, privacy transparency, user data protection, business privacy policy, marketing privacy, email privacy, analytics privacy, advertising privacy, social media privacy, privacy best practices, data minimization, privacy by design, privacy shield, international data transfers, cross-border data, privacy impact assessment",
+  image: "https://digitalvisibility.com/digital-visibility-logo-f.png"
+};
 ---
 
-<MainLayout title="Privacy Policy - Digital Visibility">
-  <!-- SEO and Canonical Tags -->
+<MainLayout title={meta.title}>
+  <!-- Comprehensive Meta Tags -->
+  <meta name="description" content={meta.description} slot="head">
+  <meta name="keywords" content={meta.keywords} slot="head">
   <link rel="canonical" href="https://digitalvisibility.com/privacy-policy/" slot="head">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
-  <meta name="description" content="Digital Visibility's privacy policy details how we collect, use, and protect your information. Learn about our commitment to your privacy and data security." slot="head">
-  <meta name="keywords" content="privacy policy, data protection, digital visibility, information collection" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-Robots-Tag" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   <meta name="author" content="Digital Visibility" slot="head">
+  
+  <!-- Geographic and Local SEO Tags -->
+  <meta name="geo.region" content="GB-WLS" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6429;-3.9372" slot="head">
+  <meta name="ICBM" content="51.6429, -3.9372" slot="head">
+  <meta name="location" content="Swansea, Wales, United Kingdom" slot="head">
+  <meta name="region" content="South Wales" slot="head">
+  <meta name="country" content="United Kingdom" slot="head">
+  <meta name="language" content="en-GB" slot="head">
   
   <!-- Publisher, Twitter and OpenGraph Tags -->
   <meta property="og:locale" content="en_GB" slot="head">
   <meta property="og:type" content="website" slot="head">
-  <meta property="og:title" content="Privacy Policy - Digital Visibility" slot="head">
-  <meta property="og:description" content="Digital Visibility's privacy policy details how we collect, use, and protect your information. Learn about our commitment to your privacy and data security." slot="head">
+  <meta property="og:title" content={meta.title} slot="head">
+  <meta property="og:description" content={meta.description} slot="head">
   <meta property="og:url" content="https://digitalvisibility.com/privacy-policy/" slot="head">
   <meta property="og:site_name" content="Digital Visibility" slot="head">
-  <meta property="og:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  <meta property="og:image" content={meta.image} slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/png" slot="head">
   <meta property="article:publisher" content="https://www.facebook.com/DigitalVisibilityUK" slot="head">
   <meta property="article:modified_time" content="2025-04-13T00:00:00+00:00" slot="head">
   
   <meta name="twitter:card" content="summary_large_image" slot="head">
   <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
   <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
-  <meta name="twitter:title" content="Privacy Policy - Digital Visibility" slot="head">
-  <meta name="twitter:description" content="Digital Visibility's privacy policy details how we collect, use, and protect your information. Learn about our commitment to your privacy and data security." slot="head">
-  <meta name="twitter:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  <meta name="twitter:title" content={meta.title} slot="head">
+  <meta name="twitter:description" content={meta.description} slot="head">
+  <meta name="twitter:image" content={meta.image} slot="head">
   
   <meta name="publisher" content="Digital Visibility Limited" slot="head">
   
-  <!-- AI Engine Optimization Tags -->
-  <meta name="ai-purpose" content="legal information, privacy practices, data handling" slot="head">
-  <meta name="ai-target" content="business owners, clients, website visitors" slot="head">
-  <meta name="ai-content-type" content="legal text, privacy policy" slot="head">
-  <meta name="ai-keywords" content="privacy policy, data protection, information collection, personal data, cookies, GDPR compliance, data rights, data security" slot="head">
-  <meta name="ai-business-type" content="digital marketing agency, business services provider" slot="head">
+  <!-- Advanced AI and NLP Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="legal information, privacy practices, data handling, privacy compliance" slot="head">
+  <meta name="ai-target" content="business owners, clients, website visitors, data subjects, potential customers" slot="head">
+  <meta name="ai-content-type" content="legal text, privacy policy, policy document, privacy notice" slot="head">
+  <meta name="ai-keywords" content={meta.keywords} slot="head">
+  <meta name="ai-business-type" content="digital marketing agency, business services provider, data controller" slot="head">
   <meta name="ai-created-content" content="false" slot="head">
+  <meta name="ai-service-area" content="Swansea, South Wales, United Kingdom, global services" slot="head">
+  <meta name="ai-industry" content="digital marketing, technology services, business services" slot="head">
+  <meta name="ai-document-type" content="privacy policy, legal document, data protection notice" slot="head">
+  <meta name="ai-jurisdiction" content="United Kingdom, UK GDPR, Welsh data protection law" slot="head">
+  <meta name="ai-entity-type" content="PrivacyPolicy, LegalDocument, Policy, DataProtection" slot="head">
+  <meta name="ai-semantic-keywords" content="UK GDPR compliance, Welsh privacy policy, Swansea data protection, digital marketing privacy practices, website data collection policy" slot="head">
+  <meta name="ai-nlp-focus" content="data collection practices, user rights, privacy protections, cookie usage, data sharing" slot="head">
+  <meta name="ai-response-style" content="formal, legal, transparent, privacy-focused" slot="head">
+  <meta name="ai-content-depth" content="comprehensive privacy policy, detailed data practices, complete user rights information" slot="head">
   
-  <!-- Privacy Policy Schema -->
-  <script type="application/ld+json">
+  <!-- Enhanced Schema Markup with @graph -->
+  <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Privacy Policy - Digital Visibility",
-    "description": "Digital Visibility's privacy policy details how we collect, use, and protect your information. Learn about our commitment to your privacy and data security.",
-    "url": "https://digitalvisibility.com/privacy-policy/",
-    "lastReviewed": "2025-04-13",
-    "mainContentOfPage": {
-      "@type": "WebPageElement",
-      "cssSelector": ".prose"
-    },
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": ["h1", "h2", "p"]
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
-      }
-    },
-    "isPartOf": {
-      "@type": "WebSite",
-      "url": "https://digitalvisibility.com",
-      "name": "Digital Visibility - Human Powered, AI Accelerated Solutions"
-    },
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://digitalvisibility.com"
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/privacy-policy/#webpage",
+        "url": "https://digitalvisibility.com/privacy-policy/",
+        "name": "Privacy Policy - Digital Visibility",
+        "description": "Digital Visibility's privacy policy details how we collect, use, and protect your information. Learn about our commitment to your privacy and data security.",
+        "lastReviewed": "2025-04-13",
+        "datePublished": "2024-01-01",
+        "dateModified": "2025-04-13",
+        "mainContentOfPage": {
+          "@type": "WebPageElement",
+          "cssSelector": ".prose"
         },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Privacy Policy",
-          "item": "https://digitalvisibility.com/privacy-policy/"
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", "h2", "p"]
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Privacy Policy",
+              "item": "https://digitalvisibility.com/privacy-policy/"
+            }
+          ]
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "contentUrl": "https://digitalvisibility.com/digital-visibility-logo-f.png"
         }
-      ]
-    }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://digitalvisibility.com/#organization",
+        "name": "Digital Visibility Limited",
+        "url": "https://digitalvisibility.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "235 Peniel Green Road",
+          "addressLocality": "Llansamlet, Swansea",
+          "addressRegion": "Wales",
+          "postalCode": "SA7 9BA",
+          "addressCountry": "UK"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+44-01792-002497",
+          "contactType": "privacy inquiries",
+          "email": "privacy@digitalvisibility.com",
+          "availableLanguage": "English"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://digitalvisibility.com/privacy-policy/#document",
+        "name": "Digital Visibility Privacy Policy",
+        "url": "https://digitalvisibility.com/privacy-policy/",
+        "datePublished": "2024-01-01",
+        "dateModified": "2025-04-13",
+        "inLanguage": "en-GB",
+        "author": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "Data protection and privacy practices",
+          "description": "Comprehensive privacy policy detailing how Digital Visibility collects, uses, and protects user information in compliance with UK GDPR"
+        },
+        "keywords": "privacy policy, data protection, information collection, personal data, cookies, GDPR compliance, data rights, data security",
+        "hasPart": [
+          {
+            "@type": "Legislation",
+            "name": "Information We Collect",
+            "legislationIdentifier": "Section 1"
+          },
+          {
+            "@type": "Legislation",
+            "name": "How We Use Your Information",
+            "legislationIdentifier": "Section 2"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Sharing Your Information",
+            "legislationIdentifier": "Section 3"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Cookies and Tracking Technologies",
+            "legislationIdentifier": "Section 4"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Data Security",
+            "legislationIdentifier": "Section 5"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Third-Party Links and Services",
+            "legislationIdentifier": "Section 6"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Children's Privacy",
+            "legislationIdentifier": "Section 7"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Your Data Protection Rights",
+            "legislationIdentifier": "Section 8"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Changes to This Privacy Policy",
+            "legislationIdentifier": "Section 9"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Contact Information",
+            "legislationIdentifier": "Section 10"
+          }
+        ],
+        "mentions": [
+          {
+            "@type": "WebPage",
+            "url": "https://digitalvisibility.com/privacy-policy/data-deletion/",
+            "name": "Data Deletion Policy"
+          }
+        ]
+      }
+    ]
   }
   </script>
+  
   <Navigation slot="nav" />
   
   <section class="bg-white py-16">

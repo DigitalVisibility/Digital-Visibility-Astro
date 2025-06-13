@@ -2,88 +2,212 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+
+const meta = {
+  title: "Digital Visibility - Website Information Form",
+  description: "Complete Digital Visibility's website information form to help us create your custom website. The more details you provide, the better we can tailor the website to your needs.",
+  keywords: "website information form, client onboarding, website development form, digital visibility onboarding, website creation form, business information form, website design questionnaire, website planning form, client intake form, website briefing form, website requirements form, digital marketing onboarding, website project form, custom website form, website consultation form, business website form, website details form, website specification form, website planning questionnaire, website development intake, UK website development, Wales website design, Swansea web development, website brief template, website project questionnaire, client questionnaire, website needs assessment, website discovery form, website strategy form, onboarding process, client information collection, website goals form, website preferences form, design preferences questionnaire, content planning form, technical requirements form",
+  image: "https://digitalvisibility.com/digital-visibility-logo-f.png"
+};
 ---
 
-<MainLayout title="Digital Visibility - Website Information Form">
-  <!-- SEO and Canonical Tags -->
+<MainLayout title={meta.title}>
+  <!-- Comprehensive Meta Tags -->
+  <meta name="description" content={meta.description} slot="head">
+  <meta name="keywords" content={meta.keywords} slot="head">
   <link rel="canonical" href="https://digitalvisibility.com/onboarding/" slot="head">
   <meta name="robots" content="noindex, follow" slot="head">
-  <meta name="description" content="Complete Digital Visibility's website information form to help us create your custom website. The more details you provide, the better we can tailor the website to your needs." slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="noindex, follow" slot="head">
+  <meta name="bingbot" content="noindex, follow" slot="head">
+  <meta http-equiv="X-Robots-Tag" content="noindex, follow" slot="head">
   <meta name="author" content="Digital Visibility" slot="head">
+  
+  <!-- Geographic and Local SEO Tags -->
+  <meta name="geo.region" content="GB-WLS" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6429;-3.9372" slot="head">
+  <meta name="ICBM" content="51.6429, -3.9372" slot="head">
+  <meta name="location" content="Swansea, Wales, United Kingdom" slot="head">
+  <meta name="region" content="South Wales" slot="head">
+  <meta name="country" content="United Kingdom" slot="head">
+  <meta name="language" content="en-GB" slot="head">
   
   <!-- Publisher, Twitter and OpenGraph Tags -->
   <meta property="og:locale" content="en_GB" slot="head">
   <meta property="og:type" content="website" slot="head">
-  <meta property="og:title" content="Digital Visibility - Website Information Form" slot="head">
-  <meta property="og:description" content="Complete Digital Visibility's website information form to help us create your custom website. The more details you provide, the better we can tailor the website to your needs." slot="head">
+  <meta property="og:title" content={meta.title} slot="head">
+  <meta property="og:description" content={meta.description} slot="head">
   <meta property="og:url" content="https://digitalvisibility.com/onboarding/" slot="head">
   <meta property="og:site_name" content="Digital Visibility" slot="head">
-  <meta property="og:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  <meta property="og:image" content={meta.image} slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/png" slot="head">
   
   <meta name="twitter:card" content="summary_large_image" slot="head">
   <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
   <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
-  <meta name="twitter:title" content="Digital Visibility - Website Information Form" slot="head">
-  <meta name="twitter:description" content="Complete Digital Visibility's website information form to help us create your custom website. The more details you provide, the better we can tailor the website to your needs." slot="head">
-  <meta name="twitter:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  <meta name="twitter:title" content={meta.title} slot="head">
+  <meta name="twitter:description" content={meta.description} slot="head">
+  <meta name="twitter:image" content={meta.image} slot="head">
   
   <meta name="publisher" content="Digital Visibility Limited" slot="head">
   
-  <!-- AI Engine Optimization Tags -->
-  <meta name="ai-purpose" content="client onboarding, information collection" slot="head">
-  <meta name="ai-target" content="business owners, new clients, website clients" slot="head">
-  <meta name="ai-content-type" content="form, client intake" slot="head">
-  <meta name="ai-business-type" content="digital marketing agency, business services provider" slot="head">
+  <!-- Advanced AI and NLP Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="client onboarding, information collection, website planning, project intake" slot="head">
+  <meta name="ai-target" content="business owners, new clients, website clients, prospective customers" slot="head">
+  <meta name="ai-content-type" content="form, client intake, onboarding questionnaire, data collection" slot="head">
+  <meta name="ai-keywords" content={meta.keywords} slot="head">
+  <meta name="ai-business-type" content="digital marketing agency, business services provider, web development company" slot="head">
   <meta name="ai-created-content" content="false" slot="head">
+  <meta name="ai-service-area" content="Swansea, South Wales, United Kingdom, global services" slot="head">
+  <meta name="ai-industry" content="digital marketing, web development, business services" slot="head">
+  <meta name="ai-form-type" content="onboarding form, client information form, website planning form" slot="head">
+  <meta name="ai-form-purpose" content="collect client requirements, gather project information, website planning" slot="head">
+  <meta name="ai-entity-type" content="Form, WebForm, OnboardingForm, ClientIntake" slot="head">
+  <meta name="ai-semantic-keywords" content="website planning form Wales, client onboarding UK, Swansea web development intake, business website questionnaire, digital marketing client form" slot="head">
+  <meta name="ai-nlp-focus" content="client requirements, website features, design preferences, business information, technical needs" slot="head">
+  <meta name="ai-response-style" content="structured form, comprehensive questionnaire, detailed information gathering" slot="head">
+  <meta name="ai-content-depth" content="comprehensive onboarding, detailed requirements gathering, complete project intake" slot="head">
   
   <!-- Cloudflare Turnstile Script -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
   
-  <!-- Onboarding Page Schema -->
-  <script type="application/ld+json">
+  <!-- Enhanced Schema Markup with @graph -->
+  <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Digital Visibility - Website Information Form",
-    "description": "Complete Digital Visibility's website information form to help us create your custom website. The more details you provide, the better we can tailor the website to your needs.",
-    "url": "https://digitalvisibility.com/onboarding/",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
-      }
-    },
-    "isPartOf": {
-      "@type": "WebSite",
-      "url": "https://digitalvisibility.com",
-      "name": "Digital Visibility - Human Powered, AI Accelerated Solutions"
-    },
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://digitalvisibility.com"
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/onboarding/#webpage",
+        "url": "https://digitalvisibility.com/onboarding/",
+        "name": "Digital Visibility - Website Information Form",
+        "description": "Complete Digital Visibility's website information form to help us create your custom website. The more details you provide, the better we can tailor the website to your needs.",
+        "datePublished": "2024-01-01",
+        "dateModified": "2025-01-01",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
         },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Onboarding",
-          "item": "https://digitalvisibility.com/onboarding/"
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Onboarding",
+              "item": "https://digitalvisibility.com/onboarding/"
+            }
+          ]
+        },
+        "mainEntity": {
+          "@type": "ContactPoint",
+          "@id": "https://digitalvisibility.com/onboarding/#contactpoint"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "contentUrl": "https://digitalvisibility.com/digital-visibility-logo-f.png"
         }
-      ]
-    },
-    "mainEntity": {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "support@digitalvisibility.com"
-    }
+      },
+      {
+        "@type": "ContactPoint",
+        "@id": "https://digitalvisibility.com/onboarding/#contactpoint",
+        "contactType": "customer service",
+        "email": "support@digitalvisibility.com",
+        "telephone": "+44-01792-002497",
+        "availableLanguage": "English",
+        "contactOption": "TollFree",
+        "areaServed": [
+          "GB",
+          "Wales",
+          "Swansea"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://digitalvisibility.com/#organization",
+        "name": "Digital Visibility Limited",
+        "url": "https://digitalvisibility.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "235 Peniel Green Road",
+          "addressLocality": "Llansamlet, Swansea",
+          "addressRegion": "Wales",
+          "postalCode": "SA7 9BA",
+          "addressCountry": "UK"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://digitalvisibility.com/onboarding/#service",
+        "name": "Website Development Onboarding",
+        "serviceType": "Client Onboarding",
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "description": "Comprehensive onboarding process for new website development projects, gathering all necessary information to create custom websites tailored to client needs",
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 51.6429,
+            "longitude": -3.9372
+          },
+          "geoRadius": "50000"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Onboarding Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Business Information Collection",
+                "description": "Gathering comprehensive business details including mission, values, USP, and target audience"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Design Preference Assessment",
+                "description": "Understanding client design preferences, style choices, and feature requirements"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Technical Requirements Planning",
+                "description": "Identifying technical needs including domain, hosting, integrations, and third-party tools"
+              }
+            }
+          ]
+        }
+      }
+    ]
   }
   </script>
+  
   <Navigation slot="nav" />
   
   <div class="container max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg my-12">

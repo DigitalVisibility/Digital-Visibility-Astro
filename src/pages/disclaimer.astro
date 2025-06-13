@@ -2,93 +2,244 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+
+const meta = {
+  title: "Disclaimer - Digital Visibility",
+  description: "Read Digital Visibility's disclaimer regarding the general information provided on our website, limitation of liability, and professional advice guidelines.",
+  keywords: "disclaimer, legal information, digital visibility, terms of use, limitation of liability, professional advice disclaimer, website disclaimer, legal disclaimer, business disclaimer, content disclaimer, marketing disclaimer, UK disclaimer, Wales business disclaimer, Swansea company disclaimer, digital services disclaimer, online disclaimer, internet disclaimer, website terms, service disclaimer, information accuracy, third-party content, testimonial disclaimer, case study disclaimer, no warranty, liability limitation, indemnification, intellectual property, content usage, legal notice, risk disclaimer, advice disclaimer, results disclaimer, performance disclaimer, outcome disclaimer, error disclaimer, availability disclaimer, technical issues disclaimer, content accuracy, typographical errors, material changes, jurisdiction disclaimer",
+  image: "https://digitalvisibility.com/digital-visibility-logo-f.png"
+};
 ---
 
-<MainLayout title="Disclaimer - Digital Visibility">
-  <!-- SEO and Canonical Tags -->
+<MainLayout title={meta.title}>
+  <!-- Comprehensive Meta Tags -->
+  <meta name="description" content={meta.description} slot="head">
+  <meta name="keywords" content={meta.keywords} slot="head">
   <link rel="canonical" href="https://digitalvisibility.com/disclaimer/" slot="head">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
-  <meta name="description" content="Read Digital Visibility's disclaimer regarding the general information provided on our website, limitation of liability, and professional advice guidelines." slot="head">
-  <meta name="keywords" content="disclaimer, legal information, digital visibility, terms of use" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-Robots-Tag" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   <meta name="author" content="Digital Visibility" slot="head">
+  
+  <!-- Geographic and Local SEO Tags -->
+  <meta name="geo.region" content="GB-WLS" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6429;-3.9372" slot="head">
+  <meta name="ICBM" content="51.6429, -3.9372" slot="head">
+  <meta name="location" content="Swansea, Wales, United Kingdom" slot="head">
+  <meta name="region" content="South Wales" slot="head">
+  <meta name="country" content="United Kingdom" slot="head">
+  <meta name="language" content="en-GB" slot="head">
   
   <!-- Publisher, Twitter and OpenGraph Tags -->
   <meta property="og:locale" content="en_GB" slot="head">
   <meta property="og:type" content="website" slot="head">
-  <meta property="og:title" content="Disclaimer - Digital Visibility" slot="head">
-  <meta property="og:description" content="Read Digital Visibility's disclaimer regarding the general information provided on our website, limitation of liability, and professional advice guidelines." slot="head">
+  <meta property="og:title" content={meta.title} slot="head">
+  <meta property="og:description" content={meta.description} slot="head">
   <meta property="og:url" content="https://digitalvisibility.com/disclaimer/" slot="head">
   <meta property="og:site_name" content="Digital Visibility" slot="head">
-  <meta property="og:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  <meta property="og:image" content={meta.image} slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/png" slot="head">
   <meta property="article:publisher" content="https://www.facebook.com/DigitalVisibilityUK" slot="head">
   <meta property="article:modified_time" content="2025-04-13T00:00:00+00:00" slot="head">
   
   <meta name="twitter:card" content="summary_large_image" slot="head">
   <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
   <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
-  <meta name="twitter:title" content="Disclaimer - Digital Visibility" slot="head">
-  <meta name="twitter:description" content="Read Digital Visibility's disclaimer regarding the general information provided on our website, limitation of liability, and professional advice guidelines." slot="head">
-  <meta name="twitter:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  <meta name="twitter:title" content={meta.title} slot="head">
+  <meta name="twitter:description" content={meta.description} slot="head">
+  <meta name="twitter:image" content={meta.image} slot="head">
   
   <meta name="publisher" content="Digital Visibility Limited" slot="head">
   
-  <!-- AI Engine Optimization Tags -->
-  <meta name="ai-purpose" content="legal information, disclaimer, business terms" slot="head">
-  <meta name="ai-target" content="business owners, clients, website visitors" slot="head">
-  <meta name="ai-content-type" content="legal text, disclaimer" slot="head">
-  <meta name="ai-keywords" content="disclaimer, legal terms, professional advice, terms of use, content usage, liability, website usage" slot="head">
-  <meta name="ai-business-type" content="digital marketing agency, business services provider" slot="head">
+  <!-- Advanced AI and NLP Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="legal information, disclaimer, business terms, liability limitation" slot="head">
+  <meta name="ai-target" content="business owners, clients, website visitors, potential customers, service users" slot="head">
+  <meta name="ai-content-type" content="legal text, disclaimer, policy document, legal notice" slot="head">
+  <meta name="ai-keywords" content={meta.keywords} slot="head">
+  <meta name="ai-business-type" content="digital marketing agency, business services provider, technology company" slot="head">
   <meta name="ai-created-content" content="false" slot="head">
+  <meta name="ai-service-area" content="Swansea, South Wales, United Kingdom, global services" slot="head">
+  <meta name="ai-industry" content="digital marketing, technology services, business services" slot="head">
+  <meta name="ai-document-type" content="disclaimer, legal document, business notice" slot="head">
+  <meta name="ai-jurisdiction" content="United Kingdom, UK law, Welsh business law" slot="head">
+  <meta name="ai-entity-type" content="Disclaimer, LegalDocument, Notice, LegalNotice" slot="head">
+  <meta name="ai-semantic-keywords" content="UK business disclaimer, Welsh company disclaimer, Swansea legal disclaimer, digital marketing disclaimer, website usage disclaimer" slot="head">
+  <meta name="ai-nlp-focus" content="liability limitations, professional advice disclaimer, content accuracy, usage restrictions, legal protection" slot="head">
+  <meta name="ai-response-style" content="formal, legal, clear disclaimers, protective language" slot="head">
+  <meta name="ai-content-depth" content="comprehensive disclaimer, detailed limitations, complete legal notice" slot="head">
   
-  <!-- Disclaimer Schema -->
-  <script type="application/ld+json">
+  <!-- Enhanced Schema Markup with @graph -->
+  <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Disclaimer - Digital Visibility",
-    "description": "Read Digital Visibility's disclaimer regarding the general information provided on our website, limitation of liability, and professional advice guidelines.",
-    "url": "https://digitalvisibility.com/disclaimer/",
-    "lastReviewed": "2025-04-13",
-    "mainContentOfPage": {
-      "@type": "WebPageElement",
-      "cssSelector": ".prose"
-    },
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": ["h1", "h2", "p"]
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
-      }
-    },
-    "isPartOf": {
-      "@type": "WebSite",
-      "url": "https://digitalvisibility.com",
-      "name": "Digital Visibility - Human Powered, AI Accelerated Solutions"
-    },
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://digitalvisibility.com"
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/disclaimer/#webpage",
+        "url": "https://digitalvisibility.com/disclaimer/",
+        "name": "Disclaimer - Digital Visibility",
+        "description": "Read Digital Visibility's disclaimer regarding the general information provided on our website, limitation of liability, and professional advice guidelines.",
+        "lastReviewed": "2025-04-13",
+        "datePublished": "2024-01-01",
+        "dateModified": "2025-04-13",
+        "mainContentOfPage": {
+          "@type": "WebPageElement",
+          "cssSelector": ".prose"
         },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Disclaimer",
-          "item": "https://digitalvisibility.com/disclaimer/"
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", "h2", "p"]
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Disclaimer",
+              "item": "https://digitalvisibility.com/disclaimer/"
+            }
+          ]
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "contentUrl": "https://digitalvisibility.com/digital-visibility-logo-f.png"
         }
-      ]
-    }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://digitalvisibility.com/#organization",
+        "name": "Digital Visibility Limited",
+        "url": "https://digitalvisibility.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "235 Peniel Green Road",
+          "addressLocality": "Llansamlet, Swansea",
+          "addressRegion": "Wales",
+          "postalCode": "SA7 9BA",
+          "addressCountry": "UK"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+44-01792-002497",
+          "contactType": "customer service",
+          "email": "support@digitalvisibility.com",
+          "availableLanguage": "English"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://digitalvisibility.com/disclaimer/#document",
+        "name": "Digital Visibility Disclaimer",
+        "url": "https://digitalvisibility.com/disclaimer/",
+        "datePublished": "2024-01-01",
+        "dateModified": "2025-04-13",
+        "inLanguage": "en-GB",
+        "author": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "Legal disclaimer for Digital Visibility services",
+          "description": "Comprehensive disclaimer covering limitation of liability, professional advice, and content usage for Digital Visibility's website and services"
+        },
+        "keywords": "disclaimer, legal terms, professional advice, terms of use, content usage, liability, website usage",
+        "hasPart": [
+          {
+            "@type": "Legislation",
+            "name": "General Information",
+            "legislationIdentifier": "Section 1"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Limitation of Liability",
+            "legislationIdentifier": "Section 2"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Website Availability",
+            "legislationIdentifier": "Section 3"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Professional Advice Disclaimer",
+            "legislationIdentifier": "Section 4"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Accuracy of Information",
+            "legislationIdentifier": "Section 5"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Marketing and Testimonials",
+            "legislationIdentifier": "Section 6"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Third-Party Content",
+            "legislationIdentifier": "Section 7"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Use of Website Content",
+            "legislationIdentifier": "Section 8"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Indemnification",
+            "legislationIdentifier": "Section 9"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Jurisdiction and Applicable Law",
+            "legislationIdentifier": "Section 10"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Changes to Disclaimer",
+            "legislationIdentifier": "Section 11"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Contact Information",
+            "legislationIdentifier": "Section 12"
+          }
+        ]
+      }
+    ]
   }
   </script>
+  
   <Navigation slot="nav" />
   
   <section class="bg-white py-16">

@@ -5,194 +5,233 @@ import Footer from '../../components/Footer.astro';
 ---
 
 <MainLayout title="Contact Digital Visibility | Book a Consultation | Get in Touch">
-  <!-- Contact Page Schema -->
+  <!-- Enhanced Contact Page Schema with @graph -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contact Digital Visibility",
-    "description": "Get in touch with Digital Visibility for expert digital marketing, app development, and product design services. Book a free consultation or request information.",
-    "url": "https://digitalvisibility.com/contact/",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "url": "https://digitalvisibility.com",
-      "logo": "https://digitalvisibility.com/logo.webp",
-      "description": "Digital Visibility provides human-powered, AI-accelerated digital marketing, app development, and product design services to businesses in Swansea, Wales, and globally.",
-      "founder": {
-        "@type": "Person",
-        "name": "Darran Goulding",
-        "url": "https://digitalvisibility.com/about/darran-goulding/"
-      },
-      "foundingDate": "2023-01-01",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "235 Peniel Green Road",
-        "addressLocality": "Llansamlet, Swansea",
-        "addressRegion": "Wales",
-        "postalCode": "SA7 9BA",
-        "addressCountry": "GB"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "51.6399",
-        "longitude": "-3.8936"
-      },
-      "telephone": "+4401792002497",
-      "email": "support@digitalvisibility.com",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:00",
-          "closes": "20:00"
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://digitalvisibility.com/contact/#webpage",
+        "url": "https://digitalvisibility.com/contact/",
+        "name": "Contact Digital Visibility | Book a Consultation | Get in Touch",
+        "description": "Contact Digital Visibility for expert digital marketing, app development, and product design services in Swansea and globally. Book a free 30-minute consultation, call us at +44-01792-002497, or send us a message. Get actionable insights from our award-winning team led by Darran Goulding.",
+        "keywords": ["contact Digital Visibility", "digital marketing agency contact", "app development company contact", "product design services contact", "book consultation Swansea", "digital marketing consultation Wales", "SEO consultation", "AEO consultation", "GEO optimization", "AI marketing consultation", "free strategy session", "schedule consultation Digital Visibility", "contact form", "business hours", "Darran Goulding contact", "Royal Academy Engineering award winner", "marketing strategy session", "digital transformation meeting", "AI integration consultation", "235 Peniel Green Road Llansamlet", "support@digitalvisibility.com", "+4401792002497"],
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
         },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "09:00",
-          "closes": "17:00"
+        "about": {
+          "@id": "https://digitalvisibility.com/#organization"
         },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Sunday",
-          "opens": "10:00",
-          "closes": "16:00"
-        }
-      ],
-      "sameAs": [
-        "https://www.linkedin.com/company/digitalvisibilityuk/",
-        "https://twitter.com/DigitalVisiUK",
-        "https://www.facebook.com/DigitalVisibilityUK",
-        "https://www.instagram.com/digitalvisibilityuk/",
-        "https://uk.pinterest.com/digitalvisibilityuk/"
-      ]
-    },
-    "potentialAction": [
-      {
-        "@type": "ReservationAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://calendar.app.google/jwi4bhf54UUxD9tg9",
-          "name": "Book a Free 30-Minute Strategy Session"
+        "mainEntity": {
+          "@id": "https://digitalvisibility.com/#organization"
         },
-        "result": {
-          "@type": "Reservation",
-          "name": "Digital Visibility Consultation Booking"
-        }
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Digital Visibility",
-    "image": "https://digitalvisibility.com/logo.webp",
-    "@id": "https://digitalvisibility.com",
-    "url": "https://digitalvisibility.com",
-
-    "telephone": "+4401792002497",
-    "email": "support@digitalvisibility.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "235 Peniel Green Road",
-      "addressLocality": "Llansamlet, Swansea",
-      "addressRegion": "Wales",
-      "postalCode": "SA7 9BA",
-      "addressCountry": "GB"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "51.6399",
-      "longitude": "-3.8936"
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "20:00"
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Contact",
+              "item": "https://digitalvisibility.com/contact/"
+            }
+          ]
+        },
+        "potentialAction": [
+          {
+            "@type": "ReservationAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://calendar.app.google/jwi4bhf54UUxD9tg9",
+              "name": "Book a Free 30-Minute Strategy Session"
+            },
+            "result": {
+              "@type": "Reservation",
+              "name": "Digital Visibility Consultation Booking"
+            }
+          }
+        ]
       },
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "09:00",
-        "closes": "17:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Sunday",
-        "opens": "10:00",
-        "closes": "16:00"
-      }
-    ],
-    "hasMap": "https://maps.app.goo.gl/1iqGZ3tPT6NejEy16",
-    "offers": {
-      "@type": "Offer",
-      "name": "Free 30-Minute Strategy Session",
-      "description": "Schedule a no-obligation 30-minute strategy session with expert digital marketing, app development, or product design specialists",
-      "price": "0",
-      "priceCurrency": "GBP",
-      "availability": "https://schema.org/InStock",
-      "url": "https://digitalvisibility.com/contact/"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/digitalvisibilityuk/",
-      "https://twitter.com/DigitalVisiUK",
-      "https://www.facebook.com/DigitalVisibilityUK",
-      "https://www.instagram.com/digitalvisibilityuk/",
-      "https://uk.pinterest.com/digitalvisibilityuk/"
-    ],
-    "areaServed": [
-      {
-        "@type": "GeoCircle",
-        "name": "Swansea area",
-        "geoMidpoint": {
+        "@type": "Organization",
+        "@id": "https://digitalvisibility.com/#organization",
+        "name": "Digital Visibility Limited",
+        "alternateName": "Digital Visibility",
+        "url": "https://digitalvisibility.com",
+        "logo": "https://digitalvisibility.com/logo.webp",
+        "description": "Digital Visibility provides human-powered, AI-accelerated digital marketing, app development, and product design services to businesses in Swansea, Wales, and globally. Founded by Royal Academy of Engineering Award winner Darran Goulding.",
+        "founder": {
+          "@type": "Person",
+          "name": "Darran Goulding",
+          "url": "https://digitalvisibility.com/about/darran-goulding/",
+          "sameAs": ["https://www.linkedin.com/in/darrangoulding/"],
+          "award": "Royal Academy of Engineering Award"
+        },
+        "foundingDate": "2023-01-01",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "235 Peniel Green Road",
+          "addressLocality": "Llansamlet, Swansea",
+          "addressRegion": "Wales",
+          "postalCode": "SA7 9BA",
+          "addressCountry": "GB"
+        },
+        "geo": {
           "@type": "GeoCoordinates",
-          "latitude": "51.6214",
-          "longitude": "-3.9436"
+          "latitude": "51.6399",
+          "longitude": "-3.8936"
         },
-        "geoRadius": "50000"
+        "telephone": "+4401792002497",
+        "email": "support@digitalvisibility.com",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+44-01792-002497",
+            "contactType": "sales",
+            "email": "support@digitalvisibility.com",
+            "areaServed": ["GB", "Global"],
+            "availableLanguage": "English",
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "08:00",
+              "closes": "20:00"
+            }
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+44-7725-817197",
+            "contactType": "customer support",
+            "contactOption": "WhatsApp",
+            "areaServed": ["GB", "Global"],
+            "availableLanguage": "English"
+          }
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "20:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "17:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "10:00",
+            "closes": "16:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/company/digitalvisibilityuk/",
+          "https://twitter.com/DigitalVisiUK",
+          "https://www.facebook.com/DigitalVisibilityUK",
+          "https://www.instagram.com/digitalvisibilityuk/",
+          "https://uk.pinterest.com/digitalvisibilityuk/"
+        ]
       },
       {
-        "@type": "Place",
-        "name": "Wales"
+        "@type": "LocalBusiness",
+        "@id": "https://digitalvisibility.com/#localbusiness",
+        "name": "Digital Visibility",
+        "image": "https://digitalvisibility.com/logo.webp",
+        "url": "https://digitalvisibility.com",
+        "priceRange": "£40/hour - Special offers available",
+        "telephone": "+4401792002497",
+        "email": "support@digitalvisibility.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "235 Peniel Green Road",
+          "addressLocality": "Llansamlet, Swansea",
+          "addressRegion": "Wales",
+          "postalCode": "SA7 9BA",
+          "addressCountry": "GB"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "51.6399",
+          "longitude": "-3.8936"
+        },
+        "hasMap": "https://maps.app.goo.gl/1iqGZ3tPT6NejEy16",
+        "offers": {
+          "@type": "Offer",
+          "name": "Free 30-Minute Strategy Session",
+          "description": "Schedule a no-obligation 30-minute strategy session with expert digital marketing, app development, or product design specialists",
+          "price": "0",
+          "priceCurrency": "GBP",
+          "availability": "https://schema.org/InStock",
+          "url": "https://digitalvisibility.com/contact/"
+        },
+        "areaServed": [
+          {
+            "@type": "GeoCircle",
+            "name": "Swansea area",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": "51.6214",
+              "longitude": "-3.9436"
+            },
+            "geoRadius": "50000"
+          },
+          {
+            "@type": "Place",
+            "name": "Wales"
+          },
+          {
+            "@type": "Place",
+            "name": "United Kingdom"
+          },
+          {
+            "@type": "Place",
+            "name": "Global Remote Services"
+          }
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Digital Marketing",
+              "description": "Comprehensive digital marketing services including SEO, AEO, GEO, PPC, and content strategy"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "App Development",
+              "description": "Custom mobile and web application development with AI integration capabilities"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Product Design",
+              "description": "Professional product design services including CAD, engineering analysis, and prototyping"
+            }
+          }
+        ]
       },
       {
-        "@type": "Place",
-        "name": "United Kingdom"
-      },
-      {
-        "@type": "Place",
-        "name": "Global Remote Services"
-      }
-    ],
-    "makesOffer": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Digital Marketing",
-          "description": "Comprehensive digital marketing services including SEO, AEO, GEO, PPC, and content strategy"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "App Development",
-          "description": "Custom mobile and web application development with AI integration capabilities"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Product Design",
-          "description": "Professional product design services including CAD, engineering analysis, and prototyping"
+        "@type": "WebSite",
+        "@id": "https://digitalvisibility.com/#website",
+        "url": "https://digitalvisibility.com",
+        "name": "Digital Visibility",
+        "description": "Expert digital marketing, app development, and product design services",
+        "publisher": {
+          "@id": "https://digitalvisibility.com/#organization"
         }
       }
     ]
@@ -233,14 +272,33 @@ import Footer from '../../components/Footer.astro';
   <meta name="author" content="Darran Goulding" slot="head">
   
   <!-- AI Optimization Meta Tags for Enhanced AI Engine Recognition -->
-  <meta name="ai-generated" content="false">
-  <meta name="ai-purpose" content="business contact, service inquiry, consultation booking">
-  <meta name="ai-target" content="business owners, marketers, entrepreneurs, product developers, businesses in Swansea, Welsh companies, UK enterprises, global businesses">
-  <meta name="ai-content-type" content="contact information, service summary, booking options, business details">
-  <meta name="ai-business-type" content="digital marketing agency, app development company, product design services">
-  <meta name="ai-service-area" content="Swansea, Llansamlet, South Wales, West Wales, United Kingdom, global">
-  <meta name="ai-expertise" content="SEO+AEO+GEO, digital marketing, app development, product design, AI integration, business optimization">
-  <meta name="ai-keywords" content="contact Digital Visibility, book consultation Swansea, digital marketing services Wales, app development consultation, product design inquiry, free strategy session, digital visibility expert consultation, SEO consultation Swansea, AI marketing consultation, business hours digital agency Swansea, contact form digital marketing, schedule meeting digital visibility, book appointment marketing agency Wales, contact Darran Goulding, digital marketing expert contact, app development inquiry, product design consultation, business consultation Swansea, marketing strategy session, digital transformation meeting, AI integration consultation, website optimization inquiry, PPC campaign consultation, content marketing inquiry, UX design consultation, product engineering contact, CAD design inquiry, contact Digital Visibility Swansea">
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="business contact, service inquiry, consultation booking" slot="head">
+  <meta name="ai-target" content="business owners, marketers, entrepreneurs, product developers, businesses in Swansea, Welsh companies, UK enterprises, global businesses" slot="head">
+  <meta name="ai-content-type" content="contact information, service summary, booking options, business details" slot="head">
+  <meta name="ai-business-type" content="digital marketing agency, app development company, product design services" slot="head">
+  <meta name="ai-service-area" content="Swansea, Llansamlet, South Wales, West Wales, United Kingdom, global" slot="head">
+  <meta name="ai-expertise" content="SEO+AEO+GEO, digital marketing, app development, product design, AI integration, business optimization" slot="head">
+  <meta name="ai-keywords" content="contact Digital Visibility, book consultation Swansea, digital marketing services Wales, app development consultation, product design inquiry, free strategy session, digital visibility expert consultation, SEO consultation Swansea, AI marketing consultation, business hours digital agency Swansea, contact form digital marketing, schedule meeting digital visibility, book appointment marketing agency Wales, contact Darran Goulding, digital marketing expert contact, app development inquiry, product design consultation, business consultation Swansea, marketing strategy session, digital transformation meeting, AI integration consultation, website optimization inquiry, PPC campaign consultation, content marketing inquiry, UX design consultation, product engineering contact, CAD design inquiry, contact Digital Visibility Swansea" slot="head">
+  
+  <!-- Main Meta Description and Keywords -->
+  <meta name="description" content="Contact Digital Visibility for expert digital marketing, app development, and product design services in Swansea and globally. Book a free 30-minute consultation, call us at +44-01792-002497, or send us a message. Get actionable insights from our award-winning team led by Darran Goulding." slot="head">
+  <meta name="keywords" content="contact Digital Visibility, digital marketing agency contact, app development company contact, product design services contact, book consultation Swansea, digital marketing consultation Wales, SEO consultation Swansea, AEO consultation, GEO optimization contact, AI marketing consultation, free strategy session, schedule consultation Digital Visibility, contact form digital marketing, business hours digital agency Swansea, contact Darran Goulding, Royal Academy Engineering award winner, digital marketing expert contact, app development inquiry, product design consultation, web3forms contact, WhatsApp business contact, instant chat support, business consultation Swansea, marketing strategy session, digital transformation meeting, AI integration consultation, PPC campaign consultation, content marketing inquiry, UX design consultation, product engineering contact, CAD design inquiry, 235 Peniel Green Road Llansamlet, Digital Visibility Limited contact, support@digitalvisibility.com, +4401792002497, digital agency Swansea contact, Welsh digital marketing agency, UK digital services contact" slot="head">
+  
+  <!-- Geographic Meta Tags -->
+  <meta name="geo.region" content="GB-SWA" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6399;-3.8936" slot="head">
+  <meta name="ICBM" content="51.6399, -3.8936" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="professional services contact page, business inquiry form, consultation booking" slot="head">
+  <meta name="ai-industry" content="digital marketing, software development, product design, technology services" slot="head">
+  <meta name="ai-services" content="SEO+AEO+GEO optimization, PPC advertising, content marketing, social media marketing, app development, UI/UX design, product design, CAD modeling, engineering analysis, AI automation, chatbot development" slot="head">
+  <meta name="ai-audience" content="business owners, entrepreneurs, startups, SMEs, enterprise companies, marketing managers, product managers, innovators" slot="head">
+  <meta name="ai-intent" content="contact business, book consultation, request quote, schedule meeting, get information, hire services" slot="head">
+  <meta name="ai-unique-value" content="human-powered AI-accelerated services, Royal Academy award-winning founder, comprehensive digital and physical product services, free consultation, special pricing offers" slot="head">
 
 
   <Navigation slot="nav" />

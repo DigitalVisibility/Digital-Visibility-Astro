@@ -5,57 +5,242 @@ import Footer from '../../components/Footer.astro';
 ---
 
 <MainLayout title="AI Conversation Automation Services - Digital Visibility">
-  <!-- AI Conversation Automation Schema -->
+  <!-- Enhanced AI Conversation Automation Schema with @graph -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Digital Visibility - AI Conversation Automation Services",
-    "description": "UK's first Claude MCP specialization agency offering revolutionary AI conversation automation services. Proven 70% efficiency gains from real-world implementation.",
-    "url": "https://digitalvisibility.com/services/ai-conversation-automation/",
-    "logo": "https://digitalvisibility.com/logo.png",
-    "telephone": "+4401792002497",
-    "email": "support@digitalvisibility.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "235 Peniel Green Road",
-      "addressLocality": "Llansamlet",
-      "addressRegion": "Swansea",
-      "postalCode": "SA7 9BA",
-      "addressCountry": "GB"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "51.6553959",
-      "longitude": "-3.9336144"
-    },
-    "openingHours": [
-      "Mo-Fr 08:00-20:00",
-      "Sa 09:00-17:00",
-      "Su 10:00-16:00"
-    ],
-    "priceRange": "£397-£1597",
-    "currenciesAccepted": "GBP",
-    "paymentAccepted": "Cash, Credit Card, Bank Transfer, Direct Debit",
-    "areaServed": [
+    "@graph": [
       {
-        "@type": "Place",
-        "name": "United Kingdom"
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/services/ai-conversation-automation/#webpage",
+        "url": "https://digitalvisibility.com/services/ai-conversation-automation/",
+        "name": "AI Conversation Automation Services | UK's First Claude MCP Specialists | Digital Visibility",
+        "description": "UK's first Claude MCP specialization agency. Revolutionary AI conversation automation with proven 70% efficiency gains. Transform your business workflows into intelligent conversations.",
+        "keywords": ["AI conversation automation", "Claude MCP", "business process automation", "conversational AI", "workflow automation", "AI efficiency", "UK Claude specialists", "intelligent automation", "business transformation", "AI implementation"],
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "about": {
+          "@id": "https://digitalvisibility.com/services/ai-conversation-automation/#service"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://digitalvisibility.com/services/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "AI Conversation Automation",
+              "item": "https://digitalvisibility.com/services/ai-conversation-automation/"
+            }
+          ]
+        }
       },
       {
-        "@type": "Place",
-        "name": "Global"
+        "@type": "ProfessionalService",
+        "@id": "https://digitalvisibility.com/services/ai-conversation-automation/#service",
+        "name": "Digital Visibility - AI Conversation Automation Services",
+        "alternateName": "UK's First Claude MCP Specialists",
+        "description": "UK's first Claude MCP specialization agency offering revolutionary AI conversation automation services. Proven 70% efficiency gains from real-world implementation. Founded by Royal Academy of Engineering Award winner.",
+        "url": "https://digitalvisibility.com/services/ai-conversation-automation/",
+        "logo": "https://digitalvisibility.com/logo.webp",
+        "image": "https://digitalvisibility.com/ai-conversation-automation.webp",
+        "telephone": "+4401792002497",
+        "email": "support@digitalvisibility.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "235 Peniel Green Road",
+          "addressLocality": "Llansamlet",
+          "addressRegion": "Swansea",
+          "postalCode": "SA7 9BA",
+          "addressCountry": "GB"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "51.6399",
+          "longitude": "-3.8936"
+        },
+        "openingHours": [
+          "Mo-Fr 08:00-20:00",
+          "Sa 09:00-17:00",
+          "Su 10:00-16:00"
+        ],
+        "priceRange": "£397-£1597/month",
+        "currenciesAccepted": "GBP",
+        "paymentAccepted": "Cash, Credit Card, Bank Transfer, Direct Debit",
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "United Kingdom"
+          },
+          {
+            "@type": "Place",
+            "name": "Global Remote Services"
+          }
+        ],
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "award": "Royal Academy of Engineering Award 2025",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "AI Conversation Automation Packages",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Starter Automation",
+              "description": "3 AI conversation automations with 5 core business app integrations",
+              "price": "397",
+              "priceCurrency": "GBP",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "397",
+                "priceCurrency": "GBP",
+                "unitText": "month"
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Business Transformation",
+              "description": "Unlimited AI conversation automations with complete Claude MCP integration. Includes FREE £2,995 website.",
+              "price": "797",
+              "priceCurrency": "GBP",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "797",
+                "priceCurrency": "GBP",
+                "unitText": "month"
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Enterprise Intelligence",
+              "description": "Complete AI ecosystem transformation with custom Claude MCP server development",
+              "price": "1597",
+              "priceCurrency": "GBP",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "1597",
+                "priceCurrency": "GBP",
+                "unitText": "month"
+              }
+            }
+          ]
+        },
+        "serviceOutput": {
+          "@type": "Thing",
+          "name": "AI-Powered Business Transformation",
+          "description": "70% efficiency gains, 90% faster task completion, streamlined operations through intelligent conversation automation"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://digitalvisibility.com/services/ai-conversation-automation/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Claude MCP and why is it revolutionary?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Claude MCP (Model Context Protocol) is Anthropic's breakthrough technology that allows AI to directly connect with your business applications. It transforms how AI interacts with your tools, enabling intelligent automation that understands context and makes decisions like a human would."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How did Digital Visibility achieve 70% efficiency gains?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We implemented Claude MCP across our entire workflow, automating research, client communication, project management, and content creation. Tasks that took hours now complete in minutes through intelligent conversation interfaces."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes Digital Visibility the UK's first Claude MCP specialists?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We were early adopters during the Claude MCP beta launch, implementing it in our own business first. Our Royal Academy Award-winning founder has documented every optimization, creating the UK's most comprehensive implementation methodology."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "SpecialAnnouncement",
+        "@id": "https://digitalvisibility.com/services/ai-conversation-automation/#announcement",
+        "name": "FREE £2,995 Website with Annual Plans",
+        "text": "Get a completely FREE professional website (worth £2,995) when you commit to our Business Transformation or Enterprise Intelligence annual plans.",
+        "datePosted": "2024-01-01",
+        "expires": "2024-12-31",
+        "category": "https://www.wikidata.org/wiki/Q11826202"
       }
     ]
   }
   </script>
 
+  <!-- SEO and Canonical Tags -->
+  <link rel="canonical" href="https://digitalvisibility.com/services/ai-conversation-automation/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  
+  <!-- Main Meta Description and Keywords -->
+  <meta name="description" content="UK's first Claude MCP specialization agency. Revolutionary AI conversation automation with proven 70% efficiency gains. Transform your business workflows into intelligent conversations. Expert implementation from Royal Academy Award winner. Serving UK businesses globally." slot="head">
+  <meta name="keywords" content="AI conversation automation UK, Claude MCP automation services, Claude MCP integration UK, AI workflow automation specialists, conversation AI specialists UK, business process automation, AI transformation services, intelligent automation agency, Claude API integration, conversational AI implementation, AI business automation Swansea, Welsh AI automation agency, UK Claude specialists, MCP server development, AI efficiency gains, automated research systems, intelligent app connectivity, AI conversation interfaces, business automation transformation, enterprise AI solutions, Claude automation experts, AI workflow optimization, conversational workflow automation, AI-powered business processes, automated task completion, intelligent decision-making systems, AI research automation, competitive intelligence automation, automated market analysis, AI productivity tools" slot="head">
+  
+  <!-- Publisher, Twitter and OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="AI Conversation Automation Services | UK's First Claude MCP Specialists | Digital Visibility" slot="head">
+  <meta property="og:description" content="Revolutionary AI conversation automation with proven 70% efficiency gains. UK's first Claude MCP specialization agency. Transform your workflows into intelligent conversations." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/services/ai-conversation-automation/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/ai-conversation-automation.webp" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/webp" slot="head">
+  
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="AI Conversation Automation | UK's First Claude MCP Specialists" slot="head">
+  <meta name="twitter:description" content="Revolutionary AI conversation automation with proven 70% efficiency gains. Transform your workflows into intelligent conversations. Book your free consultation today." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/ai-conversation-automation.webp" slot="head">
+  
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- Geographic Meta Tags -->
+  <meta name="geo.region" content="GB-SWA" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6399;-3.8936" slot="head">
+  <meta name="ICBM" content="51.6399, -3.8936" slot="head">
+  
   <!-- AI Optimization Meta Tags -->
-  <meta name="ai-purpose" content="AI conversation automation, Claude MCP integration, business process automation, intelligent workflow optimization">
-  <meta name="ai-target" content="UK businesses, entrepreneurs, digital transformation leaders, automation specialists">
-  <meta name="ai-content-type" content="AI automation service page, Claude MCP services, conversation automation">
-  <meta name="ai-business-type" content="AI automation agency, Claude MCP specialists, conversation automation experts">
-  <meta name="ai-keywords" content="AI conversation automation UK, Claude MCP automation services, intelligent business automation, AI workflow automation specialists, conversation AI specialists UK, business process automation, AI transformation services">
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="AI conversation automation, Claude MCP integration, business process automation, intelligent workflow optimization" slot="head">
+  <meta name="ai-target" content="UK businesses, entrepreneurs, digital transformation leaders, automation specialists" slot="head">
+  <meta name="ai-content-type" content="AI automation service page, Claude MCP services, conversation automation" slot="head">
+  <meta name="ai-business-type" content="AI automation agency, Claude MCP specialists, conversation automation experts" slot="head">
+  <meta name="ai-keywords" content="AI conversation automation UK, Claude MCP automation services, intelligent business automation, AI workflow automation specialists, conversation AI specialists UK, business process automation, AI transformation services" slot="head">
+  <meta name="ai-service-area" content="United Kingdom, Wales, Swansea, global remote services" slot="head">
+  <meta name="ai-technology" content="Claude MCP, conversational AI, workflow automation, intelligent integration, AI research automation" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="professional AI automation services, Claude MCP specialization, conversation automation solutions" slot="head">
+  <meta name="ai-industry" content="AI automation, business process optimization, intelligent workflow management, conversational AI services" slot="head">
+  <meta name="ai-services" content="Claude MCP integration, AI conversation automation, intelligent workflow design, automated research systems, app connectivity automation, business process transformation, AI implementation consulting, custom MCP server development, enterprise AI solutions" slot="head">
+  <meta name="ai-audience" content="business owners, CTOs, operations managers, digital transformation leaders, enterprise companies, SMEs, startups, automation-ready businesses" slot="head">
+  <meta name="ai-intent" content="implement AI automation, transform business workflows, increase efficiency, reduce manual tasks, automate research, integrate Claude MCP" slot="head">
+  <meta name="ai-unique-value" content="UK's first Claude MCP specialists, proven 70% efficiency gains, Royal Academy Award winner, real implementation experience, comprehensive automation packages from £397/month" slot="head">
 
   <Navigation slot="nav" />
   

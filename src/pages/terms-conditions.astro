@@ -2,93 +2,254 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+
+const meta = {
+  title: "Terms of Service - Digital Visibility",
+  description: "Read Digital Visibility's terms of service to understand the legal agreement between you and our company regarding website usage and service provisions.",
+  keywords: "terms of service, terms and conditions, digital visibility terms, legal agreement, website terms, service agreement, user agreement, legal terms, business terms, digital marketing terms, website usage terms, service provisions, intellectual property terms, liability disclaimer, privacy terms, user conduct, account terms, termination policy, warranty disclaimer, indemnification, UK legal terms, Wales business terms, Swansea company terms, digital services agreement, online terms, internet terms of use, website legal notice, service contract, user obligations, company policies, legal documentation, business agreement, client terms, customer agreement, service restrictions, usage policy, acceptable use policy, digital visibility policies",
+  image: "https://digitalvisibility.com/digital-visibility-logo-f.png"
+};
 ---
 
-<MainLayout title="Terms of Service - Digital Visibility">
-  <!-- SEO and Canonical Tags -->
+<MainLayout title={meta.title}>
+  <!-- Comprehensive Meta Tags -->
+  <meta name="description" content={meta.description} slot="head">
+  <meta name="keywords" content={meta.keywords} slot="head">
   <link rel="canonical" href="https://digitalvisibility.com/terms-conditions/" slot="head">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
-  <meta name="description" content="Read Digital Visibility's terms of service to understand the legal agreement between you and our company regarding website usage and service provisions." slot="head">
-  <meta name="keywords" content="terms of service, terms and conditions, digital visibility terms, legal agreement" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-Robots-Tag" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   <meta name="author" content="Digital Visibility" slot="head">
+  
+  <!-- Geographic and Local SEO Tags -->
+  <meta name="geo.region" content="GB-WLS" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6429;-3.9372" slot="head">
+  <meta name="ICBM" content="51.6429, -3.9372" slot="head">
+  <meta name="location" content="Swansea, Wales, United Kingdom" slot="head">
+  <meta name="region" content="South Wales" slot="head">
+  <meta name="country" content="United Kingdom" slot="head">
+  <meta name="language" content="en-GB" slot="head">
   
   <!-- Publisher, Twitter and OpenGraph Tags -->
   <meta property="og:locale" content="en_GB" slot="head">
   <meta property="og:type" content="website" slot="head">
-  <meta property="og:title" content="Terms of Service - Digital Visibility" slot="head">
-  <meta property="og:description" content="Read Digital Visibility's terms of service to understand the legal agreement between you and our company regarding website usage and service provisions." slot="head">
+  <meta property="og:title" content={meta.title} slot="head">
+  <meta property="og:description" content={meta.description} slot="head">
   <meta property="og:url" content="https://digitalvisibility.com/terms-conditions/" slot="head">
   <meta property="og:site_name" content="Digital Visibility" slot="head">
-  <meta property="og:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  <meta property="og:image" content={meta.image} slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/png" slot="head">
   <meta property="article:publisher" content="https://www.facebook.com/DigitalVisibilityUK" slot="head">
   <meta property="article:modified_time" content="2025-04-13T00:00:00+00:00" slot="head">
   
   <meta name="twitter:card" content="summary_large_image" slot="head">
   <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
   <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
-  <meta name="twitter:title" content="Terms of Service - Digital Visibility" slot="head">
-  <meta name="twitter:description" content="Read Digital Visibility's terms of service to understand the legal agreement between you and our company regarding website usage and service provisions." slot="head">
-  <meta name="twitter:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  <meta name="twitter:title" content={meta.title} slot="head">
+  <meta name="twitter:description" content={meta.description} slot="head">
+  <meta name="twitter:image" content={meta.image} slot="head">
   
   <meta name="publisher" content="Digital Visibility Limited" slot="head">
   
-  <!-- AI Engine Optimization Tags -->
-  <meta name="ai-purpose" content="legal information, terms of service, business agreement" slot="head">
-  <meta name="ai-target" content="business owners, clients, website visitors" slot="head">
-  <meta name="ai-content-type" content="legal text, terms of service" slot="head">
-  <meta name="ai-keywords" content="terms of service, legal agreement, user restrictions, intellectual property, service usage, liability limitations, termination policy" slot="head">
-  <meta name="ai-business-type" content="digital marketing agency, business services provider" slot="head">
+  <!-- Advanced AI and NLP Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="legal information, terms of service, business agreement, user guidelines" slot="head">
+  <meta name="ai-target" content="business owners, clients, website visitors, potential customers, service users" slot="head">
+  <meta name="ai-content-type" content="legal text, terms of service, policy document, legal agreement" slot="head">
+  <meta name="ai-keywords" content={meta.keywords} slot="head">
+  <meta name="ai-business-type" content="digital marketing agency, business services provider, technology company" slot="head">
   <meta name="ai-created-content" content="false" slot="head">
+  <meta name="ai-service-area" content="Swansea, South Wales, United Kingdom, global services" slot="head">
+  <meta name="ai-industry" content="digital marketing, technology services, business services" slot="head">
+  <meta name="ai-document-type" content="legal document, terms of service, business policy" slot="head">
+  <meta name="ai-jurisdiction" content="United Kingdom, UK law, Welsh business law" slot="head">
+  <meta name="ai-entity-type" content="LegalDocument, Terms, Policy, Agreement" slot="head">
+  <meta name="ai-semantic-keywords" content="UK terms of service, Welsh business terms, Swansea company policies, digital marketing legal terms, website usage agreement" slot="head">
+  <meta name="ai-nlp-focus" content="legal requirements, user obligations, service restrictions, liability limitations, intellectual property" slot="head">
+  <meta name="ai-response-style" content="formal, legal, comprehensive, clear terms" slot="head">
+  <meta name="ai-content-depth" content="complete legal agreement, detailed terms, comprehensive policies" slot="head">
   
-  <!-- Terms Schema -->
-  <script type="application/ld+json">
+  <!-- Enhanced Schema Markup with @graph -->
+  <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Terms of Service - Digital Visibility",
-    "description": "Read Digital Visibility's terms of service to understand the legal agreement between you and our company regarding website usage and service provisions.",
-    "url": "https://digitalvisibility.com/terms-conditions/",
-    "lastReviewed": "2025-04-13",
-    "mainContentOfPage": {
-      "@type": "WebPageElement",
-      "cssSelector": ".prose"
-    },
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": ["h1", "h2", "p"]
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
-      }
-    },
-    "isPartOf": {
-      "@type": "WebSite",
-      "url": "https://digitalvisibility.com",
-      "name": "Digital Visibility - Human Powered, AI Accelerated Solutions"
-    },
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://digitalvisibility.com"
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/terms-conditions/#webpage",
+        "url": "https://digitalvisibility.com/terms-conditions/",
+        "name": "Terms of Service - Digital Visibility",
+        "description": "Read Digital Visibility's terms of service to understand the legal agreement between you and our company regarding website usage and service provisions.",
+        "lastReviewed": "2025-04-13",
+        "datePublished": "2024-01-01",
+        "dateModified": "2025-04-13",
+        "mainContentOfPage": {
+          "@type": "WebPageElement",
+          "cssSelector": ".prose"
         },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Terms of Service",
-          "item": "https://digitalvisibility.com/terms-conditions/"
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", "h2", "p"]
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Terms of Service",
+              "item": "https://digitalvisibility.com/terms-conditions/"
+            }
+          ]
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "contentUrl": "https://digitalvisibility.com/digital-visibility-logo-f.png"
         }
-      ]
-    }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://digitalvisibility.com/#organization",
+        "name": "Digital Visibility Limited",
+        "url": "https://digitalvisibility.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "235 Peniel Green Road",
+          "addressLocality": "Llansamlet, Swansea",
+          "addressRegion": "Wales",
+          "postalCode": "SA7 9BA",
+          "addressCountry": "UK"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+44-01792-002497",
+          "contactType": "customer service",
+          "email": "support@digitalvisibility.com",
+          "availableLanguage": "English"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://digitalvisibility.com/terms-conditions/#document",
+        "name": "Digital Visibility Terms of Service",
+        "url": "https://digitalvisibility.com/terms-conditions/",
+        "datePublished": "2024-01-01",
+        "dateModified": "2025-04-13",
+        "inLanguage": "en-GB",
+        "author": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "Legal agreement for Digital Visibility services",
+          "description": "Comprehensive terms governing the use of Digital Visibility's website and digital marketing services"
+        },
+        "keywords": "terms of service, legal agreement, user restrictions, intellectual property, service usage, liability limitations, termination policy",
+        "hasPart": [
+          {
+            "@type": "Legislation",
+            "name": "Acceptance of Terms",
+            "legislationIdentifier": "Section 1"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Age Restrictions and Consent",
+            "legislationIdentifier": "Section 2"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Registration and Account Security",
+            "legislationIdentifier": "Section 3"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Intellectual Property Rights",
+            "legislationIdentifier": "Section 4"
+          },
+          {
+            "@type": "Legislation",
+            "name": "User Conduct",
+            "legislationIdentifier": "Section 5"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Third-Party Links and Services",
+            "legislationIdentifier": "Section 6"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Termination",
+            "legislationIdentifier": "Section 7"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Disclaimer of Warranties",
+            "legislationIdentifier": "Section 8"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Limitation of Liability",
+            "legislationIdentifier": "Section 9"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Indemnification",
+            "legislationIdentifier": "Section 10"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Governing Law and Jurisdiction",
+            "legislationIdentifier": "Section 11"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Severability",
+            "legislationIdentifier": "Section 12"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Entire Agreement",
+            "legislationIdentifier": "Section 13"
+          },
+          {
+            "@type": "Legislation",
+            "name": "Contact Information",
+            "legislationIdentifier": "Section 14"
+          }
+        ]
+      }
+    ]
   }
   </script>
+  
   <Navigation slot="nav" />
   
   <section class="bg-white py-16">

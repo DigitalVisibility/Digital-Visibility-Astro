@@ -2,12 +2,215 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+
+const meta = {
+  title: "Page Not Found | Digital Visibility",
+  description: "The page you're looking for doesn't exist. Return to Digital Visibility's homepage for digital marketing, app development, and product design services.",
+  keywords: "404 error, page not found, error page, Digital Visibility 404, missing page, broken link, dead link, invalid URL, page doesn't exist, page moved, page removed, error 404, not found error, website error, navigation error, wrong address, incorrect URL, lost page, unavailable page, Digital Visibility error, 404 page, site error, web error, page missing, resource not found, file not found, directory not found, URL not found, broken page, invalid page, non-existent page, page unavailable, content not found, Swansea digital marketing 404, Wales business website error, UK marketing agency error page, return to home, find what you need, popular pages, get help, sitemap, contact support",
+  image: "https://digitalvisibility.com/digital-visibility-logo-f.png"
+};
 ---
 
-<MainLayout title="Page Not Found | Digital Visibility">
-  <!-- SEO and Canonical Tags -->
+<MainLayout title={meta.title}>
+  <!-- Comprehensive Meta Tags -->
+  <meta name="description" content={meta.description} slot="head">
+  <meta name="keywords" content={meta.keywords} slot="head">
   <meta name="robots" content="noindex, follow" slot="head">
-  <meta name="description" content="The page you're looking for doesn't exist. Return to Digital Visibility's homepage for digital marketing, app development, and product design services." slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="noindex, follow" slot="head">
+  <meta name="bingbot" content="noindex, follow" slot="head">
+  <meta http-equiv="X-Robots-Tag" content="noindex, follow" slot="head">
+  <meta name="author" content="Digital Visibility" slot="head">
+  
+  <!-- Geographic and Local SEO Tags -->
+  <meta name="geo.region" content="GB-WLS" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6429;-3.9372" slot="head">
+  <meta name="ICBM" content="51.6429, -3.9372" slot="head">
+  <meta name="location" content="Swansea, Wales, United Kingdom" slot="head">
+  <meta name="region" content="South Wales" slot="head">
+  <meta name="country" content="United Kingdom" slot="head">
+  <meta name="language" content="en-GB" slot="head">
+  
+  <!-- Publisher, Twitter and OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content={meta.title} slot="head">
+  <meta property="og:description" content={meta.description} slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/404/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content={meta.image} slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/png" slot="head">
+  
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content={meta.title} slot="head">
+  <meta name="twitter:description" content={meta.description} slot="head">
+  <meta name="twitter:image" content={meta.image} slot="head">
+  
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  
+  <!-- Advanced AI and NLP Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="error page, 404 notification, navigation assistance, user guidance" slot="head">
+  <meta name="ai-target" content="lost visitors, misdirected users, broken link followers, website visitors" slot="head">
+  <meta name="ai-content-type" content="error page, 404 page, navigation page" slot="head">
+  <meta name="ai-keywords" content={meta.keywords} slot="head">
+  <meta name="ai-business-type" content="digital marketing agency, business services provider, web development company" slot="head">
+  <meta name="ai-created-content" content="false" slot="head">
+  <meta name="ai-service-area" content="Swansea, South Wales, United Kingdom, global services" slot="head">
+  <meta name="ai-industry" content="digital marketing, web development, business services" slot="head">
+  <meta name="ai-page-type" content="error page, 404 error, navigation assistance page" slot="head">
+  <meta name="ai-user-intent" content="find correct page, navigate to content, resolve error, get help" slot="head">
+  <meta name="ai-entity-type" content="ErrorPage, 404Page, NavigationPage" slot="head">
+  <meta name="ai-semantic-keywords" content="404 error page Wales, page not found UK, Swansea website error, digital marketing navigation help, broken link assistance" slot="head">
+  <meta name="ai-nlp-focus" content="error notification, navigation guidance, helpful resources, alternative paths" slot="head">
+  <meta name="ai-response-style" content="helpful, apologetic, solution-oriented, user-friendly" slot="head">
+  <meta name="ai-content-depth" content="error explanation, navigation options, resource links, contact information" slot="head">
+  
+  <!-- Enhanced Schema Markup with @graph -->
+  <script type="application/ld+json" slot="head">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/404/#webpage",
+        "url": "https://digitalvisibility.com/404/",
+        "name": "Page Not Found | Digital Visibility",
+        "description": "The page you're looking for doesn't exist. Return to Digital Visibility's homepage for digital marketing, app development, and product design services.",
+        "datePublished": "2024-01-01",
+        "dateModified": "2025-01-01",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "404 Error",
+              "item": "https://digitalvisibility.com/404/"
+            }
+          ]
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "contentUrl": "https://digitalvisibility.com/digital-visibility-logo-f.png"
+        },
+        "potentialAction": [
+          {
+            "@type": "Action",
+            "name": "Return Home",
+            "url": "https://digitalvisibility.com/"
+          },
+          {
+            "@type": "Action",
+            "name": "Contact Us",
+            "url": "https://digitalvisibility.com/contact/"
+          }
+        ],
+        "mainEntity": {
+          "@type": "ItemList",
+          "@id": "https://digitalvisibility.com/404/#navigation"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://digitalvisibility.com/#organization",
+        "name": "Digital Visibility Limited",
+        "url": "https://digitalvisibility.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "235 Peniel Green Road",
+          "addressLocality": "Llansamlet, Swansea",
+          "addressRegion": "Wales",
+          "postalCode": "SA7 9BA",
+          "addressCountry": "UK"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+44-01792-002497",
+          "contactType": "customer service",
+          "email": "support@digitalvisibility.com",
+          "availableLanguage": "English"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://digitalvisibility.com/404/#navigation",
+        "name": "Navigation Options",
+        "description": "Helpful links to find what you're looking for on Digital Visibility",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "WebPage",
+              "url": "https://digitalvisibility.com/",
+              "name": "Home"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "WebPage",
+              "url": "https://digitalvisibility.com/services/digital-marketing/",
+              "name": "Digital Marketing"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "WebPage",
+              "url": "https://digitalvisibility.com/services/app-development/",
+              "name": "App Development"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "WebPage",
+              "url": "https://digitalvisibility.com/services/product-design/",
+              "name": "Product Design"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "WebPage",
+              "url": "https://digitalvisibility.com/contact/",
+              "name": "Contact Us"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
   
   <Navigation slot="nav" />
   

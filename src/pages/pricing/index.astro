@@ -4,7 +4,7 @@ import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
 ---
 
-<MainLayout title="Flexible Hourly Pricing | Digital Visibility">
+<MainLayout title="Flexible Hourly Pricing | Digital Visibility | £40/Hour Digital Marketing">
   <!-- SEO and Canonical Tags -->
   <link rel="canonical" href="https://digitalvisibility.com/pricing/" slot="head">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
@@ -13,220 +13,433 @@ import Footer from "../../components/Footer.astro";
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   <meta http-equiv="X-Robots-Tag" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   
+  <!-- Core Meta Tags -->
+  <meta name="keywords" content="digital marketing pricing Swansea, £40 hour digital marketing, flexible SEO pricing Wales, no contract marketing agency, hourly digital marketing rates UK, affordable AEO services, website design pricing Swansea, social media marketing costs Wales, content creation hourly rate, small business marketing packages, pay as you go SEO, monthly digital marketing plans, scalable marketing services UK, transparent agency pricing, Welsh digital agency rates, South Wales marketing costs, AI optimization pricing, free website offer Swansea, AI authority funnel pricing, digital transformation costs UK" slot="head">
+  <meta name="description" content="Transparent digital marketing pricing at £40/hour. No contracts, no minimums - pay only for what you need. FREE website worth £2,995 with 5+ hours/month. Flexible packages for Swansea, Wales & UK businesses. Scale up or down anytime." slot="head">
+  
   <!-- Publisher, Twitter and OpenGraph Tags -->
   <meta property="og:locale" content="en_GB" slot="head">
   <meta property="og:type" content="website" slot="head">
-  <meta property="og:title" content="Flexible Hourly Pricing | Digital Visibility" slot="head">
-  <meta property="og:description" content="Human-powered, AI-accelerated digital marketing services at £40 per hour with no minimum commitment. Start with 1 hour and scale based on your needs. Includes free website and AI funnel offers." slot="head">
+  <meta property="og:title" content="Digital Marketing Pricing | £40/Hour | No Contracts | Digital Visibility" slot="head">
+  <meta property="og:description" content="Flexible digital marketing at £40/hour. No minimums, no contracts. FREE website (£2,995 value) with 5+ hours. Scale your marketing budget up or down anytime. Serving Swansea, Wales & UK." slot="head">
   <meta property="og:url" content="https://digitalvisibility.com/pricing/" slot="head">
   <meta property="og:site_name" content="Digital Visibility" slot="head">
-  <meta property="og:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  <meta property="og:image" content="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/pricing-digital-visibility/public" slot="head">
   <meta property="og:image:width" content="1200" slot="head">
   <meta property="og:image:height" content="630" slot="head">
   <meta property="og:image:type" content="image/png" slot="head">
+  <meta property="og:image:alt" content="Digital Visibility Pricing - £40/Hour Flexible Marketing" slot="head">
   
   <meta name="twitter:card" content="summary_large_image" slot="head">
   <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
   <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
-  <meta name="twitter:title" content="Flexible Hourly Pricing | Digital Visibility" slot="head">
-  <meta name="twitter:description" content="Human-powered, AI-accelerated digital marketing services at £40 per hour with no minimum commitment. Start with 1 hour and scale based on your needs. Includes free website and AI funnel offers." slot="head">
-  <meta name="twitter:image" content="https://digitalvisibility.com/digital-visibility-logo-f.png" slot="head">
+  <meta name="twitter:title" content="Digital Marketing Pricing | £40/Hour | No Contracts" slot="head">
+  <meta name="twitter:description" content="Pay only for what you need at £40/hour. FREE website with 5+ hours/month. No contracts, scale anytime. Digital marketing for Welsh & UK businesses." slot="head">
+  <meta name="twitter:image" content="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/pricing-digital-visibility/public" slot="head">
+  <meta name="twitter:image:alt" content="Digital Visibility Flexible Pricing" slot="head">
   
   <meta name="publisher" content="Digital Visibility Limited" slot="head">
   <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- AI-Specific Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="pricing-information,service-packages,cost-comparison,budget-planning,service-selection" slot="head">
+  <meta name="ai-target" content="small-business-owners,marketing-managers,entrepreneurs,budget-conscious-businesses,growth-focused-companies" slot="head">
+  <meta name="ai-keywords" content="£40 hour digital marketing, flexible marketing pricing, no contract SEO, pay as you go marketing, hourly rate digital agency, scalable marketing services, transparent pricing model, free website offer, AI funnel pricing, small business marketing costs" slot="head">
+  <meta name="ai-content-type" content="pricing page, service costs, package information, special offers, pricing calculator" slot="head">
+  <meta name="ai-service-area" content="Swansea, Cardiff, Newport, South Wales, West Wales, Bristol, London, United Kingdom, International" slot="head">
+  <meta name="ai-business-type" content="Digital Marketing Agency, SEO Company, Web Design Agency, AI Marketing Services" slot="head">
+  <meta name="ai-pricing-model" content="hourly-rate, pay-as-you-go, no-minimums, no-contracts, flexible-packages" slot="head">
+  <meta name="ai-special-offers" content="free-website-5-hours, free-ai-funnel-3-hours, no-setup-fees, hours-never-expire" slot="head">
+  
+  <!-- Geolocation Tags -->
+  <meta name="geo.region" content="GB-SWA" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6214;-3.9436" slot="head">
+  <meta name="ICBM" content="51.6214, -3.9436" slot="head">
 
-  <!-- Pricing Page Schema -->
-  <script type="application/ld+json">
+  <!-- Enhanced Pricing Page Schema -->
+  <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Digital Visibility",
-    "description": "Human-powered, AI-accelerated digital marketing services at £40 per hour with complete flexibility. No commitment required - choose as many or as few hours as you need and adjust monthly based on your business needs.",
-    "url": "https://digitalvisibility.com/pricing/",
-    "logo": "https://digitalvisibility.com/logo.png",
-    "image": "https://digitalvisibility.com/digital-marketing-services.jpg",
-    "telephone": "+4401792002497",
-    "email": "support@digitalvisibility.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "235 Peniel Green Road",
-      "addressLocality": "Llansamlet",
-      "addressRegion": "Swansea",
-      "postalCode": "SA7 9BA",
-      "addressCountry": "GB"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "51.6553959",
-      "longitude": "-3.9336144"
-    },
-    "openingHours": [
-      "Mo-Fr 08:00-20:00",
-      "Sa 09:00-17:00",
-      "Su 10:00-16:00"
-    ],
-    "priceRange": "£40 per hour with no upper limit",
-    "currenciesAccepted": "GBP",
-    "paymentAccepted": "Cash, Credit Card, Bank Transfer, Direct Debit",
-    "areaServed": [
+    "@graph": [
       {
-        "@type": "Place",
-        "name": "Swansea"
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/pricing/#webpage",
+        "url": "https://digitalvisibility.com/pricing/",
+        "name": "Digital Marketing Pricing - £40/Hour Flexible Packages | Digital Visibility",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-01-22",
+        "description": "Transparent digital marketing pricing at £40 per hour. No contracts, no minimums. FREE website worth £2,995 with 5+ hours/month. Scale up or down anytime.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Pricing",
+              "item": "https://digitalvisibility.com/pricing/"
+            }
+          ]
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/pricing-structure-digital-visibility/public",
+          "width": "1200",
+          "height": "630",
+          "caption": "Digital Visibility Flexible Pricing Structure"
+        }
       },
       {
-        "@type": "Place",
-        "name": "Wales"
-      },
-      {
-        "@type": "Place",
-        "name": "United Kingdom"
-      },
-      {
-        "@type": "Place",
-        "name": "Global"
+        "@type": "ProfessionalService",
+        "@id": "https://digitalvisibility.com/pricing/#service",
+        "name": "Digital Visibility Marketing Services",
+        "description": "Human-powered, AI-accelerated digital marketing services at £40 per hour with complete flexibility. No commitment required - choose as many or as few hours as you need and adjust monthly based on your business needs.",
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "url": "https://digitalvisibility.com/pricing/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/digital-visibility-logo-f.png",
+          "width": "180",
+          "height": "60"
+        },
+        "image": [
+          "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/digital-marketing-team-at-work/public",
+          "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/flexible-pricing-packages/public"
+        ],
+        "telephone": "+44-01792-002497",
+        "email": "support@digitalvisibility.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "235 Peniel Green Road",
+          "addressLocality": "Llansamlet",
+          "addressRegion": "Swansea",
+          "postalCode": "SA7 9BA",
+          "addressCountry": "GB"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "51.6214",
+          "longitude": "-3.9436"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "20:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "17:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "10:00",
+            "closes": "16:00"
+          }
+        ],
+        "priceRange": "£40 per hour - no minimum, no maximum",
+        "currenciesAccepted": "GBP",
+        "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer", "Direct Debit", "PayPal"],
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Swansea",
+            "containedInPlace": {
+              "@type": "Country",
+              "name": "United Kingdom"
+            }
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Wales"
+          },
+          {
+            "@type": "Country",
+            "name": "United Kingdom"
+          },
+          {
+            "@type": "Place",
+            "name": "International",
+            "description": "Remote services available globally"
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Digital Marketing Service Packages",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "@id": "https://digitalvisibility.com/pricing/#hourly-rate",
+              "name": "Flexible Hourly Digital Marketing",
+              "description": "Pay-as-you-go digital marketing services at £40 per hour. Use hours across any service: SEO, AEO, GEO, content creation, web design, social media, and more.",
+              "price": "40",
+              "priceCurrency": "GBP",
+              "unitCode": "HUR",
+              "availability": "https://schema.org/InStock",
+              "validFrom": "2023-01-01",
+              "category": "Digital Marketing Services"
+            }
+          ]
+        }
       }
     ]
   }
   </script>
 
-  <script type="application/ld+json">
+  <!-- Service Package Schema -->
+  <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "Offer",
-    "itemOffered": {
-      "@type": "Service",
-      "name": "Digital Marketing Hourly Services",
-      "description": "Completely flexible digital marketing services charged at £40 per hour with no minimum commitment and no upper limit. Start with as little as 1 hour and scale up or down anytime based on your business needs."
-    },
-    "priceSpecification": {
-      "@type": "PriceSpecification",
-      "price": "40.00",
-      "priceCurrency": "GBP",
-      "unitText": "Hour"
-    },
-    "seller": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "url": "https://digitalvisibility.com/"
-    },
-    "offeredBy": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "url": "https://digitalvisibility.com/"
-    }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Small Business Digital Marketing Package",
-    "description": "Recommended 3 hours per month digital marketing services including website updates, SEO improvements, and content creation. At £40 per hour with the flexibility to increase or decrease hours as needed.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Digital Visibility Limited",
-      "url": "https://digitalvisibility.com"
-    },
-    "serviceType": "Digital Marketing",
-    "serviceOutput": "Improved online visibility and website performance",
-    "offers": {
-      "@type": "Offer",
-      "price": "120.00",
-      "priceCurrency": "GBP",
-      "priceValidUntil": "2026-04-29",
-      "availability": "https://schema.org/InStock",
-      "additionalProperty": {
-        "@type": "PropertyValue",
-        "name": "Includes Free AI Authority Funnel",
-        "value": "Free AI Authority Funnel (worth £1,995) with 3+ hour package subscription for 12 months"
+    "@type": "ItemList",
+    "name": "Digital Visibility Service Packages",
+    "description": "Flexible digital marketing packages at £40 per hour. Choose the hours that fit your business needs and budget.",
+    "numberOfItems": 4,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Offer",
+          "@id": "https://digitalvisibility.com/pricing/#starter-package",
+          "name": "Starter Package - 1 Hour/Month",
+          "description": "Perfect for businesses just starting their digital journey. 1 hour of professional digital marketing services per month at £40.",
+          "price": "40",
+          "priceCurrency": "GBP",
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "HUR"
+          },
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://digitalvisibility.com/#organization"
+          },
+          "validFrom": "2023-01-01",
+          "category": "Digital Marketing Services",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Flexibility",
+              "value": "Scale up anytime"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Contract",
+              "value": "No minimum commitment"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Offer",
+          "@id": "https://digitalvisibility.com/pricing/#small-business-package",
+          "name": "Small Business Package - 3 Hours/Month",
+          "description": "Recommended for small businesses. Includes website updates, SEO improvements, and content creation. 3 hours per month at £40/hour.",
+          "price": "120",
+          "priceCurrency": "GBP",
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 3,
+            "unitCode": "HUR"
+          },
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://digitalvisibility.com/#organization"
+          },
+          "validFrom": "2023-01-01",
+          "category": "Digital Marketing Services",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Special Offer",
+              "value": "FREE AI Authority Funnel worth £1,995 with 12-month subscription"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Services Included",
+              "value": "SEO, Content Creation, Website Updates"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Offer",
+          "@id": "https://digitalvisibility.com/pricing/#growing-business-package",
+          "name": "Growing Business Package - 5-10 Hours/Month",
+          "description": "Ideal for growing businesses. Comprehensive digital marketing including SEO, AEO, content creation, social media, and website management. 5-10 hours per month at £40/hour.",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "200",
+            "maxPrice": "400",
+            "priceCurrency": "GBP"
+          },
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "minValue": 5,
+            "maxValue": 10,
+            "unitCode": "HUR"
+          },
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://digitalvisibility.com/#organization"
+          },
+          "validFrom": "2023-01-01",
+          "category": "Digital Marketing Services",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Special Offer",
+              "value": "FREE Custom Business Website worth £2,995 with 12-month subscription (5+ hours)"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Services Included",
+              "value": "SEO, AEO, GEO, Content Creation, Social Media, Website Management"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Offer",
+          "@id": "https://digitalvisibility.com/pricing/#established-business-package",
+          "name": "Established Business Package - 20+ Hours/Month",
+          "description": "Complete digital marketing solution for established businesses. Full-service digital transformation including all marketing channels. 20+ hours per month at £40/hour.",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "800",
+            "priceCurrency": "GBP"
+          },
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "minValue": 20,
+            "unitCode": "HUR"
+          },
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://digitalvisibility.com/#organization"
+          },
+          "validFrom": "2023-01-01",
+          "category": "Digital Marketing Services",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Special Offer",
+              "value": "FREE Website + AI Authority Funnel (£4,990 combined value) with 12-month subscription"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Services Included",
+              "value": "Complete Digital Marketing Team: SEO, AEO, GEO, PPC, Social Media, Content, Web Development, Analytics, Strategy"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Team Access",
+              "value": "Dedicated account manager and full digital team"
+            }
+          ]
+        }
       }
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "GB"
-    }
+    ]
   }
   </script>
 
-  <script type="application/ld+json">
+  <!-- Special Offers Schema -->
+  <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Growing Business Digital Marketing Package",
-    "description": "Recommended 5 hours per month digital marketing services with SEO, AEO, content creation, social media management, and website updates. At £40 per hour with the flexibility to increase or decrease hours as needed.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Digital Visibility Limited",
-      "url": "https://digitalvisibility.com"
-    },
-    "serviceType": "Digital Marketing",
-    "serviceOutput": "Enhanced online presence and brand visibility",
-    "offers": {
-      "@type": "Offer",
-      "price": "200.00",
-      "priceCurrency": "GBP",
-      "priceValidUntil": "2026-04-29",
-      "availability": "https://schema.org/InStock",
-      "additionalProperty": {
-        "@type": "PropertyValue",
-        "name": "Includes Free Professional Website",
-        "value": "Free Custom Business Website (up to 7 pages) worth £2,995 with 5+ hour package subscription for 12 months"
-      }
-    },
-    "areaServed": {
+    "@type": "SpecialAnnouncement",
+    "name": "FREE Website & AI Funnel Offers",
+    "text": "Get a FREE professional website or AI authority funnel with qualifying digital marketing packages",
+    "datePosted": "2023-01-01",
+    "expires": "2026-12-31",
+    "category": "https://www.wikidata.org/wiki/Q11826963",
+    "spatialCoverage": {
       "@type": "Country",
-      "name": "GB"
-    }
+      "name": "United Kingdom"
+    },
+    "announcementLocation": {
+      "@type": "VirtualLocation",
+      "url": "https://digitalvisibility.com/pricing/"
+    },
+    "about": [
+      {
+        "@type": "Offer",
+        "name": "FREE AI Authority Funnel",
+        "description": "Get a FREE AI Authority Funnel worth £1,995 when you subscribe to any 3+ hour per month package for 12 months",
+        "price": "0",
+        "priceCurrency": "GBP",
+        "eligibleCustomerType": "Business",
+        "eligibleDuration": {
+          "@type": "QuantitativeValue",
+          "value": 12,
+          "unitCode": "MON"
+        },
+        "itemOffered": {
+          "@type": "Product",
+          "name": "AI Authority Funnel",
+          "description": "Complete AI-optimized sales funnel to establish your business as an authority",
+          "value": {
+            "@type": "MonetaryAmount",
+            "currency": "GBP",
+            "value": "1995"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "FREE Professional Website",
+        "description": "Get a FREE Custom Business Website (up to 7 pages) worth £2,995 when you subscribe to any 5+ hour per month package for 12 months",
+        "price": "0",
+        "priceCurrency": "GBP",
+        "eligibleCustomerType": "Business",
+        "eligibleDuration": {
+          "@type": "QuantitativeValue",
+          "value": 12,
+          "unitCode": "MON"
+        },
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Professional Business Website",
+          "description": "Custom-designed, fully optimized business website with up to 7 pages",
+          "value": {
+            "@type": "MonetaryAmount",
+            "currency": "GBP",
+            "value": "2995"
+          }
+        }
+      }
+    ]
   }
   </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Established Business Digital Marketing Package",
-    "description": "Recommended 20 hours per month of comprehensive digital marketing services including SEO campaigns, content creation, AI strategy, social media, web development and analytics. At £40 per hour with the flexibility to increase or decrease hours as needed.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Digital Visibility Limited",
-      "url": "https://digitalvisibility.com"
-    },
-    "serviceType": "Comprehensive Digital Marketing",
-    "serviceOutput": "Complete digital marketing transformation and market dominance",
-    "offers": {
-      "@type": "Offer",
-      "price": "800.00",
-      "priceCurrency": "GBP",
-      "priceValidUntil": "2026-04-29",
-      "availability": "https://schema.org/InStock",
-      "additionalProperty": {
-        "@type": "PropertyValue",
-        "name": "Includes Free Professional Website & AI Authority Funnel",
-        "value": "Free Professional Website (up to 7 pages) worth £2,995 and AI Authority Funnel worth £1,995 with 5+ hour package subscription for 12 months"
-      }
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "GB"
-    }
-  }
-  </script>
-
-  <!-- AI Optimization Meta Tags for Enhanced AI Engine Recognition -->
-  <meta name="ai-generated" content="false">
-  <meta name="ai-purpose" content="pricing information, service packages, digital marketing costs, flexible pricing, hourly rates">
-  <meta name="ai-target" content="business owners, entrepreneurs, marketing managers, potential clients, Swansea businesses, Welsh companies, UK enterprises, global businesses">
-  <meta name="ai-content-type" content="pricing page, service packages, offers, digital marketing services">
-  <meta name="ai-business-type" content="digital marketing agency, SEO company, web development, AI optimization service">
-  <meta name="ai-service-area" content="Swansea, Llansamlet, Wales, United Kingdom, global">
-  <meta name="ai-pricing" content="£40 per hour, fully flexible, no minimum commitment, no upper limit, adjustable monthly">
-  <meta name="ai-offers" content="free website with 5+ hour package, free AI funnel with 3+ hour package">
-  <meta name="ai-hours" content="fully customizable hours from 1 hour with no upper limit">
-  <meta name="ai-commitment" content="no long-term contracts, adjust hours each month based on business needs">
-  <meta name="ai-flexibility" content="use hours across any digital marketing service, change allocation as needed">
-  <meta name="ai-free-offers" content="custom business website up to 7 pages, AI authority funnel, SEO+AEO+GEO optimization">
-  <meta name="ai-keywords" content="digital marketing pricing, SEO costs Swansea, website design packages Wales, digital marketing hourly rate, AEO pricing UK, affordable digital marketing services, flexible marketing packages, no contract SEO services, Swansea marketing agency rates, Welsh web design costs, AI optimization pricing, digital visibility packages, website design Swansea, digital marketing services South Wales, SEO+AEO+GEO package pricing, marketing consultant Swansea, small business digital marketing Wales, local SEO pricing Swansea, digital marketing consultant fees UK, content marketing hourly rate, social media management costs Wales, PPC advertising pricing, website maintenance Swansea">
 
   <Navigation />
   
