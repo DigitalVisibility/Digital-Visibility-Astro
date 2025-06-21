@@ -12,9 +12,15 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^7.0.2",
+    "@astrojs/react": "^4.3.0",
     "@astrojs/tailwind": "^5.0.4",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "astro": "^3.6.4",
     "lucide-astro": "^0.299.0",
+    "lucide-react": "^0.522.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "sharp": "^0.32.6",
     "tailwindcss": "^3.3.6"
   },

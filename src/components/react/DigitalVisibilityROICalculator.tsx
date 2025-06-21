@@ -1036,16 +1036,44 @@ export default function DigitalVisibilityROICalculator() {
             </div>
 
             <div className="text-center">
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-gray-600 mb-6">
                 *Results are projections based on industry research applied to your actual operational and marketing budgets. 
                 Individual results may vary based on implementation quality, market conditions, and execution.
               </p>
-              <button
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition duration-200"
-                onClick={() => window.location.href = 'mailto:hello@digitalvisibility.uk?subject=ROI%20Calculator%20Results'}
-              >
-                Get Started with Our Team
-              </button>
+              
+              <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 mb-6 border-2 border-green-200">
+                <div className="flex items-center justify-center mb-3">
+                  <Award className="h-6 w-6 text-green-600 mr-2" />
+                  <h3 className="text-xl font-bold text-gray-900">Ready to Turn These Numbers into Reality?</h3>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  🎯 Your {results.overallROI}% ROI potential is waiting - let's make it happen together!
+                </p>
+                <p className="text-sm text-gray-600 mb-6">
+                  Our team specializes in delivering exactly these results for businesses like yours. 
+                  Book a free strategy call to discuss your custom roadmap.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button
+                    className="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-green-700 hover:to-green-800 transition duration-200 shadow-lg transform hover:scale-105"
+                    onClick={() => window.open('/contact/', '_blank')}
+                  >
+                    📞 Book Free Strategy Call
+                  </button>
+                  <button
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-blue-700 hover:to-purple-700 transition duration-200 shadow-lg transform hover:scale-105"
+                    onClick={() => window.location.href = `mailto:support@digitalvisibility.com?subject=ROI%20Calculator%20Results%20-%20${results.overallROI}%25%20ROI%20Potential&body=Hi%20Digital%20Visibility%20Team,%0A%0AI%20just%20completed%20your%20ROI%20calculator%20and%20discovered%20I%20could%20achieve%20${results.overallROI}%25%20ROI!%0A%0AMy%20business%20details:%0A- Industry: ${formData.industry}%0A- Company%20Size: ${formData.companySize}%0A- Revenue: ${formData.revenue}%0A%0ACan%20we%20schedule%20a%20call%20to%20discuss%20how%20to%20achieve%20these%20results?%0A%0ABest%20regards,`}
+                  >
+                    ✉️ Email Our Experts
+                  </button>
+                </div>
+                
+                <div className="mt-4 flex items-center justify-center text-sm text-gray-600">
+                  <Clock className="h-4 w-4 mr-1" />
+                  <span>Free 30-minute consultation • No obligation • Same-day response</span>
+                </div>
+              </div>
             </div>
           </div>
 

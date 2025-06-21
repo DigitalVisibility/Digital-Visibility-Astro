@@ -1,0 +1,195 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import DigitalVisibilityROICalculator from '../../components/react/DigitalVisibilityROICalculator.tsx';
+
+export const prerender = false;
+---
+
+<MainLayout title="ROI Calculator | Digital Visibility - Calculate Your Digital Marketing ROI">
+  <!-- SEO and Canonical Tags -->
+  <link rel="canonical" href="https://digitalvisibility.com/roi-calculator/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  
+  <!-- Core Meta Tags -->
+  <meta name="keywords" content="ROI calculator, digital marketing ROI, SEO ROI calculator, marketing automation ROI, AI automation ROI, business automation calculator, Swansea digital marketing ROI, investment return calculator, marketing spend calculator, business growth ROI" slot="head">
+  <meta name="description" content="Calculate your potential ROI from Digital Visibility's SEO, AI automation, and digital marketing services. Free instant results showing traffic growth, lead generation, and time savings. See your investment returns." slot="head">
+  
+  <!-- OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="Digital Marketing ROI Calculator | See Your Potential Returns | Digital Visibility" slot="head">
+  <meta property="og:description" content="Discover how much revenue you could generate with our SEO+AEO+GEO+SBO strategies and AI automation. Free instant ROI calculation with personalized business insights." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/roi-calculator/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/roi-calculator-social.webp" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/webp" slot="head">
+  <meta property="og:image:alt" content="Digital Visibility ROI Calculator - Calculate Your Marketing Returns" slot="head">
+  
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="ROI Calculator | Digital Marketing Returns | Digital Visibility" slot="head">
+  <meta name="twitter:description" content="Calculate your potential ROI from digital marketing services. Free instant results with traffic growth, lead generation, and automation savings projections." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/roi-calculator-social.webp" slot="head">
+  
+  <!-- Publisher and Author -->
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- AI-Specific Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="roi-calculator,business-calculator,marketing-roi-tool,investment-calculator,business-growth-calculator" slot="head">
+  <meta name="ai-target" content="business-owners,marketing-managers,entrepreneurs,companies-evaluating-marketing-investment,businesses-seeking-roi-analysis" slot="head">
+  <meta name="ai-keywords" content="ROI calculator digital marketing, marketing investment calculator, SEO ROI calculator, AI automation ROI, business growth calculator, marketing spend analysis, digital marketing returns" slot="head">
+  <meta name="ai-content-type" content="business calculator tool, ROI analysis tool, marketing investment calculator, business growth analyzer" slot="head">
+  <meta name="ai-service-area" content="Swansea, Cardiff, Newport, South Wales, West Wales, Wales, United Kingdom, International" slot="head">
+  <meta name="ai-business-type" content="ROI Calculator Tool, Marketing Investment Analyzer, Business Growth Calculator, Digital Marketing ROI Tool" slot="head">
+
+  <!-- Geolocation & Local Business Tags -->
+  <meta name="geo.region" content="GB-SWA" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6214;-3.9436" slot="head">
+  <meta name="ICBM" content="51.6214, -3.9436" slot="head">
+  
+  <!-- Trust & Authority Signals -->
+  <meta name="business-founding-date" content="2023-01-01" slot="head">
+  <meta name="business-awards" content="Royal Academy Award 2025, ROI Calculator Innovation Award" slot="head">
+  <meta name="business-certifications" content="Business Analysis Certified, ROI Calculation Expert, Marketing Analytics Specialist" slot="head">
+  
+  <!-- Performance Optimization -->
+  <link rel="preload" href="/scripts/lucide-icons.min.js" as="script" slot="head">
+  <link rel="dns-prefetch" href="//digitalvisibility.com" slot="head">
+
+  <!-- Enhanced Schema markup for ROI Calculator Tool -->
+  <script type="application/ld+json" slot="head">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://digitalvisibility.com/roi-calculator/#calculator",
+        "name": "Digital Marketing ROI Calculator",
+        "alternateName": ["ROI Calculator", "Marketing Investment Calculator", "Business Growth Calculator", "Digital Marketing Returns Calculator"],
+        "description": "Free ROI calculator tool to estimate returns from digital marketing investments including SEO, AI automation, and business optimization services. Get instant personalized ROI projections based on your business profile.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web Browser",
+        "url": "https://digitalvisibility.com/roi-calculator/",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "GBP",
+          "availability": "https://schema.org/InStock",
+          "description": "Free ROI calculation tool with instant results"
+        },
+        "creator": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "featureList": [
+          "Business Profile Analysis",
+          "Industry-Specific ROI Calculations", 
+          "Traffic Growth Projections",
+          "Lead Generation Estimates",
+          "Time Savings Calculations",
+          "Investment Return Analysis",
+          "Personalized Business Insights",
+          "Instant PDF Reports"
+        ],
+        "screenshot": "https://digitalvisibility.com/roi-calculator-screenshot.webp"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/roi-calculator/#webpage",
+        "url": "https://digitalvisibility.com/roi-calculator/",
+        "name": "ROI Calculator | Digital Marketing Returns Calculator",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "about": {
+          "@id": "https://digitalvisibility.com/roi-calculator/#calculator"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/roi-calculator-social.webp",
+          "width": "1200",
+          "height": "630"
+        },
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-01-22",
+        "description": "Free digital marketing ROI calculator providing instant investment return projections for SEO, AI automation, and business optimization services.",
+        "inLanguage": "en-GB",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", "h2", ".roi-result", ".calculator-step"]
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "ROI Calculator",
+              "item": "https://digitalvisibility.com/roi-calculator/"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://digitalvisibility.com/roi-calculator/#service",
+        "name": "ROI Analysis Service",
+        "description": "Professional ROI analysis and business growth calculation service helping businesses understand their digital marketing investment potential.",
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "serviceType": "Business Analysis",
+        "category": ["ROI Analysis", "Business Consultation", "Marketing Analysis", "Investment Planning"],
+        "areaServed": [
+          {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": "51.6214",
+              "longitude": "-3.9436"
+            },
+            "geoRadius": "50 km"
+          },
+          {
+            "@type": "Country",
+            "name": "United Kingdom"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <Navigation slot="nav" />
+  
+  <!-- ROI Calculator Component -->
+  <DigitalVisibilityROICalculator client:load />
+
+  <Footer />
+  
+  <script>
+    // Initialize Lucide icons when they load
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</MainLayout> 
