@@ -12,6 +12,12 @@ import Footer from '../../components/Footer.astro';
   <meta name="googlebot" content="index, follow" slot="head">
   <meta http-equiv="X-Robots-Tag" content="index, follow" slot="head">
   
+  <!-- Performance Optimization -->
+  <link rel="preload" href="/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp" as="image" type="image/webp" slot="head">
+  <link rel="preload" href="/marketing-team-photo.webp" as="image" type="image/webp" slot="head">
+  <link rel="preload" href="/engineering-team-photo.webp" as="image" type="image/webp" slot="head">
+  <link rel="prefetch" href="/scripts/lucide-icons.min.js" slot="head">
+  
   <!-- Core Meta Tags -->
   <meta name="keywords" content="Digital Visibility about us, Swansea digital agency team, Darran Goulding Royal Academy of Engineering, Welsh digital marketing experts, people-powered digital solutions, AI-accelerated marketing agency, digital transformation specialists Wales, SEO AEO GEO company Swansea, award-winning digital agency South Wales, business transformation experts UK, digital marketing values, innovation-driven company Wales, forward-thinking digital agency, results-focused marketing team, integrity-based business services Swansea, continuous improvement agency, concept to creation company, digital product development Wales, app development team Swansea, product design specialists UK" slot="head">
   <meta name="description" content="Meet Digital Visibility - Swansea's award-winning digital agency. Led by Royal Academy of Engineering winner Darran Goulding, our people-powered team delivers complete digital transformation with SEO+AEO+GEO, app development & product design. Proven results, innovative solutions." slot="head">
@@ -505,7 +511,7 @@ import Footer from '../../components/Footer.astro';
         <!-- Darran Goulding -->
         <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
           <div class="flex flex-col items-center mb-6">
-            <img src="/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp" alt="Darran Goulding" class="w-32 h-32 rounded-full object-cover mb-4">
+            <img src="/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp" alt="Darran Goulding - Royal Academy of Engineering Award Winner" class="w-32 h-32 rounded-full object-cover mb-4" loading="eager" decoding="async" width="128" height="128">
             <h3 class="text-xl font-bold text-gray-900">Darran Goulding</h3>
             <p class="text-blue-600 font-medium">Founder & Chief Innovation Officer</p>
           </div>
@@ -525,7 +531,7 @@ import Footer from '../../components/Footer.astro';
         <!-- Digital Marketing & AI Team -->
         <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
           <div class="flex flex-col items-center mb-6">
-            <img src="/marketing-team-photo.webp" alt="Digital Marketing & AI Team" class="w-32 h-32 rounded-full object-cover mb-4">
+            <img src="/marketing-team-photo.webp" alt="Digital Marketing & AI Team" class="w-32 h-32 rounded-full object-cover mb-4" loading="lazy" decoding="async" width="128" height="128">
             <h3 class="text-xl font-bold text-gray-900">Digital Marketing & AI Team</h3>
             <p class="text-blue-600 font-medium">Marketing & AI Innovation Specialists</p>
           </div>
@@ -537,7 +543,7 @@ import Footer from '../../components/Footer.astro';
         <!-- Design & Engineering Team -->
         <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
           <div class="flex flex-col items-center mb-6">
-            <img src="/engineering-team-photo.webp" alt="Design & Engineering Team" class="w-32 h-32 rounded-full object-cover mb-4">
+            <img src="/engineering-team-photo.webp" alt="Design & Engineering Team" class="w-32 h-32 rounded-full object-cover mb-4" loading="lazy" decoding="async" width="128" height="128">
             <h3 class="text-xl font-bold text-gray-900">Design & Engineering Team</h3>
             <p class="text-blue-600 font-medium">UX Designers & Software Engineers</p>
           </div>
@@ -844,12 +850,17 @@ import Footer from '../../components/Footer.astro';
 
   <Footer />
   
-  <script>
+  <script defer>
     // Initialize Lucide icons
-    document.addEventListener('DOMContentLoaded', () => {
+    function initLucideIcons() {
       if (typeof window.lucide !== 'undefined') {
         lucide.createIcons();
+      } else {
+        // Retry after 100ms if lucide isn't loaded yet
+        setTimeout(initLucideIcons, 100);
       }
-    });
+    }
+    
+    document.addEventListener('DOMContentLoaded', initLucideIcons);
   </script>
 </MainLayout>

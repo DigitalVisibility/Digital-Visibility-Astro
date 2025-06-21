@@ -14,14 +14,14 @@ import Footer from "../../components/Footer.astro";
   <meta http-equiv="X-Robots-Tag" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
   
   <!-- Core Meta Tags -->
-  <meta name="keywords" content="digital marketing pricing Swansea, £40 hour digital marketing, flexible SEO pricing Wales, no contract marketing agency, hourly digital marketing rates UK, affordable AEO services, website design pricing Swansea, social media marketing costs Wales, content creation hourly rate, small business marketing packages, pay as you go SEO, monthly digital marketing plans, scalable marketing services UK, transparent agency pricing, Welsh digital agency rates, South Wales marketing costs, AI optimization pricing, free website offer Swansea, AI authority funnel pricing, digital transformation costs UK" slot="head">
-  <meta name="description" content="Transparent digital marketing pricing at £40/hour. No contracts, no minimums - pay only for what you need. FREE website worth £2,995 with 5+ hours/month. Flexible packages for Swansea, Wales & UK businesses. Scale up or down anytime." slot="head">
+  <meta name="keywords" content="digital marketing pricing Swansea, £40 hour digital marketing, flexible SEO pricing Wales, no contract marketing agency, hourly digital marketing rates UK, affordable AEO services, AI automation pricing, custom quotation digital services, specialist digital marketing team, NDA confidential projects, website design pricing Swansea, social media marketing costs Wales, content creation hourly rate, small business marketing packages, pay as you go SEO, monthly digital marketing plans, scalable marketing services UK, transparent agency pricing, Welsh digital agency rates, South Wales marketing costs, AI optimization pricing, free website offer Swansea, AI authority funnel pricing, digital transformation costs UK" slot="head">
+  <meta name="description" content="Transparent digital marketing pricing at £40/hour. No contracts, no minimums - pay only for what you need. Custom quotations available for specialist services. NDA agreements for confidential projects. FREE website worth £2,995 with 5+ hours/month. Scale up or down anytime." slot="head">
   
   <!-- Publisher, Twitter and OpenGraph Tags -->
   <meta property="og:locale" content="en_GB" slot="head">
   <meta property="og:type" content="website" slot="head">
   <meta property="og:title" content="Digital Marketing Pricing | £40/Hour | No Contracts | Digital Visibility" slot="head">
-  <meta property="og:description" content="Flexible digital marketing at £40/hour. No minimums, no contracts. FREE website (£2,995 value) with 5+ hours. Scale your marketing budget up or down anytime. Serving Swansea, Wales & UK." slot="head">
+  <meta property="og:description" content="Flexible digital marketing at £40/hour. No minimums, no contracts. Custom quotations for specialist services. NDA agreements available. FREE website (£2,995 value) with 5+ hours. Scale your marketing budget up or down anytime." slot="head">
   <meta property="og:url" content="https://digitalvisibility.com/pricing/" slot="head">
   <meta property="og:site_name" content="Digital Visibility" slot="head">
   <meta property="og:image" content="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/pricing-digital-visibility/public" slot="head">
@@ -34,7 +34,7 @@ import Footer from "../../components/Footer.astro";
   <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
   <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
   <meta name="twitter:title" content="Digital Marketing Pricing | £40/Hour | No Contracts" slot="head">
-  <meta name="twitter:description" content="Pay only for what you need at £40/hour. FREE website with 5+ hours/month. No contracts, scale anytime. Digital marketing for Welsh & UK businesses." slot="head">
+  <meta name="twitter:description" content="Pay only for what you need at £40/hour. Custom quotations for specialist services. NDA agreements available. FREE website with 5+ hours/month. No contracts, scale anytime." slot="head">
   <meta name="twitter:image" content="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/pricing-digital-visibility/public" slot="head">
   <meta name="twitter:image:alt" content="Digital Visibility Flexible Pricing" slot="head">
   
@@ -50,7 +50,7 @@ import Footer from "../../components/Footer.astro";
   <meta name="ai-service-area" content="Swansea, Cardiff, Newport, South Wales, West Wales, Bristol, London, United Kingdom, International" slot="head">
   <meta name="ai-business-type" content="Digital Marketing Agency, SEO Company, Web Design Agency, AI Marketing Services" slot="head">
   <meta name="ai-pricing-model" content="hourly-rate, pay-as-you-go, no-minimums, no-contracts, flexible-packages" slot="head">
-  <meta name="ai-special-offers" content="free-website-5-hours, free-ai-funnel-3-hours, no-setup-fees, hours-never-expire" slot="head">
+  <meta name="ai-special-offers" content="free-website-5-hours, free-ai-funnel-3-hours, no-setup-fees, hours-never-expire, custom-quotations-available, NDA-agreements" slot="head">
   
   <!-- Geolocation Tags -->
   <meta name="geo.region" content="GB-SWA" slot="head">
@@ -187,13 +187,39 @@ import Footer from "../../components/Footer.astro";
               "@type": "Offer",
               "@id": "https://digitalvisibility.com/pricing/#hourly-rate",
               "name": "Flexible Hourly Digital Marketing",
-              "description": "Pay-as-you-go digital marketing services at £40 per hour. Use hours across any service: SEO, AEO, GEO, content creation, web design, social media, and more.",
+              "description": "Pay-as-you-go digital marketing services at £40 per hour. Use hours across any service: SEO, AEO, GEO, AI automation, content creation, web design, social media, and more.",
               "price": "40",
               "priceCurrency": "GBP",
               "unitCode": "HUR",
               "availability": "https://schema.org/InStock",
               "validFrom": "2023-01-01",
               "category": "Digital Marketing Services"
+            },
+            {
+              "@type": "Offer",
+              "@id": "https://digitalvisibility.com/pricing/#specialist-services",
+              "name": "Specialist Team Services",
+              "description": "Custom quotations for specialist digital marketing and AI automation projects requiring expert knowledge, NDA agreements, or complex implementations.",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "GBP",
+                "valueAddedTaxIncluded": "true"
+              },
+              "availability": "https://schema.org/InStock",
+              "validFrom": "2023-01-01",
+              "category": "Specialist Digital Marketing Services",
+              "additionalProperty": [
+                {
+                  "@type": "PropertyValue",
+                  "name": "Quotation Type",
+                  "value": "Custom quotation based on requirements"
+                },
+                {
+                  "@type": "PropertyValue",
+                  "name": "Confidentiality",
+                  "value": "NDA agreements available"
+                }
+              ]
             }
           ]
         }
@@ -615,6 +641,33 @@ import Footer from "../../components/Footer.astro";
         
 
         
+        <!-- AI Automation Highlight Section -->
+        <div class="mb-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl md:text-3xl font-bold mb-4">🚀 AI Automation Now Included!</h3>
+            <p class="text-xl text-blue-100">Use your subscription hours for powerful AI automations at the same £40/hour rate</p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/10 rounded-lg p-4">
+              <h4 class="font-bold mb-2">✅ Email Automation</h4>
+              <p class="text-blue-100 text-sm">Automated responses, lead nurturing, customer follow-ups</p>
+            </div>
+            <div class="bg-white/10 rounded-lg p-4">
+              <h4 class="font-bold mb-2">✅ Customer Support Bots</h4>
+              <p class="text-blue-100 text-sm">24/7 AI chatbots, FAQ automation, ticket routing</p>
+            </div>
+            <div class="bg-white/10 rounded-lg p-4">
+              <h4 class="font-bold mb-2">✅ Workflow Automation</h4>
+              <p class="text-blue-100 text-sm">CRM updates, social posting, data processing</p>
+            </div>
+          </div>
+          <div class="text-center mt-6">
+            <a href="/services/ai-conversation-automation/" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-blue-50 transition">
+              Learn More About AI Automation →
+            </a>
+          </div>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- Small Business -->
           <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500 hover:shadow-lg transition duration-300">
@@ -639,11 +692,11 @@ import Footer from "../../components/Footer.astro";
                 <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span class="text-gray-700">1 Hour: Content creation</span>
+                <span class="text-gray-700">1 Hour: <a href="/services/ai-conversation-automation/" class="text-blue-600 hover:text-blue-700 underline">AI automation setup</a> (email responses, chatbot)</span>
               </li>
             </ul>
             <p class="text-sm text-gray-600 italic">
-              "Perfect for small businesses wanting to improve their online presence without a big budget"  
+              "Perfect for small businesses wanting to improve their online presence and automate repetitive tasks"  
             </p>
             <div class="mt-6">
               <div class="p-4 bg-blue-50 rounded-lg">
@@ -675,6 +728,12 @@ import Footer from "../../components/Footer.astro";
                 <svg class="h-5 w-5 text-indigo-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
+                <span class="text-gray-700">2 Hours: <a href="/services/ai-conversation-automation/" class="text-indigo-600 hover:text-indigo-700 underline">AI automation</a> (lead capture, customer support)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-indigo-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
                 <span class="text-gray-700">2 Hours: Content creation</span>
               </li>
               <li class="flex items-start">
@@ -683,15 +742,9 @@ import Footer from "../../components/Footer.astro";
                 </svg>
                 <span class="text-gray-700">2 Hours: Social media management</span>
               </li>
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-indigo-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span class="text-gray-700">2 Hours: Website updates</span>
-              </li>
             </ul>
             <p class="text-sm text-gray-600 italic">
-              "Ideal for businesses looking to grow their digital presence across multiple channels"  
+              "Ideal for businesses looking to grow their digital presence and automate key processes"  
             </p>
             <div class="mt-6">
               <div class="p-4 bg-indigo-50 rounded-lg">
@@ -723,7 +776,7 @@ import Footer from "../../components/Footer.astro";
                 <svg class="h-5 w-5 text-purple-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span class="text-gray-700">3 Hours: AI strategy implementation</span>
+                <span class="text-gray-700">4 Hours: <a href="/services/ai-conversation-automation/" class="text-purple-600 hover:text-purple-700 underline">AI automation systems</a> (multiple workflows)</span>
               </li>
               <li class="flex items-start">
                 <svg class="h-5 w-5 text-purple-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -735,7 +788,7 @@ import Footer from "../../components/Footer.astro";
                 <svg class="h-5 w-5 text-purple-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span class="text-gray-700">3 Hours: Web development</span>
+                <span class="text-gray-700">2 Hours: Web development</span>
               </li>
               <li class="flex items-start">
                 <svg class="h-5 w-5 text-purple-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -745,7 +798,7 @@ import Footer from "../../components/Footer.astro";
               </li>
             </ul>
             <p class="text-sm text-gray-600 italic">
-              "Perfect for businesses that need comprehensive digital marketing across all channels"  
+              "Perfect for businesses that need comprehensive digital marketing and automation across all channels"  
             </p>
             <div class="mt-6">
               <div class="p-4 bg-purple-50 rounded-lg">
@@ -756,6 +809,176 @@ import Footer from "../../components/Footer.astro";
         </div>
       </div>
       
+      <!-- Additional Hours for Automation Section -->
+      <div class="max-w-5xl mx-auto mb-16">
+        <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 border border-green-200">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">🤖 Need More Hours for AI Automation Projects?</h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="text-xl font-bold text-green-700 mb-4">Standard AI Automations (£40/hour)</h4>
+              <ul class="space-y-2 mb-4">
+                <li class="flex items-center text-gray-700">
+                  <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  Simple chatbot setup: 2-4 hours (£80-160)
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  Email automation system: 3-6 hours (£120-240)
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  Lead capture & CRM integration: 4-8 hours (£160-320)
+                </li>
+              </ul>
+              <p class="text-sm text-gray-600 italic">Perfect for adding automation to existing subscription hours or as standalone projects</p>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-orange-700 mb-4">Enterprise Systems (£80-120/hour)</h4>
+              <ul class="space-y-2 mb-4">
+                <li class="flex items-center text-gray-700">
+                  <span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                  Custom AI agent development: 20-40 hours
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                  Complex workflow automation: 30-60 hours
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                  Complete system integration: 50-100+ hours
+                </li>
+              </ul>
+              <p class="text-sm text-gray-600 italic">Custom quotations available for enterprise projects</p>
+            </div>
+          </div>
+          <div class="text-center mt-8">
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+              <a href="/services/ai-conversation-automation/" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-bold transition">
+                View All AI Automation Options
+              </a>
+              <a href="/contact/" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-bold transition">
+                Get Custom Quote
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Custom Quotations Section -->
+      <div class="max-w-5xl mx-auto mb-16">
+        <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 border border-purple-200">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">🎯 Need Something More Complex?</h3>
+          <p class="text-lg text-gray-600 text-center mb-8">
+            For specialist digital marketing projects, complex AI automations, or confidential work requiring our expert team
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+              <h4 class="text-xl font-bold text-purple-700 mb-4 flex items-center">
+                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Custom Quotations Available
+              </h4>
+              <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 mt-2"></span>
+                  Enterprise AI automation systems
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 mt-2"></span>
+                  Complex RAG (AI knowledge) implementations
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 mt-2"></span>
+                  Multi-department digital transformation
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 mt-2"></span>
+                  Specialist team digital marketing campaigns
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 mt-2"></span>
+                  Large-scale website development projects
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+              <h4 class="text-xl font-bold text-blue-700 mb-4 flex items-center">
+                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.25-1.25a3.5 3.5 0 11-4.95-4.95l1.25 1.25"></path>
+                </svg>
+                NDA & Confidentiality Agreements
+              </h4>
+              <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2"></span>
+                  Full confidentiality agreements provided
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2"></span>
+                  Secure project handling protocols
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2"></span>
+                  Dedicated specialist team assignments
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2"></span>
+                  Private development environments
+                </li>
+                <li class="flex items-start">
+                  <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2"></span>
+                  Fixed-price project quotations
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm mb-6">
+            <h4 class="text-xl font-bold text-gray-900 mb-4 text-center">How to Request Your Custom Quotation</h4>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="text-center">
+                <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span class="text-purple-600 font-bold">1</span>
+                </div>
+                <h5 class="font-semibold text-gray-900 mb-2">Describe Your Requirements</h5>
+                <p class="text-sm text-gray-600">Contact us with details about your project scope and any special requirements</p>
+              </div>
+              <div class="text-center">
+                <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span class="text-purple-600 font-bold">2</span>
+                </div>
+                <h5 class="font-semibold text-gray-900 mb-2">Expert Team Review</h5>
+                <p class="text-sm text-gray-600">Our specialist team analyzes requirements and develops a comprehensive strategy</p>
+              </div>
+              <div class="text-center">
+                <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span class="text-purple-600 font-bold">3</span>
+                </div>
+                <h5 class="font-semibold text-gray-900 mb-2">Detailed Quotation</h5>
+                <p class="text-sm text-gray-600">Receive fixed pricing with timeline, deliverables, and project milestones</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-4">
+              <a href="/contact/" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-bold transition text-lg">
+                Request Custom Quotation
+              </a>
+              <a href="/services/ai-conversation-automation/" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold transition text-lg">
+                View AI Automation Options
+              </a>
+            </div>
+            <p class="text-sm text-gray-600">
+              All quotations include comprehensive scope, fixed pricing, and timeline. NDA agreements provided when required.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <!-- Find the Perfect Plan CTA -->
       <div class="max-w-3xl mx-auto text-center">
         <h3 class="text-2xl font-bold text-gray-900 mb-4">Find the Perfect Plan for Your Needs</h3>

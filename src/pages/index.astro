@@ -1,58 +1,67 @@
 ---
- import MainLayout from '../layouts/MainLayout.astro';
- import Navigation from '../components/Navigation.astro';
- import Footer from '../components/Footer.astro';
- 
- // Add static routes to handle requests for old JavaScript files
- export const prerender = false;
- ---
- 
- <MainLayout title="Digital Visibility - Human Powered, AI Accelerated Solutions">
-   <!-- SEO and Canonical Tags -->
-   <link rel="canonical" href="https://digitalvisibility.com/" slot="head">
-   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
-   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
-   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
-   <meta http-equiv="X-Robots-Tag" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+import MainLayout from '../layouts/MainLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+export const prerender = false;
+---
+
+<MainLayout title="SEO Services Swansea | Search Engine Optimization | AEO, GEO & SBO Expert | Digital Visibility">
+  <!-- SEO and Canonical Tags -->
+  <link rel="canonical" href="https://digitalvisibility.com/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
 
   <!-- Core Meta Tags -->
-  <meta name="keywords" content="Digital Visibility Swansea, AI-powered digital marketing Wales, SEO AEO GEO services UK, app development Swansea, product design South Wales, AI automation business solutions, digital transformation agency, human-powered AI accelerated marketing, no-contract digital services, Welsh digital marketing agency, Swansea web design, mobile app development Wales, CAD CAE engineering services, 3D printing Swansea, business optimization tools, AI marketing dashboard, conversion optimization Wales, social media marketing Swansea, search engine optimization South Wales, answer engine optimization UK" slot="head">
-  <meta name="description" content="Award-winning Swansea digital agency offering human-powered solutions accelerated with AI. Specializing in SEO+AEO+GEO optimization, app development, product design & AI automation. Achieving 300%+ ROI for Welsh & UK businesses with no long-term contracts." slot="head">
+  <meta name="keywords" content="search engine optimization Swansea, SEO services Swansea, answer engine optimization Swansea, AEO services Wales, generative engine optimization Swansea, GEO optimization South Wales, search brand optimization Swansea, SBO services Cardiff, digital marketing agency Swansea, AI search optimization Wales, SEO company Swansea, local SEO Swansea, SEO expert Wales, AEO specialist UK, ChatGPT optimization Swansea, Perplexity optimization Wales, Microsoft Bing optimization, AI recommendations optimization, free website Swansea, business automation Wales, £40 hour SEO services, no contract digital marketing Swansea" slot="head">
+  <meta name="description" content="Expert SEO, AEO, GEO & SBO services in Swansea. Leading search engine optimization, answer engine optimization & AI search specialists. Free high-converting website + automations included. £40/hour, no contracts. Serving Swansea, South Wales & UK." slot="head">
   
-  <!-- Publisher, Twitter and OpenGraph Tags -->
+  <!-- OpenGraph Tags -->
   <meta property="og:locale" content="en_GB" slot="head">
   <meta property="og:type" content="website" slot="head">
-  <meta property="og:title" content="Digital Visibility - Human Powered, AI Accelerated Solutions | Swansea Digital Agency" slot="head">
-  <meta property="og:description" content="Award-winning Swansea digital agency. Human expertise + AI technology delivering 300%+ ROI. Digital marketing (SEO+AEO+GEO), app development, product design & AI automation. No contracts, proven results." slot="head">
+  <meta property="og:title" content="SEO, AEO, GEO & SBO Services Swansea | Search Engine Optimization | Digital Visibility" slot="head">
+  <meta property="og:description" content="Expert SEO, answer engine optimization (AEO), generative engine optimization (GEO) & search brand optimization (SBO) in Swansea. Get found on Google & AI platforms. Free website included. £40/hour, no contracts." slot="head">
   <meta property="og:url" content="https://digitalvisibility.com/" slot="head">
   <meta property="og:site_name" content="Digital Visibility" slot="head">
-  <meta property="og:image" content="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/3fb9c0e0-d1e0-4f4f-1aac-0e74e1f35900/public" slot="head">
+  <meta property="og:image" content="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/supercharged-seo-swansea/public" slot="head">
   <meta property="og:image:width" content="1200" slot="head">
   <meta property="og:image:height" content="630" slot="head">
   <meta property="og:image:type" content="image/png" slot="head">
-  <meta property="og:image:alt" content="Digital Visibility - Swansea's Leading Digital Marketing Agency" slot="head">
+  <meta property="og:image:alt" content="Supercharged Engine Optimization Services - Digital Visibility Swansea" slot="head">
   
+  <!-- Twitter Tags -->
   <meta name="twitter:card" content="summary_large_image" slot="head">
   <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
   <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
-  <meta name="twitter:title" content="Digital Visibility - Human Powered, AI Accelerated Digital Solutions" slot="head">
-  <meta name="twitter:description" content="Award-winning Swansea digital agency achieving 300%+ ROI. Expert digital marketing, app development & AI automation. No contracts, proven results for Welsh & UK businesses." slot="head">
-  <meta name="twitter:image" content="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/3fb9c0e0-d1e0-4f4f-1aac-0e74e1f35900/public" slot="head">
-  <meta name="twitter:image:alt" content="Digital Visibility - Swansea Digital Marketing Agency" slot="head">
+  <meta name="twitter:title" content="SEO & AEO Services Swansea | Search Engine Optimization Expert" slot="head">
+  <meta name="twitter:description" content="Expert SEO, answer engine optimization (AEO), generative engine optimization (GEO) & search brand optimization (SBO) in Swansea. Get found on Google & AI platforms. Free website + automations." slot="head">
+  <meta name="twitter:image" content="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/supercharged-seo-swansea/public" slot="head">
+  <meta name="twitter:image:alt" content="Supercharged Engine Optimization - Digital Visibility Swansea" slot="head">
   
+  <!-- Publisher and Author -->
   <meta name="publisher" content="Digital Visibility Limited" slot="head">
   <meta name="author" content="Darran Goulding" slot="head">
   
   <!-- AI-Specific Optimization Tags -->
   <meta name="ai-generated" content="false" slot="head">
-  <meta name="ai-purpose" content="business-discovery,service-recommendation,digital-marketing-solutions,app-development-services,product-design-engineering" slot="head">
-  <meta name="ai-target" content="small-business,medium-business,entrepreneurs,startups,marketing-managers,product-developers" slot="head">
-  <meta name="ai-keywords" content="digital marketing agency Swansea, AI-powered marketing Wales, SEO services South Wales, AEO optimization UK, GEO services Cardiff, app development company Wales, mobile app developers Swansea, product design services UK, CAD engineering Wales, AI automation business, no-contract marketing agency, Welsh digital transformation, business growth services Swansea" slot="head">
-  <meta name="ai-content-type" content="business website, service provider, digital agency, technology company" slot="head">
-  <meta name="ai-service-area" content="Swansea, Cardiff, Newport, South Wales, West Wales, Bristol, London, United Kingdom, International" slot="head">
-  <meta name="ai-business-type" content="Digital Marketing Agency, Software Development Company, Product Design Consultancy, AI Solutions Provider" slot="head">
+  <meta name="ai-purpose" content="business-discovery,digital-marketing-services,supercharged-engine-optimization,ai-search-optimization,lead-generation,local-business-growth" slot="head">
+  <meta name="ai-target" content="small-business-owners,medium-business-owners,entrepreneurs,marketing-managers,business-owners-swansea,uk-business-owners,local-businesses,service-providers" slot="head">
+  <meta name="ai-keywords" content="search engine optimization Swansea, SEO services Wales, answer engine optimization AEO Swansea, generative engine optimization GEO Wales, search brand optimization SBO Swansea, digital marketing agency South Wales, AI search optimization specialists Cardiff, local SEO expert Swansea, ChatGPT optimization services, Perplexity optimization Wales, free website development, business automation Swansea" slot="head">
+  <meta name="ai-content-type" content="supercharged engine optimization agency, digital marketing specialist, AI search optimization provider, business automation consultant" slot="head">
+  <meta name="ai-service-area" content="Swansea, Llansamlet, Cardiff, Newport, South Wales, West Wales, Wales, Bristol, London, United Kingdom, International" slot="head">
+  <meta name="ai-business-type" content="Supercharged Engine Optimization Agency, Digital Marketing Company, AI Search Optimization Specialists, Business Automation Consultancy" slot="head">
   
+  <!-- Enhanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="professional supercharged engine optimization services, AI search recommendations, business discovery optimization" slot="head">
+  <meta name="ai-industry" content="digital marketing, search engine optimization, AI search optimization, business automation, website development" slot="head">
+  <meta name="ai-services" content="Supercharged Engine Optimization, SEO+AEO+GEO+SBO strategies, AI search optimization, free website development, business automation, local SEO, AI recommendations optimization, search everywhere optimization" slot="head">
+  <meta name="ai-audience" content="business owners, entrepreneurs, marketing managers, small businesses, medium businesses, local businesses in Swansea, UK businesses seeking growth" slot="head">
+  <meta name="ai-intent" content="get discovered everywhere, improve search rankings, get AI recommendations, increase business visibility, automate business processes, dominate local search" slot="head">
+  <meta name="ai-unique-value" content="revolutionary SEO+AEO+GEO+SBO strategy, free high-converting website worth £2,995, AI automations that pay for themselves, £40/hour with no contracts, serving Swansea and UK businesses" slot="head">
+
   <!-- Geolocation & Local Business Tags -->
   <meta name="geo.region" content="GB-SWA" slot="head">
   <meta name="geo.placename" content="Swansea" slot="head">
@@ -61,8 +70,13 @@
   
   <!-- Trust & Authority Signals -->
   <meta name="business-founding-date" content="2023-01-01" slot="head">
-  <meta name="business-awards" content="Royal Academy Award 2025, #1 Digital Visibility Specialist Swansea" slot="head">
-  <meta name="business-certifications" content="Google Partner, Meta Blueprint Certified, Microsoft Advertising Professional" slot="head">
+  <meta name="business-awards" content="Royal Academy Award 2025, #1 Supercharged Engine Optimization Specialist Swansea" slot="head">
+  <meta name="business-certifications" content="Google Partner, Meta Blueprint Certified, Microsoft Advertising Professional, AI Search Optimization Certified" slot="head">
+  
+  <!-- Performance Optimization -->
+  <link rel="preload" href="/scripts/lucide-icons.min.js" as="script" slot="head">
+  <link rel="dns-prefetch" href="//imagedelivery.net" slot="head">
+  <link rel="preconnect" href="https://imagedelivery.net" crossorigin slot="head">
   
   <!-- Cloudflare Turnstile Script -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
@@ -89,14 +103,14 @@
         "image": [
           {
             "@type": "ImageObject",
-            "url": "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/3fb9c0e0-d1e0-4f4f-1aac-0e74e1f35900/public",
+            "url": "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/supercharged-seo-swansea/public",
             "width": "1200",
             "height": "630",
-            "caption": "Digital Visibility Office in Swansea"
+            "caption": "Supercharged Engine Optimization Services by Digital Visibility"
           }
         ],
-        "slogan": "Human Powered Digital Solutions, Accelerated With AI",
-        "description": "Digital Visibility is Swansea's award-winning digital agency combining human expertise with AI technology. We deliver comprehensive digital solutions including SEO+AEO+GEO optimization, custom app development, product design with CAD/CAE, and AI automation. With a proven track record of 300%+ ROI for clients and top 3 rankings achieved in just one week, we offer flexible, no-contract services at £40/hour. Our team of certified professionals serves businesses across South Wales, the UK, and internationally.",
+        "slogan": "Get Discovered Everywhere with Supercharged Engine Optimization",
+        "description": "Digital Visibility is Swansea's leading SEO agency specializing in Search Engine Optimization, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO). We help businesses get found on Google search and AI platforms like ChatGPT, Perplexity, and Microsoft Bing. Our comprehensive approach includes free high-converting websites, AI automations that pay for themselves, and flexible £40/hour services with no contracts. Serving businesses in Swansea, South Wales, across the UK, and globally.",
         "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://digitalvisibility.com"
@@ -141,36 +155,29 @@
           "https://uk.pinterest.com/digitalvisibilityuk/"
         ],
         "knowsAbout": [
+          "Supercharged Engine Optimization",
           "Search Engine Optimization (SEO)",
           "Answer Engine Optimization (AEO)",
           "Generative Engine Optimization (GEO)",
-          "Search Everywhere Optimization",
+          "Search Brand Optimization (SBO)",
           "AI Search Engine Optimization",
-          "Geographic Targeting",
+          "ChatGPT Optimization",
+          "Perplexity AI Optimization",
+          "Microsoft Bing AI Optimization",
           "Digital Marketing Strategy",
-          "Social Media Marketing (SMM)",
+          "Local Search Optimization",
+          "Business Automation",
+          "AI Marketing Tools",
+          "Free Website Development",
+          "Conversion Rate Optimization",
+          "Social Media Marketing",
           "Content Marketing",
-          "Conversion Rate Optimization (CRO)",
-          "Pay-Per-Click Advertising (PPC)",
-          "Email Marketing Automation",
+          "Pay-Per-Click Advertising",
           "Mobile App Development",
-          "iOS App Development",
-          "Android App Development",
-          "Progressive Web Apps (PWA)",
-          "Product Design & Engineering",
-          "CAD/CAE Engineering",
-          "3D Printing & Prototyping",
-          "Industrial Design",
-          "AI-Powered Business Tools",
-          "Marketing Automation",
-          "AI Conversation Automation",
-          "Business Process Automation",
-          "Website Design & Development",
           "E-commerce Solutions",
           "WordPress Development",
-          "Custom Web Applications",
           "API Integration",
-          "Business Analytics & Reporting"
+          "Business Analytics"
         ],
         "foundingDate": "2023-01-01",
         "founders": [
@@ -183,11 +190,18 @@
               "https://www.linkedin.com/in/darrangoulding/",
               "https://x.com/DarranGoulding"
             ],
-            "knowsAbout": ["Digital Marketing", "AI Technology", "Business Strategy", "Product Development"],
+            "knowsAbout": ["Supercharged Engine Optimization", "AI Search Technology", "Business Strategy", "Digital Marketing"],
             "alumniOf": {
               "@type": "EducationalOrganization",
               "name": "Swansea University"
-            }
+            },
+            "award": [
+              {
+                "@type": "Award",
+                "name": "Royal Academy of Engineering Award 2025",
+                "description": "Recognition for innovation in digital technology and business optimization"
+              }
+            ]
           }
         ],
         "employees": {
@@ -207,13 +221,9 @@
             "sameAs": "https://en.wikipedia.org/wiki/Cardiff"
           },
           {
-            "@type": "City",
-            "name": "Newport",
-            "sameAs": "https://en.wikipedia.org/wiki/Newport,_Wales"
-          },
-          {
             "@type": "AdministrativeArea",
-            "name": "South Wales"
+            "name": "South Wales",
+            "sameAs": "https://en.wikipedia.org/wiki/South_Wales"
           },
           {
             "@type": "AdministrativeArea",
@@ -228,48 +238,19 @@
           {
             "@type": "Place",
             "name": "International",
-            "description": "Remote services available worldwide"
+            "description": "Remote Supercharged Engine Optimization services available globally"
           }
         ],
         "award": [
           {
             "@type": "Award",
-            "name": "Royal Academy Award 2025",
-            "description": "Excellence in Digital Innovation"
+            "name": "Royal Academy of Engineering Award 2025",
+            "description": "Excellence in innovation and digital technology development"
           },
           {
-            "@type": "Award",
-            "name": "#1 Digital Visibility Specialist in Swansea",
-            "description": "Top ranking achieved in just one week using proprietary AI optimization"
-          }
-        ],
-        "hasCredential": [
-          {
-            "@type": "EducationalOccupationalCredential",
-            "credentialCategory": "certification",
-            "name": "Google Partner Certification",
-            "recognizedBy": {
-              "@type": "Organization",
-              "name": "Google"
-            }
-          },
-          {
-            "@type": "EducationalOccupationalCredential",
-            "credentialCategory": "certification",
-            "name": "Meta Blueprint Certification",
-            "recognizedBy": {
-              "@type": "Organization",
-              "name": "Meta"
-            }
-          },
-          {
-            "@type": "EducationalOccupationalCredential",
-            "credentialCategory": "certification",
-            "name": "Microsoft Advertising Certified Professional",
-            "recognizedBy": {
-              "@type": "Organization",
-              "name": "Microsoft"
-            }
+            "@type": "Award", 
+            "name": "#1 Supercharged Engine Optimization Specialist in Swansea",
+            "description": "Achieved top AI search rankings in record time"
           }
         ],
         "memberOf": [
@@ -282,126 +263,246 @@
             "name": "Welsh Digital Marketing Association"
           }
         ],
+        "funder": [
+          {
+            "@type": "Organization",
+            "name": "Swansea Council Business Funding",
+            "url": "https://www.swansea.gov.uk/businessfunding"
+          },
+          {
+            "@type": "Organization",
+            "name": "Royal Academy of Engineering",
+            "url": "https://enterprisehub.raeng.org.uk/"
+          }
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://digitalvisibility.com/#localbusiness",
+        "name": "Digital Visibility - Supercharged Engine Optimization",
+        "alternateName": "Digital Visibility Swansea",
+        "description": "Swansea's leading SEO agency specializing in Search Engine Optimization, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO). Expert AI search optimization for Google, ChatGPT, Perplexity, and Microsoft Bing serving businesses across South Wales.",
+        "url": "https://digitalvisibility.com",
+        "telephone": "+44-01792-002497",
+        "email": "support@digitalvisibility.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "235 Peniel Green Road",
+          "addressLocality": "Llansamlet",
+          "addressRegion": "Swansea",
+          "postalCode": "SA7 9BA",
+          "addressCountry": "GB"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "51.6214",
+          "longitude": "-3.9436"
+        },
+        "serviceArea": [
+          {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": "51.6214",
+              "longitude": "-3.9436"
+            },
+            "geoRadius": "50 km"
+          },
+          {
+            "@type": "City",
+            "name": "Swansea",
+            "sameAs": "https://en.wikipedia.org/wiki/Swansea"
+          },
+          {
+            "@type": "City",
+            "name": "Cardiff",
+            "sameAs": "https://en.wikipedia.org/wiki/Cardiff"
+          },
+          {
+            "@type": "City",
+            "name": "Newport"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "South Wales"
+          },
+          {
+            "@type": "AdministrativeArea", 
+            "name": "West Wales"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Wales"
+          }
+        ],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "20:00"
+        },
+        "priceRange": "£40-£2995",
+        "currenciesAccepted": "GBP",
+        "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer", "Direct Debit"],
+        "servesCuisine": null,
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "47",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/#webpage",
+        "url": "https://digitalvisibility.com/",
+        "name": "SEO Services Swansea | Search Engine Optimization | AEO, GEO & SBO Expert | Digital Visibility",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "about": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/supercharged-seo-swansea/public",
+          "width": "1200",
+          "height": "630"
+        },
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-01-22",
+        "description": "Revolutionary SEO+AEO+GEO+SBO strategy gets your business recommended by AI and ranked on search engines. Free website + automations that pay for themselves.",
+        "inLanguage": "en-GB",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", "h2", ".hero-description"]
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://digitalvisibility.com/#supercharged-engine-optimization",
+        "name": "Search Engine Optimization & AI Search Services",
+        "alternateName": ["SEO Services Swansea", "Answer Engine Optimization AEO", "Generative Engine Optimization GEO", "Search Brand Optimization SBO", "AI Search Optimization", "Supercharged Engine Optimization"],
+        "description": "Comprehensive search optimization services combining traditional Search Engine Optimization (SEO), trending Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO). Get your Swansea business found on Google, AI platforms like ChatGPT, Perplexity, and Microsoft Bing AI search.",
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Swansea"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "South Wales"
+          },
+          {
+            "@type": "Country",
+            "name": "United Kingdom"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://digitalvisibility.com/",
+          "price": "40.00",
+          "priceCurrency": "GBP",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "40.00",
+            "priceCurrency": "GBP",
+            "unitText": "per hour"
+          },
+          "availability": "https://schema.org/InStock",
+          "description": "Hourly rate for Supercharged Engine Optimization services, no contracts required",
+          "validFrom": "2023-01-01",
+          "seller": {
+            "@id": "https://digitalvisibility.com/#organization"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Free Website Included",
+              "value": "£2,995 value website included with optimization services"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "No Contracts",
+              "value": "Flexible month-to-month service with no long-term commitments"
+            }
+          ]
+        },
+        "serviceType": "Digital Marketing",
+        "category": ["SEO", "AEO", "GEO", "SBO", "AI Search Optimization", "Digital Marketing"],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Digital Visibility Services",
-          "description": "Comprehensive digital services at £40 per hour with no minimum commitment",
+          "name": "Supercharged Engine Optimization Services",
           "itemListElement": [
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Digital Marketing Services",
-                "description": "Complete digital marketing solutions including SEO, AEO, GEO, social media marketing, content creation, PPC advertising, and email marketing automation",
-                "url": "https://digitalvisibility.com/services/digital-marketing/",
-                "provider": {
-                  "@id": "https://digitalvisibility.com/#organization"
-                },
-                "areaServed": {
-                  "@type": "Country",
-                  "name": "United Kingdom"
-                },
-                "offers": {
-                  "@type": "Offer",
-                  "priceSpecification": {
-                    "@type": "PriceSpecification",
-                    "price": "40",
-                    "priceCurrency": "GBP",
-                    "unitCode": "HUR"
-                  },
-                  "validFrom": "2023-01-01",
-                  "availability": "https://schema.org/InStock"
-                }
+                "name": "Search Engine Optimization (SEO)",
+                "description": "Traditional search engine optimization for Google, Bing, and other search engines"
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "App Development",
-                "description": "Custom mobile and web application development for iOS, Android, and progressive web apps",
-                "url": "https://digitalvisibility.com/services/app-development/",
-                "provider": {
-                  "@id": "https://digitalvisibility.com/#organization"
-                }
+                "name": "Answer Engine Optimization (AEO)",
+                "description": "Optimization for AI platforms like ChatGPT, Perplexity, and AI search assistants"
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Product Design & Engineering",
-                "description": "Complete product design services including CAD/CAE engineering, 3D printing, prototyping, and manufacturing support",
-                "url": "https://digitalvisibility.com/services/product-design/",
-                "provider": {
-                  "@id": "https://digitalvisibility.com/#organization"
-                }
+                "name": "Generative Engine Optimization (GEO)",
+                "description": "Optimization for AI-generated content and recommendations"
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "AI Conversation Automation",
-                "description": "Advanced AI-powered conversation automation to convert visitors into customers 24/7",
-                "url": "https://digitalvisibility.com/services/ai-conversation-automation/",
-                "provider": {
-                  "@id": "https://digitalvisibility.com/#organization"
-                }
+                "name": "Search Brand Optimization (SBO)",
+                "description": "Brand visibility optimization across all search platforms and AI systems"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Free Website Development",
+                "description": "High-converting website worth £2,995 included with optimization services"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI Business Automation",
+                "description": "Smart automations that handle marketing, operations, and customer service"
               }
             }
           ]
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "ratingCount": "127",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "review": [
-          {
-            "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "Sarah Williams"
-            },
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5",
-              "bestRating": "5"
-            },
-            "datePublished": "2024-11-15",
-            "reviewBody": "Digital Visibility transformed our online presence completely. Their team in Swansea delivered exceptional results - we achieved a 300% ROI within 6 months. The combination of human expertise and AI technology is truly game-changing."
-          },
-          {
-            "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "James Morgan"
-            },
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5",
-              "bestRating": "5"
-            },
-            "datePublished": "2024-10-22",
-            "reviewBody": "Best digital agency in South Wales! They built our app and implemented AI automation that saved us 70% of our time on customer inquiries. Highly recommend their services."
-          }
-        ]
+        "serviceOutput": {
+          "@type": "Thing",
+          "name": "Complete Business Discovery",
+          "description": "Get discovered everywhere customers are looking - Google, AI platforms, and beyond"
+        }
       },
       {
         "@type": "WebSite",
         "@id": "https://digitalvisibility.com/#website",
-        "url": "https://digitalvisibility.com",
-        "name": "Digital Visibility - Human Powered, AI Accelerated Solutions",
-        "description": "Official website of Digital Visibility, Swansea's leading digital agency offering comprehensive digital marketing, app development, product design, and AI automation services",
+        "url": "https://digitalvisibility.com/",
+        "name": "Digital Visibility - Supercharged Engine Optimization",
+        "description": "Swansea's leading Supercharged Engine Optimization agency. Revolutionary SEO+AEO+GEO+SBO strategies to get your business discovered everywhere.",
         "publisher": {
           "@id": "https://digitalvisibility.com/#organization"
         },
-        "inLanguage": ["en-GB", "cy"],
-        "datePublished": "2023-01-01",
-        "dateModified": "2025-01-22",
         "potentialAction": [
           {
             "@type": "SearchAction",
@@ -412,1872 +513,486 @@
             "query-input": "required name=search_term_string"
           }
         ],
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": ["h1", "h2", ".hero-text", ".service-description", ".testimonial-content"]
-        }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://digitalvisibility.com/#webpage",
-        "url": "https://digitalvisibility.com/",
-        "name": "Digital Visibility - Award-Winning Digital Agency in Swansea | Human + AI Solutions",
-        "isPartOf": {
-          "@id": "https://digitalvisibility.com/#website"
-        },
-        "about": {
-          "@id": "https://digitalvisibility.com/#organization"
-        },
-        "description": "Digital Visibility is Swansea's premier digital agency combining human expertise with AI acceleration. We deliver 300%+ ROI through digital marketing (SEO+AEO+GEO), app development, product design & AI automation. No contracts, proven results.",
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://digitalvisibility.com/"
-            }
-          ]
-        },
-        "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/88c92a23-fd69-49c6-5731-9b3b9695b200/public",
-          "width": "1024",
-          "height": "576",
-          "caption": "Digital Visibility - Complete Business Transformation"
-        },
-        "mainEntity": {
-          "@id": "https://digitalvisibility.com/#organization"
-        }
-      },
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://digitalvisibility.com/#professionalservice",
-        "name": "Digital Visibility",
-        "image": "https://digitalvisibility.com/digital-visibility.webp",
-        "priceRange": "£40 per hour - flexible packages available",
-        "description": "Professional digital services combining human expertise with AI technology for maximum business impact",
-        "brand": {
-          "@type": "Brand",
-          "name": "Digital Visibility",
-          "logo": "https://digitalvisibility.com/digital-visibility-logo-f.png",
-          "slogan": "Human Powered Digital Solutions, Accelerated With AI"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "235 Peniel Green Road",
-          "addressLocality": "Llansamlet, Swansea",
-          "addressRegion": "Wales",
-          "postalCode": "SA7 9BA",
-          "addressCountry": "GB"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "51.6214",
-          "longitude": "-3.9436"
-        },
-        "url": "https://digitalvisibility.com",
-        "telephone": "+44-01792-002497",
-        "email": "support@digitalvisibility.com",
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "08:00",
-            "closes": "20:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Saturday"],
-            "opens": "09:00",
-            "closes": "17:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Sunday"],
-            "opens": "10:00",
-            "closes": "16:00"
-          }
-        ],
-        "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer", "PayPal"],
-        "currenciesAccepted": "GBP",
-        "serviceArea": {
-          "@type": "GeoShape",
-          "addressCountry": "GB"
-        },
-        "hasMap": "https://maps.google.com/?q=Digital+Visibility+235+Peniel+Green+Road+Swansea+SA7+9BA"
+        "inLanguage": "en-GB"
       }
     ]
   }
   </script>
 
-  <!-- Local Business Schema for Geographic Optimization -->
-  <script type="application/ld+json" slot="head">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Digital Visibility",
-    "description": "Award-winning digital agency in Swansea offering comprehensive digital solutions with proven 300%+ ROI",
-    "url": "https://digitalvisibility.com",
-    "telephone": "+44-01792-002497",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "235 Peniel Green Road",
-      "addressLocality": "Llansamlet, Swansea",
-      "addressRegion": "Wales",
-      "postalCode": "SA7 9BA",
-      "addressCountry": "GB"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "51.6214",
-      "longitude": "-3.9436"
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "09:00",
-        "closes": "17:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Sunday",
-        "opens": "10:00",
-        "closes": "16:00"
-      }
-    ],
-    "image": [
-      "https://digitalvisibility.com/digital-visibility-logo-f.png",
-      "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/3fb9c0e0-d1e0-4f4f-1aac-0e74e1f35900/public"
-    ],
-    "priceRange": "££",
-    "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer", "PayPal"],
-    "currenciesAccepted": "GBP",
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Swansea"
-      },
-      {
-        "@type": "City",
-        "name": "Cardiff"
-      },
-      {
-        "@type": "State",
-        "name": "Wales"
-      },
-      {
-        "@type": "Country",
-        "name": "United Kingdom"
-      }
-    ],
-    "makesOffer": [
-      {
-        "@type": "Offer",
-        "name": "FREE Custom Business Website",
-        "description": "FREE Custom Business Website worth £2,995 (up to 7 pages) with 5+ hour package subscription for 12 months",
-        "url": "https://digitalvisibility.com/services/digital-marketing/",
-        "category": "Digital Marketing"
-      },
-      {
-        "@type": "Offer",
-        "name": "FREE AI Authority Funnel",
-        "description": "FREE AI Authority Funnel worth £1,995 with 3+ hour package subscription for 12 months",
-        "url": "https://digitalvisibility.com/services/",
-        "category": "AI Solutions"
-      }
-    ]
-  }
-  </script>
+  <Navigation />
 
-  <!-- Service Catalog Schema -->
-  <script type="application/ld+json" slot="head">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Digital Visibility Services",
-    "description": "Comprehensive digital solutions for modern businesses",
-    "numberOfItems": 4,
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "Service",
-          "name": "Digital Marketing Services",
-          "description": "SEO, AEO, GEO, social media, content marketing, PPC, and email automation",
-          "provider": {
-            "@type": "Organization",
-            "name": "Digital Visibility"
-          },
-          "areaServed": "United Kingdom",
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Digital Marketing Packages",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "name": "SEO Optimization",
-                "description": "Search engine optimization for Google and Bing"
-              },
-              {
-                "@type": "Offer",
-                "name": "AEO Services",
-                "description": "Answer Engine Optimization for AI platforms"
-              },
-              {
-                "@type": "Offer",
-                "name": "GEO Solutions",
-                "description": "Generative Engine Optimization for AI visibility"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "Service",
-          "name": "App Development",
-          "description": "iOS, Android, and Progressive Web App development",
-          "provider": {
-            "@type": "Organization",
-            "name": "Digital Visibility"
-          }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "Service",
-          "name": "Product Design & Engineering",
-          "description": "CAD/CAE design, 3D printing, and prototyping services",
-          "provider": {
-            "@type": "Organization",
-            "name": "Digital Visibility"
-          }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "item": {
-          "@type": "Service",
-          "name": "AI Conversation Automation",
-          "description": "24/7 AI-powered customer engagement and conversion",
-          "provider": {
-            "@type": "Organization",
-            "name": "Digital Visibility"
-          }
-        }
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Remove duplicate schema definitions and keep only the enhanced versions above -->
- 
-   <Navigation slot="nav" />
- 
-   <!-- Error Alert -->
-   <div id="errorAlert" class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded max-w-md w-full hidden z-50" role="alert">
-     <span id="errorMessage" class="block text-center"></span>
-   </div>
- 
-   <!-- Hero Section -->
-   <section class="bg-white py-6 md:py-12">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       <div class="flex flex-col md:flex-row items-center">
-         <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-           <!-- First Mover Badges -->
-           <div class="flex flex-wrap gap-2 mb-6">
-             <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">🥇 FIRST MOVER: AI Search Optimization</span>
-             <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">🚀 UK PIONEER: Conversational AI Automation</span>
-           </div>
-
-           <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-             From <span class="text-blue-600">Concept to Cash</span>: Complete Business Transformation
-           </h1>
-           
-           <p class="text-xl text-gray-600 mb-8">
-             The only agency you need to dominate. We create <strong>digital marketing campaigns that convert</strong>, build <strong>apps customers love</strong>, and deploy <strong>AI automation that turns every visitor into a potential sale</strong> and streamlines your complete business to save you time and money. 
-             We've achieved <strong class="text-green-600">300%+ ROI</strong> for clients while ranking #1, #2, and #3 for our main niche in just ONE week.
-           </p>
-
-           <!-- Complete Journey Highlights -->
-           <div class="bg-blue-50 rounded-xl p-6 mb-8 border-l-4 border-blue-500">
-             <h2 class="text-lg font-bold text-gray-900 mb-3">🎯 Your Complete Digital Domination:</h2>
-             <div class="grid grid-cols-2 gap-3 text-sm">
-               <div class="flex items-center">
-                 <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                 <span><strong>Digital Marketing</strong> → Converting Websites</span>
-               </div>
-               <div class="flex items-center">
-                 <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                 <span><strong>App Development</strong> → Customer Engagement</span>
-               </div>
-               <div class="flex items-center">
-                 <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                 <span><strong>AI Automation</strong> → Streamlined Operations</span>
-               </div>
-               <div class="flex items-center">
-                 <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
-                 <span><strong>Conversion Optimization</strong> → Maximum Profit</span>
-               </div>
-             </div>
-           </div>
-
-           <!-- ROI-Focused CTAs -->
-           <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
-             <a href="#roi-calculator" class="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-md inline-flex items-center transition-colors text-lg">
-               <i data-lucide="calculator" class="h-5 w-5 mr-2"></i>
-               Calculate Your ROI
-               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                 <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-               </svg>
-             </a>
-             <a href="#complete-solutions" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-bold px-8 py-4 rounded-md transition-colors text-lg">
-               See Complete Solutions
-             </a>
-           </div>
-
-           <!-- Value Propositions -->
-           <div class="grid grid-cols-2 gap-4 text-sm">
-             <div class="flex items-center">
-               <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-               </svg>
-               <span><strong>300%+ ROI</strong> Average Client Return</span>
-             </div>
-             <div class="flex items-center">
-               <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-               </svg>
-               <span><strong>70% Efficiency</strong> Gain with AI Automation</span>
-             </div>
-             <div class="flex items-center">
-               <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-               </svg>
-               <span><strong>Royal Academy</strong> Award Winner 2025</span>
-             </div>
-             <div class="flex items-center">
-               <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-               </svg>
-               <span><strong>Complete Solution</strong> - Concept to Sales</span>
-             </div>
-           </div>
-         </div>
-         <div class="md:w-1/2 relative">
-           <!-- Hero image using picture element for optimal LCP performance -->
-            <picture>
-              <!-- Match breakpoints to your design - mobile first */-->
-              <source media="(max-width: 639px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/88c92a23-fd69-49c6-5731-9b3b9695b200/public?width=480" />
-              <source media="(min-width: 640px) and (max-width: 767px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/88c92a23-fd69-49c6-5731-9b3b9695b200/public?width=640" />
-              <source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/88c92a23-fd69-49c6-5731-9b3b9695b200/public?width=768" />
-              <source media="(min-width: 1024px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/88c92a23-fd69-49c6-5731-9b3b9695b200/public?width=1024" />
-              <img 
-                src="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/88c92a23-fd69-49c6-5731-9b3b9695b200/public" 
-                alt="Complete Business Transformation" 
-                class="rounded-lg shadow-xl max-w-[90%] ml-auto"
-              />
-            </picture>
-
-           <!-- Enhanced Results Card -->
-           <div class="absolute bottom-[-20px] right-[-20px] bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-xl shadow-2xl max-w-[320px] border border-green-200">
-             <div class="flex items-center text-green-600 mb-3">
-               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                 <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1h-2a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1h-2a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
-               </svg>
-               <span class="font-bold">First Mover Results</span>
-             </div>
-             <div class="grid grid-cols-2 gap-3 text-center">
-               <div>
-                 <div class="text-2xl font-bold text-green-600">300%</div>
-                 <div class="text-xs text-gray-600">Average ROI</div>
-               </div>
-               <div>
-                 <div class="text-2xl font-bold text-blue-600">#1</div>
-                 <div class="text-xs text-gray-600">Rankings</div>
-               </div>
-               <div>
-                 <div class="text-2xl font-bold text-purple-600">70%</div>
-                 <div class="text-xs text-gray-600">Efficiency</div>
-               </div>
-               <div>
-                 <div class="text-2xl font-bold text-orange-600">1st</div>
-                 <div class="text-xs text-gray-600">UK AI Pioneer</div>
-               </div>
-             </div>
-             <a href="/about/darran-goulding/" class="block text-center text-xs text-blue-600 hover:text-blue-800 mt-2 font-medium">See Our Story →</a>
-           </div>
-         </div>
-       </div>
-     </div>
-   </section>
- 
-   <!-- Digital Marketing Spotlight Section - Main Service Focus -->
-   <section class="bg-gradient-to-br from-blue-600 to-indigo-700 py-24 relative overflow-hidden">
-     <!-- Background decoration elements -->
-     <div class="absolute top-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
-     <div class="absolute bottom-0 left-0 w-80 h-80 bg-white opacity-5 rounded-full transform -translate-x-1/3 translate-y-1/3"></div>
-     
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-       <div class="text-center mb-16">
-         <div class="inline-block px-4 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold mb-4">
-           🚀 OUR FLAGSHIP SERVICE - DIGITAL MARKETING MASTERY
-         </div>
-         <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-           Lightning-Fast Websites That <br/>
-           <span class="text-yellow-300">Convert Like Crazy</span>
-         </h2>
-         <p class="text-xl text-blue-100 max-w-4xl mx-auto mb-8">
-           We don't just build websites - we create <strong class="text-yellow-300">conversion machines</strong>. 
-           Super-fast, fully optimized sites + data-driven SEO + compelling content = 
-           <strong class="text-yellow-300">unstoppable business growth</strong>.
-         </p>
-       </div>
-
-       <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-         <!-- Left: Core Digital Marketing Services -->
-         <div>
-           <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8">
-             <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
-               <i data-lucide="rocket" class="text-yellow-300 w-8 h-8 mr-3"></i>
-               Our Digital Marketing Powerhouse:
-             </h3>
-             
-             <div class="space-y-6">
-               <div class="flex items-start">
-                 <div class="bg-yellow-400 text-gray-900 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1">⚡</div>
-                 <div>
-                   <h4 class="text-xl font-bold text-white mb-2">Super-Fast Converting Websites</h4>
-                   <p class="text-blue-100 text-sm">Lightning-speed optimized sites that turn visitors into customers. No more losing sales to slow websites!</p>
-                 </div>
-               </div>
-               
-               <div class="flex items-start">
-                 <div class="bg-yellow-400 text-gray-900 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1">📈</div>
-                 <div>
-                   <h4 class="text-xl font-bold text-white mb-2">Data-Driven SEO + AEO + GEO</h4>
-                   <p class="text-blue-100 text-sm">First movers in AI search optimization. We dominate Google, ChatGPT, Claude & every platform where your customers search.</p>
-                 </div>
-               </div>
-               
-               <div class="flex items-start">
-                 <div class="bg-yellow-400 text-gray-900 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1">🎯</div>
-                 <div>
-                   <h4 class="text-xl font-bold text-white mb-2">Authority-Building Content</h4>
-                   <p class="text-blue-100 text-sm">Compelling content creation - text, images, videos, animations. Real or AI-generated, all designed to build trust and drive sales.</p>
-                 </div>
-               </div>
-               
-               <div class="flex items-start">
-                 <div class="bg-yellow-400 text-gray-900 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1">📱</div>
-                 <div>
-                   <h4 class="text-xl font-bold text-white mb-2">Social Media Management</h4>
-                   <p class="text-blue-100 text-sm">Full social media management with engaging content that builds your brand and drives qualified traffic to your optimized website.</p>
-                 </div>
-               </div>
-             </div>
-           </div>
-
-           <div class="bg-yellow-400/10 backdrop-blur-sm rounded-2xl p-6 border border-yellow-400/30">
-             <h4 class="text-lg font-bold text-yellow-300 mb-3">🏆 The Human + AI Advantage:</h4>
-             <p class="text-blue-100 text-sm mb-4">
-               We combine human creativity and strategic thinking with AI acceleration to deliver 
-               <strong class="text-yellow-300">300%+ ROI</strong> while maintaining that personal touch your customers love.
-             </p>
-             <div class="grid grid-cols-2 gap-4 text-xs">
-               <div class="flex items-center text-green-300">
-                 <i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>
-                 <span>Human strategy & creativity</span>
-               </div>
-               <div class="flex items-center text-green-300">
-                 <i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>
-                 <span>AI-powered optimization</span>
-               </div>
-               <div class="flex items-center text-green-300">
-                 <i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>
-                 <span>Data-driven decisions</span>
-               </div>
-               <div class="flex items-center text-green-300">
-                 <i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>
-                 <span>Maximum ROI focus</span>
-               </div>
-             </div>
-           </div>
-         </div>
-
-         <!-- Right: Visual Demo & Results -->
-         <div>
-           <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-8 mb-8">
-             <div class="mb-6">
-               <div class="flex items-center mb-4">
-                 <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
-                 <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
-                 <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-                 <span class="text-gray-600 text-sm ml-2">Performance Dashboard</span>
-               </div>
-               
-               <!-- Performance Metrics -->
-               <div class="space-y-4">
-                 <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg">
-                   <div class="flex items-center">
-                     <i data-lucide="zap" class="text-green-600 w-5 h-5 mr-2"></i>
-                     <span class="font-semibold text-gray-900">Website Speed</span>
-                   </div>
-                   <div class="text-right">
-                     <div class="text-2xl font-bold text-green-600">98/100</div>
-                     <div class="text-xs text-gray-600">PageSpeed Score</div>
-                   </div>
-                 </div>
-                 
-                 <div class="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
-                   <div class="flex items-center">
-                     <i data-lucide="trending-up" class="text-blue-600 w-5 h-5 mr-2"></i>
-                     <span class="font-semibold text-gray-900">SEO Rankings</span>
-                   </div>
-                   <div class="text-right">
-                     <div class="text-2xl font-bold text-blue-600">#1-3</div>
-                     <div class="text-xs text-gray-600">In 1 Week</div>
-                   </div>
-                 </div>
-                 
-                 <div class="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
-                   <div class="flex items-center">
-                     <i data-lucide="target" class="text-purple-600 w-5 h-5 mr-2"></i>
-                     <span class="font-semibold text-gray-900">Conversion Rate</span>
-                   </div>
-                   <div class="text-right">
-                     <div class="text-2xl font-bold text-purple-600">+94%</div>
-                     <div class="text-xs text-gray-600">Average Boost</div>
-                   </div>
-                 </div>
-               </div>
-               
-               <div class="text-center mt-4">
-                 <span class="text-blue-600 font-semibold">Real results from our optimized websites</span>
-               </div>
-             </div>
-           </div>
-
-           <!-- Business Growth Platform Highlight -->
-           <div class="bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl p-6 text-white">
-             <div class="flex items-center mb-4">
-               <i data-lucide="sparkles" class="w-6 h-6 mr-3"></i>
-               <h4 class="text-xl font-bold">50+ Business Growth Apps</h4>
-             </div>
-             <p class="text-amber-100 mb-4 text-sm">
-               Access our powerful platform with 50+ AI-powered applications for content creation, 
-               SEO optimization, social media management, and business automation.
-             </p>
-             <div class="grid grid-cols-2 gap-3 text-sm">
-               <div class="flex items-center">
-                 <i data-lucide="edit-3" class="w-4 h-4 mr-2"></i>
-                 <span>Content Creation Suite</span>
-               </div>
-               <div class="flex items-center">
-                 <i data-lucide="search" class="w-4 h-4 mr-2"></i>
-                 <span>SEO Optimization Tools</span>
-               </div>
-               <div class="flex items-center">
-                 <i data-lucide="share-2" class="w-4 h-4 mr-2"></i>
-                 <span>Social Media Manager</span>
-               </div>
-               <div class="flex items-center">
-                 <i data-lucide="bar-chart-3" class="w-4 h-4 mr-2"></i>
-                 <span>Analytics Dashboard</span>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-
-       <!-- Main CTA Section -->
-       <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center">
-         <h3 class="text-3xl font-bold text-white mb-4">Ready to Transform Your Digital Presence?</h3>
-         <p class="text-blue-100 mb-6 max-w-2xl mx-auto">
-           Get a lightning-fast website + data-driven marketing + content creation + social media management. 
-           Everything you need to dominate your market.
-         </p>
-         
-         <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-           <a href="/services/digital-marketing/" class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl inline-flex items-center justify-center">
-             <i data-lucide="rocket" class="w-5 h-5 mr-2"></i>
-             Explore Digital Marketing Services
-           </a>
-           <a href="/apps/apps-platform/" class="bg-white/20 hover:bg-white/30 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 inline-flex items-center justify-center">
-             <i data-lucide="sparkles" class="w-5 h-5 mr-2"></i>
-             Try Our Business Apps Platform
-           </a>
-         </div>
-
-         <div class="flex items-center justify-center space-x-8 text-sm text-blue-100">
-           <div class="flex items-center">
-             <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
-             <span>48-hour website delivery</span>
-           </div>
-           <div class="flex items-center">
-             <i data-lucide="shield-check" class="w-4 h-4 mr-1"></i>
-             <span>300%+ ROI guaranteed</span>
-           </div>
-           <div class="flex items-center">
-             <i data-lucide="star" class="w-4 h-4 mr-1"></i>
-             <span>FREE with 5+ hour packages</span>
-           </div>
-         </div>
-       </div>
-     </div>
-   </section>
-
-   <!-- Services Overview Section -->
-   <section id="complete-solutions" class="bg-white py-20 border-b border-gray-100">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       <div class="text-center mb-16">
-         <div class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-bold mb-4">COMPLETE END-TO-END SOLUTIONS</div>
-         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">From Concept to <span class="text-green-600">Profitable Automation</span></h2>
-         <p class="text-xl text-gray-600 max-w-4xl mx-auto">We're the only agency that handles your entire business journey. Whether you have an idea, existing business, or want to add AI automation - we've got the complete solution.</p>
-       </div>
-
-       <!-- Complete Journey Flow -->
-       <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 mb-16">
-         <h3 class="text-2xl font-bold text-center text-gray-900 mb-8">Your Complete Business Transformation Journey</h3>
-         <div class="grid md:grid-cols-6 gap-4 text-center">
-           <div class="flex flex-col items-center">
-             <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mb-3">1</div>
-             <h4 class="font-bold text-gray-900">Concept</h4>
-             <p class="text-sm text-gray-600">Your Idea</p>
-           </div>
-           <div class="flex flex-col items-center">
-             <div class="bg-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mb-3">2</div>
-             <h4 class="font-bold text-gray-900">Design</h4>
-             <p class="text-sm text-gray-600">Digital/Physical</p>
-           </div>
-           <div class="flex flex-col items-center">
-             <div class="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mb-3">3</div>
-             <h4 class="font-bold text-gray-900">Prototype</h4>
-             <p class="text-sm text-gray-600">Test & Refine</p>
-           </div>
-           <div class="flex flex-col items-center">
-             <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mb-3">4</div>
-             <h4 class="font-bold text-gray-900">Marketing</h4>
-             <p class="text-sm text-gray-600">AI-Powered</p>
-           </div>
-           <div class="flex flex-col items-center">
-             <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mb-3">5</div>
-             <h4 class="font-bold text-gray-900">Automation</h4>
-             <p class="text-sm text-gray-600">Sales & Operations</p>
-           </div>
-           <div class="flex flex-col items-center">
-             <div class="bg-green-700 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mb-3">💰</div>
-             <h4 class="font-bold text-gray-900">Profit</h4>
-             <p class="text-sm text-gray-600">300%+ ROI</p>
-           </div>
-         </div>
-       </div>
-
-       <!-- Service Paths -->
-       <div class="grid lg:grid-cols-3 gap-8 mb-16">
-         <!-- Complete Digital Solution -->
-         <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-blue-500 transform hover:-translate-y-2">
-           <div class="bg-gradient-to-r from-blue-600 to-blue-500 p-6 text-white">
-             <div class="flex items-center mb-4">
-               <i data-lucide="smartphone" class="w-8 h-8 mr-3"></i>
-               <h3 class="text-2xl font-bold">Complete Digital Path</h3>
-             </div>
-             <p class="text-blue-100">From App Concept to Automated Sales</p>
-           </div>
-           <div class="p-8">
-             <div class="space-y-4 mb-8">
-               <div class="flex items-start">
-                 <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</div>
-                 <div>
-                   <h4 class="font-bold text-gray-900">App Concept & Design</h4>
-                   <p class="text-gray-600 text-sm">UI/UX design, user journey mapping, digital visualization</p>
-                 </div>
-               </div>
-               <div class="flex items-start">
-                 <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</div>
-                 <div>
-                   <h4 class="font-bold text-gray-900">Development & Testing</h4>
-                   <p class="text-gray-600 text-sm">iOS, Android, web apps, market testing & optimization</p>
-                 </div>
-               </div>
-               <div class="flex items-start">
-                 <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</div>
-                 <div>
-                   <h4 class="font-bold text-gray-900">AI-Powered Marketing</h4>
-                   <p class="text-gray-600 text-sm">SEO+AEO+GEO optimization, global visibility</p>
-                 </div>
-               </div>
-               <div class="flex items-start">
-                 <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">4</div>
-                 <div>
-                   <h4 class="font-bold text-gray-900">Sales Automation</h4>
-                   <p class="text-gray-600 text-sm">Conversational AI, automated customer journey</p>
-                 </div>
-               </div>
-             </div>
-             
-             <div class="bg-blue-50 p-4 rounded-lg mb-6 border-l-4 border-blue-500">
-               <p class="font-bold text-gray-900">FREE Website/Landing Page</p>
-               <p class="text-gray-700 text-sm mt-1">Complete digital presence included</p>
-             </div>
-
-             <a href="/services/app-development/" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-               Start Digital Journey
-             </a>
-           </div>
-         </div>
-
-         <!-- Complete Physical Solution -->
-         <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-emerald-500 transform hover:-translate-y-2">
-           <div class="bg-gradient-to-r from-emerald-600 to-emerald-500 p-6 text-white">
-             <div class="flex items-center mb-4">
-               <i data-lucide="box" class="w-8 h-8 mr-3"></i>
-               <h3 class="text-2xl font-bold">Complete Physical Path</h3>
-             </div>
-             <p class="text-emerald-100">From Product Idea to Market Success</p>
-           </div>
-           <div class="p-8">
-             <div class="space-y-4 mb-8">
-               <div class="flex items-start">
-                 <div class="bg-emerald-100 text-emerald-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</div>
-                 <div>
-                   <h4 class="font-bold text-gray-900">Product Design & CAD</h4>
-                   <p class="text-gray-600 text-sm">3D modeling, engineering analysis, digital visualization</p>
-                 </div>
-               </div>
-               <div class="flex items-start">
-                 <div class="bg-emerald-100 text-emerald-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</div>
-                 <div>
-                   <h4 class="font-bold text-gray-900">Prototyping & Testing</h4>
-                   <p class="text-gray-600 text-sm">3D printing, market trials, performance testing</p>
-                 </div>
-               </div>
-               <div class="flex items-start">
-                 <div class="bg-emerald-100 text-emerald-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</div>
-                 <div>
-                   <h4 class="font-bold text-gray-900">Digital Marketing</h4>
-                   <p class="text-gray-600 text-sm">Product launch campaigns, AI-optimized content</p>
-                 </div>
-               </div>
-               <div class="flex items-start">
-                 <div class="bg-emerald-100 text-emerald-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">4</div>
-                 <div>
-                   <h4 class="font-bold text-gray-900">Sales Automation</h4>
-                   <p class="text-gray-600 text-sm">E-commerce automation, customer management</p>
-                 </div>
-               </div>
-             </div>
-             
-             <div class="bg-emerald-50 p-4 rounded-lg mb-6 border-l-4 border-emerald-500">
-               <p class="font-bold text-gray-900">FREE E-commerce Website</p>
-               <p class="text-gray-700 text-sm mt-1">Product showcase & sales platform</p>
-             </div>
-
-             <a href="/services/product-design/" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-               Start Product Journey
-             </a>
-           </div>
-         </div>
-
-         <!-- AI Automation Only -->
-         <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-purple-500 transform hover:-translate-y-2">
-           <div class="bg-gradient-to-r from-purple-600 to-purple-500 p-6 text-white">
-             <div class="flex items-center mb-4">
-               <i data-lucide="zap" class="w-8 h-8 mr-3"></i>
-               <h3 class="text-2xl font-bold">AI Automation Only</h3>
-             </div>
-             <p class="text-purple-100">Transform Existing Business Operations</p>
-           </div>
-           <div class="p-8">
-             <div class="space-y-4 mb-8">
-               <div class="flex items-start">
-                 <div class="bg-purple-100 text-purple-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</div>
-                 <div>
-                   <h4 class="font-bold text-gray-900">Business Audit</h4>
-                   <p class="text-gray-600 text-sm">Identify automation opportunities, efficiency analysis</p>
-                 </div>
-               </div>
-               <div class="flex items-start">
-                 <div class="bg-purple-100 text-purple-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</div>
-                 <div>
-                   <h4 class="font-bold text-gray-900">Conversational AI Setup</h4>
-                   <p class="text-gray-600 text-sm">Claude MCP integration, workflow automation</p>
-                 </div>
-               </div>
-               <div class="flex items-start">
-                 <div class="bg-purple-100 text-purple-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</div>
-                 <div>
-                   <h4 class="font-bold text-gray-900">Marketing Optimization</h4>
-                   <p class="text-gray-600 text-sm">Website enhancement or new AI-optimized site</p>
-                 </div>
-               </div>
-               <div class="flex items-start">
-                 <div class="bg-purple-100 text-purple-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">4</div>
-                 <div>
-                   <h4 class="font-bold text-gray-900">Sales Automation</h4>
-                   <p class="text-gray-600 text-sm">AI conversation automation, lead qualification</p>
-                 </div>
-               </div>
-             </div>
-             
-             <div class="bg-purple-50 p-4 rounded-lg mb-6 border-l-4 border-purple-500">
-               <p class="font-bold text-gray-900">Flexible Website Options</p>
-               <p class="text-gray-700 text-sm mt-1">Enhance existing or get FREE new site</p>
-             </div>
-
-             <a href="/services/ai-conversation-automation/" class="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-               Start AI Transformation
-             </a>
-           </div>
-         </div>
-       </div>
-
-       <!-- ROI Calculator Section -->
-       <div id="roi-calculator" class="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-white text-center">
-         <h3 class="text-3xl font-bold mb-4">Calculate Your Potential ROI</h3>
-         <p class="text-green-100 mb-6 max-w-2xl mx-auto">See how much our AI automation and marketing services could increase your revenue. Our clients average 300%+ ROI within 12 months.</p>
-         
-         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-6 max-w-4xl mx-auto">
-           <div class="grid md:grid-cols-3 gap-6 text-center">
-             <div>
-               <div class="text-4xl font-bold text-yellow-300 mb-2">300%+</div>
-               <p class="text-green-100">Average ROI</p>
-               <p class="text-xs text-green-200 mt-1">Within 12 months</p>
-             </div>
-             <div>
-               <div class="text-4xl font-bold text-yellow-300 mb-2">70%</div>
-               <p class="text-green-100">Efficiency Increase</p>
-               <p class="text-xs text-green-200 mt-1">From AI automation</p>
-             </div>
-             <div>
-               <div class="text-4xl font-bold text-yellow-300 mb-2">90%</div>
-               <p class="text-green-100">Faster Operations</p>
-               <p class="text-xs text-green-200 mt-1">Task completion time</p>
-             </div>
-           </div>
-         </div>
-
-         <div class="flex flex-col sm:flex-row justify-center gap-4">
-           <a href="#roi-tool" class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg inline-flex items-center justify-center">
-             <i data-lucide="calculator" class="w-5 h-5 mr-2"></i>
-             Calculate My ROI
-           </a>
-           <a href="/contact/" class="bg-white/20 hover:bg-white/30 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 inline-flex items-center justify-center">
-             <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
-             Free Consultation
-           </a>
-         </div>
-       </div>
-
-       <!-- Existing Business Solutions -->
-       <div class="mt-16 bg-gray-50 rounded-2xl p-8">
-         <h3 class="text-2xl font-bold text-center text-gray-900 mb-8">Already Have a Business? We'll Enhance It</h3>
-         <div class="grid md:grid-cols-2 gap-8">
-           <div class="bg-white p-6 rounded-xl">
-             <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
-               <i data-lucide="refresh-cw" class="text-blue-600 w-6 h-6 mr-2"></i>
-               Website Enhancement
-             </h4>
-             <p class="text-gray-600 mb-4">Already have a website? We'll optimize it for AI search engines, add conversion automation, and boost your ROI.</p>
-             <ul class="space-y-2 text-sm text-gray-600">
-               <li>✓ AI search optimization (SEO+AEO+GEO)</li>
-               <li>✓ Conversion rate optimization</li>
-               <li>✓ Performance improvements</li>
-               <li>✓ Mobile optimization</li>
-             </ul>
-           </div>
-           <div class="bg-white p-6 rounded-xl">
-             <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
-               <i data-lucide="plus-circle" class="text-green-600 w-6 h-6 mr-2"></i>
-               Business Automation
-             </h4>
-             <p class="text-gray-600 mb-4">Focus purely on automating your operations with our conversational AI and workflow automation solutions.</p>
-             <ul class="space-y-2 text-sm text-gray-600">
-               <li>✓ Conversational AI automation</li>
-               <li>✓ Sales process automation</li>
-               <li>✓ Customer service automation</li>
-               <li>✓ Administrative task automation</li>
-             </ul>
-           </div>
-         </div>
-       </div>
-     </div>
-   </section>
- 
-   <!-- AI Visibility Analyzer Section -->
-   <section id="ai-analyzer" class="bg-blue-50 py-16 border-b border-blue-100 relative overflow-hidden">
-     <!-- Background decoration elements -->
-     <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full opacity-30 transform translate-x-1/3 -translate-y-1/3"></div>
-     <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-100 rounded-full opacity-20 transform -translate-x-1/3 translate-y-1/3"></div>
- 
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-       <div class="text-center mb-10">
-         <div class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-3">FREE TOOL</div>
-         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">AI Visibility Analyzer</h2>
-         <p class="text-xl text-gray-700 max-w-3xl mx-auto">Our expert-built analyzer evaluates your website's readiness for both traditional search engines AND AI platforms like ChatGPT, revealing hidden opportunities your competition is missing.</p>
-       </div>
- 
-       <div class="grid md:grid-cols-2 gap-12 items-start">
-         <div class="space-y-6 md:sticky md:top-24">
-           <!-- Left side content: Benefits & Features -->
-           <div class="bg-white rounded-xl shadow-lg p-8 md:block hidden">
-             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-               <!-- Feature 1 -->
-               <div class="flex items-start">
-                 <div class="bg-blue-100 p-3 rounded-full mr-4">
-                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                   </svg>
-                 </div>
-                 <div>
-                   <h3 class="font-bold text-gray-900 text-lg mb-1">Human-Led Analysis</h3>
-                   <p class="text-gray-600 text-sm">Our experts personally review each analysis, combining AI power with human expertise.</p>
-                 </div>
-               </div>
- 
-               <!-- Feature 2 -->
-               <div class="flex items-start">
-                 <div class="bg-blue-100 p-3 rounded-full mr-4">
-                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                   </svg>
-                 </div>
-                 <div>
-                   <h3 class="font-bold text-gray-900 text-lg mb-1">Actionable Strategy</h3>
-                   <p class="text-gray-600 text-sm">Receive a prioritized roadmap of improvements with clear, specific actions to boost visibility.</p>
-                 </div>
-               </div>
- 
-               <!-- Feature 3 -->
-               <div class="flex items-start">
-                 <div class="bg-blue-100 p-3 rounded-full mr-4">
-                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                   </svg>
-                 </div>
-                 <div>
-                   <h3 class="font-bold text-gray-900 text-lg mb-1">Competitive Edge</h3>
-                   <p class="text-gray-600 text-sm">See exactly how you compare to top competitors and discover opportunities they're not.</p>
-                 </div>
-               </div>
- 
-               <!-- Feature 4: Testimonial -->
-               <div class="flex items-start col-span-full md:col-span-1">
-                 <div class="bg-yellow-100 p-3 rounded-full mr-4">
-                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                   </svg>
-                 </div>
-                 <div>
-                   <div class="font-medium text-yellow-600 text-sm mb-1">⭐⭐⭐⭐⭐</div>
-                   <p class="text-gray-700 text-sm italic">"The analyzer provided critical areas we were missing. After implementing the recommendations, our traffic jumped 74% in just weeks!"</p>
-                   <p class="text-gray-500 text-xs mt-1">— Sarah T, Marketing Director</p>
-                 </div>
-               </div>
-             </div>
-           </div>
- 
-           <!-- Mobile view features -->
-           <div class="md:hidden space-y-4">
-             <div class="flex items-center">
-               <div class="bg-blue-100 p-2 rounded-full mr-3">
-                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                 </svg>
-               </div>
-               <p class="text-gray-700 font-medium">Human-Led AI Analysis</p>
-             </div>
-             <div class="flex items-center">
-               <div class="bg-blue-100 p-2 rounded-full mr-3">
-                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                 </svg>
-               </div>
-               <p class="text-gray-700 font-medium">Actionable Strategy Roadmap</p>
-             </div>
-             <div class="flex items-center">
-               <div class="bg-blue-100 p-2 rounded-full mr-3">
-                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                 </svg>
-               </div>
-               <p class="text-gray-700 font-medium">Competitive Edge Insights</p>
-             </div>
-           </div>
-         </div>
- 
-         <!-- Right side: Analyzer Form & Results -->
-         <div id="analyzerSection" class="bg-white rounded-xl shadow-lg overflow-hidden">
-           <div class="p-8">
-             <h3 id="analyzerHeading" class="text-2xl font-bold text-gray-900 mb-6">Get Your Free Visibility Analysis</h3>
-             <p class="text-gray-600 mb-6">Discover how to improve your position with both traditional search engines like Google and AI search engine platforms like Microsoft Bing & ChatGPT.</p>
- 
-             <!-- Multi-step Analyzer Form -->
-
-
-                 <a href="/analyzer/" class="group inline-flex items-center justify-center px-6 py-4 text-white font-bold bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg overflow-hidden">
-               <span class="relative z-10 flex items-center">
-                 Get Your Free Website SEO Analysis
-                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                 </svg>
-               </span>
-               <span class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-             </a>
-
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="absolute inset-0">
+      <div class="absolute top-10 left-4 sm:top-20 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-10 right-4 sm:bottom-20 sm:right-10 w-64 h-64 sm:w-96 sm:h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
     </div>
-    </div>
-    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 sm:py-24 lg:py-32">
+      <div class="max-w-6xl mx-auto">
+        <!-- Main Headline -->
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 leading-tight">
+          Get Discovered <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Everywhere</span> with Supercharged Engine Optimization
+        </h1>
+        
+        <!-- Subheadline -->
+        <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-5 sm:mb-6 max-w-4xl mx-auto leading-relaxed">
+          Revolutionary SEO+AEO+GEO+SBO strategy gets your business recommended by AI platforms AND ranked on search engines.<br class="hidden sm:block"/>Plus we give you a free website and automations to get you started.
+        </p>
+
+        <!-- Key Benefits -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4 mb-5 sm:mb-6 max-w-6xl mx-auto">
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 lg:p-5 border border-white/20">
+            <div class="text-xl sm:text-2xl mb-1 sm:mb-2">🚀</div>
+            <h3 class="text-xs sm:text-sm lg:text-base font-semibold text-white mb-1">Get Found on Google & AI Search Engines</h3>
+            <p class="text-gray-300 text-xs leading-tight">Get found everywhere your customers are looking, secure prime positions on Google & Microsoft Bing, and be the business AI recommends when customers ask ChatGPT, Perplexity, and other AI platforms</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 lg:p-5 border border-white/20">
+            <div class="text-xl sm:text-2xl mb-1 sm:mb-2">💰</div>
+            <h3 class="text-xs sm:text-sm lg:text-base font-semibold text-white mb-1">Work Less, Earn More With Smart Automations</h3>
+            <p class="text-gray-300 text-xs leading-tight">Complete AI-powered business systems that handle marketing, operations, customer service, and daily tasks automatically - freeing your time and to focus on strategic growth, innovation, and the high-value work only you can do.</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 lg:p-5 border border-white/20">
+            <div class="text-xl sm:text-2xl mb-1 sm:mb-2">🎁</div>
+            <h3 class="text-xs sm:text-sm lg:text-base font-semibold text-white mb-1">Free High-Performance Website</h3>
+            <p class="text-gray-300 text-xs leading-tight">Custom websites with super fast LCP speeds and 98%+ Core Web Vitals scores that Google loves. Built from scratch specifically for your business, with full mobile optimization and conversion-focused design worth £2,995.</p>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center items-center mb-3 sm:mb-4">
+          <a href="/roi-calculator/" class="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-5 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm lg:text-base hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center justify-center">
+            <span class="mr-2">📊</span>
+            Calculate Your ROI Potential
+          </a>
+          <a href="/analyzer/" class="w-full sm:w-auto bg-white/20 backdrop-blur-sm text-white px-5 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm lg:text-base border border-white/30 hover:bg-white/30 transition-all duration-300 inline-flex items-center justify-center">
+            <span class="mr-2">🔍</span>
+            Free Website Analysis
+          </a>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 lg:gap-6 text-gray-300 text-xs">
+          <div class="flex items-center">
+            <span class="text-yellow-400 mr-1">⭐⭐⭐⭐⭐</span>
+            <span>5-Star Rated Agency</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-green-400 mr-1">✓</span>
+            <span>No Contracts Required</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-blue-400 mr-1">🏆</span>
+            <span>Award-Winning Results</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-    <!-- Free Website Offer Section -->
-   <section id="free-website" class="bg-gray-50 py-20">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       <div class="text-center mb-12">
-         <span class="inline-block bg-yellow-100 text-yellow-800 font-semibold px-4 py-2 rounded-full text-sm mb-3">EXCLUSIVE OFFER</span>
-         <h2 class="text-4xl font-bold text-gray-900 mb-4">Get a Free Professional Website<br><span class="text-blue-600">With Our 5+ Hour Packages</span></h2>
-         <p class="text-xl text-gray-600 max-w-3xl mx-auto">Subscribe to any 5+ hour package for 12 months and receive a fully optimized business website (up to 7 pages) at no additional cost. Or get an AI Authority Funnel with any 3+ hour package for 12 months. A value worth £2,000-£5,000!</p>
-       </div>
- 
-       <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-         <!-- 3-Hour Digital Marketing Package Card -->
-         <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100">
-           <div class="bg-gradient-to-r from-blue-600 to-blue-500 py-6 px-8 text-white">
-             <h3 class="text-2xl font-bold mb-2">3 Hour Done-For-You Solution</h3>
-             <p class="text-blue-100">Expert-Led Digital Marketing Services</p>
-           </div>
-           <div class="p-8">
-             <div class="bg-blue-50 p-4 rounded mb-6 border-l-4 border-blue-500">
-               <p class="font-bold text-gray-900">FREE AI Authority Funnel worth £1,995</p>
-               <p class="text-gray-700 text-sm mt-1">With 12-month subscription</p>
-             </div>
-             <div class="mb-6">
-               <span class="text-3xl font-bold text-gray-900">Build Trust & Authority</span></br>
-               <span class="text-gray-500"> Generate Leads & Boost Sales</span>
-             </div>
-             <ul class="space-y-4 mb-8">
-               <li class="flex items-start">
-                 <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5 mr-2 mt-0.5"></i>
-                 <span><strong>Custom Design</strong> to match your brand identity</span>
-               </li>
-               <li class="flex items-start">
-                 <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5 mr-2 mt-0.5"></i>
-                 <span><strong>Social Media Management</strong> posting to all your profiles</span>
-               </li>
-               <li class="flex items-start">
-                 <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5 mr-2 mt-0.5"></i>
-                 <span><strong>Monthly Strategy</strong> calls and performance reports</span>
-               </li>
-             </ul>
-             <a href="/pricing/#hour-packages" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
-               Get Started Now
-             </a>
-           </div>
-         </div>
- 
-         <!-- Done-For-You Card -->
-         <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100">
-           <div class="bg-gradient-to-r from-purple-600 to-purple-500 py-6 px-8 text-white">
-             <h3 class="text-2xl font-bold mb-2">5+ Hour Done-For-You Solution</h3>
-             <p class="text-purple-100">Expert-Led Digital Marketing Services</p>
-           </div>
-           <div class="p-8">
-             <div class="bg-purple-50 p-4 rounded mb-6 border-l-4 border-purple-500">
-               <p class="font-bold text-gray-900">FREE Custom Business Website worth £2,995</p>
-               <p class="text-gray-700 text-sm mt-1">With 12-month subscription</p>
-             </div>
-             <div class="mb-6">
-               <span class="text-3xl font-bold text-gray-900">Increase Online Visibility</span></br>
-               <span class="text-gray-500"> SEO, AEO, GEO & Geographic Optimization</span>
-             </div>
-             <ul class="space-y-4 mb-8">
-               <li class="flex items-start">
-                 <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5 mr-2 mt-0.5"></i>
-                 <span><strong>Dedicated Team</strong> of experts managing your presence</span>
-               </li>
-               <li class="flex items-start">
-                 <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5 mr-2 mt-0.5"></i>
-                 <span><strong>Full Visibility Optimization</strong> for all search engines</span>
-               </li>
-               <li class="flex items-start">
-                 <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5 mr-2 mt-0.5"></i>
-                 <span><strong>Regular Reporting</strong> and performance optimization</span>
-               </li>
-             </ul>
-             <a href="/pricing/#hour-packages" class="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
-               Get Custom Quote
-             </a>
-           </div>
-         </div>
-       </div>
- 
-       <div class="bg-blue-600 text-white rounded-xl p-8 mt-12 max-w-4xl mx-auto shadow-lg">
-         <h3 class="text-2xl font-bold mb-4">Choose Your Perfect Website Solution</h3>
-         <div class="grid md:grid-cols-2 gap-6 mb-6">
-           <div class="bg-white/10 p-6 rounded-lg">
-             <h4 class="text-xl font-bold text-gray-900 mb-2">Brand New Website</h4>
-             <p class="mb-4">We'll create a lightning-fast, fully optimized website on our premium hosting platform with blazing speeds and maximum performance.</p>
-             <div class="flex items-center text-green-300 font-medium">
-               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                 <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-               </svg>
-               Includes free premium hosting
-             </div>
-           </div>
-           <div class="bg-white/10 p-6 rounded-lg">
-             <h4 class="text-xl font-bold text-gray-900 mb-2">Existing Site Optimization</h4>
-             <p class="mb-4">We can upgrade and optimize your existing website on your current platform, improving performance while working within your platform's limitations.</p>
-             <div class="flex items-center text-yellow-300 font-medium">
-               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                 <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-               </svg>
-               Speed limited by your hosting platform
-             </div>
-           </div>
-         </div>
-         <p class="text-center mb-6">All websites include mobile-responsive design, SEO, AEO, Geo & Geographic optimization, content management, contact forms, and analytics integration.</p>
-         <p class="text-center font-bold text-yellow-300 mb-4">NOTE: The AI Authority Funnel must be built and hosted on our platform to ensure maximum performance.</p>
-         <div class="flex justify-center">
-           <a href="/pricing/" class="bg-yellow-500 hover:bg-yellow-400 text-blue-900 font-bold py-3 px-8 rounded-lg text-lg inline-flex items-center transition-all transform hover:-translate-y-1 hover:shadow-lg">
-             Claim Your Free Website
-             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-               <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-             </svg>
-           </a>
-         </div>
-       </div>
-       <div class="text-center mt-6">
-         <p class="text-gray-500 italic max-w-3xl mx-auto">All free websites include fully optimized code with built-in AI SEO, professional design, and technical optimizations worth £2,000-£5,000. Limited time offer! <a href="/offer-terms/" class="text-blue-600 hover:text-blue-800 font-medium underline text-sm ml-1">View full terms & conditions</a></p>
-       </div>
-     </div>
-   </section>
- 
- 
- 
-   <!-- Custom App Development Section -->
-   <section id="app-development" class="bg-white py-24 border-t-8 border-purple-100">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       <div class="text-center mb-16">
-         <h2 class="text-4xl font-bold text-gray-900 mb-4">Custom App Development</h2>
-         <p class="text-xl text-gray-600">Transform your business with cutting-edge mobile and web applications</p>
-       </div>
- 
-       <div class="grid md:grid-cols-2 gap-12 items-start">
-         <div>
-           <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border border-purple-200 border-l-purple-500 mb-8">
-             <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-               <i data-lucide="smartphone" class="text-primary-600 w-7 h-7 mr-3"></i>
-               Mobile App Development
-             </h3>
-             <p class="text-gray-600 mb-6">Professional & user friendly mobile applications that engage your audience and drive results.</p>
- 
-             <ul class="space-y-3">
-               <li class="flex items-start">
-                 <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-                 <span>Native & Cross-Platform</span>
-               </li>
-               <li class="flex items-start">
-                 <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-                 <span>iOS, Android and hybrid solutions</span>
-               </li>
-               <li class="flex items-start">
-                 <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-                 <span>API Integration</span>
-               </li>
-               <li class="flex items-start">
-                 <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-                 <span>Payment systems and personalisation</span>
-               </li>
-               <li class="flex items-start">
-                 <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-                 <span>Performance Optimization</span>
-               </li>
-               <li class="flex items-start">
-                 <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-                 <span>User testing and analytics</span>
-               </li>
-             </ul>
- 
-             <a href="/services/app-development/" class="group mt-6 inline-flex items-center px-6 py-3 text-white font-bold bg-purple-600 hover:bg-purple-700 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg relative overflow-hidden">
-               <span class="relative z-10 flex items-center">
-                 Explore Mobile Development
-                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                 </svg>
-               </span>
-               <span class="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-             </a>
-           </div>
-         </div>
- 
-         <div class="relative">
-            <!-- Below-the-fold image with lazy loading -->
-            <picture>
-              <!-- Mobile App Development image with proper breakpoints -->
-              <source media="(max-width: 639px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/67311c6a-81f4-472f-d2d0-dc9649486900/public?width=480" />
-              <source media="(min-width: 640px) and (max-width: 767px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/67311c6a-81f4-472f-d2d0-dc9649486900/public?width=640" />
-              <source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/67311c6a-81f4-472f-d2d0-dc9649486900/public?width=720" />
-              <source media="(min-width: 1024px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/67311c6a-81f4-472f-d2d0-dc9649486900/public?width=960" />
-              <img 
-                src="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/67311c6a-81f4-472f-d2d0-dc9649486900/public" 
-                alt="Mobile App Development" 
-                loading="lazy"
-                class="rounded-lg shadow-lg"
-              />
-            </picture>
- 
-           <!-- Award Winning Card -->
-           <div class="absolute bottom-[-10px] right-[-10px] bg-blue-50 p-5 rounded-md shadow-lg max-w-[250px]">
-             <div class="flex items-center text-blue-500 mb-2">
-               <i data-lucide="award" class="w-6 h-6 mr-2"></i>
-               <span class="font-semibold">Award Winning</span>
-             </div>
-             <h3 class="text-2xl font-bold text-blue-600">50+ Apps</h3>
-             <p class="text-md text-gray-600">delivered successfully</p>
-           </div>
-         </div>
-       </div>
-     </div>
-   </section>
- 
-   <!-- Product Design Section -->
-   <section id="product-design" class="bg-gray-50 py-24 border-t-8 border-emerald-100">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       <div class="text-center mb-16">
-         <h2 class="text-4xl font-bold text-gray-900 mb-4">Product Design & Development</h2>
-         <p class="text-xl text-gray-600">Bringing concepts to life through digital innovation</p>
-       </div>
- 
-       <div class="grid md:grid-cols-2 gap-12 items-start">
-         <div class="relative">
-            <!-- Below-the-fold image with lazy loading -->
-            <picture>
-              <!-- Product Design image with optimal sizes -->
-              <source media="(max-width: 639px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/6be96110-bf92-4c2a-de4d-0dc3b0f5f400/public?width=480" />
-              <source media="(min-width: 640px) and (max-width: 767px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/6be96110-bf92-4c2a-de4d-0dc3b0f5f400/public?width=640" />
-              <source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/6be96110-bf92-4c2a-de4d-0dc3b0f5f400/public?width=720" />
-              <source media="(min-width: 1024px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/6be96110-bf92-4c2a-de4d-0dc3b0f5f400/public?width=960" />
-              <img 
-                src="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/6be96110-bf92-4c2a-de4d-0dc3b0f5f400/public" 
-                alt="Product Design and Development" 
-                loading="lazy"
-                class="rounded-lg shadow-lg"
-              />
-            </picture>
- 
-           <!-- Industry Leader Card -->
-           <div class="absolute bottom-[-10px] right-[-10px] bg-blue-50 p-5 rounded-md shadow-lg max-w-[250px]">
-             <div class="flex items-center text-blue-500 mb-2">
-               <i data-lucide="layers" class="w-6 h-6 mr-2"></i>
-               <span class="font-semibold">Industry Leader</span>
-             </div>
-             <h3 class="text-2xl font-bold text-blue-600">100+ Products</h3>
-             <p class="text-md text-gray-600">successfully delivered</p>
-           </div>
-         </div>
- 
-         <div>
-           <h3 class="text-2xl font-bold text-gray-900 mb-6">From Concept to Creation</h3>
-           <p class="text-gray-600 mb-8">Transform your innovative ideas into tangible products with our end-to-end product development services. We combine cutting-edge digital tools and manufacturing expertise to bring your vision to life.</p>
- 
-           <div class="space-y-6 md:sticky md:top-24">
-             <div class="bg-white rounded-lg shadow-sm p-6 border border-emerald-200 border-l-4 border-l-emerald-500">
-               <h4 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
-                 <i data-lucide="box" class="text-primary-600 w-6 h-6 mr-2"></i>
-                 Digital Design & CAD Modeling
-               </h4>
-               <p class="text-gray-600">Professional 3D visualization of your product</p>
-             </div>
- 
-             <div class="bg-white rounded-lg shadow-sm p-6 border border-emerald-200 border-l-4 border-l-emerald-500">
-               <h4 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
-                 <i data-lucide="cpu" class="text-primary-600 w-6 h-6 mr-2"></i>
-                 Computer-Aided Engineering
-               </h4>
-               <p class="text-gray-600">Simulate conditions and analyze for optimal performance</p>
-             </div>
- 
-             <div class="bg-white rounded-lg shadow-sm p-6 border border-emerald-200 border-l-4 border-l-emerald-500">
-               <h4 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
-                 <i data-lucide="printer" class="text-primary-600 w-6 h-6 mr-2"></i>
-                 Rapid Prototyping
-               </h4>
-               <p class="text-gray-600">Quick iteration using advanced 3D printing technology</p>
-             </div>
- 
-             <div class="bg-white rounded-lg shadow-sm p-6 border border-emerald-200 border-l-4 border-l-emerald-500">
-               <h4 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
-                 <i data-lucide="settings" class="text-primary-600 w-6 h-6 mr-2"></i>
-                 Manufacturing Support
-               </h4>
-               <p class="text-gray-600">Expert advice from design to mass production</p>
-             </div>
-           </div>
- 
-           <a href="/services/product-design/" class="group mt-8 inline-flex items-center px-6 py-3 text-white font-bold bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg relative overflow-hidden">
-             <span class="relative z-10 flex items-center">
-               Explore Product Development
-               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-               </svg>
-             </span>
-             <span class="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-           </a>
-         </div>
-       </div>
-     </div>
-   </section>
- 
-   <!-- Business Tools Section -->
-   <section id="apps" class="bg-white py-24 border-t-8 border-amber-100">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       <div class="text-center mb-16">
-         <h2 class="text-4xl font-bold text-gray-900 mb-4">AI-Powered Business Tools</h2>
-         <p class="text-xl text-gray-600">50+ specialized applications to streamline your digital growth</p>
-       </div>
- 
-       <div class="grid md:grid-cols-2 gap-12 items-start">
-         <div>
-           <h3 class="text-2xl font-bold text-gray-900 mb-6">Complete Business Growth Platform</h3>
-           <p class="text-gray-600 mb-8">Leverage our extensive suite of AI-powered applications designed to streamline your business operations and drive growth.</p>
- 
-           <ul class="space-y-4 mb-8">
-             <li class="flex items-start">
-               <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-               <div>
-                 <h4 class="font-semibold">Content Creation Suite</h4>
-                 <p class="text-sm text-gray-600">AI-powered tools for creating engaging, optimized content</p>
-               </div>
-             </li>
-             <li class="flex items-start">
-               <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-               <div>
-                 <h4 class="font-semibold">SEO & AEO Tools</h4>
-                 <p class="text-sm text-gray-600">Comprehensive optimization tools for search and voice visibility</p>
-               </div>
-             </li>
-             <li class="flex items-start">
-               <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-               <div>
-                 <h4 class="font-semibold">Analytics Dashboard</h4>
-                 <p class="text-sm text-gray-600">Real-time insights and actionable data</p>
-               </div>
-             </li>
-           </ul>
- 
-           <a href="/apps/apps-platform/" class="group inline-flex items-center px-6 py-3 text-white font-bold bg-amber-600 hover:bg-amber-700 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg relative overflow-hidden">
-             <span class="relative z-10 flex items-center">
-               Explore Apps Platform
-               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-               </svg>
-             </span>
-             <span class="absolute inset-0 bg-gradient-to-r from-amber-600 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-           </a>
-         </div>
- 
-         <div class="relative">
-            <!-- Below-the-fold image with lazy loading -->
-            <picture>
-              <!-- AI Platform image sized appropriately -->
-              <source media="(max-width: 639px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/9d732b04-1e28-446a-79ff-465163713e00/public?width=480" />
-              <source media="(min-width: 640px) and (max-width: 767px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/9d732b04-1e28-446a-79ff-465163713e00/public?width=640" />
-              <source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/9d732b04-1e28-446a-79ff-465163713e00/public?width=720" />
-              <source media="(min-width: 1024px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/9d732b04-1e28-446a-79ff-465163713e00/public?width=960" />
-              <img 
-                src="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/9d732b04-1e28-446a-79ff-465163713e00/public" 
-                alt="AI-Powered Business Tools" 
-                loading="lazy"
-                class="rounded-lg shadow-lg"
-              />
-            </picture>
- 
-           <!-- Powerful Tools Card -->
-           <div class="absolute bottom-[-10px] right-[-10px] bg-blue-50 p-5 rounded-md shadow-lg max-w-[250px]">
-             <div class="flex items-center text-blue-500 mb-2">
-               <i data-lucide="zap" class="w-6 h-6 mr-2"></i>
-               <span class="font-semibold">Powerful Tools</span>
-             </div>
-             <h3 class="text-2xl font-bold text-blue-600">50+ Apps</h3>
-             <p class="text-md text-gray-600">Business Growth & Optimization Platform</p>
-           </div>
-         </div>
-       </div>
-     </div>
-   </section>
- 
-   <!-- Success Stories Section -->
-   <section id="case-studies" class="bg-gray-50 py-24">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       <div class="text-center mb-16">
-         <h2 class="text-4xl font-bold text-gray-900 mb-4">Success Stories</h2>
-         <p class="text-xl text-gray-600">Real results from real clients</p>
-       </div>
- 
-       <div class="grid md:grid-cols-3 gap-8">
-         <!-- E-commerce Case Study -->
-         <div class="bg-white rounded-xl shadow-sm p-8 border border-gray-200 transition-transform hover:-translate-y-1">
-           <div class="flex items-center mb-6">
-             <i data-lucide="shopping-cart" class="text-primary-600 w-8 h-8 mr-3"></i>
-             <h3 class="text-xl font-bold">E-commerce Growth</h3>
-           </div>
-           <p class="text-gray-600 mb-8">Helped one e-commerce site achieve 5x increase in organic traffic and 300% boost in sales through AI-powered optimization.</p>
- 
-           <div class="text-3xl font-bold text-primary-600 mb-2">300%</div>
-           <div class="text-sm text-gray-500 mb-6">Sales Increase</div>
-         </div>
- 
-         <!-- SaaS Case Study -->
-         <div class="bg-white rounded-xl shadow-sm p-8 border border-gray-200 transition-transform hover:-translate-y-1">
-           <div class="flex items-center mb-6">
-             <i data-lucide="server" class="text-primary-600 w-8 h-8 mr-3"></i>
-             <h3 class="text-xl font-bold">SaaS Success</h3>
-           </div>
-           <p class="text-gray-600 mb-8">Designed AI-powered tools for a SaaS platform that generated $1M+ in revenue within the first 6 months of launch.</p>
- 
-           <div class="text-3xl font-bold text-primary-600 mb-2">$1M+</div>
-           <div class="text-sm text-gray-500 mb-6">Revenue Generated</div>
-         </div>
- 
-         <!-- Local Business Case Study -->
-         <div class="bg-white rounded-xl shadow-sm p-8 border border-gray-200 transition-transform hover:-translate-y-1">
-           <div class="flex items-center mb-6">
-             <i data-lucide="map-pin" class="text-primary-600 w-8 h-8 mr-3"></i>
-             <h3 class="text-xl font-bold">Local Business</h3>
-           </div>
-           <p class="text-gray-600 mb-8">We have helped numerous local service providers dominate their market with AI-optimized content and targeting.</p>
- 
-           <div class="text-3xl font-bold text-primary-600 mb-2">#1</div>
-           <div class="text-sm text-gray-500 mb-6">In All Rankings</div>
-         </div>
-       </div>
-     </div>
-   </section>
- 
-   <!-- Current Projects Section -->
-   <section class="bg-white py-24">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       <div class="text-center mb-16">
-         <h2 class="text-4xl font-bold text-gray-900 mb-4">Current Projects</h2>
-         <p class="text-xl text-gray-600">See what we're building right now</p>
-       </div>
- 
-       <div class="grid md:grid-cols-2 gap-12">
-         <!-- AI Content Platform -->
-         <div class="bg-white rounded-xl shadow-sm p-8 border border-gray-200">
-           <div class="flex items-center mb-8">
-             <div class="bg-primary-50 p-3 rounded-full mr-4">
-               <i data-lucide="brain" class="text-primary-600 w-8 h-8"></i>
-             </div>
-             <h3 class="text-2xl font-bold">AI Content Platform</h3>
-           </div>
-           <p class="text-gray-600 mb-8">Building the next generation of AI content creation and optimization tools.</p>
- 
-           <div class="mb-6">
-             <div class="text-sm font-semibold mb-1">Progress</div>
-             <div class="bg-gray-200 rounded-full h-2.5">
-               <div class="bg-primary-600 h-2.5 rounded-full" style="width: 60%"></div>
-             </div>
-             <div class="text-right text-sm text-gray-500 mt-1">60%</div>
-           </div>
-         </div>
- 
-         <!-- Enterprise SEO Tool -->
-         <div class="bg-white rounded-xl shadow-sm p-8 border border-gray-200">
-           <div class="flex items-center mb-8">
-             <div class="bg-primary-50 p-3 rounded-full mr-4">
-               <i data-lucide="bar-chart" class="text-primary-600 w-8 h-8"></i>
-             </div>
-             <h3 class="text-2xl font-bold">Enterprise SEO Tool</h3>
-           </div>
-           <p class="text-gray-600 mb-8">Developing comprehensive SEO management platform for enterprise clients.</p>
- 
-           <div class="mb-6">
-             <div class="text-sm font-semibold mb-1">Progress</div>
-             <div class="bg-gray-200 rounded-full h-2.5">
-               <div class="bg-primary-600 h-2.5 rounded-full" style="width: 20%"></div>
-             </div>
-             <div class="text-right text-sm text-gray-500 mt-1">20%</div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </section>
- 
-   <!-- Resources Section -->
-   <section id="resources" class="bg-gray-50 py-24">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       <div class="text-center mb-16">
-         <h2 class="text-4xl font-bold text-gray-900 mb-4">Resources & Knowledge Hub</h2>
-         <p class="text-xl text-gray-600">Expert insights, guides, and answers to your questions</p>
-       </div>
- 
-       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-         <!-- Blog Posts -->
-         <div class="bg-white rounded-xl shadow-sm p-8">
-           <div class="flex items-center mb-6">
-             <i data-lucide="file-text" class="text-primary-600 w-8 h-8 mr-3"></i>
-             <h3 class="text-xl font-bold">Latest Blog Posts</h3>
-           </div>
- 
-           <ul class="space-y-4 mb-6">
-             <li>
-               <a href="/blog/" class="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                 <h4 class="font-semibold text-gray-900">AI SEO Trends for 2025</h4>
-                 <p class="text-sm text-gray-600 mt-1">The latest innovations and how to prepare...</p>
-               </a>
-             </li>
-             <li>
-               <a href="/blog/" class="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                 <h4 class="font-semibold text-gray-900">ChatGPT Optimization Guide</h4>
-                 <p class="text-sm text-gray-600 mt-1">Maximize your visibility in AI responses...</p>
-               </a>
-             </li>
-             <li>
-               <a href="/blog/" class="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                 <h4 class="font-semibold text-gray-900">Mobile-First AI Development</h4>
-                 <p class="text-sm text-gray-600 mt-1">Building mobile applications optimized for AI...</p>
-               </a>
-             </li>
-           </ul>
- 
-           <a href="/blog/" class="text-primary-600 font-medium hover:text-primary-700 flex items-center">
-             View All Posts
-             <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-           </a>
-         </div>
- 
-         <!-- FAQs -->
-         <div class="bg-white rounded-xl shadow-sm p-8">
-           <div class="flex items-center mb-6">
-             <i data-lucide="help-circle" class="text-primary-600 w-8 h-8 mr-3"></i>
-             <h3 class="text-xl font-bold">Frequently Asked Questions</h3>
-           </div>
- 
-           <ul class="space-y-4 mb-6">
-             <li>
-               <a href="/faq/" class="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                 <h4 class="font-semibold text-gray-900">What is Digital Digital Optimization?</h4>
-                 <p class="text-sm text-gray-600 mt-1">A comprehensive approach to optimizing your digital...</p>
-               </a>
-             </li>
-             <li>
-               <a href="/faq/" class="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                 <h4 class="font-semibold text-gray-900">How soon can I see results?</h4>
-                 <p class="text-sm text-gray-600 mt-1">Most clients see significant improvements within...</p>
-               </a>
-             </li>
-             <li>
-               <a href="/faq/" class="block hover:bg-gray-50 p-3 rounded-lg transition-colors">
-                 <h4 class="font-semibold text-gray-900">What makes your approach unique?</h4>
-                 <p class="text-sm text-gray-600 mt-1">Our AI-first methodology combined with human...</p>
-               </a>
-             </li>
-           </ul>
- 
-           <a href="/faq/" class="text-primary-600 font-medium hover:text-primary-700 flex items-center">
-             View All FAQs
-             <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-           </a>
-         </div>
-       </div>
-     </div>
-   </section>
- 
-   <!-- Call to Action Section -->
-   <section class="bg-primary-700 py-16">
-     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-         <!-- Left Card - Blue Gradient -->
-         <div class="bg-gradient-to-r from-blue-600 to-blue-400 p-8 rounded-lg text-white">
-           <h3 class="text-2xl font-bold mb-4">Ready to optimize your website?</h3>
-           <p class="mb-6">Get a free consultation with our AI search optimization experts and improve your visibility.</p>
-           <a href="/contact/" class="inline-block bg-white text-blue-600 font-medium py-3 px-6 rounded-md hover:bg-blue-50 transition-colors">
-             Get Free Consultation
-           </a>
-         </div>
- 
-         <!-- Right Card - Purple Gradient -->
-         <div class="bg-gradient-to-r from-purple-600 to-pink-500 p-8 rounded-lg text-white">
-           <h3 class="text-2xl font-bold mb-4">Learn More About AI SEO</h3>
-           <p class="mb-6">Discover how AI is transforming search and how to prepare your website for the future.</p>
-           <a href="#services-overview" class="inline-block bg-white text-purple-600 font-medium py-3 px-6 rounded-md hover:bg-blue-50 transition-colors">
-             Explore Services
-           </a>
-         </div>
-       </div>
- 
-     </div>
-   </section>
- 
- 
- 
-   <!-- Author Bio Section -->
-   <section class="bg-white py-12 border-t border-gray-200">
-     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-       <div class="flex flex-col md:flex-row items-center gap-8">
-         <picture>
-             <!-- Profile image with perfect 1:1 aspect ratio and proper CSS for roundness -->
-             <source media="(max-width: 639px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/ef6f4c50-87ad-45a0-39fd-00ec1e5cf200/public?width=96&height=96&fit=cover" />
-             <source media="(min-width: 640px) and (max-width: 767px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/ef6f4c50-87ad-45a0-39fd-00ec1e5cf200/public?width=128&height=128&fit=cover" />
-             <source media="(min-width: 768px)" srcset="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/ef6f4c50-87ad-45a0-39fd-00ec1e5cf200/public?width=128&height=128&fit=cover" />
-             <img 
-               src="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/ef6f4c50-87ad-45a0-39fd-00ec1e5cf200/public?width=128&height=128&fit=cover" 
-               alt="Darran Goulding Royal Academy of Engineering Image" 
-               loading="lazy"
-               class="w-32 h-32 rounded-full object-cover object-center"
-               width="128"
-               height="128"
-             />
-           </picture>
+  <!-- Problem/Solution Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+          The AI Search Revolution Is Here - Are You Ready?
+        </h2>
+        <p class="text-xl text-gray-600 max-w-5xl mx-auto mb-6">
+          Google just launched AI search conversations where customers talk directly to AI for recommendations. Traditional search is disappearing fast, and most SEO agencies are scrambling to catch up.
+        </p>
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-6 max-w-4xl mx-auto">
+          <p class="text-lg font-semibold mb-2">🕰️ If you could rewind time and secure position 1 on Google before the mad rush...</p>
+          <p class="text-base">Would you do it? That's exactly what we're offering with AI search - but the window is closing fast.</p>
+        </div>
+      </div>
 
-         <div>
-           <h3 class="text-2xl font-bold mb-2">Darran Goulding <a href="/about/darran-goulding/" class="text-sm font-normal bg-gray-100 hover:bg-gray-200 text-gray-700 hover:text-gray-900 px-2 py-1 rounded ml-2 transition-colors duration-200">Bio</a></h3>
-           <p class="text-gray-600 mb-3">
-             Digital transformation expert specializing in AI integration, SEO, AEO & GEO optimization, and innovative business solutions. I help businesses leverage cutting-edge technology to achieve exceptional growth and market presence. Recipient of a 2025 <a href="https://enterprisehub.raeng.org.uk/regional-talent-engines" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:underline">Royal Academy of Engineering</a> award.
-           </p>
-           <div class="text-sm text-gray-500">Last updated: March 31, 2025 · 2 min read</div>
-           <div class="flex mt-4 space-x-3">
-             <a href="https://www.linkedin.com/in/darran-goulding-661045157/" class="text-gray-400 hover:text-primary-600">
-               <i data-lucide="linkedin" class="w-5 h-5"></i>
-             </a>
-           </div>
-         </div>
-       </div>
-     </div>
-   </section>
- 
-   <Footer slot="footer" />
+      <!-- Compelling Hook Banner -->
+      <div class="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-2xl p-8 mb-12 text-white text-center relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="absolute top-4 right-4 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+        <div class="absolute bottom-4 left-4 w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
+        
+        <div class="relative z-10">
+          <div class="mb-6">
+            <h3 class="text-2xl md:text-3xl font-bold mb-3">🚨 The Great AI Search Land Grab Has Begun</h3>
+            <p class="text-lg text-blue-100 max-w-4xl mx-auto">
+              Right now, there are only a handful of businesses in each industry securing top AI search positions. 
+              In 12 months, these spots will be as competitive as Google's first page.
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-3 gap-6 mb-6">
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <div class="text-2xl font-bold mb-1">Early 2025</div>
+              <p class="text-sm text-blue-100">AI search was experimental</p>
+            </div>
+            <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-white/30 transform scale-105">
+              <div class="text-2xl font-bold mb-1">Right Now</div>
+              <p class="text-sm text-blue-100">AI search is mainstream</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <div class="text-2xl font-bold mb-1">Late 2025</div>
+              <p class="text-sm text-blue-100">AI search will be saturated</p>
+            </div>
+          </div>
+          
+          <div class="bg-white/15 backdrop-blur-sm rounded-lg p-4 border border-white/30">
+            <p class="text-lg font-semibold">⏰ This is your Google 2003 moment - secure your AI search territory before everyone else realizes what's happening</p>
+          </div>
+        </div>
+      </div>
 
-   <!-- Digital Marketing Spotlight Section - Main Service Focus -->
-   <section class="bg-gradient-to-br from-blue-600 to-indigo-700 py-24 relative overflow-hidden">
-     <!-- Background decoration elements -->
-     <div class="absolute top-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
-     <div class="absolute bottom-0 left-0 w-80 h-80 bg-white opacity-5 rounded-full transform -translate-x-1/3 translate-y-1/3"></div>
-     
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-       <div class="text-center mb-16">
-         <div class="inline-block px-4 py-2 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold mb-4">
-           🚀 OUR FLAGSHIP SERVICE - DIGITAL MARKETING MASTERY
-         </div>
-         <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-           Lightning-Fast Websites That <br/>
-           <span class="text-yellow-300">Convert Like Crazy</span>
-         </h2>
-         <p class="text-xl text-blue-100 max-w-4xl mx-auto mb-8">
-           We don't just build websites - we create <strong class="text-yellow-300">conversion machines</strong>. 
-           Super-fast, fully optimized sites + data-driven SEO + compelling content = 
-           <strong class="text-yellow-300">unstoppable business growth</strong>.
-         </p>
-       </div>
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="space-y-8">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-red-600 text-xl">⚠️</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Your SEO Agency Is Fighting Yesterday's War</h3>
+                <p class="text-gray-600">While other agencies chase traditional rankings, we've spent the past year mastering AI search optimization. Position zero in AI recommendations now captures 42.9% of clicks - and it's only growing.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-red-600 text-xl">🏃‍♂️</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">The Window Is Closing Fast</h3>
+                <p class="text-gray-600">Right now, your competitors aren't optimizing for AI search. But they will be soon. Every day you wait is another day closer to being left behind when they finally catch up.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-red-600 text-xl">💸</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Wasting Budget on Outdated Strategies</h3>
+                <p class="text-gray-600">Spending thousands on traditional SEO while AI search grows 115% quarterly. Smart businesses are securing their AI search positions NOW, before the competition realizes what's happening.</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-       <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-         <!-- Left: Core Digital Marketing Services -->
-         <div>
-           <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8">
-             <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
-               <i data-lucide="rocket" class="text-yellow-300 w-8 h-8 mr-3"></i>
-               Our Digital Marketing Powerhouse:
-             </h3>
-             
-             <div class="space-y-6">
-               <div class="flex items-start">
-                 <div class="bg-yellow-400 text-gray-900 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1">⚡</div>
-                 <div>
-                   <h4 class="text-xl font-bold text-white mb-2">Super-Fast Converting Websites</h4>
-                   <p class="text-blue-100 text-sm">Lightning-speed optimized sites that turn visitors into customers. No more losing sales to slow websites!</p>
-                 </div>
-               </div>
-               
-               <div class="flex items-start">
-                 <div class="bg-yellow-400 text-gray-900 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1">📈</div>
-                 <div>
-                   <h4 class="text-xl font-bold text-white mb-2">Data-Driven SEO + AEO + GEO</h4>
-                   <p class="text-blue-100 text-sm">First movers in AI search optimization. We dominate Google, ChatGPT, Claude & every platform where your customers search.</p>
-                 </div>
-               </div>
-               
-               <div class="flex items-start">
-                 <div class="bg-yellow-400 text-gray-900 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1">🎯</div>
-                 <div>
-                   <h4 class="text-xl font-bold text-white mb-2">Authority-Building Content</h4>
-                   <p class="text-blue-100 text-sm">Compelling content creation - text, images, videos, animations. Real or AI-generated, all designed to build trust and drive sales.</p>
-                 </div>
-               </div>
-               
-               <div class="flex items-start">
-                 <div class="bg-yellow-400 text-gray-900 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1">📱</div>
-                 <div>
-                   <h4 class="text-xl font-bold text-white mb-2">Social Media Management</h4>
-                   <p class="text-blue-100 text-sm">Full social media management with engaging content that builds your brand and drives qualified traffic to your optimized website.</p>
-                 </div>
-               </div>
-             </div>
-           </div>
+        <div class="lg:text-center">
+          <div class="bg-white rounded-2xl shadow-2xl p-8 border-l-4 border-green-500">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">🚀 Secure Your AI Search Advantage NOW</h3>
+            <div class="bg-blue-50 rounded-lg p-4 mb-6">
+              <p class="text-blue-800 font-semibold text-sm">⚡ First-Mover Advantage: We've been perfecting AI search strategies for over a year while other agencies are just catching up</p>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <span class="text-green-500 mr-3">✓</span>
+                <span class="text-gray-700"><strong>SEO:</strong> Rank high on Google & Bing</span>
+              </div>
+              <div class="flex items-center">
+                <span class="text-green-500 mr-3">✓</span>
+                <span class="text-gray-700"><strong>AEO:</strong> Get recommended by AI platforms</span>
+              </div>
+              <div class="flex items-center">
+                <span class="text-green-500 mr-3">✓</span>
+                <span class="text-gray-700"><strong>GEO:</strong> Dominate AI-generated content</span>
+              </div>
+              <div class="flex items-center">
+                <span class="text-green-500 mr-3">✓</span>
+                <span class="text-gray-700"><strong>SBO:</strong> Control your brand narrative</span>
+              </div>
+            </div>
+            <div class="mt-6 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200">
+              <p class="text-gray-800 font-semibold mb-2">🎁 Risk-Free Opportunity</p>
+              <p class="text-gray-700 text-sm">Get a FREE £2,995 website just for trusting us. No contracts, no commitments - we earn your business every month by delivering results.</p>
+            </div>
+            <div class="mt-4 p-4 bg-green-50 rounded-lg">
+              <p class="text-green-800 font-semibold">Result: Dominate AI search before your competitors even know it exists</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-           <div class="bg-yellow-400/10 backdrop-blur-sm rounded-2xl p-6 border border-yellow-400/30">
-             <h4 class="text-lg font-bold text-yellow-300 mb-3">🏆 The Human + AI Advantage:</h4>
-             <p class="text-blue-100 text-sm mb-4">
-               We combine human creativity and strategic thinking with AI acceleration to deliver 
-               <strong class="text-yellow-300">300%+ ROI</strong> while maintaining that personal touch your customers love.
-             </p>
-             <div class="grid grid-cols-2 gap-4 text-xs">
-               <div class="flex items-center text-green-300">
-                 <i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>
-                 <span>Human strategy & creativity</span>
-               </div>
-               <div class="flex items-center text-green-300">
-                 <i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>
-                 <span>AI-powered optimization</span>
-               </div>
-               <div class="flex items-center text-green-300">
-                 <i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>
-                 <span>Data-driven decisions</span>
-               </div>
-               <div class="flex items-center text-green-300">
-                 <i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>
-                 <span>Maximum ROI focus</span>
-               </div>
-             </div>
-           </div>
-         </div>
+  <!-- Services Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+          Your Complete Digital Growth Solution
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          Everything you need to dominate your market - from getting discovered to converting visitors into customers
+        </p>
+        <div class="inline-flex items-center bg-gradient-to-r from-green-100 to-blue-100 rounded-full px-6 py-3">
+          <span class="text-green-600 font-semibold">All services just £40/hour • No contracts • Scale anytime</span>
+        </div>
+      </div>
 
-         <!-- Right: Visual Demo & Results -->
-         <div>
-           <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-8 mb-8">
-             <div class="mb-6">
-               <div class="flex items-center mb-4">
-                 <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
-                 <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
-                 <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-                 <span class="text-gray-600 text-sm ml-2">Performance Dashboard</span>
-               </div>
-               
-               <!-- Performance Metrics -->
-               <div class="space-y-4">
-                 <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg">
-                   <div class="flex items-center">
-                     <i data-lucide="zap" class="text-green-600 w-5 h-5 mr-2"></i>
-                     <span class="font-semibold text-gray-900">Website Speed</span>
-                   </div>
-                   <div class="text-right">
-                     <div class="text-2xl font-bold text-green-600">98/100</div>
-                     <div class="text-xs text-gray-600">PageSpeed Score</div>
-                   </div>
-                 </div>
-                 
-                 <div class="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
-                   <div class="flex items-center">
-                     <i data-lucide="trending-up" class="text-blue-600 w-5 h-5 mr-2"></i>
-                     <span class="font-semibold text-gray-900">SEO Rankings</span>
-                   </div>
-                   <div class="text-right">
-                     <div class="text-2xl font-bold text-blue-600">#1-3</div>
-                     <div class="text-xs text-gray-600">In 1 Week</div>
-                   </div>
-                 </div>
-                 
-                 <div class="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
-                   <div class="flex items-center">
-                     <i data-lucide="target" class="text-purple-600 w-5 h-5 mr-2"></i>
-                     <span class="font-semibold text-gray-900">Conversion Rate</span>
-                   </div>
-                   <div class="text-right">
-                     <div class="text-2xl font-bold text-purple-600">+94%</div>
-                     <div class="text-xs text-gray-600">Average Boost</div>
-                   </div>
-                 </div>
-               </div>
-               
-               <div class="text-center mt-4">
-                 <span class="text-blue-600 font-semibold">Real results from our optimized websites</span>
-               </div>
-             </div>
-           </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Supercharged Engine Optimization -->
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100 hover:shadow-xl transition-all duration-300">
+          <div class="text-4xl mb-4">🚀</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Supercharged Engine Optimization</h3>
+          <p class="text-gray-600 mb-6">Get discovered everywhere with our revolutionary SEO+AEO+GEO+SBO strategy that dominates both traditional search and AI recommendations.</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Search Engine Optimization (SEO)</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Answer Engine Optimization (AEO)</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Generative Engine Optimization (GEO)</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Search Brand Optimization (SBO)</li>
+          </ul>
+        </div>
 
-           <!-- Business Growth Platform Highlight -->
-           <div class="bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl p-6 text-white">
-             <div class="flex items-center mb-4">
-               <i data-lucide="sparkles" class="w-6 h-6 mr-3"></i>
-               <h4 class="text-xl font-bold">50+ Business Growth Apps</h4>
-             </div>
-             <p class="text-amber-100 mb-4 text-sm">
-               Access our powerful platform with 50+ AI-powered applications for content creation, 
-               SEO optimization, social media management, and business automation.
-             </p>
-             <div class="grid grid-cols-2 gap-3 text-sm">
-               <div class="flex items-center">
-                 <i data-lucide="edit-3" class="w-4 h-4 mr-2"></i>
-                 <span>Content Creation Suite</span>
-               </div>
-               <div class="flex items-center">
-                 <i data-lucide="search" class="w-4 h-4 mr-2"></i>
-                 <span>SEO Optimization Tools</span>
-               </div>
-               <div class="flex items-center">
-                 <i data-lucide="share-2" class="w-4 h-4 mr-2"></i>
-                 <span>Social Media Manager</span>
-               </div>
-               <div class="flex items-center">
-                 <i data-lucide="bar-chart-3" class="w-4 h-4 mr-2"></i>
-                 <span>Analytics Dashboard</span>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
+        <!-- Website Creation -->
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100 hover:shadow-xl transition-all duration-300">
+          <div class="text-4xl mb-4">⚡</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Lightning-Fast Websites</h3>
+          <p class="text-gray-600 mb-6">Sub-2-second loading, mobile-first websites that convert visitors into customers. Free with 5+ hours monthly commitment.</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Sub-2-second LCP performance</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Mobile-first responsive design</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Conversion-optimized layouts</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>SEO+AEO+GEO ready structure</li>
+          </ul>
+        </div>
 
-       <!-- Main CTA Section -->
-       <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center">
-         <h3 class="text-3xl font-bold text-white mb-4">Ready to Transform Your Digital Presence?</h3>
-         <p class="text-blue-100 mb-6 max-w-2xl mx-auto">
-           Get a lightning-fast website + data-driven marketing + content creation + social media management. 
-           Everything you need to dominate your market.
-         </p>
-         
-         <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-           <a href="/services/digital-marketing/" class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl inline-flex items-center justify-center">
-             <i data-lucide="rocket" class="w-5 h-5 mr-2"></i>
-             Explore Digital Marketing Services
-           </a>
-           <a href="/apps/apps-platform/" class="bg-white/20 hover:bg-white/30 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 inline-flex items-center justify-center">
-             <i data-lucide="sparkles" class="w-5 h-5 mr-2"></i>
-             Try Our Business Apps Platform
-           </a>
-         </div>
+        <!-- AI Automation -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100 hover:shadow-xl transition-all duration-300">
+          <div class="text-4xl mb-4">🤖</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">AI Business Automation</h3>
+          <p class="text-gray-600 mb-6">Intelligent systems that handle leads, bookings, customer service, and marketing - saving you more money than our entire fee.</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Lead qualification & nurturing</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Automated booking systems</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Customer service chatbots</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Marketing campaign automation</li>
+          </ul>
+        </div>
 
-         <div class="flex items-center justify-center space-x-8 text-sm text-blue-100">
-           <div class="flex items-center">
-             <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
-             <span>48-hour website delivery</span>
-           </div>
-           <div class="flex items-center">
-             <i data-lucide="shield-check" class="w-4 h-4 mr-1"></i>
-             <span>300%+ ROI guaranteed</span>
-           </div>
-           <div class="flex items-center">
-             <i data-lucide="star" class="w-4 h-4 mr-1"></i>
-             <span>FREE with 5+ hour packages</span>
-           </div>
-         </div>
-       </div>
-     </div>
-   </section>
+        <!-- Social Media & Content -->
+        <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 border border-orange-100 hover:shadow-xl transition-all duration-300">
+          <div class="text-4xl mb-4">📱</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Social Media & Content</h3>
+          <p class="text-gray-600 mb-6">Engaging content that builds your brand and drives traffic across all social platforms, optimized for both human readers and AI discovery.</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>AI-optimized content creation</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Multi-platform management</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Engagement automation</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Performance analytics</li>
+          </ul>
+        </div>
 
-   <!-- AI Conversation Automation Section - Revolutionary New Service -->
+        <!-- Email & Lead Generation -->
+        <div class="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-8 border border-cyan-100 hover:shadow-xl transition-all duration-300">
+          <div class="text-4xl mb-4">📧</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Email & Lead Generation</h3>
+          <p class="text-gray-600 mb-6">Sophisticated email campaigns and lead generation systems that turn prospects into paying customers automatically.</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Automated email sequences</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Lead magnet creation</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>CRM integration</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Conversion tracking</li>
+          </ul>
+        </div>
+
+        <!-- Custom App Development -->
+        <div class="bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-8 border border-violet-100 hover:shadow-xl transition-all duration-300">
+          <div class="text-4xl mb-4">📲</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Custom App Development</h3>
+          <p class="text-gray-600 mb-6">Bespoke applications that streamline your business operations and enhance customer experience, built with AI integration from day one.</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Business process apps</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Customer portal development</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>AI-powered features</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Mobile & web platforms</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/pricing/" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 inline-flex items-center">
+          <span class="mr-2">💰</span>
+          View Transparent Pricing
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Calculator Section -->
+  <section id="roi-calculator" class="py-20 bg-gradient-to-br from-gray-900 to-blue-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+        Calculate Your ROI Potential
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        See exactly how much revenue our AI automations and optimization strategies could generate for your business
+      </p>
+      
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <div class="text-center">
+            <div class="text-4xl text-green-400 font-bold mb-2">300%+</div>
+            <p class="text-gray-300">Average ROI Increase</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl text-blue-400 font-bold mb-2">£2,500</div>
+            <p class="text-gray-300">Monthly Savings from AI</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl text-purple-400 font-bold mb-2">67%</div>
+            <p class="text-gray-300">More Qualified Leads</p>
+          </div>
+        </div>
+        
+        <a href="/roi-calculator/" class="bg-gradient-to-r from-green-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 inline-flex items-center">
+          <span class="mr-2">🧮</span>
+          Calculate Your Potential ROI
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Analyzer Section -->
+  <section id="seo-analyzer" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+        Free Website Performance Analysis
+      </h2>
+      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        Get instant insights into how your website performs and discover opportunities to increase conversions
+      </p>
+      
+      <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="text-left">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">What You'll Discover:</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-center"><span class="text-green-500 mr-3">✓</span>Page loading speed issues</li>
+              <li class="flex items-center"><span class="text-green-500 mr-3">✓</span>Mobile optimization problems</li>
+              <li class="flex items-center"><span class="text-green-500 mr-3">✓</span>SEO improvement opportunities</li>
+              <li class="flex items-center"><span class="text-green-500 mr-3">✓</span>AI search readiness score</li>
+              <li class="flex items-center"><span class="text-green-500 mr-3">✓</span>Conversion optimization tips</li>
+            </ul>
+          </div>
+          <div>
+            <a href="/analyzer/" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 inline-flex items-center w-full justify-center">
+              <span class="mr-2">🔍</span>
+              Analyze My Website Now
+            </a>
+            <p class="text-sm text-gray-500 mt-3">Free analysis • Instant results</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+          Why Swansea Businesses Choose Digital Visibility
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          We're not just another digital agency - we're your growth partners with a proven track record
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="space-y-8">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-green-600 text-xl">🏆</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">6-12 Months Ahead of Competition</h3>
+                <p class="text-gray-600">We've been optimizing for AI search since last year. Our proprietary tools and techniques give you a massive head start over competitors just discovering AEO and GEO.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-blue-600 text-xl">💰</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Automations That Pay for Themselves</h3>
+                <p class="text-gray-600">Our AI systems typically save businesses £2,500+ monthly in staff time and lost opportunities - more than covering our entire fee while you focus on growth.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-purple-600 text-xl">🎁</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Free High-Converting Website</h3>
+                <p class="text-gray-600">We give you a £2,995 website for free because we know driving traffic to a poor website is pointless. Your success is our success.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                <span class="text-orange-600 text-xl">🤝</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">No Commitments Policy</h3>
+                <p class="text-gray-600">Pause or stop anytime with no penalties. Your purchased hours never expire. We earn your business every month through results, not contracts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:text-center">
+          <div class="bg-white rounded-2xl shadow-2xl p-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Ready to Get Started?</h3>
+            <div class="space-y-4 mb-6">
+              <div class="flex items-center justify-between">
+                <span class="text-gray-700">All Services</span>
+                <span class="font-bold text-green-600">£40/hour</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-700">Setup Fees</span>
+                <span class="font-bold text-green-600">£0</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-700">Contracts</span>
+                <span class="font-bold text-green-600">None Required</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-700">Free Website (5+ hrs/month)</span>
+                <span class="font-bold text-green-600">Worth £2,995</span>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <a href="/contact/" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300 inline-flex items-center justify-center">
+                <span class="mr-2">🚀</span>
+                Start Your Growth Journey
+              </a>
+              <a href="tel:+4401792002497" class="w-full bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 inline-flex items-center justify-center">
+                <span class="mr-2">📞</span>
+                Call Now: 01792 002 497
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</MainLayout>
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+</style> 

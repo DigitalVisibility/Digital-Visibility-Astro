@@ -2,26 +2,223 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+
+export const prerender = false;
 ---
 
-<MainLayout title="Digital Marketing - Digital Visibility">
-  <!-- Enhanced Digital Marketing Service Page Schema with @graph -->
-  <script type="application/ld+json">
+<MainLayout title="Digital Marketing Services Swansea | Expert SEO, AEO, GEO & SBO | Digital Visibility">
+  <!-- SEO and Canonical Tags -->
+  <link rel="canonical" href="https://digitalvisibility.com/services/digital-marketing/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+
+  <!-- Core Meta Tags -->
+  <meta name="keywords" content="digital marketing services Swansea, digital marketing Wales, supercharged engine optimization, SEO services, AEO services, GEO services, SBO services, AI-powered digital marketing, comprehensive digital marketing, digital marketing expert Wales, search engine optimization Swansea, answer engine optimization Wales, generative engine optimization, search brand optimization, PPC management Wales, social media marketing Swansea" slot="head">
+  <meta name="description" content="Expert digital marketing services in Swansea featuring our revolutionary Supercharged Engine Optimization (SEO+AEO+GEO+SBO). Comprehensive digital marketing with AI-powered strategies for Welsh businesses." slot="head">
+  
+  <!-- OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="Digital Marketing Services Swansea | Expert SEO, AEO, GEO & SBO | Digital Visibility" slot="head">
+  <meta property="og:description" content="Professional digital marketing services in Swansea featuring revolutionary Supercharged Engine Optimization. Expert SEO, AEO, GEO, SBO and AI-powered marketing strategies." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/services/digital-marketing/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/Complete-Digital-Marketing.webp" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/webp" slot="head">
+  <meta property="og:image:alt" content="Digital Marketing Services by Digital Visibility" slot="head">
+  
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="Digital Marketing Services Swansea | Expert SEO, AEO, GEO & SBO" slot="head">
+  <meta name="twitter:description" content="Professional digital marketing services in Swansea featuring revolutionary Supercharged Engine Optimization. Expert SEO, AEO, GEO, SBO strategies for Welsh businesses." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/Complete-Digital-Marketing.webp" slot="head">
+  
+  <!-- Publisher and Author -->
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- AI-Specific Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="digital-marketing-services,supercharged-engine-optimization,search-engine-optimization,aeo-services,geo-services,sbo-services" slot="head">
+  <meta name="ai-target" content="business-owners-swansea,companies-needing-digital-marketing,marketing-managers,small-businesses,medium-businesses,local-businesses-wales" slot="head">
+  <meta name="ai-keywords" content="digital marketing services Swansea, supercharged engine optimization Wales, SEO AEO GEO SBO expert, comprehensive digital marketing, AI-powered marketing strategies, professional digital marketing company" slot="head">
+  <meta name="ai-content-type" content="digital marketing provider, supercharged engine optimization specialist, comprehensive marketing expert, AI marketing consultant" slot="head">
+  <meta name="ai-service-area" content="Swansea, Cardiff, Newport, South Wales, West Wales, Wales, United Kingdom" slot="head">
+  <meta name="ai-business-type" content="Digital Marketing Agency, Supercharged Engine Optimization Provider, AI Marketing Specialist, Comprehensive Marketing Expert" slot="head">
+
+  <!-- Geolocation & Local Business Tags -->
+  <meta name="geo.region" content="GB-SWA" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6214;-3.9436" slot="head">
+  <meta name="ICBM" content="51.6214, -3.9436" slot="head">
+  
+  <!-- Trust & Authority Signals -->
+  <meta name="business-founding-date" content="2023-01-01" slot="head">
+  <meta name="business-awards" content="Royal Academy Award 2025, UK's First Supercharged Engine Optimization Agency, Digital Marketing Pioneer" slot="head">
+  <meta name="business-certifications" content="Google Partner, Google Analytics Certified, AI Marketing Specialist, Supercharged Engine Optimization Expert" slot="head">
+  
+  <!-- Performance Optimization -->
+  <link rel="preload" href="/scripts/lucide-icons.min.js" as="script" slot="head">
+  <link rel="dns-prefetch" href="//digitalvisibility.com" slot="head">
+
+  <!-- Enhanced Schema markup for Digital Marketing Services -->
+  <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Service",
+        "@id": "https://digitalvisibility.com/services/digital-marketing/#service",
+        "name": "Digital Marketing Services",
+        "alternateName": ["Comprehensive Digital Marketing", "AI-Powered Digital Marketing", "Supercharged Engine Optimization Marketing", "SEO AEO GEO SBO Marketing"],
+        "description": "Professional digital marketing services in Swansea featuring revolutionary Supercharged Engine Optimization (SEO+AEO+GEO+SBO). Comprehensive AI-powered marketing strategies including search engine optimization, answer engine optimization, generative engine optimization, search brand optimization, PPC, social media, and content marketing.",
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": "51.6214",
+              "longitude": "-3.9436"
+            },
+            "geoRadius": "50 km"
+          },
+          {
+            "@type": "City",
+            "name": "Swansea"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "South Wales"
+          },
+          {
+            "@type": "Country",
+            "name": "United Kingdom"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://digitalvisibility.com/services/digital-marketing/",
+          "price": "40.00",
+          "priceCurrency": "GBP",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "40.00",
+            "priceCurrency": "GBP",
+            "unitText": "per hour"
+          },
+          "availability": "https://schema.org/InStock",
+          "description": "Comprehensive digital marketing services starting at £40/hour with Supercharged Engine Optimization",
+          "validFrom": "2023-01-01",
+          "seller": {
+            "@id": "https://digitalvisibility.com/#organization"
+          }
+        },
+        "serviceType": "Digital Marketing",
+        "category": ["Digital Marketing", "SEO", "AEO", "GEO", "SBO", "PPC", "Social Media Marketing"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Digital Marketing Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Supercharged Engine Optimization",
+                "description": "Revolutionary combination of SEO, AEO, GEO, and SBO for complete search domination"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Search Engine Optimization (SEO)",
+                "description": "Traditional search engine optimization for Google rankings"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Answer Engine Optimization (AEO)",
+                "description": "Get recommended by ChatGPT, Perplexity, and AI platforms"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Generative Engine Optimization (GEO)",
+                "description": "Feature in AI-generated content and overviews"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Search Brand Optimization (SBO)",
+                "description": "Build brand authority and recognition across all platforms"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "PPC & Paid Advertising",
+                "description": "Google Ads, social media advertising, and paid media management"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Social Media Marketing",
+                "description": "Comprehensive social media strategy and management"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Content Marketing",
+                "description": "Strategic content creation and distribution"
+              }
+            }
+          ]
+        }
+      },
+      {
         "@type": "WebPage",
         "@id": "https://digitalvisibility.com/services/digital-marketing/#webpage",
         "url": "https://digitalvisibility.com/services/digital-marketing/",
-        "name": "AI-Powered Digital Marketing Services | SEO, PPC, Social Media | Digital Visibility",
-        "description": "Transform your business with AI-powered digital marketing services from Digital Visibility. Expert SEO, PPC, social media marketing, content creation, email campaigns, and analytics. Human expertise optimized with AI for maximum ROI. Serving Swansea, Wales, and globally.",
-        "keywords": ["digital marketing services", "SEO agency Wales", "PPC management", "social media marketing", "content marketing", "email marketing", "AI-powered marketing", "digital visibility", "marketing ROI", "Swansea marketing agency", "Welsh digital marketing", "Google Ads specialist", "Facebook advertising", "Instagram marketing", "LinkedIn advertising", "TikTok marketing", "content strategy", "marketing analytics", "conversion optimization"],
+        "name": "Digital Marketing Services Swansea | Expert SEO, AEO, GEO & SBO",
         "isPartOf": {
           "@id": "https://digitalvisibility.com/#website"
         },
         "about": {
           "@id": "https://digitalvisibility.com/services/digital-marketing/#service"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/Complete-Digital-Marketing.webp",
+          "width": "1200",
+          "height": "630"
+        },
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-01-22",
+        "description": "Comprehensive guide to digital marketing services in Swansea featuring Supercharged Engine Optimization and expert strategies.",
+        "inLanguage": "en-GB",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", "h2", ".stat-highlight", ".service-highlight"]
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -30,7 +227,7 @@ import Footer from '../../components/Footer.astro';
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://digitalvisibility.com"
+              "item": "https://digitalvisibility.com/"
             },
             {
               "@type": "ListItem",
@@ -46,560 +243,365 @@ import Footer from '../../components/Footer.astro';
             }
           ]
         }
-      },
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://digitalvisibility.com/services/digital-marketing/#service",
-        "name": "Digital Visibility - Digital Marketing Services",
-        "alternateName": "Digital Marketing Agency Swansea",
-        "description": "Human-powered, AI-accelerated digital marketing services including SEO+AEO+GEO, PPC, social media, content marketing, email marketing, and analytics to drive engagement and boost ROI.",
-        "url": "https://digitalvisibility.com/services/digital-marketing/",
-        "logo": "https://digitalvisibility.com/logo.webp",
-        "image": "https://digitalvisibility.com/Complete-Digital-Marketing.webp",
-        "telephone": "+4401792002497",
-        "email": "support@digitalvisibility.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "235 Peniel Green Road",
-          "addressLocality": "Llansamlet",
-          "addressRegion": "Swansea",
-          "postalCode": "SA7 9BA",
-          "addressCountry": "GB"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "51.6399",
-          "longitude": "-3.8936"
-        },
-        "openingHours": [
-          "Mo-Fr 08:00-20:00",
-          "Sa 09:00-17:00",
-          "Su 10:00-16:00"
-        ],
-        "priceRange": "£40/hour - Special packages available",
-        "currenciesAccepted": "GBP",
-        "paymentAccepted": "Cash, Credit Card, Bank Transfer, Direct Debit",
-        "areaServed": [
-          {
-            "@type": "GeoCircle",
-            "name": "Swansea area",
-            "geoMidpoint": {
-              "@type": "GeoCoordinates",
-              "latitude": "51.6214",
-              "longitude": "-3.9436"
-            },
-            "geoRadius": "50000"
-          },
-          {
-            "@type": "Place",
-            "name": "Wales"
-          },
-          {
-            "@type": "Place",
-            "name": "United Kingdom"
-          },
-          {
-            "@type": "Place",
-            "name": "Global Remote Services"
-          }
-        ],
-        "provider": {
-          "@id": "https://digitalvisibility.com/#organization"
-        },
-        "offers": {
-          "@type": "AggregateOffer",
-          "priceCurrency": "GBP",
-          "lowPrice": "40",
-          "highPrice": "800",
-          "offerCount": "6",
-          "offers": [
-            {
-              "@type": "Offer",
-              "name": "SEO Services",
-              "description": "Search Engine Optimization services including technical SEO, content optimization, and link building",
-              "price": "40.00",
-              "priceCurrency": "GBP",
-              "priceSpecification": {
-                "@type": "UnitPriceSpecification",
-                "price": "40.00",
-                "priceCurrency": "GBP",
-                "unitText": "hour"
-              }
-            },
-            {
-              "@type": "Offer",
-              "name": "PPC Management",
-              "description": "Pay-Per-Click advertising management across Google Ads, Bing Ads, and social media platforms",
-              "price": "40.00",
-              "priceCurrency": "GBP",
-              "priceSpecification": {
-                "@type": "UnitPriceSpecification",
-                "price": "40.00",
-                "priceCurrency": "GBP",
-                "unitText": "hour"
-              }
-            }
-          ]
-        },
-        "serviceOutput": {
-          "@type": "Thing",
-          "name": "Improved Digital Visibility and Marketing ROI",
-          "description": "Increased website traffic, higher conversion rates, improved brand awareness, and measurable ROI"
-        },
-        "termsOfService": "https://digitalvisibility.com/terms-conditions/"
-      },
-      {
-        "@type": "ItemList",
-        "@id": "https://digitalvisibility.com/services/digital-marketing/#services-list",
-        "name": "Digital Marketing Services Offered",
-        "description": "Comprehensive list of digital marketing services provided by Digital Visibility",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "Service",
-              "@id": "https://digitalvisibility.com/services/digital-marketing/#seo",
-              "name": "Search Engine Optimization (SEO)",
-              "description": "Improve your website's visibility in search results with our AI-powered SEO strategies that adapt to algorithm changes.",
-              "offers": {
-                "@type": "Offer",
-                "price": "40.00",
-                "priceCurrency": "GBP",
-                "unitText": "hour"
-              },
-              "serviceType": "SEO Services",
-              "provider": {
-                "@id": "https://digitalvisibility.com/#organization"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "Service",
-              "@id": "https://digitalvisibility.com/services/digital-marketing/#ppc",
-              "name": "PPC & Paid Media",
-              "description": "Maximize your advertising ROI with targeted paid campaigns across search, social, and display networks.",
-              "offers": {
-                "@type": "Offer",
-                "price": "40.00",
-                "priceCurrency": "GBP",
-                "unitText": "hour"
-              },
-              "serviceType": "PPC Advertising",
-              "provider": {
-                "@id": "https://digitalvisibility.com/#organization"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "Service",
-              "@id": "https://digitalvisibility.com/services/digital-marketing/#social-media",
-              "name": "Social Media Marketing",
-              "description": "Build brand awareness and engagement with strategic social media marketing across all major platforms.",
-              "offers": {
-                "@type": "Offer",
-                "price": "40.00",
-                "priceCurrency": "GBP",
-                "unitText": "hour"
-              },
-              "serviceType": "Social Media Marketing",
-              "provider": {
-                "@id": "https://digitalvisibility.com/#organization"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "item": {
-              "@type": "Service",
-              "@id": "https://digitalvisibility.com/services/digital-marketing/#content",
-              "name": "Content Marketing",
-              "description": "Engage your audience with valuable, relevant content that drives traffic and nurtures leads through the sales funnel.",
-              "offers": {
-                "@type": "Offer",
-                "price": "40.00",
-                "priceCurrency": "GBP",
-                "unitText": "hour"
-              },
-              "serviceType": "Content Marketing",
-              "provider": {
-                "@id": "https://digitalvisibility.com/#organization"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "item": {
-              "@type": "Service",
-              "@id": "https://digitalvisibility.com/services/digital-marketing/#email",
-              "name": "Email Marketing",
-              "description": "Nurture customer relationships and drive conversions with personalized, automated email marketing campaigns.",
-              "offers": {
-                "@type": "Offer",
-                "price": "40.00",
-                "priceCurrency": "GBP",
-                "unitText": "hour"
-              },
-              "serviceType": "Email Marketing",
-              "provider": {
-                "@id": "https://digitalvisibility.com/#organization"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 6,
-            "item": {
-              "@type": "Service",
-              "@id": "https://digitalvisibility.com/services/digital-marketing/#analytics",
-              "name": "Analytics & Reporting",
-              "description": "Make data-driven decisions with comprehensive analytics and actionable insights on your marketing performance.",
-              "offers": {
-                "@type": "Offer",
-                "price": "40.00",
-                "priceCurrency": "GBP",
-                "unitText": "hour"
-              },
-              "serviceType": "Analytics Services",
-              "provider": {
-                "@id": "https://digitalvisibility.com/#organization"
-              }
-            }
-          }
-        ]
       }
     ]
   }
   </script>
 
-  <!-- SEO and Canonical Tags -->
-  <link rel="canonical" href="https://digitalvisibility.com/services/digital-marketing/" slot="head">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
-  
-  <!-- Main Meta Description and Keywords -->
-  <meta name="description" content="Transform your business with AI-powered digital marketing services from Digital Visibility. Expert SEO, PPC, social media marketing, content creation, email campaigns, and analytics. Human expertise optimized with AI for maximum ROI. Serving Swansea, Wales, and globally. Book your free consultation today." slot="head">
-  <meta name="keywords" content="digital marketing services Swansea, SEO agency Wales, PPC management UK, social media marketing Wales, content marketing services, email marketing agency UK, AI-powered digital marketing, digital visibility experts, marketing ROI optimization, local SEO Swansea, search engine optimization Wales, paid advertising management, Google Ads specialist Swansea, Facebook advertising agency Wales, Instagram marketing UK, TikTok advertising Swansea, LinkedIn advertising Welsh businesses, content strategy development, blog writing services Wales, email automation specialists UK, marketing analytics Swansea, data-driven marketing Wales, digital marketing small businesses, enterprise digital marketing solutions, affordable digital marketing Swansea, Welsh marketing agency, conversion rate optimization, web traffic experts Swansea, lead generation marketing Wales, AI marketing technology, PPC campaign management, social media content creation, marketing automation services, digital advertising agency, online marketing consultants" slot="head">
-  
-  <!-- Publisher, Twitter and OpenGraph Tags -->
-  <meta property="og:locale" content="en_GB" slot="head">
-  <meta property="og:type" content="website" slot="head">
-  <meta property="og:title" content="AI-Powered Digital Marketing Services | SEO, PPC, Social Media | Digital Visibility" slot="head">
-  <meta property="og:description" content="Transform your business with AI-powered digital marketing from Digital Visibility. Expert SEO, PPC, social media, content marketing, and analytics. Serving Swansea, Wales, and globally." slot="head">
-  <meta property="og:url" content="https://digitalvisibility.com/services/digital-marketing/" slot="head">
-  <meta property="og:site_name" content="Digital Visibility" slot="head">
-  <meta property="og:image" content="https://digitalvisibility.com/Complete-Digital-Marketing.webp" slot="head">
-  <meta property="og:image:width" content="1200" slot="head">
-  <meta property="og:image:height" content="630" slot="head">
-  <meta property="og:image:type" content="image/webp" slot="head">
-  
-  <meta name="twitter:card" content="summary_large_image" slot="head">
-  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
-  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
-  <meta name="twitter:title" content="AI-Powered Digital Marketing Services | Digital Visibility" slot="head">
-  <meta name="twitter:description" content="Transform your business with AI-powered digital marketing. Expert SEO, PPC, social media, content marketing, and analytics. Book your free consultation today." slot="head">
-  <meta name="twitter:image" content="https://digitalvisibility.com/Complete-Digital-Marketing.webp" slot="head">
-  
-  <meta name="publisher" content="Digital Visibility Limited" slot="head">
-  <meta name="author" content="Darran Goulding" slot="head">
-  
-  <!-- Geographic Meta Tags -->
-  <meta name="geo.region" content="GB-SWA" slot="head">
-  <meta name="geo.placename" content="Swansea" slot="head">
-  <meta name="geo.position" content="51.6399;-3.8936" slot="head">
-  <meta name="ICBM" content="51.6399, -3.8936" slot="head">
-  
-  <!-- AI Optimization Meta Tags for Enhanced AI Engine Recognition -->
-  <meta name="ai-generated" content="false" slot="head">
-  <meta name="ai-purpose" content="digital marketing services, SEO, PPC, social media marketing, content marketing, email marketing, analytics" slot="head">
-  <meta name="ai-target" content="business owners, marketing managers, entrepreneurs, Swansea businesses, Welsh companies, UK enterprises, global businesses seeking digital growth" slot="head">
-  <meta name="ai-content-type" content="service page, digital marketing information, marketing services" slot="head">
-  <meta name="ai-business-type" content="digital marketing agency, SEO company, social media marketing, PPC advertising, content creation service" slot="head">
-  <meta name="ai-service-area" content="Swansea, Llansamlet, South Wales, West Wales, United Kingdom, global clients" slot="head">
-  <meta name="ai-technology" content="AI-powered marketing, data-driven strategies, predictive analytics, automated campaigns" slot="head">
-  <meta name="ai-keywords" content="digital marketing services Swansea, SEO agency Wales, PPC management UK, social media marketing Wales, content marketing services Swansea, email marketing agency UK, AI-powered digital marketing, digital visibility experts, marketing ROI optimization, local SEO Swansea, search engine optimization Wales, paid advertising management, Google Ads specialist Swansea, Facebook advertising agency Wales, Instagram marketing UK, TikTok advertising Swansea, Twitter marketing services, LinkedIn advertising for Welsh businesses, content strategy development, blog writing services Wales, email automation specialists UK, marketing analytics Swansea, data-driven marketing Wales, digital marketing for small businesses, enterprise digital marketing solutions, affordable digital marketing Swansea, Welsh marketing agency, campaign performance tracking, conversion rate optimization services, Swansea web traffic experts, lead generation marketing Wales, AI marketing technology" slot="head">
-  
-  <!-- Advanced AI Optimization -->
-  <meta name="ai-language" content="en-GB" slot="head">
-  <meta name="ai-context" content="professional digital marketing services page, comprehensive marketing solutions" slot="head">
-  <meta name="ai-industry" content="digital marketing, online advertising, SEO services, PPC advertising, social media marketing, content marketing" slot="head">
-  <meta name="ai-services" content="search engine optimization, pay-per-click advertising, social media management, content creation, email marketing campaigns, marketing analytics, conversion optimization, local SEO, technical SEO, link building, Google Ads management, Facebook advertising, Instagram marketing, LinkedIn advertising, TikTok marketing, content strategy, blog writing, email automation, marketing reporting" slot="head">
-  <meta name="ai-audience" content="small businesses, medium enterprises, large corporations, startups, e-commerce businesses, B2B companies, B2C companies, local businesses, marketing managers, business owners" slot="head">
-  <meta name="ai-intent" content="hire digital marketing agency, improve online presence, increase website traffic, generate leads, boost sales, improve ROI, get marketing consultation" slot="head">
-  <meta name="ai-unique-value" content="human-powered AI-accelerated marketing, data-driven strategies, transparent reporting, local expertise with global reach, comprehensive marketing solutions, affordable pricing at £40/hour" slot="head">
-
   <Navigation slot="nav" />
   
   <!-- Hero Section -->
-  <section class="bg-white py-12 md:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            AI-Powered Digital Marketing
-          </h1>
-          <p class="text-xl text-gray-600 mb-8">
-            Drive engagement, boost conversions, and increase ROI with our data-driven digital marketing services optimized by artificial intelligence.
-          </p>
-          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href="/contact/" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-md inline-flex items-center transition-colors">Book a free Consultation
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </a>
-            <a href="#strategies" class="border border-blue-600 text-blue-600 hover:bg-blue-50 font-medium px-6 py-3 rounded-md transition-colors">Our Strategies</a>
-          </div>
+  <section class="bg-gradient-to-br from-blue-600 to-purple-800 text-white py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-block px-4 py-2 bg-yellow-500 text-black rounded-full text-sm font-bold mb-6">
+        🚀 UK's First Supercharged Engine Optimization Agency
+      </div>
+      
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">
+        Complete <span class="text-yellow-400">Digital Marketing</span> Domination
+      </h1>
+      <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+        Revolutionary digital marketing featuring our Supercharged Engine Optimization (SEO+AEO+GEO+SBO) 
+        plus PPC, social media, and content marketing for total market dominance.
+      </p>
+
+      <!-- Key Stats -->
+      <div class="grid md:grid-cols-4 gap-6 mb-8">
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+          <div class="text-3xl font-bold text-yellow-400 mb-2">4-in-1</div>
+          <p class="text-sm text-blue-100">SEO+AEO+GEO+SBO Strategy</p>
         </div>
-        <div class="md:w-1/2">
-          <img src="/Complete-Digital-Marketing.webp" alt="Digital Marketing" class="rounded-lg shadow-xl max-w-[90%] ml-auto">
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+          <div class="text-3xl font-bold text-yellow-400 mb-2">95%</div>
+          <p class="text-sm text-blue-100">Client satisfaction rate</p>
         </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+          <div class="text-3xl font-bold text-yellow-400 mb-2">3x ROI</div>
+          <p class="text-sm text-blue-100">Average return on investment</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+          <div class="text-3xl font-bold text-yellow-400 mb-2">£40</div>
+          <p class="text-sm text-blue-100">Per hour transparent pricing</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/analyzer/" class="bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors">
+          Free Marketing Analysis
+        </a>
+        <a href="/contact/" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-800 transition-colors">
+          Get Strategy Consultation
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="strategies" class="bg-gray-50 py-24">
+  <!-- Supercharged Engine Optimization Explanation -->
+  <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Digital Marketing Services</h2>
-        <p class="text-xl text-gray-600">Comprehensive strategies powered by human expertise & optimized with AI</p>
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          What is Supercharged Engine Optimization?
+        </h2>
+        <p class="text-xl text-gray-600">
+          We're the UK's first agency to combine SEO, AEO, GEO, and SBO into one powerful strategy 
+          that dominates traditional search, AI platforms, and brand recognition.
+        </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- SEO Marketing -->
-        <div class="service-card">
-          <div class="flex items-center mb-4">
-            <i data-lucide="search" class="text-primary-600 w-8 h-8 mr-3"></i>
-            <h3 class="text-xl font-bold">Search Engine Optimization</h3>
+      <!-- The 4 Components -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-blue-600 text-2xl font-bold">SEO</span>
           </div>
-          <p class="text-gray-600 mb-6">
-            Improve your website's visibility in search results with our AI-powered SEO strategies that adapt to algorithm changes.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Technical SEO audits and optimization</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Content strategy and optimization</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Link building and authority building</span>
-            </li>
-          </ul>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Search Engine Optimization</h3>
+          <p class="text-gray-600 text-sm mb-3">Traditional Google rankings and organic search visibility</p>
+          <a href="/services/search-engine-optimization/" class="text-blue-600 hover:text-blue-800 text-sm font-semibold">Learn More →</a>
         </div>
 
-        <!-- PPC Advertising -->
-        <div class="service-card">
-          <div class="flex items-center mb-4">
-            <i data-lucide="mouse-pointer-click" class="text-primary-600 w-8 h-8 mr-3"></i>
-            <h3 class="text-xl font-bold">PPC & Paid Media</h3>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-green-600 text-2xl font-bold">AEO</span>
           </div>
-          <p class="text-gray-600 mb-6">
-            Maximize your advertising ROI with targeted paid campaigns across search, social, and display networks.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Google Ads and Microsoft Advertising</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Social media advertising</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>AI-powered budget optimization</span>
-            </li>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Answer Engine Optimization</h3>
+          <p class="text-gray-600 text-sm mb-3">Get recommended by ChatGPT, Perplexity, and AI assistants</p>
+          <a href="/services/answer-engine-optimization/" class="text-green-600 hover:text-green-800 text-sm font-semibold">Learn More →</a>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-purple-600 text-2xl font-bold">GEO</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Generative Engine Optimization</h3>
+          <p class="text-gray-600 text-sm mb-3">Feature in AI-generated content and Google AI overviews</p>
+          <a href="/services/generative-engine-optimization/" class="text-purple-600 hover:text-purple-800 text-sm font-semibold">Learn More →</a>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-orange-600 text-2xl font-bold">SBO</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Search Brand Optimization</h3>
+          <p class="text-gray-600 text-sm mb-3">Build brand authority and instant recognition everywhere</p>
+          <a href="/services/search-brand-optimization/" class="text-orange-600 hover:text-orange-800 text-sm font-semibold">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="/services/supercharged-engine-optimization/" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-blue-700 hover:to-purple-700 transition-colors">
+          Discover Supercharged Engine Optimization →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Digital Marketing Services -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+        Complete Digital Marketing Services
+      </h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Supercharged Engine Optimization -->
+        <div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-gradient-to-b from-blue-500 to-purple-500">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-white text-xl font-bold">⚡</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">Supercharged Engine Optimization</h3>
+              <span class="text-sm text-purple-600 font-semibold">SEO + AEO + GEO + SBO</span>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">Revolutionary 4-in-1 strategy combining traditional SEO with cutting-edge AI optimization.</p>
+          <ul class="space-y-2 mb-4 text-sm">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Traditional Google rankings</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> ChatGPT recommendations</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> AI-generated content features</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Brand authority building</li>
+          </ul>
+          <a href="/services/supercharged-engine-optimization/" class="text-purple-600 hover:text-purple-800 font-semibold text-sm">Learn More →</a>
+        </div>
+
+        <!-- PPC & Paid Advertising -->
+        <div class="bg-white rounded-xl p-6 shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-red-600 text-xl">🎯</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">PPC & Paid Advertising</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Strategic paid advertising across Google, social media, and display networks.</p>
+          <ul class="space-y-2 mb-4 text-sm">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Google Ads management</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Social media advertising</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Display & remarketing</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> AI-powered optimization</li>
           </ul>
         </div>
 
         <!-- Social Media Marketing -->
-        <div class="service-card">
+        <div class="bg-white rounded-xl p-6 shadow-md">
           <div class="flex items-center mb-4">
-            <i data-lucide="message-circle" class="text-primary-600 w-8 h-8 mr-3"></i>
-            <h3 class="text-xl font-bold">Social Media Marketing</h3>
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-blue-600 text-xl">📱</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Social Media Marketing</h3>
           </div>
-          <p class="text-gray-600 mb-6">
-            Build brand awareness and engagement with strategic social media marketing across all major platforms.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Content creation and scheduling</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Community management</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Analytics and performance reporting</span>
-            </li>
+          <p class="text-gray-600 mb-4">Build engagement and community across all major social platforms.</p>
+          <ul class="space-y-2 mb-4 text-sm">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Content creation & posting</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Community management</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Influencer partnerships</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Performance analytics</li>
           </ul>
         </div>
 
         <!-- Content Marketing -->
-        <div class="service-card">
+        <div class="bg-white rounded-xl p-6 shadow-md">
           <div class="flex items-center mb-4">
-            <i data-lucide="file-text" class="text-primary-600 w-8 h-8 mr-3"></i>
-            <h3 class="text-xl font-bold">Content Marketing</h3>
+            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-green-600 text-xl">📝</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Content Marketing</h3>
           </div>
-          <p class="text-gray-600 mb-6">
-            Engage your audience with valuable, relevant content that drives traffic and nurtures leads through the sales funnel.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>AI-assisted content creation</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Editorial calendars and strategies</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Comprehensive content distribution</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Email Marketing -->
-        <div class="service-card">
-          <div class="flex items-center mb-4">
-            <i data-lucide="mail" class="text-primary-600 w-8 h-8 mr-3"></i>
-            <h3 class="text-xl font-bold">Email Marketing</h3>
-          </div>
-          <p class="text-gray-600 mb-6">
-            Nurture customer relationships and drive conversions with personalized, automated email marketing campaigns.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Campaign development and automation</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>AI-driven personalization</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Performance analysis and optimization</span>
-            </li>
+          <p class="text-gray-600 mb-4">Strategic content that educates, engages, and converts your audience.</p>
+          <ul class="space-y-2 mb-4 text-sm">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Blog writing & strategy</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Video content creation</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Email marketing campaigns</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Content distribution</li>
           </ul>
         </div>
 
         <!-- Analytics & Reporting -->
-        <div class="service-card">
+        <div class="bg-white rounded-xl p-6 shadow-md">
           <div class="flex items-center mb-4">
-            <i data-lucide="bar-chart" class="text-primary-600 w-8 h-8 mr-3"></i>
-            <h3 class="text-xl font-bold">Analytics & Reporting</h3>
+            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-yellow-600 text-xl">📊</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Analytics & Reporting</h3>
           </div>
-          <p class="text-gray-600 mb-6">
-            Make data-driven decisions with comprehensive analytics and actionable insights on your marketing performance.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Custom KPI dashboards</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>AI-powered predictive analytics</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Regular performance reporting</span>
-            </li>
+          <p class="text-gray-600 mb-4">Data-driven insights to optimize performance and maximize ROI.</p>
+          <ul class="space-y-2 mb-4 text-sm">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Custom dashboards</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Monthly reporting</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> ROI tracking</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Predictive analytics</li>
+          </ul>
+        </div>
+
+        <!-- Conversion Optimization -->
+        <div class="bg-white rounded-xl p-6 shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-purple-600 text-xl">🚀</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Conversion Optimization</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Maximize website performance and turn visitors into customers.</p>
+          <ul class="space-y-2 mb-4 text-sm">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Landing page optimization</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> A/B testing</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> User experience audits</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Funnel optimization</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Process Section -->
-  <section class="bg-white py-24">
+  <!-- Why Choose Our Digital Marketing -->
+  <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Proven Marketing Process</h2>
-        <p class="text-xl text-gray-600">From strategy to implementation to optimization</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+        Why Choose Digital Visibility for Digital Marketing?
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6">
+          <div class="text-4xl font-bold text-blue-600 mb-2">UK First</div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Supercharged Engine Optimization</h3>
+          <p class="text-gray-600">We're the first agency in the UK to combine SEO, AEO, GEO, and SBO into one powerful strategy.</p>
+        </div>
+
+        <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6">
+          <div class="text-4xl font-bold text-green-600 mb-2">£40/hr</div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Transparent Pricing</h3>
+          <p class="text-gray-600">No hidden fees, no long contracts. Simple, honest pricing that delivers exceptional value.</p>
+        </div>
+
+        <div class="bg-gradient-to-r from-purple-50 to-orange-50 rounded-xl p-6">
+          <div class="text-4xl font-bold text-purple-600 mb-2">AI-Powered</div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Future-Ready Marketing</h3>
+          <p class="text-gray-600">Advanced AI integration across all marketing channels for maximum efficiency and results.</p>
+        </div>
       </div>
 
-      <div class="grid md:grid-cols-4 gap-8">
-        <!-- Step 1 -->
-        <div class="text-center">
-          <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-2xl font-bold text-primary-600">1</span>
+      <!-- ROI Example -->
+      <div class="bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl p-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Real Client Results</h3>
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="text-3xl font-bold text-blue-600 mb-2">+340%</div>
+            <p class="text-gray-700">Organic traffic increase</p>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Discovery & Analysis</h3>
-          <p class="text-gray-600">
-            We analyze your business goals, target audience, and current performance to establish a baseline.
-          </p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="text-center">
-          <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-2xl font-bold text-primary-600">2</span>
+          <div>
+            <div class="text-3xl font-bold text-green-600 mb-2">+185%</div>
+            <p class="text-gray-700">Lead generation improvement</p>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Strategy Development</h3>
-          <p class="text-gray-600">
-            We create a customized marketing strategy aligned with your business objectives and budget.
-          </p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="text-center">
-          <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-2xl font-bold text-primary-600">3</span>
+          <div>
+            <div class="text-3xl font-bold text-purple-600 mb-2">3.2x ROI</div>
+            <p class="text-gray-700">Return on marketing investment</p>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Implementation</h3>
-          <p class="text-gray-600">
-            Our team executes the strategy, launching campaigns across all relevant platforms.
-          </p>
         </div>
-
-        <!-- Step 4 -->
-        <div class="text-center">
-          <div class="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-2xl font-bold text-primary-600">4</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Optimization & Scaling</h3>
-          <p class="text-gray-600">
-            We continuously analyze results and optimize campaigns to maximize ROI and scale success.
-          </p>
-        </div>
+        <p class="text-center text-gray-600 mt-6">*Results based on 12-month client campaigns using Supercharged Engine Optimization</p>
       </div>
     </div>
   </section>
+
+  <!-- Digital Marketing FAQs -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+        Digital Marketing FAQs
+      </h2>
+      
+      <div class="space-y-6">
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">What makes your digital marketing different from other agencies?</h3>
+          <p class="text-gray-600">We're the UK's first agency to offer Supercharged Engine Optimization - combining traditional SEO with Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO). This revolutionary approach ensures you dominate not just Google, but also AI platforms like ChatGPT and future search technologies.</p>
+        </div>
+
+                 <div class="bg-white rounded-lg p-6 shadow-md">
+           <h3 class="text-lg font-bold text-gray-900 mb-2">How much does digital marketing cost?</h3>
+           <p class="text-gray-600">We charge a transparent £40/hour with no contracts or hidden fees. You control how many hours you need each month and can allocate them across any services - SEO, AEO, GEO, SBO, PPC, social media, content creation, or website updates. Small businesses typically start with 3-5 hours (£120-£200/month), growing businesses use 10-15 hours (£400-£600/month), and established businesses often need 20+ hours (£800+/month). You can adjust monthly based on your needs and budget.</p>
+         </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">What's the difference between SEO, AEO, GEO, and SBO?</h3>
+          <p class="text-gray-600">SEO optimizes for traditional search engines like Google. AEO gets you recommended by AI assistants like ChatGPT and Perplexity. GEO ensures you appear in AI-generated content and overviews. SBO builds brand authority and recognition across all platforms. Our Supercharged Engine Optimization combines all four for complete market domination.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">How long does it take to see digital marketing results?</h3>
+          <p class="text-gray-600">PPC and social media advertising can show immediate results within days. SEO typically takes 3-6 months for significant improvements. Our Supercharged Engine Optimization shows faster results because it targets multiple platforms simultaneously - you might see AEO results within weeks while building long-term SEO authority.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Do you work with businesses outside of Swansea?</h3>
+          <p class="text-gray-600">Yes! While we're based in Swansea, we serve clients across Wales, the UK, and internationally. Our digital marketing strategies work for local businesses, national companies, and global brands. We have particular expertise in Welsh markets and understand the unique opportunities in the UK's evolving digital landscape.</p>
+        </div>
+
+                 <div class="bg-white rounded-lg p-6 shadow-md">
+           <h3 class="text-lg font-bold text-gray-900 mb-2">Can you guarantee first page Google rankings?</h3>
+           <p class="text-gray-600">No ethical SEO agency can guarantee specific rankings, as Google's algorithm is constantly evolving. However, our Supercharged Engine Optimization approach significantly increases your chances of success by targeting multiple platforms. We focus on delivering measurable improvements in traffic, leads, and revenue - which matter more than rankings alone.</p>
+         </div>
+
+         <div class="bg-white rounded-lg p-6 shadow-md">
+           <h3 class="text-lg font-bold text-gray-900 mb-2">What bonus offers do you provide?</h3>
+           <p class="text-gray-600">We provide valuable bonuses based on your monthly hour commitment: 5+ hours monthly includes a free Professional Website (£2,995 value), 10+ hours includes a free AI Authority Funnel (£1,995 value), and 20+ hours includes both the Professional Website & AI Authority Funnel (£4,990 total value). These bonuses are included at no extra cost as long as you maintain the minimum hour threshold.</p>
+         </div>
+       </div>
+     </div>
+   </section>
 
   <!-- CTA Section -->
-  <section class="bg-primary-600 py-20">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Digital Marketing?</h2>
-      <p class="text-xl text-primary-100 mb-8">
-        Let's create a data-driven, AI-powered marketing strategy that delivers real results for your business.
+  <section class="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Dominate Digital Marketing?</h2>
+      <p class="text-xl text-blue-100 mb-8">
+        Get started with the UK's most advanced digital marketing strategy. 
+        Combine traditional marketing with cutting-edge AI optimization.
       </p>
-      <a href="/contact/" class="inline-block bg-white text-primary-600 font-medium px-8 py-3 rounded-md hover:bg-primary-50 transition">
-        Schedule a Free Consultation
-      </a>
-	        <a href="/pricing/" class="inline-block bg-white text-primary-600 font-medium px-8 py-3 rounded-md hover:bg-primary-50 transition">
-        Subscribe to Get Started Today!
-      </a>
-	        <p class="text-lg text-primary-100">
-        <br/>Need other digital solutions too? Explore our <a href="/services/app-development/" class="text-white hover:text-primary-50 underline">App Development</a> and <a href="/services/product-design/" class="text-white hover:text-primary-50 underline">Product Design</a> services.
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/analyzer/" class="bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors">
+          Free Marketing Analysis
+        </a>
+        <a href="/contact/" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-800 transition-colors">
+          Book Strategy Consultation
+        </a>
+      </div>
+      <p class="text-blue-100 mt-6">
+        Or explore our individual optimization strategies: 
+        <a href="/services/search-engine-optimization/" class="text-yellow-400 hover:text-yellow-300 underline">SEO</a> • 
+        <a href="/services/answer-engine-optimization/" class="text-yellow-400 hover:text-yellow-300 underline">AEO</a> • 
+        <a href="/services/generative-engine-optimization/" class="text-yellow-400 hover:text-yellow-300 underline">GEO</a> • 
+        <a href="/services/search-brand-optimization/" class="text-yellow-400 hover:text-yellow-300 underline">SBO</a>
       </p>
     </div>
   </section>
 
-  <Footer slot="footer" />
+  <Footer />
+  
+  <script>
+    // Initialize Lucide icons
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
+  </script>
 </MainLayout>

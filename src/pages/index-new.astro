@@ -1,0 +1,769 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+// Meta object for SEO
+const meta = {
+  title: "AI Automation Services Swansea | Save Money While Making Money | Digital Visibility",
+  description: "Transform your business with AI automation that saves more than it costs. Custom AI agents, workflow automation, digital marketing & free website. Just £40/hour for everything.",
+  keywords: "AI automation agency Swansea, AI business automation Wales, custom AI agents UK, workflow automation services, AI conversation automation, Claude AI automation, business process automation, digital marketing Swansea, social media management Wales, free website offer UK, AI that makes money, autonomous AI systems, custom business apps Wales",
+  image: "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/3fb9c0e0-d1e0-4f4f-1aac-0e74e1f35900/public"
+};
+---
+
+<MainLayout title={meta.title}>
+  <!-- SEO and Meta Tags -->
+  <link rel="canonical" href="https://digitalvisibility.com/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  <meta name="description" content={meta.description} slot="head">
+  <meta name="keywords" content={meta.keywords} slot="head">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content={meta.title} slot="head">
+  <meta property="og:description" content={meta.description} slot="head">
+  <meta property="og:image" content={meta.image} slot="head">
+  <meta property="og:type" content="website" slot="head">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" as="image" href="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/88c92a23-fd69-49c6-5731-9b3b9695b200/public?width=480" slot="head">
+  
+  <!-- Schema Markup -->
+  <script type="application/ld+json" slot="head">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Digital Visibility",
+        "url": "https://digitalvisibility.com",
+        "logo": "https://digitalvisibility.com/digital-visibility-logo-f.png",
+        "description": "AI automation agency in Swansea offering custom AI agents, workflow automation, and digital marketing services at £40/hour",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "235 Peniel Green Road",
+          "addressLocality": "Llansamlet, Swansea",
+          "postalCode": "SA7 9BA",
+          "addressCountry": "GB"
+        },
+        "telephone": "+44-01792-002497"
+      },
+      {
+        "@type": "Service",
+        "name": "AI Automation Services",
+        "provider": {
+          "@type": "Organization",
+          "name": "Digital Visibility"
+        },
+        "description": "Custom AI automation that saves more money than it costs to implement",
+        "offers": {
+          "@type": "Offer",
+          "price": "40",
+          "priceCurrency": "GBP",
+          "unitCode": "HUR"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <Navigation slot="nav" />
+
+  <!-- Hero Section - Mobile First -->
+  <section class="bg-gradient-to-b from-blue-50 to-white py-12 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <!-- Trust Badge -->
+      <div class="text-center mb-6">
+        <span class="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          Trusted by 127+ Swansea Businesses
+        </span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-3xl md:text-5xl font-bold text-gray-900 text-center mb-6 leading-tight">
+        AI That Works 24/7 To 
+        <span class="text-blue-600">Make You Money</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-lg md:text-xl text-gray-700 text-center mb-8 max-w-3xl mx-auto">
+        We build smart AI systems that talk to your customers, book meetings, and run your business tasks. 
+        <strong class="text-gray-900">They save more money than they cost</strong> - it's like hiring staff that pay you back.
+      </p>
+
+      <!-- Value Props -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
+        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+          <div class="text-green-600 font-bold text-lg mb-1">Save £3 for Every £1</div>
+          <div class="text-gray-600 text-sm">Our AI costs less than the work it does</div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+          <div class="text-blue-600 font-bold text-lg mb-1">Works All Day & Night</div>
+          <div class="text-gray-600 text-sm">Never miss a customer or lead again</div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+          <div class="text-purple-600 font-bold text-lg mb-1">Just £40 Per Hour</div>
+          <div class="text-gray-600 text-sm">One simple price for everything we do</div>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <a href="#demo" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-center transition-all transform hover:scale-105 shadow-lg">
+          See AI Demo
+          <span class="text-sm block font-normal">Watch it work in 2 minutes</span>
+        </a>
+        <a href="#pricing" class="bg-white hover:bg-gray-50 text-gray-900 font-bold py-4 px-8 rounded-lg text-center transition-all border-2 border-gray-300">
+          Get Free Website
+          <span class="text-sm block font-normal text-gray-600">Worth £2,995</span>
+        </a>
+      </div>
+
+      <!-- Social Proof -->
+      <div class="text-center">
+        <p class="text-sm text-gray-600">
+          <span class="font-semibold">Sarah from Cardiff:</span> "Cut our admin time by 70% in just 2 weeks"
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How AI Makes You Money Section -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+        Your AI Actually Makes Money For You
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        Most businesses waste money on tools. Our AI is different - it saves more than it costs.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <!-- Left: The Math -->
+        <div class="bg-gray-50 rounded-xl p-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">Here's The Simple Math</h3>
+          
+          <div class="space-y-4">
+            <div class="flex justify-between items-center pb-3 border-b">
+              <span class="text-gray-700">Staff doing admin tasks</span>
+              <span class="text-red-600 font-bold">-£2,000/month</span>
+            </div>
+            <div class="flex justify-between items-center pb-3 border-b">
+              <span class="text-gray-700">Missed leads (nights/weekends)</span>
+              <span class="text-red-600 font-bold">-£3,000/month</span>
+            </div>
+            <div class="flex justify-between items-center pb-3 border-b">
+              <span class="text-gray-700">Slow customer replies</span>
+              <span class="text-red-600 font-bold">-£1,500/month</span>
+            </div>
+            <div class="flex justify-between items-center py-3 bg-red-50 px-4 rounded">
+              <span class="font-bold">Total Loss</span>
+              <span class="text-red-600 font-bold">-£6,500/month</span>
+            </div>
+          </div>
+
+          <div class="mt-6 p-4 bg-green-50 rounded-lg">
+            <div class="flex justify-between items-center">
+              <span class="text-gray-700">Our AI System Cost</span>
+              <span class="font-bold">£800/month</span>
+            </div>
+            <div class="flex justify-between items-center mt-3 pt-3 border-t border-green-200">
+              <span class="font-bold text-green-800">You Save</span>
+              <span class="text-2xl font-bold text-green-600">£5,700/month</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: What It Does -->
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">
+              AI That Talks Like A Human
+            </h3>
+            <p class="text-gray-600">
+              Your AI assistant chats with website visitors, answers questions, and books meetings. 
+              It sounds just like your best salesperson - but works 24/7.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">
+              Smart Systems That Run Themselves
+            </h3>
+            <p class="text-gray-600">
+              We build complete AI systems that handle boring tasks automatically. 
+              From customer emails to data entry - it all happens without you.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">
+              Custom Apps That Work For You
+            </h3>
+            <p class="text-gray-600">
+              Need a special tool for your business? We create custom apps and software 
+              that make your team faster and your customers happier.
+            </p>
+          </div>
+
+          <a href="#examples" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
+            See real examples
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Demo Section -->
+  <section id="demo" class="py-16 md:py-20 bg-blue-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+        Watch AI Turn Visitors Into Customers
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        This is exactly what happens on your website when our AI is working.
+      </p>
+
+      <!-- Demo Mockup -->
+      <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+        <div class="bg-gray-100 p-4 flex items-center space-x-2">
+          <div class="flex space-x-2">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          </div>
+          <div class="flex-1 text-center text-sm text-gray-600">yourwebsite.com</div>
+        </div>
+        
+        <div class="p-8">
+          <!-- Chat Demo -->
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start">
+              <div class="bg-blue-100 rounded-lg p-3 max-w-xs">
+                <p class="text-sm">Hi! I noticed you're looking at our services. How can I help you today?</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start justify-end">
+              <div class="bg-gray-100 rounded-lg p-3 max-w-xs">
+                <p class="text-sm">Do you do social media?</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-blue-100 rounded-lg p-3 max-w-xs">
+                <p class="text-sm">Yes! We manage social media for many Swansea businesses. We create posts, run ads, and grow your followers. Would you like to see some examples?</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start justify-end">
+              <div class="bg-gray-100 rounded-lg p-3 max-w-xs">
+                <p class="text-sm">Yes please. How much?</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-blue-100 rounded-lg p-3 max-w-xs">
+                <p class="text-sm">It's just £40 per hour - you use only what you need. Most clients use 10-20 hours per month. Can I book you a quick call to discuss your needs?</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div class="bg-green-50 rounded-lg p-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm text-gray-600">Lead captured & qualified</p>
+                <p class="font-bold text-gray-900">Meeting booked for tomorrow 2pm</p>
+              </div>
+              <svg class="w-12 h-12 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-8">
+        <a href="/contact/" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-flex items-center transition-all transform hover:scale-105">
+          Get This On Your Website
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+        Everything Your Business Needs
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        One simple price. Mix and match services. No contracts or commitments.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- AI Automation -->
+        <div class="bg-gradient-to-br from-blue-50 to-white rounded-xl p-8 border border-blue-100">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          
+          <h3 class="text-xl font-bold text-gray-900 mb-3">AI Automation</h3>
+          <p class="text-gray-600 mb-4">Smart systems that run your business 24/7</p>
+          
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>AI chat that books meetings</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Email & task automation</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Custom AI agents</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Business apps & tools</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Digital Marketing -->
+        <div class="bg-gradient-to-br from-green-50 to-white rounded-xl p-8 border border-green-100">
+          <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Digital Marketing</h3>
+          <p class="text-gray-600 mb-4">Get found online and grow your business</p>
+          
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>FREE website (worth £2,995)</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>SEO to rank #1 on Google</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Google & Facebook ads</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Email marketing</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="bg-gradient-to-br from-purple-50 to-white rounded-xl p-8 border border-purple-100">
+          <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 16h4m10 0h4"/>
+            </svg>
+          </div>
+          
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Social Media</h3>
+          <p class="text-gray-600 mb-4">Build your brand and connect with customers</p>
+          
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-start">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Daily posts & stories</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Grow real followers</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Reply to comments</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Monthly reports</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simple Pricing Section -->
+  <section id="pricing" class="py-16 md:py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+        One Price For Everything
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        No confusing packages. No hidden fees. Just simple hourly pricing.
+      </p>
+
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-8 text-white text-center">
+          <div class="text-5xl font-bold mb-2">£40</div>
+          <div class="text-xl">per hour</div>
+        </div>
+        
+        <div class="p-8">
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div>
+              <h3 class="font-bold text-gray-900 mb-3">What You Get:</h3>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Use hours for any service
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  No minimum commitment
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Cancel anytime
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Weekly progress reports
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 class="font-bold text-gray-900 mb-3">Most Businesses Use:</h3>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-center justify-between">
+                  <span>AI Automation Setup</span>
+                  <span class="text-gray-600">20-40 hours</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>Monthly AI Management</span>
+                  <span class="text-gray-600">5-10 hours</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>Social Media</span>
+                  <span class="text-gray-600">10-20 hours</span>
+                </li>
+                <li class="flex items-center justify-between">
+                  <span>SEO & Marketing</span>
+                  <span class="text-gray-600">15-30 hours</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Special Offer -->
+          <div class="bg-yellow-50 rounded-lg p-6 mb-6">
+            <div class="flex items-start">
+              <svg class="w-6 h-6 text-yellow-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5zm4.707 3.707a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L8.414 9H10a3 3 0 013 3v1a1 1 0 102 0v-1a5 5 0 00-5-5H8.414l1.293-1.293z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-1">Limited Time: FREE Website</h4>
+                <p class="text-sm text-gray-700">
+                  Sign up for 5+ hours per month for 12 months and get a professional website worth £2,995 absolutely FREE. 
+                  That's like getting 75 hours of work for nothing!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a href="/contact/" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg inline-flex items-center transition-all transform hover:scale-105 text-lg">
+              Start With Free Consultation
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <p class="text-sm text-gray-600 mt-3">No payment needed to start</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real Examples Section -->
+  <section id="examples" class="py-16 md:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+        Real AI Systems We've Built
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        See exactly how our AI helps real businesses save time and make money.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Example 1 -->
+        <div class="bg-gray-50 rounded-xl p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Estate Agent in Cardiff</h3>
+              <p class="text-sm text-gray-600">Property viewings & inquiries</p>
+            </div>
+          </div>
+          
+          <div class="space-y-3 mb-4">
+            <div class="bg-white rounded p-3">
+              <p class="text-sm font-medium text-gray-700 mb-1">Before AI:</p>
+              <p class="text-sm text-gray-600">Missing 60% of inquiries after 5pm and weekends</p>
+            </div>
+            <div class="bg-white rounded p-3">
+              <p class="text-sm font-medium text-gray-700 mb-1">After AI:</p>
+              <p class="text-sm text-gray-600">AI books viewings 24/7, sends property details, answers questions</p>
+            </div>
+          </div>
+          
+          <div class="bg-green-100 rounded-lg p-3">
+            <p class="text-sm font-bold text-green-800">Result: 40% more viewings, £4,200 saved monthly</p>
+          </div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="bg-gray-50 rounded-xl p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Dental Clinic in Swansea</h3>
+              <p class="text-sm text-gray-600">Appointment management</p>
+            </div>
+          </div>
+          
+          <div class="space-y-3 mb-4">
+            <div class="bg-white rounded p-3">
+              <p class="text-sm font-medium text-gray-700 mb-1">Before AI:</p>
+              <p class="text-sm text-gray-600">2 staff members handling calls, bookings, reminders</p>
+            </div>
+            <div class="bg-white rounded p-3">
+              <p class="text-sm font-medium text-gray-700 mb-1">After AI:</p>
+              <p class="text-sm text-gray-600">AI handles all bookings, sends reminders, manages cancellations</p>
+            </div>
+          </div>
+          
+          <div class="bg-green-100 rounded-lg p-3">
+            <p class="text-sm font-bold text-green-800">Result: 1 staff freed up, 90% fewer no-shows</p>
+          </div>
+        </div>
+
+        <!-- Example 3 -->
+        <div class="bg-gray-50 rounded-xl p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-3">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Online Shop in Newport</h3>
+              <p class="text-sm text-gray-600">Customer service & orders</p>
+            </div>
+          </div>
+          
+          <div class="space-y-3 mb-4">
+            <div class="bg-white rounded p-3">
+              <p class="text-sm font-medium text-gray-700 mb-1">Before AI:</p>
+              <p class="text-sm text-gray-600">Losing sales due to slow email responses (24-48 hours)</p>
+            </div>
+            <div class="bg-white rounded p-3">
+              <p class="text-sm font-medium text-gray-700 mb-1">After AI:</p>
+              <p class="text-sm text-gray-600">AI answers instantly, tracks orders, handles returns</p>
+            </div>
+          </div>
+          
+          <div class="bg-green-100 rounded-lg p-3">
+            <p class="text-sm font-bold text-green-800">Result: 35% more sales, 5-star customer reviews</p>
+          </div>
+        </div>
+
+        <!-- Example 4 -->
+        <div class="bg-gray-50 rounded-xl p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+              <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Accountant in Bristol</h3>
+              <p class="text-sm text-gray-600">Client onboarding & documents</p>
+            </div>
+          </div>
+          
+          <div class="space-y-3 mb-4">
+            <div class="bg-white rounded p-3">
+              <p class="text-sm font-medium text-gray-700 mb-1">Before AI:</p>
+              <p class="text-sm text-gray-600">Spending 3 hours daily on data entry and filing</p>
+            </div>
+            <div class="bg-white rounded p-3">
+              <p class="text-sm font-medium text-gray-700 mb-1">After AI:</p>
+              <p class="text-sm text-gray-600">AI extracts data, organizes files, prepares reports</p>
+            </div>
+          </div>
+          
+          <div class="bg-green-100 rounded-lg p-3">
+            <p class="text-sm font-bold text-green-800">Result: 15 hours saved weekly, zero errors</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 md:py-20 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+        Common Questions About AI
+      </h2>
+
+      <div class="space-y-6">
+        <!-- Question 1 -->
+        <div class="bg-white rounded-lg p-6">
+          <h3 class="font-bold text-gray-900 mb-2">Will AI replace my staff?</h3>
+          <p class="text-gray-600">
+            No! AI handles the boring, repetitive tasks so your staff can focus on important work. 
+            It's like giving them a super-smart assistant that never gets tired.
+          </p>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="bg-white rounded-lg p-6">
+          <h3 class="font-bold text-gray-900 mb-2">Is it hard to set up?</h3>
+          <p class="text-gray-600">
+            Not at all. We do everything for you. Most systems are running within 2 weeks, 
+            and we train your team on how to use it. It's easier than learning a new phone.
+          </p>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="bg-white rounded-lg p-6">
+          <h3 class="font-bold text-gray-900 mb-2">What if the AI makes mistakes?</h3>
+          <p class="text-gray-600">
+            We train your AI carefully and monitor it closely. It learns from every interaction 
+            and gets smarter over time. Plus, you can always check and adjust what it's doing.
+          </p>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="bg-white rounded-lg p-6">
+          <h3 class="font-bold text-gray-900 mb-2">How do I know it will save me money?</h3>
+          <p class="text-gray-600">
+            We'll show you exactly how much time and money you're currently losing. 
+            Then we'll calculate your savings before we start. Most clients save 3-5x what they spend.
+          </p>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="bg-white rounded-lg p-6">
+          <h3 class="font-bold text-gray-900 mb-2">Can I try it before committing?</h3>
+          <p class="text-gray-600">
+            Yes! We start with a free consultation where we show you exactly what AI can do for your business. 
+            You can also start with just a few hours to test it out.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="py-16 md:py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Ready To Make Your Business Run Itself?
+      </h2>
+      <p class="text-xl mb-8 text-blue-100">
+        Join 127+ Swansea businesses already using AI to work smarter, not harder.
+      </p>
+
+      <div class="bg-white/10 backdrop-blur rounded-xl p-8 mb-8">
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="text-3xl font-bold mb-2">24/7</div>
+            <div class="text-blue-100">AI Never Sleeps</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold mb-2">3-5X</div>
+            <div class="text-blue-100">Average ROI</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold mb-2">£40</div>
+            <div class="text-blue-100">Per Hour Only</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <a href="/contact/" class="bg-white hover:bg-gray-100 text-gray-900 font-bold py-4 px-8 rounded-lg inline-flex items-center transition-all transform hover:scale-105 text-lg">
+          Book Free AI Consultation
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+        
+        <p class="text-sm text-blue-100">
+          Or call us now: <a href="tel:+4401792002497" class="font-bold hover:underline">01792 002497</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</MainLayout> 

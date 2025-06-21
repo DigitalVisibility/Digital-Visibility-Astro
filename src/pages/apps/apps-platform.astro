@@ -129,7 +129,47 @@ const meta = {
           "priceCurrency": "GBP",
           "availability": "https://schema.org/InStock",
           "description": "Monthly subscription, cancel anytime, no contract",
-          "priceValidUntil": "2025-12-31"
+          "priceValidUntil": "2025-12-31",
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "0",
+              "currency": "GBP"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "businessDays": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "https://schema.org/Monday",
+                  "https://schema.org/Tuesday",
+                  "https://schema.org/Wednesday",
+                  "https://schema.org/Thursday",
+                  "https://schema.org/Friday"
+                ]
+              },
+              "cutoffTime": "23:59",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 0,
+                "maxValue": 1,
+                "unitCode": "DAY"
+              }
+            },
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "GB"
+            }
+          },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "GB",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 30,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
+          }
         },
         "description": "A comprehensive suite of 50+ human-powered, AI-accelerated business tools for marketing, content creation, and business optimization. Transform your digital presence with our all-in-one platform designed for businesses in Swansea, Wales, UK and globally.",
         "screenshot": "https://digitalvisibility.com/super-ai-agent-app.webp",
@@ -229,6 +269,46 @@ const meta = {
           "seller": {
             "@type": "Organization",
             "@id": "https://digitalvisibility.com/#organization"
+          },
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "0",
+              "currency": "GBP"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "businessDays": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "https://schema.org/Monday",
+                  "https://schema.org/Tuesday",
+                  "https://schema.org/Wednesday",
+                  "https://schema.org/Thursday",
+                  "https://schema.org/Friday"
+                ]
+              },
+              "cutoffTime": "23:59",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 0,
+                "maxValue": 1,
+                "unitCode": "DAY"
+              }
+            },
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "GB"
+            }
+          },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "GB",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 30,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
           }
         },
         "review": [
