@@ -7,6 +7,25 @@ export const prerender = false;
 ---
 
 <MainLayout title="SEO Services Swansea | Search Engine Optimization | AEO, GEO & SBO Expert | Digital Visibility">
+  <!-- Critical Performance Optimizations -->
+  <link rel="preload" as="image" href="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/supercharged-seo-swansea/public" slot="head">
+  <link rel="preconnect" href="https://challenges.cloudflare.com" crossorigin slot="head">
+  
+  <!-- Critical CSS for Above-the-Fold Content -->
+  <style slot="head">
+    /* Critical CSS for immediate hero rendering */
+    .hero-gradient{background:linear-gradient(to bottom right,#1e3a8a,#6b21a8,#4c1d95)}
+    .hero-section{position:relative;overflow:hidden}
+    .hero-content{position:relative;z-index:10;max-width:80rem;margin:0 auto;padding:5rem 1rem;text-align:center}
+    .hero-title{font-size:2rem;font-weight:700;color:#fff;margin-bottom:1rem;line-height:1.2}
+    @media(min-width:768px){.hero-title{font-size:3rem}}
+    @media(min-width:1024px){.hero-title{font-size:4rem}}
+    .hero-subtitle{font-size:1rem;color:#e5e7eb;margin-bottom:2rem;max-width:64rem;margin-left:auto;margin-right:auto}
+    .hero-cta{display:inline-flex;align-items:center;justify-content:center;padding:0.75rem 2rem;border-radius:0.5rem;font-weight:600;transition:all 0.3s}
+    .cta-primary{background:linear-gradient(to right,#06b6d4,#9333ea);color:#fff}
+    .cta-secondary{background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.3)}
+  </style>
+
   <!-- SEO and Canonical Tags -->
   <link rel="canonical" href="https://digitalvisibility.com/" slot="head">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
@@ -74,15 +93,82 @@ export const prerender = false;
   <meta name="business-certifications" content="Google Partner, Meta Blueprint Certified, Microsoft Advertising Professional, AI Search Optimization Certified" slot="head">
   
   <!-- Performance Optimization -->
-  <link rel="preload" href="/scripts/lucide-icons.min.js" as="script" slot="head">
   <link rel="dns-prefetch" href="//imagedelivery.net" slot="head">
   <link rel="preconnect" href="https://imagedelivery.net" crossorigin slot="head">
   
-  <!-- Cloudflare Turnstile Script -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
-  
-  <!-- Enhanced Schema markup for E-E-A-T and comprehensive business information -->
-  <script type="application/ld+json" slot="head">
+  <Navigation />
+
+  <!-- Optimized Hero Section with Critical CSS -->
+  <section class="hero-section hero-gradient">
+    <!-- Simplified Background for Performance -->
+    <div class="absolute inset-0 bg-black/20"></div>
+
+    <div class="hero-content">
+      <!-- Main Headline -->
+      <h1 class="hero-title">
+        Get Discovered <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Everywhere</span> with Supercharged Engine Optimization
+      </h1>
+      
+      <!-- Subheadline -->
+      <p class="hero-subtitle">
+        Revolutionary SEO+AEO+GEO+SBO strategy gets your business recommended by AI platforms AND ranked on search engines.<br class="hidden sm:block"/><span class="text-yellow-300 font-medium">Plus we give you a free website and automations to get you started.</span>
+      </p>
+
+      <!-- CTA Buttons (Above the fold) -->
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6">
+        <a href="/roi-calculator/" class="hero-cta cta-primary">
+          <span class="mr-2">📊</span>
+          Calculate Your ROI Potential
+        </a>
+        <a href="/analyzer/" class="hero-cta cta-secondary">
+          <span class="mr-2">🔍</span>
+          Free Website Analysis
+        </a>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="flex flex-wrap justify-center items-center gap-4 text-gray-300 text-xs">
+        <div class="flex items-center">
+          <span class="text-yellow-400 mr-1">⭐⭐⭐⭐⭐</span>
+          <span>5-Star Rated Agency</span>
+        </div>
+        <div class="flex items-center">
+          <span class="text-green-400 mr-1">✓</span>
+          <span>No Contracts Required</span>
+        </div>
+        <div class="flex items-center">
+          <span class="text-blue-400 mr-1">🏆</span>
+          <span>Award-Winning Results</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Benefits - Lazy Loaded -->
+  <section class="py-8 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-5 border border-white/20">
+          <div class="text-2xl mb-2">🚀</div>
+          <h3 class="text-base font-semibold text-white mb-2">Get Found on Google & AI Search Engines</h3>
+          <p class="text-gray-300 text-sm">Get found everywhere your customers are looking, secure prime positions on Google & Microsoft Bing, and be the business AI recommends when customers ask ChatGPT, Perplexity, and other AI platforms</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-5 border border-white/20">
+          <div class="text-2xl mb-2">💰</div>
+          <h3 class="text-base font-semibold text-white mb-2">Work Less, Earn More With Smart Automations</h3>
+          <p class="text-gray-300 text-sm">Complete AI-powered business systems that handle marketing, operations, customer service, and daily tasks automatically - freeing your time to focus on strategic growth and innovation</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-5 border border-white/20">
+          <div class="text-2xl mb-2">🎁</div>
+          <h3 class="text-base font-semibold text-white mb-2">Free High-Performance Website</h3>
+          <p class="text-gray-300 text-sm">Custom websites with super fast LCP speeds and 98%+ Core Web Vitals scores that Google loves. Built from scratch specifically for your business worth £2,995</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Defer Schema and Non-Critical Scripts -->
+  <script type="application/ld+json" defer slot="body">
   {
     "@context": "https://schema.org",
     "@graph": [
@@ -519,78 +605,11 @@ export const prerender = false;
   }
   </script>
 
-  <Navigation />
-
-  <!-- Hero Section -->
-  <section class="relative bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 overflow-hidden">
-    <!-- Background Elements -->
-    <div class="absolute inset-0 bg-black/20"></div>
-    <div class="absolute inset-0">
-      <div class="absolute top-10 left-4 sm:top-20 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-10 right-4 sm:bottom-20 sm:right-10 w-64 h-64 sm:w-96 sm:h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 sm:py-24 lg:py-32">
-      <div class="max-w-6xl mx-auto">
-        <!-- Main Headline -->
-        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 leading-tight">
-          Get Discovered <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Everywhere</span> with Supercharged Engine Optimization
-        </h1>
-        
-        <!-- Subheadline -->
-        <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-5 sm:mb-6 max-w-4xl mx-auto leading-relaxed">
-          Revolutionary SEO+AEO+GEO+SBO strategy gets your business recommended by AI platforms AND ranked on search engines.<br class="hidden sm:block"/>Plus we give you a free website and automations to get you started.
-        </p>
-
-        <!-- Key Benefits -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4 mb-5 sm:mb-6 max-w-6xl mx-auto">
-          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 lg:p-5 border border-white/20">
-            <div class="text-xl sm:text-2xl mb-1 sm:mb-2">🚀</div>
-            <h3 class="text-xs sm:text-sm lg:text-base font-semibold text-white mb-1">Get Found on Google & AI Search Engines</h3>
-            <p class="text-gray-300 text-xs leading-tight">Get found everywhere your customers are looking, secure prime positions on Google & Microsoft Bing, and be the business AI recommends when customers ask ChatGPT, Perplexity, and other AI platforms</p>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 lg:p-5 border border-white/20">
-            <div class="text-xl sm:text-2xl mb-1 sm:mb-2">💰</div>
-            <h3 class="text-xs sm:text-sm lg:text-base font-semibold text-white mb-1">Work Less, Earn More With Smart Automations</h3>
-            <p class="text-gray-300 text-xs leading-tight">Complete AI-powered business systems that handle marketing, operations, customer service, and daily tasks automatically - freeing your time and to focus on strategic growth, innovation, and the high-value work only you can do.</p>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 lg:p-5 border border-white/20">
-            <div class="text-xl sm:text-2xl mb-1 sm:mb-2">🎁</div>
-            <h3 class="text-xs sm:text-sm lg:text-base font-semibold text-white mb-1">Free High-Performance Website</h3>
-            <p class="text-gray-300 text-xs leading-tight">Custom websites with super fast LCP speeds and 98%+ Core Web Vitals scores that Google loves. Built from scratch specifically for your business, with full mobile optimization and conversion-focused design worth £2,995.</p>
-          </div>
-        </div>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center items-center mb-3 sm:mb-4">
-          <a href="/roi-calculator/" class="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-5 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm lg:text-base hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center justify-center">
-            <span class="mr-2">📊</span>
-            Calculate Your ROI Potential
-          </a>
-          <a href="/analyzer/" class="w-full sm:w-auto bg-white/20 backdrop-blur-sm text-white px-5 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm lg:text-base border border-white/30 hover:bg-white/30 transition-all duration-300 inline-flex items-center justify-center">
-            <span class="mr-2">🔍</span>
-            Free Website Analysis
-          </a>
-        </div>
-
-        <!-- Trust Indicators -->
-        <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 lg:gap-6 text-gray-300 text-xs">
-          <div class="flex items-center">
-            <span class="text-yellow-400 mr-1">⭐⭐⭐⭐⭐</span>
-            <span>5-Star Rated Agency</span>
-          </div>
-          <div class="flex items-center">
-            <span class="text-green-400 mr-1">✓</span>
-            <span>No Contracts Required</span>
-          </div>
-          <div class="flex items-center">
-            <span class="text-blue-400 mr-1">🏆</span>
-            <span>Award-Winning Results</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Cloudflare Turnstile Script - Deferred -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  
+  <!-- Lucide Icons - Deferred -->
+  <script src="/scripts/lucide-icons.min.js" defer></script>
 
   <!-- Problem/Solution Section -->
   <section class="py-20 bg-gray-50">
@@ -678,6 +697,33 @@ export const prerender = false;
               </div>
             </div>
           </div>
+          
+          <!-- Free Website Offer Card -->
+          <div class="mt-8">
+            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-6 border-2 border-yellow-200 shadow-lg">
+              <div class="text-center">
+                <div class="text-3xl mb-3">🎁</div>
+                <h4 class="text-xl font-bold text-gray-900 mb-3">FREE £2,995 Professional Website</h4>
+                <p class="text-gray-700 mb-4">Get a fully optimized, high-converting website absolutely FREE when you start with our 5+ hour monthly packages. This is our no-brainer offer to get you dominating your business niche from day one.</p>
+                <div class="bg-white/80 rounded-lg p-4 mb-4">
+                  <p class="text-sm text-gray-600 font-medium mb-2">✨ What's Included:</p>
+                  <div class="grid grid-cols-2 gap-3 text-sm text-gray-600">
+                    <div>• Mobile-first design</div>
+                    <div>• SEO+AEO+GEO ready</div>
+                    <div>• Super fast loading</div>
+                    <div>• Conversion optimized</div>
+                    <div>• Professional copywriting</div>
+                    <div>• Lead capture systems</div>
+                  </div>
+                </div>
+                <a href="/pricing/" class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-4 rounded-lg font-bold hover:shadow-lg transform hover:scale-105 transition-all duration-300 inline-flex items-center">
+                  <span class="mr-2">🚀</span>
+                  Claim Your Free Website
+                </a>
+                <p class="text-xs text-gray-500 mt-2">No contracts • No commitments • Risk-free offer</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="lg:text-center">
@@ -687,29 +733,51 @@ export const prerender = false;
               <p class="text-blue-800 font-semibold text-sm">⚡ First-Mover Advantage: We've been perfecting AI search strategies for over a year while other agencies are just catching up</p>
             </div>
             <div class="space-y-4">
-              <div class="flex items-center">
-                <span class="text-green-500 mr-3">✓</span>
-                <span class="text-gray-700"><strong>SEO:</strong> Rank high on Google & Bing</span>
+              <div class="flex items-start">
+                <span class="text-green-500 mr-3 mt-1">✓</span>
+                <div>
+                  <span class="text-gray-700"><strong>SEO:</strong> Rank high on Google search engine results</span>
+                  <p class="text-xs text-gray-500 mt-1">Search Engine Optimization for Googles organic search engine results pages (SERP's)</p>
+                  <a href="/services/search-engine-optimization/" class="text-blue-600 hover:text-blue-800 text-xs font-medium">Learn about SEO →</a>
+                </div>
               </div>
-              <div class="flex items-center">
-                <span class="text-green-500 mr-3">✓</span>
-                <span class="text-gray-700"><strong>AEO:</strong> Get recommended by AI platforms</span>
+              <div class="flex items-start">
+                <span class="text-green-500 mr-3 mt-1">✓</span>
+                <div>
+                  <span class="text-gray-700"><strong>AEO:</strong> Get recommended by AI platforms</span>
+                  <p class="text-xs text-gray-500 mt-1">Bing, ChatGPT, Perplexity & AI assistants with 180M+ monthly users</p>
+                  <a href="/services/answer-engine-optimization/" class="text-green-600 hover:text-green-800 text-xs font-medium">Learn about AEO →</a>
+                </div>
               </div>
-              <div class="flex items-center">
-                <span class="text-green-500 mr-3">✓</span>
-                <span class="text-gray-700"><strong>GEO:</strong> Dominate AI-generated content</span>
+              <div class="flex items-start">
+                <span class="text-green-500 mr-3 mt-1">✓</span>
+                <div>
+                  <span class="text-gray-700"><strong>GEO:</strong> Dominate AI-generated content</span>
+                  <p class="text-xs text-gray-500 mt-1">Featured in AI overviews and generated responses across platforms</p>
+                  <a href="/services/generative-engine-optimization/" class="text-purple-600 hover:text-purple-800 text-xs font-medium">Learn about GEO →</a>
+                </div>
               </div>
-              <div class="flex items-center">
-                <span class="text-green-500 mr-3">✓</span>
-                <span class="text-gray-700"><strong>SBO:</strong> Control your brand narrative</span>
+              <div class="flex items-start">
+                <span class="text-green-500 mr-3 mt-1">✓</span>
+                <div>
+                  <span class="text-gray-700"><strong>SBO:</strong> Control your brand narrative</span>
+                  <p class="text-xs text-gray-500 mt-1">Build authority and recognition across all search platforms</p>
+                  <a href="/services/search-brand-optimization/" class="text-orange-600 hover:text-orange-800 text-xs font-medium">Learn about SBO →</a>
+                </div>
               </div>
             </div>
-            <div class="mt-6 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200">
-              <p class="text-gray-800 font-semibold mb-2">🎁 Risk-Free Opportunity</p>
-              <p class="text-gray-700 text-sm">Get a FREE £2,995 website just for trusting us. No contracts, no commitments - we earn your business every month by delivering results.</p>
-            </div>
-            <div class="mt-4 p-4 bg-green-50 rounded-lg">
-              <p class="text-green-800 font-semibold">Result: Dominate AI search before your competitors even know it exists</p>
+            
+            <!-- Simple Hook and CTA -->
+            <div class="mt-6 text-center">
+              <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 text-white">
+                <h4 class="text-lg font-bold mb-3">🚀 Ready to Dominate All Search Platforms?</h4>
+                <p class="text-blue-100 text-sm mb-4">Our Supercharged Engine Optimization combines all four strategies (SEO+AEO+GEO+SBO) into one powerful system that gets you found everywhere customers search.</p>
+                <a href="/services/supercharged-engine-optimization/" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors inline-flex items-center">
+                  <span class="mr-2">⚡</span>
+                  Discover Supercharged Optimization
+                </a>
+              </div>
+              <p class="text-green-600 font-semibold text-sm mt-3">🎯 Result: Dominate AI search before your competitors even know it exists</p>
             </div>
           </div>
         </div>
