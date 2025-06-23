@@ -1,5 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calculator, TrendingUp, Users, Building, Brain, Search, Award, ChevronRight, ChevronLeft, BarChart3, Target, Clock, DollarSign, LineChart, Zap, AlertTriangle, HelpCircle, Info, Mail } from 'lucide-react';
+
+// Declare Turnstile types
+declare global {
+  interface Window {
+    turnstile: {
+      render: (element: string, options: { sitekey: string; theme: string }) => void;
+      reset: () => void;
+    };
+  }
+}
 
 export default function DigitalVisibilityROICalculator() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -53,6 +63,48 @@ export default function DigitalVisibilityROICalculator() {
     marketingConsent: false
   });
   const [results, setResults] = useState<any>(null);
+
+  // Initialize Turnstile when step 4 is reached
+  useEffect(() => {
+    if (currentStep === 4 && typeof window !== 'undefined') {
+      // Wait for Turnstile script to load and initialize the widget
+      const initTurnstile = () => {
+        if (window.turnstile) {
+          // Clear any existing widgets first
+          const existingWidget = document.querySelector('.cf-turnstile');
+          if (existingWidget && existingWidget.innerHTML) {
+            window.turnstile.reset();
+          }
+          
+          // Render the widget
+          try {
+            window.turnstile.render('.cf-turnstile', {
+              sitekey: '0x4AAAAAABLjSEqx_MGVFkGW',
+              theme: 'light'
+            });
+          } catch (error) {
+            console.log('Turnstile render error:', error);
+          }
+        }
+      };
+
+      // If Turnstile is already loaded, initialize immediately
+      if (window.turnstile) {
+        initTurnstile();
+      } else {
+        // Otherwise, wait for it to load
+        const checkTurnstile = setInterval(() => {
+          if (window.turnstile) {
+            clearInterval(checkTurnstile);
+            initTurnstile();
+          }
+        }, 100);
+
+        // Cleanup interval after 10 seconds
+        setTimeout(() => clearInterval(checkTurnstile), 10000);
+      }
+    }
+  }, [currentStep]);
 
   const steps = [
     { title: "Business Profile", icon: Building },
@@ -1444,71 +1496,136 @@ export default function DigitalVisibilityROICalculator() {
                 <p className="text-gray-600">Enter your details to receive your custom analysis and recommendations</p>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-4">
+              <form action="https://api.web3forms.com/submit" method="POST" className="space-y-4" onSubmit={(e) => {
+                e.preventDefault();
+                
+                // Calculate ROI results
+                const calculatedResults = calculateROI();
+                setResults(calculatedResults);
+                
+                // Submit form data to Web3Forms in the background
+                const formData = new FormData(e.currentTarget);
+                fetch('https://api.web3forms.com/submit', {
+                  method: 'POST',
+                  body: formData
+                }).catch(error => console.error('Form submission error:', error));
+                
+                // Show results instead of redirecting
+                setShowResults(true);
+              }}>
+                {/* Web3Forms Access Key */}
+                <input type="hidden" name="access_key" value="04b98b5a-c1af-43bf-a223-9f711109ac82" />
+                <input type="hidden" name="to_email" value="support@digitalvisibility.com" />
+                <input type="hidden" name="subject" value="New ROI Calculator Submission" />
+                <input type="hidden" name="from_name" value="Digital Visibility ROI Calculator" />
+                <input type="checkbox" name="botcheck" className="hidden" style={{display: 'none'}} />
+                
+                {/* Hidden fields with all the form data */}
+                <input type="hidden" name="company_size" value={formData.companySize} />
+                <input type="hidden" name="revenue" value={formData.revenue} />
+                <input type="hidden" name="industry" value={formData.industry} />
+                <input type="hidden" name="location" value={formData.location} />
+                <input type="hidden" name="website_traffic" value={formData.websiteTraffic} />
+                <input type="hidden" name="current_seo_ranking" value={formData.currentSEORanking} />
+                <input type="hidden" name="ai_presence" value={formData.aiPresence} />
+                <input type="hidden" name="marketing_spend" value={formData.marketingSpend} />
+                <input type="hidden" name="primary_goal" value={formData.primaryGoal} />
+                <input type="hidden" name="current_roi" value={formData.currentROI} />
+                <input type="hidden" name="manual_time" value={formData.manualTime} />
+                <input type="hidden" name="competitive_pressure" value={formData.competitivePressure} />
+                <input type="hidden" name="ai_tools_usage" value={formData.aiToolsUsage} />
+                <input type="hidden" name="services_interested" value={formData.servicesInterested.join(', ')} />
+                <input type="hidden" name="timeline" value={formData.timeline} />
+                <input type="hidden" name="budget" value={formData.budget} />
+                
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Full Name"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="you@example.com"
+                      required
+                    />
+                  </div>
+                </div>
+
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">Business Name (Optional)</label>
                   <input
                     type="text"
-                    value={formData.name}
-                    onChange={(e) => handleInputChange('name', e.target.value)}
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={(e) => handleInputChange('company', e.target.value)}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Full Name"
+                    placeholder="Your Company Name"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Contact Number (Optional)</label>
                   <input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="you@example.com"
+                    placeholder="+44 7700 900000"
                   />
                 </div>
-              </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Business Name (Optional)</label>
-                <input
-                  type="text"
-                  value={formData.company}
-                  onChange={(e) => handleInputChange('company', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Your Company Name"
-                />
-              </div>
+                {/* Cloudflare Turnstile Widget - Simple Implementation */}
+                <div className="cf-turnstile" data-sitekey="0x4AAAAAABLjSEqx_MGVFkGW" data-theme="light"></div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Contact Number (Optional)</label>
-                <input
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="+44 7700 900000"
-                />
-              </div>
-
-              <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                <div className="flex items-start space-x-3">
-                  <input
-                    type="checkbox"
-                    id="marketing"
-                    checked={formData.marketingConsent}
-                    onChange={(e) => handleInputChange('marketingConsent', e.target.checked)}
-                    className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                  />
-                  <label htmlFor="marketing" className="flex-1 text-sm text-gray-700">
-                    I agree to receive marketing communications about Digital Visibility services and insights.*
-                  </label>
+                <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                  <div className="flex items-start space-x-3">
+                    <input
+                      type="checkbox"
+                      id="marketing"
+                      name="marketing_consent"
+                      checked={formData.marketingConsent}
+                      onChange={(e) => handleInputChange('marketingConsent', e.target.checked)}
+                      className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                      required
+                    />
+                    <label htmlFor="marketing" className="flex-1 text-sm text-gray-700">
+                      I agree to receive my ROI report and marketing communications about Digital Visibility services and insights. *
+                    </label>
+                  </div>
                 </div>
-              </div>
 
-              <div className="text-center text-xs text-gray-500 mt-4">
-                <p>By clicking "Get Free Analysis", you agree to our privacy policy and terms of service.</p>
-                <p className="mt-1">We respect your privacy and will never share your information with third parties.</p>
-              </div>
+                <div className="text-center text-xs text-gray-500 mt-4">
+                  <p>By clicking "Get My ROI Report", you agree to our privacy policy and terms of service.</p>
+                  <p className="mt-1">We respect your privacy and will never share your information with third parties.</p>
+                </div>
+
+                <button 
+                  type="submit" 
+                  className="w-full flex items-center justify-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition duration-200"
+                >
+                  Get My ROI Report
+                </button>
+              </form>
             </div>
           )}
         </div>
@@ -1523,14 +1640,16 @@ export default function DigitalVisibilityROICalculator() {
             Previous
           </button>
           
-          <button
-            onClick={nextStep}
-            disabled={!isStepComplete()}
-            className="flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {currentStep === steps.length - 1 ? 'Get Free Analysis' : 'Next'}
-            {currentStep !== steps.length - 1 && <ChevronRight className="h-4 w-4 ml-1" />}
-          </button>
+          {currentStep < steps.length - 1 && (
+            <button
+              onClick={nextStep}
+              disabled={!isStepComplete()}
+              className="flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Next
+              <ChevronRight className="h-4 w-4 ml-1" />
+            </button>
+          )}
         </div>
       </div>
     </div>

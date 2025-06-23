@@ -67,6 +67,9 @@ export const prerender = false;
   <!-- Performance Optimization -->
   <link rel="preload" href="/scripts/lucide-icons.min.js" as="script" slot="head">
   <link rel="dns-prefetch" href="//digitalvisibility.com" slot="head">
+  
+  <!-- Turnstile for form protection -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer slot="head"></script>
 
   <!-- Enhanced Schema markup for ROI Calculator Tool -->
   <script type="application/ld+json" slot="head">
