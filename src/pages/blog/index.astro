@@ -2,91 +2,33 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+import { blogPosts, categoryInfo, getAllCategories, getFeaturedPosts } from '../../data/blogPosts.js';
+
+// Get all posts and categories
+const allPosts = blogPosts;
+const featuredPosts = getFeaturedPosts();
+const categories = [
+  { name: 'All', slug: 'all', count: allPosts.length },
+  ...getAllCategories()
+];
 
 // SEO Meta Data
-export const meta = {
-  title: "Digital Visibility Blog - AI Automation, Web Design & SEO Insights",
-  description: "Expert insights on AI conversation automation, SEO strategies for 2025, and revolutionary web design techniques. Learn from Royal Academy Award winner Darran Goulding and the Digital Visibility team.",
-  keywords: "AI conversation automation blog, SEO strategies 2025, web design trends, digital marketing insights, Claude MCP tutorials, business automation tips, Swansea tech blog, UK digital agency blog, AI workflow optimization, SEO best practices, website design innovation, digital transformation insights, marketing technology blog, business efficiency tips, AI implementation guides",
+const meta = {
+  title: "Digital Visibility Blog | Expert SEO, AI & Digital Marketing Insights",
+  description: "Discover expert insights on SEO, AI automation, web design, and digital marketing strategies. Stay ahead with Digital Visibility's latest industry trends and proven tactics.",
+  keywords: "Digital Visibility blog, SEO insights, AI automation, web design trends, digital marketing strategies, Swansea digital agency, UK business insights",
   canonical: "https://digitalvisibility.com/blog/",
-  ogTitle: "Digital Visibility Blog | AI Automation, Web Design & SEO Insights",
-  ogDescription: "Expert insights on AI conversation automation, SEO strategies, and web design innovation. Learn from industry leaders transforming UK businesses.",
-  ogImage: "https://digitalvisibility.com/blog-og-image.webp",
-  twitterTitle: "Digital Visibility Blog | Expert Digital Marketing Insights",
-  twitterDescription: "AI automation, SEO strategies, and web design trends from UK's leading digital agency.",
-  twitterImage: "https://digitalvisibility.com/blog-twitter-image.webp"
+  ogTitle: "Digital Visibility Blog | Expert Digital Marketing Insights",
+  ogDescription: "Stay ahead with expert insights on SEO, AI automation, and digital marketing from Digital Visibility's team of specialists.",
+  ogImage: "https://digitalvisibility.com/digital visibility blog background.webp"
 };
-
-// Categories for the blog
-const categories = [
-  { name: 'All', slug: 'all', count: 3 },
-  { name: 'AI Automation', slug: 'ai-automation', count: 1 },
-  { name: 'Web Design', slug: 'web-design', count: 1 },
-  { name: 'SEO', slug: 'seo', count: 1 }
-];
-
-// Featured blog posts
-const featuredPosts = [
-  {
-    title: "Why UK Businesses Are Ditching Zapier for AI Conversation Automation",
-    slug: "why-uk-businesses-ditching-zapier-ai-conversation-automation",
-    excerpt: "Discover why forward-thinking UK businesses are moving beyond traditional workflow builders like Zapier to revolutionary AI conversation automation. Learn how talking to AI is replacing complex drag-and-drop workflows.",
-    category: "AI Automation",
-    categorySlug: "ai-automation",
-    image: "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/63f967f0-ffcd-4712-4019-1247367b3500/public",
-    alt: "AI conversation automation interface showing natural language commands replacing complex workflow builders",
-    date: "June 6, 2025",
-    author: "Darran Goulding",
-    authorImage: "/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
-    featured: true
-  },
-  {
-    title: "10 Essential SEO Strategies for 2025",
-    slug: "10-essential-seo-strategies-2025",
-    excerpt: "Discover the most effective SEO tactics for 2025 to keep your website visible and attract more visitors. Learn practical implementation strategies for these modern SEO approaches.",
-    category: "SEO",
-    categorySlug: "seo",
-    image: "https://huskycarecorner.com/autopilot/3/10-key-seo-strategies-for-2025-implementation-wct.jpg",
-    alt: "Infographic showing 10 key SEO strategies for 2025 with implementation tips and visual elements representing different digital marketing concepts",
-    date: "April 29, 2025",
-    author: "Darran Goulding",
-    authorImage: "/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
-    featured: true
-  },
-  {
-    title: "How AI is Revolutionizing Website Design in 2025",
-    slug: "how-ai-is-revolutionizing-website-design",
-    excerpt: "Discover how artificial intelligence is transforming web design, making websites more personalized, accessible, and efficient. Learn about the latest AI tools and trends reshaping the digital landscape.",
-    category: "Web Design",
-    categorySlug: "web-design",
-    image: "https://huskycarecorner.com/autopilot/3/how-ai-is-revolutionising-web-design-mmu.jpg",
-    alt: "Designer working with AI tools to create responsive website layouts",
-    date: "April 29, 2025",
-    author: "Darran Goulding",
-    authorImage: "/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
-    featured: true
-  }
-];
-
-// Recent blog posts (same as featured for now)
-const recentPosts = featuredPosts;
 ---
 
-<MainLayout title={meta.title} 
-  description={meta.description}
-  metaOgImage={meta.ogImage}
-  metaTwitterImage={meta.twitterImage}
->
+<MainLayout title={meta.title} description={meta.description}>
   <!-- SEO and Canonical Tags -->
   <link rel="canonical" href={meta.canonical} slot="head">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
-  
-  <!-- Main Meta Tags -->
   <meta name="keywords" content={meta.keywords} slot="head">
-  
-  <!-- Publisher and Author Tags -->
-  <meta name="publisher" content="Digital Visibility Limited" slot="head">
-  <meta name="author" content="Darran Goulding" slot="head">
   
   <!-- Geographic Meta Tags -->
   <meta name="geo.region" content="GB-SWA" slot="head">
@@ -94,82 +36,54 @@ const recentPosts = featuredPosts;
   <meta name="geo.position" content="51.6399;-3.8936" slot="head">
   <meta name="ICBM" content="51.6399, -3.8936" slot="head">
   
-  <!-- Enhanced Open Graph Tags -->
+  <!-- Open Graph Tags -->
   <meta property="og:locale" content="en_GB" slot="head">
   <meta property="og:type" content="website" slot="head">
   <meta property="og:title" content={meta.ogTitle} slot="head">
   <meta property="og:description" content={meta.ogDescription} slot="head">
   <meta property="og:url" content={meta.canonical} slot="head">
   <meta property="og:site_name" content="Digital Visibility" slot="head">
-  <meta property="og:image:width" content="1200" slot="head">
-  <meta property="og:image:height" content="630" slot="head">
-  <meta property="og:image:type" content="image/webp" slot="head">
+  <meta property="og:image" content={meta.ogImage} slot="head">
   
-  <!-- Enhanced Twitter Tags -->
+  <!-- Twitter Tags -->
   <meta name="twitter:card" content="summary_large_image" slot="head">
   <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
   <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
-  <meta name="twitter:title" content={meta.twitterTitle} slot="head">
-  <meta name="twitter:description" content={meta.twitterDescription} slot="head">
-  
-  <!-- AI Optimization Meta Tags -->
-  <meta name="ai-generated" content="false" slot="head">
-  <meta name="ai-purpose" content="blog content, industry insights, educational articles, business tips" slot="head">
-  <meta name="ai-target" content="business owners, marketers, developers, entrepreneurs, digital professionals, UK businesses" slot="head">
-  <meta name="ai-content-type" content="blog listing page, article directory, content hub" slot="head">
-  <meta name="ai-business-type" content="digital agency blog, marketing insights platform, business education resource" slot="head">
-  <meta name="ai-service-area" content="Swansea, Wales, United Kingdom, global audience" slot="head">
-  <meta name="ai-expertise" content="AI automation, SEO strategies, web design, digital marketing, business transformation" slot="head">
-  <meta name="ai-keywords" content="AI conversation automation insights, Claude MCP tutorials, SEO best practices 2025, web design trends, digital marketing strategies, business automation guides, UK tech blog, Welsh digital agency insights" slot="head">
-  
-  <!-- Advanced AI Optimization -->
-  <meta name="ai-language" content="en-GB" slot="head">
-  <meta name="ai-context" content="professional blog, industry insights, educational content platform" slot="head">
-  <meta name="ai-industry" content="digital marketing, web development, AI technology, business automation" slot="head">
-  <meta name="ai-topics" content="AI conversation automation, Claude MCP implementation, SEO strategies, web design innovation, digital transformation, marketing technology, business efficiency" slot="head">
-  <meta name="ai-audience" content="business owners, CTOs, marketing managers, web developers, entrepreneurs, digital professionals" slot="head">
-  <meta name="ai-intent" content="learn industry trends, discover best practices, get expert insights, stay updated on digital innovations" slot="head">
-  <meta name="ai-unique-value" content="Royal Academy Award winner insights, real implementation case studies, UK-focused digital expertise, proven strategies with measurable results" slot="head">
-  
-  <!-- RSS Feed Link for discoverability -->
-  <link rel="alternate" type="application/rss+xml" title="Digital Visibility Blog RSS Feed" href="/feed.xml" slot="head" />
-  
+  <meta name="twitter:title" content={meta.ogTitle} slot="head">
+  <meta name="twitter:description" content={meta.ogDescription} slot="head">
+  <meta name="twitter:image" content={meta.ogImage} slot="head">
+
   <Navigation slot="nav" />
   
-  <!-- Hero Section -->
-  <section class="py-16 relative" style="background-image: url('/digital visibility blog background.webp'); background-size: cover; background-position: center;">
-    <!-- Semi-transparent overlay -->
-    <div class="absolute inset-0 bg-white opacity-75"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight text-blue-900 drop-shadow-sm">
-        Digital Visibility Blog
-      </h1>
-      <p class="text-xl mb-8 max-w-2xl mx-auto text-blue-800 font-medium">
-        Insights, tips, and strategies to enhance your digital presence and grow your business.
-      </p>
+  <!-- Blog Hero Section -->
+  <section class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-8">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li><a href="/" class="hover:text-blue-200">Home</a></li>
+          <li><span class="text-blue-300">›</span></li>
+          <li class="text-blue-200">Blog</li>
+        </ol>
+      </nav>
       
-      <!-- Search Bar -->
-      <div class="max-w-xl mx-auto">
-        <form class="flex items-center shadow-md" id="searchForm">
-          <input 
-            type="text" 
-            id="blogSearch"
-            placeholder="Search articles..." 
-            class="w-full px-5 py-3 rounded-l-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-300"
-          >
-          <button 
-            type="submit" 
-            class="bg-blue-600 hover:bg-blue-700 px-5 py-3 rounded-r-md transition-colors text-white border border-blue-700"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </button>
-        </form>
+      <div class="text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">Digital Insights</h1>
+        <p class="text-xl opacity-90 max-w-3xl mx-auto mb-8">
+          Expert insights on SEO, AI automation, web design, and digital marketing strategies to help your business thrive in the digital landscape.
+        </p>
+        <div class="flex justify-center space-x-4">
+          <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">
+            {allPosts.length} Articles
+          </span>
+          <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">
+            {categories.length - 1} Categories
+          </span>
+        </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Category Navigation -->
   <section class="bg-gray-50 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -177,10 +91,8 @@ const recentPosts = featuredPosts;
         <nav class="flex space-x-4 min-w-full">
           {categories.map((category) => (
             <a 
-              href={`/blog/${
-                category.slug === 'all' ? '' : 'category/' + category.slug + '/'
-              }`}
-              class={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+              href={category.slug === 'all' ? '/blog/' : `/blog/category/${category.slug}/`}
+              class={`px-4 py-2 text-sm font-medium rounded-md transition-colors whitespace-nowrap ${
                 category.slug === 'all' 
                 ? 'bg-blue-600 text-white' 
                 : 'bg-white text-gray-700 hover:bg-gray-100'
@@ -193,70 +105,72 @@ const recentPosts = featuredPosts;
       </div>
     </div>
   </section>
-  
-  <!-- Featured Posts -->
-  <section class="py-12 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-gray-900 mb-8">Featured Articles</h2>
-      
-      <div class="grid md:grid-cols-2 gap-8">
-        {featuredPosts.map((post) => (
-          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-            <div class="relative">
-              <a href={`/blog/${post.slug}/`}>
-                <img 
-                  src={post.image} 
-                  alt={post.alt}
-                  class="w-full h-64 object-cover"
-                  loading="lazy"
-                />
-                <div class="absolute top-4 left-4">
-                  <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-medium">
-                    Featured
-                  </span>
+
+  <!-- Featured Posts Section -->
+  {featuredPosts.length > 0 && (
+    <section class="py-12 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Featured Articles</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredPosts.map((post) => (
+            <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+              <div class="relative">
+                <a href={`/blog/${post.slug}/`}>
+                  <img 
+                    src={post.image} 
+                    alt={post.alt}
+                    class="w-full h-48 object-cover"
+                    loading="lazy"
+                  />
+                  <div class="absolute top-4 left-4">
+                    <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-medium">
+                      Featured
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center mb-4">
+                  <a 
+                    href={`/blog/category/${post.categorySlug}/`}
+                    class="text-sm font-medium text-blue-600 hover:text-blue-800"
+                  >
+                    {post.category}
+                  </a>
+                  <span class="mx-2 text-gray-300">•</span>
+                  <span class="text-sm text-gray-600">{post.date}</span>
                 </div>
-              </a>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center mb-4">
-                <!-- Changed from link to span -->
-                <span class="text-sm font-medium text-blue-600">
-                  {post.category}
-                </span>
-                <span class="mx-2 text-gray-300">•</span>
-                <span class="text-sm text-gray-600">{post.date}</span>
+                <a href={`/blog/${post.slug}/`}>
+                  <h3 class="text-lg font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors">
+                    {post.title}
+                  </h3>
+                </a>
+                <p class="text-gray-700 mb-4 text-sm">
+                  {post.excerpt}
+                </p>
+                <div class="flex items-center">
+                  <img 
+                    src={post.authorImage}
+                    alt={post.author} 
+                    class="w-8 h-8 rounded-full mr-2 object-cover"
+                  />
+                  <span class="text-xs font-medium text-gray-900">{post.author}</span>
+                </div>
               </div>
-              <a href={`/blog/${post.slug}/`}>
-                <h3 class="text-xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors">
-                  {post.title}
-                </h3>
-              </a>
-              <p class="text-gray-700 mb-4">
-                {post.excerpt}
-              </p>
-              <div class="flex items-center">
-                <img 
-                  src={post.authorImage}
-                  alt={post.author} 
-                  class="w-10 h-10 rounded-full mr-3 object-cover"
-                />
-                <span class="text-sm font-medium text-gray-900">{post.author}</span>
-              </div>
-            </div>
-          </div>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-  
-  <!-- Recent Posts -->
+    </section>
+  )}
+
+  <!-- All Posts Section -->
   <section class="py-12 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-gray-900 mb-8">Recent Articles</h2>
-      
+      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">All Articles</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {recentPosts.map((post) => (
-          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+        {allPosts.map((post) => (
+          <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
             <div class="relative">
               <a href={`/blog/${post.slug}/`}>
                 <img 
@@ -265,14 +179,23 @@ const recentPosts = featuredPosts;
                   class="w-full h-48 object-cover"
                   loading="lazy"
                 />
+                {post.featured && (
+                  <div class="absolute top-4 left-4">
+                    <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-medium">
+                      Featured
+                    </span>
+                  </div>
+                )}
               </a>
             </div>
             <div class="p-6">
               <div class="flex items-center mb-4">
-                <!-- Changed from link to span -->
-                <span class="text-sm font-medium text-blue-600">
+                <a 
+                  href={`/blog/category/${post.categorySlug}/`}
+                  class="text-sm font-medium text-blue-600 hover:text-blue-800"
+                >
                   {post.category}
-                </span>
+                </a>
                 <span class="mx-2 text-gray-300">•</span>
                 <span class="text-sm text-gray-600">{post.date}</span>
               </div>
@@ -293,192 +216,66 @@ const recentPosts = featuredPosts;
                 <span class="text-xs font-medium text-gray-900">{post.author}</span>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
-      
-      <!-- No View All Button needed since we only have 2 blogs -->
     </div>
   </section>
-  
-  <!-- Newsletter CTA Section -->
+
+  <!-- Newsletter Signup -->
   <section class="py-12 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-4">Subscribe to Our Web Design & SEO Newsletter</h2>
-        <p class="text-lg opacity-90 mb-6">
-          Get the latest on AI web design innovations and cutting-edge SEO strategies delivered straight to your inbox. Stay ahead of the digital curve with expert insights.
-        </p>
-        
-        <div class="flex flex-col items-center">
-          <a 
-            href="/contact/"
-            class="bg-white text-blue-800 hover:bg-blue-50 font-medium px-8 py-3 rounded-md transition-colors shadow-md inline-block"
-          >
-            Join Our Exclusive Newsletter
-          </a>
-          
-          <p class="text-sm opacity-90 mt-6 max-w-lg">
-            Visit our contact page to sign up for our monthly insights. We carefully curate valuable content that helps businesses like yours succeed in the ever-changing digital landscape.
-          </p>
-        </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+      <p class="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
+        Get the latest insights on SEO, AI automation, and digital marketing delivered to your inbox.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a 
+          href="/contact/"
+          class="bg-white text-blue-800 hover:bg-blue-50 font-medium px-8 py-3 rounded-md transition-colors"
+        >
+          Get Free Consultation
+        </a>
+        <a 
+          href="/services/"
+          class="border border-white text-white hover:bg-white hover:text-blue-800 font-medium px-8 py-3 rounded-md transition-colors"
+        >
+          View Our Services
+        </a>
       </div>
     </div>
   </section>
-  
+
   <Footer />
-  
-  <script>
-    // Search functionality
-    document.addEventListener('DOMContentLoaded', () => {
-      const searchForm = document.getElementById('searchForm');
-      const searchInput = document.getElementById('blogSearch') as HTMLInputElement;
-      
-      if (searchForm && searchInput) {
-        searchForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const query = searchInput.value.trim();
-          
-          if (query) {
-            window.location.href = `/blog/search?q=${encodeURIComponent(query)}`;
-          }
-        });
-      }
-    });
-  </script>
-  
-  <!-- Enhanced Blog Schema with @graph -->
+
+  <!-- Schema Markup -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebPage",
-          "@id": "https://digitalvisibility.com/blog/#webpage",
-          "url": "https://digitalvisibility.com/blog/",
-          "name": "Digital Visibility Blog - AI Automation, Web Design & SEO Insights",
-          "description": "Expert insights on AI conversation automation, SEO strategies for 2025, and revolutionary web design techniques. Learn from Royal Academy Award winner Darran Goulding.",
-          "keywords": ["AI automation", "SEO strategies", "web design", "digital marketing", "Claude MCP", "business automation"],
-          "isPartOf": {
-            "@id": "https://digitalvisibility.com/#website"
-          },
-          "about": {
-            "@id": "https://digitalvisibility.com/blog/#blog"
-          },
-          "breadcrumb": {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://digitalvisibility.com"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Blog",
-                "item": "https://digitalvisibility.com/blog/"
-              }
-            ]
-          }
-        },
-        {
-          "@type": "Blog",
-          "@id": "https://digitalvisibility.com/blog/#blog",
-          "url": "https://digitalvisibility.com/blog/",
-          "name": "Digital Visibility Blog",
-          "description": "Expert insights on AI conversation automation, SEO strategies, and web design innovation from UK's leading digital agency.",
-          "publisher": {
-            "@id": "https://digitalvisibility.com/#organization"
-          },
-          "blogPost": [
-            {
-              "@type": "BlogPosting",
-              "@id": "https://digitalvisibility.com/blog/why-uk-businesses-ditching-zapier-ai-conversation-automation/",
-              "headline": "Why UK Businesses Are Ditching Zapier for AI Conversation Automation",
-              "description": "Discover why forward-thinking UK businesses are moving beyond traditional workflow builders like Zapier to revolutionary AI conversation automation.",
-              "url": "https://digitalvisibility.com/blog/why-uk-businesses-ditching-zapier-ai-conversation-automation/",
-              "datePublished": "2025-06-06T00:00:00+00:00",
-              "author": {
-                "@type": "Person",
-                "@id": "https://digitalvisibility.com/about/darran-goulding/#person",
-                "name": "Darran Goulding",
-                "url": "https://digitalvisibility.com/about/darran-goulding/"
-              },
-              "publisher": {
-                "@id": "https://digitalvisibility.com/#organization"
-              },
-              "image": {
-                "@type": "ImageObject",
-                "url": "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/63f967f0-ffcd-4712-4019-1247367b3500/public",
-                "width": 1200,
-                "height": 630
-              },
-              "articleSection": "AI Automation",
-              "keywords": ["AI automation", "Claude MCP", "Zapier alternative", "conversation automation", "workflow automation"]
-            },
-            {
-              "@type": "BlogPosting",
-              "@id": "https://digitalvisibility.com/blog/10-essential-seo-strategies-2025/",
-              "headline": "10 Essential SEO Strategies for 2025",
-              "description": "Discover the most effective SEO tactics for 2025 to keep your website visible and attract more visitors. Learn practical implementation strategies.",
-              "url": "https://digitalvisibility.com/blog/10-essential-seo-strategies-2025/",
-              "datePublished": "2025-04-29T00:00:00+00:00",
-              "author": {
-                "@type": "Person",
-                "@id": "https://digitalvisibility.com/about/darran-goulding/#person",
-                "name": "Darran Goulding"
-              },
-              "publisher": {
-                "@id": "https://digitalvisibility.com/#organization"
-              },
-              "image": {
-                "@type": "ImageObject",
-                "url": "https://huskycarecorner.com/autopilot/3/10-key-seo-strategies-for-2025-implementation-wct.jpg",
-                "width": 1200,
-                "height": 630
-              },
-              "articleSection": "SEO",
-              "keywords": ["SEO strategies", "search engine optimization", "2025 SEO", "digital marketing", "website visibility"]
-            },
-            {
-              "@type": "BlogPosting",
-              "@id": "https://digitalvisibility.com/blog/how-ai-is-revolutionizing-website-design/",
-              "headline": "How AI is Revolutionizing Website Design in 2025",
-              "description": "Discover how artificial intelligence is transforming web design, making websites more personalized, accessible, and efficient.",
-              "url": "https://digitalvisibility.com/blog/how-ai-is-revolutionizing-website-design/",
-              "datePublished": "2025-04-29T00:00:00+00:00",
-              "author": {
-                "@type": "Person",
-                "@id": "https://digitalvisibility.com/about/darran-goulding/#person",
-                "name": "Darran Goulding"
-              },
-              "publisher": {
-                "@id": "https://digitalvisibility.com/#organization"
-              },
-              "image": {
-                "@type": "ImageObject",
-                "url": "https://huskycarecorner.com/autopilot/3/how-ai-is-revolutionising-web-design-mmu.jpg",
-                "width": 1200,
-                "height": 630
-              },
-              "articleSection": "Web Design",
-              "keywords": ["AI web design", "website design", "artificial intelligence", "web development", "UX design"]
-            }
-          ]
-        },
-        {
-          "@type": "CollectionPage",
-          "@id": "https://digitalvisibility.com/blog/#collectionpage",
-          "url": "https://digitalvisibility.com/blog/",
-          "name": "Digital Visibility Blog Articles",
-          "description": "Collection of expert articles on AI automation, SEO strategies, and web design from Digital Visibility",
-          "mainEntity": {
-            "@id": "https://digitalvisibility.com/blog/#blog"
-          }
+      "@type": "Blog",
+      "name": "Digital Visibility Blog",
+      "description": "Expert insights on SEO, AI automation, web design, and digital marketing strategies",
+      "url": "https://digitalvisibility.com/blog/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Digital Visibility Limited",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
         }
-      ]
+      },
+      "blogPost": allPosts.map((post) => ({
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.excerpt,
+        "url": `https://digitalvisibility.com/blog/${post.slug}/`,
+        "author": {
+          "@type": "Person",
+          "name": post.author
+        },
+        "datePublished": post.date,
+        "image": post.image
+      }))
     }
   </script>
 </MainLayout>

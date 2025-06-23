@@ -1,0 +1,245 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Navigation from '../../../components/Navigation.astro';
+import Footer from '../../../components/Footer.astro';
+import { blogPosts, categoryInfo, getPostsByCategory } from '../../../data/blogPosts.js';
+
+// Get the category from the URL
+export async function getStaticPaths() {
+  return [
+    { params: { category: 'ai-automation' } },
+    { params: { category: 'web-design' } },
+    { params: { category: 'seo' } },
+    { params: { category: 'digital-marketing' } },
+    { params: { category: 'app-development' } },
+    { params: { category: 'product-design' } },
+  ];
+}
+
+const { category } = Astro.params;
+
+// Get posts for this category and category info
+const categoryPosts = getPostsByCategory(category);
+const currentCategory = categoryInfo[category];
+
+// SEO Meta Data
+const meta = {
+  title: `${currentCategory?.name} Blog | Digital Visibility - Expert Insights & Strategies`,
+  description: currentCategory?.description || `Expert insights and strategies about ${currentCategory?.name} from Digital Visibility's team of specialists.`,
+  keywords: `${currentCategory?.keywords}, Digital Visibility blog, Swansea digital agency, UK business insights`,
+  canonical: `https://digitalvisibility.com/blog/category/${category}/`,
+  ogTitle: `${currentCategory?.name} Insights | Digital Visibility Blog`,
+  ogDescription: currentCategory?.description || `Expert ${currentCategory?.name} insights from Digital Visibility`,
+  ogImage: "https://digitalvisibility.com/blog-category-og-image.webp"
+};
+---
+
+<MainLayout title={meta.title} description={meta.description}>
+  <!-- SEO and Canonical Tags -->
+  <link rel="canonical" href={meta.canonical} slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  <meta name="keywords" content={meta.keywords} slot="head">
+  
+  <!-- Geographic Meta Tags -->
+  <meta name="geo.region" content="GB-SWA" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6399;-3.8936" slot="head">
+  <meta name="ICBM" content="51.6399, -3.8936" slot="head">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content={meta.ogTitle} slot="head">
+  <meta property="og:description" content={meta.ogDescription} slot="head">
+  <meta property="og:url" content={meta.canonical} slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content={meta.ogImage} slot="head">
+  
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content={meta.ogTitle} slot="head">
+  <meta name="twitter:description" content={meta.ogDescription} slot="head">
+  <meta name="twitter:image" content={meta.ogImage} slot="head">
+
+  <Navigation slot="nav" />
+  
+  <!-- Category Header -->
+  <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li><a href="/" class="hover:text-blue-200">Home</a></li>
+          <li><span class="text-blue-300">›</span></li>
+          <li><a href="/blog/" class="hover:text-blue-200">Blog</a></li>
+          <li><span class="text-blue-300">›</span></li>
+          <li class="text-blue-200">{currentCategory?.name}</li>
+        </ol>
+      </nav>
+      
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">{currentCategory?.name} Insights</h1>
+        <p class="text-xl opacity-90 max-w-3xl mx-auto">
+          {currentCategory?.description}
+        </p>
+        <div class="mt-6">
+          <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">
+            {categoryPosts.length} {categoryPosts.length === 1 ? 'Article' : 'Articles'}
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Posts -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {categoryPosts.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {categoryPosts.map((post) => (
+            <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+              <div class="relative">
+                <a href={`/blog/${post.slug}/`}>
+                  <img 
+                    src={post.image} 
+                    alt={post.alt}
+                    class="w-full h-48 object-cover"
+                    loading="lazy"
+                  />
+                  {post.featured && (
+                    <div class="absolute top-4 left-4">
+                      <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-medium">
+                        Featured
+                      </span>
+                    </div>
+                  )}
+                </a>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center mb-4">
+                  <span class="text-sm font-medium text-blue-600">{post.category}</span>
+                  <span class="mx-2 text-gray-300">•</span>
+                  <span class="text-sm text-gray-600">{post.date}</span>
+                </div>
+                <a href={`/blog/${post.slug}/`}>
+                  <h2 class="text-lg font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors">
+                    {post.title}
+                  </h2>
+                </a>
+                <p class="text-gray-700 mb-4 text-sm">
+                  {post.excerpt}
+                </p>
+                <div class="flex items-center">
+                  <img 
+                    src={post.authorImage}
+                    alt={post.author} 
+                    class="w-8 h-8 rounded-full mr-2 object-cover"
+                  />
+                  <span class="text-xs font-medium text-gray-900">{post.author}</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-12">
+          <div class="max-w-md mx-auto">
+            <div class="text-gray-400 mb-4">
+              <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">No articles yet</h3>
+            <p class="text-gray-600 mb-6">
+              We're working on creating amazing {currentCategory?.name.toLowerCase()} content. Check back soon!
+            </p>
+            <a href="/blog/" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition-colors">
+              View All Articles
+            </a>
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Related Categories -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Explore Other Topics</h2>
+      <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {Object.entries(categoryInfo).filter(([slug]) => slug !== category).map(([slug, info]) => (
+          <a 
+            href={`/blog/category/${slug}/`}
+            class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
+          >
+            <h3 class="font-medium text-gray-900 mb-1">{info.name}</h3>
+            <p class="text-xs text-gray-600">Expert insights</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-12 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
+      <p class="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
+        Get expert {currentCategory?.name.toLowerCase()} solutions tailored to your business needs.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a 
+          href="/contact/"
+          class="bg-white text-blue-800 hover:bg-blue-50 font-medium px-8 py-3 rounded-md transition-colors"
+        >
+          Get Free Consultation
+        </a>
+        <a 
+          href="/blog/"
+          class="border border-white text-white hover:bg-white hover:text-blue-800 font-medium px-8 py-3 rounded-md transition-colors"
+        >
+          View All Articles
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": `${currentCategory?.name} Blog | Digital Visibility`,
+      "description": currentCategory?.description,
+      "url": `https://digitalvisibility.com/blog/category/${category}/`,
+      "publisher": {
+        "@type": "Organization",
+        "name": "Digital Visibility Limited",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
+        }
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": categoryPosts.map((post, index) => ({
+          "@type": "BlogPosting",
+          "position": index + 1,
+          "name": post.title,
+          "description": post.excerpt,
+          "url": `https://digitalvisibility.com/blog/${post.slug}/`,
+          "author": {
+            "@type": "Person",
+            "name": post.author
+          },
+          "datePublished": post.date,
+          "image": post.image
+        }))
+      }
+    }
+  </script>
+</MainLayout> 
