@@ -244,279 +244,293 @@ export const prerender = false;
 
   <Navigation slot="nav" />
   
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 text-white py-16 md:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-4xl mx-auto">
-        <div class="inline-block px-4 py-2 bg-yellow-500 text-black rounded-full text-sm font-bold mb-6">
-          🇬🇧 UK's First Supercharged Engine Optimization
-        </div>
+  <!-- Main Content with Proper Semantic Structure -->
+  <main>
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 text-white py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="mb-8">
+          <ol class="flex items-center space-x-2 text-sm">
+            <li><a href="/" class="hover:text-blue-200">Home</a></li>
+            <li><span class="text-blue-300" aria-hidden="true">›</span></li>
+            <li><a href="/services/" class="hover:text-blue-200">Services</a></li>
+            <li><span class="text-blue-300" aria-hidden="true">›</span></li>
+            <li class="text-blue-200" aria-current="page">Supercharged Engine Optimization</li>
+          </ol>
+        </nav>
         
-        <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          Get Found <span class="text-yellow-400">Everywhere</span> Customers Search
-        </h1>
-        
-        <p class="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
-          Revolutionary SEO+AEO+GEO+SBO strategy gets your business discovered on Google, 
-          AI platforms like ChatGPT & Perplexity, plus every search engine that matters.
-        </p>
-
-        <!-- Key Stats -->
-        <div class="grid md:grid-cols-3 gap-6 mb-8">
-          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-            <div class="text-3xl font-bold text-yellow-400 mb-2">3x ROI</div>
-            <p class="text-sm text-blue-100">Average return on investment guaranteed</p>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-            <div class="text-3xl font-bold text-yellow-400 mb-2">51%</div>
-            <p class="text-sm text-blue-100">Google results now include AI snippets</p>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-            <div class="text-3xl font-bold text-yellow-400 mb-2">£5k+</div>
-            <p class="text-sm text-blue-100">Extra annual revenue from Bing's 5% market share alone</p>
-          </div>
-        </div>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/roi-calculator/" class="bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors">
-            Calculate Your ROI Potential
-          </a>
-          <a href="/contact/" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-900 transition-colors">
-            Get Free Strategy Session
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What is Supercharged Engine Optimization -->
-  <section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          What is Supercharged Engine Optimization?
-        </h2>
-        <p class="text-xl text-gray-600 leading-relaxed">
-          The world's first comprehensive search strategy combining four powerful optimization techniques 
-          to get your business found everywhere customers search - from traditional Google to cutting-edge AI platforms.
-        </p>
-      </div>
-
-      <!-- Four Pillars -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-        <!-- SEO -->
-        <div class="bg-blue-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
-          <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-white font-bold text-xl">SEO</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Search Engine Optimization</h3>
-          <p class="text-gray-600 mb-4">Get found on Google, Bing, and traditional search engines where 92% of searches happen.</p>
-          <a href="/services/search-engine-optimization/" class="text-blue-600 font-semibold hover:underline">Learn More →</a>
-        </div>
-
-        <!-- AEO -->
-        <div class="bg-green-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
-          <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-white font-bold text-xl">AEO</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Answer Engine Optimization</h3>
-          <p class="text-gray-600 mb-4">Get recommended by ChatGPT, Perplexity, and AI assistants when customers ask questions.</p>
-          <a href="/services/answer-engine-optimization/" class="text-green-600 font-semibold hover:underline">Learn More →</a>
-        </div>
-
-        <!-- GEO -->
-        <div class="bg-purple-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
-          <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-white font-bold text-xl">GEO</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Generative Engine Optimization</h3>
-          <p class="text-gray-600 mb-4">Optimize for AI-generated content and recommendations across all platforms.</p>
-          <a href="/services/generative-engine-optimization/" class="text-purple-600 font-semibold hover:underline">Learn More →</a>
-        </div>
-
-        <!-- SBO -->
-        <div class="bg-orange-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
-          <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-white font-bold text-xl">SBO</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Search Brand Optimization</h3>
-          <p class="text-gray-600 mb-4">Build brand authority and recognition across all search platforms and AI systems.</p>
-          <a href="/services/search-brand-optimization/" class="text-orange-600 font-semibold hover:underline">Learn More →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why You Need This Now -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          Why Your Business Needs This Right Now
-        </h2>
-        <p class="text-xl text-gray-600">
-          Search is changing rapidly. Traditional SEO alone leaves money on the table.
-        </p>
-      </div>
-
-      <!-- Statistics Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-        <div class="bg-white rounded-xl p-6 shadow-md">
-          <div class="text-4xl font-bold text-blue-600 mb-2">51%</div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Google Results Include AI</h3>
-          <p class="text-gray-600">Over half of Google search results now feature AI-generated snippets and overviews.</p>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 shadow-md">
-          <div class="text-4xl font-bold text-green-600 mb-2">5%</div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Bing's Market Share = £5k</h3>
-          <p class="text-gray-600">For a £100k business, Bing's 5% market share equals £5,000 in extra revenue annually.</p>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 shadow-md">
-          <div class="text-4xl font-bold text-purple-600 mb-2">115%</div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">AI Search Growth</h3>
-          <p class="text-gray-600">AI-powered search platforms growing 115% quarterly as users shift to conversational search.</p>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 shadow-md">
-          <div class="text-4xl font-bold text-orange-600 mb-2">42%</div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Zero-Click Searches</h3>
-          <p class="text-gray-600">Nearly half of searches end without clicking, making AI recommendations crucial.</p>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 shadow-md">
-          <div class="text-4xl font-bold text-red-600 mb-2">180M</div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">ChatGPT Users</h3>
-          <p class="text-gray-600">Active users asking AI for business recommendations every month.</p>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 shadow-md">
-          <div class="text-4xl font-bold text-indigo-600 mb-2">3x</div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">ROI Increase</h3>
-          <p class="text-gray-600">Businesses using comprehensive search strategies see 3x better returns.</p>
-        </div>
-      </div>
-
-      <!-- ROI Calculator CTA -->
-      <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center">
-        <h3 class="text-2xl font-bold mb-4">Calculate Your Missing Revenue</h3>
-        <p class="text-lg mb-6">See exactly how much money you're leaving on the table without comprehensive optimization.</p>
-        <a href="/roi-calculator/" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
-          Calculate Your ROI →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          How Supercharged Engine Optimization Works
-        </h2>
-        <p class="text-xl text-gray-600">
-          Our proven four-step process gets your business found everywhere customers search.
-        </p>
-      </div>
-
-      <!-- Process Steps -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="text-center">
-          <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-white font-bold text-2xl">1</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">SEO Foundation</h3>
-          <p class="text-gray-600">Optimize your website and content for traditional search engines like Google and Bing.</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-white font-bold text-2xl">2</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">AEO Implementation</h3>
-          <p class="text-gray-600">Structure content to be recommended by AI platforms like ChatGPT and Perplexity.</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-white font-bold text-2xl">3</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">GEO Optimization</h3>
-          <p class="text-gray-600">Optimize for AI-generated content and recommendations across all platforms.</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-white font-bold text-2xl">4</span>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">SBO Authority</h3>
-          <p class="text-gray-600">Build brand recognition and authority across all search platforms and AI systems.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ROI and Pricing -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          Investment That Pays for Itself
-        </h2>
-        <p class="text-xl text-gray-600">
-          Industry-recommended 2% of turnover delivers 3x return on investment.
-        </p>
-      </div>
-
-      <!-- ROI Example -->
-      <div class="bg-white rounded-2xl p-8 shadow-lg max-w-3xl mx-auto mb-12">
-        <h3 class="text-2xl font-bold text-center text-gray-900 mb-8">Real Example: £120k Turnover Business</h3>
-        
-        <div class="grid md:grid-cols-3 gap-8 text-center">
-          <div class="border-r border-gray-200 pr-8">
-            <div class="text-3xl font-bold text-blue-600 mb-2">£200</div>
-            <p class="text-gray-600 font-semibold">Monthly Investment</p>
-            <p class="text-sm text-gray-500">(2% of £120k turnover)</p>
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-block px-4 py-2 bg-yellow-500 text-black rounded-full text-sm font-bold mb-6">
+            🇬🇧 UK's First Supercharged Engine Optimization
           </div>
           
-          <div class="border-r border-gray-200 pr-8">
-            <div class="text-3xl font-bold text-green-600 mb-2">5 Hours</div>
-            <p class="text-gray-600 font-semibold">Expert Optimization</p>
-            <p class="text-sm text-gray-500">Dedicated specialist time monthly</p>
-          </div>
+          <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Get Found <span class="text-yellow-400">Everywhere</span> Customers Search
+          </h1>
           
-          <div>
-            <div class="text-3xl font-bold text-purple-600 mb-2">£600+</div>
-            <p class="text-gray-600 font-semibold">Extra Monthly Revenue</p>
-            <p class="text-sm text-gray-500">£7,200+ annually guaranteed</p>
-          </div>
-        </div>
+          <p class="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
+            Revolutionary SEO+AEO+GEO+SBO strategy gets your business discovered on Google, 
+            AI platforms like ChatGPT & Perplexity, plus every search engine that matters.
+          </p>
 
-        <div class="text-center mt-8">
-          <div class="inline-block bg-green-100 px-6 py-3 rounded-lg">
-            <span class="text-green-800 font-bold text-xl">3x ROI = £4,800 Net Profit Annually</span>
+          <!-- Key Stats -->
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+              <div class="text-3xl font-bold text-yellow-400 mb-2">3x ROI</div>
+              <p class="text-sm text-blue-100">Average return on investment guaranteed</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+              <div class="text-3xl font-bold text-yellow-400 mb-2">51%</div>
+              <p class="text-sm text-blue-100">Google results now include AI snippets</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+              <div class="text-3xl font-bold text-yellow-400 mb-2">£5k+</div>
+              <p class="text-sm text-blue-100">Extra annual revenue from Bing's 5% market share alone</p>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/roi-calculator/" class="bg-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors">
+              Calculate Your ROI Potential
+            </a>
+            <a href="/contact/" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-900 transition-colors">
+              Get Free Strategy Session
+            </a>
           </div>
         </div>
       </div>
+    </header>
 
-      <!-- CTA -->
-      <div class="text-center">
-        <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to 3x Your Search Visibility?</h3>
-        <p class="text-lg text-gray-600 mb-8">Get found everywhere customers search with our proven strategy.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact/" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition-colors">
-            Get Free Strategy Session
-          </a>
-          <a href="/roi-calculator/" class="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-colors">
-            Calculate Your ROI
+    <!-- What is Supercharged Engine Optimization -->
+    <section class="py-16 bg-white" aria-labelledby="what-is-seo">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="max-w-4xl mx-auto text-center mb-12">
+          <h2 id="what-is-seo" class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            What is Supercharged Engine Optimization?
+          </h2>
+          <p class="text-xl text-gray-600 leading-relaxed">
+            The world's first comprehensive search strategy combining four powerful optimization techniques 
+            to get your business found everywhere customers search - from traditional Google to cutting-edge AI platforms.
+          </p>
+        </header>
+
+        <!-- Four Pillars -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <!-- SEO -->
+          <article class="bg-blue-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white font-bold text-xl">SEO</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Search Engine Optimization</h3>
+            <p class="text-gray-600 mb-4">Get found on Google, Bing, and traditional search engines where 92% of searches happen.</p>
+            <a href="/services/search-engine-optimization/" class="text-blue-600 font-semibold hover:underline">Learn More →</a>
+          </article>
+
+          <!-- AEO -->
+          <article class="bg-green-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white font-bold text-xl">AEO</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Answer Engine Optimization</h3>
+            <p class="text-gray-600 mb-4">Get recommended by ChatGPT, Perplexity, and AI assistants when customers ask questions.</p>
+            <a href="/services/answer-engine-optimization/" class="text-green-600 font-semibold hover:underline">Learn More →</a>
+          </article>
+
+          <!-- GEO -->
+          <article class="bg-purple-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white font-bold text-xl">GEO</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Generative Engine Optimization</h3>
+            <p class="text-gray-600 mb-4">Optimize for AI-generated content and recommendations across all platforms.</p>
+            <a href="/services/generative-engine-optimization/" class="text-purple-600 font-semibold hover:underline">Learn More →</a>
+          </article>
+
+          <!-- SBO -->
+          <article class="bg-orange-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white font-bold text-xl">SBO</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Search Brand Optimization</h3>
+            <p class="text-gray-600 mb-4">Build brand authority and recognition across all search platforms and AI systems.</p>
+            <a href="/services/search-brand-optimization/" class="text-orange-600 font-semibold hover:underline">Learn More →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why You Need This Now -->
+    <section class="py-16 bg-gray-50" aria-labelledby="why-now">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="max-w-4xl mx-auto text-center mb-12">
+          <h2 id="why-now" class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Why Your Business Needs This Right Now
+          </h2>
+          <p class="text-xl text-gray-600">
+            Search is changing rapidly. Traditional SEO alone leaves money on the table.
+          </p>
+        </header>
+
+        <!-- Statistics Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <article class="bg-white rounded-xl p-6 shadow-md">
+            <div class="text-4xl font-bold text-blue-600 mb-2">51%</div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Google Results Include AI</h3>
+            <p class="text-gray-600">Over half of Google search results now feature AI-generated snippets and overviews.</p>
+          </article>
+
+          <article class="bg-white rounded-xl p-6 shadow-md">
+            <div class="text-4xl font-bold text-green-600 mb-2">5%</div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Bing's Market Share = £5k</h3>
+            <p class="text-gray-600">For a £100k business, Bing's 5% market share equals £5,000 in extra revenue annually.</p>
+          </article>
+
+          <article class="bg-white rounded-xl p-6 shadow-md">
+            <div class="text-4xl font-bold text-purple-600 mb-2">115%</div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">AI Search Growth</h3>
+            <p class="text-gray-600">AI-powered search platforms growing 115% quarterly as users shift to conversational search.</p>
+          </article>
+
+          <article class="bg-white rounded-xl p-6 shadow-md">
+            <div class="text-4xl font-bold text-orange-600 mb-2">42%</div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Zero-Click Searches</h3>
+            <p class="text-gray-600">Nearly half of searches end without clicking, making AI recommendations crucial.</p>
+          </article>
+
+          <article class="bg-white rounded-xl p-6 shadow-md">
+            <div class="text-4xl font-bold text-red-600 mb-2">180M</div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">ChatGPT Users</h3>
+            <p class="text-gray-600">Active users asking AI for business recommendations every month.</p>
+          </article>
+
+          <article class="bg-white rounded-xl p-6 shadow-md">
+            <div class="text-4xl font-bold text-indigo-600 mb-2">3x</div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">ROI Increase</h3>
+            <p class="text-gray-600">Businesses using comprehensive search strategies see 3x better returns.</p>
+          </article>
+        </div>
+
+        <!-- ROI Calculator CTA -->
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center">
+          <h3 class="text-2xl font-bold mb-4">Calculate Your Missing Revenue</h3>
+          <p class="text-lg mb-6">See exactly how much money you're leaving on the table without comprehensive optimization.</p>
+          <a href="/roi-calculator/" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+            Calculate Your ROI →
           </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            How Supercharged Engine Optimization Works
+          </h2>
+          <p class="text-xl text-gray-600">
+            Our proven four-step process gets your business found everywhere customers search.
+          </p>
+        </div>
+
+        <!-- Process Steps -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white font-bold text-2xl">1</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">SEO Foundation</h3>
+            <p class="text-gray-600">Optimize your website and content for traditional search engines like Google and Bing.</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white font-bold text-2xl">2</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">AEO Implementation</h3>
+            <p class="text-gray-600">Structure content to be recommended by AI platforms like ChatGPT and Perplexity.</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white font-bold text-2xl">3</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">GEO Optimization</h3>
+            <p class="text-gray-600">Optimize for AI-generated content and recommendations across all platforms.</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-white font-bold text-2xl">4</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">SBO Authority</h3>
+            <p class="text-gray-600">Build brand recognition and authority across all search platforms and AI systems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI and Pricing -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Investment That Pays for Itself
+          </h2>
+          <p class="text-xl text-gray-600">
+            Industry-recommended 2% of turnover delivers 3x return on investment.
+          </p>
+        </div>
+
+        <!-- ROI Example -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg max-w-3xl mx-auto mb-12">
+          <h3 class="text-2xl font-bold text-center text-gray-900 mb-8">Real Example: £120k Turnover Business</h3>
+          
+          <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div class="border-r border-gray-200 pr-8">
+              <div class="text-3xl font-bold text-blue-600 mb-2">£200</div>
+              <p class="text-gray-600 font-semibold">Monthly Investment</p>
+              <p class="text-sm text-gray-500">(2% of £120k turnover)</p>
+            </div>
+            
+            <div class="border-r border-gray-200 pr-8">
+              <div class="text-3xl font-bold text-green-600 mb-2">5 Hours</div>
+              <p class="text-gray-600 font-semibold">Expert Optimization</p>
+              <p class="text-sm text-gray-500">Dedicated specialist time monthly</p>
+            </div>
+            
+            <div>
+              <div class="text-3xl font-bold text-purple-600 mb-2">£600+</div>
+              <p class="text-gray-600 font-semibold">Extra Monthly Revenue</p>
+              <p class="text-sm text-gray-500">£7,200+ annually guaranteed</p>
+            </div>
+          </div>
+
+          <div class="text-center mt-8">
+            <div class="inline-block bg-green-100 px-6 py-3 rounded-lg">
+              <span class="text-green-800 font-bold text-xl">3x ROI = £4,800 Net Profit Annually</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to 3x Your Search Visibility?</h3>
+          <p class="text-lg text-gray-600 mb-8">Get found everywhere customers search with our proven strategy.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact/" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition-colors">
+              Get Free Strategy Session
+            </a>
+            <a href="/roi-calculator/" class="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-colors">
+              Calculate Your ROI
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <Footer />
 </MainLayout> 

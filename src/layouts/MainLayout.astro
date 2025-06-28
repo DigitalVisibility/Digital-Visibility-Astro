@@ -1,6 +1,12 @@
 ---
 // Main layout component that will be used across all pages
-const { title = "Digital Visibility - AI Powered Business Optimization" } = Astro.props;
+const { title = "Digital Visibility - AI Powered Business Optimization", meta } = Astro.props;
+
+// Use meta object if provided, otherwise fall back to individual props
+const pageTitle = meta?.title || title;
+const pageDescription = meta?.description || "Human-powered digital solutions, accelerated with AI. Digital marketing with SEO+AEO+GEO, app development, and physical product design services in Swansea, Wales, and globally.";
+const pageKeywords = meta?.keywords || "AI, digital marketing, app development, product design, business optimization";
+const pageImage = meta?.image || "/digital-visibility-logo-f.png";
 ---
 
 <!DOCTYPE html>
@@ -52,10 +58,10 @@ const { title = "Digital Visibility - AI Powered Business Optimization" } = Astr
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://imagedelivery.net" crossorigin>
-    <title>{title}</title>
+    <title>{pageTitle}</title>
     <!-- Removed global.css stylesheet reference -->
     <!-- Individual pages now handle their own meta descriptions -->
-    <meta name="keywords" content="AI, digital marketing, app development, product design, business optimization">
+    <meta name="keywords" content={pageKeywords}>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     
     <!-- Sitemap and Robots References -->
@@ -69,7 +75,7 @@ const { title = "Digital Visibility - AI Powered Business Optimization" } = Astr
       "@id": "https://digitalvisibility.com/#website",
       "url": "https://digitalvisibility.com",
       "name": "Digital Visibility - Human Powered, AI Accelerated Solutions",
-      "description": "Human-powered digital solutions, accelerated with AI. Digital marketing with SEO+AEO+GEO, app development, and physical product design services in Swansea, Wales, and globally.",
+      "description": `${pageDescription}`,
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://digitalvisibility.com/search?q={search_term_string}",
@@ -80,7 +86,7 @@ const { title = "Digital Visibility - AI Powered Business Optimization" } = Astr
         "name": "Digital Visibility Limited",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://digitalvisibility.com/digital-visibility-logo-f.png",
+          "url": `${pageImage.startsWith('http') ? pageImage : 'https://digitalvisibility.com' + pageImage}`,
           "width": "180",
           "height": "60"
         }

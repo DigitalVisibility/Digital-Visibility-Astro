@@ -365,382 +365,396 @@ import Footer from '../../components/Footer.astro';
 
   <Navigation slot="nav" />
   
-  <!-- Hero Section -->
-  <section class="bg-white py-12 md:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Custom App Development & Business Automation
-          </h1>
-          <p class="text-xl text-gray-600 mb-8">
-            Transform your business with powerful, scalable, and intuitive mobile and web applications designed for your specific needs. Leverage AI and automation to optimize your operations and boost efficiency.
-          </p>
-          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href="/contact/" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-md inline-flex items-center transition-colors">Book a free Consultation
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </a>
-            <a href="#services" class="border border-blue-600 text-blue-600 hover:bg-blue-50 font-medium px-6 py-3 rounded-md transition-colors">Our Services</a>
-          </div>
-        </div>
-        <div class="md:w-1/2">
-          <img src="/super-ai-agent-app.webp" alt="Digital Visibility app development services Swansea: AI-powered mobile app development, custom software solutions, and business application development for Welsh companies" class="rounded-lg shadow-xl max-w-[90%] ml-auto">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="bg-gray-50 py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">Our App Development Services</h2>
-        <p class="text-xl text-gray-600">Comprehensive development solutions for every platform and need</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Mobile App Development -->
-        <div class="service-card">
-          <div class="flex items-center mb-4">
-            <i data-lucide="smartphone" class="text-primary-600 w-8 h-8 mr-3"></i>
-            <h3 class="text-xl font-bold">Mobile App Development</h3>
-          </div>
-          <p class="text-gray-600 mb-6">
-            Native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Native iOS and Android development</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Cross-platform solutions (React Native, Flutter)</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Wearable and IoT app integration</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Web Application Development -->
-        <div class="service-card">
-          <div class="flex items-center mb-4">
-            <i data-lucide="globe" class="text-primary-600 w-8 h-8 mr-3"></i>
-            <h3 class="text-xl font-bold">Web Application Development</h3>
-          </div>
-          <p class="text-gray-600 mb-6">
-            Modern, responsive web applications with powerful functionality and beautiful interfaces.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Progressive Web Apps (PWAs)</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Single-page applications (SPAs)</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Custom web portals and dashboards</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Custom Software Solutions -->
-        <div class="service-card">
-          <div class="flex items-center mb-4">
-            <i data-lucide="settings" class="text-primary-600 w-8 h-8 mr-3"></i>
-            <h3 class="text-xl font-bold">Custom Software Solutions</h3>
-          </div>
-          <p class="text-gray-600 mb-6">
-            Tailored software solutions to address specific business challenges and optimize workflows.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Enterprise software development</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Business process automation</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>CRM and ERP system integration</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- AI Integration -->
-        <div class="service-card">
-          <div class="flex items-center mb-4">
-            <i data-lucide="brain" class="text-primary-600 w-8 h-8 mr-3"></i>
-            <h3 class="text-xl font-bold">AI & Machine Learning Integration</h3>
-          </div>
-          <p class="text-gray-600 mb-6">
-            Enhance your applications with AI and machine learning capabilities to deliver smart, personalized experiences.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Intelligent chatbots and assistants</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Predictive analytics implementation</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Computer vision and NLP solutions</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- API Development & Integration -->
-        <div class="service-card">
-          <div class="flex items-center mb-4">
-            <i data-lucide="plug" class="text-primary-600 w-8 h-8 mr-3"></i>
-            <h3 class="text-xl font-bold">API Development & Integration</h3>
-          </div>
-          <p class="text-gray-600 mb-6">
-            Create robust APIs and seamlessly integrate your applications with third-party services and platforms.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>RESTful and GraphQL API development</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Third-party API integration</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Payment gateway and e-commerce integration</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- QA & Testing -->
-        <div class="service-card">
-          <div class="flex items-center mb-4">
-            <i data-lucide="check-square" class="text-primary-600 w-8 h-8 mr-3"></i>
-            <h3 class="text-xl font-bold">Quality Assurance & Testing</h3>
-          </div>
-          <p class="text-gray-600 mb-6">
-            Comprehensive testing services to ensure your applications are robust, secure, and perform optimally.
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Automated and manual testing</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Performance and load testing</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5"></i>
-              <span>Security and penetration testing</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Development Process -->
-  <section class="bg-white py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Development Process</h2>
-        <p class="text-xl text-gray-600">A structured approach to delivering exceptional applications</p>
-      </div>
-
-      <div class="relative">
-        <!-- Process Line -->
-        <div class="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-primary-100 -translate-y-1/2 z-0"></div>
+  <!-- Main Content with Proper Semantic Structure -->
+  <main>
+    <!-- Hero Section -->
+    <header class="bg-white py-12 md:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="mb-8">
+          <ol class="flex items-center space-x-2 text-sm text-gray-600">
+            <li><a href="/" class="hover:text-blue-600">Home</a></li>
+            <li><span class="text-gray-400" aria-hidden="true">›</span></li>
+            <li><a href="/services/" class="hover:text-blue-600">Services</a></li>
+            <li><span class="text-gray-400" aria-hidden="true">›</span></li>
+            <li class="text-gray-500" aria-current="page">App Development</li>
+          </ol>
+        </nav>
         
-        <div class="grid md:grid-cols-5 gap-8 relative z-10">
-          <!-- Discovery -->
-          <div class="text-center">
-            <div class="bg-white w-16 h-16 rounded-full border-4 border-primary-500 flex items-center justify-center mx-auto mb-6">
-              <i data-lucide="search" class="text-primary-500 w-8 h-8"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">Discovery</h3>
-            <p class="text-gray-600">
-              Understanding your requirements, goals, and target users to establish a solid foundation.
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              Custom App Development & Business Automation
+            </h1>
+            <p class="text-xl text-gray-600 mb-8">
+              Transform your business with powerful, scalable, and intuitive mobile and web applications designed for your specific needs. Leverage AI and automation to optimize your operations and boost efficiency.
             </p>
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <a href="/contact/" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-md inline-flex items-center transition-colors">Book a free Consultation
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#services" class="border border-blue-600 text-blue-600 hover:bg-blue-50 font-medium px-6 py-3 rounded-md transition-colors">Our Services</a>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img src="/super-ai-agent-app.webp" alt="Digital Visibility app development services Swansea: AI-powered mobile app development, custom software solutions, and business application development for Welsh companies" class="rounded-lg shadow-xl max-w-[90%] ml-auto">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-gray-50 py-24" aria-labelledby="app-services">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="text-center mb-16">
+          <h2 id="app-services" class="text-4xl font-bold text-gray-900 mb-4">Our App Development Services</h2>
+          <p class="text-xl text-gray-600">Comprehensive development solutions for every platform and need</p>
+        </header>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Mobile App Development -->
+          <article class="service-card">
+            <header class="flex items-center mb-4">
+              <i data-lucide="smartphone" class="text-primary-600 w-8 h-8 mr-3" aria-hidden="true"></i>
+              <h3 class="text-xl font-bold">Mobile App Development</h3>
+            </header>
+            <p class="text-gray-600 mb-6">
+              Native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>Native iOS and Android development</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>Cross-platform solutions (React Native, Flutter)</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>Wearable and IoT app integration</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Web Application Development -->
+          <article class="service-card">
+            <header class="flex items-center mb-4">
+              <i data-lucide="globe" class="text-primary-600 w-8 h-8 mr-3" aria-hidden="true"></i>
+              <h3 class="text-xl font-bold">Web Application Development</h3>
+            </header>
+            <p class="text-gray-600 mb-6">
+              Modern, responsive web applications with powerful functionality and beautiful interfaces.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>Progressive Web Apps (PWAs)</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>Single-page applications (SPAs)</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>Custom web portals and dashboards</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Business Automation -->
+          <article class="service-card">
+            <header class="flex items-center mb-4">
+              <i data-lucide="settings" class="text-primary-600 w-8 h-8 mr-3" aria-hidden="true"></i>
+              <h3 class="text-xl font-bold">Business Automation</h3>
+            </header>
+            <p class="text-gray-600 mb-6">
+              Streamline your operations with intelligent automation solutions that save time and reduce costs.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>Workflow automation systems</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>CRM and ERP integration</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>Custom business process solutions</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- API Development -->
+          <article class="service-card">
+            <header class="flex items-center mb-4">
+              <i data-lucide="link" class="text-primary-600 w-8 h-8 mr-3" aria-hidden="true"></i>
+              <h3 class="text-xl font-bold">API Development & Integration</h3>
+            </header>
+            <p class="text-gray-600 mb-6">
+              Connect your systems with robust APIs and seamless third-party integrations.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>RESTful API development</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>GraphQL implementation</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>Third-party service integration</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- AI Integration -->
+          <article class="service-card">
+            <header class="flex items-center mb-4">
+              <i data-lucide="brain" class="text-primary-600 w-8 h-8 mr-3" aria-hidden="true"></i>
+              <h3 class="text-xl font-bold">AI Integration</h3>
+            </header>
+            <p class="text-gray-600 mb-6">
+              Enhance your applications with artificial intelligence and machine learning capabilities.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>Chatbot development</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>Machine learning implementation</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>Predictive analytics</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Quality Assurance -->
+          <article class="service-card">
+            <header class="flex items-center mb-4">
+              <i data-lucide="shield-check" class="text-primary-600 w-8 h-8 mr-3" aria-hidden="true"></i>
+              <h3 class="text-xl font-bold">Quality Assurance & Testing</h3>
+            </header>
+            <p class="text-gray-600 mb-6">
+              Comprehensive testing services to ensure your applications are robust, secure, and perform optimally.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>Automated testing frameworks</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>Security vulnerability testing</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check-circle" class="text-primary-600 w-5 h-5 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                <span>Performance optimization</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Development Process -->
+    <section class="bg-white py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Development Process</h2>
+          <p class="text-xl text-gray-600">A structured approach to delivering exceptional applications</p>
+        </div>
+
+        <div class="relative">
+          <!-- Process Line -->
+          <div class="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-primary-100 -translate-y-1/2 z-0"></div>
+          
+          <div class="grid md:grid-cols-5 gap-8 relative z-10">
+            <!-- Discovery -->
+            <div class="text-center">
+              <div class="bg-white w-16 h-16 rounded-full border-4 border-primary-500 flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="search" class="text-primary-500 w-8 h-8"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4">Discovery</h3>
+              <p class="text-gray-600">
+                Understanding your requirements, goals, and target users to establish a solid foundation.
+              </p>
+            </div>
+
+            <!-- Planning -->
+            <div class="text-center">
+              <div class="bg-white w-16 h-16 rounded-full border-4 border-primary-500 flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="clipboard-list" class="text-primary-500 w-8 h-8"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4">Planning</h3>
+              <p class="text-gray-600">
+                Creating a detailed roadmap, architecture, and technical specifications for your application.
+              </p>
+            </div>
+
+            <!-- Design & Development -->
+            <div class="text-center">
+              <div class="bg-white w-16 h-16 rounded-full border-4 border-primary-500 flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="code" class="text-primary-500 w-8 h-8"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4">Development</h3>
+              <p class="text-gray-600">
+                Building your application with clean, maintainable code following best practices.
+              </p>
+            </div>
+
+            <!-- Testing -->
+            <div class="text-center">
+              <div class="bg-white w-16 h-16 rounded-full border-4 border-primary-500 flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="shield-check" class="text-primary-500 w-8 h-8"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4">Testing</h3>
+              <p class="text-gray-600">
+                Thorough quality assurance to ensure your application is robust, secure, and performs well.
+              </p>
+            </div>
+
+            <!-- Deployment & Support -->
+            <div class="text-center">
+              <div class="bg-white w-16 h-16 rounded-full border-4 border-primary-500 flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="upload-cloud" class="text-primary-500 w-8 h-8"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4">Deployment</h3>
+              <p class="text-gray-600">
+                Launching your application and providing ongoing maintenance and support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="bg-gray-50 py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Technologies We Use</h2>
+          <p class="text-xl text-gray-600">Cutting-edge technologies to power your applications</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <!-- Front-end -->
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
+            <h3 class="font-bold text-lg mb-4">Front-end</h3>
+            <div class="space-y-2 text-gray-600">
+              <p>React / React Native</p>
+              <p>Vue.js</p>
+              <p>Angular</p>
+              <p>Flutter</p>
+            </div>
           </div>
 
-          <!-- Planning -->
-          <div class="text-center">
-            <div class="bg-white w-16 h-16 rounded-full border-4 border-primary-500 flex items-center justify-center mx-auto mb-6">
-              <i data-lucide="clipboard-list" class="text-primary-500 w-8 h-8"></i>
+          <!-- Back-end -->
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
+            <h3 class="font-bold text-lg mb-4">Back-end</h3>
+            <div class="space-y-2 text-gray-600">
+              <p>Node.js</p>
+              <p>Python (Django, Flask)</p>
+              <p>PHP (Laravel)</p>
+              <p>.NET Core</p>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">Planning</h3>
-            <p class="text-gray-600">
-              Creating a detailed roadmap, architecture, and technical specifications for your application.
-            </p>
           </div>
 
-          <!-- Design & Development -->
-          <div class="text-center">
-            <div class="bg-white w-16 h-16 rounded-full border-4 border-primary-500 flex items-center justify-center mx-auto mb-6">
-              <i data-lucide="code" class="text-primary-500 w-8 h-8"></i>
+          <!-- Databases -->
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
+            <h3 class="font-bold text-lg mb-4">Databases</h3>
+            <div class="space-y-2 text-gray-600">
+              <p>MongoDB</p>
+              <p>PostgreSQL</p>
+              <p>MySQL</p>
+              <p>Firebase</p>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">Development</h3>
-            <p class="text-gray-600">
-              Building your application with clean, maintainable code following best practices.
-            </p>
+          </div>
+
+          <!-- Cloud & Infrastructure -->
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
+            <h3 class="font-bold text-lg mb-4">Cloud Services</h3>
+            <div class="space-y-2 text-gray-600">
+              <p>AWS</p>
+              <p>Google Cloud</p>
+              <p>Microsoft Azure</p>
+              <p>Cloudflare</p>
+            </div>
+          </div>
+
+          <!-- DevOps -->
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
+            <h3 class="font-bold text-lg mb-4">DevOps</h3>
+            <div class="space-y-2 text-gray-600">
+              <p>Docker</p>
+              <p>Kubernetes</p>
+              <p>CI/CD Pipelines</p>
+              <p>GitLab / GitHub Actions</p>
+            </div>
+          </div>
+
+          <!-- AI & ML -->
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
+            <h3 class="font-bold text-lg mb-4">AI & ML</h3>
+            <div class="space-y-2 text-gray-600">
+              <p>TensorFlow</p>
+              <p>PyTorch</p>
+              <p>Natural Language Processing</p>
+              <p>Computer Vision</p>
+            </div>
           </div>
 
           <!-- Testing -->
-          <div class="text-center">
-            <div class="bg-white w-16 h-16 rounded-full border-4 border-primary-500 flex items-center justify-center mx-auto mb-6">
-              <i data-lucide="shield-check" class="text-primary-500 w-8 h-8"></i>
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
+            <h3 class="font-bold text-lg mb-4">Testing</h3>
+            <div class="space-y-2 text-gray-600">
+              <p>Jest</p>
+              <p>Cypress</p>
+              <p>Selenium</p>
+              <p>Appium</p>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">Testing</h3>
-            <p class="text-gray-600">
-              Thorough quality assurance to ensure your application is robust, secure, and performs well.
-            </p>
           </div>
 
-          <!-- Deployment & Support -->
-          <div class="text-center">
-            <div class="bg-white w-16 h-16 rounded-full border-4 border-primary-500 flex items-center justify-center mx-auto mb-6">
-              <i data-lucide="upload-cloud" class="text-primary-500 w-8 h-8"></i>
+          <!-- Analytics -->
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
+            <h3 class="font-bold text-lg mb-4">Analytics</h3>
+            <div class="space-y-2 text-gray-600">
+              <p>Google Analytics</p>
+              <p>Mixpanel</p>
+              <p>Amplitude</p>
+              <p>Hotjar</p>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">Deployment</h3>
-            <p class="text-gray-600">
-              Launching your application and providing ongoing maintenance and support.
-            </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Technologies Section -->
-  <section class="bg-gray-50 py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">Technologies We Use</h2>
-        <p class="text-xl text-gray-600">Cutting-edge technologies to power your applications</p>
+    <!-- CTA Section -->
+    <section class="bg-primary-600 py-20">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Build Your Next Application?</h2>
+        <p class="text-xl text-primary-100 mb-8">
+          Let's discuss your project requirements and build a solution that drives your business forward.
+        </p>
+        <a href="/contact/" class="inline-block bg-white text-primary-600 font-medium px-8 py-3 rounded-md hover:bg-primary-50 transition">
+          Schedule a Free Consultation to discuss your project
+        </a>
+        <p class="text-lg text-primary-100">
+          <br/>Need other digital solutions too? Explore our <a href="/services/digital-marketing/" class="text-white hover:text-primary-50 underline">Digital Marketing</a> and <a href="/services/product-design/" class="text-white hover:text-primary-50 underline">Product Design</a> services.
+        </p>
       </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        <!-- Front-end -->
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
-          <h3 class="font-bold text-lg mb-4">Front-end</h3>
-          <div class="space-y-2 text-gray-600">
-            <p>React / React Native</p>
-            <p>Vue.js</p>
-            <p>Angular</p>
-            <p>Flutter</p>
-          </div>
-        </div>
-
-        <!-- Back-end -->
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
-          <h3 class="font-bold text-lg mb-4">Back-end</h3>
-          <div class="space-y-2 text-gray-600">
-            <p>Node.js</p>
-            <p>Python (Django, Flask)</p>
-            <p>PHP (Laravel)</p>
-            <p>.NET Core</p>
-          </div>
-        </div>
-
-        <!-- Databases -->
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
-          <h3 class="font-bold text-lg mb-4">Databases</h3>
-          <div class="space-y-2 text-gray-600">
-            <p>MongoDB</p>
-            <p>PostgreSQL</p>
-            <p>MySQL</p>
-            <p>Firebase</p>
-          </div>
-        </div>
-
-        <!-- Cloud & Infrastructure -->
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
-          <h3 class="font-bold text-lg mb-4">Cloud Services</h3>
-          <div class="space-y-2 text-gray-600">
-            <p>AWS</p>
-            <p>Google Cloud</p>
-            <p>Microsoft Azure</p>
-            <p>Cloudflare</p>
-          </div>
-        </div>
-
-        <!-- DevOps -->
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
-          <h3 class="font-bold text-lg mb-4">DevOps</h3>
-          <div class="space-y-2 text-gray-600">
-            <p>Docker</p>
-            <p>Kubernetes</p>
-            <p>CI/CD Pipelines</p>
-            <p>GitLab / GitHub Actions</p>
-          </div>
-        </div>
-
-        <!-- AI & ML -->
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
-          <h3 class="font-bold text-lg mb-4">AI & ML</h3>
-          <div class="space-y-2 text-gray-600">
-            <p>TensorFlow</p>
-            <p>PyTorch</p>
-            <p>Natural Language Processing</p>
-            <p>Computer Vision</p>
-          </div>
-        </div>
-
-        <!-- Testing -->
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
-          <h3 class="font-bold text-lg mb-4">Testing</h3>
-          <div class="space-y-2 text-gray-600">
-            <p>Jest</p>
-            <p>Cypress</p>
-            <p>Selenium</p>
-            <p>Appium</p>
-          </div>
-        </div>
-
-        <!-- Analytics -->
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center">
-          <h3 class="font-bold text-lg mb-4">Analytics</h3>
-          <div class="space-y-2 text-gray-600">
-            <p>Google Analytics</p>
-            <p>Mixpanel</p>
-            <p>Amplitude</p>
-            <p>Hotjar</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="bg-primary-600 py-20">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Build Your Next Application?</h2>
-      <p class="text-xl text-primary-100 mb-8">
-        Let's discuss your project requirements and build a solution that drives your business forward.
-      </p>
-      <a href="/contact/" class="inline-block bg-white text-primary-600 font-medium px-8 py-3 rounded-md hover:bg-primary-50 transition">
-        Schedule a Free Consultation to discuss your project
-      </a>
-	  	        <p class="text-lg text-primary-100">
-        <br/>Need other digital solutions too? Explore our <a href="/services/digital-marketing/" class="text-white hover:text-primary-50 underline">Digital Marketing</a> and <a href="/services/product-design/" class="text-white hover:text-primary-50 underline">Product Design</a> services.
-      </p>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <Footer slot="footer" />
 </MainLayout>

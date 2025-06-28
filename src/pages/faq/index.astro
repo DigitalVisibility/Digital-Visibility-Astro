@@ -305,584 +305,140 @@ import Footer from '../../components/Footer.astro';
   
   <Navigation slot="nav" />
   
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16 md:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-          Frequently Asked Questions
-        </h1>
-        <p class="text-xl opacity-90 mb-8">
-          Get clear answers about our services, how we help businesses grow, and why our approach to digital visibility delivers remarkable results.
-        </p>
-        <a href="#faq-categories" class="bg-white text-blue-800 font-bold px-8 py-4 rounded-md inline-flex items-center transition-all duration-300 transform hover:translate-y-[-2px] shadow-md">
-          Browse FAQ Categories
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-          </svg>
-        </a>
+  <!-- Main Content with Proper Semantic Structure -->
+  <main>
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16 md:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="mb-8">
+          <ol class="flex items-center space-x-2 text-sm">
+            <li><a href="/" class="hover:text-blue-200">Home</a></li>
+            <li><span class="text-blue-300" aria-hidden="true">›</span></li>
+            <li class="text-blue-200" aria-current="page">FAQ</li>
+          </ol>
+        </nav>
+        
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            Frequently Asked Questions
+          </h1>
+          <p class="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
+            Get instant answers to common questions about our SEO+AEO+GEO services, 
+            website design, pricing, and how we help Swansea businesses grow online.
+          </p>
+          <div class="flex justify-center space-x-4">
+            <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">
+              20+ Questions Answered
+            </span>
+            <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">
+              Expert Guidance
+            </span>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- FAQ Categories Section -->
-  <section class="py-16 bg-gray-50" id="faq-categories">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Would You Like to Know?</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Select a category to find the answers you need</p>
-      </div>
-      
-      <div class="category-tabs flex flex-wrap justify-center gap-4 mb-12">
-        <button class="category-tab active bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" data-category="services">Our Services</button>
-        <button class="category-tab bg-white text-gray-700 px-6 py-3 rounded-lg font-medium transition-all hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" data-category="aeo">Answer Engine Optimization</button>
-        <button class="category-tab bg-white text-gray-700 px-6 py-3 rounded-lg font-medium transition-all hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" data-category="websites">Websites</button>
-        <button class="category-tab bg-white text-gray-700 px-6 py-3 rounded-lg font-medium transition-all hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" data-category="geo">Geographic Optimization</button>
-        <button class="category-tab bg-white text-gray-700 px-6 py-3 rounded-lg font-medium transition-all hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" data-category="pricing">Pricing</button>
-      </div>
+    <!-- FAQ Content -->
+    <section class="py-16 bg-white" aria-labelledby="faq-content">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Quick Navigation -->
+        <nav class="mb-12" aria-label="FAQ Categories">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">Quick Navigation</h2>
+          <div class="grid md:grid-cols-3 gap-4">
+            <a href="#services" class="bg-blue-50 p-4 rounded-lg hover:bg-blue-100 transition-colors">
+              <h3 class="font-semibold text-blue-800 mb-2">Our Services</h3>
+              <p class="text-sm text-gray-600">SEO, AEO, GEO, and website design</p>
+            </a>
+            <a href="#pricing" class="bg-green-50 p-4 rounded-lg hover:bg-green-100 transition-colors">
+              <h3 class="font-semibold text-green-800 mb-2">Pricing & Packages</h3>
+              <p class="text-sm text-gray-600">Transparent pricing and payment</p>
+            </a>
+            <a href="#process" class="bg-purple-50 p-4 rounded-lg hover:bg-purple-100 transition-colors">
+              <h3 class="font-semibold text-purple-800 mb-2">Process & Results</h3>
+              <p class="text-sm text-gray-600">How we work and deliver results</p>
+            </a>
+          </div>
+        </nav>
 
-      <!-- FAQ Content Start -->
-      <div class="max-w-3xl mx-auto">
-        <!-- Services FAQs -->
-        <div class="faq-category-content" data-category="services">
-          <div class="mb-8">
-            <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">How does Digital Visibility help my business?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">We help your business get found in three ways:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li><strong>Complete Visibility:</strong> We optimise your online presence to help your business/brand rank and for people find you in regular search results like on Google using Search Engine Optimisation (SEO), We are also pioneering AI Answer Engine Optimisation (AEO) and Generative Engine Optimisation to get you ranked and recommended on AI Search Engines like Microsoft Bing, ChatGPT, Perplexity and many more, and to show up in local searches.</li>
-                      <li><strong>Building Trust:</strong> We boost your local presence so people trust your business more.</li>
-                      <li><strong>Future-Ready:</strong> As AI gets more important, your business stays ahead because we optimize for both regular search and AI recommendations.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+        <!-- Services FAQ Section -->
+        <section id="services" aria-labelledby="services-heading">
+          <h2 id="services-heading" class="text-3xl font-bold text-gray-900 mb-8">Our Services</h2>
+          
+          <article class="mb-6 bg-gray-50 rounded-lg p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">How does Digital Visibility help my business?</h3>
+            <div class="text-gray-700 space-y-3">
+              <p>We help your business get found in three ways:</p>
+              <ol class="list-decimal list-inside space-y-2 ml-4">
+                <li><strong>Complete Visibility:</strong> We optimise your online presence using Search Engine Optimisation (SEO), pioneering AI Answer Engine Optimisation (AEO), and Generative Engine Optimisation to get you ranked on Google, Microsoft Bing, ChatGPT, Perplexity and AI platforms.</li>
+                <li><strong>Building Trust:</strong> We boost your local presence so people trust your business more.</li>
+                <li><strong>Future-Ready:</strong> As AI becomes more important, your business stays ahead because we optimize for both regular search and AI recommendations.</li>
+              </ol>
             </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">Can you help businesses outside of Wales?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">Yes! We help businesses everywhere, not just in Wales.</p>
-                    <p class="mb-3">Our digital visibility strategies work for businesses in:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li>All parts of the UK</li>
-                      <li>Europe</li>
-                      <li>Worldwide locations</li>
-                    </ul>
-                    <p>Our special approach to SEO, AEO, and GEO helps any business, anywhere get found more easily online.</p>
-                  </div>
-                </div>
-              </div>
+          </article>
+
+          <!-- AEO FAQs -->
+          <article class="mb-6 bg-gray-50 rounded-lg p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Answer Engine Optimization (AEO)</h3>
+            <div class="text-gray-700 space-y-3">
+              <p>Answer Engine Optimization (AEO) makes sure AI tools like Microsoft Bing, ChatGPT, Alexa, Perplexity, Google AI Overview and many more recommend your business.</p>
+              <p>When someone asks an AI:</p>
+              <ul class="list-disc pl-6 mb-3 space-y-2">
+                <li>"What's the best [your service] in [your area]?"</li>
+                <li>"Who offers [your product] near me?"</li>
+              </ul>
+              <p>AEO helps make sure your business gets mentioned. It's like SEO, but for AI platforms instead of Google search results which is now the most popular means of searching online and will very soon be the only way your business can get found!</p>
             </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">What makes Digital Visibility different from other agencies?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">We do things differently in three big ways:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li><strong>Triple Optimization:</strong> We combine SEO, AEO, and GEO so your business gets found everywhere - in regular search, AI recommendations, and local searches.</li>
-                      <li><strong>People-First:</strong> Our expert team has real experience in business growth and digital success.</li>
-                      <li><strong>Complete Solution:</strong> We offer everything you need in one place - websites, optimization, apps, and business strategy.</li>
-                    </ul>
-                    <p>This unique approach gives you better results and makes your business stand out online.</p>
-                  </div>
-                </div>
-              </div>
+          </article>
+
+          <!-- Websites FAQs -->
+          <article class="mb-6 bg-gray-50 rounded-lg p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Websites</h3>
+            <div class="text-gray-700 space-y-3">
+              <p>Our websites work harder for your business. While most designers focus only on how a website looks, we build websites that:</p>
+              <ul class="list-disc pl-6 mb-3 space-y-2">
+                <li><strong>Get Found:</strong> Built-in AI optimization so your site gets recommended by ChatGPT and Google</li>
+                <li><strong>Build Trust:</strong> Special features that make your business look trustworthy to both people and AI</li>
+                <li><strong>Convert Better:</strong> Designs that turn visitors into customers</li>
+              </ul>
+              <p>Plus, all our websites are mobile-friendly, load quickly, and are easy for you to update yourself.</p>
             </div>
-          </div>
-        </div>
-        
-        <!-- AEO FAQs -->
-        <div class="faq-category-content hidden" data-category="aeo">
-          <div class="mb-8">
-            <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">What is Answer Engine Optimization (AEO)?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">Answer Engine Optimization (AEO) makes sure AI tools like Microsoft Bing, ChatGPT, Alexa, Perplexity, Google AI Overview and many more recommend your business.</p>
-                    <p class="mb-3">When someone asks an AI:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li>"What's the best [your service] in [your area]?"</li>
-                      <li>"Who offers [your product] near me?"</li>
-                    </ul>
-                    <p>AEO helps make sure your business gets mentioned. It's like SEO, but for AI platforms instead of Google search results which is now the most popular means of searching online and will very soon be the only way your business can get found!</p>
-                  </div>
-                </div>
-              </div>
+          </article>
+
+          <!-- Geographic Optimization FAQs -->
+          <article class="mb-6 bg-gray-50 rounded-lg p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Geographic Optimization</h3>
+            <div class="text-gray-700 space-y-3">
+              <p>Geographic Optimization (GO) or Local SEO which is sometimes how it is known helps your business appear in local searches by showing search engines and AI tools that you are a trusted local business.</p>
+              <p>Local SEO makes your business appear when people search for:</p>
+              <ul class="list-disc pl-6 mb-3 space-y-2">
+                <li>"best [your service] near me"</li>
+                <li>"[your service] in [your town or city]"</li>
+                <li>"[your service] open now"</li>
+              </ul>
+              <p>With good Local SEO, your business shows up in map results, the local pack (those businesses Google shows at the top with a map), and local directories.</p>
             </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">Why is AEO important for my business?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">AEO is important because over half of people now use AI tools to find businesses.</p>
-                    <p class="mb-3">Without AEO, you miss out on:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li>Getting recommended when people ask AI about services like yours</li>
-                      <li>Staying ahead of competitors who haven't started using AEO yet</li>
-                      <li>Building trust with customers who rely on AI for recommendations</li>
-                      <li>Being ready for the future as more people use AI every day</li>
-                    </ul>
-                    <p>AEO helps you get found by the growing number of customers who ask AI for help instead of searching Google.</p>
-                  </div>
-                </div>
-              </div>
+          </article>
+
+          <!-- Pricing FAQs -->
+          <article class="mb-6 bg-gray-50 rounded-lg p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Pricing</h3>
+            <div class="text-gray-700 space-y-3">
+              <p>Our services are based on what your business needs and include:</p>
+              <ul class="list-disc pl-6 mb-3 space-y-2">
+                <li><strong>Visibility Packages:</strong> Start at £40 per month and can include SEO, AEO, and GEO</li>
+                <li><strong>Websites:</strong> From £2,995 for a complete professional business website</li>
+                <li><strong>App Platform Access:</strong> From £40 per month for access to our business apps</li>
+                <li><strong>One-off Projects:</strong> Pricing based on specific needs</li>
+              </ul>
+              <p>We create custom solutions based on your business goals. Contact us for a free consultation and detailed quote.</p>
             </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">How quickly will I see results from AEO?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">Most businesses start seeing AEO results within 30-60 days.</p>
-                    <p class="mb-3">This is actually faster than regular SEO because AI tools update their recommendations more quickly than Google changes its rankings.</p>
-                    <p class="mb-3">Here's what to expect:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li><strong>First 30 days:</strong> Your business starts showing up in AI recommendations</li>
-                      <li><strong>60-90 days:</strong> More consistent AI recommendations</li>
-                      <li><strong>After 90 days:</strong> Strong, reliable AI recommendations</li>
-                    </ul>
-                    <p>Like all digital strategies, we keep optimizing your AEO over time to maintain and improve your results.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">How do you optimize my business for AI recommendations?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">We use a complete approach to make AI tools recommend your business:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li><strong>Content Structure:</strong> We organize your website content so AI can easily understand and recommend it</li>
-                      <li><strong>Natural Language:</strong> We match your content to how people actually ask questions to AI</li>
-                      <li><strong>Authority Building:</strong> We strengthen your presence across websites that AI uses for recommendations</li>
-                      <li><strong>Trust Signals:</strong> We add special markers that help AI recognize your business as trustworthy</li>
-                      <li><strong>Regular Updates:</strong> We keep adjusting your optimization as AI systems change</li>
-                    </ul>
-                    <p>We also use our own AI tools like Blogs Manager and Humanizer to create content that both humans and AI can easily understand and trust.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Websites FAQs -->
-        <div class="faq-category-content hidden" data-category="websites">
-          <div class="mb-8">
-            <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">What makes your websites different from other designers?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">Our websites work harder for your business. While most designers focus only on how a website looks, we build websites that:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li><strong>Get Found:</strong> Built-in AI optimization so your site gets recommended by ChatGPT and Google</li>
-                      <li><strong>Build Trust:</strong> Special features that make your business look trustworthy to both people and AI</li>
-                      <li><strong>Convert Better:</strong> Designs that turn visitors into customers</li>
-                    </ul>
-                    <p>Plus, all our websites are mobile-friendly, load quickly, and are easy for you to update yourself.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">How much does a new website cost?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">Our professional business websites start from £2,995. This includes everything you need:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li>Mobile-friendly, modern design</li>
-                      <li>Built-in SEO optimization</li>
-                      <li>AI recommendation optimization</li>
-                      <li>Geographic trust building</li>
-                      <li>Easy-to-use content management</li>
-                      <li>Contact forms and business tools</li>
-                      <li>Security features and backups</li>
-                    </ul>
-                    <p>Each website is built specially for your business needs. We'll give you an exact price after we understand what you need.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">How long will it take to build my website?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">Most business websites take 4-6 weeks from start to finish. Here's our typical timeline:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li><strong>Week 1:</strong> Planning and design choices</li>
-                      <li><strong>Weeks 2-3:</strong> Building your website</li>
-                      <li><strong>Week 4:</strong> Adding content and optimization</li>
-                      <li><strong>Weeks 5-6:</strong> Testing and launch</li>
-                    </ul>
-                    <p>Online stores or websites needing special features might take 6-8 weeks. We'll give you a specific timeline based on your needs.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">Can you update my existing website instead of building a new one?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">Yes, we can improve your existing website. Our website enhancement service includes:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li>Making your site work well on phones and tablets</li>
-                      <li>Improving loading speed</li>
-                      <li>Adding SEO and AI optimization</li>
-                      <li>Updating the design to look more professional</li>
-                      <li>Adding new features you need</li>
-                      <li>Building geographic trust signals</li>
-                    </ul>
-                    <p>We'll keep what works well and fix what needs improving, all while keeping your website online during the changes.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Geographic Optimization FAQs -->
-        <div class="faq-category-content hidden" data-category="geo">
-          <div class="mb-8">
-            <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">What is Geographic Optimization or Local SEO?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">Geographic Optimization (GO) or Local SEO which is sometimes how it is known helps your business appear in local searches by showing search engines and AI tools that you are a trusted local business.</p>
-                    <p class="mb-3">Local SEO makes your business appear when people search for:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li>"best [your service] near me"</li>
-                      <li>"[your service] in [your town or city]"</li>
-                      <li>"[your service] open now"</li>
-                    </ul>
-                    <p>With good Local SEO, your business shows up in map results, the local pack (those businesses Google shows at the top with a map), and local directories.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">Why is local visibility important for my business?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">Local visibility is crucial because:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li><strong>People Trust Local Businesses:</strong> 84% of people trust local businesses more than big companies.</li>
-                      <li><strong>Local Searches Lead to Visits:</strong> 76% of people who search for a local business visit one within 24 hours.</li>
-                      <li><strong>Higher Conversion Rates:</strong> Local searches result in sales 28% more often than non-local searches.</li>
-                      <li><strong>Mobile Search Dominance:</strong> Over 60% of all mobile searches are for local information.</li>
-                    </ul>
-                    <p>Simply put, if your business serves local customers, being found in local searches is one of the quickest ways to get more customers.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">How do you improve my local business visibility?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">We use a proven local visibility system:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li><strong>Google Business Profile:</strong> We optimize your business listing with the right categories, keywords, and images.</li>
-                      <li><strong>Local Citations:</strong> We ensure your business information is correct on important directories.</li>
-                      <li><strong>Review Management:</strong> We help you get and respond to customer reviews.</li>
-                      <li><strong>Local Content:</strong> We create content that includes local terms people search for.</li>
-                      <li><strong>Local Schema:</strong> We add special code to your website that tells search engines about your location.</li>
-                      <li><strong>Local Link Building:</strong> We get links from other trusted local websites.</li>
-                    </ul>
-                    <p>This complete approach helps you show up when local customers are looking for your services.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">Can you help with multiple locations?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">Yes! We help businesses with multiple locations get found in all their service areas.</p>
-                    <p class="mb-3">Our multi-location strategy includes:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li>Setting up separate Google Business profiles for each location</li>
-                      <li>Creating location-specific pages on your website</li>
-                      <li>Building local citation networks for each location</li>
-                      <li>Developing local content strategies for each area</li>
-                      <li>Managing reviews across all locations</li>
-                    </ul>
-                    <p>Whether you have 2 locations or 20, we can help you dominate local search results in every area you serve.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Pricing FAQs -->
-        <div class="faq-category-content hidden" data-category="pricing">
-          <div class="mb-8">
-            <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">How much do your services cost?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">Our services are based on what your business needs and include:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li><strong>Visibility Packages:</strong> Start at £40 per month and can include SEO, AEO, and GEO</li>
-                      <li><strong>Websites:</strong> From £2,995 for a complete professional business website</li>
-                      <li><strong>App Platform Access:</strong> From £40 per month for access to our business apps</li>
-                      <li><strong>One-off Projects:</strong> Pricing based on specific needs</li>
-                    </ul>
-                    <p>We create custom solutions based on your business goals. Contact us for a free consultation and detailed quote.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">Do you require long-term contracts?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">We offer flexible options to fit your needs:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li><strong>Monthly Plans:</strong> For businesses that want flexibility</li>
-                      <li><strong>3-Month Plans:</strong> Our most popular option with a small discount</li>
-                      <li><strong>6-Month Plans:</strong> With additional savings</li>
-                      <li><strong>12-Month Plans:</strong> Best value with maximum savings</li>
-                    </ul>
-                    <p>Our services show results over time, so we recommend at least 3 months to see meaningful improvement. However, we don't lock you into contracts you're not comfortable with.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">What is your payment process?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">We keep payment simple and transparent:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li><strong>For Ongoing Services:</strong> We invoice at the beginning of each month with payment due within 14 days</li>
-                      <li><strong>For Websites & Projects:</strong> We require a 50% deposit to begin work, with the balance due upon completion</li>
-                      <li><strong>Payment Methods:</strong> We accept bank transfers, credit cards, and direct debits</li>
-                    </ul>
-                    <p>All our invoices clearly explain what you're paying for, and we're always available to answer any questions about your billing.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <div class="faq-question mb-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <button class="flex justify-between items-center w-full text-left">
-                  <h3 class="text-xl font-semibold text-gray-900" itemprop="name">Do you offer any guarantees?</h3>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="toggle-icon h-6 w-6 text-blue-600 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-                <div class="faq-answer mt-4 text-gray-700 hidden" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                  <div itemprop="text">
-                    <p class="mb-3">While no digital agency can guarantee specific rankings or results (be careful of those who do!), we do offer these assurances:</p>
-                    <ul class="list-disc pl-6 mb-3 space-y-2">
-                      <li><strong>Satisfaction Guarantee:</strong> If you're not happy with our service in the first 30 days, we'll work with you to make it right or refund your payment</li>
-                      <li><strong>Transparent Reporting:</strong> You'll always know exactly what we're doing and what results we're achieving</li>
-                      <li><strong>Best Practice Commitment:</strong> We follow Google's guidelines and industry best practices</li>
-                      <li><strong>No Hidden Fees:</strong> The price we quote is the price you pay</li>
-                    </ul>
-                    <p>Our clients stay with us because we deliver results, not because they're locked into contracts.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          </article>
+        </section>
       </div>
-      <!-- FAQ Content End -->
-    </div>
-  </section>
-  
-  <!-- Add JavaScript for FAQ interactions -->
-  <script>
-    // Wait for the DOM to be fully loaded
-    document.addEventListener('DOMContentLoaded', function() {
-      // Handle category tab clicks
-      const categoryTabs = document.querySelectorAll('.category-tab');
-      const faqCategories = document.querySelectorAll('.faq-category-content');
-      
-      categoryTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-          // Remove active class from all tabs
-          categoryTabs.forEach(t => t.classList.remove('active', 'bg-blue-600', 'text-white'));
-          categoryTabs.forEach(t => t.classList.add('bg-white', 'text-gray-700'));
-          
-          // Add active class to clicked tab
-          this.classList.add('active', 'bg-blue-600', 'text-white');
-          this.classList.remove('bg-white', 'text-gray-700');
-          
-          // Hide all categories
-          faqCategories.forEach(cat => cat.classList.add('hidden'));
-          
-          // Show selected category
-          const selectedCategory = this.getAttribute('data-category');
-          document.querySelector(`.faq-category-content[data-category="${selectedCategory}"]`).classList.remove('hidden');
-        });
-      });
-      
-      // Handle FAQ question clicks
-      const faqQuestions = document.querySelectorAll('.faq-question button');
-      
-      faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-          const parent = this.closest('.faq-question');
-          const answer = parent.querySelector('.faq-answer');
-          const icon = this.querySelector('.toggle-icon');
-          
-          // Toggle answer visibility
-          answer.classList.toggle('hidden');
-          
-          // Toggle icon rotation
-          if (answer.classList.contains('hidden')) {
-            icon.classList.remove('rotate-45');
-          } else {
-            icon.classList.add('rotate-45');
-          }
-        });
-      });
-    });
-  </script>
+    </section>
+  </main>
   
   <Footer />
   

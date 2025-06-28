@@ -214,55 +214,65 @@ const meta = {
   
   <Navigation slot="nav" />
   
-  <!-- 404 Hero Section -->
-  <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 md:py-32">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-5xl md:text-6xl font-bold mb-6">404</h1>
-      <h2 class="text-3xl md:text-4xl font-semibold mb-6">Page Not Found</h2>
-      <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
-        The page you're looking for might have been moved, renamed, or doesn't exist.
-      </p>
-      <div class="flex justify-center gap-4 flex-wrap">
-        <a href="/" class="bg-white text-blue-800 font-bold px-8 py-3 rounded-md transition-all duration-300 hover:bg-gray-100">
-          Return Home
-        </a>
-        <a href="/contact/" class="bg-transparent border-2 border-white text-white font-bold px-8 py-3 rounded-md transition-all duration-300 hover:bg-white hover:text-blue-800">
-          Contact Us
-        </a>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Resources Section -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-10 text-center">Find What You're Looking For</h2>
-      
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Popular Pages</h3>
-          <ul class="space-y-3">
-            <li><a href="/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2">→</span> Home</a></li>
-            <li><a href="/services/digital-marketing/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2">→</span> Digital Marketing</a></li>
-            <li><a href="/services/app-development/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2">→</span> App Development</a></li>
-            <li><a href="/services/product-design/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2">→</span> Product Design</a></li>
-            <li><a href="/analyzer/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2">→</span> AI Visibility Analyzer</a></li>
-          </ul>
+  <!-- Main Content with Proper Semantic Structure -->
+  <main>
+    <!-- 404 Hero Section -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 md:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">404</h1>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-6">Page Not Found</h2>
+        <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
+          The page you're looking for might have been moved, renamed, or doesn't exist.
+        </p>
+        <div class="flex justify-center gap-4 flex-wrap">
+          <a href="/" class="bg-white text-blue-800 font-bold px-8 py-3 rounded-md transition-all duration-300 hover:bg-gray-100">
+            Return Home
+          </a>
+          <a href="/contact/" class="bg-transparent border-2 border-white text-white font-bold px-8 py-3 rounded-md transition-all duration-300 hover:bg-white hover:text-blue-800">
+            Contact Us
+          </a>
         </div>
+      </div>
+    </header>
+    
+    <!-- Resources Section -->
+    <section class="py-16 bg-gray-50" aria-labelledby="helpful-resources">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="text-center mb-10">
+          <h2 id="helpful-resources" class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Find What You're Looking For</h2>
+        </header>
         
-        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Get Help</h3>
-          <ul class="space-y-3">
-            <li><a href="/contact/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2">→</span> Contact Us</a></li>
-            <li><a href="/about/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2">→</span> About Our Company</a></li>
-            <li><a href="/pricing/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2">→</span> Service Pricing</a></li>
-            <li><a href="/faq/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2">→</span> Frequently Asked Questions</a></li>
-            <li><a href="/sitemap/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2">→</span> Sitemap</a></li>
-          </ul>
+        <div class="grid md:grid-cols-2 gap-8">
+          <article class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Popular Pages</h3>
+            <nav aria-label="Popular pages">
+              <ul class="space-y-3">
+                <li><a href="/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2" aria-hidden="true">→</span> Home</a></li>
+                <li><a href="/services/digital-marketing/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2" aria-hidden="true">→</span> Digital Marketing</a></li>
+                <li><a href="/services/app-development/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2" aria-hidden="true">→</span> App Development</a></li>
+                <li><a href="/services/product-design/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2" aria-hidden="true">→</span> Product Design</a></li>
+                <li><a href="/analyzer/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2" aria-hidden="true">→</span> AI Visibility Analyzer</a></li>
+                <li><a href="/pricing/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2" aria-hidden="true">→</span> Pricing</a></li>
+              </ul>
+            </nav>
+          </article>
+
+          <article class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Get Help</h3>
+            <nav aria-label="Help and support">
+              <ul class="space-y-3">
+                <li><a href="/contact/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2" aria-hidden="true">→</span> Contact Us</a></li>
+                <li><a href="/faq/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2" aria-hidden="true">→</span> Frequently Asked Questions</a></li>
+                <li><a href="/about/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2" aria-hidden="true">→</span> About Digital Visibility</a></li>
+                <li><a href="/blog/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2" aria-hidden="true">→</span> Blog & Resources</a></li>
+                <li><a href="/roi-calculator/" class="text-blue-600 hover:text-blue-800 flex items-center"><span class="mr-2" aria-hidden="true">→</span> ROI Calculator</a></li>
+              </ul>
+            </nav>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
   
   <Footer />
   
