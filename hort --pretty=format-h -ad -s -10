@@ -1,0 +1,10 @@
+a166c49 2025-06-23 Add Web3Forms and Turnstile integration to ROI Calculator - form submits to email and shows results on same page
+43cbab5 2025-06-23 Create scalable blog category system: Fix 404 errors by implementing dynamic category pages, centralized blog data management, proper SEO optimization for long-term content strategy
+9d5448b 2025-06-23 Enhance image alt text for SEO, AEO, GEO & SBO optimization: Facebook pixel tracking, blog post images, service pages, and app platform icons now include descriptive alt text optimized for Digital Visibility's Swansea location and business services
+0336231 2025-06-23 Fix SEO issues: optimize titles under 60 chars, meta descriptions under 160 chars, remove duplicates
+8b1fb80 2025-06-23 Enhance homepage with improved hero section, service links, and strategic layout restructuring
+479f72e 2025-06-22 Update why-uk-businesses-ditching-zapier-ai-conversation-automation.astro
+64c6f1a 2025-06-21 Integrate React ROI calculator with enhanced CTA and fix deployment issues
+988548f 2025-06-21 Fix deployment issues and clean up redundant files
+8a36c7b 2025-06-21 Complete site optimization: comprehensive metadata, schema, interlinking & sitemap updates
+07b400a 2025-06-13 Add comprehensive metadata and enhanced schema markup to all pages - Added meta objects, geographic tags, AI optimization tags, Open Graph/Twitter cards, and @graph structured data to 21 pages for improved SEO, AEO, and GEO

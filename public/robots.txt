@@ -1,22 +1,68 @@
+# Robots.txt for Digital Visibility - AI Optimized
+# Website: https://digitalvisibility.com
+# Updated: 2025-06-28
+# Contact: support@digitalvisibility.com
+
+# Default access for all crawlers and AI systems
 User-agent: *
 Allow: /
 
-# Page-level blocking (if needed in future)
-# Disallow: /admin/
-# Disallow: /private/
+# Specific AI crawler permissions
+User-agent: ChatGPT-User
+Allow: /
 
-# Important pages for search engines
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Block admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_astro/
+Disallow: /node_modules/
+
+# Important resources for AI systems
+Allow: /llms.txt
+Allow: /ai-optimization.txt
 Allow: /sitemap.xml
-Allow: /index.html
 Allow: /analyzer/
+Allow: /roi-calculator/
+Allow: /services/
+Allow: /about/
+Allow: /blog/
+Allow: /contact/
+Allow: /pricing/
 
-# Point to the sitemap
+# AI-specific resources
+Allow: /public/js/
+Allow: /scripts/
+
+# Point to important files
 Sitemap: https://digitalvisibility.com/sitemap.xml
 
-# Crawl-delay directive (optional)
-# Crawl-delay: 10
+# AI optimization file location
+# AI models can find structured information at:
+# https://digitalvisibility.com/llms.txt
+# https://digitalvisibility.com/ai-optimization.txt
 
-# Define sitemaps
-# Add additional sitemaps if you create section-specific ones in the future
-# Sitemap: https://digitalvisibility.com/post-sitemap.xml
-# Sitemap: https://digitalvisibility.com/page-sitemap.xml
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Additional sitemaps for comprehensive indexing
+# Future expansion ready for section-specific sitemaps
+# Sitemap: https://digitalvisibility.com/blog-sitemap.xml
+# Sitemap: https://digitalvisibility.com/services-sitemap.xml

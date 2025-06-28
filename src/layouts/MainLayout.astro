@@ -61,11 +61,12 @@ const { title = "Digital Visibility - AI Powered Business Optimization" } = Astr
     <!-- Sitemap and Robots References -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     
-    <!-- Schema.org WebSite markup with sitemap reference -->
+    <!-- Schema.org WebSite markup with proper schema properties -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
+      "@id": "https://digitalvisibility.com/#website",
       "url": "https://digitalvisibility.com",
       "name": "Digital Visibility - Human Powered, AI Accelerated Solutions",
       "description": "Human-powered digital solutions, accelerated with AI. Digital marketing with SEO+AEO+GEO, app development, and physical product design services in Swansea, Wales, and globally.",
@@ -74,7 +75,6 @@ const { title = "Digital Visibility - AI Powered Business Optimization" } = Astr
         "target": "https://digitalvisibility.com/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       },
-      "siteMapLink": "https://digitalvisibility.com/sitemap.xml",
       "publisher": {
         "@type": "Organization",
         "name": "Digital Visibility Limited",
@@ -92,7 +92,7 @@ const { title = "Digital Visibility - AI Powered Business Optimization" } = Astr
       },
       "copyrightYear": "2025",
       "datePublished": "2023-01-01",
-      "dateModified": "2025-04-29"
+      "dateModified": "2025-06-28"
     }
     </script>
     <slot name="head"/>

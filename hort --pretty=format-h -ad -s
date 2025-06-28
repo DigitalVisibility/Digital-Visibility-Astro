@@ -1,0 +1,5 @@
+a166c49 2025-06-23 Add Web3Forms and Turnstile integration to ROI Calculator - form submits to email and shows results on same page
+64c6f1a 2025-06-21 Integrate React ROI calculator with enhanced CTA and fix deployment issues
+988548f 2025-06-21 Fix deployment issues and clean up redundant files
+8a36c7b 2025-06-21 Complete site optimization: comprehensive metadata, schema, interlinking & sitemap updates
+b86c3d1 2025-06-05 feat: Add Google Analytics tracking and refocus hero section on core services - Add Google tag (gtag.js) with ID G-T7HFBLX1X1 to MainLayout.astro - Update hero section messaging to emphasize digital marketing, app development, and AI automation - Change hero paragraph to focus on digital marketing campaigns that convert, apps customers love, and AI automation - Update business journey card from physical product focus to digital domination approach - Maintain strong ROI messaging and first mover positioning
