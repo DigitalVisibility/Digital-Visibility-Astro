@@ -7,7 +7,7 @@ import Footer from '../../components/Footer.astro';
 const post = {
   title: "10 Essential SEO Strategies for 2025",
   slug: "10-essential-seo-strategies-2025",
-  description: "Master the 10 crucial SEO strategies that will dominate 2025. From AI-driven content to voice search optimization - learn how to implement these proven tactics to boost your rankings and traffic.",
+  description: "Master 10 crucial SEO strategies dominating 2025. AI-driven content to voice search optimization - implement proven tactics to boost rankings & traffic.",
   category: "SEO Strategy",
   categorySlug: "seo-strategy",
   image: "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/10-essential-seo-strategies-2025/public",
@@ -72,6 +72,7 @@ const structuredData = {
 <MainLayout 
   title={post.title + " | Digital Visibility Blog"} 
   description={post.description}
+  keywords={post.keywords.join(", ")}
   metaOgImage={post.image}
   metaTwitterImage={post.image}
 >
@@ -545,7 +546,7 @@ const structuredData = {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       "headline": "10 Essential SEO Strategies for 2025 (and how to implement them)",
-      "description": "Master the 10 crucial SEO strategies that will dominate 2025. From AI-driven content to voice search optimization - learn how to implement these proven tactics to boost your rankings and traffic.",
+      "description": "Master 10 crucial SEO strategies dominating 2025. AI-driven content to voice search optimization - implement proven tactics to boost rankings & traffic.",
       "image": "https://digitalvisibility.com/blog/seo-strategies-2025.webp",
       "datePublished": "2024-12-15",
       "dateModified": "2024-12-15",

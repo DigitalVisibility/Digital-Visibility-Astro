@@ -5,9 +5,9 @@ import Footer from '../../components/Footer.astro';
 
 // Blog post metadata
 const post = {
-  title: "Why UK Businesses Are Ditching Zapier for AI Automation",
+  title: "Why UK Businesses Ditch Zapier for AI Automation",
   slug: "why-uk-businesses-ditching-zapier-ai-conversation-automation",
-  description: "Discover why forward-thinking UK businesses are moving beyond traditional workflow builders like Zapier to revolutionary AI conversation automation. Learn how talking to AI is replacing complex drag-and-drop workflows.",
+  description: "Forward-thinking UK businesses move beyond Zapier to AI conversation automation. Learn how talking to AI replaces complex drag-and-drop workflows.",
   category: "AI Automation",
   categorySlug: "ai-automation",
   image: "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/63f967f0-ffcd-4712-4019-1247367b3500/public",
@@ -70,6 +70,7 @@ const structuredData = {
 <MainLayout 
   title={post.title + " | Digital Visibility Blog"} 
   description={post.description}
+  keywords={post.keywords.join(", ")}
   metaOgImage={post.image}
   metaTwitterImage={post.image}
 >
