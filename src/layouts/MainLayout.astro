@@ -1,11 +1,10 @@
 ---
 // Main layout component that will be used across all pages
-const { title = "Digital Visibility - AI Powered Business Optimization", description, keywords, meta } = Astro.props;
+const { title = "Digital Visibility - AI Powered Business Optimization", meta } = Astro.props;
 
 // Use meta object if provided, otherwise fall back to individual props
 const pageTitle = meta?.title || title;
-const pageDescription = meta?.description || description || "Human-powered digital solutions, accelerated with AI. Digital marketing with SEO+AEO+GEO, app development, and physical product design services in Swansea, Wales, and globally.";
-const pageKeywords = meta?.keywords || keywords || "AI, digital marketing, app development, product design, business optimization";
+const pageKeywords = meta?.keywords || "AI, digital marketing, app development, product design, business optimization";
 const pageImage = meta?.image || "/digital-visibility-logo-f.png";
 ---
 
@@ -60,7 +59,7 @@ const pageImage = meta?.image || "/digital-visibility-logo-f.png";
     <link rel="preconnect" href="https://imagedelivery.net" crossorigin>
     <title>{pageTitle}</title>
     <!-- Removed global.css stylesheet reference -->
-    <meta name="description" content={pageDescription}>
+    <!-- Individual pages handle their own meta descriptions to avoid duplicates -->
     <meta name="keywords" content={pageKeywords}>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     

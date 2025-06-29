@@ -71,11 +71,13 @@ const structuredData = {
 
 <MainLayout 
   title={post.title + " | Digital Visibility Blog"} 
-  description={post.description}
-  keywords={post.keywords.join(", ")}
   metaOgImage={post.image}
   metaTwitterImage={post.image}
 >
+  <!-- Meta Tags -->
+  <meta name="description" content={post.description} slot="head">
+  <meta name="keywords" content={post.keywords.join(", ")} slot="head">
+  
   <Navigation slot="nav" />
   
   <article class="article">

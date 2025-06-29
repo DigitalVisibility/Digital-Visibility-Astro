@@ -32,11 +32,13 @@ const post = {
 
 <MainLayout 
   title={post.title + " | Digital Visibility Blog"} 
-  description={post.description}
-  keywords="web design, AI web design, responsive design, UX design, website development, AI design tools, web design trends"
   metaOgImage={post.image}
   metaTwitterImage={post.image}
 >
+  <!-- Meta Tags -->
+  <meta name="description" content={post.description} slot="head">
+  <meta name="keywords" content="web design, AI web design, responsive design, UX design, website development, AI design tools, web design trends" slot="head">
+  
   <Navigation slot="nav" />
   
   <article class="article">
@@ -166,7 +168,7 @@ const post = {
 
 <p>Consequently, <strong>AI is reshaping web design into a playground where creativity isn't limited by skill</strong>. You don't need to sweat the technical stuff because AI tools handle code generation, layout adjustments, and even usability testing. This means <strong>design quality improves while deadlines get shorter</strong>. But beware: relying too heavily on AI without your creative touch can make sites feel generic. So, use AI as your secret weapon, not a crutch, and watch your ideas stand out in a crowded digital world.</p><h2 id="future-trends" class="text-2xl font-bold mt-8 mb-4">The Crystal Ball: Future Trends in AI Web Design</h2>  
 <p>Keep your eyes peeled because <strong>AI is set to become your creative sidekick, not your replacement</strong>. As AI gets smarter, you'll see websites that adapt instantly to who's visiting, making every click feel personal. But don't get too comfy — with great power comes <strong>the risk of over-automation killing human creativity</strong>. Still, the upside is massive: <strong>faster designs, smarter layouts, and hands-free coding</strong> mean you get to focus on the fun stuff. The future? Expect your design tools to do the heavy lifting while you bring the magic, making web design faster and more tailored than ever before.</p><h2 id="final-words" class="text-2xl font-bold mt-8 mb-4">Final Words</h2>
-<p>With this in mind, AI is shaking up web design in ways that make your life easier and your projects smarter. It's like having a digital sidekick that handles boring tasks while you get to play the creative genius. From personalising user experiences to speeding up your workflow, AI helps you build websites that please visitors and impress clients without breaking a sweat. Curious to learn more about <a href="https://thewebdesignercardiff.co.uk/blog/how-ai-is-revolutionizing-web-design/" rel="nofollow noreferrer" target="_blank">how AI is revolutionising web design?</a> Dive in and get ahead of the curve—you'll thank yourself later!</p><h2 class="text-2xl font-bold mt-8 mb-4">FAQ</h2>
+<p>With this in mind, AI is shaking up web design in ways that make your life easier and your projects smarter. It's like having a digital sidekick that handles boring tasks while you get to play the creative genius. From personalising user experiences to speeding up your workflow, AI helps you build websites that please visitors and impress clients without breaking a sweat. Curious to learn more about <a href="https://thewebdesignercardiff.co.uk/blog/how-ai-is-revolutionising-web-design/" rel="nofollow noreferrer" target="_blank">how AI is revolutionising web design?</a> Dive in and get ahead of the curve—you'll thank yourself later!</p><h2 class="text-2xl font-bold mt-8 mb-4">FAQ</h2>
 
 <h4 class="text-lg font-bold mt-6 mb-2">Q: How does AI make web design faster and easier?</h4>  
 <p>A: AI helps web designers by doing boring tasks like creating layouts, choosing colors, and making website templates quickly. Tools like Wix ADI and Bookmark's AIDA can build a whole website in minutes based on what the user wants. This saves designers a lot of time so they can focus on making the site look nice and work well.</p>
