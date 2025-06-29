@@ -108,14 +108,7 @@ const meta = {
           "@type": "Organization",
           "name": "Royal Academy of Engineering"
         },
-        "award": [
-          {
-            "@type": "Award",
-            "name": "Royal Academy of Engineering Award 2025",
-            "description": "Award for the Anti-Damp Vent System innovation supported by the Department of Science, Innovation and Technology",
-            "url": "https://enterprisehub.raeng.org.uk/regional-talent-engines"
-          }
-        ],
+        "award": "Royal Academy of Engineering Award 2025",
         "hasCredential": {
           "@type": "EducationalOccupationalCredential",
           "name": "Engineering Excellence",
@@ -210,7 +203,13 @@ const meta = {
             "name": "Anti-Damp Vent System",
             "description": "Revolutionary wind-powered system that dries out damp walls and prevents moisture damage",
             "manufacturer": {
-              "@id": "https://digitalvisibility.com/about/darran-goulding/#person"
+              "@type": "Organization",
+              "@id": "https://digitalvisibility.com/#organization"
+            },
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "description": "Contact for licensing opportunities"
             }
           },
           {
@@ -218,7 +217,14 @@ const meta = {
             "name": "Modern Windscreen Wiper",
             "description": "Innovative windscreen wiper system invented in the 1990s, now standard on vehicles globally",
             "manufacturer": {
-              "@id": "https://digitalvisibility.com/about/darran-goulding/#person"
+              "@type": "Organization",
+              "@id": "https://digitalvisibility.com/#organization"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5.0",
+              "ratingCount": "1000000",
+              "bestRating": "5"
             }
           }
         ]

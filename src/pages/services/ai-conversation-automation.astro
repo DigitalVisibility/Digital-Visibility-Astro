@@ -89,9 +89,6 @@ import Footer from '../../components/Footer.astro';
             "name": "Global Remote Services"
           }
         ],
-        "provider": {
-          "@id": "https://digitalvisibility.com/#organization"
-        },
         "award": "Royal Academy of Engineering Award 2025",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
@@ -115,7 +112,7 @@ import Footer from '../../components/Footer.astro';
               "name": "Enterprise AI Systems",
               "description": "Bespoke AI automation systems with strategic analyst specialists, RAG systems, and NDA handling. Custom quotations available for enterprise projects.",
               "priceSpecification": {
-                "@type": "PriceSpecification",
+                "@type": "UnitPriceSpecification",
                 "minPrice": "80",
                 "maxPrice": "120",
                 "priceCurrency": "GBP",
@@ -130,11 +127,6 @@ import Footer from '../../components/Footer.astro';
                 "@type": "PriceSpecification",
                 "priceCurrency": "GBP",
                 "valueAddedTaxIncluded": "true"
-              },
-              "additionalProperty": {
-                "@type": "PropertyValue",
-                "name": "Quotation Type",
-                "value": "Custom quotation based on requirements"
               }
             }
           ]

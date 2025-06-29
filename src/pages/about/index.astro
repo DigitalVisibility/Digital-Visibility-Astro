@@ -139,40 +139,26 @@ import Footer from '../../components/Footer.astro';
             "postalCode": "SA7 9BA",
             "addressCountry": "GB"
           },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "51.6553959",
-            "longitude": "-3.9336144"
-          },
           "foundingDate": "2023-01-01",
-          "founders": [
-            {
-              "@type": "Person",
-              "@id": "https://digitalvisibility.com/about/darran-goulding/#person",
-              "name": "Darran Goulding",
-              "jobTitle": "Founder & Chief Innovation Officer",
-              "url": "https://digitalvisibility.com/about/darran-goulding/",
-              "image": "https://digitalvisibility.com/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
-              "description": "Award-winning inventor and digital transformation specialist with over 15 years of experience in AI integration and business optimization. Recipient of a 2025 Royal Academy of Engineering award for innovation in product development.",
-              "sameAs": [
-                "https://www.linkedin.com/in/darrangoulding/",
-                "https://x.com/DarranGoulding"
-              ],
-              "alumniOf": {
-                "@type": "EducationalOrganization",
-                "name": "Swansea University"
-              },
-              "award": [
-                {
-                  "@type": "Award",
-                  "name": "Royal Academy of Engineering Award 2025",
-                  "description": "Recognition for innovation in product development and engineering",
-                  "url": "https://enterprisehub.raeng.org.uk/regional-talent-engines"
-                }
-              ],
-              "knowsAbout": ["Digital Marketing", "AI Integration", "Product Development", "Business Strategy", "Engineering", "Innovation Management"]
-            }
-          ],
+          "founder": {
+            "@type": "Person",
+            "@id": "https://digitalvisibility.com/about/darran-goulding/#person",
+            "name": "Darran Goulding",
+            "jobTitle": "Founder & Chief Innovation Officer",
+            "url": "https://digitalvisibility.com/about/darran-goulding/",
+            "image": "https://digitalvisibility.com/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
+            "description": "Award-winning inventor and digital transformation specialist with over 15 years of experience in AI integration and business optimization. Recipient of a 2025 Royal Academy of Engineering award for innovation in product development.",
+            "sameAs": [
+              "https://www.linkedin.com/in/darrangoulding/",
+              "https://x.com/DarranGoulding"
+            ],
+            "alumniOf": {
+              "@type": "EducationalOrganization",
+              "name": "Swansea University"
+            },
+            "award": "Royal Academy of Engineering Award 2025",
+            "knowsAbout": ["Digital Marketing", "AI Integration", "Product Development", "Business Strategy", "Engineering", "Innovation Management"]
+          },
           "slogan": "Human Powered Digital Solutions, Accelerated With AI",
           "makesOffer": [
             {
@@ -220,16 +206,8 @@ import Footer from '../../components/Footer.astro';
             }
           ],
           "award": [
-            {
-              "@type": "Award",
-              "name": "Royal Academy of Engineering Award 2025",
-              "description": "Excellence in innovation and product development"
-            },
-            {
-              "@type": "Award", 
-              "name": "#1 Digital Visibility Specialist in Swansea",
-              "description": "Achieved top rankings in just one week"
-            }
+            "Royal Academy of Engineering Award 2025",
+            "#1 Digital Visibility Specialist in Swansea"
           ],
           "memberOf": [
             {
@@ -364,30 +342,20 @@ import Footer from '../../components/Footer.astro';
         },
         "isRelatedTo": [
           {
-            "@type": "Thing",
+            "@type": "Product",
             "name": "Home Ventilation"
           },
           {
-            "@type": "Thing",
+            "@type": "Product",
             "name": "Damp Prevention"
           },
           {
-            "@type": "Thing",
+            "@type": "Product",
             "name": "Property Maintenance"
           }
         ],
         "keywords": "anti-damp vent, home ventilation, mold prevention, property health, innovative vent design",
-        "award": "Patent Pending",
-        "funder": [
-          {
-            "@type": "Organization",
-            "name": "Swansea Council Business Funding"
-          },
-          {
-            "@type": "Organization",
-            "name": "Royal Academy of Engineering"
-          }
-        ]
+        "award": "Patent Pending"
       }
     ]
   }

@@ -218,31 +218,30 @@ const meta = {
   <Footer />
 
   <!-- Schema Markup -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": `${currentCategory?.name} Blog | Digital Visibility`,
-      "description": currentCategory?.description,
-      "url": `https://digitalvisibility.com/blog/category/${category}/`,
-      "publisher": {
-        "@type": "Organization",
-        "name": "Digital Visibility Limited",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
-        }
-      },
-      "mainEntity": {
-        "@type": "ItemList",
-        "itemListElement": categoryPosts.map((post, index) => ({
-          "@type": "ListItem",
-          "position": index + 1,
-          "url": `https://digitalvisibility.com/blog/${post.slug}/`,
-          "name": post.title,
-          "description": post.excerpt
-        }))
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": `${currentCategory?.name} Blog | Digital Visibility`,
+    "description": currentCategory?.description,
+    "url": `https://digitalvisibility.com/blog/category/${category}/`,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Digital Visibility Limited",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
       }
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": categoryPosts.map((post, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "url": `https://digitalvisibility.com/blog/${post.slug}/`,
+        "name": post.title,
+        "description": post.excerpt
+      }))
     }
+  })} slot="head">
   </script>
 </MainLayout> 

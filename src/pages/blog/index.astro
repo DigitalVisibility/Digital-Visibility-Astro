@@ -265,8 +265,7 @@ const meta = {
   <Footer />
 
   <!-- Comprehensive Schema Markup -->
-  <script type="application/ld+json" slot="head">
-  {
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
       {
@@ -287,16 +286,16 @@ const meta = {
         },
         "mainEntity": {
           "@type": "ItemList",
-          "numberOfItems": ${allPosts.length},
-          "itemListElement": ${JSON.stringify(allPosts.slice(0, 10).map((post, index) => ({
+          "numberOfItems": allPosts.length,
+          "itemListElement": allPosts.slice(0, 10).map((post, index) => ({
             "@type": "ListItem",
             "position": index + 1,
             "url": `https://digitalvisibility.com/blog/${post.slug}/`,
             "name": post.title,
             "description": post.excerpt
-          })))}
+          }))
         },
-        "blogPost": ${JSON.stringify(allPosts.slice(0, 5).map(post => ({
+        "blogPost": allPosts.slice(0, 5).map(post => ({
           "@type": "BlogPosting",
           "@id": `https://digitalvisibility.com/blog/${post.slug}/#blogpost`,
           "url": `https://digitalvisibility.com/blog/${post.slug}/`,
@@ -322,7 +321,7 @@ const meta = {
           "isPartOf": {
             "@id": "https://digitalvisibility.com/blog/#blog"
           }
-        })))}
+        }))
       },
       {
         "@type": "WebPage",
@@ -402,6 +401,6 @@ const meta = {
         ]
       }
     ]
-  }
+  })} slot="head">
   </script>
 </MainLayout>

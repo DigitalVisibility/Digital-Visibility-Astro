@@ -153,7 +153,7 @@ import Footer from "../../components/Footer.astro";
             "closes": "16:00"
           }
         ],
-        "priceRange": "£40 per hour - no minimum, no maximum",
+        "priceRange": "£40-800",
         "currenciesAccepted": "GBP",
         "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer", "Direct Debit", "PayPal"],
         "areaServed": [
@@ -190,10 +190,12 @@ import Footer from "../../components/Footer.astro";
               "description": "Pay-as-you-go digital marketing services at £40 per hour. Use hours across any service: SEO, AEO, GEO, AI automation, content creation, web design, social media, and more.",
               "price": "40",
               "priceCurrency": "GBP",
-              "unitCode": "HUR",
               "availability": "https://schema.org/InStock",
               "validFrom": "2023-01-01",
-              "category": "Digital Marketing Services"
+              "category": "Digital Marketing Services",
+              "seller": {
+                "@id": "https://digitalvisibility.com/#organization"
+              }
             },
             {
               "@type": "Offer",
@@ -203,11 +205,14 @@ import Footer from "../../components/Footer.astro";
               "priceSpecification": {
                 "@type": "PriceSpecification",
                 "priceCurrency": "GBP",
-                "valueAddedTaxIncluded": "true"
+                "valueAddedTaxIncluded": true
               },
               "availability": "https://schema.org/InStock",
               "validFrom": "2023-01-01",
               "category": "Specialist Digital Marketing Services",
+              "seller": {
+                "@id": "https://digitalvisibility.com/#organization"
+              },
               "additionalProperty": [
                 {
                   "@type": "PropertyValue",
@@ -250,7 +255,7 @@ import Footer from "../../components/Footer.astro";
           "eligibleQuantity": {
             "@type": "QuantitativeValue",
             "value": 1,
-            "unitCode": "HUR"
+            "unitText": "hour"
           },
           "priceValidUntil": "2026-12-31",
           "availability": "https://schema.org/InStock",
@@ -286,7 +291,7 @@ import Footer from "../../components/Footer.astro";
           "eligibleQuantity": {
             "@type": "QuantitativeValue",
             "value": 3,
-            "unitCode": "HUR"
+            "unitText": "hours"
           },
           "priceValidUntil": "2026-12-31",
           "availability": "https://schema.org/InStock",
@@ -327,7 +332,7 @@ import Footer from "../../components/Footer.astro";
             "@type": "QuantitativeValue",
             "minValue": 5,
             "maxValue": 10,
-            "unitCode": "HUR"
+            "unitText": "hours"
           },
           "priceValidUntil": "2026-12-31",
           "availability": "https://schema.org/InStock",
@@ -366,7 +371,7 @@ import Footer from "../../components/Footer.astro";
           "eligibleQuantity": {
             "@type": "QuantitativeValue",
             "minValue": 20,
-            "unitCode": "HUR"
+            "unitText": "hours"
           },
           "priceValidUntil": "2026-12-31",
           "availability": "https://schema.org/InStock",
@@ -427,7 +432,7 @@ import Footer from "../../components/Footer.astro";
         "eligibleDuration": {
           "@type": "QuantitativeValue",
           "value": 12,
-          "unitCode": "MON"
+          "unitText": "months"
         },
         "itemOffered": {
           "@type": "Product",
@@ -450,7 +455,7 @@ import Footer from "../../components/Footer.astro";
         "eligibleDuration": {
           "@type": "QuantitativeValue",
           "value": 12,
-          "unitCode": "MON"
+          "unitText": "months"
         },
         "itemOffered": {
           "@type": "Product",

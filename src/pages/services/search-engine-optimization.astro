@@ -86,10 +86,10 @@ export const prerender = false;
             "@type": "GeoCircle",
             "geoMidpoint": {
               "@type": "GeoCoordinates",
-              "latitude": "51.6214",
-              "longitude": "-3.9436"
+              "latitude": 51.6214,
+              "longitude": -3.9436
             },
-            "geoRadius": "50 km"
+            "geoRadius": "50000"
           },
           {
             "@type": "City",
@@ -113,7 +113,12 @@ export const prerender = false;
             "@type": "UnitPriceSpecification",
             "price": "200.00",
             "priceCurrency": "GBP",
-            "unitText": "per month"
+            "unitText": "per month",
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitText": "month"
+            }
           },
           "availability": "https://schema.org/InStock",
           "description": "Monthly search engine optimization services delivering proven Google rankings and organic traffic growth",

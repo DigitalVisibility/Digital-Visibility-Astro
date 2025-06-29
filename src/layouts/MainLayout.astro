@@ -67,39 +67,356 @@ const pageImage = meta?.image || "/digital-visibility-logo-f.png";
     <!-- Sitemap and Robots References -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     
-    <!-- Schema.org WebSite markup with proper schema properties -->
-    <script type="application/ld+json">
-    {
+    <!-- Schema.org WebSite and Organization markup with proper schema properties -->
+    <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": "https://digitalvisibility.com/#website",
-      "url": "https://digitalvisibility.com",
-      "name": "Digital Visibility - Human Powered, AI Accelerated Solutions",
-      "description": `${pageDescription}`,
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://digitalvisibility.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Digital Visibility Limited",
-        "logo": {
-          "@type": "ImageObject",
-          "url": `${pageImage.startsWith('http') ? pageImage : 'https://digitalvisibility.com' + pageImage}`,
-          "width": "180",
-          "height": "60"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization",
+          "name": "Digital Visibility",
+          "legalName": "Digital Visibility Limited",
+          "alternateName": ["Digital Visibility Limited", "Digital Visibility Ltd"],
+          "url": "https://digitalvisibility.com",
+          "slogan": "Get Discovered Everywhere with Supercharged Engine Optimization",
+          "description": "Digital Visibility is Swansea's leading SEO agency specializing in Search Engine Optimization, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO). We help businesses get found on Google search and AI platforms like ChatGPT, Perplexity, and Microsoft Bing. Our comprehensive approach includes free high-converting websites, AI automations that pay for themselves, and flexible £40/hour services with no contracts. Serving businesses in Swansea, South Wales, across the UK, and globally.",
+          "foundingDate": "2023-01-01",
+          "founder": {
+            "@type": "Person",
+            "name": "Darran Goulding",
+            "jobTitle": "CEO & Founder",
+            "url": "https://digitalvisibility.com/about/darran-goulding/",
+            "sameAs": [
+              "https://www.linkedin.com/in/darrangoulding/",
+              "https://x.com/DarranGoulding"
+            ],
+            "knowsAbout": [
+              "Supercharged Engine Optimization",
+              "AI Search Technology",
+              "Business Strategy",
+              "Digital Marketing"
+            ],
+            "alumniOf": {
+              "name": "Swansea University"
+            },
+            "award": "Royal Academy of Engineering Award 2025",
+            "funder": [
+              {
+                "name": "Swansea Council Business Funding",
+                "url": "https://www.swansea.gov.uk/businessfunding"
+              },
+              {
+                "name": "Royal Academy of Engineering",
+                "url": "https://enterprisehub.raeng.org.uk/"
+              }
+            ]
+          },
+          "employee": {
+            "@type": "QuantitativeValue",
+            "minValue": 10,
+            "maxValue": 25
+          },
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://digitalvisibility.com/digital-visibility-logo-f.png",
+            "width": 180,
+            "height": 60,
+            "caption": "Digital Visibility Logo"
+          },
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/supercharged-seo-swansea/public",
+            "width": 1200,
+            "height": 630,
+            "caption": "Supercharged Engine Optimization Services by Digital Visibility"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "235 Peniel Green Road",
+            "addressLocality": "Llansamlet",
+            "addressRegion": "Swansea",
+            "postalCode": "SA7 9BA",
+            "addressCountry": "GB"
+          },
+          "areaServed": [
+            {
+              "name": "Swansea",
+              "sameAs": "https://en.wikipedia.org/wiki/Swansea"
+            },
+            {
+              "name": "Cardiff",
+              "sameAs": "https://en.wikipedia.org/wiki/Cardiff"
+            },
+            {
+              "name": "South Wales",
+              "sameAs": "https://en.wikipedia.org/wiki/South_Wales"
+            },
+            {
+              "name": "Wales",
+              "sameAs": "https://en.wikipedia.org/wiki/Wales"
+            },
+            {
+              "name": "United Kingdom",
+              "sameAs": "https://en.wikipedia.org/wiki/United_Kingdom"
+            },
+            {
+              "name": "International",
+              "description": "Remote Supercharged Engine Optimization services available globally"
+            }
+          ],
+          "award": [
+            "Royal Academy of Engineering Award 2025",
+            "#1 Supercharged Engine Optimization Specialist in Swansea"
+          ],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+44-01792-002497",
+              "contactType": "Customer Support",
+              "email": "support@digitalvisibility.com",
+              "availableLanguage": ["English", "Welsh"],
+              "hoursAvailable": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "20:00"
+              }
+            },
+            {
+              "telephone": "+44-07725-817197",
+              "contactType": "Mobile/WhatsApp",
+              "availableLanguage": ["English", "Welsh"]
+            }
+          ],
+          "sameAs": [
+            "https://www.facebook.com/people/Digital-Visibility/61572995410124/",
+            "https://www.linkedin.com/company/digitalvisibilityuk/",
+            "https://x.com/DigitalVisiUK",
+            "https://www.instagram.com/digitalvisibilityuk/",
+            "https://www.tiktok.com/@digitalvisibilityuk",
+            "https://uk.pinterest.com/digitalvisibilityuk/"
+          ],
+          "knowsAbout": [
+            "Supercharged Engine Optimization",
+            "Local Search Optimization",
+            "Business Automation",
+            "AI Marketing Tools",
+            "Free Website Development",
+            "Conversion Rate Optimization",
+            "Social Media Marketing",
+            "Content Marketing",
+            "Pay-Per-Click Advertising",
+            "Mobile App Development",
+            "E-commerce Solutions",
+            "Search Engine Optimization (SEO)",
+            "WordPress Development",
+            "API Integration",
+            "Business Analytics",
+            "Answer Engine Optimization (AEO)",
+            "Generative Engine Optimization (GEO)",
+            "Search Brand Optimization (SBO)",
+            "AI Search Engine Optimization",
+            "ChatGPT Optimization",
+            "Perplexity AI Optimization",
+            "Microsoft Bing AI Optimization",
+            "Digital Marketing Strategy"
+          ],
+          "memberOf": [
+            {
+              "name": "Swansea Business Club"
+            },
+            {
+              "name": "Welsh Digital Marketing Association"
+            }
+          ]
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://digitalvisibility.com/#localbusiness",
+          "name": "Digital Visibility - Supercharged Engine Optimization",
+          "alternateName": "Digital Visibility Swansea",
+          "description": "Swansea's leading SEO agency specializing in Search Engine Optimization, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO). Expert AI search optimization for Google, ChatGPT, Perplexity, and Microsoft Bing serving businesses across South Wales.",
+          "url": "https://digitalvisibility.com",
+          "telephone": "+44-01792-002497",
+          "email": "support@digitalvisibility.com",
+          "priceRange": "£40-£2995",
+          "currenciesAccepted": "GBP",
+          "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer", "Direct Debit"],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "235 Peniel Green Road",
+            "addressLocality": "Llansamlet",
+            "addressRegion": "Swansea",
+            "postalCode": "SA7 9BA",
+            "addressCountry": "GB"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 51.6214,
+            "longitude": -3.9436
+          },
+          "areaServed": [
+            {
+              "name": "Swansea"
+            },
+            {
+              "name": "South Wales"
+            },
+            {
+              "name": "United Kingdom"
+            }
+          ],
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "20:00"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 5.0,
+            "reviewCount": 47,
+            "bestRating": 5,
+            "worstRating": 1
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://digitalvisibility.com/#webpage",
+          "url": "https://digitalvisibility.com/",
+          "name": "SEO Services Swansea | Search Engine Optimization | AEO, GEO & SBO Expert | Digital Visibility",
+          "description": "Revolutionary SEO+AEO+GEO+SBO strategy gets your business recommended by AI and ranked on search engines. Free website + automations that pay for themselves.",
+          "inLanguage": "en-GB",
+          "datePublished": "2025-04-17",
+          "dateModified": "2025-06-23",
+          "about": {
+            "@id": "https://digitalvisibility.com/#organization"
+          },
+          "isPartOf": {
+            "@id": "https://digitalvisibility.com/#website"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/supercharged-seo-swansea/public",
+            "width": 1200,
+            "height": 630
+          },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", "h2", ".hero-description"]
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://digitalvisibility.com/#supercharged-engine-optimization",
+          "name": "Search Engine Optimization & AI Search Services",
+          "alternateName": [
+            "SEO Services Swansea",
+            "Answer Engine Optimization AEO",
+            "Generative Engine Optimization GEO",
+            "Search Brand Optimization SBO",
+            "AI Search Optimization",
+            "Supercharged Engine Optimization"
+          ],
+          "description": "Comprehensive search optimization services combining traditional Search Engine Optimization (SEO), trending Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO). Get your Swansea business found on Google, AI platforms like ChatGPT, Perplexity, and Microsoft Bing AI search.",
+          "serviceType": "Digital Marketing",
+          "category": ["SEO", "AEO", "GEO", "SBO", "AI Search Optimization", "Digital Marketing"],
+          "areaServed": [
+            {
+              "name": "Swansea"
+            },
+            {
+              "name": "South Wales"
+            },
+            {
+              "name": "United Kingdom"
+            }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Supercharged Engine Optimization Services",
+            "itemListElement": [
+              {
+                "itemOffered": {
+                  "name": "Search Engine Optimization (SEO)",
+                  "description": "Traditional search engine optimization for Google, Bing, and other search engines"
+                }
+              },
+              {
+                "itemOffered": {
+                  "name": "Answer Engine Optimization (AEO)",
+                  "description": "Optimization for AI platforms like ChatGPT, Perplexity, and AI search assistants"
+                }
+              },
+              {
+                "itemOffered": {
+                  "name": "Generative Engine Optimization (GEO)",
+                  "description": "Optimization for AI-generated content and recommendations"
+                }
+              },
+              {
+                "itemOffered": {
+                  "name": "Search Brand Optimization (SBO)",
+                  "description": "Brand visibility optimization across all search platforms and AI systems"
+                }
+              },
+              {
+                "itemOffered": {
+                  "name": "Free Website Development",
+                  "description": "High-converting website worth £2,995 included with optimization services"
+                }
+              },
+              {
+                "itemOffered": {
+                  "name": "AI Business Automation",
+                  "description": "Smart automations that handle marketing, operations, and customer service"
+                }
+              }
+            ]
+          },
+          "offers": {
+            "@type": "Offer",
+            "description": "Hourly rate for Supercharged Engine Optimization services, no contracts required",
+            "price": "40.00",
+            "priceCurrency": "GBP",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2023-01-01",
+            "url": "https://digitalvisibility.com/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": 40.00,
+              "priceCurrency": "GBP",
+              "unitText": "per hour"
+            },
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
+          },
+          "provider": {
+            "@id": "https://digitalvisibility.com/#organization"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://digitalvisibility.com/#website",
+          "url": "https://digitalvisibility.com",
+          "name": "Digital Visibility - Supercharged Engine Optimization",
+          "description": "Swansea's leading Supercharged Engine Optimization agency. Revolutionary SEO+AEO+GEO+SBO strategies to get your business discovered everywhere.",
+          "inLanguage": "en-GB",
+          "publisher": {
+            "@id": "https://digitalvisibility.com/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://digitalvisibility.com/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
         }
-      },
-      "inLanguage": "en-GB",
-      "copyrightHolder": {
-        "@type": "Organization",
-        "name": "Digital Visibility Limited"
-      },
-      "copyrightYear": "2025",
-      "datePublished": "2023-01-01",
-      "dateModified": "2025-06-28"
-    }
+      ]
+    })}>
     </script>
     <slot name="head"/>
 </head>
