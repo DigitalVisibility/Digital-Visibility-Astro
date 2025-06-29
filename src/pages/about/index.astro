@@ -105,132 +105,45 @@ import Footer from '../../components/Footer.astro';
         },
         "mainEntity": {
           "@type": "Organization",
-          "@id": "https://digitalvisibility.com/#organization",
+          "@id": "https://digitalvisibility.com/about/#organization",
           "name": "Digital Visibility",
-          "alternateName": ["Digital Visibility Limited", "Digital Visibility Ltd"],
-          "legalName": "Digital Visibility Limited",
-          "description": "Digital Visibility is a people-powered digital marketing and product development agency based in Swansea, Wales. We specialize in complete business transformation through SEO+AEO+GEO optimization, custom app development, and physical product design. Our integrated approach combines human expertise with AI acceleration to deliver measurable results and sustainable growth for businesses across the UK and globally.",
+          "description": "Award-winning digital marketing agency specializing in Supercharged Engine Optimization",
           "url": "https://digitalvisibility.com/about/",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://digitalvisibility.com/digital-visibility-logo-f.png",
-            "width": "180",
-            "height": "60"
+          "foundingDate": "2023-01-01",
+          "founder": {
+            "@type": "Person",
+            "name": "Darran Goulding",
+            "jobTitle": "CEO & Founder",
+            "url": "https://digitalvisibility.com/about/darran-goulding/"
           },
-          "image": [
-            {
-              "@type": "ImageObject",
-              "url": "https://digitalvisibility.com/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
-              "caption": "Darran Goulding receiving Royal Academy of Engineering Award"
-            },
-            {
-              "@type": "ImageObject", 
-              "url": "https://digitalvisibility.com/digital-visibility-team.webp",
-              "caption": "Digital Visibility Team"
-            }
-          ],
-          "telephone": "+44-01792-002497",
-          "email": "support@digitalvisibility.com",
+          "employee": {
+            "@type": "QuantitativeValue",
+            "minValue": 10,
+            "maxValue": 25
+          },
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "235 Peniel Green Road",
             "addressLocality": "Llansamlet",
-            "addressRegion": "Swansea",
+            "addressRegion": "Swansea", 
             "postalCode": "SA7 9BA",
             "addressCountry": "GB"
           },
-          "foundingDate": "2023-01-01",
-          "founder": {
-            "@type": "Person",
-            "@id": "https://digitalvisibility.com/about/darran-goulding/#person",
-            "name": "Darran Goulding",
-            "jobTitle": "Founder & Chief Innovation Officer",
-            "url": "https://digitalvisibility.com/about/darran-goulding/",
-            "image": "https://digitalvisibility.com/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
-            "description": "Award-winning inventor and digital transformation specialist with over 15 years of experience in AI integration and business optimization. Recipient of a 2025 Royal Academy of Engineering award for innovation in product development.",
-            "sameAs": [
-              "https://www.linkedin.com/in/darrangoulding/",
-              "https://x.com/DarranGoulding"
-            ],
-            "alumniOf": {
-              "@type": "EducationalOrganization",
-              "name": "Swansea University"
-            },
-            "award": "Royal Academy of Engineering Award 2025",
-            "knowsAbout": ["Digital Marketing", "AI Integration", "Product Development", "Business Strategy", "Engineering", "Innovation Management"]
-          },
-          "slogan": "Human Powered Digital Solutions, Accelerated With AI",
-          "makesOffer": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Digital Marketing Services",
-                "description": "Comprehensive digital marketing including SEO, AEO, GEO, social media, and content creation"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "App Development",
-                "description": "Custom mobile and web application development"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Product Design & Engineering",
-                "description": "Physical product design with CAD/CAE and prototyping"
-              }
-            }
-          ],
           "areaServed": [
             {
-              "@type": "City",
-              "name": "Swansea"
+              "name": "Swansea",
+              "sameAs": "https://en.wikipedia.org/wiki/Swansea"
             },
             {
-              "@type": "AdministrativeArea",
-              "name": "Wales"
+              "name": "Wales",
+              "sameAs": "https://en.wikipedia.org/wiki/Wales"
             },
             {
-              "@type": "Country",
-              "name": "United Kingdom"
-            },
-            {
-              "@type": "Place",
-              "name": "International",
-              "description": "Remote services available globally"
+              "name": "United Kingdom", 
+              "sameAs": "https://en.wikipedia.org/wiki/United_Kingdom"
             }
           ],
-          "award": [
-            "Royal Academy of Engineering Award 2025",
-            "#1 Digital Visibility Specialist in Swansea"
-          ],
-          "memberOf": [
-            {
-              "@type": "Organization",
-              "name": "Swansea Business Club"
-            },
-            {
-              "@type": "Organization",
-              "name": "Welsh Digital Marketing Association"
-            }
-          ],
-          "funder": [
-            {
-              "@type": "Organization",
-              "name": "Swansea Council",
-              "url": "https://www.swansea.gov.uk/businessfunding"
-            },
-            {
-              "@type": "Organization",
-              "name": "Royal Academy of Engineering",
-              "url": "https://enterprisehub.raeng.org.uk/"
-            }
-          ]
+          "award": "Award-winning team"
         }
       },
       {
