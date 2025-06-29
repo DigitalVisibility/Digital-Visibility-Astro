@@ -60,7 +60,7 @@ export const prerender = false;
   
   <!-- Trust & Authority Signals -->
   <meta name="business-founding-date" content="2023-01-01" slot="head">
-  <meta name="business-awards" content="Award-winning, Top SEO Expert Swansea" slot="head">
+  <meta name="business-awards" content="Award-winning SEO Expert Swansea" slot="head">
   <meta name="business-certifications" content="Google Partner, Google Analytics Certified, Google Search Console Expert" slot="head">
   
   <!-- Performance Optimization -->
@@ -129,44 +129,24 @@ export const prerender = false;
         },
         "serviceType": "Search Engine Optimization",
         "category": ["SEO", "Digital Marketing", "Google Optimization", "Organic Search"],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Search Engine Optimization Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Technical SEO Audit",
-                "description": "Comprehensive technical analysis and optimization"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Keyword Research & Strategy",
-                "description": "In-depth keyword analysis and content planning"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "On-Page SEO Optimization",
-                "description": "Complete on-page optimization and content enhancement"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Local SEO Optimization",
-                "description": "Google Business Profile and local search optimization"
-              }
-            }
-          ]
-        }
+        "serviceOutput": [
+          "Improved Google Rankings",
+          "Increased Organic Traffic",
+          "Better User Experience",
+          "Higher Conversion Rates",
+          "Technical SEO Audit Report",
+          "Keyword Strategy Document",
+          "Monthly Performance Reports"
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/services/search-engine-optimization/",
+          "servicePhone": "+44 7450 247 479",
+          "availableLanguage": ["en-GB", "cy"]
+        },
+        "additionalType": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+        "termsOfService": "https://digitalvisibility.com/terms-of-service/",
+        "award": "Award-winning SEO Agency in Swansea"
       },
       {
         "@type": "WebPage",
