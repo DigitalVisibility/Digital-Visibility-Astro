@@ -1,0 +1,581 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+
+// Blog post metadata
+const post = {
+  title: "How Should Your Business Adapt to Google's Latest Search Engine Update?",
+  slug: "how-should-your-business-adapt-to-googles-latest-search-engine-update",
+  description: "Discover how your business can adapt to Google's latest June 2025 search engine update through expert-led content, technical optimization, and multi-platform visibility.",
+  category: "SEO",
+  categorySlug: "seo",
+  image: "/how should business adapt to googles latest update.webp",
+  alt: "Google June 2025 core update analysis showing search engine algorithm changes and business adaptation strategies for SEO optimization",
+  publishDate: "July 2, 2025",
+  updatedDate: "July 2, 2025",
+  author: "Darran Goulding",
+  authorImage: "/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
+  authorBio: "SEO Expert & Founder of Digital Visibility",
+  timeToRead: "18 min read",
+  keywords: ["Google core update", "Google June 2025 update", "search engine optimization", "SEO strategy", "algorithm changes", "business adaptation", "technical SEO", "content strategy", "multi-platform visibility", "E-A-T", "Core Web Vitals", "AI search optimization"],
+  tableOfContents: [
+    { id: "what-is-june-2025-update", title: "What is Google's June 2025 Core Update?" },
+    { id: "why-update-matters", title: "Why does this update matter for your business?" },
+    { id: "revamp-content-strategy", title: "How to revamp your content strategy right now" },
+    { id: "technical-tweaks", title: "What technical tweaks can boost your performance?" },
+    { id: "industry-effects", title: "How do core updates affect different industries?" },
+    { id: "expanding-visibility", title: "Expanding visibility beyond traditional search" },
+    { id: "what-to-do-now", title: "What Should Businesses Do Right Now?" },
+    { id: "long-term-strategy", title: "Why focus on long-term strategy over quick fixes?" },
+    { id: "expert-recommendations", title: "Expert Recommendations from Digital Visibility" },
+    { id: "conclusion", title: "Conclusion" }
+  ]
+};
+
+// Schema.org structured data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.title,
+  "description": post.description,
+  "image": post.image,
+  "author": {
+    "@type": "Person",
+    "name": post.author,
+    "image": `https://digitalvisibility.com${post.authorImage}`,
+    "url": "https://digitalvisibility.com/about/darran-goulding/",
+    "sameAs": [
+      "https://www.linkedin.com/in/darrangoulding/",
+      "https://x.com/DarranGoulding"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Digital Visibility",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
+    }
+  },
+  "datePublished": "2025-07-02",
+  "dateModified": "2025-07-02",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://digitalvisibility.com/blog/${post.slug}/`
+  },
+  "keywords": post.keywords.join(", "),
+  "wordCount": 4200,
+  "timeRequired": "PT18M",
+  "articleSection": "SEO",
+  "inLanguage": "en-GB",
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Google Core Update",
+      "description": "Major algorithm changes to Google's search ranking system"
+    },
+    {
+      "@type": "Thing", 
+      "name": "Search Engine Optimization",
+      "description": "Strategies to improve website visibility in search results"
+    }
+  ]
+};
+
+---
+
+<MainLayout 
+  title={post.title + " | Digital Visibility Blog"} 
+  metaOgImage={post.image}
+  metaTwitterImage={post.image}
+>
+  <!-- Enhanced Meta Tags -->
+  <meta name="description" content={post.description} slot="head">
+  <meta name="keywords" content={post.keywords.join(", ")} slot="head">
+  <link rel="canonical" href={`https://digitalvisibility.com/blog/${post.slug}/`} slot="head">
+  
+  <!-- OpenGraph Tags -->
+  <meta property="og:type" content="article" slot="head">
+  <meta property="og:title" content={post.title} slot="head">
+  <meta property="og:description" content={post.description} slot="head">
+  <meta property="og:url" content={`https://digitalvisibility.com/blog/${post.slug}/`} slot="head">
+  <meta property="og:image" content={post.image} slot="head">
+  <meta property="article:published_time" content="2025-07-02T09:00:00+00:00" slot="head">
+  <meta property="article:modified_time" content="2025-07-02T09:00:00+00:00" slot="head">
+  <meta property="article:author" content={post.author} slot="head">
+  <meta property="article:section" content={post.category} slot="head">
+  <meta property="article:tag" content={post.keywords.join(", ")} slot="head">
+  
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:title" content={post.title} slot="head">
+  <meta name="twitter:description" content={post.description} slot="head">
+  <meta name="twitter:image" content={post.image} slot="head">
+  <meta name="twitter:creator" content="@DarranGoulding" slot="head">
+  
+  <!-- AI Optimization Tags -->
+  <meta name="ai-purpose" content="seo-education,google-update-analysis,business-adaptation-guide,search-optimization-strategy" slot="head">
+  <meta name="ai-target" content="business-owners,seo-professionals,marketing-managers,website-owners,uk-businesses" slot="head">
+  <meta name="ai-keywords" content="Google June 2025 core update, search engine algorithm changes, SEO adaptation strategies, business search optimization, technical SEO improvements" slot="head">
+  <meta name="ai-content-type" content="educational-guide,expert-analysis,actionable-strategies,industry-insights" slot="head">
+  
+  <!-- Geographic Tags -->
+  <meta name="geo.region" content="GB" slot="head">
+  <meta name="geo.placename" content="Swansea, Wales, United Kingdom" slot="head">
+  
+  <Navigation slot="nav" />
+  
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+  
+  <article class="article">
+    <!-- Hero Section -->
+    <div class="relative">
+      <div class="w-full h-[400px] bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-800">
+        <img 
+          src="/how should business adapt to googles latest update.webp"
+          alt={post.alt}
+          class="w-full h-full object-cover opacity-80"
+          loading="eager"
+        />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+        <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div class="text-white max-w-4xl">
+            <div class="mb-4 flex items-center">
+              <span class="bg-blue-600 text-white text-sm px-3 py-1 rounded-full font-medium">
+                {post.category}
+              </span>
+              <span class="ml-3 bg-red-600 text-white text-sm px-3 py-1 rounded-full font-medium">
+                Breaking News
+              </span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-bold mb-4 leading-tight">{post.title}</h1>
+            <p class="text-xl text-gray-200 leading-relaxed">
+              {post.description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Content Area -->
+    <div class="py-8 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Publication info -->
+        <div class="mb-8 pb-4 border-b border-gray-200 flex flex-wrap items-center justify-between">
+          <div class="flex items-center space-x-4 mb-4 sm:mb-0">
+            <div class="flex items-center">
+              <i data-lucide="calendar" class="w-4 h-4 mr-1 text-gray-500"></i>
+              <span class="text-sm text-gray-600">{post.publishDate}</span>
+            </div>
+            <div class="flex items-center">
+              <i data-lucide="clock" class="w-4 h-4 mr-1 text-gray-500"></i>
+              <span class="text-sm text-gray-600">{post.timeToRead}</span>
+            </div>
+            <div class="flex items-center">
+              <img src={post.authorImage} alt={post.author} class="w-8 h-8 rounded-full mr-2" />
+              <span class="text-sm text-gray-600">{post.author}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <!-- Main Content -->
+          <div class="lg:col-span-8 order-2 lg:order-1">
+            <div class="prose prose-lg max-w-none">
+
+<!-- Blog Content Starts Here -->
+<p>To adapt to Google's latest search engine update, focus on expert-led content that satisfies user intent, optimize site speed and mobile experience, and expand visibility across AI assistants, voice platforms, and local searches. Prioritize continuous audits over quick fixes to secure sustainable rankings. This expert-first approach aligns with Google's AI-driven E-A-T requirements and positions your brand for long-term success.</p>
+
+<p><strong>The search landscape has shifted once again.</strong> On June 30, 2025, Google announced the rollout of its June 2025 core update. This is the second major algorithm change this year following the March update. With an expected three-week rollout period (longer than the usual two weeks), this update is already creating significant ripples across search rankings worldwide.</p>
+
+<p>As digital marketing specialists who've successfully navigated countless algorithm changes, we at Digital Visibility understand the anxiety these updates can create. Our <a href="/services/digital-marketing/">SEO+AEO+GEO optimization strategies</a> have helped clients achieve #1, #2, and #3 rankings in just one week, and we're here to help you understand what this latest update means for your business.</p>
+
+<h2 class="text-2xl font-bold mt-8 mb-4">What You'll Learn From This Blog</h2>
+
+<p>This comprehensive guide will walk you through everything you need to know about adapting to Google's June 2025 core update:</p>
+
+<ul>
+<li>Why this core update shifts the SEO landscape and what it means for your visibility</li>
+<li>How to overhaul your content strategy to meet AI-powered ranking signals</li>
+<li>Technical tweaks that boost speed, user experience, and Core Web Vitals</li>
+<li>Ways to extend reach across voice search, AI assistants, and local discovery</li>
+</ul>
+
+<h2 id="what-is-june-2025-update" class="text-2xl font-bold mt-8 mb-4">What is Google's June 2025 Core Update?</h2>
+
+<p>Google's June 2025 core update started on June 30, 2025, at 7:34 AM PDT. This is the second major algorithm change of 2025, following the March update that ended on March 27. The rollout will take three weeks to complete, which is longer than the usual two weeks.</p>
+
+<p>Unlike targeted updates that address specific issues like spam or product reviews, core updates involve broad changes to Google's ranking systems. These updates are designed to improve Google's ability to surface helpful, high-quality content in search. They don't target specific websites or punish bad content. Instead, they help Google find and show better content that answers what people are looking for.</p>
+
+<div class="my-8">
+<img 
+  src="/Googles latest update, what really matters.webp" 
+  alt="Google's June 2025 core update timeline infographic showing key dates, rollout phases, and expected impact on search results rankings" 
+  class="w-full rounded-lg shadow-lg"
+  loading="lazy"
+/>
+</div>
+
+<h2 id="why-update-matters" class="text-2xl font-bold mt-8 mb-4">Why does this update matter for your business?</h2>
+
+<p>This update reshapes how Google ranks content by emphasizing expertise, technical performance, and AI signals. The changes represent a fundamental shift in how search engines evaluate and rank websites.</p>
+
+<p>Google's AI-driven ranking signals have become much stronger, meaning:</p>
+
+<ul>
+<li>Enhanced AI-driven ranking that weeds out thin, fluff-filled pages</li>
+<li>Stronger E-A-T requirements demanding expert voices and trusted sources</li>
+<li>User experience and mobile optimization now tied directly to rankings</li>
+</ul>
+
+<p>Remember when one quick tweak sent your traffic soaring? Those days are gone. Google wants real expertise, not quick tricks.</p>
+
+<p>The search giant is prioritizing content that demonstrates genuine expertise, authoritativeness, and trustworthiness. This is especially important for businesses in healthcare, finance, and professional services where wrong information could hurt people.</p>
+
+<h2 id="revamp-content-strategy" class="text-2xl font-bold mt-8 mb-4">How to revamp your content strategy right now</h2>
+
+<p>High-quality, expert-driven content wins in this new landscape. The days of creating lots of thin, keyword-stuffed content are over. Agencies and businesses must focus on creating comprehensive, expert-driven content that shows real authority.</p>
+
+<p>Here's your action plan for content strategy overhaul:</p>
+
+<ul>
+<li>Audit existing content for accuracy, depth, and author credentials</li>
+<li>Update or remove outdated articles that underperform</li>
+<li>Add clear author bios, citations, and FAQs framed as voice-search queries</li>
+<li>Integrate long-tail, question-based phrases like "how should your business adapt to Google's latest search engine update?"</li>
+</ul>
+
+<p>A single well-crafted guide can outperform ten generic posts if it truly serves your reader.</p>
+
+<p>Our AEO (Answer Engine Optimization) approach becomes even more valuable as Google prioritizes content that can effectively answer user questions across traditional search and AI platforms. Content should be written by experts who genuinely understand the topic. It must provide unique value that visitors can't find elsewhere.</p>
+
+<div class="my-8">
+<img 
+  src="/webpage adjustments screen shot.webp" 
+  alt="Content strategy flowchart showing the process of content audit, expert review, optimization for E-A-T signals, and multi-platform distribution for maximum visibility" 
+  class="w-full rounded-lg shadow-lg"
+  loading="lazy"
+/>
+</div>
+
+<h3 class="text-xl font-bold mt-6 mb-3">Content Quality Standards</h3>
+
+<p>Your content needs to meet these new standards:</p>
+
+<ul>
+<li>Written by people who know the topic well</li>
+<li>Provides unique value that other websites don't offer</li>
+<li>Answers questions completely and helps people solve problems</li>
+<li>Created for humans first, not search engines</li>
+<li>Includes proper citations and references to authoritative sources</li>
+</ul>
+
+<h2 id="technical-tweaks" class="text-2xl font-bold mt-8 mb-4">What technical tweaks can boost your performance?</h2>
+
+<p>Technical excellence is non-negotiable under Google's updated metrics. With the update's emphasis on user experience, businesses must ensure their websites meet Google's technical standards.</p>
+
+<p>Think of your site as a sports car. No matter how great the engine, it won't win races if the wheels are flat.</p>
+
+<p>Essential technical improvements include:</p>
+
+<ul>
+<li>Implement mobile-first responsive design that feels native on any device</li>
+<li>Optimize page speed: compress images, defer scripts, and leverage caching</li>
+<li>Monitor and improve Core Web Vitals: Largest Contentful Paint, Interaction to Next Paint, Cumulative Layout Shift</li>
+<li>Apply schema markup for rich results and AI visibility</li>
+</ul>
+
+<p>Google recently replaced First Input Delay (FID) with Interaction to Next Paint (INP), making website speed and responsiveness even more important. Your website should load in under 3 seconds and work perfectly on mobile phones.</p>
+
+<div class="my-8">
+<img 
+  src="/inpact of tweeks on core web vitals.webp" 
+  alt="Technical SEO dashboard showing Core Web Vitals scores, page speed metrics, mobile optimization status, and schema markup implementation for optimal search performance" 
+  class="w-full rounded-lg shadow-lg"
+  loading="lazy"
+/>
+</div>
+
+<h3 class="text-xl font-bold mt-6 mb-3">Core Web Vitals Breakdown</h3>
+
+<p>Focus on these three key metrics:</p>
+
+<ul>
+<li><strong>Largest Contentful Paint (LCP)</strong> - Should occur within 2.5 seconds</li>
+<li><strong>Interaction to Next Paint (INP)</strong> - Should be less than 200 milliseconds</li>
+<li><strong>Cumulative Layout Shift (CLS)</strong> - Should be less than 0.1</li>
+</ul>
+
+<h2 id="industry-effects" class="text-2xl font-bold mt-8 mb-4">How do core updates affect different industries?</h2>
+
+<p>Based on patterns from the March 2025 update and early June observations, certain sectors are experiencing more volatility than others.</p>
+
+<h3 class="text-xl font-bold mt-6 mb-3">Healthcare and Medical</h3>
+<p>Sites in the healthcare sector often see big changes during core updates because Google has strict standards for medical information. Medical practices and health-related businesses should focus on showing medical expertise and credentials clearly on their websites.</p>
+
+<h3 class="text-xl font-bold mt-6 mb-3">Local Services and Home Improvement</h3>
+<p>According to tracking data from Local SEO Guide, which monitors 100,000 home services keywords, previous updates showed the highest search result changes in over a year. Local service businesses should prioritize authentic customer reviews and local optimization.</p>
+
+<h3 class="text-xl font-bold mt-6 mb-3">E-commerce and Retail</h3>
+<p>The retail sector has seen mixed results with previous updates. Some online stores gained visibility while others lost rankings. E-commerce businesses should focus on product page optimization and creating authentic customer experiences.</p>
+
+<h2 id="expanding-visibility" class="text-2xl font-bold mt-8 mb-4">Expanding visibility beyond traditional search</h2>
+
+<p>Multi-platform visibility future-proofs your reach across AI and voice channels. Our SEO+AEO+GEO approach has proven essential. While other agencies focus only on Google, businesses now need visibility across multiple platforms.</p>
+
+<p>Have you ever asked an assistant aloud and ended up frustrated by the answer? Make sure your content is the one that assistant chooses.</p>
+
+<p>Here's how to expand your reach:</p>
+
+<ul>
+<li>Optimize FAQs and conversational snippets for Siri, Alexa, ChatGPT, and Google's SGE</li>
+<li>Localize pages with geo-targeted keywords, Google Business Profile updates, and genuine customer reviews</li>
+<li>Experiment with short how-to videos or voice-friendly transcripts</li>
+</ul>
+
+<p>Traditional search engines like Google and Bing are just the beginning. Your business also needs visibility on:</p>
+
+<ul>
+<li>AI assistants like ChatGPT, Claude, and Perplexity</li>
+<li>Local search and geographic targeting</li>
+<li>Voice search platforms like Alexa and Siri</li>
+</ul>
+
+<div class="my-8">
+<img 
+  src="/get found everywhere with supercharged engine optimization.webp" 
+  alt="Multi-platform visibility diagram showing how content optimized for SEO+AEO+GEO appears across Google search, AI assistants, voice platforms, and local discovery channels" 
+  class="w-full rounded-lg shadow-lg"
+  loading="lazy"
+/>
+</div>
+
+<h2 id="what-to-do-now" class="text-2xl font-bold mt-8 mb-4">What Should Businesses Do Right Now?</h2>
+
+<p>Understanding what to do during and after a core update can make the difference between losing traffic and gaining competitive advantage.</p>
+
+<h3 class="text-xl font-bold mt-6 mb-3">Immediate Actions During Rollout</h3>
+
+<p><strong>Don't Panic or Make Quick Changes</strong></p>
+
+<p>Google specifically advises against making reactive changes while an update is still rolling out. Instead, focus on monitoring and documenting what's happening to your website.</p>
+
+<p><strong>Monitor These Key Metrics</strong></p>
+
+<p>Track these essential indicators during the three-week rollout:</p>
+
+<ul>
+<li>Organic traffic patterns from Google Analytics</li>
+<li>Keyword ranking changes in search results</li>
+<li>Click-through rates from search listings</li>
+<li>Conversion rates from organic traffic</li>
+<li>Search Console insights and error reports</li>
+</ul>
+
+<p><strong>Document All Changes</strong></p>
+
+<p>Keep detailed records of traffic and ranking shifts. This information will be valuable for understanding your site's performance once the update is complete and help guide future improvements.</p>
+
+<h2 id="long-term-strategy" class="text-2xl font-bold mt-8 mb-4">Why should businesses focus on long-term strategy over quick fixes?</h2>
+
+<p>Google's core updates reward sustainable, high-quality approaches rather than quick tricks or shortcuts. Businesses that focus on long-term value creation typically see better results over time.</p>
+
+<p><strong>Authority Building Strategy</strong></p>
+
+<p>Strengthen your website's expertise signals:</p>
+
+<ul>
+<li>Author information with relevant credentials and experience</li>
+<li>Detailed About pages explaining company expertise</li>
+<li>Industry certifications, awards, and recognition</li>
+<li>Quality backlinks from authoritative, relevant sources</li>
+</ul>
+
+<h3 class="text-xl font-bold mt-6 mb-3">How often does Google release core updates?</h3>
+
+<p>Google indicated they plan to release core updates more frequently in 2025, though the March-to-June gap suggests they're still working toward that goal. Over six months ago, a Google representative said we should expect "more core updates, more often." However, in the past six months, we've only had two confirmed updates.</p>
+
+<p>This means businesses need sustainable, long-term strategies rather than reactive quick fixes. Our approach focuses on building robust digital foundations that can weather any algorithm change while positioning clients for growth across all search platforms.</p>
+
+<h2 id="expert-recommendations" class="text-2xl font-bold mt-8 mb-4">Expert Recommendations from Digital Visibility</h2>
+
+<p>Based on our experience helping clients achieve rapid ranking improvements, here are our key recommendations for navigating the June 2025 update and future changes.</p>
+
+<h3 class="text-xl font-bold mt-6 mb-3">For Existing Websites</h3>
+
+<ol>
+<li><strong>Conduct a comprehensive SEO+AEO audit</strong> to identify optimization opportunities</li>
+<li><strong>Implement technical improvements</strong> focusing on speed and user experience</li>
+<li><strong>Enhance content depth and expertise</strong> with human-led, AI-accelerated strategies</li>
+<li><strong>Build authority signals</strong> through strategic link building and credentials display</li>
+</ol>
+
+<h3 class="text-xl font-bold mt-6 mb-3">For New Projects</h3>
+
+<ol>
+<li><strong>Start with our <a href="/pricing/#hour-packages">AI Authority Funnel</a></strong> to establish credibility quickly</li>
+<li><strong>Implement our integrated SEO+AEO+GEO approach</strong> from day one</li>
+<li><strong>Focus on omnichannel visibility</strong> across search engines and AI platforms</li>
+<li><strong>Build for humans first</strong> with AI optimization as an enhancement</li>
+</ol>
+
+<h3 class="text-xl font-bold mt-6 mb-3">The Opportunity in Algorithm Updates</h3>
+
+<p>While algorithm updates can seem scary, they represent significant opportunities for businesses that adapt quickly. If your website is slow, spammy, or unhelpful, expect problems. But if you've built something fast, helpful, and human-focused, this could be your time to shine.</p>
+
+<p>At Digital Visibility, we've helped clients not just survive algorithm updates but thrive during them. Our integrated approach combining SEO, AEO, and GEO optimization ensures our clients maintain visibility across all platforms where their customers search.</p>
+
+<h2 id="conclusion" class="text-2xl font-bold mt-8 mb-4">Conclusion</h2>
+
+<p>Google's June 2025 core update underscores the need for human expertise, technical rigor, and multi-platform strategies. By focusing on high-value content, seamless user experiences, and AI-friendly optimization, you can turn this update into a growth opportunity.</p>
+
+<p>Now's not the time to panic. It's the time to optimize. The businesses that will thrive in this new landscape are those that combine human expertise with AI acceleration, focus on multi-platform visibility, and maintain a relentless commitment to serving their audience's needs.</p>
+
+<p>At Digital Visibility, we blend human insight with AI acceleration to keep your brand ahead of every algorithm change. We're not just helping clients adapt to these changes. We're helping them get ahead of them. Our proven strategies have achieved remarkable results, including top-3 rankings in just one week for competitive terms.</p>
+
+<p>If your website has been impacted by the June 2025 update, or if you want to future-proof your digital presence against upcoming changes, our team of human experts backed by AI acceleration is ready to help.</p>
+
+<hr class="my-12">
+
+<div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 my-12 border border-blue-200">
+  <div class="text-center">
+    <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to dominate search across all platforms?</h3>
+    <p class="text-lg text-gray-700 mb-6 max-w-3xl mx-auto">
+      Our comprehensive <a href="/services/digital-marketing/" class="text-blue-600 hover:text-blue-800 font-semibold">SEO+AEO+GEO optimization</a> ensures your business captures visibility wherever your customers are searching.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a 
+        href="/contact/" 
+        class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center"
+      >
+        <span class="mr-2">📞</span>
+        Schedule a Consultation
+      </a>
+      <a 
+        href="/analyzer/" 
+        class="bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center"
+      >
+        <span class="mr-2">🔍</span>
+        Free Visibility Analysis
+      </a>
+    </div>
+    <p class="text-sm text-gray-600 mt-4">
+      Discover how our proven strategies can drive measurable growth for your business
+    </p>
+  </div>
+</div>
+
+<div class="mt-12 pt-8 border-t border-gray-200">
+  <p class="text-sm text-gray-600 italic">
+    <strong>Sources:</strong> 
+    <a href="https://www.searchenginejournal.com/google-rolls-out-june-2025-core-update/550161/" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800">Search Engine Journal</a>, 
+    <a href="https://www.engageweb.co.uk/blog/googles-june-2025-core-update-what-just-happened-and-what-to-do-about-it" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800">Engage Web</a>, 
+    <a href="https://www.seroundtable.com/google-search-ranking-volatility-39674.html" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800">SE Roundtable</a>, 
+    <a href="https://developers.google.com/search/updates/core-updates" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800">Google Search Central</a>
+  </p>
+</div>
+
+<!-- Blog Content Ends Here -->
+
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="lg:col-span-4 order-1 lg:order-2">
+            <div class="sticky top-8 space-y-8">
+              <!-- Category Badge -->
+              <div>
+                <span class="inline-block bg-blue-100 text-blue-700 rounded-full px-3 py-1 text-xs font-medium mr-2 mb-2">
+                  {post.category}
+                </span>
+                <span class="inline-block bg-red-100 text-red-700 rounded-full px-3 py-1 text-xs font-medium mb-2">
+                  Breaking News
+                </span>
+              </div>
+              
+              <!-- Table of Contents -->
+              <div class="bg-gray-50 rounded-lg p-6">
+                <h2 class="text-lg font-bold text-gray-900 mb-4">Table of Contents</h2>
+                <nav class="space-y-2 text-sm">
+                  {post.tableOfContents.map((item) => (
+                    <a 
+                      href={`#${item.id}`}
+                      class="block text-gray-700 hover:text-blue-600 transition-colors"
+                    >
+                      {item.title}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+              
+              <!-- CTA Box -->
+              <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Navigate Google Updates Successfully</h3>
+                <p class="text-gray-700 text-sm mb-4">
+                  Get expert help adapting to Google's latest algorithm changes. Our proven strategies help businesses thrive during updates.
+                </p>
+                <a 
+                  href="/contact/"
+                  class="block bg-blue-600 hover:bg-blue-700 text-white text-center font-medium px-4 py-2 rounded-md transition-colors"
+                >
+                  Get Expert SEO Help
+                </a>
+              </div>
+
+              <!-- Author Bio -->
+              <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <div class="flex items-center mb-4">
+                  <img 
+                    src={post.authorImage} 
+                    alt={post.author}
+                    class="w-16 h-16 rounded-full mr-4 object-cover"
+                  />
+                  <div>
+                    <h3 class="font-bold text-gray-900">{post.author}</h3>
+                    <p class="text-sm text-gray-600">{post.authorBio}</p>
+                  </div>
+                </div>
+                <p class="text-sm text-gray-700 mb-4">
+                  Royal Academy of Engineering award winner specializing in SEO+AEO+GEO optimization. Helping businesses achieve top rankings and AI visibility.
+                </p>
+                <a 
+                  href="/about/darran-goulding/"
+                  class="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                >
+                  Learn more about Darran →
+                </a>
+              </div>
+
+              <!-- Related Services -->
+              <div class="bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-200 rounded-lg p-6">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Related Services</h3>
+                <div class="space-y-3">
+                  <a href="/services/search-engine-optimization/" class="block text-sm text-gray-700 hover:text-blue-600 transition-colors">
+                    → Search Engine Optimization (SEO)
+                  </a>
+                  <a href="/services/answer-engine-optimization/" class="block text-sm text-gray-700 hover:text-blue-600 transition-colors">
+                    → Answer Engine Optimization (AEO)
+                  </a>
+                  <a href="/services/generative-engine-optimization/" class="block text-sm text-gray-700 hover:text-blue-600 transition-colors">
+                    → Generative Engine Optimization (GEO)
+                  </a>
+                  <a href="/analyzer/" class="block text-sm text-gray-700 hover:text-blue-600 transition-colors">
+                    → Free Website Analysis
+                  </a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</MainLayout>
+
+<!-- Lucide Icons Script -->
+<script src="/scripts/lucide-icons.min.js" defer></script> 

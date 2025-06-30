@@ -3,6 +3,20 @@
 
 export const blogPosts = [
   {
+    title: "How Should Your Business Adapt to Google's Latest Search Engine Update?",
+    slug: "how-should-your-business-adapt-to-googles-latest-search-engine-update",
+    excerpt: "Discover how your business can adapt to Google's latest June 2025 search engine update through expert-led content, technical optimization, and multi-platform visibility.",
+    category: "SEO",
+    categorySlug: "seo",
+    image: "/how should business adapt to googles latest update.webp",
+    alt: "Google June 2025 core update analysis showing search engine algorithm changes and business adaptation strategies for SEO optimization",
+    date: "July 2, 2025",
+    author: "Darran Goulding",
+    authorImage: "/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
+    featured: true,
+    tags: ["Google Update", "Core Update", "SEO Strategy", "Algorithm Changes", "Technical SEO", "Content Strategy"]
+  },
+  {
     title: "Why UK Businesses Ditch Zapier for AI Automation",
     slug: "why-uk-businesses-ditching-zapier-ai-conversation-automation",
     excerpt: "Forward-thinking UK businesses move beyond Zapier to AI conversation automation. Learn how talking to AI replaces complex drag-and-drop workflows.",
