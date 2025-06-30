@@ -155,12 +155,18 @@
   <!-- Blog Index -->
   <url>
     <loc>https://digitalvisibility.com/blog/</loc>
-    <lastmod>2025-06-23</lastmod>
+    <lastmod>2025-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Individual Blog Posts -->
+  <url>
+    <loc>https://digitalvisibility.com/blog/how-should-your-business-adapt-to-googles-latest-search-engine-update/</loc>
+    <lastmod>2025-06-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://digitalvisibility.com/blog/how-ai-is-revolutionizing-website-design/</loc>
     <lastmod>2025-06-23</lastmod>

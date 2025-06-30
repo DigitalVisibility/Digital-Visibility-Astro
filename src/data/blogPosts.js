@@ -10,7 +10,7 @@ export const blogPosts = [
     categorySlug: "seo",
     image: "/how should business adapt to googles latest update.webp",
     alt: "Google June 2025 core update analysis showing search engine algorithm changes and business adaptation strategies for SEO optimization",
-    date: "July 2, 2025",
+    date: "June 30, 2025",
     author: "Darran Goulding",
     authorImage: "/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
     featured: true,
