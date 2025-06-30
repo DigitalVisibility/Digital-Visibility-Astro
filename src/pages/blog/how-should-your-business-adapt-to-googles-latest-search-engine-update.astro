@@ -33,55 +33,135 @@ const post = {
   ]
 };
 
-// Schema.org structured data
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": post.title,
-  "description": post.description,
-  "image": post.image,
-  "author": {
-    "@type": "Person",
-    "name": post.author,
-    "image": `https://digitalvisibility.com${post.authorImage}`,
-    "url": "https://digitalvisibility.com/about/darran-goulding/",
-    "sameAs": [
-      "https://www.linkedin.com/in/darrangoulding/",
-      "https://x.com/DarranGoulding"
+// Schema.org structured data with FAQ schema
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.description,
+    "image": post.image,
+    "author": {
+      "@type": "Person",
+      "name": post.author,
+      "image": `https://digitalvisibility.com${post.authorImage}`,
+      "url": "https://digitalvisibility.com/about/darran-goulding/",
+      "sameAs": [
+        "https://www.linkedin.com/in/darrangoulding/",
+        "https://x.com/DarranGoulding"
+      ]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Digital Visibility",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
+      }
+    },
+    "datePublished": "2025-06-30",
+    "dateModified": "2025-06-30",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://digitalvisibility.com/blog/${post.slug}/`
+    },
+    "keywords": post.keywords.join(", "),
+    "wordCount": 4200,
+    "timeRequired": "PT18M",
+    "articleSection": "SEO",
+    "inLanguage": "en-GB",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Google Core Update",
+        "description": "Major algorithm changes to Google's search ranking system"
+      },
+      {
+        "@type": "Thing", 
+        "name": "Search Engine Optimization",
+        "description": "Strategies to improve website visibility in search results"
+      }
     ]
   },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Digital Visibility",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
-    }
-  },
-  "datePublished": "2025-06-30",
-  "dateModified": "2025-06-30",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": `https://digitalvisibility.com/blog/${post.slug}/`
-  },
-  "keywords": post.keywords.join(", "),
-  "wordCount": 4200,
-  "timeRequired": "PT18M",
-  "articleSection": "SEO",
-  "inLanguage": "en-GB",
-  "about": [
-    {
-      "@type": "Thing",
-      "name": "Google Core Update",
-      "description": "Major algorithm changes to Google's search ranking system"
-    },
-    {
-      "@type": "Thing", 
-      "name": "Search Engine Optimization",
-      "description": "Strategies to improve website visibility in search results"
-    }
-  ]
-};
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Google's June 2025 Core Update?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Google's June 2025 core update started on June 30, 2025, at 7:34 AM PDT. This is the second major algorithm change of 2025, following the March update that ended on March 27. The rollout will take three weeks to complete, which is longer than the usual two weeks. Unlike targeted updates that address specific issues like spam or product reviews, core updates involve broad changes to Google's ranking systems designed to improve Google's ability to surface helpful, high-quality content in search."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does this update matter for your business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This update reshapes how Google ranks content by emphasizing expertise, technical performance, and AI signals. The changes represent a fundamental shift in how search engines evaluate and rank websites. Google's AI-driven ranking signals have become much stronger, meaning enhanced AI-driven ranking that weeds out thin, fluff-filled pages, stronger E-A-T requirements demanding expert voices and trusted sources, and user experience and mobile optimization now tied directly to rankings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to revamp your content strategy right now?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "High-quality, expert-driven content wins in this new landscape. Your action plan for content strategy overhaul includes: audit existing content for accuracy, depth, and author credentials; update or remove outdated articles that underperform; add clear author bios, citations, and FAQs framed as voice-search queries; and integrate long-tail, question-based phrases. Content should be written by experts who genuinely understand the topic and provide unique value that visitors can't find elsewhere."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What technical tweaks can boost your performance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Technical excellence is non-negotiable under Google's updated metrics. Essential technical improvements include: implement mobile-first responsive design that feels native on any device; optimize page speed by compressing images, deferring scripts, and leveraging caching; monitor and improve Core Web Vitals (Largest Contentful Paint, Interaction to Next Paint, Cumulative Layout Shift); and apply schema markup for rich results and AI visibility. Your website should load in under 3 seconds and work perfectly on mobile phones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do core updates affect different industries?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Based on patterns from the March 2025 update and early June observations, certain sectors experience more volatility. Healthcare and medical sites often see big changes due to strict standards for medical information. Local services and home improvement showed the highest search result changes in over a year according to Local SEO Guide tracking. E-commerce and retail have seen mixed results, with some online stores gaining visibility while others lost rankings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should businesses do right now during the update rollout?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Don't panic or make quick changes while the update is rolling out. Instead, focus on monitoring and documenting what's happening. Track organic traffic patterns, keyword ranking changes, click-through rates, conversion rates, and Search Console insights. Keep detailed records of traffic and ranking shifts as this information will be valuable for understanding your site's performance once the update is complete."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why should businesses focus on long-term strategy over quick fixes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Google's core updates reward sustainable, high-quality approaches rather than quick tricks or shortcuts. Businesses that focus on long-term value creation typically see better results over time. Strengthen your website's expertise signals with author information with relevant credentials, detailed About pages explaining company expertise, industry certifications and awards, and quality backlinks from authoritative sources."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often does Google release core updates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Google indicated they plan to release core updates more frequently in 2025, though the March-to-June gap suggests they're still working toward that goal. Over six months ago, a Google representative said we should expect 'more core updates, more often.' However, in the past six months, we've only had two confirmed updates. This means businesses need sustainable, long-term strategies rather than reactive quick fixes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How should your business adapt to Google's latest search engine update?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Businesses should focus on creating high-quality, expert-driven content that demonstrates genuine expertise, authoritativeness, and trustworthiness. Implement technical improvements focusing on Core Web Vitals, mobile optimization, and page speed. Expand visibility beyond traditional search to include AI platforms like ChatGPT, voice search, and local discovery. Build authority signals through strategic content creation, proper author credentials, and sustainable SEO practices that can weather any algorithm change."
+        }
+      }
+    ]
+  }
+];
 
 ---
 
