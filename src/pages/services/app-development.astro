@@ -5,76 +5,20 @@ import Footer from '../../components/Footer.astro';
 ---
 
 <MainLayout title="App Development Swansea | Mobile & Web Applications">
-  <!-- Enhanced App Development Service Page Schema with @graph -->
-  <script type="application/ld+json">
+  <!-- Enhanced Schema markup for App Development Services -->
+  <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebPage",
-        "@id": "https://digitalvisibility.com/services/app-development/#webpage",
-        "url": "https://digitalvisibility.com/services/app-development/",
-        "name": "App Development Services | Mobile Apps, Web Applications, AI Integration | Digital Visibility",
-        "description": "Expert app development services from Digital Visibility. Custom mobile apps (iOS, Android), web applications, business automation, and AI integration. Transform your business with powerful software solutions.",
-        "keywords": ["app development", "mobile app development", "iOS development", "Android development", "web applications", "PWA development", "custom software", "business automation", "AI integration", "API development", "React Native", "Flutter", "Swansea app developers", "Wales software development", "UK app development"],
-        "isPartOf": {
-          "@id": "https://digitalvisibility.com/#website"
-        },
-        "about": {
-          "@id": "https://digitalvisibility.com/services/app-development/#service"
-        },
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://digitalvisibility.com"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Services",
-              "item": "https://digitalvisibility.com/services/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "App Development",
-              "item": "https://digitalvisibility.com/services/app-development/"
-            }
-          ]
-        }
-      },
-      {
-        "@type": "ProfessionalService",
+        "@type": "Service",
         "@id": "https://digitalvisibility.com/services/app-development/#service",
-        "name": "Digital Visibility - App Development Services",
-        "alternateName": "App Development Agency Swansea",
-        "description": "Custom app development, business automation, and software solutions including mobile apps, web applications, AI integration, and API development. Award-winning team.",
-        "url": "https://digitalvisibility.com/services/app-development/",
-        "logo": "https://digitalvisibility.com/logo.webp",
-        "image": "https://digitalvisibility.com/super-ai-agent-app.webp",
-        "telephone": "+4401792002497",
-        "email": "support@digitalvisibility.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "235 Peniel Green Road",
-          "addressLocality": "Llansamlet",
-          "addressRegion": "Swansea",
-          "postalCode": "SA7 9BA",
-          "addressCountry": "GB"
+        "name": "App Development Services",
+        "alternateName": ["Mobile App Development", "Web App Development", "Custom Application Development", "Software Development"],
+        "description": "Professional app development services in Swansea including mobile apps, web applications, and custom software solutions. Expert development team creating innovative applications that solve business problems and enhance user experience.",
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "51.6399",
-          "longitude": "-3.8936"
-        },
-
-        "priceRange": "£40/hour - Project-based pricing available",
-        "currenciesAccepted": "GBP",
-        "paymentAccepted": "Cash, Credit Card, Bank Transfer, Direct Debit",
         "offers": [
           {
             "@type": "Offer",
@@ -109,192 +53,56 @@ import Footer from '../../components/Footer.astro';
               "@id": "https://digitalvisibility.com/#organization"
             }
           }
-        ]
+        ],
+        "serviceType": "App Development Services",
+        "category": ["App Development", "Mobile Development", "Web Development", "Software Development"],
+        "additionalType": "https://en.wikipedia.org/wiki/Application_software",
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/"
       },
       {
-        "@type": "ItemList",
-        "@id": "https://digitalvisibility.com/services/app-development/#services-list",
-        "name": "App Development Services Offered",
-        "description": "Comprehensive list of app development and software engineering services provided by Digital Visibility",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "Service",
-              "@id": "https://digitalvisibility.com/services/app-development/#mobile",
-              "name": "Mobile App Development",
-              "description": "Native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android.",
-              "offers": {
-                "@type": "Offer",
-                "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": "40.00",
-                  "priceCurrency": "GBP",
-                  "unitText": "hour"
-                }
-              },
-              "serviceType": "Mobile Development",
-              "additionalType": "iOS, Android, React Native, Flutter",
-              "provider": {
-                "@id": "https://digitalvisibility.com/#organization"
-              }
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/services/app-development/#webpage",
+        "url": "https://digitalvisibility.com/services/app-development/",
+        "name": "App Development Services Swansea | Mobile & Web App Development",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "about": {
+          "@id": "https://digitalvisibility.com/services/app-development/#service"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/app-development-swansea.webp",
+          "width": "1200",
+          "height": "630"
+        },
+        "datePublished": "2025-06-21",
+        "dateModified": "2025-06-21",
+        "description": "Comprehensive guide to app development services in Swansea with expert strategies for mobile and web application development.",
+        "inLanguage": "en-GB",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://digitalvisibility.com/services/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "App Development",
+              "item": "https://digitalvisibility.com/services/app-development/"
             }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "Service",
-              "@id": "https://digitalvisibility.com/services/app-development/#web",
-              "name": "Web Application Development",
-              "description": "Modern, responsive web applications with powerful functionality and beautiful interfaces.",
-              "offers": {
-                "@type": "Offer",
-                "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": "40.00",
-                  "priceCurrency": "GBP",
-                  "unitText": "hour"
-                }
-              },
-              "serviceType": "Web App Development",
-              "additionalType": "PWA, SPA, React, Vue.js, Angular",
-              "provider": {
-                "@id": "https://digitalvisibility.com/#organization"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "Service",
-              "@id": "https://digitalvisibility.com/services/app-development/#custom-software",
-              "name": "Custom Software Solutions",
-              "description": "Tailored software solutions to address specific business challenges and optimize workflows.",
-              "offers": {
-                "@type": "Offer",
-                "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": "40.00",
-                  "priceCurrency": "GBP",
-                  "unitText": "hour"
-                }
-              },
-              "serviceType": "Custom Software Development",
-              "additionalType": "Enterprise Software, Business Automation, CRM, ERP",
-              "provider": {
-                "@id": "https://digitalvisibility.com/#organization"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "item": {
-              "@type": "Service",
-              "@id": "https://digitalvisibility.com/services/app-development/#ai-integration",
-              "name": "AI & Machine Learning Integration",
-              "description": "Enhance your applications with AI and machine learning capabilities to deliver smart, personalized experiences.",
-              "offers": {
-                "@type": "Offer",
-                "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": "40.00",
-                  "priceCurrency": "GBP",
-                  "unitText": "hour"
-                }
-              },
-              "serviceType": "AI Integration Services",
-              "additionalType": "Chatbots, Predictive Analytics, Computer Vision, NLP",
-              "provider": {
-                "@id": "https://digitalvisibility.com/#organization"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "item": {
-              "@type": "Service",
-              "@id": "https://digitalvisibility.com/services/app-development/#api",
-              "name": "API Development & Integration",
-              "description": "Create robust APIs and seamlessly integrate your applications with third-party services and platforms.",
-              "offers": {
-                "@type": "Offer",
-                "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": "40.00",
-                  "priceCurrency": "GBP",
-                  "unitText": "hour"
-                }
-              },
-              "serviceType": "API Development",
-              "additionalType": "RESTful APIs, GraphQL, Third-party Integration",
-              "provider": {
-                "@id": "https://digitalvisibility.com/#organization"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 6,
-            "item": {
-              "@type": "Service",
-              "@id": "https://digitalvisibility.com/services/app-development/#qa-testing",
-              "name": "Quality Assurance & Testing",
-              "description": "Comprehensive testing services to ensure your applications are robust, secure, and perform optimally.",
-              "offers": {
-                "@type": "Offer",
-                "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": "40.00",
-                  "priceCurrency": "GBP",
-                  "unitText": "hour"
-                }
-              },
-              "serviceType": "QA Services",
-              "additionalType": "Automated Testing, Security Testing, Performance Testing",
-              "provider": {
-                "@id": "https://digitalvisibility.com/#organization"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "@type": "HowTo",
-        "@id": "https://digitalvisibility.com/services/app-development/#process",
-        "name": "App Development Process",
-        "description": "Our structured approach to delivering exceptional applications",
-        "step": [
-          {
-            "@type": "HowToStep",
-            "name": "Discovery",
-            "text": "Understanding your requirements, goals, and target users to establish a solid foundation."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "Planning",
-            "text": "Creating a detailed roadmap, architecture, and technical specifications for your application."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "Development",
-            "text": "Building your application with clean, maintainable code following best practices."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "Testing",
-            "text": "Thorough quality assurance to ensure your application is robust, secure, and performs well."
-          },
-          {
-            "@type": "HowToStep",
-            "name": "Deployment",
-            "text": "Launching your application and providing ongoing maintenance and support."
-          }
-        ]
+          ]
+        }
       }
     ]
   }
