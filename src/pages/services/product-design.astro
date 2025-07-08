@@ -71,36 +71,26 @@ import Footer from '../../components/Footer.astro';
           "latitude": "51.6399",
           "longitude": "-3.8936"
         },
-        "openingHours": [
-          "Mo-Fr 08:00-20:00",
-          "Sa 09:00-17:00",
-          "Su 10:00-16:00"
-        ],
-        "priceRange": "£40/hour - Project-based pricing available",
+
+        "priceRange": "Quotation-based pricing - Contact for custom quotes",
         "currenciesAccepted": "GBP",
         "paymentAccepted": "Cash, Credit Card, Bank Transfer, Direct Debit",
-        "areaServed": [
+        "offers": [
           {
-            "@type": "GeoCircle",
-            "name": "Swansea area",
-            "geoMidpoint": {
-              "@type": "GeoCoordinates",
-              "latitude": "51.6214",
-              "longitude": "-3.9436"
+            "@type": "Offer",
+            "name": "Custom Product Design Quotations",
+            "url": "https://digitalvisibility.com/contact/",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "GBP",
+              "valueAddedTaxIncluded": "false"
             },
-            "geoRadius": "50000"
-          },
-          {
-            "@type": "Place",
-            "name": "Wales"
-          },
-          {
-            "@type": "Place",
-            "name": "United Kingdom"
-          },
-          {
-            "@type": "Place",
-            "name": "Global Remote Design Services"
+            "availability": "https://schema.org/InStock",
+            "description": "Bespoke quotations for product design projects including CAD design, prototyping, and manufacturing support",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
           }
         ]
       },
@@ -120,12 +110,13 @@ import Footer from '../../components/Footer.astro';
               "description": "Turn your ideas into well-defined concepts with our expert sketching and ideation services that capture the essence of your product vision.",
               "offers": {
                 "@type": "Offer",
+                "url": "https://digitalvisibility.com/contact/",
                 "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": "40.00",
+                  "@type": "PriceSpecification",
                   "priceCurrency": "GBP",
-                  "unitText": "hour"
-                }
+                  "valueAddedTaxIncluded": "false"
+                },
+                "description": "Contact for custom quotation"
               },
               "serviceType": "Product Concept Development",
               "provider": {
@@ -143,12 +134,13 @@ import Footer from '../../components/Footer.astro';
               "description": "Transform concepts into detailed 3D models with precision engineering and expert CAD services that bring your product to life.",
               "offers": {
                 "@type": "Offer",
+                "url": "https://digitalvisibility.com/contact/",
                 "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": "40.00",
+                  "@type": "PriceSpecification",
                   "priceCurrency": "GBP",
-                  "unitText": "hour"
-                }
+                  "valueAddedTaxIncluded": "false"
+                },
+                "description": "Contact for custom quotation"
               },
               "serviceType": "CAD Design Services",
               "provider": {
@@ -166,12 +158,13 @@ import Footer from '../../components/Footer.astro';
               "description": "Ensure your products perform perfectly with comprehensive engineering analysis using advanced simulation tools and expert validation.",
               "offers": {
                 "@type": "Offer",
+                "url": "https://digitalvisibility.com/contact/",
                 "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": "40.00",
+                  "@type": "PriceSpecification",
                   "priceCurrency": "GBP",
-                  "unitText": "hour"
-                }
+                  "valueAddedTaxIncluded": "false"
+                },
+                "description": "Contact for custom quotation"
               },
               "serviceType": "Engineering Analysis Services",
               "additionalType": "FEA, CFD, Structural Analysis",
@@ -190,12 +183,13 @@ import Footer from '../../components/Footer.astro';
               "description": "Quickly bring your designs to life with advanced 3D printing technology for testing, validation, and refinement of physical products.",
               "offers": {
                 "@type": "Offer",
+                "url": "https://digitalvisibility.com/contact/",
                 "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": "40.00",
+                  "@type": "PriceSpecification",
                   "priceCurrency": "GBP",
-                  "unitText": "hour"
-                }
+                  "valueAddedTaxIncluded": "false"
+                },
+                "description": "Contact for custom quotation"
               },
               "serviceType": "3D Printing and Prototyping",
               "provider": {
@@ -213,12 +207,13 @@ import Footer from '../../components/Footer.astro';
               "description": "Optimize your product designs for efficient and cost-effective mass production with manufacturing expertise and production planning.",
               "offers": {
                 "@type": "Offer",
+                "url": "https://digitalvisibility.com/contact/",
                 "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": "40.00",
+                  "@type": "PriceSpecification",
                   "priceCurrency": "GBP",
-                  "unitText": "hour"
-                }
+                  "valueAddedTaxIncluded": "false"
+                },
+                "description": "Contact for custom quotation"
               },
               "serviceType": "Design for Manufacturing",
               "provider": {
@@ -236,12 +231,13 @@ import Footer from '../../components/Footer.astro';
               "description": "Get expert guidance from design to mass production with comprehensive manufacturing support services that ensure quality products.",
               "offers": {
                 "@type": "Offer",
+                "url": "https://digitalvisibility.com/contact/",
                 "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": "40.00",
+                  "@type": "PriceSpecification",
                   "priceCurrency": "GBP",
-                  "unitText": "hour"
-                }
+                  "valueAddedTaxIncluded": "false"
+                },
+                "description": "Contact for custom quotation"
               },
               "serviceType": "Manufacturing Support Services",
               "provider": {
@@ -341,7 +337,7 @@ import Footer from '../../components/Footer.astro';
   <meta name="ai-services" content="concept development, CAD design, 3D modeling, engineering analysis, FEA, CFD, rapid prototyping, 3D printing, design for manufacturing, DFM, manufacturing support, supplier management, quality control, production scaling, material selection, product testing, technical documentation" slot="head">
   <meta name="ai-audience" content="inventors, entrepreneurs, product designers, manufacturers, hardware startups, industrial companies, consumer product companies, medical device companies, electronics manufacturers, IoT developers" slot="head">
   <meta name="ai-intent" content="hire product design agency, develop physical product, create prototype, get CAD design services, 3D print prototype, engineering analysis, manufacturing consultation" slot="head">
-  <meta name="ai-unique-value" content="Royal Academy Award-winning founder, end-to-end product development, local expertise with global reach, rapid prototyping capabilities, manufacturing support, affordable pricing at £40/hour" slot="head">
+  <meta name="ai-unique-value" content="Royal Academy of Engineering Award-winning founder, end-to-end product development, local expertise with global reach, rapid prototyping capabilities, manufacturing support, affordable pricing at £40/hour" slot="head">
 
   <Navigation slot="nav" />
   

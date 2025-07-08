@@ -71,36 +71,43 @@ import Footer from '../../components/Footer.astro';
           "latitude": "51.6399",
           "longitude": "-3.8936"
         },
-        "openingHours": [
-          "Mo-Fr 08:00-20:00",
-          "Sa 09:00-17:00",
-          "Su 10:00-16:00"
-        ],
+
         "priceRange": "£40/hour - Project-based pricing available",
         "currenciesAccepted": "GBP",
         "paymentAccepted": "Cash, Credit Card, Bank Transfer, Direct Debit",
-        "areaServed": [
+        "offers": [
           {
-            "@type": "GeoCircle",
-            "name": "Swansea area",
-            "geoMidpoint": {
-              "@type": "GeoCoordinates",
-              "latitude": "51.6214",
-              "longitude": "-3.9436"
+            "@type": "Offer",
+            "url": "https://digitalvisibility.com/pricing/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "40.00",
+              "priceCurrency": "GBP",
+              "unitText": "hour"
             },
-            "geoRadius": "50000"
+            "availability": "https://schema.org/InStock",
+            "description": "Flexible hourly app development services starting at £40/hour with no contracts",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
           },
           {
-            "@type": "Place",
-            "name": "Wales"
-          },
-          {
-            "@type": "Place",
-            "name": "United Kingdom"
-          },
-          {
-            "@type": "Place",
-            "name": "Global Remote Development Services"
+            "@type": "Offer",
+            "name": "FREE Professional Website",
+            "url": "https://digitalvisibility.com/pricing/#free-website",
+            "price": "0",
+            "priceCurrency": "GBP",
+            "availability": "https://schema.org/InStock",
+            "description": "FREE £2,995 professional website included with 5+ hours monthly commitment",
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "minValue": 5,
+              "unitText": "hours per month"
+            },
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
           }
         ]
       },
@@ -346,7 +353,7 @@ import Footer from '../../components/Footer.astro';
   <meta name="ai-services" content="mobile app development, iOS development, Android development, cross-platform apps, React Native, Flutter, web application development, PWA development, SPA development, custom software solutions, enterprise software, business automation, CRM integration, ERP systems, AI integration, machine learning, chatbot development, API development, RESTful APIs, GraphQL, third-party integration, QA testing, automated testing, security testing" slot="head">
   <meta name="ai-audience" content="business owners, CTOs, IT managers, entrepreneurs, startups, SMEs, enterprise companies, e-commerce businesses, service companies, manufacturers, healthcare providers" slot="head">
   <meta name="ai-intent" content="hire app developer, create mobile app, develop web application, business software development, digital transformation, automate business processes, AI app development" slot="head">
-  <meta name="ai-unique-value" content="Royal Academy Award-winning founder, end-to-end app development, AI-powered solutions, local expertise with global reach, agile development process, affordable pricing at £40/hour" slot="head">
+  <meta name="ai-unique-value" content="Royal Academy of Engineering Award-winning founder, end-to-end app development, AI-powered solutions, local expertise with global reach, agile development process, affordable pricing at £40/hour" slot="head">
 
   <Navigation slot="nav" />
   

@@ -60,7 +60,7 @@ export const prerender = false;
   
   <!-- Trust & Authority Signals -->
   <meta name="business-founding-date" content="2023-01-01" slot="head">
-  <meta name="business-awards" content="Royal Academy Award 2025, UK's First Supercharged Engine Optimization Agency, Digital Marketing Pioneer" slot="head">
+  <meta name="business-awards" content="Royal Academy of Engineering Award Winner 2025, UK's First Supercharged Engine Optimization Agency, Digital Marketing Pioneer" slot="head">
   <meta name="business-certifications" content="Google Partner, Google Analytics Certified, AI Marketing Specialist, Supercharged Engine Optimization Expert" slot="head">
   
   <!-- Performance Optimization -->
@@ -81,47 +81,41 @@ export const prerender = false;
         "provider": {
           "@id": "https://digitalvisibility.com/#organization"
         },
-        "areaServed": [
+        "offers": [
           {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-              "@type": "GeoCoordinates",
-              "latitude": "51.6214",
-              "longitude": "-3.9436"
+            "@type": "Offer",
+            "url": "https://digitalvisibility.com/pricing/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "40.00",
+              "priceCurrency": "GBP",
+              "unitText": "hour"
             },
-            "geoRadius": "50 km"
+            "availability": "https://schema.org/InStock",
+            "description": "Flexible hourly digital marketing services starting at £40/hour with no contracts",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
           },
           {
-            "@type": "City",
-            "name": "Swansea"
-          },
-          {
-            "@type": "AdministrativeArea",
-            "name": "South Wales"
-          },
-          {
-            "@type": "Country",
-            "name": "United Kingdom"
+            "@type": "Offer",
+            "name": "FREE Professional Website",
+            "url": "https://digitalvisibility.com/pricing/#free-website",
+            "price": "0",
+            "priceCurrency": "GBP",
+            "availability": "https://schema.org/InStock",
+            "description": "FREE £2,995 professional website included with 5+ hours monthly commitment",
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "minValue": 5,
+              "unitText": "hours per month"
+            },
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
           }
         ],
-        "offers": {
-          "@type": "Offer",
-          "url": "https://digitalvisibility.com/services/digital-marketing/",
-          "price": "40.00",
-          "priceCurrency": "GBP",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "40.00",
-            "priceCurrency": "GBP",
-            "unitText": "per hour"
-          },
-          "availability": "https://schema.org/InStock",
-          "description": "Comprehensive digital marketing services starting at £40/hour with Supercharged Engine Optimization",
-          "validFrom": "2023-01-01",
-          "seller": {
-            "@id": "https://digitalvisibility.com/#organization"
-          }
-        },
         "serviceType": "Digital Marketing",
         "category": ["Digital Marketing", "SEO", "AEO", "GEO", "SBO", "PPC", "Social Media Marketing"],
         "serviceOutput": [
@@ -141,8 +135,7 @@ export const prerender = false;
           "availableLanguage": ["en-GB", "cy"]
         },
         "additionalType": "https://en.wikipedia.org/wiki/Digital_marketing",
-        "termsOfService": "https://digitalvisibility.com/terms-of-service/",
-        "award": "Award-Winning Digital Marketing Agency"
+        "termsOfService": "https://digitalvisibility.com/terms-of-service/"
       },
       {
         "@type": "WebPage",

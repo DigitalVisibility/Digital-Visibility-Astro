@@ -89,7 +89,7 @@ export const prerender = false;
   
   <!-- Trust & Authority Signals -->
   <meta name="business-founding-date" content="2023-01-01" slot="head">
-  <meta name="business-awards" content="Award-winning Supercharged Engine Optimization Specialist Swansea" slot="head">
+  <meta name="business-awards" content="Royal Academy of Engineering Award Winner 2025, Award-winning Supercharged Engine Optimization Specialist Swansea" slot="head">
   <meta name="business-certifications" content="Google Partner, Meta Blueprint Certified, Microsoft Advertising Professional, AI Search Optimization Certified" slot="head">
   
   <!-- Performance Optimization -->
@@ -199,7 +199,7 @@ export const prerender = false;
             }
           ],
           "slogan": "Get Discovered Everywhere with Supercharged Engine Optimization",
-          "description": "Digital Visibility is Swansea's award-winning SEO agency specializing in Search Engine Optimization, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO). We help businesses get found on Google search and AI platforms like ChatGPT, Perplexity, and Microsoft Bing. Our comprehensive approach includes free high-converting websites, AI automations that pay for themselves, and flexible £40/hour services with no contracts. Serving businesses in Swansea, South Wales, across the UK, and globally.",
+          "description": "Digital Visibility is Swansea's award-winning SEO agency led by Royal Academy of Engineering Award winner Darran Goulding, specializing in Search Engine Optimization, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO). We help businesses get found on Google search and AI platforms like ChatGPT, Perplexity, and Microsoft Bing. Our comprehensive approach includes free high-converting websites, AI automations that pay for themselves, and flexible £40/hour services with no contracts. Serving businesses in Swansea, South Wales, across the UK, and globally.",
           "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://digitalvisibility.com"
@@ -210,8 +210,7 @@ export const prerender = false;
             "addressLocality": "Llansamlet",
             "addressRegion": "Swansea",
             "postalCode": "SA7 9BA",
-            "addressCountry": "GB",
-            "addressCountryCode": "UK"
+            "addressCountry": "GB"
           },
           "contactPoint": [
             {
@@ -224,8 +223,7 @@ export const prerender = false;
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
                 "opens": "08:00",
-                "closes": "20:00",
-                "timeZone": "Europe/London"
+                "closes": "20:00"
               }
             },
             {
@@ -284,20 +282,10 @@ export const prerender = false;
                 "@type": "EducationalOrganization",
                 "name": "Swansea University"
               },
-              "award": [
-                {
-                  "@type": "Award",
-                  "name": "Royal Academy of Engineering Award 2025",
-                  "description": "Recognition for innovation in digital technology and business optimization"
-                }
-              ]
+
             }
           ],
-          "employees": {
-            "@type": "QuantitativeValue",
-            "minValue": 10,
-            "maxValue": 25
-          },
+          "numberOfEmployees": 3,
           "areaServed": [
             {
               "@type": "City",
@@ -330,18 +318,7 @@ export const prerender = false;
               "description": "Remote Supercharged Engine Optimization services available globally"
             }
           ],
-          "award": [
-            {
-              "@type": "Award",
-              "name": "Royal Academy of Engineering Award 2025",
-              "description": "Excellence in innovation and digital technology development"
-            },
-            {
-              "@type": "Award", 
-              "name": "Award-winning Supercharged Engine Optimization Specialist in Swansea",
-              "description": "Achieved top AI search rankings in record time"
-            }
-          ],
+
           "memberOf": [
             {
               "@type": "Organization",
@@ -351,25 +328,13 @@ export const prerender = false;
               "@type": "Organization",
               "name": "Welsh Digital Marketing Association"
             }
-          ],
-          "funder": [
-            {
-              "@type": "Organization",
-              "name": "Swansea Council Business Funding",
-              "url": "https://www.swansea.gov.uk/businessfunding"
-            },
-            {
-              "@type": "Organization",
-              "name": "Royal Academy of Engineering",
-              "url": "https://enterprisehub.raeng.org.uk/"
-            }
           ]
         },
         {
           "@type": "LocalBusiness",
           "@id": "https://digitalvisibility.com/#localbusiness",
           "name": "Digital Visibility",
-          "description": "Swansea's award-winning SEO agency specializing in Supercharged Engine Optimization for search engines and AI platforms",
+          "description": "Swansea's award-winning SEO agency led by Royal Academy of Engineering Award winner, specializing in Supercharged Engine Optimization for search engines and AI platforms",
           "url": "https://digitalvisibility.com",
           "telephone": "+44-01792-002497",
           "address": {
@@ -385,29 +350,141 @@ export const prerender = false;
             "latitude": 51.6399,
             "longitude": -3.9436
           },
-          "openingHours": "Mo-Fr 08:00-20:00",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "08:00",
+              "closes": "20:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Saturday",
+              "opens": "09:00",
+              "closes": "17:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Sunday",
+              "opens": "10:00",
+              "closes": "16:00"
+            }
+          ],
           "priceRange": "£40/hour",
           "paymentAccepted": "Cash, Credit Card, Bank Transfer",
           "currenciesAccepted": "GBP"
         },
         {
-          "@type": "Service",
-          "@id": "https://digitalvisibility.com/#supercharged-seo",
-          "name": "Supercharged Engine Optimization",
-          "description": "Complete SEO+AEO+GEO+SBO optimization to get found on Google and AI platforms",
-          "provider": {
-            "@id": "https://digitalvisibility.com/#organization"
-          },
-          "areaServed": {
-            "name": "Swansea, Wales, UK and International"
-          },
-          "serviceType": ["SEO Services", "AEO Services", "GEO Services", "SBO Services"],
-          "availableChannel": {
-            "@type": "ServiceChannel",
-            "serviceUrl": "https://digitalvisibility.com/services/supercharged-engine-optimization/",
-            "servicePhone": "+44 7450 247 479",
-            "availableLanguage": ["en-GB", "cy"]
-          }
+          "@type": "ItemList",
+          "@id": "https://digitalvisibility.com/#services",
+          "name": "Digital Visibility Services",
+          "description": "Complete digital transformation services",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "Service",
+                "name": "Supercharged Engine Optimization",
+                "description": "Complete SEO+AEO+GEO+SBO optimization strategy",
+                "url": "https://digitalvisibility.com/services/supercharged-engine-optimization/",
+                "provider": {
+                  "@id": "https://digitalvisibility.com/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "Service",
+                "name": "Search Engine Optimization",
+                "description": "Traditional SEO services for Google rankings",
+                "url": "https://digitalvisibility.com/services/search-engine-optimization/",
+                "provider": {
+                  "@id": "https://digitalvisibility.com/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "Service",
+                "name": "Answer Engine Optimization",
+                "description": "AEO optimization for AI platforms like ChatGPT and Perplexity",
+                "url": "https://digitalvisibility.com/services/answer-engine-optimization/",
+                "provider": {
+                  "@id": "https://digitalvisibility.com/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "Service",
+                "name": "Generative Engine Optimization",
+                "description": "GEO optimization for AI-generated content and responses",
+                "url": "https://digitalvisibility.com/services/generative-engine-optimization/",
+                "provider": {
+                  "@id": "https://digitalvisibility.com/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "Service",
+                "name": "Search Brand Optimization",
+                "description": "SBO for brand authority and recognition",
+                "url": "https://digitalvisibility.com/services/search-brand-optimization/",
+                "provider": {
+                  "@id": "https://digitalvisibility.com/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "Service",
+                "name": "Digital Marketing",
+                "description": "Complete digital marketing strategies and campaigns",
+                "url": "https://digitalvisibility.com/services/digital-marketing/",
+                "provider": {
+                  "@id": "https://digitalvisibility.com/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "item": {
+                "@type": "Service",
+                "name": "App Development",
+                "description": "Custom mobile and web application development",
+                "url": "https://digitalvisibility.com/services/app-development/",
+                "provider": {
+                  "@id": "https://digitalvisibility.com/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "item": {
+                "@type": "Service",
+                "name": "Product Design",
+                "description": "Physical product design and engineering services",
+                "url": "https://digitalvisibility.com/services/product-design/",
+                "provider": {
+                  "@id": "https://digitalvisibility.com/#organization"
+                }
+              }
+            }
+          ]
         }
       ]
     }

@@ -71,25 +71,80 @@ import Footer from '../../components/Footer.astro';
           "latitude": "51.6399",
           "longitude": "-3.8936"
         },
-        "openingHours": [
-          "Mo-Fr 08:00-20:00",
-          "Sa 09:00-17:00",
-          "Su 10:00-16:00"
-        ],
+
         "priceRange": "£40-120 per hour",
         "currenciesAccepted": "GBP",
         "paymentAccepted": "Cash, Credit Card, Bank Transfer, Direct Debit",
-        "areaServed": [
+        "offers": [
           {
-            "@type": "Country",
-            "name": "United Kingdom"
+            "@type": "Offer",
+            "name": "Standard AI Automations",
+            "url": "https://digitalvisibility.com/pricing/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "40.00",
+              "priceCurrency": "GBP",
+              "unitText": "hour"
+            },
+            "availability": "https://schema.org/InStock",
+            "description": "Standard AI automation services including templates and basic integrations at £40/hour",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
           },
           {
-            "@type": "Place",
-            "name": "Global Remote Services"
+            "@type": "Offer",
+            "name": "Enterprise AI Systems",
+            "url": "https://digitalvisibility.com/contact/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "minPrice": "80.00",
+              "maxPrice": "120.00",
+              "priceCurrency": "GBP",
+              "unitText": "hour"
+            },
+            "availability": "https://schema.org/InStock",
+            "description": "Specialist AI automation services with strategic analysis, RAG systems, and bespoke development at £80-120/hour",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Fixed Price Quotations",
+            "url": "https://digitalvisibility.com/contact/",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "GBP",
+              "valueAddedTaxIncluded": "false"
+            },
+            "availability": "https://schema.org/InStock",
+            "description": "Custom quotations available for complex AI automation projects with NDA agreements",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "FREE Professional Website",
+            "url": "https://digitalvisibility.com/pricing/#free-website",
+            "price": "0",
+            "priceCurrency": "GBP",
+            "availability": "https://schema.org/InStock",
+            "description": "FREE £2,995 professional website included with 5+ hours monthly commitment",
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "minValue": 5,
+              "unitText": "hours per month"
+            },
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
           }
         ],
-        "award": "Award-winning team",
         "serviceOutput": [
           "Claude MCP Implementation",
           "AI Workflow Automation",
@@ -107,8 +162,7 @@ import Footer from '../../components/Footer.astro';
           "availableLanguage": ["en-GB", "cy"]
         },
         "additionalType": "https://en.wikipedia.org/wiki/Conversational_artificial_intelligence",
-        "termsOfService": "https://digitalvisibility.com/terms-of-service/",
-        "award": "UK's First Claude MCP Specialists"
+        "termsOfService": "https://digitalvisibility.com/terms-of-service/"
       },
       {
         "@type": "SpecialAnnouncement",
