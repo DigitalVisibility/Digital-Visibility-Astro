@@ -104,9 +104,6 @@ import Footer from "../../components/Footer.astro";
         "@id": "https://digitalvisibility.com/pricing/#service",
         "name": "Digital Visibility Marketing Services",
         "description": "Human-powered, AI-accelerated digital marketing services at £40 per hour with complete flexibility. No commitment required - choose as many or as few hours as you need and adjust monthly based on your business needs.",
-        "provider": {
-          "@id": "https://digitalvisibility.com/#organization"
-        },
         "url": "https://digitalvisibility.com/pricing/",
         "logo": {
           "@type": "ImageObject",
@@ -146,8 +143,12 @@ import Footer from "../../components/Footer.astro";
               "@id": "https://digitalvisibility.com/pricing/#hourly-rate",
               "name": "Flexible Hourly Digital Marketing",
               "description": "Pay-as-you-go digital marketing services at £40 per hour. Use hours across any service: SEO, AEO, GEO, AI automation, content creation, web design, social media, and more.",
-              "price": "40",
-              "priceCurrency": "GBP",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "40",
+                "priceCurrency": "GBP",
+                "unitText": "hour"
+              },
               "availability": "https://schema.org/InStock",
               "validFrom": "2023-01-01",
               "category": "Digital Marketing Services",
@@ -208,8 +209,12 @@ import Footer from "../../components/Footer.astro";
           "@id": "https://digitalvisibility.com/pricing/#starter-package",
           "name": "Starter Package - 1 Hour/Month",
           "description": "Perfect for businesses just starting their digital journey. 1 hour of professional digital marketing services per month at £40.",
-          "price": "40",
-          "priceCurrency": "GBP",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "40",
+            "priceCurrency": "GBP",
+            "unitText": "month"
+          },
           "eligibleQuantity": {
             "@type": "QuantitativeValue",
             "value": 1,
@@ -244,8 +249,12 @@ import Footer from "../../components/Footer.astro";
           "@id": "https://digitalvisibility.com/pricing/#small-business-package",
           "name": "Small Business Package - 3 Hours/Month",
           "description": "Recommended for small businesses. Includes website updates, SEO improvements, and content creation. 3 hours per month at £40/hour.",
-          "price": "120",
-          "priceCurrency": "GBP",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "120",
+            "priceCurrency": "GBP",
+            "unitText": "month"
+          },
           "eligibleQuantity": {
             "@type": "QuantitativeValue",
             "value": 3,
@@ -376,7 +385,8 @@ import Footer from "../../components/Footer.astro";
       "name": "United Kingdom"
     },
     "announcementLocation": {
-      "@type": "VirtualLocation",
+      "@type": "Place",
+      "name": "Digital Visibility Website",
       "url": "https://digitalvisibility.com/pricing/"
     },
     "about": [

@@ -3,6 +3,20 @@
 
 export const blogPosts = [
   {
+    title: "How Local Businesses Can Crush Competitors Using Claude 4 Extended Thinking Capabilities",
+    slug: "how-local-businesses-can-crush-competitors-using-claude-4-extended-thinking-capabilities",
+    excerpt: "Discover how Claude 4's extended thinking capabilities help local businesses outperform competitors through AI-driven strategies, automated competitor analysis, and smart pricing optimization.",
+    category: "AI Automation",
+    categorySlug: "ai-automation",
+    image: "/Blog hero image for claude thinking.webp",
+    alt: "Local business owner using Claude 4 AI extended thinking capabilities to analyze competitors and develop strategic business plans on laptop screen",
+    date: "July 10, 2025",
+    author: "Darran Goulding",
+    authorImage: "/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
+    featured: true,
+    tags: ["Claude 4", "Extended Thinking", "Local Business", "AI Automation", "Competitor Analysis", "Business Strategy"]
+  },
+  {
     title: "How Should Your Business Adapt to Google's Latest Search Engine Update?",
     slug: "how-should-your-business-adapt-to-googles-latest-search-engine-update",
     excerpt: "Discover how your business can adapt to Google's latest June 2025 search engine update through expert-led content, technical optimization, and multi-platform visibility.",

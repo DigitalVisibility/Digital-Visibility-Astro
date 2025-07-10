@@ -113,8 +113,12 @@ import Footer from '../../components/Footer.astro';
             "@type": "Offer",
             "name": "FREE Professional Website",
             "url": "https://digitalvisibility.com/pricing/#free-website",
-            "price": "0",
-            "priceCurrency": "GBP",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "0",
+              "priceCurrency": "GBP",
+              "unitText": "website"
+            },
             "availability": "https://schema.org/InStock",
             "description": "FREE £2,995 professional website included with 5+ hours monthly commitment",
             "eligibleQuantity": {
@@ -127,7 +131,7 @@ import Footer from '../../components/Footer.astro';
             }
           }
         ],
-        "additionalType": "https://en.wikipedia.org/wiki/Conversational_artificial_intelligence",
+
         "termsOfService": "https://digitalvisibility.com/terms-conditions/"
       },
       {
@@ -138,7 +142,7 @@ import Footer from '../../components/Footer.astro';
         "datePosted": "2025-06-05",
         "dateModified": "2025-06-23",
         "expires": "2025-12-31",
-        "category": "https://www.wikidata.org/wiki/Q11826202"
+        "category": "BusinessAnnouncement"
       }
     ]
   }
