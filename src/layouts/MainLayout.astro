@@ -45,7 +45,10 @@ const pageImage = meta?.image || "/digital-visibility-logo-f.png";
     <!-- Removed global.css stylesheet reference -->
     <!-- Individual pages handle their own meta descriptions to avoid duplicates -->
     <meta name="keywords" content={pageKeywords}>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- Favicon with multiple formats for better browser support -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/digital-visibility-logo-fav.png">
+    <link rel="icon" type="image/webp" sizes="32x32" href="/digital-visibility-logo-fav.webp">
+    <link rel="apple-touch-icon" href="/digital-visibility-logo-fav.png">
     
     <!-- Sitemap and Robots References -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">

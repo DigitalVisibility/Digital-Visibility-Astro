@@ -530,7 +530,7 @@ async function analyzeWebsite(url) {
       
       // Analytics & Tracking
       'googletagmanager.com', 'google-analytics.com', 'doubleclick.net',
-      'facebook.net', 'hotjar.com', 'clarity.ms',
+      'hotjar.com', 'clarity.ms',
       
       // Payment services
       'paypal.com', 'stripe.com', 'authorize.net', 'square.com', 'checkout.com'
