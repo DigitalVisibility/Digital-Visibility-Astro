@@ -2,13 +2,15 @@
 /*
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
-  Cache-Control: public, max-age=3600
+  Cache-Control: public, max-age=31536000, immutable
   Content-Security-Policy: upgrade-insecure-requests; connect-src 'self' https://*.darrangoulding.workers.dev https://*.cloudflare.com https://api.web3forms.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.cloudflare.com https://challenges.cloudflare.com https://unpkg.com https://static.cloudflareinsights.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
   CF-Speed-Hint: perf=lcp;
   CF-Cache-Status: HIT
   CF-Early-Hints: on
   CF-Prefetch-URLs: /scripts/lucide-icons.min.js
+  Link: </scripts/lucide-icons.min.js>; rel=preload; as=script
+  Link: </src/styles/global.css>; rel=preload; as=style
   
 # Don't process these files
 /js/AnalyzerLead.js
@@ -18,3 +20,35 @@
 /js/lead-api.js
   Content-Type: application/javascript
   X-Robots-Tag: noindex
+
+# Static assets - long cache
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+  
+# CSS files - long cache with versioning
+*.css
+  Cache-Control: public, max-age=31536000, immutable
+  
+# JavaScript files - long cache with versioning  
+*.js
+  Cache-Control: public, max-age=31536000, immutable
+  
+# Images - long cache
+*.webp
+  Cache-Control: public, max-age=31536000, immutable
+  
+*.png
+  Cache-Control: public, max-age=31536000, immutable
+  
+*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+  
+*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+  
+*.svg
+  Cache-Control: public, max-age=31536000, immutable
+  
+# HTML files - shorter cache for content updates
+*.html
+  Cache-Control: public, max-age=3600

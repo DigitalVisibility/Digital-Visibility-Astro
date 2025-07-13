@@ -12,6 +12,19 @@
   --color-primary-800: #075985;
   --color-primary-900: #0c4a6e;
   --color-primary-950: #082f49;
+  
+  /* Green color palette for better contrast */
+  --color-green-50: #f0fdf4;
+  --color-green-100: #dcfce7;
+  --color-green-200: #bbf7d0;
+  --color-green-300: #86efac;
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+  --color-green-800: #166534;
+  --color-green-900: #14532d;
+  --color-green-950: #052e16;
 }
 
 /* Base styles */
@@ -112,4 +125,68 @@ input:focus, textarea:focus, select:focus {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Accessibility improvements - Better contrast for green text */
+.text-green-600 {
+  color: var(--color-green-700) !important; /* Darker green for better contrast */
+}
+
+.text-green-700 {
+  color: var(--color-green-800) !important; /* Even darker for hover states */
+}
+
+.text-green-800 {
+  color: var(--color-green-900) !important; /* Darkest for maximum contrast */
+}
+
+.hover\:text-green-700:hover {
+  color: var(--color-green-800) !important;
+}
+
+.hover\:text-green-800:hover {
+  color: var(--color-green-900) !important;
+}
+
+/* Maintain the same visual hierarchy but with better contrast */
+.bg-green-50 {
+  background-color: var(--color-green-50) !important;
+}
+
+.bg-green-100 {
+  background-color: var(--color-green-100) !important;
+}
+
+.hover\:bg-green-50:hover {
+  background-color: var(--color-green-50) !important;
+}
+
+.border-green-200 {
+  border-color: var(--color-green-200) !important;
+}
+
+.border-green-300 {
+  border-color: var(--color-green-300) !important;
+}
+
+/* Fix gray text contrast issues */
+.text-gray-400 {
+  color: #6b7280 !important; /* Darker gray for better contrast */
+}
+
+.text-gray-500 {
+  color: #4b5563 !important; /* Even darker gray for better contrast */
+}
+
+.hover\:text-gray-500:hover {
+  color: #4b5563 !important;
+}
+
+/* Ensure hover states maintain good contrast */
+.hover\:text-blue-500:hover {
+  color: #3b82f6 !important;
+}
+
+.hover\:text-blue-600:hover {
+  color: #2563eb !important;
 }

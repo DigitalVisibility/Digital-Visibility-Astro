@@ -25,6 +25,7 @@
     "tailwindcss": "^3.3.6"
   },
   "devDependencies": {
+    "cssnano": "^7.0.7",
     "terser": "^5.39.0"
   }
 }
