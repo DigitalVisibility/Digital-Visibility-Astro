@@ -128,34 +128,64 @@ input:focus, textarea:focus, select:focus {
 }
 
 /* Accessibility improvements - Better contrast for green text */
-.text-green-600 {
+/* Using stronger selectors to ensure proper overrides */
+.text-green-600,
+span.text-green-600,
+div.text-green-600,
+p.text-green-600,
+a.text-green-600,
+h1.text-green-600,
+h2.text-green-600,
+h3.text-green-600,
+h4.text-green-600,
+h5.text-green-600,
+h6.text-green-600,
+li.text-green-600,
+td.text-green-600,
+th.text-green-600,
+strong.text-green-600,
+em.text-green-600,
+i.text-green-600,
+svg.text-green-600 {
   color: #15803d !important; /* Darker green for better contrast - passes WCAG AA */
 }
 
-.text-green-700 {
+.text-green-700,
+span.text-green-700,
+div.text-green-700,
+p.text-green-700,
+a.text-green-700 {
   color: #166534 !important; /* Even darker for hover states */
 }
 
-.text-green-800 {
+.text-green-800,
+span.text-green-800,
+div.text-green-800,
+p.text-green-800,
+a.text-green-800 {
   color: #14532d !important; /* Darkest for maximum contrast */
 }
 
 /* Additional green text variations that might exist */
-.text-green-500 {
+.text-green-500,
+span.text-green-500,
+div.text-green-500,
+p.text-green-500,
+a.text-green-500 {
   color: #16a34a !important; /* Ensure all green variants have good contrast */
-}
-
-/* Specific targeting for problematic elements */
-span.text-green-600,
-div.text-green-600,
-p.text-green-600,
-a.text-green-600 {
-  color: #15803d !important;
 }
 
 /* Font weight adjustments for better readability */
 .text-green-600.font-bold,
-.text-green-600.font-semibold {
+.text-green-600.font-semibold,
+span.text-green-600.font-bold,
+div.text-green-600.font-bold,
+p.text-green-600.font-bold,
+a.text-green-600.font-bold,
+span.text-green-600.font-semibold,
+div.text-green-600.font-semibold,
+p.text-green-600.font-semibold,
+a.text-green-600.font-semibold {
   color: #166534 !important; /* Slightly darker for bold text */
 }
 
@@ -164,17 +194,32 @@ a.text-green-600 {
 .text-green-600.text-2xl,
 .text-green-600.text-3xl,
 .text-green-600.text-4xl,
-.text-green-600.text-5xl {
+.text-green-600.text-5xl,
+span.text-green-600.text-xl,
+div.text-green-600.text-xl,
+span.text-green-600.text-2xl,
+div.text-green-600.text-2xl,
+span.text-green-600.text-3xl,
+div.text-green-600.text-3xl,
+span.text-green-600.text-4xl,
+div.text-green-600.text-4xl,
+span.text-green-600.text-5xl,
+div.text-green-600.text-5xl {
   color: #166534 !important; /* Darker for larger text */
 }
 
 /* Ensure all green text variants meet contrast requirements */
-.text-green-600.font-medium {
+.text-green-600.font-medium,
+span.text-green-600.font-medium,
+div.text-green-600.font-medium,
+p.text-green-600.font-medium,
+a.text-green-600.font-medium {
   color: #15803d !important;
 }
 
 /* Override any inline styles that might be causing issues */
-[class*="text-green-600"] {
+[class*="text-green-600"],
+*[class*="text-green-600"] {
   color: #15803d !important;
 }
 
@@ -215,16 +260,76 @@ a.text-green-600 {
 }
 
 /* Fix gray text contrast issues */
-.text-gray-400 {
+.text-gray-400,
+span.text-gray-400,
+div.text-gray-400,
+p.text-gray-400,
+a.text-gray-400,
+li.text-gray-400,
+td.text-gray-400,
+th.text-gray-400,
+strong.text-gray-400,
+em.text-gray-400,
+i.text-gray-400 {
   color: #6b7280 !important; /* Darker gray for better contrast */
 }
 
-.text-gray-500 {
+.text-gray-500,
+span.text-gray-500,
+div.text-gray-500,
+p.text-gray-500,
+a.text-gray-500,
+li.text-gray-500,
+td.text-gray-500,
+th.text-gray-500,
+strong.text-gray-500,
+em.text-gray-500,
+i.text-gray-500 {
   color: #4b5563 !important; /* Even darker gray for better contrast */
 }
 
-.hover\:text-gray-500:hover {
+.hover\:text-gray-500:hover,
+span.hover\:text-gray-500:hover,
+div.hover\:text-gray-500:hover,
+p.hover\:text-gray-500:hover,
+a.hover\:text-gray-500:hover {
   color: #4b5563 !important;
+}
+
+/* Additional gray variants for comprehensive coverage */
+.text-gray-300,
+span.text-gray-300,
+div.text-gray-300,
+p.text-gray-300,
+a.text-gray-300 {
+  color: #4b5563 !important; /* Ensure sufficient contrast */
+}
+
+/* Override any class combinations that might be problematic */
+[class*="text-gray-400"],
+*[class*="text-gray-400"] {
+  color: #6b7280 !important;
+}
+
+[class*="text-gray-500"],
+*[class*="text-gray-500"] {
+  color: #4b5563 !important;
+}
+
+/* Ensure footer text-gray-200 has good contrast on dark backgrounds */
+.text-gray-200,
+span.text-gray-200,
+div.text-gray-200,
+p.text-gray-200,
+a.text-gray-200,
+li.text-gray-200 {
+  color: #e5e7eb !important; /* Light gray for good contrast on dark backgrounds */
+}
+
+/* Ensure hover states work well */
+.hover\:text-blue-400:hover,
+a.hover\:text-blue-400:hover {
+  color: #60a5fa !important;
 }
 
 /* Ensure hover states maintain good contrast */
