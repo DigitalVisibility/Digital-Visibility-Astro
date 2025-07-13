@@ -1,5 +1,7 @@
 ---
 // Main layout component that will be used across all pages
+import '../styles/global.css';
+
 const { title = "Digital Visibility - AI Powered Business Optimization", meta } = Astro.props;
 
 // Use meta object if provided, otherwise fall back to individual props
@@ -36,9 +38,7 @@ const pageImage = meta?.image || "/digital-visibility-logo-f.png";
 
 
     <!-- Preload critical resources for better LCP -->
-    <!-- Load global CSS asynchronously to prevent render blocking -->
-    <link rel="preload" href="/src/styles/global.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/src/styles/global.css"></noscript>
+    <!-- Global CSS is now imported in the component frontmatter -->
     
     <!-- Preload critical scripts -->
     <link rel="preload" href="/scripts/lucide-icons.min.js" as="script">

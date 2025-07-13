@@ -10,7 +10,6 @@
   CF-Early-Hints: on
   CF-Prefetch-URLs: /scripts/lucide-icons.min.js
   Link: </scripts/lucide-icons.min.js>; rel=preload; as=script
-  Link: </src/styles/global.css>; rel=preload; as=style
   
 # Don't process these files
 /js/AnalyzerLead.js
@@ -27,6 +26,11 @@
   
 # CSS files - long cache with versioning
 *.css
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: text/css; charset=utf-8
+
+# Built assets from Astro
+/assets/*.css
   Cache-Control: public, max-age=31536000, immutable
   Content-Type: text/css; charset=utf-8
   
