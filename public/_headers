@@ -3,7 +3,7 @@
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
   Cache-Control: public, max-age=31536000, immutable
-  Content-Security-Policy: upgrade-insecure-requests; connect-src 'self' https://*.darrangoulding.workers.dev https://*.cloudflare.com https://api.web3forms.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.cloudflare.com https://challenges.cloudflare.com https://unpkg.com https://static.cloudflareinsights.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;
+  Content-Security-Policy: upgrade-insecure-requests; connect-src 'self' https://*.darrangoulding.workers.dev https://*.cloudflare.com https://api.web3forms.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://region1.analytics.google.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.cloudflare.com https://challenges.cloudflare.com https://unpkg.com https://static.cloudflareinsights.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
   CF-Speed-Hint: perf=lcp;
   CF-Cache-Status: HIT
@@ -28,6 +28,7 @@
 # CSS files - long cache with versioning
 *.css
   Cache-Control: public, max-age=31536000, immutable
+  Content-Type: text/css; charset=utf-8
   
 # JavaScript files - long cache with versioning  
 *.js
@@ -51,4 +52,19 @@
   
 # HTML files - shorter cache for content updates
 *.html
+  Cache-Control: public, max-age=3600
+
+# Handle missing resources gracefully
+/...supercharged-seo-swansea-public-*
+  Cache-Control: no-cache
+  X-Robots-Tag: noindex
+
+# Prevent 404s for common missing files
+/favicon.ico
+  Cache-Control: public, max-age=31536000
+
+/robots.txt
+  Cache-Control: public, max-age=3600
+  
+/sitemap.xml
   Cache-Control: public, max-age=3600

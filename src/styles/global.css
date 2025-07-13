@@ -129,15 +129,60 @@ input:focus, textarea:focus, select:focus {
 
 /* Accessibility improvements - Better contrast for green text */
 .text-green-600 {
-  color: var(--color-green-700) !important; /* Darker green for better contrast */
+  color: #15803d !important; /* Darker green for better contrast - passes WCAG AA */
 }
 
 .text-green-700 {
-  color: var(--color-green-800) !important; /* Even darker for hover states */
+  color: #166534 !important; /* Even darker for hover states */
 }
 
 .text-green-800 {
-  color: var(--color-green-900) !important; /* Darkest for maximum contrast */
+  color: #14532d !important; /* Darkest for maximum contrast */
+}
+
+/* Additional green text variations that might exist */
+.text-green-500 {
+  color: #16a34a !important; /* Ensure all green variants have good contrast */
+}
+
+/* Specific targeting for problematic elements */
+span.text-green-600,
+div.text-green-600,
+p.text-green-600,
+a.text-green-600 {
+  color: #15803d !important;
+}
+
+/* Font weight adjustments for better readability */
+.text-green-600.font-bold,
+.text-green-600.font-semibold {
+  color: #166534 !important; /* Slightly darker for bold text */
+}
+
+/* Specific text size and weight combinations for better contrast */
+.text-green-600.text-xl,
+.text-green-600.text-2xl,
+.text-green-600.text-3xl,
+.text-green-600.text-4xl,
+.text-green-600.text-5xl {
+  color: #166534 !important; /* Darker for larger text */
+}
+
+/* Ensure all green text variants meet contrast requirements */
+.text-green-600.font-medium {
+  color: #15803d !important;
+}
+
+/* Override any inline styles that might be causing issues */
+[class*="text-green-600"] {
+  color: #15803d !important;
+}
+
+/* Specific targeting for pricing and CTA elements */
+.text-green-600.font-bold.text-xl,
+.text-green-600.font-bold.text-2xl,
+.text-green-600.font-bold.text-3xl {
+  color: #14532d !important; /* Darkest for large bold text */
 }
 
 .hover\:text-green-700:hover {
