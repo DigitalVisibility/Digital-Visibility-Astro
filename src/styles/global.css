@@ -386,7 +386,7 @@ a.hover\:text-blue-400:hover {
 .text-orange-600,
 a.text-orange-600,
 span.text-orange-600 {
-  color: #ea580c !important; /* Darker orange for better contrast */
+  color: #c2410c !important; /* Much darker orange for better contrast */
 }
 
 .hover\:text-orange-800:hover,
@@ -396,7 +396,7 @@ a.hover\:text-orange-800:hover {
 
 /* Fix green button contrast issues */
 .bg-green-600 {
-  background-color: #16a34a !important; /* Ensure proper green background */
+  background-color: #1e40af !important; /* Changed to blue background for better contrast */
 }
 
 .bg-green-600.text-white,

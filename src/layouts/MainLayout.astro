@@ -1,7 +1,5 @@
 ---
 // Main layout component that will be used across all pages
-import '../styles/global.css';
-
 const { title = "Digital Visibility - AI Powered Business Optimization", meta } = Astro.props;
 
 // Use meta object if provided, otherwise fall back to individual props
@@ -54,6 +52,55 @@ const pageImage = meta?.image || "/digital-visibility-logo-f.png";
     <!-- Removed global.css stylesheet reference -->
     <!-- Individual pages handle their own meta descriptions to avoid duplicates -->
     <meta name="keywords" content={pageKeywords}>
+    
+    <!-- Critical CSS inline for accessibility and contrast fixes -->
+    <style>
+      /* Fix text-gray-300 contrast issues - change to white for better contrast */
+      .text-gray-300,
+      span.text-gray-300,
+      div.text-gray-300,
+      p.text-gray-300,
+      a.text-gray-300,
+      li.text-gray-300,
+      *[class*="text-gray-300"],
+      [class*="text-gray-300"] *,
+      .text-gray-300.text-sm,
+      p.text-gray-300.text-sm {
+        color: #ffffff !important;
+      }
+      
+      /* Very specific targeting for the exact card text elements */
+      p.text-gray-300.text-sm,
+      .text-gray-300.text-sm,
+      p[class*="text-gray-300"][class*="text-sm"] {
+        color: #ffffff !important;
+        font-weight: 400 !important;
+      }
+      
+      /* ROI Calculator subtitle text */
+      p.text-xl.text-gray-300,
+      .text-xl.text-gray-300,
+      p[class*="text-xl"][class*="text-gray-300"] {
+        color: #ffffff !important;
+      }
+      
+      /* Fix orange text contrast issues */
+      .text-orange-600,
+      a.text-orange-600,
+      span.text-orange-600 {
+        color: #c2410c !important;
+      }
+      
+      /* Fix green button contrast issues */
+      .bg-green-600 {
+        background-color: #1e40af !important;
+      }
+      
+      .bg-green-600.text-white,
+      .bg-green-600 .text-white {
+        color: #ffffff !important;
+      }
+    </style>
     <!-- Favicon with multiple formats for better browser support -->
     <link rel="icon" type="image/png" sizes="32x32" href="/digital-visibility-logo-fav.png">
     <link rel="icon" type="image/webp" sizes="32x32" href="/digital-visibility-logo-fav.webp">
