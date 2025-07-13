@@ -91,14 +91,55 @@ const pageImage = meta?.image || "/digital-visibility-logo-f.png";
         color: #c2410c !important;
       }
       
-      /* Fix green button contrast issues */
+      /* Fix green button contrast issues - change to navy blue */
       .bg-green-600 {
-        background-color: #1e40af !important;
+        background-color: #1e3a8a !important; /* Navy blue background */
       }
       
       .bg-green-600.text-white,
       .bg-green-600 .text-white {
         color: #ffffff !important;
+      }
+      
+      /* Override ALL green text with navy blue - maximum specificity */
+      *[class*="text-green-600"],
+      *[class*="text-green-500"],
+      *[class*="text-green-700"],
+      *[class*="text-green-800"],
+      .text-green-600,
+      span.text-green-600,
+      .font-bold.text-green-600,
+      span.font-bold.text-green-600,
+      .text-green-500,
+      .text-green-700,
+      .text-green-800,
+      span.text-green-500,
+      span.text-green-700,
+      span.text-green-800 {
+        color: #1e3a8a !important; /* Navy blue text */
+      }
+      
+      /* Ultra-specific override for pricing table */
+      html body .bg-white span.font-bold.text-green-600,
+      html body .bg-white .font-bold.text-green-600,
+      html body .rounded-2xl span.font-bold.text-green-600,
+      html body span[class*="text-green-600"],
+      html body *[class*="font-bold"][class*="text-green-600"] {
+        color: #1e3a8a !important; /* Navy blue text */
+      }
+      
+      /* Nuclear option - override any green color */
+      span:contains("£40/hour"),
+      span:contains("£0"),
+      span:contains("None Required"),
+      span:contains("Worth £2,995") {
+        color: #1e3a8a !important;
+      }
+      
+      /* Tailwind override */
+      .text-green-600 {
+        --tw-text-opacity: 1;
+        color: #1e3a8a !important;
       }
     </style>
     <!-- Favicon with multiple formats for better browser support -->
