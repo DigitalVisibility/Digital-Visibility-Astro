@@ -274,6 +274,56 @@ i.text-gray-400 {
   color: #6b7280 !important; /* Darker gray for better contrast */
 }
 
+/* Fix text-gray-300 contrast issues - change to white for better contrast */
+.text-gray-300,
+span.text-gray-300,
+div.text-gray-300,
+p.text-gray-300,
+a.text-gray-300,
+li.text-gray-300,
+*[class*="text-gray-300"],
+[class*="text-gray-300"] *,
+.text-gray-300.text-sm,
+p.text-gray-300.text-sm {
+  color: #ffffff !important; /* White text for better contrast on dark backgrounds */
+}
+
+/* Additional specificity for card text */
+.bg-white .text-gray-300,
+.bg-gray-900 .text-gray-300,
+.backdrop-blur-sm .text-gray-300,
+article .text-gray-300,
+section .text-gray-300 {
+  color: #ffffff !important;
+}
+
+/* Very specific targeting for the exact card text elements */
+p.text-gray-300.text-sm,
+.text-gray-300.text-sm,
+p[class*="text-gray-300"][class*="text-sm"] {
+  color: #ffffff !important;
+  font-weight: 400 !important;
+}
+
+/* Force override with highest specificity */
+body p.text-gray-300.text-sm,
+html body p.text-gray-300.text-sm {
+  color: #ffffff !important;
+}
+
+/* ROI Calculator subtitle text */
+p.text-xl.text-gray-300,
+.text-xl.text-gray-300,
+p[class*="text-xl"][class*="text-gray-300"] {
+  color: #ffffff !important;
+}
+
+/* Force override for ROI subtitle */
+body p.text-xl.text-gray-300,
+html body p.text-xl.text-gray-300 {
+  color: #ffffff !important;
+}
+
 .text-gray-500,
 span.text-gray-500,
 div.text-gray-500,
@@ -330,6 +380,28 @@ li.text-gray-200 {
 .hover\:text-blue-400:hover,
 a.hover\:text-blue-400:hover {
   color: #60a5fa !important;
+}
+
+/* Fix orange text contrast issues */
+.text-orange-600,
+a.text-orange-600,
+span.text-orange-600 {
+  color: #ea580c !important; /* Darker orange for better contrast */
+}
+
+.hover\:text-orange-800:hover,
+a.hover\:text-orange-800:hover {
+  color: #9a3412 !important; /* Very dark orange for hover state */
+}
+
+/* Fix green button contrast issues */
+.bg-green-600 {
+  background-color: #16a34a !important; /* Ensure proper green background */
+}
+
+.bg-green-600.text-white,
+.bg-green-600 .text-white {
+  color: #ffffff !important; /* Ensure white text on green background */
 }
 
 /* Ensure hover states maintain good contrast */
