@@ -2106,7 +2106,7 @@ import Footer from "../../components/Footer.astro";
 </script>
   <script>
     // JavaScript for the billing toggle functionality
-    document.addEventListener('DOMContentLoaded', function() {
+    function initializeBillingToggle() {
       // Service tiers toggle
       const billingToggle = document.getElementById('billing-toggle');
       const monthlyLabel = document.getElementById('monthly-label');
@@ -2119,6 +2119,7 @@ import Footer from "../../components/Footer.astro";
       
       // Function to update the UI based on billing period for service tiers
       function updateBillingUI(isYearly) {
+        console.log('Updating billing UI:', isYearly ? 'yearly' : 'monthly');
         // Update the toggle appearance
         if (isYearly) {
           monthlyLabel.classList.remove('text-blue-600');
@@ -2265,9 +2266,21 @@ import Footer from "../../components/Footer.astro";
       
       // Add event listener for toggle changes
       if (billingToggle) {
+        console.log('Setting up billing toggle event listener');
         billingToggle.addEventListener('change', function() {
+          console.log('Toggle changed:', this.checked);
           updateBillingUI(this.checked);
         });
+        
+        // Also add click event as fallback
+        billingToggle.addEventListener('click', function(e) {
+          console.log('Toggle clicked');
+          setTimeout(() => {
+            updateBillingUI(this.checked);
+          }, 50);
+        });
+      } else {
+        console.log('Billing toggle not found!');
       }
       
       // Add event listener for Apps Platform toggle changes
@@ -2276,6 +2289,16 @@ import Footer from "../../components/Footer.astro";
           updateAppsBillingUI(this.checked);
         });
       }
-    });
+    }
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeBillingToggle);
+    } else {
+      initializeBillingToggle();
+    }
+    
+    // Also initialize after a short delay as fallback
+    setTimeout(initializeBillingToggle, 500);
   </script>
 </MainLayout>
