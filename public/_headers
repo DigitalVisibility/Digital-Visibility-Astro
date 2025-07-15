@@ -25,12 +25,12 @@
   Cache-Control: public, max-age=31536000, immutable
   
 # CSS files - long cache with versioning
-*.css
+/*.css
   Cache-Control: public, max-age=31536000, immutable
   Content-Type: text/css; charset=utf-8
 
 # JavaScript files - long cache with versioning
-*.js
+/*.js
   Cache-Control: public, max-age=31536000, immutable
   Content-Type: application/javascript; charset=utf-8
 
@@ -54,27 +54,27 @@
   Content-Type: text/css; charset=utf-8
   
 # JavaScript files - long cache with versioning  
-*.js
+/*.js
   Cache-Control: public, max-age=31536000, immutable
   
 # Images - long cache
-*.webp
+/*.webp
   Cache-Control: public, max-age=31536000, immutable
   
-*.png
+/*.png
   Cache-Control: public, max-age=31536000, immutable
   
-*.jpg
+/*.jpg
   Cache-Control: public, max-age=31536000, immutable
   
-*.jpeg
+/*.jpeg
   Cache-Control: public, max-age=31536000, immutable
   
-*.svg
+/*.svg
   Cache-Control: public, max-age=31536000, immutable
   
 # HTML files - shorter cache for content updates
-*.html
+/*.html
   Cache-Control: public, max-age=3600
 
 # Handle missing resources gracefully
