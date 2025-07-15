@@ -1,0 +1,611 @@
+
+<!DOCTYPE html><html lang="en" data-astro-cid-ouamjn2i> <!-- Cloudflare Early Hints Support --> <!-- Early hints preloads --> <!-- Early hints preconnect --> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Cloudflare optimization hints --><meta http-equiv="Cache-Control" content="public, max-age=86400"><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="cf-2fa-verify" content="true"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-T7HFBLX1X1"></script><!-- Preload critical resources for better LCP --><!-- Preload critical scripts --><link rel="preload" href="/scripts/lucide-icons.min.js" as="script"><!-- DNS prefetch and preconnect for external resources --><link rel="dns-prefetch" href="//fonts.googleapis.com"><link rel="dns-prefetch" href="//fonts.gstatic.com"><link rel="dns-prefetch" href="//imagedelivery.net"><link rel="preconnect" href="https://imagedelivery.net" crossorigin><title>Affordable Digital Marketing Pricing £40/Hour | No Contracts</title><!-- Removed global.css stylesheet reference --><!-- Individual pages handle their own meta descriptions to avoid duplicates --><meta name="keywords" content="AI, digital marketing, app development, product design, business optimization"><!-- Critical CSS inline for accessibility and contrast fixes --><!-- Favicon with multiple formats for better browser support --><link rel="icon" type="image/png" sizes="32x32" href="/digital-visibility-logo-fav.png"><link rel="icon" type="image/webp" sizes="32x32" href="/digital-visibility-logo-fav.webp"><link rel="apple-touch-icon" href="/digital-visibility-logo-fav.png"><!-- Sitemap and Robots References --><link rel="sitemap" type="application/xml" href="/sitemap.xml"><!-- Critical CSS for immediate rendering --><!-- Schema markup removed from MainLayout to prevent conflicts with individual page schemas --><link rel="canonical" href="https://digitalvisibility.com/pricing/"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><meta http-equiv="X-Robots-Tag" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><meta name="keywords" content="digital marketing pricing Swansea, £40 hour digital marketing, flexible SEO pricing Wales, no contract marketing agency, hourly digital marketing rates UK, affordable AEO services, AI automation pricing, custom quotation digital services, specialist digital marketing team, NDA confidential projects, website design pricing Swansea, social media marketing costs Wales, content creation hourly rate, small business marketing packages, pay as you go SEO, monthly digital marketing plans, scalable marketing services UK, transparent agency pricing, Welsh digital agency rates, South Wales marketing costs, AI optimization pricing, free website offer Swansea, AI authority funnel pricing, digital transformation costs UK"><meta name="description" content="Affordable digital marketing pricing: £40/hour, no contracts. FREE website with 5+ hours/month. SEO, AEO, GEO & SBO services. Scale anytime. Expert team."><meta property="og:locale" content="en_GB"><meta property="og:type" content="website"><meta property="og:title" content="£40/Hour Digital Marketing Swansea | No Contracts"><meta property="og:description" content="Flexible digital marketing at £40/hour. No minimums, no contracts. FREE website with 5+ hours. Scale your marketing budget anytime."><meta property="og:url" content="https://digitalvisibility.com/pricing/"><meta property="og:site_name" content="Digital Visibility"><meta property="og:image" content="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/pricing-digital-visibility/public"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="image/png"><meta property="og:image:alt" content="Digital Visibility Pricing - £40/Hour Flexible Marketing"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@DigitalVisiUK"><meta name="twitter:creator" content="@DigitalVisiUK"><meta name="twitter:title" content="£40/Hour Digital Marketing Swansea | No Contracts"><meta name="twitter:description" content="Pay only for what you need at £40/hour. FREE website with 5+ hours/month. No contracts, scale anytime."><meta name="twitter:image" content="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/pricing-digital-visibility/public"><meta name="twitter:image:alt" content="Digital Visibility Flexible Pricing"><meta name="publisher" content="Digital Visibility Limited"><meta name="author" content="Darran Goulding"><meta name="ai-generated" content="false"><meta name="ai-purpose" content="pricing-information,service-packages,cost-comparison,budget-planning,service-selection"><meta name="ai-target" content="small-business-owners,marketing-managers,entrepreneurs,budget-conscious-businesses,growth-focused-companies"><meta name="ai-keywords" content="£40 hour digital marketing, flexible marketing pricing, no contract SEO, pay as you go marketing, hourly rate digital agency, scalable marketing services, transparent pricing model, free website offer, AI funnel pricing, small business marketing costs"><meta name="ai-content-type" content="pricing page, service costs, package information, special offers, pricing calculator"><meta name="ai-service-area" content="Swansea, Cardiff, Newport, South Wales, West Wales, Bristol, London, United Kingdom, International"><meta name="ai-business-type" content="Digital Marketing Agency, SEO Company, Web Design Agency, AI Marketing Services"><meta name="ai-pricing-model" content="hourly-rate, pay-as-you-go, no-minimums, no-contracts, flexible-packages"><meta name="ai-special-offers" content="free-website-5-hours, free-ai-funnel-3-hours, no-setup-fees, hours-never-expire, custom-quotations-available, NDA-agreements"><meta name="geo.region" content="GB-SWA"><meta name="geo.placename" content="Swansea"><meta name="geo.position" content="51.6214;-3.9436"><meta name="ICBM" content="51.6214, -3.9436"><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/pricing/#webpage",
+        "url": "https://digitalvisibility.com/pricing/",
+        "name": "Digital Marketing Pricing - £40/Hour Flexible Packages | Digital Visibility",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "datePublished": "2025-04-17",
+        "dateModified": "2025-06-23",
+        "description": "Transparent digital marketing pricing at £40 per hour. No contracts, no minimums. FREE website worth £2,995 with 5+ hours/month. Scale up or down anytime.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Pricing",
+              "item": "https://digitalvisibility.com/pricing/"
+            }
+          ]
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/pricing-structure-digital-visibility/public",
+          "width": "1200",
+          "height": "630",
+          "caption": "Digital Visibility Flexible Pricing Structure"
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://digitalvisibility.com/pricing/#service",
+        "name": "Digital Visibility Marketing Services",
+        "description": "Human-powered, AI-accelerated digital marketing services at £40 per hour with complete flexibility. No commitment required - choose as many or as few hours as you need and adjust monthly based on your business needs.",
+        "url": "https://digitalvisibility.com/pricing/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/digital-visibility-logo-f.png",
+          "width": "180",
+          "height": "60"
+        },
+        "image": [
+          "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/digital-marketing-team-at-work/public",
+          "https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/flexible-pricing-packages/public"
+        ],
+        "telephone": "+44-01792-002497",
+        "email": "support@digitalvisibility.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "235 Peniel Green Road",
+          "addressLocality": "Llansamlet",
+          "addressRegion": "Swansea",
+          "postalCode": "SA7 9BA",
+          "addressCountry": "GB"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "51.6214",
+          "longitude": "-3.9436"
+        },
+
+                  "priceRange": "£40+",
+        "currenciesAccepted": "GBP",
+        "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer", "Direct Debit", "PayPal"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Digital Marketing Service Packages",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "@id": "https://digitalvisibility.com/pricing/#hourly-rate",
+              "name": "Flexible Hourly Digital Marketing",
+              "description": "Pay-as-you-go digital marketing services at £40 per hour. Use hours across any service: SEO, AEO, GEO, AI automation, content creation, web design, social media, and more.",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "40",
+                "priceCurrency": "GBP",
+                "unitText": "hour"
+              },
+              "availability": "https://schema.org/InStock",
+              "validFrom": "2023-01-01",
+              "category": "Digital Marketing Services",
+              "seller": {
+                "@id": "https://digitalvisibility.com/#organization"
+              }
+            },
+            {
+              "@type": "Offer",
+              "@id": "https://digitalvisibility.com/pricing/#specialist-services",
+              "name": "Specialist Team Services",
+              "description": "Custom quotations for specialist digital marketing and AI automation projects requiring expert knowledge, NDA agreements, or complex implementations.",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "GBP",
+                "valueAddedTaxIncluded": true
+              },
+              "availability": "https://schema.org/InStock",
+              "validFrom": "2023-01-01",
+              "category": "Specialist Digital Marketing Services",
+              "seller": {
+                "@id": "https://digitalvisibility.com/#organization"
+              },
+              "additionalProperty": [
+                {
+                  "@type": "PropertyValue",
+                  "name": "Quotation Type",
+                  "value": "Custom quotation based on requirements"
+                },
+                {
+                  "@type": "PropertyValue",
+                  "name": "Confidentiality",
+                  "value": "NDA agreements available"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+  </script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Digital Visibility Service Packages",
+    "description": "Flexible digital marketing packages at £40 per hour. Choose the hours that fit your business needs and budget.",
+    "numberOfItems": 4,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Offer",
+          "@id": "https://digitalvisibility.com/pricing/#starter-package",
+          "name": "Starter Package - 1 Hour/Month",
+          "description": "Perfect for businesses just starting their digital journey. 1 hour of professional digital marketing services per month at £40.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "40",
+            "priceCurrency": "GBP",
+            "unitText": "month"
+          },
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "hour"
+          },
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://digitalvisibility.com/#organization"
+          },
+          "validFrom": "2023-01-01",
+          "category": "Digital Marketing Services",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Flexibility",
+              "value": "Scale up anytime"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Contract",
+              "value": "No minimum commitment"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Offer",
+          "@id": "https://digitalvisibility.com/pricing/#small-business-package",
+          "name": "Small Business Package - 3 Hours/Month",
+          "description": "Recommended for small businesses. Includes website updates, SEO improvements, and content creation. 3 hours per month at £40/hour.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "120",
+            "priceCurrency": "GBP",
+            "unitText": "month"
+          },
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 3,
+            "unitText": "hours"
+          },
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://digitalvisibility.com/#organization"
+          },
+          "validFrom": "2023-01-01",
+          "category": "Digital Marketing Services",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Special Offer",
+              "value": "FREE AI Authority Funnel worth £1,995 with 12-month subscription"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Services Included",
+              "value": "SEO, Content Creation, Website Updates"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Offer",
+          "@id": "https://digitalvisibility.com/pricing/#growing-business-package",
+          "name": "Growing Business Package - 5-10 Hours/Month",
+          "description": "Ideal for growing businesses. Comprehensive digital marketing including SEO, AEO, content creation, social media, and website management. 5-10 hours per month at £40/hour.",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "200",
+            "maxPrice": "400",
+            "priceCurrency": "GBP"
+          },
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "minValue": 5,
+            "maxValue": 10,
+            "unitText": "hours"
+          },
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://digitalvisibility.com/#organization"
+          },
+          "validFrom": "2023-01-01",
+          "category": "Digital Marketing Services",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Special Offer",
+              "value": "FREE Custom Business Website worth £2,995 with 12-month subscription (5+ hours)"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Services Included",
+              "value": "SEO, AEO, GEO, Content Creation, Social Media, Website Management"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Offer",
+          "@id": "https://digitalvisibility.com/pricing/#established-business-package",
+          "name": "Established Business Package - 20+ Hours/Month",
+          "description": "Complete digital marketing solution for established businesses. Full-service digital transformation including all marketing channels. 20+ hours per month at £40/hour.",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "800",
+            "priceCurrency": "GBP"
+          },
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "minValue": 20,
+            "unitText": "hours"
+          },
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://digitalvisibility.com/#organization"
+          },
+          "validFrom": "2023-01-01",
+          "category": "Digital Marketing Services",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Special Offer",
+              "value": "FREE Website + AI Authority Funnel (£4,990 combined value) with 12-month subscription"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Services Included",
+              "value": "Complete Digital Marketing Team: SEO, AEO, GEO, PPC, Social Media, Content, Web Development, Analytics, Strategy"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Team Access",
+              "value": "Dedicated account manager and full digital team"
+            }
+          ]
+        }
+      }
+    ]
+  }
+  </script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SpecialAnnouncement",
+    "name": "FREE Website & AI Funnel Offers",
+    "text": "Get a FREE professional website or AI authority funnel with qualifying digital marketing packages",
+    "datePosted": "2023-01-01",
+    "expires": "2026-12-31",
+    "category": "https://www.wikidata.org/wiki/Q11826963",
+    "spatialCoverage": {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    "announcementLocation": {
+      "@type": "Place",
+      "name": "Digital Visibility Website",
+      "url": "https://digitalvisibility.com/pricing/"
+    },
+    "about": [
+      {
+        "@type": "Offer",
+        "name": "FREE AI Authority Funnel",
+        "description": "Get a FREE AI Authority Funnel worth £1,995 when you subscribe to any 3+ hour per month package for 12 months",
+        "price": "0",
+        "priceCurrency": "GBP",
+        "eligibleCustomerType": "Business",
+        "eligibleDuration": {
+          "@type": "QuantitativeValue",
+          "value": 12,
+          "unitText": "months"
+        },
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Authority Funnel",
+          "description": "Complete AI-optimized sales funnel to establish your business as an authority"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "FREE Professional Website",
+        "description": "Get a FREE Custom Business Website (up to 7 pages) worth £2,995 when you subscribe to any 5+ hour per month package for 12 months",
+        "price": "0",
+        "priceCurrency": "GBP",
+        "eligibleCustomerType": "Business",
+        "eligibleDuration": {
+          "@type": "QuantitativeValue",
+          "value": 12,
+          "unitText": "months"
+        },
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Professional Business Website",
+          "description": "Custom-designed, fully optimized business website with up to 7 pages"
+        }
+      }
+    ]
+  }
+  </script><link rel="stylesheet" href="/assets/darran-goulding.a3e463cd.css" /><script type="module" src="/assets/hoisted.1ac3560e.js"></script></head> <body data-astro-cid-ouamjn2i> <nav class="bg-white shadow-sm sticky top-0 z-50" data-astro-cid-pux6a34n> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-astro-cid-pux6a34n> <div class="flex justify-between h-16" data-astro-cid-pux6a34n> <div class="flex items-center" data-astro-cid-pux6a34n> <a href="/" class="flex items-center space-x-2" data-astro-cid-pux6a34n> <img src="https://imagedelivery.net/xUD9jGQuj6OKHFKJ8WGwXA/534d1892-305b-409a-93fa-7508ea65a000/public" alt="Digital Visibility Logo" class="h-8 w-auto" style="aspect-ratio: 1.9" data-astro-cid-pux6a34n> <span class="text-xl font-bold text-gray-900" data-astro-cid-pux6a34n>Digital Visibility</span> </a> </div> <div class="hidden md:flex items-center space-x-8" data-astro-cid-pux6a34n> <!-- Home link --> <a href="/" class="p-2 rounded-md text-gray-700 hover:text-blue-500 transition-colors font-medium" data-astro-cid-pux6a34n>Home</a> <!-- Services Dropdown --> <div class="relative group" data-astro-cid-pux6a34n> <button class="flex items-center p-2 rounded-md text-gray-700 hover:text-blue-500 transition-colors font-medium" data-astro-cid-pux6a34n>
+Services
+<i data-lucide="chevron-down" class="w-4 h-4 ml-1" data-astro-cid-pux6a34n></i> </button> <div class="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform" data-astro-cid-pux6a34n> <div class="bg-white rounded-lg shadow-lg py-2" data-astro-cid-pux6a34n> <a href="/services/ai-conversation-automation/" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+AI Conversation Automation
+</a> <a href="/services/digital-marketing/" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+Digital Marketing
+</a> <a href="/services/app-development/" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+App Development
+</a> <a href="/services/product-design/" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+Product Design
+</a> </div> </div> </div> <!-- Apps Dropdown --> <div class="relative group" data-astro-cid-pux6a34n> <button class="flex items-center p-2 rounded-md text-gray-700 hover:text-blue-500 transition-colors font-medium" data-astro-cid-pux6a34n>
+Apps
+<i data-lucide="chevron-down" class="w-4 h-4 ml-1" data-astro-cid-pux6a34n></i> </button> <div class="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform" data-astro-cid-pux6a34n> <div class="bg-white rounded-lg shadow-lg py-2" data-astro-cid-pux6a34n> <a href="/analyzer/" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+AI Optimization Analyzer
+</a> <a href="/roi-calculator/" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+ROI Calculator
+</a> <a href="/apps/apps-platform/" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+Business Apps Platform
+</a> </div> </div> </div> <!-- Resources Dropdown --> <div class="relative group" data-astro-cid-pux6a34n> <button class="flex items-center p-2 rounded-md text-gray-700 hover:text-blue-500 transition-colors font-medium" data-astro-cid-pux6a34n>
+Resources
+<i data-lucide="chevron-down" class="w-4 h-4 ml-1" data-astro-cid-pux6a34n></i> </button> <div class="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform" data-astro-cid-pux6a34n> <div class="bg-white rounded-lg shadow-lg py-2" data-astro-cid-pux6a34n> <a href="/blog/" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+Digital Visibility Blog
+</a> <a href="https://blog.digitalvisibility.com" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+Industry Insights Blog
+</a> <a href="/faq/" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+FAQ's
+</a> </div> </div> </div> <!-- About --> <a href="/pricing/" class="p-2 rounded-md text-gray-700 hover:text-blue-500 transition-colors font-medium" data-astro-cid-pux6a34n>Pricing</a> <!-- Contact --> <a href="/contact/" class="p-2 rounded-md text-gray-700 hover:text-blue-500 transition-colors font-medium" data-astro-cid-pux6a34n>Contact</a> <!-- Quick Contact Links --> <div class="flex items-center space-x-2 border-l border-gray-200 pl-4" data-astro-cid-pux6a34n> <a href="tel:+4401792002497" class="p-2 rounded-md text-gray-600 hover:text-blue-500 hover:bg-gray-50 transition-colors" title="Call us" data-astro-cid-pux6a34n> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-pux6a34n> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" data-astro-cid-pux6a34n></path> </svg> </a> <a href="/cdn-cgi/l/email-protection#87f4f2f7f7e8f5f3c7e3eee0eef3e6ebf1eef4eee5eeebeef3fea9e4e8ea" class="p-2 rounded-md text-gray-600 hover:text-blue-500 hover:bg-gray-50 transition-colors" title="Email us" data-astro-cid-pux6a34n> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-pux6a34n> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" data-astro-cid-pux6a34n></path> </svg> </a> <a href="https://wa.me/447725817197" target="_blank" rel="noopener" class="p-2 rounded-md text-gray-600 hover:text-green-500 hover:bg-gray-50 transition-colors" title="WhatsApp" data-astro-cid-pux6a34n> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-pux6a34n> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" data-astro-cid-pux6a34n></path> </svg> </a> </div> <!-- Login --> <a href="https://apps.digitalvisibility.com" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition-colors" data-astro-cid-pux6a34n>Login</a> </div> <div class="md:hidden flex items-center" data-astro-cid-pux6a34n> <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-500 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" aria-expanded="false" aria-label="Toggle navigation menu" data-astro-cid-pux6a34n> <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24" data-astro-cid-pux6a34n> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" data-astro-cid-pux6a34n></path> </svg> </button> </div> </div> <!-- Mobile menu --> <div id="mobile-menu" class="md:hidden hidden" data-astro-cid-pux6a34n> <div class="px-2 pt-2 pb-3 space-y-1" data-astro-cid-pux6a34n> <!-- Home link mobile --> <a href="/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>Home</a> <div class="mobile-dropdown" data-astro-cid-pux6a34n> <button class="mobile-dropdown-button w-full text-left px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500 flex items-center justify-between" data-astro-cid-pux6a34n>
+Services
+<i data-lucide="chevron-down" class="w-4 h-4" data-astro-cid-pux6a34n></i> </button> <div class="mobile-dropdown-content hidden pl-4 mt-1 space-y-1" data-astro-cid-pux6a34n> <a href="/services/ai-conversation-automation/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+AI Conversation Automation
+</a> <a href="/services/digital-marketing/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+Digital Marketing
+</a> <a href="/services/app-development/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+App Development
+</a> <a href="/services/product-design/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+Product Design
+</a> </div> </div> <div class="mobile-dropdown" data-astro-cid-pux6a34n> <button class="mobile-dropdown-button w-full text-left px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500 flex items-center justify-between" data-astro-cid-pux6a34n>
+Apps
+<i data-lucide="chevron-down" class="w-4 h-4" data-astro-cid-pux6a34n></i> </button> <div class="mobile-dropdown-content hidden pl-4 mt-1 space-y-1" data-astro-cid-pux6a34n> <a href="/analyzer/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+AI Optimization Analyzer
+</a> <a href="/roi-calculator/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+ROI Calculator
+</a> <a href="/apps/apps-platform/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+Business Apps Platform
+</a> </div> </div> <div class="mobile-dropdown" data-astro-cid-pux6a34n> <button class="mobile-dropdown-button w-full text-left px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500 flex items-center justify-between" data-astro-cid-pux6a34n>
+Resources
+<i data-lucide="chevron-down" class="w-4 h-4" data-astro-cid-pux6a34n></i> </button> <div class="mobile-dropdown-content hidden pl-4 mt-1 space-y-1" data-astro-cid-pux6a34n> <a href="/blog/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+Digital Visibility Blog
+</a> <a href="https://blog.digitalvisibility.com" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+Industry Insights Blog
+</a> <a href="/faq/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+FAQ's
+</a> </div> </div> <a href="/pricing/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+Pricing
+</a> <a href="/contact/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n>
+Contact
+</a> <!-- Mobile Quick Contact Links --> <div class="border-t border-gray-200 pt-3 mt-3" data-astro-cid-pux6a34n> <div class="flex justify-center space-x-4" data-astro-cid-pux6a34n> <a href="tel:+4401792002497" class="flex items-center px-4 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n> <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-pux6a34n> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" data-astro-cid-pux6a34n></path> </svg>
+Call
+</a> <a href="/cdn-cgi/l/email-protection#8efdfbfefee1fcfaceeae7e9e7faefe2f8e7fde7ece7e2e7faf7a0ede1e3" class="flex items-center px-4 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500" data-astro-cid-pux6a34n> <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-pux6a34n> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" data-astro-cid-pux6a34n></path> </svg>
+Email
+</a> <a href="https://wa.me/447725817197" target="_blank" rel="noopener" class="flex items-center px-4 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-green-500" data-astro-cid-pux6a34n> <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-pux6a34n> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" data-astro-cid-pux6a34n></path> </svg>
+WhatsApp
+</a> </div> </div> <a href="https://apps.digitalvisibility.com" class="block px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 mt-4" data-astro-cid-pux6a34n>
+Login
+</a> </div> </div> </div> </nav>   <main data-astro-cid-ouamjn2i>                                                         <main> <!-- Hero Section --> <header class="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 py-20 md:py-28"> <div class="absolute inset-0 opacity-20"></div> <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> <!-- Breadcrumb Navigation --> <nav aria-label="Breadcrumb" class="mb-8"> <ol class="flex items-center space-x-2 text-sm"> <li><a href="/" class="text-blue-200 hover:text-white">Home</a></li> <li><span class="text-blue-300" aria-hidden="true">›</span></li> <li class="text-blue-100" aria-current="page">Pricing</li> </ol> </nav> <div class="max-w-4xl mx-auto text-center"> <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+Flexible Digital Marketing <span class="text-yellow-300">Solutions</span> </h1> <p class="text-xl md:text-2xl text-blue-100 mb-10">
+One low hourly rate of £40 gives you complete control over your digital marketing.
+<span class="block mt-2">Use your hours exactly how you need them - with no commitments.</span> <span class="block mt-2">Plus, <span class="text-yellow-300">A Free fully Optimized Website Offer To Get You Started!</span> </span></p> <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8"> <a href="#hour-packages" class="px-8 py-4 bg-white text-blue-800 rounded-lg font-medium text-lg hover:bg-blue-50 transition duration-300 shadow-lg hover:shadow-xl">
+View Hour Packages
+</a> <a href="#free-website" class="px-8 py-4 bg-yellow-400 text-blue-900 rounded-lg font-medium text-lg hover:bg-yellow-300 transition duration-300 shadow-lg hover:shadow-xl">
+Get a Free Website
+</a> </div> </div> </div> </header> <!-- Unique Selling Point Section --> <section id="pricing-details" class="py-20 bg-white" aria-labelledby="why-hourly-model"> <div class="container mx-auto px-4 sm:px-6 lg:px-8"> <header class="max-w-3xl mx-auto text-center mb-16"> <h2 id="why-hourly-model" class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+Why Our Hourly Rate Model Works Better
+</h2> <p class="text-xl text-gray-700">
+Our Done-For-You services at just £40 per hour give you the flexibility and control you need, without expensive packages or long-term commitments.
+</p> </header> <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto"> <!-- Card 1: Flexibility --> <article class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1"> <div class="h-14 w-14 rounded-full bg-blue-100 flex items-center justify-center mb-6 mx-auto"> <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path> </svg> </div> <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Complete Flexibility</h3> <p class="text-gray-700 text-center">
+Use your hours across all our services: SEO, AEO, GEO, website maintenance, content creation, and more. Your needs determine how we use the time.
+</p> </article> <!-- Card 2: No Commitments --> <article class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1"> <div class="h-14 w-14 rounded-full bg-blue-100 flex items-center justify-center mb-6 mx-auto"> <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path> </svg> </div> <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">No Commitments</h3> <p class="text-gray-700 text-center">
+Pause or stop anytime with no penalties. Your purchased hours remain available for when you need them - they never expire.
+</p> </article> <!-- Card 3: Full Digital Team --> <article class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1"> <div class="h-14 w-14 rounded-full bg-blue-100 flex items-center justify-center mb-6 mx-auto"> <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path> </svg> </div> <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Your Complete Team</h3> <p class="text-gray-700 text-center">
+We become your entire digital marketing department with all the expertise, tools, and knowledge needed to grow your business.
+</p> </article> </div> <!-- CTA Box --> <aside class="mt-16 max-w-4xl mx-auto bg-gradient-to-r from-blue-700 to-indigo-800 rounded-2xl p-8 md:p-10 text-center shadow-xl relative z-10"> <div class="relative z-10"> <h3 class="text-2xl md:text-3xl font-bold mb-4 text-white" style="text-shadow: 0 1px 3px rgba(0,0,0,0.3);">Done-For-You Digital Marketing</h3> <p class="text-xl mb-6 text-white" style="text-shadow: 0 1px 2px rgba(0,0,0,0.2);">At just £40 per hour, we handle everything while you focus on running your business. From SEO and AEO to website maintenance and content creation.</p> <a href="#hour-packages" class="inline-block px-8 py-4 bg-yellow-400 text-blue-900 rounded-lg font-bold hover:bg-yellow-300 transition duration-300 shadow-lg">
+Choose Your Hours
+</a> </div> </aside> </div> </section> <!-- How Our Pricing Works Section --> <section class="py-20 bg-white" id="Pricing-Works" aria-labelledby="pricing-works-heading"> <div class="container mx-auto px-4 sm:px-6 lg:px-8"> <header class="max-w-4xl mx-auto text-center mb-16"> <h2 id="pricing-works-heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+How Our Pricing Works
+</h2> <p class="text-xl text-gray-700 mb-8">
+Simple, transparent, and designed to fit your exact needs
+</p> <div class="bg-blue-50 rounded-xl p-8 shadow-md mb-12"> <h3 class="text-2xl font-bold text-blue-800 mb-4">One Simple Rate: £40 Per Hour</h3> <p class="text-lg text-gray-700 mb-6">Use your hours however you need across all our services!</p> <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10"> <!-- Feature 1 --> <article class="bg-white rounded-lg p-6 shadow-sm"> <div class="flex items-center justify-center mb-4"> <div class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path> </svg> </div> </div> <h4 class="text-lg font-semibold text-gray-900 mb-2 text-center">Choose Your Hours</h4> <p class="text-gray-600 text-center">
+Pick how many hours you need each month based on your budget, start with just 1 hour!
+</p> </article> <!-- Feature 2 --> <article class="bg-white rounded-lg p-6 shadow-sm"> <div class="flex items-center justify-center mb-4"> <div class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path> </svg> </div> </div> <h4 class="text-lg font-semibold text-gray-900 mb-2 text-center">Mix & Match Services</h4> <p class="text-gray-600 text-center">
+Spread your hours across any service: SEO, content, social media, website work or all of them!
+</p> </article> <!-- Feature 3 --> <article class="bg-white rounded-lg p-6 shadow-sm"> <div class="flex items-center justify-center mb-4"> <div class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path> </svg> </div> </div> <h4 class="text-lg font-semibold text-gray-900 mb-2 text-center">No Long Contracts</h4> <p class="text-gray-600 text-center">
+Stay because you want to, not because you're locked in - we earn your business every month
+</p> </article> </div> <div class="mt-8"> <a href="#hour-packages" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg">
+See Our Hour Packages
+</a> </div> </div> </header> <!-- How Businesses Use Our Hours --> <div class="max-w-5xl mx-auto mb-16"> <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+How Businesses Use Our Hours
+</h3> <p class="text-lg text-gray-700 mb-8 text-center">
+Real examples of how different businesses allocate their monthly hours
+</p> <!-- AI Automation Highlight Section --> <div class="mb-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white"> <div class="text-center mb-8"> <h3 class="text-2xl md:text-3xl font-bold mb-4">🚀 AI Automation Now Included!</h3> <p class="text-xl text-blue-100">Use your subscription hours for powerful AI automations at the same £40/hour rate</p> </div> <div class="grid md:grid-cols-3 gap-6"> <div class="bg-white/10 rounded-lg p-4"> <h4 class="font-bold mb-2">✅ Email Automation</h4> <p class="text-blue-100 text-sm">Automated responses, lead nurturing, customer follow-ups</p> </div> <div class="bg-white/10 rounded-lg p-4"> <h4 class="font-bold mb-2">✅ Customer Support Bots</h4> <p class="text-blue-100 text-sm">24/7 AI chatbots, FAQ automation, ticket routing</p> </div> <div class="bg-white/10 rounded-lg p-4"> <h4 class="font-bold mb-2">✅ Workflow Automation</h4> <p class="text-blue-100 text-sm">CRM updates, social posting, data processing</p> </div> </div> <div class="text-center mt-6"> <a href="/services/ai-conversation-automation/" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-blue-50 transition">
+Learn More About AI Automation →
+</a> </div> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> <!-- Small Business --> <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-blue-500 hover:shadow-lg transition duration-300"> <h4 class="text-xl font-bold text-gray-900 mb-4">Small Business</h4> <div class="flex items-center mb-6"> <span class="text-sm font-medium bg-blue-100 text-blue-800 py-1 px-3 rounded-full">3 hours/month • £120</span> </div> <ul class="space-y-3 mb-6"> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">1 Hour: Website updates</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">1 Hour: SEO improvements</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">1 Hour: <a href="/services/ai-conversation-automation/" class="text-blue-600 hover:text-blue-700 underline">AI automation setup</a> (email responses, chatbot)</span> </li> </ul> <p class="text-sm text-gray-600 italic">
+"Perfect for small businesses wanting to improve their online presence and automate repetitive tasks"
+</p> <div class="mt-6"> <div class="p-4 bg-blue-50 rounded-lg"> <p class="text-sm text-blue-800 font-medium">Free AI Authority Funnel (£1,995 value) with 1-year subscription</p> </div> </div> </div> <!-- Growing Business --> <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-indigo-500 hover:shadow-lg transition duration-300"> <h4 class="text-xl font-bold text-gray-900 mb-4">Growing Business</h4> <div class="flex items-center mb-6"> <span class="text-sm font-medium bg-indigo-100 text-indigo-800 py-1 px-3 rounded-full">10 hours/month • £400</span> </div> <ul class="space-y-3 mb-6"> <li class="flex items-start"> <svg class="h-5 w-5 text-indigo-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">2 Hours: SEO & keyword optimization</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-indigo-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">2 Hours: Answer Engine Optimization</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-indigo-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">2 Hours: <a href="/services/ai-conversation-automation/" class="text-indigo-600 hover:text-indigo-700 underline">AI automation</a> (lead capture, customer support)</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-indigo-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">2 Hours: Content creation</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-indigo-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">2 Hours: Social media management</span> </li> </ul> <p class="text-sm text-gray-600 italic">
+"Ideal for businesses looking to grow their digital presence and automate key processes"
+</p> <div class="mt-6"> <div class="p-4 bg-indigo-50 rounded-lg"> <p class="text-sm text-indigo-800 font-medium">Free Professional Website (£2,995 value)</p> </div> </div> </div> <!-- Established Business --> <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-purple-500 hover:shadow-lg transition duration-300"> <h4 class="text-xl font-bold text-gray-900 mb-4">Established Business</h4> <div class="flex items-center mb-6"> <span class="text-sm font-medium bg-purple-100 text-purple-800 py-1 px-3 rounded-full">20 hours/month • £800</span> </div> <ul class="space-y-3 mb-6"> <li class="flex items-start"> <svg class="h-5 w-5 text-purple-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">5 Hours: Comprehensive SEO campaign</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-purple-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">4 Hours: Content creation & strategy</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-purple-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">4 Hours: <a href="/services/ai-conversation-automation/" class="text-purple-600 hover:text-purple-700 underline">AI automation systems</a> (multiple workflows)</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-purple-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">3 Hours: Social media campaigns</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-purple-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">2 Hours: Web development</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-purple-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">2 Hours: Analytics & reporting</span> </li> </ul> <p class="text-sm text-gray-600 italic">
+"Perfect for businesses that need comprehensive digital marketing and automation across all channels"
+</p> <div class="mt-6"> <div class="p-4 bg-purple-50 rounded-lg"> <p class="text-sm text-purple-800 font-medium">Free Professional Website & AI Authority Funnel (£4,990 value)</p> </div> </div> </div> </div> </div> <!-- Additional Hours for Automation Section --> <div class="max-w-5xl mx-auto mb-16"> <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 border border-green-200"> <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">🤖 Need More Hours for AI Automation Projects?</h3> <div class="grid md:grid-cols-2 gap-8"> <div> <h4 class="text-xl font-bold text-green-700 mb-4">Standard AI Automations (£40/hour)</h4> <ul class="space-y-2 mb-4"> <li class="flex items-center text-gray-700"> <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+Simple chatbot setup: 2-4 hours (£80-160)
+</li> <li class="flex items-center text-gray-700"> <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+Email automation system: 3-6 hours (£120-240)
+</li> <li class="flex items-center text-gray-700"> <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+Lead capture & CRM integration: 4-8 hours (£160-320)
+</li> </ul> <p class="text-sm text-gray-600 italic">Perfect for adding automation to existing subscription hours or as standalone projects</p> </div> <div> <h4 class="text-xl font-bold text-orange-700 mb-4">Enterprise Systems (£80-120/hour)</h4> <ul class="space-y-2 mb-4"> <li class="flex items-center text-gray-700"> <span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+Custom AI agent development: 20-40 hours
+</li> <li class="flex items-center text-gray-700"> <span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+Complex workflow automation: 30-60 hours
+</li> <li class="flex items-center text-gray-700"> <span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+Complete system integration: 50-100+ hours
+</li> </ul> <p class="text-sm text-gray-600 italic">Custom quotations available for enterprise projects</p> </div> </div> <div class="text-center mt-8"> <div class="flex flex-col sm:flex-row justify-center gap-4"> <a href="/services/ai-conversation-automation/" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-bold transition">
+View All AI Automation Options
+</a> <a href="/contact/" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-bold transition">
+Get Custom Quote
+</a> </div> </div> </div> </div> <!-- Custom Quotations Section --> <div class="max-w-5xl mx-auto mb-16"> <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 border border-purple-200"> <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">🎯 Need Something More Complex?</h3> <p class="text-lg text-gray-600 text-center mb-8">
+For specialist digital marketing projects, complex AI automations, or confidential work requiring our expert team
+</p> <div class="grid md:grid-cols-2 gap-8 mb-8"> <div class="bg-white p-6 rounded-xl shadow-sm"> <h4 class="text-xl font-bold text-purple-700 mb-4 flex items-center"> <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path> </svg>
+Custom Quotations Available
+</h4> <ul class="space-y-3 text-gray-700"> <li class="flex items-start"> <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 mt-2"></span>
+Enterprise AI automation systems
+</li> <li class="flex items-start"> <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 mt-2"></span>
+Complex RAG (AI knowledge) implementations
+</li> <li class="flex items-start"> <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 mt-2"></span>
+Multi-department digital transformation
+</li> <li class="flex items-start"> <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 mt-2"></span>
+Specialist team digital marketing campaigns
+</li> <li class="flex items-start"> <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 mt-2"></span>
+Large-scale website development projects
+</li> </ul> </div> <div class="bg-white p-6 rounded-xl shadow-sm"> <h4 class="text-xl font-bold text-blue-700 mb-4 flex items-center"> <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.25-1.25a3.5 3.5 0 11-4.95-4.95l1.25 1.25"></path> </svg>
+NDA & Confidentiality Agreements
+</h4> <ul class="space-y-3 text-gray-700"> <li class="flex items-start"> <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2"></span>
+Full confidentiality agreements provided
+</li> <li class="flex items-start"> <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2"></span>
+Secure project handling protocols
+</li> <li class="flex items-start"> <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2"></span>
+Dedicated specialist team assignments
+</li> <li class="flex items-start"> <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2"></span>
+Private development environments
+</li> <li class="flex items-start"> <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2"></span>
+Fixed-price project quotations
+</li> </ul> </div> </div> <div class="bg-white p-6 rounded-xl shadow-sm mb-6"> <h4 class="text-xl font-bold text-gray-900 mb-4 text-center">How to Request Your Custom Quotation</h4> <div class="grid md:grid-cols-3 gap-6"> <div class="text-center"> <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"> <span class="text-purple-600 font-bold">1</span> </div> <h5 class="font-semibold text-gray-900 mb-2">Describe Your Requirements</h5> <p class="text-sm text-gray-600">Contact us with details about your project scope and any special requirements</p> </div> <div class="text-center"> <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"> <span class="text-purple-600 font-bold">2</span> </div> <h5 class="font-semibold text-gray-900 mb-2">Expert Team Review</h5> <p class="text-sm text-gray-600">Our specialist team analyzes requirements and develops a comprehensive strategy</p> </div> <div class="text-center"> <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"> <span class="text-purple-600 font-bold">3</span> </div> <h5 class="font-semibold text-gray-900 mb-2">Detailed Quotation</h5> <p class="text-sm text-gray-600">Receive fixed pricing with timeline, deliverables, and project milestones</p> </div> </div> </div> <div class="text-center"> <div class="flex flex-col sm:flex-row justify-center gap-4 mb-4"> <a href="/contact/" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-bold transition text-lg">
+Request Custom Quotation
+</a> <a href="/services/ai-conversation-automation/" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold transition text-lg">
+View AI Automation Options
+</a> </div> <p class="text-sm text-gray-600">
+All quotations include comprehensive scope, fixed pricing, and timeline. NDA agreements provided when required.
+</p> </div> </div> </div> <!-- Find the Perfect Plan CTA --> <div class="max-w-3xl mx-auto text-center"> <h3 class="text-2xl font-bold text-gray-900 mb-4">Find the Perfect Plan for Your Needs</h3> <p class="text-lg text-gray-700 mb-8">
+Choose the plan that works best for you. Whether you're just getting started or scaling up, we have options designed to grow with your business. No hidden fees, no surprises—just transparent pricing for exceptional value.
+</p> <a href="#hour-packages" class="inline-block px-8 py-4 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition duration-300 shadow-lg hover:shadow-xl">
+See Our Plans
+</a> </div> </div> </section> <!-- Hour Packages Section --> <section id="hour-packages" class="py-20 bg-gray-50" aria-labelledby="service-packages-heading"> <div class="container mx-auto px-4 sm:px-6 lg:px-8"> <header class="max-w-3xl mx-auto text-center mb-16"> <h2 id="service-packages-heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+Done-For-You Service Packages
+</h2> <p class="text-xl text-gray-700">
+Our transparent hourly rate of £40 gives you complete control over your digital marketing strategy.
+            Choose the package that fits your business needs, or create a custom solution.
+</p> <!-- Billing Toggle --> <div class="flex justify-center items-center mt-8"> <div class="billing-toggle bg-gray-100 rounded-full p-2 flex items-center"> <span id="monthly-label" class="text-sm md:text-base font-medium mx-3 text-blue-600">Monthly</span> <label class="relative inline-block w-14 h-7 cursor-pointer"> <input type="checkbox" id="billing-toggle" class="sr-only peer"> <span class="slider absolute inset-0 rounded-full transition-transform duration-300 transform bg-gray-200 peer-checked:bg-blue-600"></span> <span class="absolute h-5 w-5 left-1 top-1 bg-white rounded-full transition-transform duration-300 transform peer-checked:translate-x-7"></span> </label> <span id="yearly-label" class="text-sm md:text-base font-medium mx-3 flex items-center text-gray-500">
+Yearly
+<span class="ml-2 text-xs text-white bg-green-600 px-2 py-1 rounded-full font-bold">Save 2 months</span> </span> </div> </div> </header> <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto"> <!-- Row 1: First 3 packages --> <!-- Essential Package (1 hour) --> <article class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1"> <header class="bg-gradient-to-r from-blue-500 to-blue-700 py-6 px-6 text-white"> <h3 class="text-2xl font-bold">Essential</h3> <div class="mt-1 text-blue-100">Perfect for individuals just getting started</div> </header> <div class="p-6"> <div class="mb-6 text-center"> <span class="text-4xl font-bold text-gray-900 monthly-price">£40</span> <span class="text-4xl font-bold text-gray-900 yearly-price hidden">£400</span> <span class="text-gray-700 ml-1 billing-period">/month</span> <div class="text-gray-700 mt-1">1 Hour of Expert Implementation every month</div> <div class="yearly-savings hidden text-sm mt-1 text-green-600 font-medium">Save £80 per year (2 months free)</div> </div> <ul class="mb-6 space-y-3"> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Mix and match any service</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Monthly strategy reviews</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Competitor analysis</span> </li> </ul> <div class="text-center"> <a href="https://buy.stripe.com/9AQ9B1aJPevE2uA4gv" class="block w-full py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition duration-300 monthly-btn">
+Subscribe Monthly
+</a> <a href="https://buy.stripe.com/14k3cDdW15Z8edi6oE" class="hidden w-full py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition duration-300 yearly-btn">
+Subscribe Yearly (2 Months Free)
+</a> </div> </div> </article> <!-- Standard Package (3 hours) --> <article class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1"> <header class="bg-gradient-to-r from-blue-500 to-blue-700 py-6 px-6 text-white"> <h3 class="text-2xl font-bold">Standard</h3> <div class="mt-1 text-blue-100">Core marketing implementation services</div> </header> <div class="p-6"> <div class="mb-6 text-center"> <span class="text-4xl font-bold text-gray-900 monthly-price">£120</span> <span class="text-4xl font-bold text-gray-900 yearly-price hidden">£1,200</span> <span class="text-gray-700 ml-1 billing-period">/month</span> <div class="text-gray-700 mt-1">3 Hours of Expert Implementation every month</div> <div class="yearly-savings hidden text-sm mt-1 text-green-600 font-medium">Save £240 per year (2 months free)</div> </div> <ul class="mb-6 space-y-3"> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Mix and match any service</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Monthly strategy reviews</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Competitor analysis</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700 font-semibold">FREE AI Authority Funnel</span> </li> </ul> <div class="text-center"> <a href="https://buy.stripe.com/7sI28z05bcnw5GMdR7" class="block w-full py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition duration-300 monthly-btn">
+Subscribe Monthly
+</a> <a href="https://buy.stripe.com/aEU4gHf050EO5GM4gy" class="hidden w-full py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition duration-300 yearly-btn">
+Subscribe Yearly (2 Months Free)
+</a> </div> </div> </article> <!-- Enhanced Package (5 hours) --> <article class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1"> <header class="bg-gradient-to-r from-blue-500 to-blue-700 py-6 px-6 text-white"> <h3 class="text-2xl font-bold">Enhanced</h3> <div class="mt-1 text-blue-100">Expanded marketing capabilities</div> </header> <div class="p-6"> <div class="mb-6 text-center"> <span class="text-4xl font-bold text-gray-900 monthly-price">£200</span> <span class="text-4xl font-bold text-gray-900 yearly-price hidden">£2,000</span> <span class="text-gray-700 ml-1 billing-period">/month</span> <div class="text-gray-700 mt-1">5 Hours of Expert Implementation every month</div> <div class="yearly-savings hidden text-sm mt-1 text-green-600 font-medium">Save £400 per year (2 months free)</div> </div> <ul class="mb-6 space-y-3"> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Mix and match any service</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Monthly strategy reviews</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Competitor analysis</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700 font-semibold">FREE Professional Business Website</span> </li> </ul> <div class="text-center"> <a href="https://buy.stripe.com/9AQcNd2djbjs6KQ4gz" class="block w-full py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition duration-300 monthly-btn">
+Subscribe Monthly
+</a> <a href="https://buy.stripe.com/4gweVlbNT5Z82uA28s" class="hidden w-full py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition duration-300 yearly-btn">
+Subscribe Yearly (2 Months Free)
+</a> </div> </div> </article> </div> <!-- Row 2: Higher tier packages --> <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mt-8"> <!-- Advanced Package (10 hours) --> <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1"> <div class="bg-gradient-to-r from-blue-600 to-blue-800 py-6 px-6 text-white"> <h3 class="text-2xl font-bold">Advanced</h3> <div class="mt-1 text-blue-100">Comprehensive marketing solutions</div> </div> <div class="p-6"> <div class="mb-6 text-center"> <span class="text-4xl font-bold text-gray-900 monthly-price">£400</span> <span class="text-4xl font-bold text-gray-900 yearly-price hidden">£4,000</span> <span class="text-gray-700 ml-1 billing-period">/month</span> <div class="text-gray-700 mt-1">10 Hours of Expert Implementation every month</div> <div class="yearly-savings hidden text-sm mt-1 text-green-600 font-medium">Save £800 per year (2 months free)</div> </div> <ul class="mb-6 space-y-3"> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Mix and match any service</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Monthly strategy reviews</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Competitor analysis</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Higher chance of dominating your service niche</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700 font-semibold">FREE Professional Business Website + AI Authority Funnel</span> </li> </ul> <div class="text-center"> <a href="https://buy.stripe.com/4gwfZp7xD87gedi7sy" class="block w-full py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition duration-300 monthly-btn">
+Subscribe Monthly
+</a> <a href="https://buy.stripe.com/8wM14vf05fzI2uAeV1" class="hidden w-full py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition duration-300 yearly-btn">
+Subscribe Yearly (2 Months Free)
+</a> </div> </div> </div> <!-- Premium Package (20 hours) --> <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition duration-300 hover:shadow-2xl hover:-translate-y-2 ring-2 ring-blue-500"> <div class="bg-gradient-to-r from-blue-600 to-indigo-700 py-6 px-6 text-white relative overflow-hidden"> <div class="absolute top-0 right-0 transform translate-x-8 -translate-y-1"> <div class="bg-yellow-400 text-blue-900 text-xs font-bold px-4 py-1 transform rotate-45 shadow-md">
+POPULAR
+</div> </div> <h3 class="text-2xl font-bold">Premium</h3> <div class="mt-1 text-blue-100">Ideal for growing businesses</div> </div> <div class="p-6"> <div class="mb-6 text-center"> <span class="text-4xl font-bold text-gray-900 monthly-price">£800</span> <span class="text-4xl font-bold text-gray-900 yearly-price hidden">£8,000</span> <span class="text-gray-700 ml-1 billing-period">/month</span> <div class="text-gray-700 mt-1">20 Hours of Expert Implementation every month</div> <div class="yearly-savings hidden text-sm mt-1 text-green-600 font-medium">Save £1,600 per year (2 months free)</div> </div> <ul class="mb-6 space-y-3"> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Mix and match any service</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Weekly strategy reviews</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Comprehensive competitor analysis</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Dominate multiple service niches</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700 font-semibold">FREE Premium Business Website</span> </li> </ul> <div class="text-center"> <a href="https://buy.stripe.com/9AQ00raJP0EOglqbIQ" class="block w-full py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition duration-300 monthly-btn">
+Subscribe Monthly
+</a> <a href="https://buy.stripe.com/6oEeVl6tz2MW9X2dQZ" class="hidden w-full py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition duration-300 yearly-btn">
+Subscribe Yearly (2 Months Free)
+</a> </div> </div> </div> <!-- Elite Package (40 hours) --> <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1"> <div class="bg-gradient-to-r from-indigo-600 to-purple-700 py-6 px-6 text-white"> <h3 class="text-2xl font-bold">Elite</h3> <div class="mt-1 text-blue-100">For established businesses</div> </div> <div class="p-6"> <div class="mb-6 text-center"> <span class="text-4xl font-bold text-gray-900 monthly-price">£1,600</span> <span class="text-4xl font-bold text-gray-900 yearly-price hidden">£16,000</span> <span class="text-gray-700 ml-1 billing-period">/month</span> <div class="text-gray-700 mt-1">40 Hours of Expert Implementation every month</div> <div class="yearly-savings hidden text-sm mt-1 text-green-600 font-medium">Save £3,200 per year (2 months free)</div> </div> <ul class="mb-6 space-y-3"> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Mix and match any service</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Weekly strategy consultations</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Deep competitor and market analysis</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Dominate multiple locations and niches</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700 font-semibold">FREE E-Commerce Website</span> </li> </ul> <div class="text-center"> <a href="https://buy.stripe.com/6oE28z3hn2MW1qweV4" class="block w-full py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition duration-300 monthly-btn">
+Subscribe Monthly
+</a> <a href="https://buy.stripe.com/6oEdRh8BH2MW4CI28j" class="hidden w-full py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition duration-300 yearly-btn">
+Subscribe Yearly (2 Months Free)
+</a> </div> </div> </div> </div> <!-- Custom Hours Message --> <div class="mt-12 max-w-3xl mx-auto text-center bg-white p-6 rounded-xl shadow-md"> <h3 class="text-xl font-bold text-gray-900 mb-2">Need a Custom Solution?</h3> <p class="text-gray-700 mb-4">
+We can tailor a package specifically for your business needs. Our hourly rate remains at £40 per hour regardless of how many hours you purchase.
+</p> <div class="mb-4 p-4 bg-blue-50 rounded-lg text-left"> <h4 class="font-bold text-blue-800 mb-2">Why Choose Yearly Billing?</h4> <ul class="text-gray-700 space-y-2"> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span>Save 20% compared to monthly billing</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span>Lock in your rate for a full year</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span>Better long-term results with consistent marketing</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span>Qualify for our free website or AI authority funnel offer</span> </li> </ul> </div> <a href="/contact/" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 font-bold">
+Contact Us for Custom Packages
+</a> </div> </div> </section> <!-- Free Website Offer Section --> <section id="free-website" class="py-20 bg-gradient-to-br from-blue-900 to-indigo-900 text-white relative overflow-hidden"> <div class="absolute inset-0 bg-pattern-dots opacity-5"></div> <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> <div class="flex flex-col lg:flex-row items-center justify-between gap-12"> <div class="lg:w-1/2"> <div class="bg-yellow-400 p-2 inline-block rounded-lg mb-4"> <span class="text-blue-900 font-bold px-3 py-1">EXCLUSIVE OFFER</span> </div> <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+Get a <span class="text-yellow-400">Free Professional Website</span> With Our 5+ Hour Packages
+</h2> <p class="text-xl text-white mb-8">
+Subscribe to any 5+ hour package for 12 months and receive a fully optimized business website (up to 7 pages) at no additional cost. Or get an AI Authority Funnel with any 3+ hour package for 12 months. A value worth £2,000-£5,000!
+</p> <div class="bg-blue-800/50 backdrop-blur-sm p-6 rounded-xl mb-8"> <h3 class="text-xl font-bold text-yellow-300 mb-4">What You'll Get Based On Your Package:</h3> <ul class="space-y-5"> <li class="flex items-start"> <svg class="h-6 w-6 text-yellow-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <div> <span class="text-lg font-semibold text-white">5+ Hour Packages (12-month subscription)</span> <p class="text-blue-100 mt-1">Fully optimized business website (up to 7 pages) with your branding, optimized for search engines and mobile devices</p> </div> </li> <li class="flex items-start"> <svg class="h-6 w-6 text-yellow-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <div> <span class="text-lg font-semibold text-white">3+ Hour Packages (12-month subscription)</span> <p class="text-blue-100 mt-1">AI Authority Funnel to maximize your online presence and capture leads efficiently</p> </div> </li> </ul> </div> <div class="bg-blue-800/50 backdrop-blur-sm p-6 rounded-xl mb-8"> <h3 class="text-xl font-bold text-yellow-300 mb-4">All Free Websites Include:</h3> <div class="grid grid-cols-1 md:grid-cols-2 gap-4"> <div class="flex items-start"> <svg class="h-5 w-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-white">Custom design</span> </div> <div class="flex items-start"> <svg class="h-5 w-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-white">Mobile-responsive</span> </div> <div class="flex items-start"> <svg class="h-5 w-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-white">SEO optimization</span> </div> <div class="flex items-start"> <svg class="h-5 w-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-white">Contact forms</span> </div> <div class="flex items-start"> <svg class="h-5 w-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-white">Content management</span> </div> <div class="flex items-start"> <svg class="h-5 w-5 text-yellow-400 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-white">Analytics integration</span> </div> </div> </div> <div class="flex flex-col sm:flex-row gap-4"> <a href="#hour-packages" class="px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold rounded-lg transition duration-300 text-center shadow-lg hover:shadow-xl">
+Claim Your Free Website
+</a> </div> <div class="mt-4 text-blue-200">
+All free websites include fully optimized code with built-in AI SEO, professional design, and technical optimizations. <a href="/offer-terms/" class="text-blue-300 hover:text-blue-100 font-medium underline">View full terms & conditions</a> </div> </div> <div class="lg:w-1/2"> <div class="relative"> <div class="bg-white rounded-xl shadow-2xl overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500"> <div class="bg-gradient-to-r from-blue-600 to-indigo-700 h-8"></div> <div class="p-6"> <div class="flex justify-between items-center mb-6"> <div class="flex items-center"> <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div> <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div> <div class="w-3 h-3 rounded-full bg-green-500"></div> </div> <div class="h-2.5 w-1/3 bg-gray-200 rounded-full"></div> </div> <!-- Website mockup content --> <div class="space-y-3 mb-6"> <div class="h-8 bg-blue-600 rounded-full w-1/2"></div> <div class="h-4 bg-gray-200 rounded-full"></div> <div class="h-4 bg-gray-200 rounded-full w-5/6"></div> <div class="h-4 bg-gray-200 rounded-full w-4/6"></div> </div> <div class="mt-6 grid grid-cols-2 gap-4"> <div class="space-y-2"> <div class="h-32 bg-blue-100 rounded-lg"></div> <div class="h-3 bg-gray-200 rounded-full w-3/4"></div> <div class="h-3 bg-gray-200 rounded-full w-1/2"></div> </div> <div class="space-y-2"> <div class="h-32 bg-blue-100 rounded-lg"></div> <div class="h-3 bg-gray-200 rounded-full w-3/4"></div> <div class="h-3 bg-gray-200 rounded-full w-1/2"></div> </div> </div> <div class="mt-6 h-10 bg-blue-600 rounded-lg w-1/3 mx-auto"></div> </div> </div> <!-- Pricing tag --> <div class="absolute -top-6 -right-6 bg-yellow-400 text-blue-900 font-bold px-6 py-2 rounded-lg transform rotate-12 shadow-lg">
+FREE
+</div> <!-- Value badge --> <div class="absolute -bottom-4 -left-4 bg-white text-blue-900 font-bold px-4 py-2 rounded-full shadow-lg"> <span class="text-sm">Value: £2,000-£5,000</span> </div> </div> </div> </div> </div> </section> <!-- Service Categories Section --> <section class="py-20 bg-blue-50"> <div class="container mx-auto px-4 sm:px-6 lg:px-8"> <div class="max-w-3xl mx-auto text-center mb-16"> <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+Our Service Categories
+</h2> <p class="text-xl text-gray-700 mb-8">
+Mix and match these services with your monthly hours
+</p> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"> <!-- AI Optimization --> <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1"> <div class="bg-gradient-to-r from-blue-600 to-indigo-600 h-2"></div> <div class="p-6"> <div class="flex items-start mb-6"> <div class="h-12 w-12 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center mr-4"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path> </svg> </div> <h3 class="text-xl font-bold text-gray-900">AI Optimization</h3> </div> <ul class="space-y-3"> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Answer Engine Optimization (AEO)</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Generative Engine Optimization (GEO)</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">AI-Assisted Knowledge Base Creation</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Semantic Implementation for AI</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">AI Content Enhancement</span> </li> </ul> </div> </div> <!-- Search Optimization --> <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1"> <div class="bg-gradient-to-r from-blue-600 to-indigo-600 h-2"></div> <div class="p-6"> <div class="flex items-start mb-6"> <div class="h-12 w-12 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center mr-4"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path> </svg> </div> <h3 class="text-xl font-bold text-gray-900">Search Optimization</h3> </div> <ul class="space-y-3"> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Comprehensive SEO Campaigns</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">On-Page SEO Optimization</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Technical SEO Audits</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Google Business Profile Optimization</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Local SEO Strategies</span> </li> </ul> </div> </div> <!-- Content Creation --> <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1"> <div class="bg-gradient-to-r from-blue-600 to-indigo-600 h-2"></div> <div class="p-6"> <div class="flex items-start mb-6"> <div class="h-12 w-12 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center mr-4"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path> </svg> </div> <h3 class="text-xl font-bold text-gray-900">Content Creation</h3> </div> <ul class="space-y-3"> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Blog Content Writing</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Website Content Writing</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Email Marketing Content</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Social Media Content</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">AI-Assisted Content Strategy</span> </li> </ul> </div> </div> <!-- Web Design & Development --> <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1"> <div class="bg-gradient-to-r from-blue-600 to-indigo-600 h-2"></div> <div class="p-6"> <div class="flex items-start mb-6"> <div class="h-12 w-12 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center mr-4"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path> </svg> </div> <h3 class="text-xl font-bold text-gray-900">Web Design & Development</h3> </div> <ul class="space-y-3"> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Website Updates & Maintenance</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Landing Page Creation</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">WordPress Development</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Performance Optimization</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Mobile Responsiveness</span> </li> </ul> </div> </div> <!-- Social Media Marketing --> <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1"> <div class="bg-gradient-to-r from-blue-600 to-indigo-600 h-2"></div> <div class="p-6"> <div class="flex items-start mb-6"> <div class="h-12 w-12 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center mr-4"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path> </svg> </div> <h3 class="text-xl font-bold text-gray-900">Social Media Marketing</h3> </div> <ul class="space-y-3"> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Social Media Management</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Content Calendar Creation</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Community Engagement</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Hashtag Strategy</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Social Analytics Reporting</span> </li> </ul> </div> </div> <!-- AI Applications --> <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1"> <div class="bg-gradient-to-r from-blue-600 to-indigo-600 h-2"></div> <div class="p-6"> <div class="flex items-start mb-6"> <div class="h-12 w-12 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center mr-4"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path> </svg> </div> <h3 class="text-xl font-bold text-gray-900">AI Applications</h3> </div> <ul class="space-y-3"> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">AI Integration with Websites</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">Chatbot Development</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">AI Content Tools</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">AI Authority Funnels</span> </li> <li class="flex items-start"> <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> </svg> <span class="text-gray-700">AI Automation Solutions</span> </li> </ul> </div> </div> </div> <div class="max-w-3xl mx-auto text-center mt-16"> <div class="bg-blue-50 rounded-xl p-8 shadow-md"> <h3 class="text-xl font-bold text-blue-900 mb-4 px-3 py-1 bg-blue-100 inline-block rounded">Pioneering AI Search Optimization</h3> <p class="text-gray-700 mb-6">
+We are at the forefront of optimizing business profiles for AI search platforms like Microsoft Bing and ChatGPT. While others are still focusing solely on traditional SEO, we're helping our clients get recommended by AI systems, putting them miles ahead of competitors.
+</p> <div class="flex justify-center"> <a href="#hour-packages" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg">
+Start Your AI Optimization Today
+</a> </div> </div> </div> </div> </section> <!-- Testimonials Section --> <section class="py-20 bg-white"> <div class="container mx-auto px-4 sm:px-6 lg:px-8"> <div class="max-w-3xl mx-auto text-center mb-16"> <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+What Our Clients Say
+</h2> <p class="text-xl text-gray-600">
+Here's what businesses just like yours are saying about our flexible hour model.
+</p> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"> <!-- Testimonial 1 --> <div class="bg-gray-50 rounded-xl p-8 shadow-md relative"> <div class="absolute -top-5 -left-5 text-blue-500 text-6xl opacity-20">"</div> <p class="text-gray-700 mb-6 relative z-10">
+The flexibility of choosing how we use our hours has been fantastic. One month we focused on SEO, the next on content creation – all with the same team who knows our business inside out.
+</p> <div class="flex items-center"> <div class="w-12 h-12 rounded-full bg-gray-300 mr-4"></div> <div> <h4 class="font-semibold text-gray-900">Sarah Johnson</h4> <p class="text-gray-600 text-sm">Small Business Owner</p> </div> </div> </div> <!-- Testimonial 2 --> <div class="bg-gray-50 rounded-xl p-8 shadow-md relative"> <div class="absolute -top-5 -left-5 text-blue-500 text-6xl opacity-20">"</div> <p class="text-gray-700 mb-6 relative z-10">
+We started with just 10 hours a month to test the waters. The results were so impressive that we quickly scaled up. The no-commitment approach made it an easy decision.
+</p> <div class="flex items-center"> <div class="w-12 h-12 rounded-full bg-gray-300 mr-4"></div> <div> <h4 class="font-semibold text-gray-900">David Williams</h4> <p class="text-gray-600 text-sm">Marketing Director</p> </div> </div> </div> <!-- Testimonial 3 --> <div class="bg-gray-50 rounded-xl p-8 shadow-md relative"> <div class="absolute -top-5 -left-5 text-blue-500 text-6xl opacity-20">"</div> <p class="text-gray-700 mb-6 relative z-10">
+The free website offer sealed the deal for us. We got a beautiful, high-converting website and ongoing digital marketing support – all in one package with complete flexibility.
+</p> <div class="flex items-center"> <div class="w-12 h-12 rounded-full bg-gray-300 mr-4"></div> <div> <h4 class="font-semibold text-gray-900">Michael Thompson</h4> <p class="text-gray-600 text-sm">E-commerce Store Owner</p> </div> </div> </div> </div> </div> </section> <!-- Apps Platform Section --> <section class="py-20 bg-blue-50"> <div class="container mx-auto px-4 sm:px-6 lg:px-8"> <div class="max-w-4xl mx-auto text-center mb-12"> <span class="inline-block px-4 py-1 bg-blue-100 text-blue-800 font-medium rounded-full mb-4">DIY Marketing Solution</span> <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Power Up Your Business With Our Apps Platform</h2> <p class="text-xl text-gray-700">Get access to 50+ human-crafted marketing and business tools, accelerated with AI, for a single low monthly price.</p> </div> <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden"> <div class="p-8 border-b border-gray-200"> <!-- Billing Toggle --> <div class="flex justify-center items-center mb-8"> <div class="billing-toggle-apps bg-gray-100 rounded-full p-2 flex items-center"> <span id="monthly-label-apps" class="text-sm md:text-base font-medium mx-3 text-blue-600">Monthly</span> <label class="relative inline-block w-14 h-7 cursor-pointer"> <input type="checkbox" id="billing-toggle-apps" class="sr-only peer"> <span class="slider absolute inset-0 rounded-full transition-transform duration-300 transform bg-gray-200 peer-checked:bg-blue-600"></span> <span class="absolute h-5 w-5 left-1 top-1 bg-white rounded-full transition-transform duration-300 transform peer-checked:translate-x-7"></span> </label> <span id="yearly-label-apps" class="text-sm md:text-base font-medium mx-3 flex items-center text-gray-500">
+Yearly
+<span class="ml-2 text-xs text-white bg-green-600 px-2 py-1 rounded-full font-bold">Save 2 months</span> </span> </div> </div> <div class="flex justify-between items-center mb-6"> <h3 class="text-2xl font-bold text-gray-900">Apps Platform Subscription</h3> <div> <span class="text-3xl font-bold text-blue-600 monthly-price-apps">£40</span> <span class="text-3xl font-bold text-blue-600 yearly-price-apps hidden">£400</span> <span class="text-gray-500 billing-period-apps">/month</span> <div class="yearly-savings-apps hidden text-sm mt-1 text-green-600 font-medium">Save £80 per year</div> </div> </div> <ul class="space-y-3 mb-8"> <li class="flex items-start"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"> <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path> </svg> <span><strong>Access to 50+ specialized AI tools</strong> for all your marketing needs</span> </li> <li class="flex items-start"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"> <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path> </svg> <span><strong>Build and optimize your own website</strong> with our website builder tools</span> </li> <li class="flex items-start"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"> <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path> </svg> <span><strong>Create marketing campaigns</strong> that drive real business results</span> </li> <li class="flex items-start"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"> <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path> </svg> <span><strong>Expert training included</strong> to help you get maximum value</span> </li> </ul> <div class="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-100"> <p class="text-gray-700"><span class="font-semibold">Need extra help?</span> Subscribe to our platform and DIY your marketing, then add our expert services at £40/hour whenever you need a boost. Perfect for businesses who want to drive growth faster with professional assistance.</p> </div> <a href="https://buy.stripe.com/28o4gH6tzgDMedi3cc" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center font-bold py-3 px-4 rounded-md transition-colors monthly-btn-apps">Subscribe Now</a> <a href="https://buy.stripe.com/fZe9B1dW14V46KQ3cd" class="hidden w-full bg-blue-600 hover:bg-blue-700 text-white text-center font-bold py-3 px-4 rounded-md transition-colors yearly-btn-apps">Subscribe Yearly (2 Months Free)</a> </div> </div> </div> </section> <!-- FAQ Section --> <section id="pricing-faq" class="py-20 bg-gray-50"> <div class="container mx-auto px-4 sm:px-6 lg:px-8"> <div class="max-w-3xl mx-auto text-center mb-16"> <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+Frequently Asked Questions
+</h2> <p class="text-xl text-gray-600">
+Everything you need to know about our flexible pricing model.
+</p> </div> <div class="max-w-3xl mx-auto"> <div class="space-y-6"> <!-- FAQ Item 1 --> <div class="bg-white rounded-xl shadow-md overflow-hidden"> <button class="faq-toggle w-full text-left p-6 focus:outline-none"> <div class="flex justify-between items-center"> <h3 class="text-lg font-semibold text-gray-900">How does the hourly rate model work?</h3> <svg class="faq-icon h-6 w-6 text-blue-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path> </svg> </div> </button> <div class="faq-content hidden px-6 pb-6"> <p class="text-gray-700">
+Our Done-For-You services are priced at a transparent rate of £40 per hour. You can purchase hours in one of our package tiers (Essential, Professional, or Enterprise) or create a custom solution. These hours can be used across all our services including SEO, AEO, GEO, content creation, social media management, website maintenance, and more. We track your hour usage and provide detailed reporting so you always know exactly how your investment is being utilized. This model gives you complete control and flexibility over your digital marketing strategy.
+</p> </div> </div> <!-- FAQ Item 2 --> <div class="bg-white rounded-xl shadow-md overflow-hidden"> <button class="faq-toggle w-full text-left p-6 focus:outline-none"> <div class="flex justify-between items-center"> <h3 class="text-lg font-semibold text-gray-900">Is there a minimum number of hours I need to purchase?</h3> <svg class="faq-icon h-6 w-6 text-blue-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path> </svg> </div> </button> <div class="faq-content hidden px-6 pb-6"> <p class="text-gray-700">
+We recommend a minimum of 5 hours to see meaningful results, but there's no strict requirement. Our suggested packages (10, 20, and 40 hours) are designed based on typical needs, but we're happy to customize a solution that works for your specific situation and budget.
+</p> </div> </div> <!-- FAQ Item 3 --> <div class="bg-white rounded-xl shadow-md overflow-hidden"> <button class="faq-toggle w-full text-left p-6 focus:outline-none"> <div class="flex justify-between items-center"> <h3 class="text-lg font-semibold text-gray-900">Can I really pause or cancel at any time?</h3> <svg class="faq-icon h-6 w-6 text-blue-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path> </svg> </div> </button> <div class="faq-content hidden px-6 pb-6"> <p class="text-gray-700">
+Absolutely! We don't believe in locking you into long-term contracts. If you need to pause or stop our services for any reason, you can do so without any penalties. Any unused hours you've purchased will remain available for you to use when you're ready to resume.
+</p> </div> </div> <!-- FAQ Item 4 --> <div class="bg-white rounded-xl shadow-md overflow-hidden"> <button class="faq-toggle w-full text-left p-6 focus:outline-none"> <div class="flex justify-between items-center"> <h3 class="text-lg font-semibold text-gray-900">How does the free website offer work?</h3> <svg class="faq-icon h-6 w-6 text-blue-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path> </svg> </div> </button> <div class="faq-content hidden px-6 pb-6"> <p class="text-gray-700">
+When you subscribe to our Professional package (20 hours) or Enterprise package (40 hours), you'll receive a professionally designed website at no additional cost. The Professional package includes a 5-page responsive website, while the Enterprise package includes a custom-designed website with unlimited pages. Development typically begins in the first month, and you'll have full ownership of the completed site. This offer represents a value of £2,000-£5,000 elsewhere.
+</p> </div> </div> <!-- FAQ Item 5 --> <div class="bg-white rounded-xl shadow-md overflow-hidden"> <button class="faq-toggle w-full text-left p-6 focus:outline-none"> <div class="flex justify-between items-center"> <h3 class="text-lg font-semibold text-gray-900">Do unused hours expire?</h3> <svg class="faq-icon h-6 w-6 text-blue-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path> </svg> </div> </button> <div class="faq-content hidden px-6 pb-6"> <p class="text-gray-700">
+No, your hours don't expire. Once purchased, they remain in your account until you use them. This gives you complete flexibility to use your hours at a pace that works for your business, whether that's intensively for a specific project or spread out over a longer period.
+</p> </div> </div> </div> </div> </div> <!-- Contact CTA --> <div id="contact" class="mt-16 max-w-3xl mx-auto bg-gradient-to-r from-blue-700 to-indigo-800 rounded-2xl p-8 md:p-10 text-center text-white shadow-xl"> <h3 class="text-2xl md:text-3xl font-bold mb-4">Ready to Get Started?</h3> <p class="text-xl mb-8">Contact us today to discuss how our flexible hour packages can help grow your business.</p> <div class="flex flex-col sm:flex-row justify-center gap-4"> <a href="/contact/" class="px-8 py-4 bg-white text-blue-800 rounded-lg font-medium text-lg hover:bg-blue-50 transition duration-300 shadow-lg hover:shadow-xl">
+Contact Us
+</a> <a href="tel:+4401792002497" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-medium text-lg hover:bg-white/10 transition duration-300">
+Call: (+44) 01792 002 497
+</a> </div> </div> </section> </main>     </main> <footer class="bg-gray-900"> <!-- Main Footer --> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"> <!-- Company Info --> <div> <a href="/" class="flex items-center space-x-2"> <span class="text-xl font-bold text-white">Digital Visibility</span> </a> <p class="text-gray-200 mb-4">
+Everything you need to create a truly professional digital presence.
+</p> <div class="flex space-x-4 mt-6"> <a href="https://www.facebook.com/people/Digital-Visibility/61572995410124/" class="text-gray-200 hover:text-blue-400" target="_blank" rel="noopener noreferrer" aria-label="Visit Digital Visibility on Facebook"> <i data-lucide="facebook" class="w-5 h-5"></i> </a> <a href="https://www.linkedin.com/company/digitalvisibilityuk/" class="text-gray-200 hover:text-blue-400" target="_blank" rel="noopener noreferrer" aria-label="Visit Digital Visibility on LinkedIn"> <i data-lucide="linkedin" class="w-5 h-5"></i> </a> <a href="https://x.com/DigitalVisUK" class="text-gray-200 hover:text-blue-400" target="_blank" rel="noopener noreferrer" aria-label="Visit Digital Visibility on X (Twitter)"> <i data-lucide="twitter" class="w-5 h-5"></i> </a> <a href="https://www.instagram.com/digitalvisibilityuk/" class="text-gray-200 hover:text-blue-400" target="_blank" rel="noopener noreferrer" aria-label="Visit Digital Visibility on Instagram"> <i data-lucide="instagram" class="w-5 h-5"></i> </a> <a href="https://www.tiktok.com/@digitalvisibilityuk" class="text-gray-200 hover:text-blue-400" target="_blank" rel="noopener noreferrer" aria-label="Visit Digital Visibility on TikTok"> <i data-lucide="video" class="w-5 h-5"></i> </a> <a href="https://uk.pinterest.com/digitalvisibilityuk/" class="text-gray-200 hover:text-blue-400" target="_blank" rel="noopener noreferrer" aria-label="Visit Digital Visibility on Pinterest"> <i data-lucide="image" class="w-5 h-5"></i> </a> </div> </div> <!-- Services --> <div> <h3 class="text-white font-semibold mb-4">Services</h3> <ul class="space-y-2"> <li> <a href="/services/ai-conversation-automation/" class="text-gray-200 hover:text-blue-400">AI Conversation Automation</a> </li> <li> <a href="/services/digital-marketing/" class="text-gray-200 hover:text-blue-400">Digital Marketing</a> </li> <li> <a href="/services/app-development/" class="text-gray-200 hover:text-blue-400">Apps Development</a> </li> <li> <a href="/services/product-design/" class="text-gray-200 hover:text-blue-400">Product Design & Engineering</a> </li> <li> <a href="/apps/apps-platform/" class="text-gray-200 hover:text-blue-400">Business Growth Tools</a> </li> </ul> </div> <!-- Company --> <div> <h3 class="text-white font-semibold mb-4">Company</h3> <ul class="space-y-2"> <li> <a href="/about/" class="text-gray-200 hover:text-blue-400">About Us</a> </li> <li> <a href="/faq/" class="text-gray-200 hover:text-blue-400">FAQs</a> </li> <li> <a href="/blog/" class="text-gray-200 hover:text-blue-400">Digital Visibility Blog</a> </li> <li> <a href="https://blog.digitalvisibility.com" class="text-gray-200 hover:text-blue-400">Industry Insights Blog</a> </li> <li> <a href="/pricing/" class="text-gray-200 hover:text-blue-400">Pricing</a> </li> <li> <a href="/terms-conditions/" class="text-gray-200 hover:text-blue-400">Terms & Conditions</a> </li> <li> <a href="/privacy-policy/" class="text-gray-200 hover:text-blue-400">Privacy Policy</a> </li> <li> <a href="/privacy-policy/data-deletion/" class="text-gray-200 hover:text-blue-400">Data Deletion</a> </li> <li> <a href="/disclaimer/" class="text-gray-200 hover:text-blue-400">Disclaimer</a> </li> </ul> </div> <!-- Contact Us --> <div> <h3 class="text-white font-semibold mb-4">Contact Us</h3> <div class="space-y-4"> <div> <p class="text-gray-200">Digital Visibility Limited</p> <p class="text-gray-200">235 Peniel Green Road</p> <p class="text-gray-200">Llansamlet, Swansea</p> <p class="text-gray-200">Wales, UK, SA7 9BA</p> </div> <div> <p class="text-gray-200 flex items-center"> <i data-lucide="phone" class="w-4 h-4 mr-2"></i> <a href="tel:+4401792002497" class="hover:text-blue-400">(+44) 01792 002 497</a> </p> <p class="text-gray-200 flex items-center mt-2"> <i data-lucide="mail" class="w-4 h-4 mr-2"></i> <a href="/cdn-cgi/l/email-protection#acdfd9dcdcc3ded8ecc8c5cbc5d8cdc0dac5dfc5cec5c0c5d8d582cfc3c1" class="hover:text-blue-400"><span class="__cf_email__" data-cfemail="4a393f3a3a25383e0a2e232d233e2b263c233923282326233e3364292527">[email&#160;protected]</span></a> </p> <p class="text-gray-200 flex items-center mt-2"> <i data-lucide="message-circle" class="w-4 h-4 mr-2"></i> <a href="https://wa.me/447725817197" class="hover:text-blue-400">Instant Chat</a> </p> </div> <!-- Business Hours --> <div class="mt-6"> <h4 class="text-white font-semibold mb-3">Business Hours</h4> <div class="grid grid-cols-2 gap-2"> <p class="text-gray-200">Monday-Friday</p> <p class="text-gray-200">08:00-20:00</p> <p class="text-gray-200">Saturday</p> <p class="text-gray-200">09:00-17:00</p> <p class="text-gray-200">Sunday</p> <p class="text-gray-200">10:00-16:00</p> </div> </div> </div> </div> </div> </div> <!-- Copyright --> <div class="border-t border-gray-800"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6"> <div class="flex flex-col md:flex-row justify-between items-center"> <p class="text-gray-200">&copy; 2024 Digital Visibility Limited. All rights reserved.</p> <p class="text-gray-200 mt-2 md:mt-0">www.digitalvisibility.com</p> </div> </div> </div> </footer> <!-- Load scripts asynchronously to prevent render blocking -->   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"95f84b0a2942d577","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.6.2","token":"ff4ffa87a8264e59a78c83474a01b5d3"}' crossorigin="anonymous"></script>
+</body></html>

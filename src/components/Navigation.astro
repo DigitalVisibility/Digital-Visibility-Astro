@@ -211,8 +211,9 @@
 </nav>
 
 <script>
-// Mobile menu toggle
+// Mobile menu toggle - Updated: 2024-12-19 10:30
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('Navigation script loading...'); // Debug log
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
@@ -246,6 +247,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
     }
 });
+
+// Backup initialization for mobile menu (in case DOMContentLoaded doesn't fire)
+function initMobileMenu() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu && !mobileMenuButton.hasAttribute('data-initialized')) {
+        console.log('Backup mobile menu initialization');
+        mobileMenuButton.setAttribute('data-initialized', 'true');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', 
+                mobileMenuButton.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'
+            );
+        });
+    }
+}
+
+// Try backup initialization after a delay
+setTimeout(initMobileMenu, 1000);
 </script>
 
 <style>
