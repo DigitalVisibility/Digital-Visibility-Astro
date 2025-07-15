@@ -2,32 +2,6 @@
 // Responsive navigation component with dropdowns
 ---
 
-<!-- Contact Bar -->
-<div class="bg-gray-700 text-white text-sm py-2 hidden lg:block">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-center items-center space-x-8">
-            <a href="tel:+4401792002497" class="flex items-center space-x-2 hover:text-blue-300 transition-colors">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                </svg>
-                <span>Tel: 01792 002497</span>
-            </a>
-            <a href="mailto:support@digitalvisibility.com" class="flex items-center space-x-2 hover:text-blue-300 transition-colors">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-                <span>Email: support@digitalvisibility.com</span>
-            </a>
-            <a href="https://wa.me/447725817197" target="_blank" rel="noopener" class="flex items-center space-x-2 hover:text-green-300 transition-colors">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                </svg>
-                <span>WhatsApp: 07725 817197</span>
-            </a>
-        </div>
-    </div>
-</div>
-
 <nav class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -37,7 +11,7 @@
                     <span class="text-xl font-bold text-gray-900">Digital Visibility</span>
                 </a>
             </div>
-            <div class="hidden lg:flex items-center space-x-8">
+            <div class="hidden md:flex items-center space-x-8">
                 <!-- Home link -->
                 <a href="/" class="p-2 rounded-md text-gray-700 hover:text-blue-500 transition-colors font-medium">Home</a>
                 <!-- Services Dropdown -->
@@ -71,8 +45,11 @@
                     </button>
                     <div class="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform">
                         <div class="bg-white rounded-lg shadow-lg py-2">
-                            <a href="/#ai-analyzer" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-blue-500">
+                            <a href="/analyzer/" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-blue-500">
                                 AI Optimization Analyzer
+                            </a>
+                            <a href="/roi-calculator/" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-blue-500">
+                                ROI Calculator
                             </a>
                             <a href="/apps/apps-platform/" class="block px-4 py-2 text-gray-800 hover:bg-gray-50 hover:text-blue-500">
                                 Business Apps Platform
@@ -104,10 +81,30 @@
                 <a href="/pricing/" class="p-2 rounded-md text-gray-700 hover:text-blue-500 transition-colors font-medium">Pricing</a>
                 <!-- Contact -->
                 <a href="/contact/" class="p-2 rounded-md text-gray-700 hover:text-blue-500 transition-colors font-medium">Contact</a>
+                
+                <!-- Quick Contact Links -->
+                <div class="flex items-center space-x-2 border-l border-gray-200 pl-4">
+                    <a href="tel:+4401792002497" class="p-2 rounded-md text-gray-600 hover:text-blue-500 hover:bg-gray-50 transition-colors" title="Call us">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:support@digitalvisibility.com" class="p-2 rounded-md text-gray-600 hover:text-blue-500 hover:bg-gray-50 transition-colors" title="Email us">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/447725817197" target="_blank" rel="noopener" class="p-2 rounded-md text-gray-600 hover:text-green-500 hover:bg-gray-50 transition-colors" title="WhatsApp">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                        </svg>
+                    </a>
+                </div>
+                
                 <!-- Login -->
-                <a href="https://apps.digitalvisibility.com" class="btn-primary">Login</a>
+                <a href="https://apps.digitalvisibility.com" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition-colors">Login</a>
             </div>
-            <div class="lg:hidden flex items-center">
+            <div class="md:hidden flex items-center">
                 <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-500 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" aria-expanded="false" aria-label="Toggle navigation menu">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -116,7 +113,7 @@
             </div>
         </div>
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="lg:hidden hidden">
+        <div id="mobile-menu" class="hidden md:hidden">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <!-- Home link mobile -->
                 <a href="/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500">Home</a>
@@ -146,8 +143,11 @@
                         <i data-lucide="chevron-down" class="w-4 h-4"></i>
                     </button>
                     <div class="mobile-dropdown-content hidden pl-4 mt-1 space-y-1">
-                        <a href="/#analyzer" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500">
+                        <a href="/analyzer/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500">
                             AI Optimization Analyzer
+                        </a>
+                        <a href="/roi-calculator/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500">
+                            ROI Calculator
                         </a>
                         <a href="/apps/apps-platform/" class="block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500">
                             Business Apps Platform
@@ -178,31 +178,31 @@
                     Contact
                 </a>
                 
-                <!-- Mobile Contact Links -->
+                <!-- Mobile Quick Contact Links -->
                 <div class="border-t border-gray-200 pt-3 mt-3">
-                    <div class="space-y-2">
-                        <a href="tel:+4401792002497" class="flex items-center px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500">
+                    <div class="flex justify-center space-x-4">
+                        <a href="tel:+4401792002497" class="flex items-center px-4 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500">
                             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                             </svg>
-                            Call: 01792 002497
+                            Call
                         </a>
-                        <a href="mailto:support@digitalvisibility.com" class="flex items-center px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500">
+                        <a href="mailto:support@digitalvisibility.com" class="flex items-center px-4 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-blue-500">
                             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
-                            Email Us
+                            Email
                         </a>
-                        <a href="https://wa.me/447725817197" target="_blank" rel="noopener" class="flex items-center px-3 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-green-500">
+                        <a href="https://wa.me/447725817197" target="_blank" rel="noopener" class="flex items-center px-4 py-2 text-gray-800 rounded-md hover:bg-gray-50 hover:text-green-500">
                             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                             </svg>
-                            WhatsApp Chat
+                            WhatsApp
                         </a>
                     </div>
                 </div>
                 
-                <a href="https://apps.digitalvisibility.com" class="block px-3 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 mt-4">
+                <a href="https://apps.digitalvisibility.com" class="block px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 mt-4">
                     Login
                 </a>
             </div>
@@ -211,18 +211,35 @@
 </nav>
 
 <script>
-// Mobile menu toggle
+// Mobile menu toggle - Updated: 2024-12-19 10:30
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('Navigation script loading...'); // Debug log
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
     if (mobileMenuButton && mobileMenu) {
+        console.log('Mobile menu elements found, adding event listener');
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            console.log('Mobile menu button clicked');
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.remove('md:hidden');
+                mobileMenu.classList.add('block');
+                console.log('Menu opened');
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.add('md:hidden');
+                mobileMenu.classList.remove('block');
+                console.log('Menu closed');
+            }
+            console.log('Menu classes after toggle:', mobileMenu.classList.toString());
             mobileMenuButton.setAttribute('aria-expanded', 
                 mobileMenuButton.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'
             );
         });
+    } else {
+        console.log('Mobile menu elements not found:', { mobileMenuButton, mobileMenu });
     }
     
     // Mobile dropdowns
@@ -233,13 +250,45 @@ document.addEventListener('DOMContentLoaded', () => {
             content.classList.toggle('hidden');
         });
     });
+    
+    // Initialize Lucide icons for dropdowns if available
+    if (typeof window.lucide !== 'undefined') {
+        window.lucide.createIcons();
+    } else {
+        // Retry icon initialization after a delay
+        setTimeout(() => {
+            if (typeof window.lucide !== 'undefined') {
+                window.lucide.createIcons();
+            }
+        }, 500);
+    }
 });
+
+// Backup initialization for mobile menu (in case DOMContentLoaded doesn't fire)
+function initMobileMenu() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu && !mobileMenuButton.hasAttribute('data-initialized')) {
+        console.log('Backup mobile menu initialization');
+        mobileMenuButton.setAttribute('data-initialized', 'true');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', 
+                mobileMenuButton.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'
+            );
+        });
+    }
+}
+
+// Try backup initialization after a delay
+setTimeout(initMobileMenu, 1000);
 </script>
 
 <style>
 .btn-primary {
     display: inline-block;
-    background-color: #2563eb;
+    background-color: var(--color-primary-600);
     color: white;
     font-weight: 500;
     padding: 0.5rem 1rem;
@@ -248,6 +297,6 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .btn-primary:hover {
-    background-color: #1d4ed8;
+    background-color: var(--color-primary-700);
 }
 </style>
