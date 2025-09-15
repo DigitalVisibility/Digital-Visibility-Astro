@@ -1,0 +1,142 @@
+{
+  "intro": "Get found on Google Maps and Search. Set up your Google Business Profile in minutes and start getting more local customers.",
+  "setupSteps": [
+    "Go to google.com/business and click 'Manage now'",
+    "Search for your business name and address",
+    "Claim your business or create a new listing",
+    "Fill in your business details (name, address, phone, website)",
+    "Pick your main category and add services"
+  ],
+  "verificationMethods": [
+    "Postcard verification: Google sends a code to your business address (5-14 days)",
+    "Phone verification: Get a code via SMS or call (if eligible)",
+    "Email verification: For some businesses, instant verification via email"
+  ],
+  "optimiseSections": [
+    {
+      "title": "Categories & Services",
+      "tips": [
+        "Pick your main category carefully - it affects how you show up in searches",
+        "Add 5-10 relevant services that customers search for",
+        "Use Google's suggested categories, not made-up ones",
+        "Review categories every 6 months as Google adds new ones"
+      ]
+    },
+    {
+      "title": "NAP (Name, Address, Phone)",
+      "tips": [
+        "Keep your business name exactly as it appears on your signage",
+        "Use your real business address, not a PO Box",
+        "Add a local phone number, not a mobile if possible",
+        "Match your NAP details on your website and other directories"
+      ]
+    },
+    {
+      "title": "Description",
+      "tips": [
+        "Write 150-200 words about what makes you special",
+        "Include your main services and location",
+        "Mention years in business and qualifications",
+        "Add a call-to-action like 'Call for free quote'"
+      ]
+    },
+    {
+      "title": "Photos",
+      "tips": [
+        "Add at least 10 high-quality photos",
+        "Include: exterior, interior, team, products, work samples",
+        "Use landscape orientation (horizontal photos work best)",
+        "Upload new photos monthly to stay active"
+      ]
+    },
+    {
+      "title": "Posts",
+      "tips": [
+        "Post weekly updates, offers, or news",
+        "Use the event post type for special promotions",
+        "Add a clear call-to-action and link to your website",
+        "Include photos or videos in every post"
+      ]
+    },
+    {
+      "title": "Reviews",
+      "tips": [
+        "Ask happy customers to leave reviews",
+        "Respond to all reviews within 24-48 hours",
+        "Thank positive reviewers and address negative feedback professionally",
+        "Use review templates to save time"
+      ]
+    },
+    {
+      "title": "Q&A",
+      "tips": [
+        "Add 5-10 common questions customers ask",
+        "Include: opening hours, payment methods, parking, pricing",
+        "Answer questions from customers quickly",
+        "Keep answers short and helpful"
+      ]
+    },
+    {
+      "title": "Messaging & Calls",
+      "tips": [
+        "Turn on messaging to let customers contact you directly",
+        "Set up auto-replies for out-of-hours messages",
+        "Add a click-to-call button with your main number",
+        "Respond to messages within a few hours"
+      ]
+    },
+    {
+      "title": "Hours & Holidays",
+      "tips": [
+        "Set accurate opening hours for each day",
+        "Add special hours for holidays and events",
+        "Update hours if you change them temporarily",
+        "Mark yourself as 'temporarily closed' if needed"
+      ]
+    },
+    {
+      "title": "Products & Services",
+      "tips": [
+        "Add your main products or services with photos",
+        "Include prices where possible",
+        "Write short descriptions for each item",
+        "Link to your website for more details"
+      ]
+    }
+  ],
+  "linksTracking": {
+    "utmHelp": "UTM codes help track which Google Business Profile clicks become customers.",
+    "utmDefault": "utm_source=google&utm_medium=organic&utm_campaign=gbp_profile",
+    "exampleBase": "https://yourdomain.com/contact"
+  },
+  "suspensionHelp": [
+    "Use your real business name, address, and phone number",
+    "Don't stuff keywords into your business name",
+    "Remove any promotional text from your business description",
+    "Make sure your website matches your business details"
+  ],
+  "performanceTips": [
+    "Check your Google Business Profile insights monthly",
+    "Track how many people view your profile, visit your website, and call",
+    "Compare your performance to last month",
+    "Focus on getting more reviews and photos if engagement is low"
+  ],
+  "weeklyChecklist": [
+    "Check and respond to new reviews",
+    "Answer any new customer questions",
+    "Post an update or offer",
+    "Add 1-2 new photos"
+  ],
+  "monthlyChecklist": [
+    "Review your Google Business Profile insights",
+    "Update your business description if needed",
+    "Check your opening hours are correct",
+    "Ask recent customers for reviews"
+  ],
+  "templates": {
+    "reviewRequestSMS": "Hi [Name], thanks for choosing [Business]. We'd love a quick Google review if you're happy with our service. It really helps us grow! Link: [Google Review URL]",
+    "reviewRequestWhatsApp": "Hi [Name]! 😊 Thanks for choosing [Business]. If you're happy with our work, a quick Google review would mean the world to us! 🌟 It takes 30 seconds and helps other customers find us. [Google Review URL]",
+    "postTemplateUpdate": "🔧 Just completed another [Service Type] project in [Location]!\n\nWe helped [Customer] with [Brief Description]. The results speak for themselves!\n\n📞 Need similar work? Get your free quote today\n\nhttps://yourdomain.com/contact?utm_source=google&utm_medium=organic&utm_campaign=gbp_profile\n\n📸 Photo: [Upload before/after shot]"
+  },
+  "geoNote": "Based in Swansea, Wales, UK. We help businesses across the UK get found on Google."
+}

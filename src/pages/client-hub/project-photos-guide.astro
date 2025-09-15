@@ -1,0 +1,383 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import photosData from '../../data/project-photos-tips.json';
+
+const WHATSAPP_NUMBER = '447725817197';
+const WHATSAPP_CTA = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Digital%20Visibility%2C%20I%20want%20to%20send%20a%20project%20update%20with%20photos%20and%20notes.`;
+const PAGE_URL = 'https://digitalvisibility.com/client-hub/project-photos-guide';
+const PAGE_TITLE = 'Project Photos Guide | Digital Visibility';
+const PAGE_DESC = 'Simple, text-only guide to taking clear before, during, and after project photos with your phone. Easy steps, helpful tips, and WhatsApp upload.';
+
+const currentDate = new Date().toLocaleDateString('en-GB', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+
+const meta = {
+  title: PAGE_TITLE,
+  description: PAGE_DESC,
+  keywords: "project photos, phone photography, before after photos, construction photos, project documentation, client photos",
+  image: "/digital-visibility-logo-f.png"
+};
+
+// Schema JSON-LD data
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://digitalvisibility.com/"},
+    {"@type":"ListItem","position":2,"name":"Client Hub","item":"https://digitalvisibility.com/client-hub/"},
+    {"@type":"ListItem","position":3,"name":"Project Photos Guide","item":"https://digitalvisibility.com/client-hub/project-photos-guide"}
+  ]
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Project Photos Guide",
+  "url": "https://digitalvisibility.com/client-hub/project-photos-guide",
+  "description": "Simple, text-only guide to taking clear before, during, and after project photos with your phone."
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Do I need a special camera?","acceptedAnswer":{"@type":"Answer","text":"No. Your phone is enough. Hold it steady, use landscape, and good light."}},
+    {"@type":"Question","name":"How many photos should I send?","acceptedAnswer":{"@type":"Answer","text":"Send your best 5–10 photos. Include before, during, and after shots."}},
+    {"@type":"Question","name":"Should I send before and after photos?","acceptedAnswer":{"@type":"Answer","text":"Yes. Match the same angle for before and after. It shows clear results."}},
+    {"@type":"Question","name":"What if lighting is bad?","acceptedAnswer":{"@type":"Answer","text":"Open curtains or doors for natural light. Avoid shooting into direct sunlight."}}
+  ]
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Take project photos with your phone",
+  "step": [
+    {"@type":"HowToStep","name":"Before: take wide and problem shots"},
+    {"@type":"HowToStep","name":"During: show tools and progress"},
+    {"@type":"HowToStep","name":"After: match the angle and add detail shots"},
+    {"@type":"HowToStep","name":"Send via WhatsApp using our checklist"}
+  ]
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Digital Visibility Limited",
+  "url": "https://digitalvisibility.com/",
+  "telephone": "+44 7725 817197",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Swansea",
+    "addressRegion": "Wales",
+    "addressCountry": "GB"
+  }
+};
+---
+
+<MainLayout {meta}>
+  <Fragment slot="head">
+    <meta name="description" content={PAGE_DESC}>
+    <link rel="canonical" href={PAGE_URL} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={PAGE_TITLE}>
+    <meta property="og:description" content={PAGE_DESC}>
+    <meta property="og:url" content={PAGE_URL}>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Digital Visibility">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content={PAGE_TITLE}>
+    <meta name="twitter:description" content={PAGE_DESC}>
+
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(howToSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)}></script>
+  </Fragment>
+
+  <Navigation slot="nav" />
+
+  <!-- Main Content -->
+  <div class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Breadcrumb -->
+      <nav class="flex mb-8" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="inline-flex items-center">
+            <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+              </svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <a href="/client-hub/" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2">Client Hub</a>
+            </div>
+          </li>
+          <li aria-current="page">
+            <div class="flex items-center">
+              <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Project Photos Guide</span>
+            </div>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4 flex items-center justify-center">
+          📷 Project Photos Guide
+        </h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          {photosData.intro}
+        </p>
+      </div>
+
+      <!-- Before Photos Section -->
+      <section class="mb-12">
+        <div class="flex items-center mb-6">
+          <span class="text-2xl mr-3" aria-hidden="true">📷</span>
+          <h2 class="text-3xl font-bold text-gray-900">Before Photos</h2>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+          <ul class="space-y-3" aria-label="Before photos tips">
+            {photosData.before.map((tip) => (
+              <li class="flex items-start text-blue-800">
+                <svg class="w-5 h-5 mr-3 mt-0.5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {tip}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Future image placeholder:
+        <figure class="mb-6">
+          <img src="/images/project-photos-guide/before-wide.jpg"
+               alt="Person holding phone sideways to capture full room before renovation with natural light"
+               class="w-full rounded-lg shadow-md" />
+          <figcaption class="text-center text-gray-600 mt-2 italic">Stand back and use natural light for before shots.</figcaption>
+        </figure>
+        */}
+      </section>
+
+      <!-- During Photos Section -->
+      <section class="mb-12">
+        <div class="flex items-center mb-6">
+          <span class="text-2xl mr-3" aria-hidden="true">🔧</span>
+          <h2 class="text-3xl font-bold text-gray-900">During Photos</h2>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-6">
+          <ul class="space-y-3" aria-label="During work photos tips">
+            {photosData.during.map((tip) => (
+              <li class="flex items-start text-amber-800">
+                <svg class="w-5 h-5 mr-3 mt-0.5 text-amber-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {tip}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Future image placeholder:
+        <figure class="mb-6">
+          <img src="/images/project-photos-guide/during-tools.jpg"
+               alt="Construction worker using tools with project materials visible in background"
+               class="w-full rounded-lg shadow-md" />
+          <figcaption class="text-center text-gray-600 mt-2 italic">Show tools and materials to highlight your professional process.</figcaption>
+        </figure>
+        */}
+      </section>
+
+      <!-- After Photos Section -->
+      <section class="mb-12">
+        <div class="flex items-center mb-6">
+          <span class="text-2xl mr-3" aria-hidden="true">✨</span>
+          <h2 class="text-3xl font-bold text-gray-900">After Photos</h2>
+        </div>
+
+        <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+          <ul class="space-y-3" aria-label="After photos tips">
+            {photosData.after.map((tip) => (
+              <li class="flex items-start text-green-800">
+                <svg class="w-5 h-5 mr-3 mt-0.5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {tip}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Future image placeholder:
+        <figure class="mb-6">
+          <img src="/images/project-photos-guide/after-comparison.jpg"
+               alt="Side-by-side before and after photos showing dramatic improvement in renovated space"
+               class="w-full rounded-lg shadow-md" />
+          <figcaption class="text-center text-gray-600 mt-2 italic">Match angles for perfect before-and-after comparisons.</figcaption>
+        </figure>
+        */}
+      </section>
+
+      <!-- General Tips Section -->
+      <section class="mb-12">
+        <div class="flex items-center mb-6">
+          <span class="text-2xl mr-3" aria-hidden="true">💡</span>
+          <h2 class="text-3xl font-bold text-gray-900">General Tips</h2>
+        </div>
+
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+          <ul class="space-y-3" aria-label="General photography tips">
+            {photosData.generalTips.map((tip) => (
+              <li class="flex items-start text-gray-800">
+                <svg class="w-5 h-5 mr-3 mt-0.5 text-gray-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {tip}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Future image placeholder:
+        <figure class="mb-6">
+          <img src="/images/project-photos-guide/landscape-phone.jpg"
+               alt="Hands holding smartphone horizontally in landscape orientation"
+               class="w-full rounded-lg shadow-md" />
+          <figcaption class="text-center text-gray-600 mt-2 italic">Hold your phone sideways for better website photos.</figcaption>
+        </figure>
+        */}
+      </section>
+
+      <!-- CTA Section -->
+      <div class="bg-blue-600 rounded-lg p-8 text-center text-white mb-8">
+        <h3 class="text-2xl font-bold mb-4">Ready to Send Your Photos?</h3>
+        <p class="text-lg mb-6">Use our simple WhatsApp checklist to send your project photos and details.</p>
+        <a
+          href="/client-hub/project-upload-whatsapp/"
+          class="inline-flex items-center bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+        >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+          </svg>
+          Send Your Photos via WhatsApp
+        </a>
+      </div>
+
+      <!-- Local Service Notice -->
+      <div class="text-center bg-gray-50 rounded-lg p-6 mb-8">
+        <p class="text-gray-700">
+          <svg class="w-5 h-5 mr-2 inline text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+          {photosData.geoNote}
+        </p>
+      </div>
+
+      <!-- Related Links -->
+      <div class="border-t border-gray-200 pt-8">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">More client resources</h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <a href="/client-hub/project-upload-whatsapp/" class="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+              <span class="font-medium text-gray-900">WhatsApp Upload</span>
+            </div>
+          </a>
+          <a href="/client-hub/domain-transfer-guide/" class="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+              </svg>
+              <span class="font-medium text-gray-900">Domain Transfer</span>
+            </div>
+          </a>
+          <a href="/pricing/" class="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+              </svg>
+              <span class="font-medium text-gray-900">Pricing</span>
+            </div>
+          </a>
+          <a href="/contact/" class="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              <span class="font-medium text-gray-900">Contact Us</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Last Updated -->
+      <div class="text-right mt-8 pt-4 border-t border-gray-200">
+        <p class="text-sm text-gray-500">Last updated: {currentDate}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky WhatsApp CTA -->
+  <div class="fixed bottom-6 right-6 z-50 lg:hidden">
+    <a
+      href={WHATSAPP_CTA}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-primary shadow-lg flex items-center px-4 py-3 rounded-full hover:shadow-xl transition-all"
+      aria-label="Send project photos via WhatsApp"
+    >
+      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+      </svg>
+      Send Photos
+    </a>
+  </div>
+
+  <Footer slot="footer" />
+
+  <style>
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #2563eb;
+      color: white;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      transition: all 300ms;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</MainLayout>

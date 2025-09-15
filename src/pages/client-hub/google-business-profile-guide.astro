@@ -1,0 +1,613 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import gbpData from '../../data/gbp-guide.json';
+
+const WHATSAPP_NUMBER = '447725817197';
+const WHATSAPP_CTA = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Digital%20Visibility%2C%20please%20help%20me%20with%20my%20Google%20Business%20Profile.`;
+const PAGE_URL = 'https://digitalvisibility.com/client-hub/google-business-profile-guide';
+const PAGE_TITLE = 'Google Business Profile Guide | Digital Visibility';
+const PAGE_DESC = 'Simple steps to set up and optimise your Google Business Profile: verify, pick categories, add photos, get reviews, post updates, and track results.';
+
+const currentDate = new Date().toLocaleDateString('en-GB', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+
+const meta = {
+  title: PAGE_TITLE,
+  description: PAGE_DESC,
+  keywords: "Google Business Profile, Google My Business, local SEO, business listing, Google Maps, local marketing",
+  image: "/digital-visibility-logo-f.png"
+};
+
+// Schema JSON-LD data
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://digitalvisibility.com/"},
+    {"@type":"ListItem","position":2,"name":"Client Hub","item":"https://digitalvisibility.com/client-hub/"},
+    {"@type":"ListItem","position":3,"name":"Google Business Profile Guide","item":"https://digitalvisibility.com/client-hub/google-business-profile-guide"}
+  ]
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Google Business Profile Guide",
+  "url": "https://digitalvisibility.com/client-hub/google-business-profile-guide",
+  "description": "Simple steps to set up and optimise your Google Business Profile for better local visibility."
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How do I verify my Google Business Profile?","acceptedAnswer":{"@type":"Answer","text":"Google offers postcard verification (5-14 days), phone verification (SMS or call), or email verification for eligible businesses."}},
+    {"@type":"Question","name":"Should I use a service area business or storefront?","acceptedAnswer":{"@type":"Answer","text":"Use storefront if customers visit your location. Use service area if you travel to customers' locations."}},
+    {"@type":"Question","name":"How often should I post on Google Business Profile?","acceptedAnswer":{"@type":"Answer","text":"Post weekly updates, offers, or news to keep your profile active and engaging."}},
+    {"@type":"Question","name":"How do I get my Google review link?","acceptedAnswer":{"@type":"Answer","text":"In your Google Business Profile dashboard, click 'Get more reviews' to find your unique review link."}},
+    {"@type":"Question","name":"What photos should I upload?","acceptedAnswer":{"@type":"Answer","text":"Upload exterior, interior, team, products, and work samples. Aim for at least 10 high-quality landscape photos."}}
+  ]
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Set up Google Business Profile",
+  "step": [
+    {"@type":"HowToStep","name":"Claim your business listing"},
+    {"@type":"HowToStep","name":"Verify your business"},
+    {"@type":"HowToStep","name":"Set accurate NAP details"},
+    {"@type":"HowToStep","name":"Add categories and services"},
+    {"@type":"HowToStep","name":"Upload photos and create posts"},
+    {"@type":"HowToStep","name":"Ask customers for reviews"},
+    {"@type":"HowToStep","name":"Track performance with insights"}
+  ]
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Digital Visibility Limited",
+  "url": "https://digitalvisibility.com/",
+  "telephone": "+44 7725 817197",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Swansea",
+    "addressRegion": "Wales",
+    "addressCountry": "GB"
+  }
+};
+---
+
+<MainLayout {meta}>
+  <Fragment slot="head">
+    <meta name="description" content={PAGE_DESC}>
+    <link rel="canonical" href={PAGE_URL} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={PAGE_TITLE}>
+    <meta property="og:description" content={PAGE_DESC}>
+    <meta property="og:url" content={PAGE_URL}>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Digital Visibility">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content={PAGE_TITLE}>
+    <meta name="twitter:description" content={PAGE_DESC}>
+
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(howToSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)}></script>
+  </Fragment>
+
+  <Navigation slot="nav" />
+
+  <!-- Main Content -->
+  <div class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Breadcrumb -->
+      <nav class="flex mb-8" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="inline-flex items-center">
+            <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+              </svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <a href="/client-hub/" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2">Client Hub</a>
+            </div>
+          </li>
+          <li aria-current="page">
+            <div class="flex items-center">
+              <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Google Business Profile Guide</span>
+            </div>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Google Business Profile Guide</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          {gbpData.intro}
+        </p>
+      </div>
+
+      <!-- Set Up Section -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Set up your profile</h2>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <ol class="list-decimal list-inside space-y-3">
+            {gbpData.setupSteps.map((step) => (
+              <li class="text-blue-800 font-medium">{step}</li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <!-- Verification Section -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Verify your profile</h2>
+        <ul class="space-y-3">
+          {gbpData.verificationMethods.map((method) => (
+            <li class="flex items-start">
+              <svg class="w-5 h-5 mr-3 mt-0.5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700">{method}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Optimise Profile Section -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Optimise your profile</h2>
+        <div class="space-y-4">
+          {gbpData.optimiseSections.map((section, index) => (
+            <div class="border border-gray-200 rounded-lg">
+              <button
+                class="accordion-button w-full text-left px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 rounded-t-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                data-accordion={`optimise-${index}`}
+                aria-expanded="false"
+                aria-controls={`optimise-${index}-content`}
+              >
+                <span class="font-semibold text-gray-900">{section.title}</span>
+                <svg class="w-5 h-5 text-gray-500 transform transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div
+                id={`optimise-${index}-content`}
+                class="accordion-content hidden px-6 py-4 border-t border-gray-200"
+              >
+                <ul class="space-y-2">
+                  {section.tips.map((tip) => (
+                    <li class="flex items-start">
+                      <svg class="w-4 h-4 mr-2 mt-0.5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span class="text-gray-700 text-sm">{tip}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Ask for Reviews Section -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Ask for reviews</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- SMS Template -->
+          <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">SMS Template</h3>
+            <textarea
+              readonly
+              class="w-full h-24 p-3 border border-gray-300 rounded-md resize-none bg-gray-50 text-sm"
+              id="smsTemplate"
+              aria-label="SMS review request template"
+            >{gbpData.templates.reviewRequestSMS}</textarea>
+            <button
+              class="btn-primary mt-3 flex items-center"
+              onclick="copyToClipboard('smsTemplate', this)"
+              aria-label="Copy SMS template"
+            >
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+              </svg>
+              Copy SMS Template
+            </button>
+          </div>
+
+          <!-- WhatsApp Template -->
+          <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">WhatsApp Template</h3>
+            <textarea
+              readonly
+              class="w-full h-24 p-3 border border-gray-300 rounded-md resize-none bg-gray-50 text-sm"
+              id="whatsappTemplate"
+              aria-label="WhatsApp review request template"
+            >{gbpData.templates.reviewRequestWhatsApp}</textarea>
+            <button
+              class="btn-primary mt-3 flex items-center"
+              onclick="copyToClipboard('whatsappTemplate', this)"
+              aria-label="Copy WhatsApp template"
+            >
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+              </svg>
+              Copy WhatsApp Template
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Post Template Section -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Post on Google</h2>
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Post Template</h3>
+          <textarea
+            readonly
+            class="w-full h-32 p-3 border border-gray-300 rounded-md resize-none bg-gray-50 text-sm"
+            id="postTemplate"
+            aria-label="Google Business Profile post template"
+          >{gbpData.templates.postTemplateUpdate}</textarea>
+          <button
+            class="btn-primary mt-3 flex items-center"
+            onclick="copyToClipboard('postTemplate', this)"
+            aria-label="Copy post template"
+          >
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+            Copy Post Template
+          </button>
+        </div>
+      </section>
+
+      <!-- UTM Link Builder -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">UTM link builder</h2>
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+          <p class="text-gray-600 mb-4">{gbpData.linksTracking.utmHelp}</p>
+
+          <div class="space-y-4">
+            <div>
+              <label for="baseUrl" class="block text-sm font-medium text-gray-700 mb-2">Base URL</label>
+              <input
+                type="url"
+                id="baseUrl"
+                class="w-full p-3 border border-gray-300 rounded-md"
+                value={gbpData.linksTracking.exampleBase}
+                placeholder="https://yourdomain.com/contact"
+              />
+            </div>
+
+            <div>
+              <label for="utmContent" class="block text-sm font-medium text-gray-700 mb-2">Campaign Content (optional)</label>
+              <input
+                type="text"
+                id="utmContent"
+                class="w-full p-3 border border-gray-300 rounded-md"
+                placeholder="summer_offer"
+              />
+            </div>
+
+            <div>
+              <label for="utmResult" class="block text-sm font-medium text-gray-700 mb-2">Result URL</label>
+              <div class="flex">
+                <input
+                  type="text"
+                  id="utmResult"
+                  readonly
+                  class="flex-1 p-3 border border-gray-300 rounded-l-md bg-gray-100 text-sm"
+                  value={gbpData.linksTracking.exampleBase + '?' + gbpData.linksTracking.utmDefault}
+                />
+                <button
+                  class="btn-primary rounded-l-none"
+                  onclick="copyToClipboard('utmResult', this)"
+                  aria-label="Copy UTM URL"
+                >
+                  Copy URL
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Photos Help Links -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Photo help</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a href="/client-hub/project-photos-guide/" class="block p-6 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all">
+            <div class="flex items-center">
+              <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <div>
+                <h3 class="font-semibold text-gray-900">Project Photos Guide</h3>
+                <p class="text-gray-600 text-sm">Learn to take great before/after photos</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="/client-hub/project-upload-whatsapp/" class="block p-6 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all">
+            <div class="flex items-center">
+              <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+              <div>
+                <h3 class="font-semibold text-gray-900">Upload via WhatsApp</h3>
+                <p class="text-gray-600 text-sm">Send us photos and project details</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- If Suspended Section -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">If your profile gets suspended</h2>
+        <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+          <ul class="space-y-3">
+            {gbpData.suspensionHelp.map((tip) => (
+              <li class="flex items-start">
+                <svg class="w-5 h-5 mr-3 mt-0.5 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                </svg>
+                <span class="text-red-800">{tip}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <!-- Measure Results Section -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Measure your results</h2>
+        <ul class="space-y-3">
+          {gbpData.performanceTips.map((tip) => (
+            <li class="flex items-start">
+              <svg class="w-5 h-5 mr-3 mt-0.5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 00-2 2z"></path>
+              </svg>
+              <span class="text-gray-700">{tip}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Checklists Section -->
+      <section class="mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Weekly Checklist -->
+          <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+            <h3 class="text-xl font-bold text-green-900 mb-4">Weekly checklist</h3>
+            <ul class="space-y-2">
+              {gbpData.weeklyChecklist.map((item) => (
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 mr-2 mt-0.5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-green-800 text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Monthly Checklist -->
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+            <h3 class="text-xl font-bold text-blue-900 mb-4">Monthly checklist</h3>
+            <ul class="space-y-2">
+              {gbpData.monthlyChecklist.map((item) => (
+                <li class="flex items-start">
+                  <svg class="w-4 h-4 mr-2 mt-0.5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-blue-800 text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Local Service Notice -->
+      <div class="text-center bg-gray-50 rounded-lg p-6 mb-8">
+        <p class="text-gray-700">
+          <svg class="w-5 h-5 mr-2 inline text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+          {gbpData.geoNote}
+        </p>
+      </div>
+
+      <!-- Last Updated -->
+      <div class="text-right mt-8 pt-4 border-t border-gray-200">
+        <p class="text-sm text-gray-500">Last updated: {currentDate}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky WhatsApp CTA -->
+  <div class="fixed bottom-6 right-6 z-50 lg:hidden">
+    <a
+      href={WHATSAPP_CTA}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-primary shadow-lg flex items-center px-4 py-3 rounded-full hover:shadow-xl transition-all"
+      aria-label="Get help with Google Business Profile"
+    >
+      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+      </svg>
+      Get Help
+    </a>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="copy-toast" class="fixed top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 hidden">
+    <div class="flex items-center">
+      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+      </svg>
+      <span aria-live="polite">Copied!</span>
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+
+  <script slot="scripts">
+    // Accordion functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const accordionButtons = document.querySelectorAll('.accordion-button');
+
+      accordionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const targetContent = document.getElementById(this.getAttribute('aria-controls'));
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          const icon = this.querySelector('.accordion-icon');
+
+          // Toggle content
+          if (isExpanded) {
+            targetContent.classList.add('hidden');
+            this.setAttribute('aria-expanded', 'false');
+            icon.classList.remove('rotate-180');
+          } else {
+            targetContent.classList.remove('hidden');
+            this.setAttribute('aria-expanded', 'true');
+            icon.classList.add('rotate-180');
+          }
+        });
+
+        // Keyboard navigation
+        button.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+      });
+
+      // UTM builder functionality
+      const baseUrlInput = document.getElementById('baseUrl');
+      const utmContentInput = document.getElementById('utmContent');
+      const utmResultInput = document.getElementById('utmResult');
+      const defaultUtm = 'utm_source=google&utm_medium=organic&utm_campaign=gbp_profile';
+
+      function updateUtmResult() {
+        const baseUrl = baseUrlInput.value.trim();
+        const utmContent = utmContentInput.value.trim();
+
+        if (baseUrl) {
+          let result = baseUrl;
+          const separator = baseUrl.includes('?') ? '&' : '?';
+          result += separator + defaultUtm;
+
+          if (utmContent) {
+            result += '&utm_content=' + encodeURIComponent(utmContent);
+          }
+
+          utmResultInput.value = result;
+        }
+      }
+
+      baseUrlInput.addEventListener('input', updateUtmResult);
+      utmContentInput.addEventListener('input', updateUtmResult);
+
+      // Initial update
+      updateUtmResult();
+    });
+
+    // Copy to clipboard function
+    function copyToClipboard(elementId, button) {
+      const element = document.getElementById(elementId);
+      const text = element.value;
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() {
+          showCopyToast();
+        }).catch(function(err) {
+          console.error('Failed to copy: ', err);
+        });
+      } else {
+        // Fallback for older browsers
+        element.select();
+        element.setSelectionRange(0, 99999);
+        try {
+          document.execCommand('copy');
+          showCopyToast();
+        } catch (err) {
+          console.error('Failed to copy: ', err);
+        }
+      }
+    }
+
+    function showCopyToast() {
+      const toast = document.getElementById('copy-toast');
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2000);
+    }
+
+    // Make functions globally available
+    window.copyToClipboard = copyToClipboard;
+  </script>
+
+  <style>
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #2563eb;
+      color: white;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      transition: all 300ms;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background-color: #1d4ed8;
+    }
+
+    .rotate-180 {
+      transform: rotate(180deg);
+    }
+
+    .accordion-icon {
+      transition: transform 0.2s ease-in-out;
+    }
+  </style>
+</MainLayout>

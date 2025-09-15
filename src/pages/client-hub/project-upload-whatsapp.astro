@@ -1,0 +1,434 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import checklistsData from '../../data/project-upload-checklists.json';
+
+const WHATSAPP_NUMBER = '447725817197';
+const WHATSAPP_CTA = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Digital%20Visibility%2C%20I%20want%20to%20send%20a%20project%20update.%20Here%20are%20the%20details%3A%0A%0AProject%20name%3A%20%0ALocation%20%28optional%29%3A%0AServices%3A%0AShort%20description%3A%0AResults%2Foutcomes%3A%0ADate%20completed%20%28MM%2FYYYY%29%3A%0AMedia%20links%3A%0ATestimonial%20%28if%20any%29%3A%0APublish%20permission%3A%20Yes%2FNo`;
+const PAGE_URL = 'https://digitalvisibility.com/client-hub/project-upload-whatsapp';
+const PAGE_TITLE = 'Project Upload via WhatsApp | Digital Visibility';
+const PAGE_DESC = 'Fast way to send project photos, videos, and notes via WhatsApp. Copy our checklist, paste, and hit send. Simple and SEO friendly.';
+
+const currentDate = new Date().toLocaleDateString('en-GB', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+
+const meta = {
+  title: PAGE_TITLE,
+  description: PAGE_DESC,
+  keywords: "project upload, WhatsApp, case study, client portal, digital marketing, project photos, video upload",
+  image: "/digital-visibility-logo-f.png"
+};
+
+// Create checklist strings
+const shortChecklistText = checklistsData.shortChecklist.join('\n');
+const detailedChecklistText = checklistsData.detailedChecklist.join('\n');
+
+// Schema JSON-LD data
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://digitalvisibility.com/"},
+    {"@type":"ListItem","position":2,"name":"Client Hub","item":"https://digitalvisibility.com/client-hub/"},
+    {"@type":"ListItem","position":3,"name":"Project Upload via WhatsApp","item":"https://digitalvisibility.com/client-hub/project-upload-whatsapp"}
+  ]
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Project Upload via WhatsApp",
+  "url": "https://digitalvisibility.com/client-hub/project-upload-whatsapp",
+  "description": "Fast way to send project photos, videos, and notes via WhatsApp with copyable checklists."
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What should I include?","acceptedAnswer":{"@type":"Answer","text":"Send project name, location, services, a short description, results, date, and photos or video links."}},
+    {"@type":"Question","name":"Does WhatsApp compress files?","acceptedAnswer":{"@type":"Answer","text":"Sometimes, yes. For highest quality, send Drive or Dropbox links to the original files."}},
+    {"@type":"Question","name":"Can I just send the photos now?","acceptedAnswer":{"@type":"Answer","text":"Yes. Send the photos first. We'll ask a few quick follow-ups if we need details."}},
+    {"@type":"Question","name":"How fast will this be turned into content?","acceptedAnswer":{"@type":"Answer","text":"We'll confirm we received your update and schedule it into our content plan."}}
+  ]
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Share a project via WhatsApp",
+  "step": [
+    {"@type":"HowToStep","name":"Copy a checklist"},
+    {"@type":"HowToStep","name":"Open WhatsApp and paste"},
+    {"@type":"HowToStep","name":"Attach photos and videos"},
+    {"@type":"HowToStep","name":"Send and we'll take it from there"}
+  ]
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Digital Visibility Limited",
+  "url": "https://digitalvisibility.com/",
+  "telephone": "+44 7725 817197",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Swansea",
+    "addressRegion": "Wales",
+    "addressCountry": "GB"
+  }
+};
+---
+
+<MainLayout {meta}>
+  <Fragment slot="head">
+    <meta name="description" content={PAGE_DESC}>
+    <link rel="canonical" href={PAGE_URL} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={PAGE_TITLE}>
+    <meta property="og:description" content={PAGE_DESC}>
+    <meta property="og:url" content={PAGE_URL}>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Digital Visibility">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content={PAGE_TITLE}>
+    <meta name="twitter:description" content={PAGE_DESC}>
+
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(howToSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)}></script>
+  </Fragment>
+
+  <Navigation slot="nav" />
+
+  <!-- Main Content -->
+  <div class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Breadcrumb -->
+      <nav class="flex mb-8" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="inline-flex items-center">
+            <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+              </svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <a href="/client-hub/" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2">Client Hub</a>
+            </div>
+          </li>
+          <li aria-current="page">
+            <div class="flex items-center">
+              <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Project Upload via WhatsApp</span>
+            </div>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4 flex items-center justify-center">
+          <svg class="w-8 h-8 mr-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+          </svg>
+          Project Upload via WhatsApp
+        </h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          {checklistsData.intro}
+        </p>
+      </div>
+
+      <!-- Info Box - What to send -->
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+        <div class="flex items-start">
+          <svg class="w-6 h-6 text-blue-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <div>
+            <h3 class="text-lg font-semibold text-blue-900 mb-4">What to send</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="flex items-center text-blue-800">
+                <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                Photos (before & after)
+              </div>
+              <div class="flex items-center text-blue-800">
+                <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Videos or links
+              </div>
+              <div class="flex items-center text-blue-800">
+                <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Short notes about the job
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checklists Section -->
+      <div class="space-y-12">
+        <!-- Short Checklist -->
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+          <div class="flex items-center mb-4">
+            <svg class="w-6 h-6 mr-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+            </svg>
+            <h2 class="text-2xl font-bold text-gray-900">Short checklist</h2>
+          </div>
+          <p class="text-gray-600 mb-4">Fast and simple. Great for quick updates.</p>
+
+          <div class="bg-gray-50 rounded-lg p-4 mb-4">
+            <textarea
+              readonly
+              class="w-full h-48 p-3 border border-gray-300 rounded-md resize-none bg-white font-mono text-sm"
+              aria-label="Short project checklist"
+              id="shortChecklistText"
+            >{shortChecklistText}</textarea>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <button
+              class="btn-primary flex items-center justify-center px-4 py-2 rounded-md font-medium transition-colors"
+              onclick="copyToClipboard('shortChecklistText', this)"
+              aria-label="Copy short checklist to clipboard"
+            >
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+              </svg>
+              Copy Short Checklist
+            </button>
+
+            <a
+              href={WHATSAPP_CTA}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              class="btn-primary flex items-center justify-center px-4 py-2 rounded-md font-medium transition-colors"
+            >
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+              Open WhatsApp with Short Checklist
+            </a>
+          </div>
+        </div>
+
+        <!-- Detailed Checklist -->
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+          <div class="flex items-center mb-4">
+            <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            <h2 class="text-2xl font-bold text-gray-900">Detailed checklist</h2>
+          </div>
+          <p class="text-gray-600 mb-4">Use this when you want us to write a full case study.</p>
+
+          <div class="bg-gray-50 rounded-lg p-4 mb-4">
+            <textarea
+              readonly
+              class="w-full h-64 p-3 border border-gray-300 rounded-md resize-none bg-white font-mono text-sm"
+              aria-label="Detailed project checklist"
+              id="detailedChecklistText"
+            >{detailedChecklistText}</textarea>
+          </div>
+
+          <button
+            class="btn-primary flex items-center justify-center px-4 py-2 rounded-md font-medium transition-colors"
+            onclick="copyToClipboard('detailedChecklistText', this)"
+            aria-label="Copy detailed checklist to clipboard"
+          >
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+            Copy Detailed Checklist
+          </button>
+        </div>
+      </div>
+
+      <!-- Tips Section -->
+      <div class="bg-amber-50 border border-amber-200 rounded-lg p-6 mt-8">
+        <h3 class="text-lg font-semibold text-amber-900 mb-4 flex items-center">
+          <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+          </svg>
+          Helpful tips
+        </h3>
+        <ul class="space-y-2">
+          {checklistsData.tips.map((tip) => (
+            <li class="flex items-start text-amber-800">
+              <svg class="w-5 h-5 mr-2 mt-0.5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              {tip}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Local Service Notice -->
+      <div class="text-center bg-gray-50 rounded-lg p-6 mt-8">
+        <p class="text-gray-700">
+          <svg class="w-5 h-5 mr-2 inline text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+          {checklistsData.geoNote}
+        </p>
+      </div>
+
+      <!-- Related Links -->
+      <div class="border-t border-gray-200 pt-8 mt-8">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Need more help?</h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <a href="/client-hub/domain-transfer-guide/" class="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+              </svg>
+              <span class="font-medium text-gray-900">Domain Transfer</span>
+            </div>
+          </a>
+          <a href="/contact/" class="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              <span class="font-medium text-gray-900">Contact Us</span>
+            </div>
+          </a>
+          <a href="/pricing/" class="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+              </svg>
+              <span class="font-medium text-gray-900">Pricing</span>
+            </div>
+          </a>
+          <a href="/#ai-analyzer" class="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 00-2 2z"></path>
+              </svg>
+              <span class="font-medium text-gray-900">AI Analyzer</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Last Updated -->
+      <div class="text-right mt-8 pt-4 border-t border-gray-200">
+        <p class="text-sm text-gray-500">Last updated: {currentDate}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky WhatsApp CTA -->
+  <div class="fixed bottom-6 right-6 z-50 lg:hidden">
+    <a
+      href={WHATSAPP_CTA}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-primary shadow-lg flex items-center px-4 py-3 rounded-full hover:shadow-xl transition-all"
+      aria-label="Send project via WhatsApp"
+    >
+      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+      </svg>
+      Send Project
+    </a>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="copy-toast" class="fixed top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 hidden">
+    <div class="flex items-center">
+      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+      </svg>
+      <span aria-live="polite">Copied!</span>
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+
+  <script slot="scripts">
+    // Copy to clipboard function
+    function copyToClipboard(textareaId, button) {
+      const textarea = document.getElementById(textareaId);
+      const text = textarea.value;
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() {
+          showCopyToast();
+        }).catch(function(err) {
+          console.error('Failed to copy: ', err);
+        });
+      } else {
+        // Fallback for older browsers
+        textarea.select();
+        textarea.setSelectionRange(0, 99999); // For mobile devices
+        try {
+          document.execCommand('copy');
+          showCopyToast();
+        } catch (err) {
+          console.error('Failed to copy: ', err);
+        }
+      }
+    }
+
+    function showCopyToast() {
+      const toast = document.getElementById('copy-toast');
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2000);
+    }
+
+    // Make functions globally available
+    window.copyToClipboard = copyToClipboard;
+  </script>
+
+  <style>
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #2563eb;
+      color: white;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      transition: all 300ms;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</MainLayout>

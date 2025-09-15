@@ -1,0 +1,36 @@
+{
+  "intro": "Share your project with us on WhatsApp. Copy a checklist, paste into WhatsApp, add photos and videos, then send.",
+  "shortChecklist": [
+    "Project name:",
+    "Location (optional):",
+    "Services:",
+    "Short description:",
+    "Results/outcomes:",
+    "Date completed (MM/YYYY):",
+    "Media links (Drive/Dropbox/WeTransfer or YouTube/Vimeo):",
+    "Testimonial (if any):",
+    "Publish permission (Yes/No):"
+  ],
+  "detailedChecklist": [
+    "Project name/title:",
+    "Location (town/city; optional):",
+    "Services provided (comma-separated):",
+    "What we did (1–3 lines):",
+    "Key challenge (1 line):",
+    "Result/outcome (1–2 lines):",
+    "Date completed (MM/YYYY):",
+    "Before photos (link or upload in chat):",
+    "After photos (link or upload in chat):",
+    "Video link(s) (optional):",
+    "Target keywords (optional):",
+    "Client testimonial (if any):",
+    "Permission to publish on website/social (Yes/No):",
+    "Notes (anything we should highlight):"
+  ],
+  "tips": [
+    "WhatsApp may compress large files. For highest quality, share a Drive/Dropbox link.",
+    "Clear, short notes help us write a strong case study and improve your SEO.",
+    "If you get stuck, just send photos first and we'll ask a few quick follow-ups."
+  ],
+  "geoNote": "Local service in Swansea, Wales, UK. We also work with clients across the UK."
+}

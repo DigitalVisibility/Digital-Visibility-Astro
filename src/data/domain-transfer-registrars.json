@@ -1,0 +1,60 @@
+{
+  "most_tlds_note": "You'll need an Auth/EPP code (a transfer key). Make sure the domain is unlocked before requesting the code.",
+  "registrars": [
+    {
+      "name": "GoDaddy",
+      "steps": [
+        "Log in to GoDaddy.",
+        "Go to My Products → Domains.",
+        "Open your domain.",
+        "Turn Domain Lock OFF.",
+        "Go to Additional Settings → Transfer domain away.",
+        "Copy the Authorization Code (EPP)."
+      ]
+    },
+    {
+      "name": "123 Reg",
+      "steps": [
+        "Log in to 123 Reg.",
+        "Open Domain Management.",
+        "Select your domain.",
+        "Unlock your domain.",
+        "Find Transfer Out and request/copy the Auth Code."
+      ]
+    },
+    {
+      "name": "Namecheap",
+      "steps": [
+        "Log in to Namecheap.",
+        "Go to Domain List.",
+        "Click Manage next to your domain.",
+        "Set Domain Lock to OFF.",
+        "Scroll to Auth Code and click Get Auth Code."
+      ]
+    },
+    {
+      "name": "IONOS (1&1)",
+      "steps": [
+        "Log in to IONOS.",
+        "Select your domain.",
+        "Unlock the domain.",
+        "Click Show Authorization Code and copy the EPP code."
+      ]
+    }
+  ],
+  "uk": {
+    "intro": "For .UK domains, use an IPS tag instead of an Auth/EPP code.",
+    "ips_tag_value": "CLOUDFLARE",
+    "steps": [
+      "Log in to your current registrar.",
+      "Find Transfer Out or Change IPS tag.",
+      "Enter the IPS tag shown below and save.",
+      "We'll accept the transfer on our side to complete."
+    ]
+  },
+  "after": [
+    "You'll get a confirmation email from your current registrar — please approve it.",
+    "Do not send passwords. Only share the Auth/EPP code (or IPS tag for .uk).",
+    "Stuck? Send a screenshot on WhatsApp and we'll guide you."
+  ]
+}
