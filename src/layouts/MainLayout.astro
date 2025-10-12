@@ -1,5 +1,7 @@
 ---
 // Main layout component that will be used across all pages
+import CookieConsent from '../components/CookieConsent.astro';
+
 const { title = "Digital Visibility - AI Powered Business Optimization", meta } = Astro.props;
 
 // Use meta object if provided, otherwise fall back to individual props
@@ -23,15 +25,7 @@ const pageImage = meta?.image || "/digital-visibility-logo-f.png";
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="cf-2fa-verify" content="true">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T7HFBLX1X1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-T7HFBLX1X1');
-    </script>
+    <!-- Google Analytics will be loaded conditionally based on cookie consent -->
 
 
 
@@ -208,6 +202,9 @@ const pageImage = meta?.image || "/digital-visibility-logo-f.png";
 
     <slot name="footer"/>
 
+    <!-- Cookie Consent Banner -->
+    <CookieConsent />
+
     <!-- Load scripts asynchronously to prevent render blocking -->
     <script>
         // Load Lucide icons asynchronously after initial render
@@ -256,5 +253,6 @@ const pageImage = meta?.image || "/digital-visibility-logo-f.png";
         }
     </script>
     <slot name="scripts"/>
+
 </body>
 </html>

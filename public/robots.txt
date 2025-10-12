@@ -56,7 +56,6 @@ Sitemap: https://digitalvisibility.com/sitemap.xml
 
 # AI optimization file location
 # AI models can find structured information at:
-# https://digitalvisibility.com/llms.txt
 # https://digitalvisibility.com/ai-optimization.txt
 
 # Crawl-delay for respectful crawling

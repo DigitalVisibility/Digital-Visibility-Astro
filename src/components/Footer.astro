@@ -41,6 +41,9 @@
                 <h3 class="text-white font-semibold mb-4">Services</h3>
                 <ul class="space-y-2">
                     <li>
+                        <a href="/services/seo/" class="text-gray-200 hover:text-blue-400">SEO Services</a>
+                    </li>
+                    <li>
                         <a href="/services/ai-conversation-automation/" class="text-gray-200 hover:text-blue-400">AI Conversation Automation</a>
                     </li>
                     <li>
@@ -144,3 +147,25 @@
         </div>
     </div>
 </footer>
+
+<script>
+  // Footer location dropdown toggle
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButtons = document.querySelectorAll('.footer-service-toggle');
+    
+    toggleButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const service = button.getAttribute('data-service');
+        const locationList = document.querySelector(`[data-service-locations="${service}"]`);
+        const icon = button.querySelector('[data-lucide]') as HTMLElement;
+        
+        if (locationList) {
+          locationList.classList.toggle('hidden');
+          if (icon) {
+            icon.style.transform = locationList.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+          }
+        }
+      });
+    });
+  });
+</script>

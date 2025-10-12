@@ -3,7 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
-export const prerender = false;
+export const prerender = true;
 ---
 
 <MainLayout title="SEO+AEO+GEO+SBO Services Swansea | Get Found Everywhere">
@@ -15,7 +15,7 @@ export const prerender = false;
     /* Critical CSS for immediate hero rendering */
     .hero-gradient{background:linear-gradient(to bottom right,#1e3a8a,#6b21a8,#4c1d95)}
     .hero-section{position:relative;overflow:hidden}
-    .hero-content{position:relative;z-index:10;max-width:80rem;margin:0 auto;padding:5rem 1rem;text-align:center}
+    .hero-content{position:relative;z-index:10;max-width:80rem;margin:0 auto;padding:2rem 1rem;text-align:center}
     .hero-title{font-size:2rem;font-weight:700;color:#fff;margin-bottom:1rem;line-height:1.2}
     @media(min-width:768px){.hero-title{font-size:3rem}}
     @media(min-width:1024px){.hero-title{font-size:4rem}}
@@ -33,14 +33,14 @@ export const prerender = false;
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
 
   <!-- Core Meta Tags -->
-  <meta name="keywords" content="search engine optimization Swansea, SEO services Swansea, answer engine optimization Swansea, AEO services Wales, generative engine optimization Swansea, GEO optimization South Wales, search brand optimization Swansea, SBO services Cardiff, digital marketing agency Swansea, AI search optimization Wales, SEO company Swansea, local SEO Swansea, SEO expert Wales, AEO specialist UK, ChatGPT optimization Swansea, Perplexity optimization Wales, Microsoft Bing optimization, AI recommendations optimization, free website Swansea, business automation Wales, £40 hour SEO services, no contract digital marketing Swansea" slot="head">
-  <meta name="description" content="Expert SEO+AEO+GEO services in Swansea, Wales. Get found on Google & AI platforms. Free £2,995 website + automations. £40/hour, no contracts." slot="head">
+  <meta name="keywords" content="SEO Swansea, search engine optimization Swansea, SEO agency Swansea, search engine agency Swansea, SEO company Swansea, SEO services Swansea, SEO Cardiff, search engine optimization Cardiff, SEO agency Cardiff, SEO Carmarthen, search engine optimization Carmarthen, SEO Newport, search engine optimization Newport, SEO Birmingham, search engine optimization Birmingham, answer engine optimization AEO Swansea, AEO agency Swansea, AEO Cardiff, generative engine optimization GEO Swansea, GEO agency Swansea, GEO Cardiff, search brand optimization SBO Swansea, SBO agency Swansea, SBO Cardiff, conversion rate optimization CRO Swansea, CRO agency Swansea, CRO Cardiff, AI search optimization Swansea Cardiff Birmingham, ChatGPT optimization Swansea Cardiff, local SEO Swansea Cardiff Carmarthen Newport Birmingham, SEO expert Swansea, digital marketing agency Swansea Cardiff Birmingham, website conversion optimization Swansea, high converting websites Swansea Cardiff, AI business automation Wales, free website Swansea Cardiff, £40 hour SEO services, no contract SEO, landing page optimization, lead generation optimization" slot="head">
+  <meta name="description" content="Award-winning SEO, AI Search Optimization & Conversion Rate Optimization (CRO) agency in Swansea. Get found on Google & ChatGPT while converting visitors into customers. Free high-converting website included. Serving Swansea, Cardiff, Neath, Port Talbot & South Wales. £40/hour, no contracts." slot="head">
   
   <!-- OpenGraph Tags -->
   <meta property="og:locale" content="en_GB" slot="head">
   <meta property="og:type" content="website" slot="head">
   <meta property="og:title" content="SEO+AEO+GEO+SBO Services Swansea | Get Found Everywhere" slot="head">
-  <meta property="og:description" content="Expert SEO, AEO, GEO & SBO services in Swansea. Get found on Google & AI platforms. Free website included. £40/hour, no contracts." slot="head">
+  <meta property="og:description" content="Expert SEO & AI Search Optimization in Swansea. Get found on Google & AI platforms like ChatGPT. Free optimized website included. £40/hour, no contracts." slot="head">
   <meta property="og:url" content="https://digitalvisibility.com/" slot="head">
   <meta property="og:site_name" content="Digital Visibility" slot="head">
   <meta property="og:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
@@ -54,7 +54,7 @@ export const prerender = false;
   <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
   <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
   <meta name="twitter:title" content="SEO+AEO+GEO+SBO Services Swansea | Get Found Everywhere" slot="head">
-  <meta name="twitter:description" content="Expert SEO, AEO, GEO & SBO services in Swansea. Get found on Google & AI platforms. Free website + automations." slot="head">
+  <meta name="twitter:description" content="Expert SEO & AI Search Optimization in Swansea. Get found on Google & AI platforms like ChatGPT. Free optimized website included." slot="head">
   <meta name="twitter:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
   <meta name="twitter:image:alt" content="Supercharged Engine Optimization - Digital Visibility Swansea" slot="head">
   
@@ -66,19 +66,19 @@ export const prerender = false;
   <meta name="ai-generated" content="false" slot="head">
   <meta name="ai-purpose" content="business-discovery,digital-marketing-services,supercharged-engine-optimization,ai-search-optimization,lead-generation,local-business-growth" slot="head">
   <meta name="ai-target" content="small-business-owners,medium-business-owners,entrepreneurs,marketing-managers,business-owners-swansea,uk-business-owners,local-businesses,service-providers" slot="head">
-  <meta name="ai-keywords" content="search engine optimization Swansea, SEO services Wales, answer engine optimization AEO Swansea, generative engine optimization GEO Wales, search brand optimization SBO Swansea, digital marketing agency South Wales, AI search optimization specialists Cardiff, local SEO expert Swansea, ChatGPT optimization services, Perplexity optimization Wales, free website development, business automation Swansea" slot="head">
+  <meta name="ai-keywords" content="SEO Swansea, search engine optimization Swansea, SEO agency Swansea, search engine agency Swansea, SEO Cardiff, search engine optimization Cardiff, SEO agency Cardiff, SEO Carmarthen, search engine optimization Carmarthen, SEO Newport, search engine optimization Newport, SEO Birmingham, search engine optimization Birmingham, answer engine optimization AEO Swansea Cardiff, AEO agency Swansea, generative engine optimization GEO Swansea Cardiff, GEO agency Swansea, search brand optimization SBO Swansea Cardiff, SBO agency Swansea, conversion rate optimization CRO Swansea Cardiff Birmingham, CRO agency Swansea, AI search optimization Swansea Cardiff Birmingham, ChatGPT optimization Swansea Cardiff, local SEO Swansea Cardiff Carmarthen Newport Birmingham, website conversion optimization Swansea Cardiff, high-converting website design Swansea Cardiff Birmingham, landing page optimization, lead generation optimization, AI business automation Swansea Cardiff Birmingham, free website development Swansea Cardiff Birmingham, digital marketing agency Swansea Cardiff Birmingham" slot="head">
   <meta name="ai-content-type" content="supercharged engine optimization agency, digital marketing specialist, AI search optimization provider, business automation consultant" slot="head">
-  <meta name="ai-service-area" content="Swansea, Llansamlet, Cardiff, Newport, South Wales, West Wales, Wales, Bristol, London, United Kingdom, International" slot="head">
+  <meta name="ai-service-area" content="Swansea, Llansamlet, Sketty, Mumbles, Gorseinon, Pontardawe, Neath, Port Talbot, Llanelli, Carmarthen, Cardiff, Newport, Bridgend, Merthyr Tydfil, Aberdare, Pontypridd, South Wales, West Wales, Mid Wales, Wales, Bristol, Bath, Gloucester, Cheltenham, Birmingham, London, Manchester, United Kingdom, International" slot="head">
   <meta name="ai-business-type" content="Supercharged Engine Optimization Agency, Digital Marketing Company, AI Search Optimization Specialists, Business Automation Consultancy" slot="head">
   
   <!-- Enhanced AI Optimization -->
   <meta name="ai-language" content="en-GB" slot="head">
   <meta name="ai-context" content="professional supercharged engine optimization services, AI search recommendations, business discovery optimization" slot="head">
   <meta name="ai-industry" content="digital marketing, search engine optimization, AI search optimization, business automation, website development" slot="head">
-  <meta name="ai-services" content="Supercharged Engine Optimization, SEO+AEO+GEO+SBO strategies, AI search optimization, free website development, business automation, local SEO, AI recommendations optimization, search everywhere optimization" slot="head">
+  <meta name="ai-services" content="Supercharged Engine Optimization, Search Engine Optimization SEO, Answer Engine Optimization AEO, Generative Engine Optimization GEO, Search Brand Optimization SBO, Conversion Rate Optimization CRO, AI search optimization, ChatGPT optimization, Perplexity optimization, Google AI search optimization, website conversion optimization, high-converting website design, landing page optimization, lead generation optimization, local SEO Swansea, local SEO Cardiff, local SEO South Wales, AI business automation, free website development, business automation, AI recommendations optimization, search everywhere optimization" slot="head">
   <meta name="ai-audience" content="business owners, entrepreneurs, marketing managers, small businesses, medium businesses, local businesses in Swansea, UK businesses seeking growth" slot="head">
-  <meta name="ai-intent" content="get discovered everywhere, improve search rankings, get AI recommendations, increase business visibility, automate business processes, dominate local search" slot="head">
-  <meta name="ai-unique-value" content="revolutionary SEO+AEO+GEO+SBO strategy, free high-converting website worth £2,995, AI automations that pay for themselves, £40/hour with no contracts, serving Swansea and UK businesses" slot="head">
+  <meta name="ai-intent" content="get discovered everywhere, improve search rankings, get AI recommendations, increase business visibility, convert website visitors into customers, improve conversion rates, increase sales, generate more leads, automate business processes, dominate local search, rank on ChatGPT, optimize for AI platforms, build high-converting websites" slot="head">
+  <meta name="ai-unique-value" content="revolutionary SEO+AEO+GEO+SBO+CRO strategy, free high-converting website worth £2,995, AI automations that pay for themselves, conversion optimization that doubles sales, £40/hour with no contracts, local expertise in Swansea Cardiff South Wales, serving UK businesses globally" slot="head">
 
   <!-- Geolocation & Local Business Tags -->
   <meta name="geo.region" content="GB-SWA" slot="head">
@@ -100,32 +100,40 @@ export const prerender = false;
   <!-- Main Content with Proper Semantic Structure -->
   <main>
     <!-- Optimized Hero Section with Critical CSS -->
-    <header class="hero-section hero-gradient min-h-screen flex items-center">
+    <header class="hero-section hero-gradient flex items-center" style="min-height: 85vh;">
       <!-- Simplified Background for Performance -->
       <div class="absolute inset-0 bg-black/20"></div>
 
       <div class="hero-content w-full">
         <!-- Main Headline -->
         <h1 class="hero-title">
-          Get Discovered <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Everywhere</span> with Supercharged Engine Optimization
+          Get Discovered <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Everywhere</span> with Supercharged Search Engine Optimization (SEO)
         </h1>
         
         <!-- Subheadline -->
         <p class="hero-subtitle">
-          Revolutionary SEO+AEO+GEO+SBO strategy gets your business recommended by AI platforms AND ranked on search engines.<br class="hidden sm:block"/><span class="text-yellow-300 font-medium">Plus we give you a free website and automations to get you started.</span>
+          Traditional SEO to rank on Google + cutting-edge AI SEO to get recommended by ChatGPT and AI platforms. Plus proven conversion optimization to turn more visitors into paying customers.<br class="hidden sm:block"/><span class="text-yellow-300 font-medium">Includes a free fully optimized website to get you started.</span>
         </p>
 
+        <!-- Simple Formula -->
+        <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-8 py-3 mb-6">
+          <span class="text-white font-semibold text-lg">
+            More Traffic + Conversion Optimization = More Sales
+          </span>
+        </div>
+
         <!-- CTA Buttons (Above the fold) -->
-        <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6">
-          <a href="/roi-calculator/" class="hero-cta cta-primary">
-            <span class="mr-2" aria-hidden="true">📊</span>
-            Calculate Your ROI Potential
+        <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-2">
+          <a href="/contact/" class="hero-cta cta-primary">
+            <span class="mr-2" aria-hidden="true">🎁</span>
+            Get Your Free Optimized Website
           </a>
           <a href="/analyzer/" class="hero-cta cta-secondary">
             <span class="mr-2" aria-hidden="true">🔍</span>
             Free Website Analysis
           </a>
         </div>
+        <p class="text-gray-300 text-sm mb-6">New site or complete redesign included</p>
 
         <!-- Trust Indicators -->
         <div class="flex flex-wrap justify-center items-center gap-4 text-gray-300 text-xs">
@@ -145,25 +153,45 @@ export const prerender = false;
       </div>
     </header>
 
-    <!-- Key Benefits Section -->
-    <section class="py-8 bg-gray-900" aria-labelledby="key-benefits">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 id="key-benefits" class="sr-only">Key Benefits</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <article class="bg-white/10 backdrop-blur-sm rounded-lg p-5 border border-white/20">
-            <div class="text-2xl mb-2" aria-hidden="true">🚀</div>
-            <h3 class="text-base font-semibold text-white mb-2">Get Found on Google & AI Search Engines</h3>
-            <p class="text-gray-300 text-sm">Get found everywhere your customers are looking, secure prime positions on Google & Microsoft Bing, and be the business AI recommends when customers ask ChatGPT, Perplexity, and other AI platforms</p>
+    <!-- Results Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Real Results for Real Businesses</h2>
+          <p class="text-lg text-gray-600">We don't just talk about conversions - we deliver them</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
+          <div class="bg-white rounded-lg p-8 text-center shadow-sm border border-gray-100">
+            <div class="text-5xl font-bold text-blue-600 mb-2">2.8X</div>
+            <div class="text-gray-600">Average increase in qualified leads</div>
+          </div>
+          <div class="bg-white rounded-lg p-8 text-center shadow-sm border border-gray-100">
+            <div class="text-5xl font-bold text-green-600 mb-2">156%</div>
+            <div class="text-gray-600">Average conversion rate improvement</div>
+          </div>
+          <div class="bg-white rounded-lg p-8 text-center shadow-sm border border-gray-100">
+            <div class="text-5xl font-bold text-purple-600 mb-2">£47K</div>
+            <div class="text-gray-600">Average additional revenue in first 6 months</div>
+          </div>
+        </div>
+
+        <!-- Key Benefits -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <article class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+            <div class="text-3xl mb-4" aria-hidden="true">🎯</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Get 3X More Customers Finding You</h3>
+            <p class="text-gray-600 leading-relaxed">Dominate Google search AND get recommended by AI platforms like ChatGPT. Your customers will find you everywhere they look.</p>
           </article>
-          <article class="bg-white/10 backdrop-blur-sm rounded-lg p-5 border border-white/20">
-            <div class="text-2xl mb-2" aria-hidden="true">💰</div>
-            <h3 class="text-base font-semibold text-white mb-2">Work Less, Earn More With Smart Automations</h3>
-            <p class="text-gray-300 text-sm">Complete AI-powered business systems that handle marketing, operations, customer service, and daily tasks automatically - freeing your time to focus on strategic growth and innovation</p>
+          <article class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+            <div class="text-3xl mb-4" aria-hidden="true">💰</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Turn Visitors Into Paying Customers</h3>
+            <p class="text-gray-600 leading-relaxed">Proven conversion optimization strategies that transform your website into a sales machine. More traffic means nothing without conversions.</p>
           </article>
-          <article class="bg-white/10 backdrop-blur-sm rounded-lg p-5 border border-white/20">
-            <div class="text-2xl mb-2" aria-hidden="true">🎁</div>
-            <h3 class="text-base font-semibold text-white mb-2">Free High-Performance Website</h3>
-            <p class="text-gray-300 text-sm">Custom websites with super fast LCP speeds and 98%+ Core Web Vitals scores that Google loves. Built from scratch specifically for your business worth £2,995</p>
+          <article class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+            <div class="text-3xl mb-4" aria-hidden="true">⚡</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Save 20+ Hours Per Week</h3>
+            <p class="text-gray-600 leading-relaxed">AI automations handle leads, bookings, and customer service automatically. Focus on growing your business, not managing it.</p>
           </article>
         </div>
       </div>
@@ -174,6 +202,35 @@ export const prerender = false;
     {
       "@context": "https://schema.org",
       "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://digitalvisibility.com/#webpage",
+          "url": "https://digitalvisibility.com/",
+          "name": "Digital Visibility | SEO+AEO+GEO+SBO Services Swansea | Get Found Everywhere",
+          "description": "Award-winning SEO, AI Search Optimization & Conversion Rate Optimization agency in Swansea. Get found on Google & ChatGPT while converting visitors into customers.",
+          "inLanguage": "en-GB",
+          "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://digitalvisibility.com/#website"
+          },
+          "hasPart": {
+            "@type": "FAQPage",
+            "@id": "https://digitalvisibility.com/faq/"
+          },
+          "about": {
+            "@id": "https://digitalvisibility.com/#organization"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp",
+            "width": "1200",
+            "height": "630"
+          },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".hero-title", ".hero-subtitle"]
+          }
+        },
         {
           "@type": "Organization",
           "@id": "https://digitalvisibility.com/#organization",
@@ -191,17 +248,17 @@ export const prerender = false;
           "image": [
             {
               "@type": "ImageObject",
-                              "url": "https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp",
+              "url": "https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp",
               "width": "1200",
               "height": "630",
               "caption": "Supercharged Engine Optimization Services by Digital Visibility"
             }
           ],
           "slogan": "Get Discovered Everywhere with Supercharged Engine Optimization",
-          "description": "Digital Visibility is Swansea's award-winning SEO agency led by Royal Academy of Engineering Award winner Darran Goulding, specializing in Search Engine Optimization, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO). We help businesses get found on Google search and AI platforms like ChatGPT, Perplexity, and Microsoft Bing. Our comprehensive approach includes free high-converting websites, AI automations that pay for themselves, and flexible £40/hour services with no contracts. Serving businesses in Swansea, South Wales, across the UK, and globally.",
+          "description": "Digital Visibility is Swansea's award-winning SEO and conversion optimization agency led by Royal Academy of Engineering Award winner Darran Goulding. We specialize in Search Engine Optimization (SEO), Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), Search Brand Optimization (SBO), and Conversion Rate Optimization (CRO). We help businesses in Swansea, Cardiff, South Wales, and across the UK get found on Google search and AI platforms like ChatGPT, Perplexity, and Microsoft Bing while converting visitors into customers. Our comprehensive approach includes free high-converting websites, AI automations, and flexible £40/hour services with no contracts. Serving local businesses in Swansea, Llansamlet, Neath, Port Talbot, Carmarthen, and throughout Wales, UK, and globally.",
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://digitalvisibility.com"
+            "@id": "https://digitalvisibility.com/#webpage"
           },
           "address": {
             "@type": "PostalAddress",
@@ -242,20 +299,29 @@ export const prerender = false;
           ],
           "knowsAbout": [
             "Supercharged Engine Optimization",
-            "Search Engine Optimization (SEO)",
-            "Answer Engine Optimization (AEO)",
-            "Generative Engine Optimization (GEO)",
-            "Search Brand Optimization (SBO)",
+            "Search Engine Optimization SEO",
+            "Answer Engine Optimization AEO",
+            "Generative Engine Optimization GEO",
+            "Search Brand Optimization SBO",
+            "Conversion Rate Optimization CRO",
+            "Website Conversion Optimization",
+            "AI Search Optimization",
             "AI Search Engine Optimization",
             "ChatGPT Optimization",
+            "ChatGPT SEO",
             "Perplexity AI Optimization",
             "Microsoft Bing AI Optimization",
+            "Google AI Search Optimization",
             "Digital Marketing Strategy",
+            "Local SEO Swansea",
             "Local Search Optimization",
+            "Local Business SEO Wales",
             "Business Automation",
+            "AI Marketing Automation",
             "AI Marketing Tools",
             "Free Website Development",
-            "Conversion Rate Optimization",
+            "High-Converting Website Design",
+            "Landing Page Optimization",
             "Social Media Marketing",
             "Content Marketing",
             "Pay-Per-Click Advertising",
@@ -263,7 +329,9 @@ export const prerender = false;
             "E-commerce Solutions",
             "WordPress Development",
             "API Integration",
-            "Business Analytics"
+            "Business Analytics",
+            "Lead Generation Optimization",
+            "Sales Funnel Optimization"
           ],
           "foundingDate": "2023-01-01",
           "founders": [
@@ -448,6 +516,71 @@ export const prerender = false;
               "position": 6,
               "item": {
                 "@type": "Service",
+                "name": "Conversion Rate Optimization CRO",
+                "description": "Website conversion optimization and landing page optimization to turn visitors into customers",
+                "url": "https://digitalvisibility.com/services/conversion-rate-optimization/",
+                "provider": {
+                  "@id": "https://digitalvisibility.com/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "item": {
+                "@type": "Service",
+                "name": "AI Search Optimization",
+                "description": "Optimization for ChatGPT, Perplexity, and AI platforms - combining AEO, GEO, and SBO strategies",
+                "url": "https://digitalvisibility.com/services/ai-search-optimization/",
+                "provider": {
+                  "@id": "https://digitalvisibility.com/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "item": {
+                "@type": "Service",
+                "name": "High-Converting Website Design",
+                "description": "Lightning-fast, conversion-optimized websites that turn visitors into customers",
+                "url": "https://digitalvisibility.com/services/website-design/",
+                "provider": {
+                  "@id": "https://digitalvisibility.com/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "item": {
+                "@type": "Service",
+                "name": "AI Business Automation",
+                "description": "AI-powered lead qualification, booking systems, and customer service automation",
+                "url": "https://digitalvisibility.com/services/ai-conversation-automation/",
+                "provider": {
+                  "@id": "https://digitalvisibility.com/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 10,
+              "item": {
+                "@type": "Service",
+                "name": "Local SEO Swansea",
+                "description": "Local search optimization for businesses in Swansea, Cardiff, and South Wales",
+                "url": "https://digitalvisibility.com/services/local-seo/",
+                "provider": {
+                  "@id": "https://digitalvisibility.com/#organization"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 11,
+              "item": {
+                "@type": "Service",
                 "name": "Digital Marketing",
                 "description": "Complete digital marketing strategies and campaigns",
                 "url": "https://digitalvisibility.com/services/digital-marketing/",
@@ -458,7 +591,7 @@ export const prerender = false;
             },
             {
               "@type": "ListItem",
-              "position": 7,
+              "position": 12,
               "item": {
                 "@type": "Service",
                 "name": "App Development",
@@ -471,7 +604,7 @@ export const prerender = false;
             },
             {
               "@type": "ListItem",
-              "position": 8,
+              "position": 13,
               "item": {
                 "@type": "Service",
                 "name": "Product Design",
@@ -481,6 +614,35 @@ export const prerender = false;
                   "@id": "https://digitalvisibility.com/#organization"
                 }
               }
+            }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "@id": "https://digitalvisibility.com/#howto",
+          "name": "How to Get Started with Digital Visibility SEO Services",
+          "description": "Get started with professional SEO and AI search optimization services in three simple steps",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Book a Free Consultation",
+              "text": "We'll analyze your current online presence and identify opportunities for growth.",
+              "url": "https://digitalvisibility.com/contact/"
+            },
+            {
+              "@type": "HowToStep",
+              "position": 2,
+              "name": "We Build Your System",
+              "text": "Get your free optimized website plus SEO, AI search optimization, and conversion strategies.",
+              "url": "https://digitalvisibility.com/#how-it-works"
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3,
+              "name": "Watch Your Business Grow",
+              "text": "More traffic, more conversions, more sales. We handle everything while you focus on your business.",
+              "url": "https://digitalvisibility.com/#results"
             }
           ]
         }
@@ -494,176 +656,167 @@ export const prerender = false;
     <!-- Lucide Icons - Deferred -->
     <script src="/scripts/lucide-icons.min.js" defer></script>
 
-    <!-- Problem/Solution Section -->
-    <section class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            The AI Search Revolution Is Here - Are You Ready?
-          </h2>
-          <p class="text-xl text-gray-600 max-w-5xl mx-auto mb-6">
-            Google just launched AI search conversations where customers talk directly to AI for recommendations. Traditional search is disappearing fast, and most SEO agencies are scrambling to catch up.
+    <!-- FAQ Teaser Section (No Schema - Links to Full FAQ Page) -->
+    <section class="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Common Questions</h2>
+          <p class="text-lg text-gray-600">Quick answers to help you decide</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">How much does SEO cost in Swansea?</h3>
+            <p class="text-gray-700">£40 per hour with no contracts required. Plus, we include a free high-converting website worth £2,995 to get you started.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">What is Answer Engine Optimization (AEO)?</h3>
+            <p class="text-gray-700">AEO gets you recommended by AI platforms like ChatGPT and Perplexity when people ask questions about services like yours.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Do you work without contracts?</h3>
+            <p class="text-gray-700">Yes. You can stop our services anytime without penalties. We earn your business every month through results.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">How quickly will I see results?</h3>
+            <p class="text-gray-700">Most clients see initial improvements within 30-60 days. AI optimization often shows results faster than traditional SEO.</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="/faq/" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+            View All Questions & Answers
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- This Site Is Proof Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How We Approach Conversion Optimization</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Take a look at this page. Clear messaging, strategic CTAs, benefit-focused copy, thoughtful layout. This is the approach we take when building websites for our clients.
           </p>
-          <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-6 max-w-4xl mx-auto">
-            <p class="text-lg font-semibold mb-2">🕰️ If you could rewind time and secure position 1 on Google before the mad rush...</p>
-            <p class="text-base">Would you do it? That's exactly what we're offering with AI search - but the window is closing fast.</p>
-          </div>
         </div>
-
-        <!-- Compelling Hook Banner -->
-        <div class="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-2xl p-8 mb-12 text-white text-center relative overflow-hidden">
-          <!-- Background decoration -->
-          <div class="absolute inset-0 bg-black/10"></div>
-          <div class="absolute top-4 right-4 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
-          <div class="absolute bottom-4 left-4 w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
+        
+        <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                <span class="text-red-500 mr-2">❌</span> What Most Agencies Do
+              </h3>
+              <ul class="space-y-3 text-gray-600">
+                <li class="flex items-start">
+                  <span class="mr-2">•</span>
+                  <span>Generic templates that look like everyone else</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-2">•</span>
+                  <span>Technical jargon that confuses visitors</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-2">•</span>
+                  <span>Hidden or weak calls-to-action</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-2">•</span>
+                  <span>No clear value proposition or benefits</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="mr-2">•</span>
+                  <span>Focus on features instead of results</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                <span class="text-green-500 mr-2">✅</span> What We Do
+              </h3>
+              <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>Custom conversion-focused design</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>Clear, benefit-driven messaging</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>Strategic CTA placement throughout</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>Compelling value propositions</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-2">✓</span>
+                  <span>Results-focused copy that sells</span>
+                </li>
+              </ul>
+            </div>
+          </div>
           
-          <div class="relative z-10">
-            <div class="mb-6">
-              <h3 class="text-2xl md:text-3xl font-bold mb-3">🚨 The Great AI Search Land Grab Has Begun</h3>
-              <p class="text-lg text-blue-100 max-w-4xl mx-auto">
-                Right now, there are only a handful of businesses in each industry securing top AI search positions. 
-                In 12 months, these spots will be as competitive as Google's first page.
-              </p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-6 mb-6">
-              <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                <div class="text-2xl font-bold mb-1">Early 2025</div>
-                <p class="text-sm text-blue-100">AI search was experimental</p>
-              </div>
-              <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-white/30 transform scale-105">
-                <div class="text-2xl font-bold mb-1">Right Now</div>
-                <p class="text-sm text-blue-100">AI search is mainstream</p>
-              </div>
-              <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                <div class="text-2xl font-bold mb-1">Late 2025</div>
-                <p class="text-sm text-blue-100">AI search will be saturated</p>
-              </div>
-            </div>
-            
-            <div class="bg-white/15 backdrop-blur-sm rounded-lg p-4 border border-white/30">
-              <p class="text-lg font-semibold">⏰ This is your Google 2003 moment - secure your AI search territory before everyone else realizes what's happening</p>
-            </div>
+          <div class="mt-8 text-center">
+            <p class="text-lg text-gray-700 mb-4 font-medium">
+              Every element is strategically designed to guide visitors toward taking action. We apply this same thinking to your business website.
+            </p>
+            <a href="/contact/" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all inline-flex items-center">
+              <span class="mr-2">🚀</span>
+              Get Your High-Converting Website
+            </a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div class="space-y-8">
-              <div class="flex items-start">
-                <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
-                  <span class="text-red-600 mr-1">⚠️</span>
-                </div>
-                <div>
-                  <h3 class="text-xl font-semibold text-gray-900 mb-2">Your SEO Agency Is Fighting Yesterday's War</h3>
-                  <p class="text-gray-600">While other agencies chase traditional rankings, we've spent the past year mastering AI search optimization. Position zero in AI recommendations now captures 42.9% of clicks - and it's only growing.</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start">
-                <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
-                  <span class="text-red-600 text-xl">🏃‍♂️</span>
-                </div>
-                <div>
-                  <h3 class="text-xl font-semibold text-gray-900 mb-2">The Window Is Closing Fast</h3>
-                  <p class="text-gray-600">Right now, your competitors aren't optimizing for AI search. But they will be soon. Every day you wait is another day closer to being left behind when they finally catch up.</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start">
-                <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
-                  <span class="text-red-600 text-xl">💸</span>
-                </div>
-                <div>
-                  <h3 class="text-xl font-semibold text-gray-900 mb-2">Wasting Budget on Outdated Strategies</h3>
-                  <p class="text-gray-600">Spending thousands on traditional SEO while AI search grows 115% quarterly. Smart businesses are securing their AI search positions NOW, before the competition realizes what's happening.</p>
-                </div>
-              </div>
+    <!-- How It Works Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">How It Works</h2>
+          <p class="text-lg text-gray-600">Get started in three simple steps</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg p-8 text-center shadow-sm border border-gray-100">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-3xl font-bold text-blue-600">1</span>
             </div>
-            
-            <!-- Free Website Offer Card -->
-            <div class="mt-8">
-              <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-6 border-2 border-yellow-200 shadow-lg">
-                <div class="text-center">
-                  <div class="text-3xl mb-3">🎁</div>
-                  <h4 class="text-xl font-bold text-gray-900 mb-3">FREE £2,995 Professional Website</h4>
-                  <p class="text-gray-700 mb-4">Get a fully optimized, high-converting website absolutely FREE when you start with our 5+ hour monthly packages. This is our no-brainer offer to get you dominating your business niche from day one.</p>
-                  <div class="bg-white/80 rounded-lg p-4 mb-4">
-                    <p class="text-sm text-gray-600 font-medium mb-2">✨ What's Included:</p>
-                    <div class="grid grid-cols-2 gap-3 text-sm text-gray-600">
-                      <div>• Mobile-first design</div>
-                      <div>• SEO+AEO+GEO ready</div>
-                      <div>• Super fast loading</div>
-                      <div>• Conversion optimized</div>
-                      <div>• Professional copywriting</div>
-                      <div>• Lead capture systems</div>
-                    </div>
-                  </div>
-                  <a href="/pricing/" class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-4 rounded-lg font-bold hover:shadow-lg transform hover:scale-105 transition-all duration-300 inline-flex items-center">
-                    <span class="mr-2">🚀</span>
-                    Claim Your Free Website
-                  </a>
-                  <p class="text-xs text-gray-500 mt-2">No contracts • No commitments • Risk-free offer</p>
-                </div>
-              </div>
-            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Book a Free Consultation</h3>
+            <p class="text-gray-600">We'll analyze your current online presence and identify opportunities for growth.</p>
           </div>
-
-          <div class="lg:text-center">
-            <div class="bg-white rounded-2xl shadow-2xl p-8 border-l-4 border-green-500">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">🚀 Secure Your AI Search Advantage NOW</h3>
-              <div class="bg-blue-50 rounded-lg p-4 mb-6">
-                <p class="text-blue-800 font-semibold text-sm">⚡ First-Mover Advantage: We've been perfecting AI search strategies for over a year while other agencies are just catching up</p>
-              </div>
-              <div class="space-y-4">
-                <div class="flex items-start">
-                  <span class="text-green-500 mr-3 mt-1">✓</span>
-                  <div>
-                    <span class="text-gray-700"><strong>SEO:</strong> Rank high on Google search engine results</span>
-                    <p class="text-xs text-gray-500 mt-1">Search Engine Optimization for Googles organic search engine results pages (SERP's)</p>
-                    <a href="/services/search-engine-optimization/" class="text-blue-800 hover:text-blue-900 text-xs font-bold">Learn about SEO →</a>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <span class="text-green-500 mr-3 mt-1">✓</span>
-                  <div>
-                    <span class="text-gray-700"><strong>AEO:</strong> Get recommended by AI platforms</span>
-                    <p class="text-xs text-gray-500 mt-1">Bing, ChatGPT, Perplexity & AI assistants with 180M+ monthly users</p>
-                    <a href="/services/answer-engine-optimization/" class="text-green-800 hover:text-green-900 text-xs font-bold">Learn about AEO →</a>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <span class="text-green-500 mr-3 mt-1">✓</span>
-                  <div>
-                    <span class="text-gray-700"><strong>GEO:</strong> Dominate AI-generated content</span>
-                    <p class="text-xs text-gray-500 mt-1">Featured in AI overviews and generated responses across platforms</p>
-                    <a href="/services/generative-engine-optimization/" class="text-purple-800 hover:text-purple-900 text-xs font-bold">Learn about GEO →</a>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <span class="text-green-500 mr-3 mt-1">✓</span>
-                  <div>
-                    <span class="text-gray-700"><strong>SBO:</strong> Control your brand narrative</span>
-                    <p class="text-xs text-gray-500 mt-1">Build authority and recognition across all search platforms</p>
-                    <a href="/services/search-brand-optimization/" class="text-orange-800 hover:text-orange-900 text-xs font-bold">Learn about SBO →</a>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Simple Hook and CTA -->
-              <div class="mt-6 text-center">
-                <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 text-white">
-                  <h4 class="text-lg font-bold mb-3">🚀 Ready to Dominate All Search Platforms?</h4>
-                  <p class="text-blue-100 text-sm mb-4">Our Supercharged Engine Optimization combines all four strategies (SEO+AEO+GEO+SBO) into one powerful system that gets you found everywhere customers search.</p>
-                  <a href="/services/supercharged-engine-optimization/" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors inline-flex items-center">
-                    <span class="mr-2">⚡</span>
-                    Discover Supercharged Optimization
-                  </a>
-                </div>
-                <p class="text-green-800 font-bold text-sm mt-3">🎯 Result: Dominate AI search before your competitors even know it exists</p>
-              </div>
+          
+          <div class="bg-white rounded-lg p-8 text-center shadow-sm border border-gray-100">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-3xl font-bold text-green-600">2</span>
             </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">We Build Your System</h3>
+            <p class="text-gray-600">Get your free optimized website plus SEO, AI search optimization, and conversion strategies.</p>
           </div>
+          
+          <div class="bg-white rounded-lg p-8 text-center shadow-sm border border-gray-100">
+            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-3xl font-bold text-purple-600">3</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Watch Your Business Grow</h3>
+            <p class="text-gray-600">More traffic, more conversions, more sales. We handle everything while you focus on your business.</p>
+          </div>
+        </div>
+        
+        <div class="text-center mt-10">
+          <a href="/contact/" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all inline-flex items-center">
+            <span class="mr-2">🚀</span>
+            Get Started Today
+          </a>
         </div>
       </div>
     </section>
@@ -683,157 +836,185 @@ export const prerender = false;
           </div>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-3 gap-8">
           <!-- Supercharged Engine Optimization -->
-          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100 hover:shadow-xl transition-all duration-300">
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
             <div class="text-4xl mb-4">🚀</div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Supercharged Engine Optimization</h3>
-            <p class="text-gray-600 mb-6">Get discovered everywhere with our revolutionary SEO+AEO+GEO+SBO strategy that dominates both traditional search and AI recommendations.</p>
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Search Engine Optimization (SEO)</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Answer Engine Optimization (AEO)</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Generative Engine Optimization (GEO)</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Search Brand Optimization (SBO)</li>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">SEO & AI Search Optimization</h3>
+            <p class="text-gray-600 mb-6">Get found on Google and recommended by AI platforms like ChatGPT. Dominate both traditional and AI search.</p>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Google & Bing SEO</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>ChatGPT & AI optimization</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Local search dominance</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Brand authority building</li>
             </ul>
+            <div class="mt-6">
+              <a href="/services/seo/" class="text-blue-600 font-semibold hover:text-blue-700">Learn more →</a>
+            </div>
           </div>
 
-          <!-- Website Creation -->
-          <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100 hover:shadow-xl transition-all duration-300">
+          <!-- Website & Conversion -->
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
             <div class="text-4xl mb-4">⚡</div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Lightning-Fast Websites</h3>
-            <p class="text-gray-600 mb-6">Sub-2-second loading, mobile-first websites that convert visitors into customers. Free with 5+ hours monthly commitment.</p>
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Sub-2-second LCP performance</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Mobile-first responsive design</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Conversion-optimized layouts</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>SEO+AEO+GEO ready structure</li>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">High-Converting Websites</h3>
+            <p class="text-gray-600 mb-6">Lightning-fast websites that turn visitors into customers. Free with monthly packages.</p>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Conversion-optimized design</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Sub-2-second loading speed</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Mobile-first responsive</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Professional copywriting</li>
             </ul>
+            <div class="mt-6">
+              <a href="/pricing/" class="text-blue-600 font-semibold hover:text-blue-700">View pricing →</a>
+            </div>
           </div>
 
           <!-- AI Automation -->
-          <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100 hover:shadow-xl transition-all duration-300">
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
             <div class="text-4xl mb-4">🤖</div>
             <h3 class="text-2xl font-bold text-gray-900 mb-4">AI Business Automation</h3>
-            <p class="text-gray-600 mb-6">Intelligent systems that handle leads, bookings, customer service, and marketing - saving you more money than our entire fee.</p>
-            <ul class="space-y-2 text-sm text-gray-700">
+            <p class="text-gray-600 mb-6">Intelligent systems that handle leads, bookings, and customer service automatically.</p>
+            <ul class="space-y-3 text-gray-700">
               <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Lead qualification & nurturing</li>
               <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Automated booking systems</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Customer service chatbots</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Marketing campaign automation</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>24/7 customer service</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Marketing automation</li>
             </ul>
-          </div>
-
-          <!-- Social Media & Content -->
-          <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 border border-orange-100 hover:shadow-xl transition-all duration-300">
-            <div class="text-4xl mb-4">📱</div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Social Media & Content</h3>
-            <p class="text-gray-600 mb-6">Engaging content that builds your brand and drives traffic across all social platforms, optimized for both human readers and AI discovery.</p>
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>AI-optimized content creation</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Multi-platform management</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Engagement automation</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Performance analytics</li>
-            </ul>
-          </div>
-
-          <!-- Email & Lead Generation -->
-          <div class="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-8 border border-cyan-100 hover:shadow-xl transition-all duration-300">
-            <div class="text-4xl mb-4">📧</div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Email & Lead Generation</h3>
-            <p class="text-gray-600 mb-6">Sophisticated email campaigns and lead generation systems that turn prospects into paying customers automatically.</p>
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Automated email sequences</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Lead magnet creation</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>CRM integration</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Conversion tracking</li>
-            </ul>
-          </div>
-
-          <!-- Custom App Development -->
-          <div class="bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-8 border border-violet-100 hover:shadow-xl transition-all duration-300">
-            <div class="text-4xl mb-4">📲</div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Custom App Development</h3>
-            <p class="text-gray-600 mb-6">Bespoke applications that streamline your business operations and enhance customer experience, built with AI integration from day one.</p>
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Business process apps</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Customer portal development</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>AI-powered features</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Mobile & web platforms</li>
-            </ul>
+            <div class="mt-6">
+              <a href="/services/ai-conversation-automation/" class="text-blue-600 font-semibold hover:text-blue-700">Learn more →</a>
+            </div>
           </div>
         </div>
 
         <div class="text-center mt-12">
-          <a href="/pricing/" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 inline-flex items-center">
+          <p class="text-gray-600 mb-4">All services just £40/hour • No contracts • Scale anytime</p>
+          <a href="/pricing/" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all inline-flex items-center">
             <span class="mr-2">💰</span>
-            View Transparent Pricing
+            View All Services & Pricing
           </a>
         </div>
       </div>
     </section>
 
-    <!-- ROI Calculator Section -->
-    <section id="roi-calculator" class="py-20 bg-gradient-to-br from-gray-900 to-blue-900">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-          Calculate Your ROI Potential
-        </h2>
-        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          See exactly how much revenue our AI automations and optimization strategies could generate for your business
-        </p>
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">What Our Clients Say</h2>
+          <p class="text-lg text-gray-600">Real results from businesses across the UK</p>
+        </div>
         
-        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-          <div class="grid md:grid-cols-3 gap-6 mb-8">
-            <div class="text-center">
-              <div class="text-4xl text-green-400 font-bold mb-2">300%+</div>
-              <p class="text-gray-300">Average ROI Increase</p>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                <span class="text-blue-600 font-bold text-lg">MR</span>
+              </div>
+              <div>
+                <div class="font-bold text-gray-900">Michael Roberts</div>
+                <div class="text-sm text-gray-600">Marketing Director, Cardiff</div>
+              </div>
             </div>
-            <div class="text-center">
-              <div class="text-4xl text-blue-400 font-bold mb-2">£2,500</div>
-              <p class="text-gray-300">Monthly Savings from AI</p>
-            </div>
-            <div class="text-center">
-              <div class="text-4xl text-purple-400 font-bold mb-2">67%</div>
-              <p class="text-gray-300">More Qualified Leads</p>
-            </div>
+            <p class="text-gray-700 italic mb-4">"Finally found an agency that gets it. They got us ranking on ChatGPT AND fixed our website so visitors actually convert. Every other agency only did half the job."</p>
+            <div class="text-yellow-500">★★★★★</div>
           </div>
           
-          <a href="/roi-calculator/" class="bg-gradient-to-r from-green-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 inline-flex items-center">
-            <span class="mr-2">🧮</span>
-            Calculate Your Potential ROI
-          </a>
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                <span class="text-green-600 font-bold text-lg">BO</span>
+              </div>
+              <div>
+                <div class="font-bold text-gray-900">Beth Owen</div>
+                <div class="text-sm text-gray-600">E-commerce Owner, Swansea</div>
+              </div>
+            </div>
+            <p class="text-gray-700 italic mb-4">"We were getting traffic but no sales. Turns out we had TWO problems: ChatGPT wasn't recommending us, and our website didn't convert. They fixed both."</p>
+            <div class="text-yellow-500">★★★★★</div>
+          </div>
+          
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                <span class="text-purple-600 font-bold text-lg">SB</span>
+              </div>
+              <div>
+                <div class="font-bold text-gray-900">Steve Bennett</div>
+                <div class="text-sm text-gray-600">Local Services Owner, Birmingham</div>
+              </div>
+            </div>
+            <p class="text-gray-700 italic mb-4">"All the other agencies I've tried never got me any sales. These guys actually understand conversion optimization and AI search. Finally seeing real ROI."</p>
+            <div class="text-yellow-500">★★★★★</div>
+          </div>
+          
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                <span class="text-orange-600 font-bold text-lg">JM</span>
+              </div>
+              <div>
+                <div class="font-bold text-gray-900">James Mitchell</div>
+                <div class="text-sm text-gray-600">Local Service Business, Newport</div>
+              </div>
+            </div>
+            <p class="text-gray-700 italic mb-4">"Our leads increased by 280% in just 3 months. The AI search optimization got us recommended by ChatGPT, which brings in high-quality leads daily."</p>
+            <div class="text-yellow-500">★★★★★</div>
+          </div>
+          
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mr-3">
+                <span class="text-cyan-600 font-bold text-lg">SC</span>
+              </div>
+              <div>
+                <div class="font-bold text-gray-900">Sarah Chen</div>
+                <div class="text-sm text-gray-600">E-commerce Owner, Bristol</div>
+              </div>
+            </div>
+            <p class="text-gray-700 italic mb-4">"The free website alone was worth £3,000. But the conversion optimization doubled our sales. Best investment we've made."</p>
+            <div class="text-yellow-500">★★★★★</div>
+          </div>
+          
+          <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mr-3">
+                <span class="text-pink-600 font-bold text-lg">DP</span>
+              </div>
+              <div>
+                <div class="font-bold text-gray-900">David Patel</div>
+                <div class="text-sm text-gray-600">Professional Services, Carmarthen</div>
+              </div>
+            </div>
+            <p class="text-gray-700 italic mb-4">"The AI automation saves us 25+ hours per week. It handles all our lead qualification and booking. Game changer for our business."</p>
+            <div class="text-yellow-500">★★★★★</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SEO Analyzer Section -->
-    <section id="seo-analyzer" class="py-20 bg-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-          Free Website Performance Analysis
-        </h2>
-        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-          Get instant insights into how your website performs and discover opportunities to increase conversions
-        </p>
+    <!-- Free Analyzer CTA Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">See How Your Website Performs</h2>
+        <p class="text-xl text-gray-600 mb-8">Get a free analysis and discover opportunities to increase conversions</p>
         
-        <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100">
-          <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+          <div class="grid md:grid-cols-2 gap-8 items-center mb-6">
             <div class="text-left">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">What You'll Discover:</h3>
-              <ul class="space-y-3 text-gray-700">
-                <li class="flex items-center"><span class="text-green-500 mr-3">✓</span>Page loading speed issues</li>
-                <li class="flex items-center"><span class="text-green-500 mr-3">✓</span>Mobile optimization problems</li>
-                <li class="flex items-center"><span class="text-green-500 mr-3">✓</span>SEO improvement opportunities</li>
-                <li class="flex items-center"><span class="text-green-500 mr-3">✓</span>AI search readiness score</li>
-                <li class="flex items-center"><span class="text-green-500 mr-3">✓</span>Conversion optimization tips</li>
+              <h3 class="text-lg font-bold text-gray-900 mb-3">You'll discover:</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Speed & performance issues</li>
+                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>SEO opportunities</li>
+                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>AI search readiness</li>
+                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>Conversion improvements</li>
               </ul>
             </div>
             <div>
-              <a href="/analyzer/" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 inline-flex items-center w-full justify-center">
+              <a href="/analyzer/" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all inline-flex items-center justify-center w-full">
                 <span class="mr-2">🔍</span>
-                Analyze My Website Now
+                Analyze My Website Free
               </a>
-              <p class="text-sm text-gray-500 mt-3">Free analysis • Instant results</p>
+              <p class="text-sm text-gray-500 mt-3">Instant results • No signup required</p>
             </div>
           </div>
         </div>
@@ -845,10 +1026,10 @@ export const prerender = false;
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            Why Swansea Businesses Choose Digital Visibility
+            Why UK Businesses Choose Digital Visibility
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            We're not just another digital agency - we're your growth partners with a proven track record
+            From Swansea to Birmingham, we're helping businesses across the UK dominate search results and convert visitors into customers
           </p>
         </div>
 
@@ -933,6 +1114,48 @@ export const prerender = false;
         </div>
       </div>
     </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-16 bg-gradient-to-br from-blue-600 to-purple-600">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Grow Your Business?</h2>
+        <p class="text-xl text-blue-100 mb-6">Get your free website and start dominating search results today</p>
+        <p class="text-lg text-blue-100 mb-8">Serving Swansea, Carmarthen, Cardiff, Newport, Birmingham and beyond</p>
+        
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8">
+          <div class="grid md:grid-cols-4 gap-4 text-white mb-6">
+            <div>
+              <div class="text-2xl font-bold">£40/hour</div>
+              <div class="text-sm text-blue-100">All Services</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold">£0</div>
+              <div class="text-sm text-blue-100">Setup Fees</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold">No</div>
+              <div class="text-sm text-blue-100">Contracts</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold">Free</div>
+              <div class="text-sm text-blue-100">Website Included</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact/" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transition-all inline-flex items-center justify-center">
+            <span class="mr-2">🚀</span>
+            Get Started Free
+          </a>
+          <a href="tel:+4401792002497" class="bg-blue-900 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-800 transition-all inline-flex items-center justify-center">
+            <span class="mr-2">📞</span>
+            Call: 01792 002 497
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <Footer />

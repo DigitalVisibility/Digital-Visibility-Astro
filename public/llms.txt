@@ -1,8 +1,8 @@
 # Digital Visibility
 
-> Digital Visibility is Swansea's leading digital marketing agency specializing in Supercharged Engine Optimization (SEO+AEO+GEO+SBO) that gets businesses discovered everywhere customers search. We combine search engine optimization, answer engine optimization, generative engine optimization, and search brand optimization with AI-powered automations and free high-converting websites. Led by Royal Academy of Engineering award winner Darran Goulding, we serve businesses across Swansea, Wales, UK, and globally with flexible £40/hour services and no contracts.
+> Digital Visibility is an award-winning digital marketing agency in Swansea specializing in SEO and AI Search Optimization. We help businesses get found on Google and recommended by AI platforms like ChatGPT and Perplexity. Our services include traditional SEO, cutting-edge AI SEO, and ongoing conversion optimization to turn visitors into customers. Led by Royal Academy of Engineering award winner Darran Goulding, we serve businesses across Swansea, Wales, UK, and globally with flexible £40/hour services and no contracts.
 
-Our people-powered approach combines human expertise with AI acceleration to deliver complete digital transformation. We specialize in getting businesses found on Google search results AND recommended by AI platforms like ChatGPT, Perplexity, and Microsoft Bing. Every client receives a free custom website worth £2,995 plus AI automations that pay for themselves.
+Our people-powered approach combines human expertise with AI acceleration to deliver complete digital transformation. Every client receives a free fully optimized website (new site or complete redesign) plus AI automations that pay for themselves. We specialize in Supercharged Engine Optimization - combining SEO, AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), and SBO (Search Brand Optimization) into one powerful strategy.
 
 ## Core Services
 
@@ -32,8 +32,10 @@ Our people-powered approach combines human expertise with AI acceleration to del
 ## Educational Content
 
 - [Blog](https://digitalvisibility.com/blog/): Latest insights on SEO, AI optimization, and digital marketing trends
-- [10 Essential SEO Strategies 2025](https://digitalvisibility.com/blog/10-essential-seo-strategies-2025/): Comprehensive guide to modern SEO practices
+- [How Should Your Business Adapt to Google's Latest Search Engine Update](https://digitalvisibility.com/blog/how-should-your-business-adapt-to-googles-latest-search-engine-update/): Guide to adapting to Google algorithm changes
+- [How Local Businesses Can Crush Competitors Using Claude 4 Extended Thinking Capabilities](https://digitalvisibility.com/blog/how-local-businesses-can-crush-competitors-using-claude-4-extended-thinking-capabilities/): Leveraging advanced AI for competitive advantage
 - [How AI is Revolutionizing Website Design](https://digitalvisibility.com/blog/how-ai-is-revolutionizing-website-design/): Impact of AI on web development
+- [10 Essential SEO Strategies 2025](https://digitalvisibility.com/blog/10-essential-seo-strategies-2025/): Comprehensive guide to modern SEO practices
 - [Why UK Businesses are Ditching Zapier for AI Conversation Automation](https://digitalvisibility.com/blog/why-uk-businesses-ditching-zapier-ai-conversation-automation/): Business automation insights
 
 ## Support & Information
