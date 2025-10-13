@@ -24,12 +24,39 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Validate required fields
     const { name, email, phone, service, date, time } = bookingData;
+    
+    console.log('📋 Validating fields:', { name, email, phone, date, time });
+    
     if (!name || !email || !phone) {
-      console.error('❌ Missing required fields');
+      console.error('❌ Missing required contact fields');
       return new Response(
         JSON.stringify({
           success: false,
-          error: 'Missing required booking information'
+          error: 'Missing required booking information (name, email, or phone)'
+        }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+    
+    if (!date || !time) {
+      console.error('❌ Missing date or time');
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: 'Missing preferred date or time'
+        }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+    
+    // Validate date format (YYYY-MM-DD)
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateRegex.test(date)) {
+      console.error('❌ Invalid date format:', date);
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: 'Invalid date format. Expected YYYY-MM-DD'
         }),
         { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
