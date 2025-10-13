@@ -1,9 +1,7 @@
 import type { APIRoute } from 'astro';
-import { Resend } from 'resend';
 
 export const POST: APIRoute = async ({ request }) => {
   try {
-    // Initialize Resend inside the function to avoid build-time errors
     const resendApiKey = import.meta.env.RESEND_API_KEY;
     
     if (!resendApiKey) {
@@ -19,7 +17,6 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
     
-    const resend = new Resend(resendApiKey);
     const data = await request.formData();
     const name = data.get('name') as string;
     const email = data.get('email') as string;
@@ -40,24 +37,32 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    // Send email using Resend
-    const { data: emailData, error } = await resend.emails.send({
-      from: 'Digital Visibility <noreply@updates.digitalvisibility.com>',
-      to: ['support@digitalvisibility.com'],
-      replyTo: email,
-      subject: `New Contact Form Submission from ${name}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-      `,
+    // Send email using Resend API directly (Cloudflare Workers compatible)
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${resendApiKey}`,
+      },
+      body: JSON.stringify({
+        from: 'Digital Visibility <noreply@updates.digitalvisibility.com>',
+        to: ['support@digitalvisibility.com'],
+        reply_to: email,
+        subject: `New Contact Form Submission from ${name}`,
+        html: `
+          <h2>New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message.replace(/\n/g, '<br>')}</p>
+        `,
+      }),
     });
 
-    if (error) {
-      console.error('Resend error:', error);
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Resend API error:', errorText);
       return new Response(
         JSON.stringify({ 
           success: false, 
@@ -69,6 +74,8 @@ export const POST: APIRoute = async ({ request }) => {
         }
       );
     }
+
+    const emailData = await response.json();
 
     return new Response(
       JSON.stringify({ 
