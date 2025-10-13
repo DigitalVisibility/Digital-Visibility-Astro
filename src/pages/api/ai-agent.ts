@@ -1,5 +1,7 @@
 import type { APIRoute } from 'astro';
 
+export const prerender = false;
+
 // System prompt with all business knowledge
 // Updated: Environment variables configured
 const SYSTEM_PROMPT = `You are the AI assistant for Digital Visibility, a digital marketing agency in Swansea, Wales, UK.
