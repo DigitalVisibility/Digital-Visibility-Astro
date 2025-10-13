@@ -270,8 +270,41 @@
       // Remove typing indicator
       removeTypingIndicator();
       
-      // Add AI response to UI
-      addMessage(data.message, 'assistant');
+      // Check if response contains a booking request
+      const bookingMatch = data.message.match(/\[BOOKING_REQUEST\](.*?)\[\/BOOKING_REQUEST\]/);
+      if (bookingMatch) {
+        try {
+          const bookingData = JSON.parse(bookingMatch[1]);
+          console.log('📅 Processing booking:', bookingData);
+          
+          // Call n8n webhook
+          const bookingResponse = await fetch('/api/booking', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(bookingData)
+          });
+          
+          if (bookingResponse.ok) {
+            const bookingResult = await bookingResponse.json();
+            console.log('✅ Booking successful:', bookingResult);
+            
+            // Replace booking request tag with success message
+            const successMessage = data.message.replace(
+              /\[BOOKING_REQUEST\].*?\[\/BOOKING_REQUEST\]/,
+              `✅ Booking confirmed! Check your email for details and the Google Meet link.`
+            );
+            addMessage(successMessage, 'assistant');
+          } else {
+            throw new Error('Booking failed');
+          }
+        } catch (error) {
+          console.error('❌ Booking error:', error);
+          addMessage(data.message.replace(/\[BOOKING_REQUEST\].*?\[\/BOOKING_REQUEST\]/, '❌ Sorry, booking failed. Please try the calendar link or call us.'), 'assistant');
+        }
+      } else {
+        // Add AI response to UI normally
+        addMessage(data.message, 'assistant');
+      }
       
       // Add to conversation history
       conversationHistory.push({
