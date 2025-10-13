@@ -64,21 +64,26 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Call n8n webhook
     console.log('🚀 Calling n8n webhook...');
+    
+    const webhookPayload = {
+      name,
+      email,
+      phone,
+      company: bookingData.company || '',
+      service_interest: service || 'General Consultation',
+      preferred_date: date,
+      preferred_time: time,
+      notes: bookingData.notes || 'Booked via AI chat assistant'
+    };
+    
+    console.log('📦 Webhook payload:', JSON.stringify(webhookPayload, null, 2));
+    
     const response = await fetch(webhookUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        name,
-        email,
-        phone,
-        company: bookingData.company || '',
-        service_interest: service || 'General Consultation',
-        preferred_date: date || '',
-        preferred_time: time || '',
-        notes: bookingData.notes || 'Booked via AI chat assistant'
-      }),
+      body: JSON.stringify(webhookPayload),
     });
 
     console.log('📡 n8n response status:', response.status);
