@@ -1,10 +1,4 @@
 import type { APIRoute } from 'astro';
-import Anthropic from '@anthropic-ai/sdk';
-
-// Initialize Anthropic client
-const anthropic = new Anthropic({
-  apiKey: import.meta.env.ANTHROPIC_API_KEY,
-});
 
 // System prompt with all business knowledge
 const SYSTEM_PROMPT = `You are the AI assistant for Digital Visibility, a digital marketing agency in Swansea, Wales, UK.
@@ -88,6 +82,18 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
+    const apiKey = import.meta.env.ANTHROPIC_API_KEY;
+    
+    if (!apiKey) {
+      return new Response(
+        JSON.stringify({
+          error: 'AI service not configured',
+          message: "Sorry, I'm not available right now. Please call us at 01792 002 497.",
+        }),
+        { status: 500, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+
     // Build messages array for Claude
     const messages = [
       ...conversationHistory.map((msg: any) => ({
@@ -100,24 +106,40 @@ export const POST: APIRoute = async ({ request }) => {
       },
     ];
 
-    // Call Claude API
-    const response = await anthropic.messages.create({
-      model: 'claude-sonnet-4-5-20250929',
-      max_tokens: 500, // Keep responses concise
-      temperature: 0.7,
-      system: SYSTEM_PROMPT,
-      messages: messages,
+    // Call Claude API directly with fetch (works in Cloudflare Workers)
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-5-20250929',
+        max_tokens: 500,
+        temperature: 0.7,
+        system: SYSTEM_PROMPT,
+        messages: messages,
+      }),
     });
 
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Anthropic API Error:', errorText);
+      throw new Error(`API request failed: ${response.status}`);
+    }
+
+    const data = await response.json();
+
     // Extract the response text
-    const assistantMessage = response.content[0].type === 'text' 
-      ? response.content[0].text 
+    const assistantMessage = data.content?.[0]?.type === 'text' 
+      ? data.content[0].text 
       : 'Sorry, I encountered an error. Please try again.';
 
     return new Response(
       JSON.stringify({
         message: assistantMessage,
-        conversationId: response.id,
+        conversationId: data.id,
       }),
       {
         status: 200,
