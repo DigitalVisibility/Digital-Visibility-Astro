@@ -74,9 +74,12 @@ IMPORTANT RULES:
 
 export const POST: APIRoute = async ({ request }) => {
   try {
+    console.log('🔵 AI Agent API called');
     const { message, conversationHistory = [] } = await request.json();
+    console.log('📨 Received message:', message);
 
     if (!message || typeof message !== 'string') {
+      console.error('❌ Invalid message format');
       return new Response(
         JSON.stringify({ error: 'Message is required' }),
         { status: 400, headers: { 'Content-Type': 'application/json' } }
@@ -84,8 +87,11 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     const apiKey = import.meta.env.ANTHROPIC_API_KEY;
+    console.log('🔑 API Key present:', !!apiKey);
+    console.log('🔑 API Key length:', apiKey?.length || 0);
     
     if (!apiKey) {
+      console.error('❌ No API key found in environment');
       return new Response(
         JSON.stringify({
           error: 'AI service not configured',
@@ -108,6 +114,7 @@ export const POST: APIRoute = async ({ request }) => {
     ];
 
     // Call Claude API directly with fetch (works in Cloudflare Workers)
+    console.log('🚀 Calling Anthropic API...');
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
@@ -124,13 +131,16 @@ export const POST: APIRoute = async ({ request }) => {
       }),
     });
 
+    console.log('📡 Anthropic response status:', response.status);
+
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('Anthropic API Error:', errorText);
-      throw new Error(`API request failed: ${response.status}`);
+      console.error('❌ Anthropic API Error:', errorText);
+      throw new Error(`API request failed: ${response.status} - ${errorText}`);
     }
 
     const data = await response.json();
+    console.log('✅ Anthropic response received');
 
     // Extract the response text
     const assistantMessage = data.content?.[0]?.type === 'text' 
