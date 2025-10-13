@@ -24,11 +24,7 @@ export default defineConfig({
   ],
   output: 'hybrid',
   adapter: cloudflare({
-    mode: 'directory',
-    runtime: {
-      mode: 'local',
-      type: 'pages'
-    }
+    mode: 'directory'
   }),
   trailingSlash: 'always',
   // Enable built-in image optimization for static sites
