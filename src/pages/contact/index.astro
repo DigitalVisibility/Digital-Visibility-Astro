@@ -2,6 +2,8 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+
+export const prerender = true;
 ---
 
 <MainLayout title="Contact SEO & Digital Marketing Expert Swansea | Free Consultation">
@@ -260,20 +262,9 @@ import Footer from '../../components/Footer.astro';
               <p class="text-gray-700">Let us know what you're looking to achieve — whether it's boosting your online visibility, developing a custom app, or creating a physical product. We'll have the right expert call you back today.</p>
             </header>
             
-            <form class="space-y-4" action="https://api.web3forms.com/submit" method="POST" aria-label="Contact Form">
-              <!-- Web3Forms Access Key -->
-              <input type="hidden" name="access_key" value="04b98b5a-c1af-43bf-a223-9f711109ac82">
-              
-              <!-- Destination Email -->
-              <input type="hidden" name="to_email" value="support@digitalvisibility.com">
-              
-              <!-- Hidden inputs -->
-              <input type="hidden" name="subject" value="New Contact Form Submission from Digital Visibility">
-              <input type="hidden" name="from_name" value="Digital Visibility Website">
-              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-              
-              <!-- Success redirect URL -->
-              <input type="hidden" name="redirect" value="https://digitalvisibility.com/thank-you/">
+            <form id="contact-form" class="space-y-4" aria-label="Contact Form">
+              <!-- Honeypot for spam protection -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1">
               
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
@@ -293,13 +284,15 @@ import Footer from '../../components/Footer.astro';
               <div>
                 <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
                 <p class="text-sm text-gray-500 mb-2">Please share which service you're interested in (digital marketing, app development, or product design) so we can connect you with the right specialist.</p>
-                <textarea id="message" name="message" rows="4" placeholder="I'm looking for help with... [VERSION 12 - SIMPLIFIED TURNSTILE] (e.g., boosting my online visibility, creating a custom app, designing a new product)" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
+                <textarea id="message" name="message" rows="4" placeholder="I'm looking for help with... (e.g., boosting my online visibility, creating a custom app, designing a new product)" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
               </div>
               
-              <!-- Cloudflare Turnstile Widget - Simplified Implementation -->
+              <!-- Cloudflare Turnstile Widget -->
               <div class="cf-turnstile" data-sitekey="0x4AAAAAABLjSEqx_MGVFkGW" data-theme="light"></div>
               
-              <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition-colors">
+              <div id="form-message" class="hidden p-4 rounded-md"></div>
+              
+              <button type="submit" id="submit-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                 Send Message
               </button>
             </form>
@@ -502,12 +495,74 @@ import Footer from '../../components/Footer.astro';
 
   <Footer />
   
-  <script>
+  <script is:inline>
     // Initialize Lucide icons
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof window.lucide !== 'undefined') {
         lucide.createIcons();
       }
     });
+
+    // Handle contact form submission
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const formMessage = document.getElementById('form-message');
+
+    if (form && submitBtn && formMessage) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Check honeypot
+        const botcheck = form.querySelector('[name="botcheck"]');
+        if (botcheck && botcheck.checked) {
+          return; // Likely a bot
+        }
+
+        // Disable submit button
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        // Get form data
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch('/api/contact', {
+            method: 'POST',
+            body: formData,
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            // Show success message
+            formMessage.textContent = 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.';
+            formMessage.className = 'p-4 rounded-md bg-green-100 text-green-800 border border-green-200';
+            formMessage.classList.remove('hidden');
+
+            // Reset form
+            form.reset();
+
+            // Redirect to thank you page after 2 seconds
+            setTimeout(() => {
+              window.location.href = '/thank-you/';
+            }, 2000);
+          } else {
+            // Show error message
+            formMessage.textContent = result.error || 'Something went wrong. Please try again or contact us directly.';
+            formMessage.className = 'p-4 rounded-md bg-red-100 text-red-800 border border-red-200';
+            formMessage.classList.remove('hidden');
+          }
+        } catch (error) {
+          console.error('Form submission error:', error);
+          formMessage.textContent = 'Network error. Please check your connection and try again.';
+          formMessage.className = 'p-4 rounded-md bg-red-100 text-red-800 border border-red-200';
+          formMessage.classList.remove('hidden');
+        } finally {
+          // Re-enable submit button
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        }
+      });
+    }
   </script>
 </MainLayout>

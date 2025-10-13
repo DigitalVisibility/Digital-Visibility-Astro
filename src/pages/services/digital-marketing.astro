@@ -51,6 +51,15 @@ export const prerender = true;
   <meta name="ai-content-type" content="digital marketing provider, supercharged engine optimization specialist, comprehensive marketing expert, AI marketing consultant" slot="head">
   <meta name="ai-service-area" content="Swansea, Cardiff, Newport, South Wales, West Wales, Wales, United Kingdom" slot="head">
   <meta name="ai-business-type" content="Digital Marketing Agency, Supercharged Engine Optimization Provider, AI Marketing Specialist, Comprehensive Marketing Expert" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="comprehensive digital marketing services, multi-channel marketing strategies, integrated digital campaigns" slot="head">
+  <meta name="ai-industry" content="digital marketing, online marketing, integrated marketing, multi-channel campaigns" slot="head">
+  <meta name="ai-services" content="digital marketing strategy, social media management, email marketing campaigns, content marketing, PPC advertising, influencer marketing, marketing automation, conversion optimization, analytics and reporting, multi-channel campaigns" slot="head">
+  <meta name="ai-audience" content="business owners needing marketing, companies wanting growth, startups launching, established businesses scaling, service providers, e-commerce businesses, B2B companies" slot="head">
+  <meta name="ai-intent" content="comprehensive marketing strategy, grow business online, increase sales, generate leads, build brand awareness, multi-channel marketing, digital transformation" slot="head">
+  <meta name="ai-unique-value" content="Comprehensive digital marketing expertise, multi-channel integration, data-driven strategies, transparent reporting, flexible services, £40/hour clear pricing, no long contracts" slot="head">
 
   <!-- Geolocation & Local Business Tags -->
   <meta name="geo.region" content="GB-SWA" slot="head">
@@ -60,7 +69,7 @@ export const prerender = true;
   
   <!-- Trust & Authority Signals -->
   <meta name="business-founding-date" content="2023-01-01" slot="head">
-  <meta name="business-awards" content="Royal Academy of Engineering Award Winner 2025, UK's First Supercharged Engine Optimization Agency, Digital Marketing Pioneer" slot="head">
+  <meta name="business-awards" content="Award-winning digital marketing services, Recognized comprehensive marketing expertise" slot="head">
   <meta name="business-certifications" content="Google Partner, Google Analytics Certified, AI Marketing Specialist, Supercharged Engine Optimization Expert" slot="head">
   
   <!-- Performance Optimization -->
@@ -99,27 +108,32 @@ export const prerender = true;
             }
           },
           {
-            "@type": "Offer",
-            "name": "FREE Professional Website",
-            "url": "https://digitalvisibility.com/pricing/#free-website",
-            "price": "0",
-            "priceCurrency": "GBP",
-            "availability": "https://schema.org/InStock",
-            "description": "FREE £2,995 professional website included with 5+ hours monthly commitment",
-            "eligibleQuantity": {
-              "@type": "QuantitativeValue",
-              "minValue": 5,
-              "unitText": "hours per month"
-            },
-            "seller": {
-              "@id": "https://digitalvisibility.com/#organization"
-            }
+            "@id": "https://digitalvisibility.com/pricing/#free-website-offer"
           }
         ],
         "serviceType": "Digital Marketing Services",
         "category": ["Digital Marketing", "Online Marketing", "Digital Strategy", "Marketing Solutions"],
+        "serviceOutput": [
+          "Digital marketing strategy - custom roadmap for your business goals",
+          "Social media management - content creation and community engagement",
+          "Email marketing campaigns - automated sequences and newsletters",
+          "Content marketing - blogs, videos, infographics that drive traffic",
+          "PPC advertising management - Google Ads, Facebook Ads, LinkedIn Ads",
+          "Conversion rate optimization - landing pages that turn visitors into customers",
+          "Marketing automation setup - nurture leads while you sleep",
+          "Monthly performance dashboard - clear ROI tracking and insights"
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/contact/",
+          "servicePhone": "+44-01792-002497"
+        },
         "additionalType": "https://en.wikipedia.org/wiki/Digital_marketing",
-        "termsOfService": "https://digitalvisibility.com/terms-conditions/"
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/",
+        "mainEntityOfPage": {
+          "@type": "FAQPage",
+          "@id": "https://digitalvisibility.com/faq/#digital-marketing"
+        }
       },
       {
         "@type": "WebPage",
@@ -138,8 +152,8 @@ export const prerender = true;
           "width": "1200",
           "height": "630"
         },
-        "datePublished": "2025-06-21",
-        "dateModified": "2025-06-21",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
         "description": "Comprehensive guide to digital marketing services in Swansea with expert strategies for online growth and business success.",
         "inLanguage": "en-GB",
         "breadcrumb": {
@@ -418,8 +432,9 @@ export const prerender = true;
   <script>
     // Initialize Lucide icons
     document.addEventListener('DOMContentLoaded', () => {
-      if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
+      const lucideLib = (window as any).lucide;
+      if (typeof lucideLib !== 'undefined') {
+        lucideLib.createIcons();
       }
     });
   </script>

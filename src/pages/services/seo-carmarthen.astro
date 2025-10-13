@@ -2,44 +2,196 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+
+export const prerender = true;
 ---
 
 <MainLayout title="SEO Carmarthen | Search Engine Optimization Services in Carmarthenshire">
-  <meta name="description" content="Expert SEO services in Carmarthen helping local businesses get found on Google, ChatGPT & AI platforms. From town centre to surrounding villages, we help Carmarthenshire businesses dominate local search. £40/hour, no contracts." slot="head">
-  <meta name="keywords" content="SEO Carmarthen, search engine optimization Carmarthen, SEO agency Carmarthen, search engine agency Carmarthen, SEO company Carmarthen, local SEO Carmarthen, SEO expert Carmarthen, SEO services Carmarthen, Carmarthen SEO specialist, AEO Carmarthen, GEO Carmarthen, ChatGPT optimization Carmarthen, AI search optimization Carmarthen" slot="head">
+  <!-- SEO and Canonical Tags -->
   <link rel="canonical" href="https://digitalvisibility.com/services/seo-carmarthen/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  
+  <!-- Core Meta Tags -->
+  <meta name="description" content="Expert SEO services in Carmarthen helping local businesses get found on Google, ChatGPT & AI platforms. From town centre to surrounding villages, we help Carmarthenshire businesses dominate local search. £40/hour, no contracts." slot="head">
+  <meta name="keywords" content="SEO Carmarthen, search engine optimization Carmarthen, SEO agency Carmarthen, local SEO Carmarthenshire, rural SEO Wales, market town SEO, Llanelli SEO, Ammanford SEO, West Wales SEO, agricultural business SEO, tourism SEO Carmarthen" slot="head">
+  
+  <!-- OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="SEO Carmarthen | Rural & Market Town SEO Specialists" slot="head">
+  <meta property="og:description" content="Help market town and rural businesses in Carmarthenshire rank online. Specialist SEO for agricultural, tourism, and local service providers across West Wales." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/services/seo-carmarthen/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/webp" slot="head">
+  
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="SEO Carmarthen | Market Town & Rural Business SEO" slot="head">
+  <meta name="twitter:description" content="Specialist SEO for Carmarthenshire market towns and rural businesses. Reach customers across wide geographic areas." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  
+  <!-- Publisher and Author -->
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- Geographic Meta Tags -->
+  <meta name="geo.region" content="GB-CMN" slot="head">
+  <meta name="geo.placename" content="Carmarthen" slot="head">
+  <meta name="geo.position" content="51.8577;-4.3095" slot="head">
+  <meta name="ICBM" content="51.8577, -4.3095" slot="head">
+  
+  <!-- AI-Specific Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="rural-seo-carmarthen,market-town-optimization,west-wales-business-seo,agricultural-sector-marketing" slot="head">
+  <meta name="ai-target" content="carmarthen-businesses,market-town-shops,agricultural-suppliers,tourism-ventures,rural-service-providers,west-wales-companies" slot="head">
+  <meta name="ai-keywords" content="SEO Carmarthen, Carmarthenshire SEO, rural business SEO, market town optimization, West Wales digital marketing, agricultural SEO, tourism SEO Carmarthen, village business visibility" slot="head">
+  <meta name="ai-content-type" content="rural SEO specialist, market town optimization provider, agricultural business marketing" slot="head">
+  <meta name="ai-business-type" content="Rural SEO Agency, Market Town Digital Marketing, West Wales SEO Services" slot="head">
+  <meta name="ai-service-area" content="Carmarthen, Llanelli, Ammanford, Carmarthenshire, West Wales, rural Wales, market towns Wales" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="rural and market town SEO services, agricultural sector digital marketing, dispersed customer base optimization" slot="head">
+  <meta name="ai-industry" content="rural SEO, agricultural marketing, tourism optimization, market town services, countryside business" slot="head">
+  <meta name="ai-services" content="rural market coverage SEO, agricultural sector optimization, tourism and hospitality visibility, multi-village strategies, local supplier SEO, seasonal campaign planning, Welsh language SEO, regional brand building Carmarthenshire" slot="head">
+  <meta name="ai-audience" content="market town business owners, agricultural suppliers, rural tourism operators, countryside service providers, village shops, farming businesses, West Wales enterprises" slot="head">
+  <meta name="ai-intent" content="market town SEO agency, rural business visibility, agricultural marketing, reach scattered customers, compete with urban businesses online, seasonal business promotion" slot="head">
+  <meta name="ai-unique-value" content="Rural market expertise, agricultural sector experience, wide geographic reach strategies, seasonal campaign specialists, bilingual Welsh-English SEO, £40/hour affordable pricing, flexible rural business support" slot="head">
 
   <!-- Schema Markup -->
   <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "SEO Carmarthen - Search Engine Optimization Services",
-    "description": "Comprehensive SEO services for Carmarthen businesses including traditional SEO, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO). Helping local businesses in Carmarthen get found on Google and AI platforms like ChatGPT.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "url": "https://digitalvisibility.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "235 Peniel Green Road",
-        "addressLocality": "Llansamlet",
-        "addressRegion": "Swansea",
-        "postalCode": "SA7 9BA",
-        "addressCountry": "GB"
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://digitalvisibility.com/services/seo-carmarthen/#service",
+        "name": "Carmarthen SEO - Rural & Market Town Search Experts",
+        "alternateName": ["SEO Carmarthenshire", "Carmarthen Digital Marketing", "Rural SEO Wales", "Market Town SEO"],
+        "description": "Specialized SEO for Carmarthen and rural Carmarthenshire businesses. We help market town shops, agricultural suppliers, tourism ventures, and local services compete online against larger urban competitors. Expertise in serving dispersed rural customer bases.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "keywords": "SEO Carmarthen, Carmarthenshire SEO, rural business SEO, market town SEO Wales, Carmarthen local search, agricultural SEO Carmarthen, tourism SEO West Wales, Carmarthen business marketing, village business SEO, West Wales digital marketing",
+        "category": ["Rural SEO", "Market Town SEO", "Local Search Optimization", "Agricultural Business SEO"],
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Carmarthen",
+            "sameAs": "https://en.wikipedia.org/wiki/Carmarthen"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Carmarthenshire"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Llanelli"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Ammanford"
+          }
+        ],
+        "serviceOutput": [
+          "Rural market coverage - reach customers across wide geographic areas",
+          "Agricultural sector SEO - rank for farming and countryside services",
+          "Tourism and hospitality optimization - attract visitors to West Wales",
+          "Multi-village strategies - serve scattered communities effectively",
+          "Local supplier visibility - help market town businesses compete online",
+          "Seasonal campaign planning - optimize for harvest, tourism, and events",
+          "Welsh language SEO - bilingual optimization for local communities",
+          "Regional brand building - establish authority across Carmarthenshire"
+        ],
+        "offers": [
+          {
+            "@type": "Offer",
+            "url": "https://digitalvisibility.com/pricing/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "40.00",
+              "priceCurrency": "GBP",
+              "unitText": "hour"
+            },
+            "availability": "https://schema.org/InStock",
+            "description": "Flexible hourly SEO for Carmarthenshire businesses at £40/hour, no long-term contracts required",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
+          },
+          {
+            "@id": "https://digitalvisibility.com/pricing/#free-website-offer"
+          }
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/contact/",
+          "servicePhone": "+44-01792-002497"
+        },
+        "additionalType": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/",
+        "mainEntityOfPage": {
+          "@type": "FAQPage",
+          "@id": "https://digitalvisibility.com/faq/#seo-carmarthen"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/services/seo-carmarthen/#webpage",
+        "url": "https://digitalvisibility.com/services/seo-carmarthen/",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "about": {
+          "@id": "https://digitalvisibility.com/services/seo-carmarthen/#service"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp",
+          "width": "1200",
+          "height": "630"
+        },
+        "name": "SEO Carmarthen | Rural & Market Town SEO Specialists",
+        "description": "Expert SEO for Carmarthen businesses. Reach rural customers, dominate local searches, and grow your market town business across Carmarthenshire.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "inLanguage": "en-GB",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://digitalvisibility.com/services/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "SEO Carmarthen",
+              "item": "https://digitalvisibility.com/services/seo-carmarthen/"
+            }
+          ]
+        }
       }
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Carmarthen",
-      "sameAs": "https://en.wikipedia.org/wiki/Carmarthen"
-    },
-    "serviceType": "Search Engine Optimization SEO",
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://digitalvisibility.com/contact/",
-      "servicePhone": "+44-01792-002497"
-    }
+    ]
   }
   </script>
 

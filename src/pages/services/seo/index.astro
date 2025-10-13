@@ -2,49 +2,165 @@
 import MainLayout from '../../../layouts/MainLayout.astro';
 import Navigation from '../../../components/Navigation.astro';
 import Footer from '../../../components/Footer.astro';
+
+export const prerender = true;
 ---
 
 <MainLayout title="SEO Services | Transparent SEO That Actually Works">
-  <meta name="description" content="Tired of SEO agencies that promise everything and deliver nothing? No contracts, transparent pricing at £40/hour, and you see exactly what work gets done. SEO services that actually work." slot="head">
-  <meta name="keywords" content="SEO services, search engine optimization, transparent SEO, no contract SEO, honest SEO agency, SEO that works, affordable SEO" slot="head">
+  <!-- SEO and Canonical Tags -->
   <link rel="canonical" href="https://digitalvisibility.com/services/seo/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  
+  <!-- Core Meta Tags -->
+  <meta name="description" content="Tired of SEO agencies that promise everything and deliver nothing? No contracts, transparent pricing at £40/hour, and you see exactly what work gets done. SEO services that actually work." slot="head">
+  <meta name="keywords" content="SEO services, search engine optimization, transparent SEO, no contract SEO, honest SEO agency, SEO that works, affordable SEO, flexible SEO services, pay as you go SEO" slot="head">
+  
+  <!-- OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="SEO Services | Transparent SEO That Actually Works" slot="head">
+  <meta property="og:description" content="No contracts, transparent pricing, see exactly what work gets done. SEO services that don't feel like a scam. £40/hour, cancel anytime." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/services/seo/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/webp" slot="head">
+  
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="SEO Services | Transparent, No Contracts" slot="head">
+  <meta name="twitter:description" content="Honest SEO services. See exactly what work gets done. No contracts, £40/hour, cancel anytime." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  
+  <!-- Publisher and Author -->
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- AI-Specific Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="transparent-seo-services,honest-search-optimization,no-contract-seo,visible-work-seo" slot="head">
+  <meta name="ai-target" content="frustrated-business-owners,businesses-burned-by-agencies,transparency-seeking-companies,budget-conscious-businesses,small-medium-businesses" slot="head">
+  <meta name="ai-keywords" content="transparent SEO, honest SEO agency, no contract SEO services, see actual work done, cancel anytime SEO, affordable SEO £40 hour, no hidden fees SEO" slot="head">
+  <meta name="ai-content-type" content="transparent SEO provider, honest search optimization agency, flexible SEO services" slot="head">
+  <meta name="ai-business-type" content="Transparent SEO Agency, Honest Digital Marketing, Flexible Search Optimization" slot="head">
+  <meta name="ai-service-area" content="UK-wide, Wales, England, Scotland, Northern Ireland, international" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="transparent SEO services, honest agency approach, visible work delivery, no long-term contracts" slot="head">
+  <meta name="ai-industry" content="transparent SEO, honest digital marketing, flexible search optimization, ethical SEO practices" slot="head">
+  <meta name="ai-services" content="transparent SEO reporting, visible work tracking, technical SEO audits, content optimization, link building with transparency, Google Business Profile optimization, AI search visibility, no-contract flexibility" slot="head">
+  <meta name="ai-audience" content="business owners tired of agencies, companies seeking transparency, budget-conscious businesses, small businesses, medium businesses, startups needing flexibility" slot="head">
+  <meta name="ai-intent" content="find honest SEO agency, transparent SEO services, no contract SEO, see actual work done, affordable reliable SEO, cancel anytime SEO, ethical SEO practices" slot="head">
+  <meta name="ai-unique-value" content="Complete transparency on work done, no long-term contracts, £40/hour honest pricing, see exactly what you're paying for, cancel anytime, no hidden fees, actual optimizations not just reports" slot="head">
 
-  <!-- Schema Markup -->
+  <!-- Enhanced Schema Markup with @graph -->
   <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "SEO Services",
-    "description": "Transparent SEO services with no contracts and honest pricing. We show you exactly what work gets done, when it gets done, and why. No wild promises, just real results.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "url": "https://digitalvisibility.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "235 Peniel Green Road",
-        "addressLocality": "Llansamlet",
-        "addressRegion": "Swansea",
-        "postalCode": "SA7 9BA",
-        "addressCountry": "GB"
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://digitalvisibility.com/services/seo/#service",
+        "name": "Professional SEO Services",
+        "alternateName": ["Search Engine Optimization Services", "Transparent SEO", "Honest SEO Services", "No-Contract SEO"],
+        "description": "Transparent SEO services with no contracts and honest pricing. We show you exactly what work gets done, when it gets done, and why. No wild promises, just real results.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "category": ["SEO Services", "Search Engine Optimization", "Digital Marketing", "AI Search Optimization"],
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "serviceType": "Search Engine Optimization SEO",
+        "serviceOutput": [
+          "Improved search engine rankings across Google and AI platforms",
+          "Increased organic traffic from targeted searches",
+          "AI platform visibility (ChatGPT, Perplexity, Claude)",
+          "Google Business Profile optimization and management",
+          "Technical SEO improvements and site audits",
+          "Content optimization and strategy development"
+        ],
+        "offers": [
+          {
+            "@type": "Offer",
+            "url": "https://digitalvisibility.com/pricing/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "40.00",
+              "priceCurrency": "GBP",
+              "unitText": "hour"
+            },
+            "availability": "https://schema.org/InStock",
+            "description": "Transparent SEO services at £40/hour with no long-term contracts or hidden fees",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
+          },
+          {
+            "@id": "https://digitalvisibility.com/pricing/#free-website-offer"
+          }
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/contact/",
+          "servicePhone": "+44-01792-002497"
+        },
+        "additionalType": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/services/seo/#webpage",
+        "url": "https://digitalvisibility.com/services/seo/",
+        "name": "SEO Services | Transparent SEO That Actually Works",
+        "description": "Tired of SEO agencies that promise everything and deliver nothing? No contracts, transparent pricing at £40/hour, and you see exactly what work gets done.",
+        "inLanguage": "en-GB",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "about": {
+          "@id": "https://digitalvisibility.com/services/seo/#service"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp",
+          "width": "1200",
+          "height": "630"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://digitalvisibility.com/services/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "SEO Services",
+              "item": "https://digitalvisibility.com/services/seo/"
+            }
+          ]
+        }
       }
-    },
-    "serviceType": "Search Engine Optimization SEO",
-    "serviceOutput": [
-      "Improved search engine rankings",
-      "Increased organic traffic",
-      "AI platform visibility (ChatGPT, Perplexity, Claude)",
-      "Google Business Profile optimization",
-      "Technical SEO improvements",
-      "Content optimization"
-    ],
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://digitalvisibility.com/contact/",
-      "servicePhone": "+44-01792-002497"
-    },
-    "additionalType": "https://en.wikipedia.org/wiki/Search_engine_optimization",
-    "termsOfService": "https://digitalvisibility.com/terms/"
+    ]
   }
   </script>
 

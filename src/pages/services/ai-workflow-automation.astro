@@ -1,0 +1,677 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import AIAgent from '../../components/AIAgent.astro';
+
+export const prerender = true;
+
+const pageTitle = "AI Workflow Automation Services - Save 15+ Hours Per Week | Digital Visibility";
+const pageDescription = "Stop doing repetitive tasks manually. Our AI workflow automation saves UK businesses 15+ hours weekly at £40/hour. Free consultation to identify what we can automate for you.";
+const calendarLink = "https://calendar.app.google/jwi4bhf54UUxD9tg9";
+---
+
+<MainLayout 
+  title={pageTitle}
+  description={pageDescription}
+>
+<Navigation />
+
+  <!-- Enhanced Schema Markup with @graph -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/services/ai-workflow-automation/#webpage",
+        "url": "https://digitalvisibility.com/services/ai-workflow-automation/",
+        "name": "AI Workflow Automation Services - Save 15+ Hours Per Week",
+        "description": "Stop doing repetitive tasks manually. Our AI workflow automation saves UK businesses 15+ hours weekly at £40/hour.",
+        "inLanguage": "en-GB",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "about": {
+          "@id": "https://digitalvisibility.com/services/ai-workflow-automation/#service"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/ai-workflow-automation.webp",
+          "width": "1200",
+          "height": "630"
+        },
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://digitalvisibility.com/services/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "AI Workflow Automation",
+              "item": "https://digitalvisibility.com/services/ai-workflow-automation/"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://digitalvisibility.com/services/ai-workflow-automation/#service",
+        "name": "AI Workflow Automation Services",
+        "alternateName": ["Business Process Automation", "AI Task Automation", "Workflow Automation Services", "Intelligent Process Automation"],
+        "description": "Professional AI workflow automation services helping UK businesses save time and reduce costs through intelligent automation. Secure, human-supervised automation for marketing, customer engagement, and SEO tasks.",
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "category": ["AI Automation", "Workflow Automation", "Business Process Automation", "Marketing Automation"],
+        "areaServed": {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "url": "https://digitalvisibility.com/pricing/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "40.00",
+              "priceCurrency": "GBP",
+              "unitText": "hour"
+            },
+            "availability": "https://schema.org/InStock",
+            "description": "Flexible hourly AI workflow automation services starting at £40/hour with no contracts",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
+          },
+          {
+            "@id": "https://digitalvisibility.com/pricing/#free-website-offer"
+          }
+        ],
+        "serviceOutput": [
+          "Marketing automation - social media posting, blog publishing, email campaigns",
+          "Customer engagement - review responses, social media replies, 24/7 chat support",
+          "SEO automation - automated updates, content optimization, competitor tracking",
+          "Secure workflows with human oversight and approval checkpoints",
+          "GDPR-compliant, encrypted automation systems"
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/contact/",
+          "servicePhone": "+44-01792-002497"
+        },
+        "additionalType": "https://en.wikipedia.org/wiki/Workflow_automation",
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/",
+        "mainEntityOfPage": {
+          "@type": "FAQPage",
+          "@id": "https://digitalvisibility.com/faq/#ai-workflow-automation"
+        }
+      }
+    ]
+  })} />
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+          Stop Wasting Time on Repetitive Tasks
+        </h1>
+        <p class="text-2xl mb-8 text-blue-100">
+          We automate the boring stuff so you can focus on growing your business. Most clients save 15+ hours per week.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href={calendarLink} target="_blank" rel="noopener" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition text-center">
+            Book Free Consultation Now
+          </a>
+          <a href="#what-we-automate" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition text-center">
+            See What We Can Automate
+          </a>
+        </div>
+        <div class="flex flex-wrap justify-center items-center gap-4 text-gray-200 text-sm mt-6">
+          <div class="flex items-center">
+            <span class="text-green-400 mr-1">✓</span>
+            <span>No Contracts</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-green-400 mr-1">✓</span>
+            <span>Cancel Anytime</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-green-400 mr-1">✓</span>
+            <span>Secure AI Agent Workflows with Human Oversight</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="bg-white py-8 border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">More Strategic Work</h3>
+          <p class="text-gray-600 text-sm">Focus on growth, not data entry</p>
+        </div>
+        <div class="text-center">
+          <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Higher Job Satisfaction</h3>
+          <p class="text-gray-600 text-sm">Teams love having more time for meaningful work</p>
+        </div>
+        <div class="text-center">
+          <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">24/7 Availability</h3>
+          <p class="text-gray-600 text-sm">Never miss a lead or customer question</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Automate -->
+  <section id="what-we-automate" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">What Can We Automate for You?</h2>
+        <p class="text-xl text-gray-600">If you do it more than twice a week, we can probably automate it</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Marketing Automation -->
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Marketing Automation</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Social media posting and scheduling</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Blog and content publishing</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Review request campaigns</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Email marketing sequences</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Customer Engagement -->
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Customer Engagement</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Manage social media replies</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Respond to customer reviews</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>24/7 customer support chat</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Keep satisfaction ratings high</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- SEO & Content -->
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">SEO & Content</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Automated SEO updates</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Content creation and optimization</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Keyword monitoring and reports</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Competitor tracking</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <p class="text-gray-600 mb-6 text-lg">And many more - if it's repetitive, we can automate it</p>
+        <a href={calendarLink} target="_blank" rel="noopener" class="inline-block bg-blue-600 text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition shadow-lg">
+          Book Your Free Consultation - Pick Your Time
+        </a>
+        <p class="text-sm text-gray-500 mt-3">30 minutes · Free · No obligation · Instant confirmation</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security & Trust Section -->
+  <section class="py-16 bg-white border-t border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Secure, Human-Supervised Automation</h2>
+        <p class="text-xl text-gray-600">We build automation that helps your team, doesn't replace them</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center p-6">
+          <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Bank-Level Security</h3>
+          <p class="text-gray-600">
+            Encrypted data, secure API connections, and GDPR-compliant workflows. Your business data never leaks or gets published publicly.
+          </p>
+        </div>
+
+        <div class="text-center p-6">
+          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Human Approval Loops</h3>
+          <p class="text-gray-600">
+            Important decisions always go through your team. Automation handles the boring stuff, humans handle the thinking.
+          </p>
+        </div>
+
+        <div class="text-center p-6">
+          <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Helps Your Staff</h3>
+          <p class="text-gray-600">
+            Your team keeps their jobs and gets their time back. They stop doing data entry and start focusing on work that matters.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">How does AI workflow automation work?</h2>
+        <p class="text-xl text-gray-600">Simple 4-step process from idea to automation</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8 mb-12">
+        <div class="text-center">
+          <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+            1
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Book Consultation</h3>
+          <p class="text-gray-600">
+            Pick a time that works for you. 30-minute call where we identify what's eating up your time.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+            2
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Get Clear Quote</h3>
+          <p class="text-gray-600">
+            We explain exactly what we can automate, how long it takes, and what it costs. No surprises.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+            3
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">We Build It</h3>
+          <p class="text-gray-600">
+            You see exactly what we're building. We test it together to make sure it works perfectly.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+            4
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">You Save Time</h3>
+          <p class="text-gray-600">
+            Your automation runs 24/7. We're here if you need changes or want to add more.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href={calendarLink} target="_blank" rel="noopener" class="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-10 py-4 rounded-lg font-bold text-lg hover:shadow-xl transition">
+          Start Step 1 - Book Your Free Call Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Demo Section -->
+  <section class="py-20 bg-gradient-to-br from-indigo-50 to-purple-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+          ✨ LIVE DEMO
+        </div>
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          Try Our AI Assistant Right Now
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          This page includes a working AI chatbot in the bottom-right corner. Click it to see automation in action - it answers questions, provides pricing, and can even book consultations for you.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Instant Responses</h3>
+          <p class="text-gray-600 text-sm">Answers questions 24/7 without human intervention</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Handles Bookings</h3>
+          <p class="text-gray-600 text-sm">Collects info and schedules consultations automatically</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Never Stops Working</h3>
+          <p class="text-gray-600 text-sm">Works weekends, holidays, 3am - always available</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <div class="bg-white rounded-2xl p-8 max-w-2xl mx-auto shadow-xl">
+          <p class="text-lg text-gray-700 mb-4">
+            <strong>This exact chatbot runs 24/7 on our website.</strong> It's handled hundreds of conversations and booked dozens of consultations - all without human intervention.
+          </p>
+          <p class="text-gray-600 mb-6">
+            We can build one for your business too. Same technology, customized to your services and pricing.
+          </p>
+          <div class="flex items-center justify-center gap-4">
+            <div class="flex items-center">
+              <span class="text-green-500 text-2xl mr-2">👉</span>
+              <span class="text-gray-700 font-semibold">Look for the chat icon in the bottom-right corner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof / Real Results -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Real Results from Real Businesses</h2>
+        <p class="text-xl text-gray-600">Here's what happens when you automate the boring stuff</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <div class="text-5xl font-bold text-blue-600 mb-4">70%</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Less Time on Admin</h3>
+          <p class="text-gray-700">
+            Our own business saved 70% of time on repetitive tasks. That's 25+ hours per week we now spend on growth.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <div class="text-5xl font-bold text-green-600 mb-4">40%</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Fewer Support Tickets</h3>
+          <p class="text-gray-700">
+            Chatbots handle common questions 24/7. Your team only deals with the complex stuff that needs a human.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <div class="text-5xl font-bold text-purple-600 mb-4">100%</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Accuracy on Data Entry</h3>
+          <p class="text-gray-700">
+            Robots don't make typos or forget to update the CRM. Every lead is captured and followed up automatically.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 max-w-3xl mx-auto text-center">
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Story</h3>
+        <p class="text-gray-700 mb-6">
+          We're a digital marketing agency that was drowning in repetitive tasks. We automated all of it and saved so much time that we started helping other businesses do the same.
+        </p>
+        <p class="text-xl font-bold text-blue-600 mb-6">If it worked for us, it'll work for you.</p>
+        <a href={calendarLink} target="_blank" rel="noopener" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-700 transition">
+          Book Your Free Consultation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Common Questions About AI Workflow Automation</h2>
+        <p class="text-xl text-gray-600">Everything you need to know before booking your consultation</p>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Do I need to be technical to use automation?</h3>
+          <p class="text-gray-700">
+            Not at all. You just need to know what tasks eat up your time. We handle all the technical stuff. 
+            You'll use the automation just like you use your current tools - we make it simple.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Will this replace my staff?</h3>
+          <p class="text-gray-700">
+            No. Automation handles repetitive tasks like data entry, form filling, and email responses. Your staff keeps their jobs and focuses on work that needs human judgment - like customer relationships, strategy, and problem-solving. Think of it as giving everyone a robot assistant.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">How secure is my business data?</h3>
+          <p class="text-gray-700 mb-4">
+            We take security seriously. Every automation we build includes:
+          </p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Encrypted connections (bank-level security)</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>GDPR-compliant data handling</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Your data never leaves your systems or gets published</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Secure API authentication (no backdoors)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">What if the automation makes a mistake?</h3>
+          <p class="text-gray-700">
+            We build human approval checkpoints into important workflows. For example, if a chatbot isn't sure about an answer, it passes the question to your team. Critical decisions always require human approval before proceeding. You stay in control.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">How long does it take to set up automation?</h3>
+          <p class="text-gray-700">
+            Simple automations take 1-4 hours (same day to 1 week). Complex systems take 20-40 hours (2-6 weeks). 
+            We'll tell you exactly how long during your free consultation.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">What if something breaks or needs changing?</h3>
+          <p class="text-gray-700">
+            We're here to help. No contracts means you can call us anytime. Most small tweaks take under an hour at £40/hour.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">How much does automation cost compared to hiring someone?</h3>
+          <p class="text-gray-700">
+            A full-time employee costs £25,000-35,000/year plus benefits. Most automation projects cost £400-2,000 one-time to build, then run 24/7 forever at no extra cost (except minor tweaks). Your existing staff keeps their jobs and gets their time back.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">What happens in the free consultation?</h3>
+          <p class="text-gray-700 mb-4">
+            We'll spend 30 minutes understanding your business and identifying your biggest time drains. You'll walk away with:
+          </p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Clear list of what we can automate</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Estimated time savings per week</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>Rough cost estimate (hours × £40)</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-500 mr-2">✓</span>
+              <span>No obligation to proceed</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <p class="text-gray-600 mb-4">Still have questions?</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={calendarLink} target="_blank" rel="noopener" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-700 transition">
+            Ask Them in Your Free Consultation
+          </a>
+          <a href="/faq/" class="inline-block bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition">
+            View Full FAQ Page
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20 bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">
+        Ready to Get Your Time Back?
+      </h2>
+      <p class="text-2xl mb-8 text-blue-100">
+        Book your free consultation now. Pick a time that works for you - instant confirmation.
+      </p>
+      
+      <a href={calendarLink} target="_blank" rel="noopener" class="inline-block bg-white text-blue-600 px-12 py-5 rounded-lg font-bold text-xl hover:bg-blue-50 transition shadow-2xl mb-6">
+        Book Your Free 30-Minute Consultation
+      </a>
+
+      <div class="grid md:grid-cols-3 gap-6 text-blue-100 max-w-2xl mx-auto">
+        <div>
+          <div class="text-2xl font-bold mb-2">✓ No Contracts</div>
+          <div class="text-sm">Cancel anytime</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold mb-2">✓ £40/Hour</div>
+          <div class="text-sm">Transparent pricing</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold mb-2">✓ Instant Booking</div>
+          <div class="text-sm">No back and forth</div>
+        </div>
+      </div>
+
+      <p class="text-sm text-blue-200 mt-8">
+        You'll receive an instant confirmation email with a Google Meet link. No waiting, no hassle.
+      </p>
+    </div>
+  </section>
+
+<Footer />
+
+<!-- AI Chat Assistant -->
+<AIAgent />
+</MainLayout>

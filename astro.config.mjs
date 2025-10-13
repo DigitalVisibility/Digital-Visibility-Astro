@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
+import cloudflare from '@astrojs/cloudflare';
 import cssnano from 'cssnano';
 
 // https://astro.build/config
@@ -21,7 +22,8 @@ export default defineConfig({
     }),
     react()
   ],
-  output: 'static',
+  output: 'hybrid',
+  adapter: cloudflare(),
   trailingSlash: 'always',
   // Enable built-in image optimization for static sites
   image: {

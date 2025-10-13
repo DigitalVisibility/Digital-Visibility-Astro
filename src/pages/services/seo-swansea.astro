@@ -2,44 +2,200 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+
+export const prerender = true;
 ---
 
 <MainLayout title="SEO Swansea | Search Engine Optimization Services in Swansea, Wales">
-  <meta name="description" content="Expert SEO services in Swansea helping local businesses get found on Google, ChatGPT & AI platforms. From Mumbles to Morriston, we help Swansea businesses dominate local search. £40/hour, no contracts." slot="head">
-  <meta name="keywords" content="SEO Swansea, search engine optimization Swansea, SEO agency Swansea, search engine agency Swansea, SEO company Swansea, local SEO Swansea, SEO expert Swansea, SEO services Swansea, Swansea SEO specialist, AEO Swansea, GEO Swansea, ChatGPT optimization Swansea, AI search optimization Swansea" slot="head">
+  <!-- SEO and Canonical Tags -->
   <link rel="canonical" href="https://digitalvisibility.com/services/seo-swansea/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  
+  <!-- Core Meta Tags -->
+  <meta name="description" content="Expert SEO services in Swansea helping local businesses get found on Google, ChatGPT & AI platforms. From Mumbles to Morriston, we help Swansea businesses dominate local search. £40/hour, no contracts." slot="head">
+  <meta name="keywords" content="SEO Swansea, Swansea SEO agency, local SEO Swansea Bay, Mumbles SEO, Gower SEO, Morriston SEO, West Wales SEO hub, Swansea digital marketing, Swansea business optimization, waterfront business SEO" slot="head">
+  
+  <!-- OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="SEO Swansea | Local Expertise for Swansea Bay Businesses" slot="head">
+  <meta property="og:description" content="Local SEO specialists based in Swansea. Deep knowledge of Swansea Bay, Gower, and West Wales markets. Help businesses from Mumbles to Morriston dominate local search." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/services/seo-swansea/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/webp" slot="head">
+  
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="SEO Swansea | West Wales Gateway SEO" slot="head">
+  <meta name="twitter:description" content="Local Swansea SEO experts. Deep market knowledge from Swansea Bay to Gower. Help businesses dominate local and regional search." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  
+  <!-- Publisher and Author -->
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- Geographic Meta Tags -->
+  <meta name="geo.region" content="GB-SWA" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6214;-3.9436" slot="head">
+  <meta name="ICBM" content="51.6214, -3.9436" slot="head">
+  
+  <!-- AI-Specific Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="local-seo-swansea,swansea-bay-optimization,west-wales-gateway-marketing,gower-tourism-seo" slot="head">
+  <meta name="ai-target" content="swansea-businesses,swansea-bay-companies,mumbles-shops,gower-tourism,morriston-enterprises,sketty-professionals,west-wales-gateway-companies" slot="head">
+  <meta name="ai-keywords" content="SEO Swansea, Swansea Bay SEO, local SEO expert Swansea, Mumbles optimization, Gower business marketing, West Wales SEO hub, Swansea waterfront businesses, Marina SEO" slot="head">
+  <meta name="ai-content-type" content="local SEO specialist Swansea, West Wales gateway optimization, Swansea Bay marketing expert" slot="head">
+  <meta name="ai-business-type" content="Local Swansea SEO Agency, Swansea Bay Digital Marketing, West Wales SEO Hub" slot="head">
+  <meta name="ai-service-area" content="Swansea, Swansea Bay, Mumbles, Gower, Sketty, Morriston, Llansamlet, Port Talbot, Neath, West Wales" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="local Swansea expertise, Swansea Bay area specialist, West Wales gateway positioning, deep local market knowledge" slot="head">
+  <meta name="ai-industry" content="local Swansea SEO, coastal business optimization, tourism marketing Gower, waterfront business visibility, West Wales regional services" slot="head">
+  <meta name="ai-services" content="Swansea Bay area optimization, local Swansea expertise, Mumbles and Gower tourism marketing, waterfront business visibility, Marina quarter optimization, university area targeting, city centre Swansea SEO, West Wales gateway positioning, regional expansion from Swansea" slot="head">
+  <meta name="ai-audience" content="Swansea business owners, Swansea Bay companies, Mumbles retailers, Gower tourism businesses, Marina quarter enterprises, university area services, city centre shops, West Wales companies" slot="head">
+  <meta name="ai-intent" content="hire Swansea SEO expert, local Swansea marketing, dominate Swansea Bay search, Gower business visibility, waterfront optimization, West Wales regional SEO, Swansea market dominance" slot="head">
+  <meta name="ai-unique-value" content="Based in Swansea with deep local knowledge, Swansea Bay area expertise, Gower tourism specialists, waterfront business experience, West Wales gateway positioning, £40/hour local rates, personal Swansea market understanding" slot="head">
 
   <!-- Schema Markup -->
   <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "SEO Swansea - Search Engine Optimization Services",
-    "description": "Comprehensive SEO services for Swansea businesses including traditional SEO, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO). Helping local businesses in Swansea get found on Google and AI platforms like ChatGPT.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "url": "https://digitalvisibility.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "235 Peniel Green Road",
-        "addressLocality": "Llansamlet",
-        "addressRegion": "Swansea",
-        "postalCode": "SA7 9BA",
-        "addressCountry": "GB"
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://digitalvisibility.com/services/seo-swansea/#service",
+        "name": "SEO Swansea - Local Search Engine Optimization",
+        "alternateName": ["Swansea SEO Services", "SEO Company Swansea", "Swansea Search Optimization", "Local SEO Swansea"],
+        "description": "Specialist SEO services for Swansea businesses in Mumbles, Sketty, Uplands, and city centre. We help Swansea retailers, restaurants, salons, and service providers rank on Google and get recommended by ChatGPT and AI platforms. From local visibility to national reach.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "keywords": "SEO Swansea, Swansea SEO services, search engine optimization Swansea, local SEO Swansea, SEO Mumbles, SEO Sketty, SEO Uplands, Swansea digital marketing, Google ranking Swansea, ChatGPT optimization Swansea, AI search Swansea, Swansea business visibility",
+        "category": ["Local SEO", "Search Engine Optimization", "AI Search Optimization", "Digital Marketing"],
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Swansea",
+            "sameAs": "https://en.wikipedia.org/wiki/Swansea"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Mumbles"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Sketty"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Uplands"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Llansamlet"
+          }
+        ],
+        "serviceOutput": [
+          "Swansea local SEO - dominate 'near me' searches in Swansea area",
+          "Google Business Profile setup - optimized for Swansea locations",
+          "Swansea keyword targeting - rank for what locals actually search",
+          "Mumbles and Sketty visibility - neighborhood-specific optimization",
+          "Swansea business citations - local directory listings across Wales",
+          "AI visibility for Swansea - ChatGPT recommendations for local services",
+          "Swansea competitor analysis - outrank other local businesses",
+          "Monthly Swansea ranking reports - track local search performance"
+        ],
+        "offers": [
+          {
+            "@type": "Offer",
+            "url": "https://digitalvisibility.com/pricing/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "40.00",
+              "priceCurrency": "GBP",
+              "unitText": "hour"
+            },
+            "availability": "https://schema.org/InStock",
+            "description": "Flexible hourly SEO services starting at £40/hour with no contracts",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
+          },
+          {
+            "@id": "https://digitalvisibility.com/pricing/#free-website-offer"
+          }
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/contact/",
+          "servicePhone": "+44-01792-002497"
+        },
+        "additionalType": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/",
+        "mainEntityOfPage": {
+          "@type": "FAQPage",
+          "@id": "https://digitalvisibility.com/faq/#seo-swansea"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/services/seo-swansea/#webpage",
+        "url": "https://digitalvisibility.com/services/seo-swansea/",
+        "name": "SEO Services Swansea | Local Search Optimization",
+        "description": "Expert SEO services for Swansea businesses. Rank higher on Google, get found by local customers, and grow your Swansea business online.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "inLanguage": "en-GB",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "about": {
+          "@id": "https://digitalvisibility.com/services/seo-swansea/#service"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/seo-swansea-wales.webp",
+          "width": "1200",
+          "height": "630"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://digitalvisibility.com/services/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "SEO Swansea",
+              "item": "https://digitalvisibility.com/services/seo-swansea/"
+            }
+          ]
+        }
       }
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Swansea",
-      "sameAs": "https://en.wikipedia.org/wiki/Swansea"
-    },
-    "serviceType": "Search Engine Optimization SEO",
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://digitalvisibility.com/contact/",
-      "servicePhone": "+44-01792-002497"
-    }
+    ]
   }
   </script>
 

@@ -4,6 +4,8 @@ import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 import { blogPosts, categoryInfo, getAllCategories, getFeaturedPosts } from '../../data/blogPosts.js';
 
+export const prerender = true;
+
 // Get all posts and categories
 const allPosts = blogPosts;
 const featuredPosts = getFeaturedPosts();

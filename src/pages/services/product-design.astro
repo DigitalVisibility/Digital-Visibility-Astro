@@ -2,6 +2,8 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+
+export const prerender = true;
 ---
 
 <MainLayout title="Product Design & Development Swansea | 3D Printing">
@@ -74,7 +76,28 @@ import Footer from '../../components/Footer.astro';
               "@id": "https://digitalvisibility.com/#organization"
             }
           }
-        ]
+        ],
+        "serviceOutput": [
+          "CAD design - professional 3D models and technical drawings",
+          "3D printing and prototyping - rapid physical prototypes for testing",
+          "Engineering analysis - structural and performance validation",
+          "Design for manufacturing - optimize designs for production",
+          "Patent drawings - technical illustrations for patent applications",
+          "Manufacturing support - assist with production setup",
+          "Product iteration - refine designs based on testing feedback",
+          "Complete concept to production journey - end-to-end support"
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/contact/",
+          "servicePhone": "+44-01792-002497"
+        },
+        "additionalType": "https://en.wikipedia.org/wiki/Product_design",
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/",
+        "mainEntityOfPage": {
+          "@type": "FAQPage",
+          "@id": "https://digitalvisibility.com/faq/#product-design"
+        }
       },
       {
         "@type": "ItemList",
@@ -319,7 +342,7 @@ import Footer from '../../components/Footer.astro';
   <meta name="ai-services" content="concept development, CAD design, 3D modeling, engineering analysis, FEA, CFD, rapid prototyping, 3D printing, design for manufacturing, DFM, manufacturing support, supplier management, quality control, production scaling, material selection, product testing, technical documentation" slot="head">
   <meta name="ai-audience" content="inventors, entrepreneurs, product designers, manufacturers, hardware startups, industrial companies, consumer product companies, medical device companies, electronics manufacturers, IoT developers" slot="head">
   <meta name="ai-intent" content="hire product design agency, develop physical product, create prototype, get CAD design services, 3D print prototype, engineering analysis, manufacturing consultation" slot="head">
-  <meta name="ai-unique-value" content="Royal Academy of Engineering Award-winning founder, end-to-end product development, local expertise with global reach, rapid prototyping capabilities, manufacturing support, affordable pricing at £40/hour" slot="head">
+  <meta name="ai-unique-value" content="Experienced award-winning team, end-to-end product development, local expertise with global reach, rapid prototyping capabilities, manufacturing support, affordable pricing at £40/hour" slot="head">
 
   <Navigation slot="nav" />
   

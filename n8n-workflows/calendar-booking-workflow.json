@@ -1,0 +1,267 @@
+{
+  "name": "AI Agent - Calendar Booking & Email Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ai-agent-booking",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "ai-agent-booking"
+    },
+    {
+      "parameters": {
+        "functionCode": "// Extract and validate booking data\nconst data = $input.item.json;\n\nreturn {\n  json: {\n    name: data.name || '',\n    email: data.email || '',\n    phone: data.phone || '',\n    company: data.company || '',\n    service_interest: data.service_interest || 'General Consultation',\n    preferred_date: data.preferred_date || '',\n    preferred_time: data.preferred_time || '',\n    notes: data.notes || '',\n    booking_id: `DV-${Date.now()}`,\n    created_at: new Date().toISOString()\n  }\n};"
+      },
+      "id": "validate-data",
+      "name": "Validate & Format Data",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "calendarId": "primary",
+        "start": "={{ $json.preferred_date }}T{{ $json.preferred_time }}:00",
+        "end": "={{ $json.preferred_date }}T{{ $json.preferred_time.split(':')[0] }}:30:00",
+        "summary": "Consultation: {{ $json.company }}",
+        "description": "Client: {{ $json.name }}\\nEmail: {{ $json.email }}\\nPhone: {{ $json.phone }}\\nService Interest: {{ $json.service_interest }}\\nNotes: {{ $json.notes }}\\n\\nBooking ID: {{ $json.booking_id }}",
+        "attendees": "{{ $json.email }}",
+        "sendUpdates": "all"
+      },
+      "id": "create-calendar-event",
+      "name": "Create Google Calendar Event",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1,
+      "position": [650, 300],
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "1",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "// Generate meeting link (replace with your actual video conferencing)\nconst meetingLink = `https://meet.google.com/xyz-abc-def`; // This should come from calendar event\n\nreturn {\n  json: {\n    ...($input.item.json),\n    meeting_link: meetingLink,\n    calendar_event_id: $input.item.json.id || ''\n  }\n};"
+      },
+      "id": "add-meeting-link",
+      "name": "Add Meeting Link",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "fromEmail": "support@digitalvisibility.com",
+        "toEmail": "={{ $json.email }}",
+        "subject": "Consultation Confirmed - Digital Visibility",
+        "emailType": "html",
+        "message": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n    .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n    .header { background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }\n    .content { background: #f9fafb; padding: 30px; border-radius: 0 0 10px 10px; }\n    .button { display: inline-block; background: #2563eb; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; margin: 20px 0; }\n    .details { background: white; padding: 20px; border-radius: 5px; margin: 20px 0; }\n    .footer { text-align: center; color: #6b7280; font-size: 14px; margin-top: 30px; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1>Consultation Confirmed! 🎉</h1>\n    </div>\n    <div class=\"content\">\n      <p>Hi {{ $json.name }},</p>\n      \n      <p>Great news! Your free 30-minute consultation with Digital Visibility is confirmed.</p>\n      \n      <div class=\"details\">\n        <h3>Consultation Details:</h3>\n        <p><strong>Date:</strong> {{ $json.preferred_date }}</p>\n        <p><strong>Time:</strong> {{ $json.preferred_time }} GMT</p>\n        <p><strong>Duration:</strong> 30 minutes</p>\n        <p><strong>Format:</strong> Video call</p>\n      </div>\n      \n      <a href=\"{{ $json.meeting_link }}\" class=\"button\">Join Video Call</a>\n      \n      <h3>What to Expect:</h3>\n      <ul>\n        <li>✓ Analysis of your current digital presence</li>\n        <li>✓ Actionable recommendations</li>\n        <li>✓ Pricing tailored to your needs</li>\n        <li>✓ Answers to all your questions</li>\n      </ul>\n      \n      <h3>Before the Call:</h3>\n      <p>It would help if you could:</p>\n      <ul>\n        <li>Have your website URL ready</li>\n        <li>Think about your main business goals</li>\n        <li>Note any specific concerns or questions</li>\n      </ul>\n      \n      <p><strong>You'll receive reminder emails:</strong></p>\n      <ul>\n        <li>24 hours before the consultation</li>\n        <li>1 hour before the consultation</li>\n      </ul>\n      \n      <p>Need to reschedule? Just reply to this email or call us at <strong>01792 002 497</strong>.</p>\n      \n      <p>Looking forward to speaking with you!</p>\n      \n      <p>Best regards,<br>\n      <strong>Digital Visibility Team</strong></p>\n      \n      <div class=\"footer\">\n        <p>Digital Visibility Limited<br>\n        235 Peniel Green Road, Llansamlet, Swansea, SA7 9BA<br>\n        Phone: 01792 002 497 | Email: support@digitalvisibility.com</p>\n      </div>\n    </div>\n  </div>\n</body>\n</html>"
+      },
+      "id": "send-confirmation-email",
+      "name": "Send Confirmation Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [1050, 300],
+      "credentials": {
+        "smtp": {
+          "id": "1",
+          "name": "SMTP account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "unit": "hours",
+        "amount": 23,
+        "triggerTimes": {
+          "item": [
+            {
+              "hour": "={{ $json.preferred_time.split(':')[0] }}",
+              "minute": "={{ $json.preferred_time.split(':')[1] }}"
+            }
+          ]
+        }
+      },
+      "id": "schedule-24h-reminder",
+      "name": "Schedule 24h Reminder",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [1050, 500]
+    },
+    {
+      "parameters": {
+        "fromEmail": "support@digitalvisibility.com",
+        "toEmail": "={{ $json.email }}",
+        "subject": "Reminder: Consultation Tomorrow - Digital Visibility",
+        "emailType": "html",
+        "message": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n    .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n    .header { background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }\n    .content { background: #f9fafb; padding: 30px; border-radius: 0 0 10px 10px; }\n    .button { display: inline-block; background: #2563eb; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; margin: 20px 0; }\n    .highlight { background: #fef3c7; padding: 15px; border-radius: 5px; margin: 20px 0; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1>Consultation Tomorrow! ⏰</h1>\n    </div>\n    <div class=\"content\">\n      <p>Hi {{ $json.name }},</p>\n      \n      <p>Just a friendly reminder that your consultation with Digital Visibility is scheduled for <strong>tomorrow</strong>.</p>\n      \n      <div class=\"highlight\">\n        <p><strong>📅 Date:</strong> {{ $json.preferred_date }}</p>\n        <p><strong>🕐 Time:</strong> {{ $json.preferred_time }} GMT</p>\n        <p><strong>⏱️ Duration:</strong> 30 minutes</p>\n      </div>\n      \n      <a href=\"{{ $json.meeting_link }}\" class=\"button\">Join Video Call</a>\n      \n      <p>We're looking forward to discussing how we can help {{ $json.company }} achieve its digital marketing goals.</p>\n      \n      <p>See you tomorrow!</p>\n      \n      <p>Best regards,<br>\n      <strong>Digital Visibility Team</strong></p>\n    </div>\n  </div>\n</body>\n</html>"
+      },
+      "id": "send-24h-reminder",
+      "name": "Send 24h Reminder Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [1250, 500]
+    },
+    {
+      "parameters": {
+        "unit": "hours",
+        "amount": 1
+      },
+      "id": "schedule-1h-reminder",
+      "name": "Schedule 1h Reminder",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [1050, 700]
+    },
+    {
+      "parameters": {
+        "fromEmail": "support@digitalvisibility.com",
+        "toEmail": "={{ $json.email }}",
+        "subject": "Starting Soon: Your Consultation in 1 Hour",
+        "emailType": "html",
+        "message": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n    .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n    .header { background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }\n    .content { background: #f9fafb; padding: 30px; border-radius: 0 0 10px 10px; }\n    .button { display: inline-block; background: #10b981; color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; margin: 20px 0; font-size: 18px; font-weight: bold; }\n    .urgent { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; margin: 20px 0; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1>Starting in 1 Hour! 🚀</h1>\n    </div>\n    <div class=\"content\">\n      <p>Hi {{ $json.name }},</p>\n      \n      <div class=\"urgent\">\n        <p><strong>⏰ Your consultation starts in 1 hour at {{ $json.preferred_time }} GMT</strong></p>\n      </div>\n      \n      <p>Click the button below to join the video call:</p>\n      \n      <a href=\"{{ $json.meeting_link }}\" class=\"button\">Join Video Call Now</a>\n      \n      <p><strong>Quick reminders:</strong></p>\n      <ul>\n        <li>Test your camera and microphone</li>\n        <li>Have your website URL ready</li>\n        <li>Prepare any questions you have</li>\n      </ul>\n      \n      <p>See you soon!</p>\n      \n      <p>Best regards,<br>\n      <strong>Digital Visibility Team</strong></p>\n    </div>\n  </div>\n</body>\n</html>"
+      },
+      "id": "send-1h-reminder",
+      "name": "Send 1h Reminder Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [1250, 700]
+    },
+    {
+      "parameters": {
+        "fromEmail": "support@digitalvisibility.com",
+        "toEmail": "support@digitalvisibility.com",
+        "subject": "New Consultation Booked: {{ $json.company }}",
+        "emailType": "text",
+        "message": "New consultation booking:\n\nClient: {{ $json.name }}\nCompany: {{ $json.company }}\nEmail: {{ $json.email }}\nPhone: {{ $json.phone }}\nService Interest: {{ $json.service_interest }}\nDate: {{ $json.preferred_date }}\nTime: {{ $json.preferred_time }}\n\nNotes: {{ $json.notes }}\n\nBooking ID: {{ $json.booking_id }}\nCalendar Event: {{ $json.calendar_event_id }}\nMeeting Link: {{ $json.meeting_link }}"
+      },
+      "id": "notify-team",
+      "name": "Notify Team",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [1050, 100]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"booking_id\": \"{{ $json.booking_id }}\",\n  \"message\": \"Consultation booked successfully!\",\n  \"details\": {\n    \"date\": \"{{ $json.preferred_date }}\",\n    \"time\": \"{{ $json.preferred_time }}\",\n    \"meeting_link\": \"{{ $json.meeting_link }}\"\n  }\n}"
+      },
+      "id": "respond-to-webhook",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1450, 300]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Validate & Format Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate & Format Data": {
+      "main": [
+        [
+          {
+            "node": "Create Google Calendar Event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Google Calendar Event": {
+      "main": [
+        [
+          {
+            "node": "Add Meeting Link",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Meeting Link": {
+      "main": [
+        [
+          {
+            "node": "Send Confirmation Email",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Schedule 24h Reminder",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Schedule 1h Reminder",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Notify Team",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Confirmation Email": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule 24h Reminder": {
+      "main": [
+        [
+          {
+            "node": "Send 24h Reminder Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule 1h Reminder": {
+      "main": [
+        [
+          {
+            "node": "Send 1h Reminder Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-12T21:00:00.000Z",
+  "versionId": "1"
+}

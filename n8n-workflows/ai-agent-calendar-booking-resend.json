@@ -1,0 +1,390 @@
+{
+  "name": "AI Agent - Calendar Booking with Resend",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ai-agent-booking",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "ai-agent-booking"
+    },
+    {
+      "parameters": {
+        "functionCode": "// Extract and validate booking data\nconst data = $input.item.json;\n\n// Validate required fields\nif (!data.name || !data.email || !data.preferred_date || !data.preferred_time) {\n  throw new Error('Missing required fields: name, email, preferred_date, or preferred_time');\n}\n\nreturn {\n  json: {\n    name: data.name || '',\n    email: data.email || '',\n    phone: data.phone || '',\n    company: data.company || 'Not provided',\n    service_interest: data.service_interest || 'General Consultation',\n    preferred_date: data.preferred_date || '',\n    preferred_time: data.preferred_time || '',\n    notes: data.notes || '',\n    booking_id: `DV-${Date.now()}`,\n    created_at: new Date().toISOString()\n  }\n};"
+      },
+      "id": "validate-data",
+      "name": "Validate & Format Data",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "calendarId": "primary",
+        "start": "={{ $json.preferred_date }}T{{ $json.preferred_time }}:00+00:00",
+        "end": "={{ $json.preferred_date }}T{{ parseInt($json.preferred_time.split(':')[0]) + 0 }}:30:00+00:00",
+        "summary": "Consultation: {{ $json.name }} - {{ $json.company }}",
+        "description": "Client: {{ $json.name }}\\nEmail: {{ $json.email }}\\nPhone: {{ $json.phone }}\\nCompany: {{ $json.company }}\\nService Interest: {{ $json.service_interest }}\\nNotes: {{ $json.notes }}\\n\\nBooking ID: {{ $json.booking_id }}",
+        "attendees": "={{ $json.email }}",
+        "sendUpdates": "all",
+        "conferenceDataVersion": 1
+      },
+      "id": "create-calendar-event",
+      "name": "Create Google Calendar Event",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1,
+      "position": [650, 300],
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "YOUR_GOOGLE_CALENDAR_CREDENTIAL_ID",
+          "name": "Google Workspace Calendar"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "// Extract meeting link from Google Calendar event\nconst calendarData = $input.item.json;\nconst meetingLink = calendarData.hangoutLink || calendarData.htmlLink || 'https://calendar.google.com';\n\nreturn {\n  json: {\n    name: $node[\"Validate & Format Data\"].json.name,\n    email: $node[\"Validate & Format Data\"].json.email,\n    phone: $node[\"Validate & Format Data\"].json.phone,\n    company: $node[\"Validate & Format Data\"].json.company,\n    service_interest: $node[\"Validate & Format Data\"].json.service_interest,\n    preferred_date: $node[\"Validate & Format Data\"].json.preferred_date,\n    preferred_time: $node[\"Validate & Format Data\"].json.preferred_time,\n    notes: $node[\"Validate & Format Data\"].json.notes,\n    booking_id: $node[\"Validate & Format Data\"].json.booking_id,\n    created_at: $node[\"Validate & Format Data\"].json.created_at,\n    meeting_link: meetingLink,\n    calendar_event_id: calendarData.id || ''\n  }\n};"
+      },
+      "id": "extract-meeting-link",
+      "name": "Extract Meeting Link",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.resend.com/emails",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.RESEND_API_KEY }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "from",
+              "value": "Digital Visibility <noreply@updates.digitalvisibility.com>"
+            },
+            {
+              "name": "to",
+              "value": "={{ $json.email }}"
+            },
+            {
+              "name": "subject",
+              "value": "Consultation Confirmed - Digital Visibility"
+            },
+            {
+              "name": "html",
+              "value": "=<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }\n    .container { max-width: 600px; margin: 0 auto; }\n    .header { background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); color: white; padding: 40px 30px; text-align: center; }\n    .content { background: #ffffff; padding: 40px 30px; }\n    .button { display: inline-block; background: #2563eb; color: white !important; padding: 14px 32px; text-decoration: none; border-radius: 6px; margin: 24px 0; font-weight: 600; }\n    .details { background: #f3f4f6; padding: 24px; border-radius: 8px; margin: 24px 0; border-left: 4px solid #2563eb; }\n    .footer { text-align: center; color: #6b7280; font-size: 14px; padding: 30px; background: #f9fafb; }\n    ul { padding-left: 20px; }\n    li { margin: 8px 0; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1 style=\"margin: 0; font-size: 28px;\">Consultation Confirmed! 🎉</h1>\n    </div>\n    <div class=\"content\">\n      <p>Hi {{ $json.name }},</p>\n      \n      <p>Great news! Your free 30-minute consultation with Digital Visibility is confirmed.</p>\n      \n      <div class=\"details\">\n        <h3 style=\"margin-top: 0;\">Consultation Details:</h3>\n        <p><strong>📅 Date:</strong> {{ $json.preferred_date }}</p>\n        <p><strong>🕐 Time:</strong> {{ $json.preferred_time }} GMT</p>\n        <p><strong>⏱️ Duration:</strong> 30 minutes</p>\n        <p><strong>💼 Service:</strong> {{ $json.service_interest }}</p>\n        <p style=\"margin-bottom: 0;\"><strong>📹 Format:</strong> Google Meet video call</p>\n      </div>\n      \n      <center>\n        <a href=\"{{ $json.meeting_link }}\" class=\"button\">Join Video Call</a>\n      </center>\n      \n      <h3>What to Expect:</h3>\n      <ul>\n        <li>Analysis of your current situation</li>\n        <li>Actionable recommendations</li>\n        <li>Clear pricing (£40/hour)</li>\n        <li>Answers to all your questions</li>\n      </ul>\n      \n      <h3>Before the Call:</h3>\n      <p>It would help if you could:</p>\n      <ul>\n        <li>Have your website URL ready (if applicable)</li>\n        <li>Think about your main business goals</li>\n        <li>Prepare any specific questions</li>\n      </ul>\n      \n      <p><strong>Booking Reference:</strong> {{ $json.booking_id }}</p>\n      \n      <p>Need to reschedule? Just reply to this email.</p>\n      \n      <p>Looking forward to speaking with you!</p>\n      \n      <p>Best regards,<br>\n      <strong>Digital Visibility Team</strong><br>\n      📞 01792 002 497</p>\n    </div>\n    <div class=\"footer\">\n      <p>Digital Visibility Limited<br>\n      235 Peniel Green Road, Llansamlet, Swansea, SA7 9BA<br>\n      <a href=\"https://digitalvisibility.com\" style=\"color: #2563eb;\">digitalvisibility.com</a></p>\n    </div>\n  </div>\n</body>\n</html>"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "send-confirmation-resend",
+      "name": "Send Confirmation (Resend)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.resend.com/emails",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.RESEND_API_KEY }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "from",
+              "value": "Digital Visibility <noreply@updates.digitalvisibility.com>"
+            },
+            {
+              "name": "to",
+              "value": "support@digitalvisibility.com"
+            },
+            {
+              "name": "subject",
+              "value": "=New Consultation Booked: {{ $json.company }}"
+            },
+            {
+              "name": "html",
+              "value": "=<h2>New Consultation Booking</h2>\n<p><strong>Client:</strong> {{ $json.name }}</p>\n<p><strong>Company:</strong> {{ $json.company }}</p>\n<p><strong>Email:</strong> {{ $json.email }}</p>\n<p><strong>Phone:</strong> {{ $json.phone }}</p>\n<p><strong>Service Interest:</strong> {{ $json.service_interest }}</p>\n<p><strong>Date:</strong> {{ $json.preferred_date }}</p>\n<p><strong>Time:</strong> {{ $json.preferred_time }} GMT</p>\n<p><strong>Notes:</strong> {{ $json.notes }}</p>\n<hr>\n<p><strong>Booking ID:</strong> {{ $json.booking_id }}</p>\n<p><strong>Calendar Event ID:</strong> {{ $json.calendar_event_id }}</p>\n<p><strong>Meeting Link:</strong> <a href=\"{{ $json.meeting_link }}\">{{ $json.meeting_link }}</a></p>"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "notify-team-resend",
+      "name": "Notify Team (Resend)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1050, 100]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"booking_id\": \"{{ $json.booking_id }}\",\n  \"message\": \"Consultation booked successfully! Check your email for confirmation.\",\n  \"details\": {\n    \"date\": \"{{ $json.preferred_date }}\",\n    \"time\": \"{{ $json.preferred_time }}\",\n    \"meeting_link\": \"{{ $json.meeting_link }}\"\n  }\n}"
+      },
+      "id": "respond-to-webhook",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1250, 300]
+    },
+    {
+      "parameters": {
+        "unit": "hours",
+        "amount": "={{ Math.floor((new Date($json.preferred_date + 'T' + $json.preferred_time).getTime() - new Date().getTime()) / 3600000) - 24 }}"
+      },
+      "id": "wait-24h-before",
+      "name": "Wait Until 24h Before",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [1050, 500]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.resend.com/emails",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.RESEND_API_KEY }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "from",
+              "value": "Digital Visibility <noreply@updates.digitalvisibility.com>"
+            },
+            {
+              "name": "to",
+              "value": "={{ $json.email }}"
+            },
+            {
+              "name": "subject",
+              "value": "Reminder: Consultation Tomorrow - Digital Visibility"
+            },
+            {
+              "name": "html",
+              "value": "=<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }\n    .container { max-width: 600px; margin: 0 auto; }\n    .header { background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); color: white; padding: 40px 30px; text-align: center; }\n    .content { background: #ffffff; padding: 40px 30px; }\n    .button { display: inline-block; background: #2563eb; color: white !important; padding: 14px 32px; text-decoration: none; border-radius: 6px; margin: 24px 0; font-weight: 600; }\n    .highlight { background: #fef3c7; padding: 20px; border-radius: 8px; margin: 24px 0; border-left: 4px solid #f59e0b; }\n    .footer { text-align: center; color: #6b7280; font-size: 14px; padding: 30px; background: #f9fafb; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1 style=\"margin: 0; font-size: 28px;\">Consultation Tomorrow! ⏰</h1>\n    </div>\n    <div class=\"content\">\n      <p>Hi {{ $json.name }},</p>\n      \n      <p>Just a friendly reminder that your consultation with Digital Visibility is scheduled for <strong>tomorrow</strong>.</p>\n      \n      <div class=\"highlight\">\n        <p style=\"margin: 0;\"><strong>📅 Date:</strong> {{ $json.preferred_date }}</p>\n        <p style=\"margin: 8px 0;\"><strong>🕐 Time:</strong> {{ $json.preferred_time }} GMT</p>\n        <p style=\"margin: 0;\"><strong>⏱️ Duration:</strong> 30 minutes</p>\n      </div>\n      \n      <center>\n        <a href=\"{{ $json.meeting_link }}\" class=\"button\">Join Video Call</a>\n      </center>\n      \n      <p>We're looking forward to discussing how we can help {{ $json.company }} achieve its goals.</p>\n      \n      <p>See you tomorrow!</p>\n      \n      <p>Best regards,<br>\n      <strong>Digital Visibility Team</strong></p>\n    </div>\n    <div class=\"footer\">\n      <p>Digital Visibility Limited<br>\n      <a href=\"https://digitalvisibility.com\" style=\"color: #2563eb;\">digitalvisibility.com</a></p>\n    </div>\n  </div>\n</body>\n</html>"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "send-24h-reminder-resend",
+      "name": "Send 24h Reminder (Resend)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1250, 500]
+    },
+    {
+      "parameters": {
+        "unit": "hours",
+        "amount": "={{ Math.floor((new Date($json.preferred_date + 'T' + $json.preferred_time).getTime() - new Date().getTime()) / 3600000) - 1 }}"
+      },
+      "id": "wait-1h-before",
+      "name": "Wait Until 1h Before",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [1050, 700]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.resend.com/emails",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.RESEND_API_KEY }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "from",
+              "value": "Digital Visibility <noreply@updates.digitalvisibility.com>"
+            },
+            {
+              "name": "to",
+              "value": "={{ $json.email }}"
+            },
+            {
+              "name": "subject",
+              "value": "Starting Soon: Your Consultation in 1 Hour"
+            },
+            {
+              "name": "html",
+              "value": "=<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }\n    .container { max-width: 600px; margin: 0 auto; }\n    .header { background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%); color: white; padding: 40px 30px; text-align: center; }\n    .content { background: #ffffff; padding: 40px 30px; }\n    .button { display: inline-block; background: #10b981; color: white !important; padding: 16px 40px; text-decoration: none; border-radius: 6px; margin: 24px 0; font-size: 18px; font-weight: bold; }\n    .urgent { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 20px; margin: 24px 0; border-radius: 6px; }\n    .footer { text-align: center; color: #6b7280; font-size: 14px; padding: 30px; background: #f9fafb; }\n    ul { padding-left: 20px; }\n    li { margin: 8px 0; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1 style=\"margin: 0; font-size: 28px;\">Starting in 1 Hour! 🚀</h1>\n    </div>\n    <div class=\"content\">\n      <p>Hi {{ $json.name }},</p>\n      \n      <div class=\"urgent\">\n        <p style=\"margin: 0; font-size: 16px;\"><strong>⏰ Your consultation starts in 1 hour at {{ $json.preferred_time }} GMT</strong></p>\n      </div>\n      \n      <p>Click the button below to join the video call:</p>\n      \n      <center>\n        <a href=\"{{ $json.meeting_link }}\" class=\"button\">Join Video Call Now</a>\n      </center>\n      \n      <p><strong>Quick reminders:</strong></p>\n      <ul>\n        <li>Test your camera and microphone</li>\n        <li>Have your website URL ready (if applicable)</li>\n        <li>Prepare any questions you have</li>\n      </ul>\n      \n      <p>See you soon!</p>\n      \n      <p>Best regards,<br>\n      <strong>Digital Visibility Team</strong></p>\n    </div>\n    <div class=\"footer\">\n      <p>Digital Visibility Limited<br>\n      <a href=\"https://digitalvisibility.com\" style=\"color: #2563eb;\">digitalvisibility.com</a></p>\n    </div>\n  </div>\n</body>\n</html>"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "send-1h-reminder-resend",
+      "name": "Send 1h Reminder (Resend)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1250, 700]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Validate & Format Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate & Format Data": {
+      "main": [
+        [
+          {
+            "node": "Create Google Calendar Event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Google Calendar Event": {
+      "main": [
+        [
+          {
+            "node": "Extract Meeting Link",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Meeting Link": {
+      "main": [
+        [
+          {
+            "node": "Send Confirmation (Resend)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Notify Team (Resend)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Wait Until 24h Before",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Wait Until 1h Before",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Confirmation (Resend)": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait Until 24h Before": {
+      "main": [
+        [
+          {
+            "node": "Send 24h Reminder (Resend)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait Until 1h Before": {
+      "main": [
+        [
+          {
+            "node": "Send 1h Reminder (Resend)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": ["ai-agent", "calendar", "resend", "automation"],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-13T11:22:00.000Z",
+  "versionId": "2"
+}

@@ -2,72 +2,188 @@
 import MainLayout from '../../../layouts/MainLayout.astro';
 import Navigation from '../../../components/Navigation.astro';
 import Footer from '../../../components/Footer.astro';
+
+export const prerender = true;
 ---
 
 <MainLayout title="SEO Services Wales | Welsh SEO Agency Supporting Welsh Businesses">
-  <meta name="description" content="Award-winning SEO services for Welsh businesses. Supporting the Welsh economy with expert SEO, AEO & AI optimization across Swansea, Cardiff, Carmarthen, Newport and South Wales. Trusted by Welsh organizations. £40/hour, no contracts." slot="head">
-  <meta name="keywords" content="SEO Wales, SEO services Wales, Welsh SEO company, SEO agency Wales, South Wales SEO, West Wales SEO, digital marketing Wales, Welsh business SEO, SEO Cymru, local SEO Wales" slot="head">
+  <!-- SEO and Canonical Tags -->
   <link rel="canonical" href="https://digitalvisibility.com/services/seo-wales/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  
+  <!-- Core Meta Tags -->
+  <meta name="description" content="Award-winning SEO services for Welsh businesses. Supporting the Welsh economy with expert SEO, AEO & AI optimization across Swansea, Cardiff, Carmarthen, Newport and South Wales. Trusted by Welsh organizations. £40/hour, no contracts." slot="head">
+  <meta name="keywords" content="SEO Wales, SEO services Wales, Welsh SEO company, SEO Cymru, South Wales SEO, West Wales SEO, North Wales SEO, digital marketing Wales, Welsh business SEO, Wales economy support" slot="head">
+  
+  <!-- OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="SEO Wales | Supporting Welsh Businesses Across Cymru" slot="head">
+  <meta property="og:description" content="Dedicated SEO for Welsh businesses. Supporting the Welsh economy from Swansea to North Wales. Expert bilingual optimization, local Welsh market knowledge." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/services/seo-wales/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/webp" slot="head">
+  
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="SEO Wales | Welsh Business SEO Cymru" slot="head">
+  <meta name="twitter:description" content="Supporting Welsh businesses with expert SEO. From Swansea to North Wales, helping the Welsh economy thrive online." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  
+  <!-- Publisher and Author -->
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- AI-Specific Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="welsh-business-seo,wales-economy-support,cymru-digital-marketing,bilingual-welsh-optimization" slot="head">
+  <meta name="ai-target" content="welsh-businesses,cymru-companies,south-wales-enterprises,west-wales-businesses,north-wales-companies,welsh-organizations" slot="head">
+  <meta name="ai-keywords" content="SEO Wales, Welsh SEO services, SEO Cymru, bilingual Welsh SEO, Welsh economy support, South Wales SEO, Welsh business visibility, Wales digital marketing" slot="head">
+  <meta name="ai-content-type" content="Welsh SEO specialist, Cymru digital marketing, bilingual optimization provider Wales" slot="head">
+  <meta name="ai-business-type" content="Welsh SEO Agency, Cymru Digital Marketing, Wales Business Support Services" slot="head">
+  <meta name="ai-service-area" content="Wales, Cymru, South Wales, West Wales, Mid Wales, North Wales, Welsh regions nationwide" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="Welsh business SEO services, supporting Welsh economy, bilingual Welsh-English optimization, Cymru market expertise" slot="head">
+  <meta name="ai-industry" content="Welsh regional SEO, bilingual marketing Wales, Welsh economy support, Cymru business services" slot="head">
+  <meta name="ai-services" content="Wales-wide SEO coverage, bilingual Welsh-English optimization, Welsh market positioning, regional authority building Wales, Welsh Business Profile optimization, Cymru-specific strategies, support Welsh economy growth" slot="head">
+  <meta name="ai-audience" content="Welsh business owners, Cymru enterprises, South Wales companies, West Wales businesses, North Wales organizations, Welsh startups, regional Welsh businesses" slot="head">
+  <meta name="ai-intent" content="Welsh SEO agency, support Welsh economy, bilingual SEO Wales, grow Welsh business online, dominate Welsh markets, Cymru business visibility, regional Wales SEO" slot="head">
+  <meta name="ai-unique-value" content="Dedicated to Welsh economy, bilingual Welsh-English expertise, deep Welsh market knowledge, supporting Cymru businesses, regional Wales coverage, £40/hour supporting local economy, committed to Welsh growth" slot="head">
 
-  <!-- Schema Markup -->
+  <!-- Enhanced Schema Markup with @graph -->
   <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "SEO Services for Welsh Businesses",
-    "description": "Comprehensive SEO and AI search optimization services for businesses across Wales. Supporting Welsh businesses with traditional SEO, Answer Engine Optimization (AEO), and AI platform visibility. Serving Swansea, Cardiff, Carmarthen, Newport, and throughout South Wales and West Wales.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "url": "https://digitalvisibility.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "235 Peniel Green Road",
-        "addressLocality": "Llansamlet",
-        "addressRegion": "Swansea",
-        "postalCode": "SA7 9BA",
-        "addressCountry": "GB"
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://digitalvisibility.com/services/seo-wales/#service",
+        "name": "SEO Services Supporting Welsh Businesses",
+        "alternateName": ["SEO Wales", "Welsh SEO Services", "SEO Cymru", "Wales Digital Marketing"],
+        "description": "Comprehensive SEO and AI search optimization services for businesses across Wales. Supporting Welsh businesses with traditional SEO, Answer Engine Optimization (AEO), and AI platform visibility. Serving Swansea, Cardiff, Carmarthen, Newport, and throughout South Wales and West Wales.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "category": ["Regional SEO Wales", "Welsh Business SEO", "Bilingual SEO", "Welsh Economy Support"],
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Wales",
+            "sameAs": "https://en.wikipedia.org/wiki/Wales"
+          },
+          {
+            "@type": "City",
+            "name": "Swansea"
+          },
+          {
+            "@type": "City",
+            "name": "Cardiff"
+          },
+          {
+            "@type": "City",
+            "name": "Carmarthen"
+          },
+          {
+            "@type": "City",
+            "name": "Newport"
+          }
+        ],
+        "serviceType": "Search Engine Optimization SEO",
+        "serviceOutput": [
+          "Enhanced search engine rankings across Google and AI platforms",
+          "Increased organic traffic from Welsh customer base",
+          "Strengthened local visibility throughout Wales",
+          "AI platform recommendations (ChatGPT, Perplexity, Claude)",
+          "Google Business Profile optimization for Welsh locations",
+          "Welsh market positioning and regional authority building"
+        ],
+        "offers": [
+          {
+            "@type": "Offer",
+            "url": "https://digitalvisibility.com/pricing/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "40.00",
+              "priceCurrency": "GBP",
+              "unitText": "hour"
+            },
+            "availability": "https://schema.org/InStock",
+            "description": "SEO services supporting the Welsh economy at £40/hour, helping Welsh businesses thrive",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
+          },
+          {
+            "@id": "https://digitalvisibility.com/pricing/#free-website-offer"
+          }
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/contact/",
+          "servicePhone": "+44-01792-002497"
+        },
+        "additionalType": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/services/seo-wales/#webpage",
+        "url": "https://digitalvisibility.com/services/seo-wales/",
+        "name": "SEO Services Wales | Welsh SEO Agency Supporting Welsh Businesses",
+        "description": "Award-winning SEO services for Welsh businesses. Supporting the Welsh economy with expert SEO, AEO & AI optimization across Wales.",
+        "inLanguage": "en-GB",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "about": {
+          "@id": "https://digitalvisibility.com/services/seo-wales/#service"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp",
+          "width": "1200",
+          "height": "630"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://digitalvisibility.com/services/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "SEO Wales",
+              "item": "https://digitalvisibility.com/services/seo-wales/"
+            }
+          ]
+        }
       }
-    },
-    "areaServed": [
-      {
-        "@type": "Country",
-        "name": "Wales",
-        "sameAs": "https://en.wikipedia.org/wiki/Wales"
-      },
-      {
-        "@type": "City",
-        "name": "Swansea"
-      },
-      {
-        "@type": "City",
-        "name": "Cardiff"
-      },
-      {
-        "@type": "City",
-        "name": "Carmarthen"
-      },
-      {
-        "@type": "City",
-        "name": "Newport"
-      }
-    ],
-    "serviceType": "Search Engine Optimization SEO",
-    "serviceOutput": [
-      "Improved search engine rankings across Google and AI platforms",
-      "Increased organic traffic from Welsh customers",
-      "Enhanced local visibility across Wales",
-      "AI platform recommendations (ChatGPT, Perplexity, Claude)",
-      "Google Business Profile optimization",
-      "Welsh market positioning and authority"
-    ],
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://digitalvisibility.com/contact/",
-      "servicePhone": "+44-01792-002497"
-    },
-    "additionalType": "https://en.wikipedia.org/wiki/Search_engine_optimization",
-    "termsOfService": "https://digitalvisibility.com/terms/"
+    ]
   }
   </script>
 

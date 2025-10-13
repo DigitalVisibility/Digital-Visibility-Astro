@@ -2,64 +2,180 @@
 import MainLayout from '../../../layouts/MainLayout.astro';
 import Navigation from '../../../components/Navigation.astro';
 import Footer from '../../../components/Footer.astro';
+
+export const prerender = true;
 ---
 
 <MainLayout title="SEO Services UK | Professional SEO Agency Across the United Kingdom">
-  <meta name="description" content="Professional SEO services across the UK. Helping businesses in Wales, England, and beyond dominate search rankings on Google and AI platforms. Expert SEO, AEO & conversion optimization. £40/hour, no contracts." slot="head">
-  <meta name="keywords" content="SEO UK, SEO services UK, UK SEO company, SEO agency UK, national SEO services, multi-location SEO UK, SEO England, SEO Wales, professional SEO UK" slot="head">
+  <!-- SEO and Canonical Tags -->
   <link rel="canonical" href="https://digitalvisibility.com/services/seo-uk/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  
+  <!-- Core Meta Tags -->
+  <meta name="description" content="Professional SEO services across the UK. Helping businesses in Wales, England, and beyond dominate search rankings on Google and AI platforms. Expert SEO, AEO & conversion optimization. £40/hour, no contracts." slot="head">
+  <meta name="keywords" content="SEO UK, SEO services UK, UK SEO company, SEO agency UK, national SEO services, multi-location SEO UK, SEO England, SEO Wales, SEO Scotland, professional SEO UK, UK-wide SEO" slot="head">
+  
+  <!-- OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="SEO Services UK | National SEO Across the United Kingdom" slot="head">
+  <meta property="og:description" content="Professional SEO for UK businesses. National coverage from Wales to Scotland. Multi-location expertise, serving businesses across England, Wales, and beyond." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/services/seo-uk/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/webp" slot="head">
+  
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="SEO Services UK | National Coverage" slot="head">
+  <meta name="twitter:description" content="Professional UK-wide SEO services. Multi-location expertise serving businesses across England, Wales, Scotland, and Northern Ireland." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  
+  <!-- Publisher and Author -->
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- AI-Specific Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="national-uk-seo,multi-location-optimization,uk-wide-search-marketing,national-coverage-seo" slot="head">
+  <meta name="ai-target" content="uk-businesses,multi-location-companies,national-brands,expanding-businesses,uk-wide-service-providers,regional-chains" slot="head">
+  <meta name="ai-keywords" content="SEO UK, national SEO services, UK-wide SEO, multi-location SEO UK, England Wales Scotland SEO, national search optimization, UK business visibility" slot="head">
+  <meta name="ai-content-type" content="national SEO provider, UK-wide optimization agency, multi-location SEO specialist" slot="head">
+  <meta name="ai-business-type" content="National SEO Agency UK, UK-Wide Search Marketing, Multi-Location SEO Services" slot="head">
+  <meta name="ai-service-area" content="United Kingdom, England, Wales, Scotland, Northern Ireland, UK-wide, national coverage" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="UK-wide SEO services, national search optimization, multi-location business support across United Kingdom" slot="head">
+  <meta name="ai-industry" content="national SEO, UK-wide search marketing, multi-location optimization, enterprise SEO UK" slot="head">
+  <meta name="ai-services" content="national SEO campaigns UK, multi-location optimization strategies, UK-wide search visibility, regional coordination, enterprise SEO solutions, national brand building, cross-region campaigns, unified national strategy" slot="head">
+  <meta name="ai-audience" content="UK business owners, multi-location companies, national brands, expanding businesses, franchise operators, regional chains, UK-wide service providers, growing enterprises" slot="head">
+  <meta name="ai-intent" content="national SEO UK, multi-location SEO agency, UK-wide search optimization, expand across UK, national brand visibility, coordinate regional SEO, unified UK strategy" slot="head">
+  <meta name="ai-unique-value" content="UK-wide expertise across regions, multi-location coordination, national and local balance, unified strategy execution, scalable for growth, £40/hour consistent UK pricing, flexible national coverage" slot="head">
 
-  <!-- Schema Markup -->
+  <!-- Enhanced Schema Markup with @graph -->
   <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "SEO Services Across the United Kingdom",
-    "description": "Professional SEO and AI search optimization services for businesses across the UK. Helping companies in Wales, England, and throughout the United Kingdom achieve visibility on Google and AI platforms like ChatGPT. Serving Swansea, Cardiff, Birmingham, and nationwide.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "url": "https://digitalvisibility.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "235 Peniel Green Road",
-        "addressLocality": "Llansamlet",
-        "addressRegion": "Swansea",
-        "postalCode": "SA7 9BA",
-        "addressCountry": "GB"
-      }
-    },
-    "areaServed": [
+    "@graph": [
       {
-        "@type": "Country",
-        "name": "United Kingdom",
-        "sameAs": "https://en.wikipedia.org/wiki/United_Kingdom"
+        "@type": "Service",
+        "@id": "https://digitalvisibility.com/services/seo-uk/#service",
+        "name": "UK-Wide SEO Services",
+        "alternateName": ["SEO Services UK", "National SEO UK", "Multi-Location SEO", "UK Search Optimization"],
+        "description": "Professional SEO and AI search optimization services for businesses across the UK. Helping companies in Wales, England, and throughout the United Kingdom achieve visibility on Google and AI platforms like ChatGPT. Serving Swansea, Cardiff, Birmingham, and nationwide.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "category": ["National SEO", "UK-Wide SEO", "Multi-Location SEO", "Enterprise SEO"],
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "United Kingdom",
+            "sameAs": "https://en.wikipedia.org/wiki/United_Kingdom"
+          },
+          {
+            "@type": "Country",
+            "name": "Wales"
+          },
+          {
+            "@type": "Country",
+            "name": "England"
+          }
+        ],
+        "serviceType": "Search Engine Optimization SEO",
+        "serviceOutput": [
+          "National and local search engine rankings across UK regions",
+          "Multi-location SEO strategies for businesses with multiple sites",
+          "AI platform visibility (ChatGPT, Perplexity, Claude)",
+          "Organic traffic growth across diverse UK markets",
+          "Technical SEO and comprehensive site optimization",
+          "Conversion rate optimization for national campaigns"
+        ],
+        "offers": [
+          {
+            "@type": "Offer",
+            "url": "https://digitalvisibility.com/pricing/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "40.00",
+              "priceCurrency": "GBP",
+              "unitText": "hour"
+            },
+            "availability": "https://schema.org/InStock",
+            "description": "National SEO services covering the entire UK at £40/hour with flexible engagement",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
+          },
+          {
+            "@id": "https://digitalvisibility.com/pricing/#free-website-offer"
+          }
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/contact/",
+          "servicePhone": "+44-01792-002497"
+        },
+        "additionalType": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/"
       },
       {
-        "@type": "Country",
-        "name": "Wales"
-      },
-      {
-        "@type": "Country",
-        "name": "England"
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/services/seo-uk/#webpage",
+        "url": "https://digitalvisibility.com/services/seo-uk/",
+        "name": "SEO Services UK | Professional SEO Agency Across the United Kingdom",
+        "description": "Professional SEO services across the UK. Helping businesses in Wales, England, and beyond dominate search rankings on Google and AI platforms.",
+        "inLanguage": "en-GB",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "about": {
+          "@id": "https://digitalvisibility.com/services/seo-uk/#service"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp",
+          "width": "1200",
+          "height": "630"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://digitalvisibility.com/services/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "SEO UK",
+              "item": "https://digitalvisibility.com/services/seo-uk/"
+            }
+          ]
+        }
       }
-    ],
-    "serviceType": "Search Engine Optimization SEO",
-    "serviceOutput": [
-      "National and local search engine rankings",
-      "Multi-location SEO strategies",
-      "AI platform visibility (ChatGPT, Perplexity, Claude)",
-      "Organic traffic growth across UK markets",
-      "Technical SEO and site optimization",
-      "Conversion rate optimization"
-    ],
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://digitalvisibility.com/contact/",
-      "servicePhone": "+44-01792-002497"
-    },
-    "additionalType": "https://en.wikipedia.org/wiki/Search_engine_optimization",
-    "termsOfService": "https://digitalvisibility.com/terms/"
+    ]
   }
   </script>
 

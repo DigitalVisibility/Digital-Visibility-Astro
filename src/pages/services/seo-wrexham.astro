@@ -2,44 +2,196 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+
+export const prerender = true;
 ---
 
 <MainLayout title="SEO Wrexham | Search Engine Optimization Services in Wrexham, North Wales">
-  <meta name="description" content="Data-driven SEO services in Wrexham helping North Wales businesses increase online visibility. Serving Wrexham, Rhosllanerchrugog, Ruabon & surrounding areas. £40/hour, transparent results." slot="head">
-  <meta name="keywords" content="SEO Wrexham, search engine optimization Wrexham, SEO agency Wrexham, SEO company Wrexham, local SEO Wrexham, SEO services Wrexham, Wrexham SEO specialist, North Wales SEO, AEO Wrexham, GEO Wrexham" slot="head">
+  <!-- SEO and Canonical Tags -->
   <link rel="canonical" href="https://digitalvisibility.com/services/seo-wrexham/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  
+  <!-- Core Meta Tags -->
+  <meta name="description" content="Data-driven SEO services in Wrexham helping North Wales businesses increase online visibility. Serving Wrexham, Rhosllanerchrugog, Ruabon & surrounding areas. £40/hour, transparent results." slot="head">
+  <meta name="keywords" content="SEO Wrexham, North Wales SEO, cross-border SEO Wales England, bilingual SEO Wrexham, Chester SEO proximity, Wrexham AFC business marketing, North Wales digital marketing, Wrexham regional SEO" slot="head">
+  
+  <!-- OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="SEO Wrexham | North Wales Cross-Border Optimization" slot="head">
+  <meta property="og:description" content="Strategic SEO for Wrexham businesses serving Wales and England. Bilingual optimization, cross-border commerce, and regional hub positioning for North Wales." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/services/seo-wrexham/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/webp" slot="head">
+  
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="SEO Wrexham | Cross-Border North Wales SEO" slot="head">
+  <meta name="twitter:description" content="Expert SEO for Wrexham businesses. Reach customers in Wales and England with bilingual, cross-border optimization strategies." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  
+  <!-- Publisher and Author -->
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- Geographic Meta Tags -->
+  <meta name="geo.region" content="GB-WRX" slot="head">
+  <meta name="geo.placename" content="Wrexham" slot="head">
+  <meta name="geo.position" content="53.0465;-2.9915" slot="head">
+  <meta name="ICBM" content="53.0465, -2.9915" slot="head">
+  
+  <!-- AI-Specific Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="cross-border-seo-wrexham,bilingual-optimization-north-wales,regional-hub-marketing,wales-england-commerce" slot="head">
+  <meta name="ai-target" content="wrexham-businesses,north-wales-companies,border-region-enterprises,bilingual-service-providers,chester-proximity-businesses" slot="head">
+  <meta name="ai-keywords" content="SEO Wrexham, North Wales SEO, cross-border SEO, bilingual Welsh English optimization, Chester Wrexham marketing, regional hub SEO, Wrexham AFC business boost, A483 corridor businesses" slot="head">
+  <meta name="ai-content-type" content="cross-border SEO specialist, bilingual optimization provider, North Wales regional marketing" slot="head">
+  <meta name="ai-business-type" content="Cross-Border SEO Agency, Bilingual Search Marketing, North Wales Digital Hub" slot="head">
+  <meta name="ai-service-area" content="Wrexham, Rhosllanerchrugog, Ruabon, North Wales, Chester proximity, Wales-England border, Cheshire" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="cross-border Wales-England SEO, bilingual market optimization, regional hub positioning for North Wales gateway" slot="head">
+  <meta name="ai-industry" content="cross-border commerce SEO, bilingual marketing, regional hub services, border town optimization" slot="head">
+  <meta name="ai-services" content="cross-border optimization Wales England, bilingual search campaigns Welsh English, regional hub positioning, Chester proximity marketing, Wrexham AFC momentum leverage, North Wales network building, commuter corridor targeting A483 A55, border town expertise" slot="head">
+  <meta name="ai-audience" content="Wrexham business owners, North Wales enterprises, cross-border traders, bilingual service providers, Chester area businesses, regional hub companies, commuter corridor businesses" slot="head">
+  <meta name="ai-intent" content="Wrexham SEO agency, cross-border marketing, bilingual optimization, reach Wales and England customers, North Wales regional dominance, Chester market access, border commerce optimization" slot="head">
+  <meta name="ai-unique-value" content="Cross-border expertise Wales-England, bilingual Welsh-English optimization, North Wales regional knowledge, Chester proximity advantage, unique border town strategies, £40/hour transparent pricing, flexible regional support" slot="head">
 
   <!-- Schema Markup -->
   <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "SEO Wrexham - Search Engine Optimization Services",
-    "description": "Professional SEO services for Wrexham businesses including traditional SEO, Answer Engine Optimization (AEO), and AI platform visibility. Data-driven strategies that deliver measurable results.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "url": "https://digitalvisibility.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "235 Peniel Green Road",
-        "addressLocality": "Llansamlet",
-        "addressRegion": "Swansea",
-        "postalCode": "SA7 9BA",
-        "addressCountry": "GB"
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://digitalvisibility.com/services/seo-wrexham/#service",
+        "name": "Wrexham SEO - North Wales Regional Hub Optimization",
+        "alternateName": ["SEO North Wales", "Wrexham Digital Marketing", "Cross-Border SEO Wales", "Wrexham Search Services"],
+        "description": "Strategic SEO for Wrexham businesses serving North Wales and England border regions. We optimize for bilingual markets, cross-border commerce, and regional service areas. Expertise in reaching both Welsh local customers and English cross-border markets simultaneously.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "keywords": "SEO Wrexham, North Wales SEO, Wrexham digital marketing, cross-border SEO, bilingual SEO Wales, Wrexham business visibility, Chester Wrexham SEO, North Wales search optimization, regional SEO Wales, Wrexham online marketing",
+        "category": ["Cross-Border SEO", "Bilingual SEO", "Regional SEO", "North Wales Marketing"],
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Wrexham",
+            "sameAs": "https://en.wikipedia.org/wiki/Wrexham"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Rhosllanerchrugog"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Ruabon"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "North Wales"
+          }
+        ],
+        "serviceOutput": [
+          "Cross-border optimization - reach customers in both Wales and England",
+          "Bilingual search campaigns - Welsh and English language targeting",
+          "Regional hub positioning - establish Wrexham as North Wales center",
+          "Chester proximity marketing - tap into nearby English city markets",
+          "Football club momentum - leverage Wrexham AFC visibility boost",
+          "North Wales network building - citations across regional directories",
+          "Commuter corridor targeting - reach customers along A483 and A55",
+          "Border town expertise - unique strategies for gateway locations"
+        ],
+        "offers": [
+          {
+            "@type": "Offer",
+            "url": "https://digitalvisibility.com/pricing/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "40.00",
+              "priceCurrency": "GBP",
+              "unitText": "hour"
+            },
+            "availability": "https://schema.org/InStock",
+            "description": "Cross-border SEO expertise for North Wales businesses at £40/hour with bilingual optimization",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
+          },
+          {
+            "@id": "https://digitalvisibility.com/pricing/#free-website-offer"
+          }
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/contact/",
+          "servicePhone": "+44-01792-002497"
+        },
+        "additionalType": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/",
+        "mainEntityOfPage": {
+          "@type": "FAQPage",
+          "@id": "https://digitalvisibility.com/faq/#seo-wrexham"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/services/seo-wrexham/#webpage",
+        "url": "https://digitalvisibility.com/services/seo-wrexham/",
+        "name": "SEO Wrexham | North Wales Cross-Border Optimization",
+        "description": "Expert SEO for Wrexham businesses. Reach North Wales customers, tap cross-border markets, and grow your regional presence.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "inLanguage": "en-GB",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "about": {
+          "@id": "https://digitalvisibility.com/services/seo-wrexham/#service"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp",
+          "width": "1200",
+          "height": "630"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://digitalvisibility.com/services/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "SEO Wrexham",
+              "item": "https://digitalvisibility.com/services/seo-wrexham/"
+            }
+          ]
+        }
       }
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Wrexham",
-      "sameAs": "https://en.wikipedia.org/wiki/Wrexham"
-    },
-    "serviceType": "Search Engine Optimization SEO",
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://digitalvisibility.com/contact/",
-      "servicePhone": "+44-01792-002497"
-    }
+    ]
   }
   </script>
 

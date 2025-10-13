@@ -1,0 +1,276 @@
+{
+  "company": {
+    "name": "Digital Visibility",
+    "tagline": "Award-winning digital agency",
+    "founder": "Darran Goulding",
+    "awards": ["Royal Academy of Engineering Enterprise Fellow"],
+    "location": {
+      "address": "235 Peniel Green Road",
+      "city": "Llansamlet",
+      "region": "Swansea",
+      "postcode": "SA7 9BA",
+      "country": "United Kingdom"
+    },
+    "contact": {
+      "phone": "+44-01792-002497",
+      "phone_display": "01792 002 497",
+      "email": "support@digitalvisibility.com",
+      "website": "https://digitalvisibility.com"
+    },
+    "differentiators": [
+      "No contracts - cancel anytime",
+      "Transparent £40/hour pricing",
+      "See exactly what work gets done",
+      "Real results from our own business (70% efficiency gain)",
+      "Award-winning team",
+      "We use the tools we build (dogfooding)",
+      "Honest about timelines and expectations"
+    ]
+  },
+  "services": {
+    "seo": {
+      "name": "SEO Services",
+      "url": "/services/seo/",
+      "description": "Search engine optimization with transparent pricing and no contracts. We optimize for Google, ChatGPT, Perplexity, and other AI platforms.",
+      "pricing": {
+        "hourly": 40,
+        "currency": "GBP",
+        "packages": {
+          "starter": {
+            "hours": 5,
+            "monthly": 200,
+            "description": "Basic optimization for small businesses"
+          },
+          "growth": {
+            "hours": 10,
+            "monthly": 400,
+            "description": "Comprehensive SEO for growing businesses"
+          },
+          "accelerated": {
+            "hours": 20,
+            "monthly": 800,
+            "description": "Aggressive growth strategy"
+          }
+        }
+      },
+      "timeline": "4-8 weeks for initial improvements, 3-6 months for significant results",
+      "includes": [
+        "Technical SEO audits",
+        "Keyword research and strategy",
+        "Content optimization",
+        "Local SEO",
+        "Google Business Profile optimization",
+        "AI platform visibility (ChatGPT, Perplexity, Claude)",
+        "Monthly performance reports"
+      ],
+      "locations_served": [
+        "Swansea", "Cardiff", "Newport", "Carmarthen", "Wrexham", "Bangor",
+        "Birmingham", "Bristol", "Manchester", "London", "Liverpool", "Leeds",
+        "Glasgow", "Edinburgh", "Aberdeen", "Belfast"
+      ]
+    },
+    "ai_automation": {
+      "name": "AI Workflow Automation",
+      "url": "/services/ai-workflow-automation/",
+      "description": "Custom AI agents, chatbots, and workflow automation using n8n, Claude MCP, and other cutting-edge tools.",
+      "pricing": {
+        "standard": 40,
+        "specialist": {
+          "min": 80,
+          "max": 120
+        },
+        "currency": "GBP"
+      },
+      "use_cases": [
+        "Lead qualification chatbots",
+        "Customer support automation (24/7)",
+        "Data entry and CRM updates",
+        "Report generation",
+        "Email response automation",
+        "Social media posting",
+        "Invoice and payment processing",
+        "Custom AI agents with MCP"
+      ],
+      "results": {
+        "efficiency_gain": "70%",
+        "time_saved": "90% faster research",
+        "response_time": "85% improvement"
+      },
+      "technologies": ["n8n", "Claude MCP", "OpenAI", "Voiceflow", "Make", "Zapier"]
+    },
+    "aeo": {
+      "name": "Answer Engine Optimization (AEO)",
+      "url": "/services/answer-engine-optimization/",
+      "description": "Optimize your content to appear in AI platform responses like ChatGPT, Perplexity, and Claude.",
+      "pricing": {
+        "hourly": 40,
+        "currency": "GBP"
+      },
+      "benefits": [
+        "Get recommended by AI platforms",
+        "Reach users who prefer AI over Google",
+        "Higher quality traffic (ready-to-buy)",
+        "Future-proof your visibility"
+      ]
+    },
+    "geo": {
+      "name": "Generative Engine Optimization (GEO)",
+      "url": "/services/generative-engine-optimization/",
+      "description": "Optimize for AI-generated search results and summaries.",
+      "pricing": {
+        "hourly": 40,
+        "currency": "GBP"
+      }
+    },
+    "sbo": {
+      "name": "Search Brand Optimization (SBO)",
+      "url": "/services/search-brand-optimization/",
+      "description": "Control how your brand appears in search results and AI responses.",
+      "pricing": {
+        "hourly": 40,
+        "currency": "GBP"
+      }
+    },
+    "digital_marketing": {
+      "name": "Digital Marketing",
+      "url": "/services/digital-marketing/",
+      "description": "Comprehensive digital marketing services including content, social media, and paid advertising.",
+      "pricing": {
+        "hourly": 40,
+        "currency": "GBP"
+      }
+    },
+    "app_development": {
+      "name": "App Development",
+      "url": "/services/app-development/",
+      "description": "Custom web and mobile app development.",
+      "pricing": {
+        "hourly": 40,
+        "specialist": 80,
+        "currency": "GBP"
+      }
+    },
+    "product_design": {
+      "name": "Product Design & Engineering",
+      "url": "/services/product-design/",
+      "description": "End-to-end product design and engineering services.",
+      "pricing": {
+        "hourly": 40,
+        "specialist": 80,
+        "currency": "GBP"
+      }
+    }
+  },
+  "pricing_info": {
+    "standard_rate": 40,
+    "specialist_rate": {
+      "min": 80,
+      "max": 120
+    },
+    "currency": "GBP",
+    "billing_options": ["hourly", "monthly_packages", "fixed_price_quotes"],
+    "payment_terms": "No contracts, cancel anytime",
+    "yearly_discount": "20% (2 months free)",
+    "free_offers": {
+      "website": {
+        "value": 2995,
+        "requirement": "5+ hour packages with 12-month subscription"
+      },
+      "ai_funnel": {
+        "value": 4990,
+        "requirement": "3+ hour packages with 12-month subscription"
+      }
+    }
+  },
+  "consultation": {
+    "duration": "30 minutes",
+    "cost": "Free",
+    "format": "Video call",
+    "includes": [
+      "Analysis of current situation",
+      "Actionable recommendations",
+      "Pricing tailored to your needs",
+      "No obligation whatsoever"
+    ],
+    "booking_url": "/contact/",
+    "booking_phone": "01792 002 497"
+  },
+  "common_questions": {
+    "how_long_does_seo_take": {
+      "question": "How long does SEO take to work?",
+      "answer": "Honest answer: 4-8 weeks for initial improvements, 3-6 months for significant results. Anyone promising page 1 rankings in 30 days is lying. SEO is a marathon, not a sprint."
+    },
+    "can_i_see_the_work": {
+      "question": "Can I see what work you're actually doing?",
+      "answer": "Yes. Every hour is tracked and documented. You'll see exactly what got optimized, when, and why. No vague reports. Real work."
+    },
+    "what_if_i_cancel": {
+      "question": "What if I want to cancel?",
+      "answer": "Just tell us. No contracts means no cancellation fees, no penalties, no hassle. You keep everything (website, content, accounts). Simple as that."
+    },
+    "do_you_guarantee_rankings": {
+      "question": "Do you guarantee first page rankings?",
+      "answer": "No. Anyone who guarantees specific rankings is either lying or using tactics that will get you penalized. We promise honest work, transparent reporting, and strategies that have worked for other clients. We optimize for sales, not just rankings."
+    },
+    "what_makes_you_different": {
+      "question": "What makes you different from other agencies?",
+      "answer": "Complete transparency. Every hour is documented, every strategy is explained, and every metric is shared. No proprietary secrets or vague promises. We also use the tools we build - our own business runs 70% more efficiently thanks to AI automation."
+    },
+    "do_you_work_with_my_industry": {
+      "question": "Do you work with businesses in my industry?",
+      "answer": "We work with businesses across all industries. Our transparent, results-focused approach works whether you're a local restaurant, professional service, e-commerce store, or B2B company."
+    },
+    "what_is_aeo": {
+      "question": "What is Answer Engine Optimization (AEO)?",
+      "answer": "AEO optimizes content to appear in AI platform responses (ChatGPT, Perplexity, Claude). As more users adopt AI for search, businesses need visibility on these platforms in addition to traditional search engines."
+    },
+    "how_much_does_automation_cost": {
+      "question": "How much does AI automation cost?",
+      "answer": "Standard automations (chatbots, simple workflows) start at £40/hour. Complex integrations and custom AI agents are £80-120/hour. Most projects range from £500-5,000 depending on complexity. We can provide a fixed quote after understanding your needs."
+    }
+  },
+  "objection_handling": {
+    "too_expensive": {
+      "response": "I understand budget is important. Our £40/hour rate is actually very competitive - many agencies charge £100-200/hour. Plus, with no contracts, you can start small (5 hours/month for £200) and scale up as you see results. What's your current marketing budget?"
+    },
+    "need_to_think": {
+      "response": "Absolutely, this is an important decision. Would it help to book a free consultation? We can analyze your specific situation and provide recommendations with no pressure. What questions can I answer to help you decide?"
+    },
+    "tried_seo_before": {
+      "response": "I hear this a lot. Many agencies overpromise and underdeliver. That's exactly why we built Digital Visibility differently - complete transparency, no contracts, and you see exactly what work gets done. What was your experience with previous agencies?"
+    },
+    "too_busy": {
+      "response": "That's exactly why automation and SEO are valuable - they work while you focus on running your business. Our clients typically spend 1-2 hours per month on calls with us, and we handle everything else. Would a quick 30-minute consultation fit your schedule?"
+    },
+    "not_sure_what_i_need": {
+      "response": "That's completely normal! That's what our free consultation is for. We'll analyze your current situation, identify opportunities, and recommend the best starting point. No technical knowledge required. Would you like to book a call?"
+    }
+  },
+  "conversation_guidelines": {
+    "tone": "Friendly, professional, helpful but not pushy",
+    "style": "Conversational, use UK English spelling",
+    "emoji_usage": "OK in chat, not in formal emails",
+    "response_length": "Keep responses concise (2-4 sentences), use bullet points for lists",
+    "question_strategy": "Ask one question at a time to avoid overwhelming",
+    "escalation": "Redirect complex technical questions to consultation",
+    "guardrails": [
+      "Only discuss Digital Visibility services",
+      "No competitor comparisons",
+      "No guarantees on rankings or specific results",
+      "Be transparent about pricing and timelines",
+      "Honest about what we can and cannot do"
+    ]
+  },
+  "booking_process": {
+    "steps": [
+      "Confirm they want to book",
+      "Explain what the consultation includes",
+      "Collect: name, email, phone, company name",
+      "Show available time slots",
+      "Confirm booking details",
+      "Send confirmation email"
+    ],
+    "required_info": ["name", "email", "phone", "company_name", "preferred_date", "preferred_time"],
+    "optional_info": ["service_interest", "budget_range", "specific_questions"]
+  }
+}

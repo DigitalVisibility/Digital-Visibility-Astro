@@ -4,6 +4,8 @@ import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 import checklistsData from '../../data/project-upload-checklists.json';
 
+export const prerender = true;
+
 const WHATSAPP_NUMBER = '447725817197';
 const WHATSAPP_CTA = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Digital%20Visibility%2C%20I%20want%20to%20send%20a%20project%20update.%20Here%20are%20the%20details%3A%0A%0AProject%20name%3A%20%0ALocation%20%28optional%29%3A%0AServices%3A%0AShort%20description%3A%0AResults%2Foutcomes%3A%0ADate%20completed%20%28MM%2FYYYY%29%3A%0AMedia%20links%3A%0ATestimonial%20%28if%20any%29%3A%0APublish%20permission%3A%20Yes%2FNo`;
 const PAGE_URL = 'https://digitalvisibility.com/client-hub/project-upload-whatsapp';

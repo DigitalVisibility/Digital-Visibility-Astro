@@ -2,6 +2,8 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+
+export const prerender = true;
 ---
 
 <MainLayout title="Generative Engine Optimization Swansea | AI Content">
@@ -49,6 +51,15 @@ import Footer from '../../components/Footer.astro';
   <meta name="ai-content-type" content="generative engine optimization provider, AI content optimization specialist, AI-generated content expert, GEO consultant" slot="head">
   <meta name="ai-service-area" content="Swansea, Cardiff, Newport, South Wales, West Wales, Wales, United Kingdom" slot="head">
   <meta name="ai-business-type" content="Generative Engine Optimization Provider, AI Content Optimization Agency, AI-Generated Content Specialist, GEO Expert" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="generative engine optimization services, AI-generated content optimization, Google AI Overview strategies" slot="head">
+  <meta name="ai-industry" content="AI content optimization, generative search marketing, AI-generated content, GEO services" slot="head">
+  <meta name="ai-services" content="AI overview optimization, generative search positioning, AI snippet optimization, content structure for AI parsing, schema markup for AI engines, AI-generated summary optimization, Google SGE optimization, AI content recommendations" slot="head">
+  <meta name="ai-audience" content="businesses needing AI content visibility, companies targeting AI overviews, marketers seeking generative search, businesses wanting AI summaries, content creators optimizing for AI" slot="head">
+  <meta name="ai-intent" content="featured in AI overviews, rank in generative search, AI-generated content visibility, Google SGE optimization, control AI descriptions, AI summary optimization" slot="head">
+  <meta name="ai-unique-value" content="GEO specialist expertise, AI overview positioning strategies, proven generative search results, comprehensive AI platform coverage, £40/hour transparent pricing, realistic AI expectations" slot="head">
 
   <!-- Geolocation & Local Business Tags -->
   <meta name="geo.region" content="GB-SWA" slot="head">
@@ -58,7 +69,7 @@ import Footer from '../../components/Footer.astro';
   
   <!-- Trust & Authority Signals -->
   <meta name="business-founding-date" content="2023-01-01" slot="head">
-  <meta name="business-awards" content="Award-winning, UK's First GEO Expert, AI Content Optimization Pioneer" slot="head">
+  <meta name="business-awards" content="Award-winning GEO services, Recognized AI Content Optimization expertise" slot="head">
   <meta name="business-certifications" content="AI Content Certified, Google AI Specialist, Generative AI Expert" slot="head">
   
   <!-- Performance Optimization -->
@@ -97,27 +108,31 @@ import Footer from '../../components/Footer.astro';
             }
           },
           {
-            "@type": "Offer",
-            "name": "FREE Professional Website",
-            "url": "https://digitalvisibility.com/pricing/#free-website",
-            "price": "0",
-            "priceCurrency": "GBP",
-            "availability": "https://schema.org/InStock",
-            "description": "FREE £2,995 professional website included with 5+ hours monthly commitment",
-            "eligibleQuantity": {
-              "@type": "QuantitativeValue",
-              "minValue": 5,
-              "unitText": "hours per month"
-            },
-            "seller": {
-              "@id": "https://digitalvisibility.com/#organization"
-            }
+            "@id": "https://digitalvisibility.com/pricing/#free-website-offer"
           }
         ],
         "serviceType": "Generative Engine Optimization",
         "category": ["GEO", "AI Content Optimization", "Generative AI", "AI-Generated Content"],
-        "additionalType": "https://en.wikipedia.org/wiki/Artificial_intelligence",
-        "termsOfService": "https://digitalvisibility.com/terms-conditions/"
+        "serviceOutput": [
+          "AI overview optimization - featured in Google's AI-generated summaries",
+          "Generative search positioning - rank in AI-created content across platforms",
+          "AI snippet optimization - control how AI systems describe your business",
+          "Content structure for AI parsing - formatted for machine understanding",
+          "Schema markup for AI engines - help AI accurately extract your information",
+          "AI attribution strategy - ensure proper crediting in generated content",
+          "Quarterly GEO audits tracking AI-generated mentions"
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/contact/",
+          "servicePhone": "+44-01792-002497"
+        },
+        "additionalType": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/",
+        "mainEntityOfPage": {
+          "@type": "FAQPage",
+          "@id": "https://digitalvisibility.com/faq/#generative-engine-optimization"
+        }
       },
       {
         "@type": "WebPage",
@@ -136,8 +151,8 @@ import Footer from '../../components/Footer.astro';
           "width": "1200",
           "height": "630"
         },
-        "datePublished": "2025-06-21",
-        "dateModified": "2025-06-21",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
         "description": "Comprehensive guide to Generative Engine Optimization (GEO) in Swansea with expert strategies for AI-generated content and AI platform optimization.",
         "inLanguage": "en-GB",
         "breadcrumb": {

@@ -3,6 +3,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 
+export const prerender = true;
+
 // Blog post metadata
 const post = {
   title: "Why UK Businesses Ditch Zapier for AI Automation",
@@ -561,7 +563,7 @@ const structuredData = {
                 </div>
                 
                 <div class="text-center">
-                  <a href="/services/ai-conversation-automation/" 
+                  <a href="/services/ai-workflow-automation/" 
                      class="inline-block bg-white text-blue-600 font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors text-lg mr-4 mb-4">
                     Get Your Free AI Automation Consultation
                   </a>
@@ -589,7 +591,7 @@ const structuredData = {
                   Have questions about AI conversation automation? Ready to see how talking to AI can replace complex Zapier workflows? Our UK-based specialists will analyze your current automation challenges and show you exactly how conversational automation can solve them faster, smarter, and more efficiently.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                  <a href="/services/ai-conversation-automation/" 
+                  <a href="/services/ai-workflow-automation/" 
                      class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
                     Get Free AI Automation Consultation
                   </a>
@@ -644,7 +646,7 @@ const structuredData = {
               <div class="bg-blue-50 p-6 rounded-lg">
                 <h3 class="text-lg font-bold text-blue-900 mb-4">Related Services</h3>
                 <div class="space-y-3">
-                  <a href="/services/ai-conversation-automation/" class="block text-sm text-blue-700 hover:text-blue-900 transition-colors">
+                  <a href="/services/ai-workflow-automation/" class="block text-sm text-blue-700 hover:text-blue-900 transition-colors">
                     AI Conversation Automation Services
                   </a>
                   <a href="/services/digital-marketing/" class="block text-sm text-blue-700 hover:text-blue-900 transition-colors">

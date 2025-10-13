@@ -2,6 +2,8 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+
+export const prerender = true;
 ---
 
 <MainLayout title="App Development Swansea | Mobile & Web Applications">
@@ -37,27 +39,32 @@ import Footer from '../../components/Footer.astro';
             }
           },
           {
-            "@type": "Offer",
-            "name": "FREE Professional Website",
-            "url": "https://digitalvisibility.com/pricing/#free-website",
-            "price": "0",
-            "priceCurrency": "GBP",
-            "availability": "https://schema.org/InStock",
-            "description": "FREE £2,995 professional website included with 5+ hours monthly commitment",
-            "eligibleQuantity": {
-              "@type": "QuantitativeValue",
-              "minValue": 5,
-              "unitText": "hours per month"
-            },
-            "seller": {
-              "@id": "https://digitalvisibility.com/#organization"
-            }
+            "@id": "https://digitalvisibility.com/pricing/#free-website-offer"
           }
         ],
         "serviceType": "App Development Services",
         "category": ["App Development", "Mobile Development", "Web Development", "Software Development"],
+        "serviceOutput": [
+          "Custom mobile apps - iOS and Android applications built to your specifications",
+          "Progressive web apps - fast, reliable apps that work offline",
+          "API development and integration - connect systems and automate workflows",
+          "Database design - scalable data architecture for your application",
+          "User interface design - intuitive, attractive app interfaces",
+          "App testing and QA - comprehensive testing before launch",
+          "App store deployment - publish to Apple App Store and Google Play",
+          "Ongoing maintenance and updates - keep your app running smoothly"
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/contact/",
+          "servicePhone": "+44-01792-002497"
+        },
         "additionalType": "https://en.wikipedia.org/wiki/Application_software",
-        "termsOfService": "https://digitalvisibility.com/terms-conditions/"
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/",
+        "mainEntityOfPage": {
+          "@type": "FAQPage",
+          "@id": "https://digitalvisibility.com/faq/#app-development"
+        }
       },
       {
         "@type": "WebPage",
@@ -76,8 +83,8 @@ import Footer from '../../components/Footer.astro';
           "width": "1200",
           "height": "630"
         },
-        "datePublished": "2025-06-21",
-        "dateModified": "2025-06-21",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
         "description": "Comprehensive guide to app development services in Swansea with expert strategies for mobile and web application development.",
         "inLanguage": "en-GB",
         "breadcrumb": {
@@ -161,7 +168,7 @@ import Footer from '../../components/Footer.astro';
   <meta name="ai-services" content="mobile app development, iOS development, Android development, cross-platform apps, React Native, Flutter, web application development, PWA development, SPA development, custom software solutions, enterprise software, business automation, CRM integration, ERP systems, AI integration, machine learning, chatbot development, API development, RESTful APIs, GraphQL, third-party integration, QA testing, automated testing, security testing" slot="head">
   <meta name="ai-audience" content="business owners, CTOs, IT managers, entrepreneurs, startups, SMEs, enterprise companies, e-commerce businesses, service companies, manufacturers, healthcare providers" slot="head">
   <meta name="ai-intent" content="hire app developer, create mobile app, develop web application, business software development, digital transformation, automate business processes, AI app development" slot="head">
-  <meta name="ai-unique-value" content="Royal Academy of Engineering Award-winning founder, end-to-end app development, AI-powered solutions, local expertise with global reach, agile development process, affordable pricing at £40/hour" slot="head">
+  <meta name="ai-unique-value" content="Award-winning team with proven expertise, end-to-end app development, AI-powered solutions, local expertise with global reach, agile development process, affordable pricing at £40/hour" slot="head">
 
   <Navigation slot="nav" />
   

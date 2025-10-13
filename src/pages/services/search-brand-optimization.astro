@@ -2,6 +2,8 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+
+export const prerender = true;
 ---
 
 <MainLayout title="Search Brand Optimization Swansea | Brand Authority">
@@ -49,6 +51,15 @@ import Footer from '../../components/Footer.astro';
   <meta name="ai-content-type" content="search brand optimization provider, brand authority building specialist, brand recognition expert, SBO consultant" slot="head">
   <meta name="ai-service-area" content="Swansea, Cardiff, Newport, South Wales, West Wales, Wales, United Kingdom" slot="head">
   <meta name="ai-business-type" content="Search Brand Optimization Provider, Brand Authority Building Agency, Brand Recognition Specialist, SBO Expert" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="search brand optimization services, brand authority building, search brand reputation management" slot="head">
+  <meta name="ai-industry" content="brand optimization, search brand marketing, brand authority services, reputation management" slot="head">
+  <meta name="ai-services" content="brand SERP analysis, knowledge panel optimization, brand mention tracking, entity establishment, branded search strategy, brand reputation management, search brand authority building, consistent brand messaging" slot="head">
+  <meta name="ai-audience" content="businesses building brand authority, companies managing online reputation, brands seeking recognition, businesses establishing entity presence, companies protecting brand image" slot="head">
+  <meta name="ai-intent" content="build brand authority, optimize knowledge panel, control brand SERP, establish brand entity, manage online reputation, improve brand recognition, dominate branded searches" slot="head">
+  <meta name="ai-unique-value" content="Brand authority specialist, comprehensive SBO strategies, proven brand recognition results, entity establishment expertise, £40/hour transparent pricing, long-term brand building" slot="head">
 
   <!-- Geolocation & Local Business Tags -->
   <meta name="geo.region" content="GB-SWA" slot="head">
@@ -58,7 +69,7 @@ import Footer from '../../components/Footer.astro';
   
   <!-- Trust & Authority Signals -->
   <meta name="business-founding-date" content="2023-01-01" slot="head">
-  <meta name="business-awards" content="Award-winning, UK's First SBO Expert, Brand Authority Pioneer" slot="head">
+  <meta name="business-awards" content="Award-winning SBO services, Recognized Brand Authority expertise" slot="head">
   <meta name="business-certifications" content="Brand Authority Certified, Search Brand Specialist, Brand Recognition Expert" slot="head">
   
   <!-- Performance Optimization -->
@@ -97,27 +108,32 @@ import Footer from '../../components/Footer.astro';
             }
           },
           {
-            "@type": "Offer",
-            "name": "FREE Professional Website",
-            "url": "https://digitalvisibility.com/pricing/#free-website",
-            "price": "0",
-            "priceCurrency": "GBP",
-            "availability": "https://schema.org/InStock",
-            "description": "FREE £2,995 professional website included with 5+ hours monthly commitment",
-            "eligibleQuantity": {
-              "@type": "QuantitativeValue",
-              "minValue": 5,
-              "unitText": "hours per month"
-            },
-            "seller": {
-              "@id": "https://digitalvisibility.com/#organization"
-            }
+            "@id": "https://digitalvisibility.com/pricing/#free-website-offer"
           }
         ],
         "serviceType": "Search Brand Optimization",
         "category": ["SBO", "Brand Authority", "Search Brand Strategy", "Brand Visibility"],
+        "serviceOutput": [
+          "Brand SERP analysis - understand your current search brand presence",
+          "Knowledge panel optimization - claim and optimize your Google Knowledge Graph",
+          "Brand mention tracking - monitor online reputation across platforms",
+          "Entity establishment - build authoritative brand entity signals",
+          "Branded search strategy - rank for your business name variations",
+          "Review management - strategic review acquisition and response",
+          "Brand authority building - citations, mentions, and trust signals",
+          "Quarterly brand visibility reports - track search presence growth"
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/contact/",
+          "servicePhone": "+44-01792-002497"
+        },
         "additionalType": "https://en.wikipedia.org/wiki/Brand_management",
-        "termsOfService": "https://digitalvisibility.com/terms-conditions/"
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/",
+        "mainEntityOfPage": {
+          "@type": "FAQPage",
+          "@id": "https://digitalvisibility.com/faq/#search-brand-optimization"
+        }
       },
       {
         "@type": "WebPage",
@@ -136,8 +152,8 @@ import Footer from '../../components/Footer.astro';
           "width": "1200",
           "height": "630"
         },
-        "datePublished": "2025-06-21",
-        "dateModified": "2025-06-21",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
         "description": "Comprehensive guide to Search Brand Optimization (SBO) in Swansea with expert strategies for building brand authority and search visibility.",
         "inLanguage": "en-GB",
         "breadcrumb": {

@@ -2,6 +2,8 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+
+export const prerender = true;
 ---
 
 <MainLayout title="Digital Marketing FAQ Swansea | Expert SEO Answers">
@@ -143,6 +145,86 @@ import Footer from '../../components/Footer.astro';
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Professional business websites typically take 4-6 weeks from start to finish. This includes planning, design, development, content optimization, and testing. Complex projects may take longer. We provide clear timelines and regular updates throughout the process."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is AI Workflow Automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI Workflow Automation uses intelligent systems to handle repetitive business tasks like data entry, social media posting, customer replies, and review management. It saves time, reduces errors, and lets your team focus on strategic work. Most businesses save 6+ hours weekly, and automation runs 24/7 without breaks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will automation replace my staff?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Automation handles repetitive tasks like data entry, form filling, and email responses. Your staff keeps their jobs and focuses on work that needs human judgment - like customer relationships, strategy, and problem-solving. Research shows 88% of employees report higher job satisfaction after automation because they can focus on more meaningful work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How secure is AI workflow automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We build automation with bank-level security including encrypted connections, GDPR-compliant data handling, secure API authentication, and human approval checkpoints for important decisions. Your data never leaves your systems or gets published. Every automation includes security as a core requirement, not an afterthought."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does workflow automation cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most automation projects cost £400-2,000 one-time to build at £40/hour, then run 24/7 forever at no extra cost except minor tweaks. Simple automations take 1-4 hours, complex systems take 20-40 hours. This compares to £25,000-35,000/year for a full-time employee. Your existing staff keeps their jobs and gets their time back."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What business tasks can be automated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We automate marketing tasks (social media posting, blog publishing, email campaigns), customer engagement (review responses, social media replies, 24/7 chat support), and SEO tasks (automated updates, content optimization, competitor tracking). If you do it more than twice a week, we can probably automate it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need technical skills to use automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No technical knowledge required. You simply tell us which tasks consume your time, and we handle the entire technical implementation. You'll interact with the automation using your existing tools and systems - we ensure it's intuitive and user-friendly for your team."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if automation makes an error?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We implement human approval checkpoints for critical workflows. When the system encounters uncertainty, it automatically routes decisions to your team. Important actions always require human authorization before execution, ensuring you maintain complete control over business-critical processes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does automation setup take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Simple automations require 1-4 hours (delivered within same day to 1 week). Complex multi-workflow systems need 20-40 hours (typically 2-6 weeks). During your complimentary consultation, we provide exact timelines based on your specific requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if automation breaks or needs updates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our no-contract model means ongoing support is available whenever needed. Minor adjustments and fixes typically require under one hour at our standard £40/hour rate. We provide responsive support to keep your automation running smoothly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens during the free automation consultation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "During the 30-minute consultation, we analyze your business processes and identify time-consuming tasks. You receive a clear automation roadmap, estimated weekly time savings, and approximate project costs (hours × £40). No obligation to proceed - you get valuable insights regardless."
         }
       },
       {
@@ -340,6 +422,41 @@ import Footer from '../../components/Footer.astro';
                 <li><strong>Convert Better:</strong> Designs that turn visitors into customers</li>
               </ul>
               <p>Plus, all our websites are mobile-friendly, load quickly, and are easy for you to update yourself.</p>
+            </div>
+          </article>
+
+          <!-- AI Workflow Automation FAQs -->
+          <article id="ai-workflow-automation" class="mb-6 bg-gray-50 rounded-lg p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">AI Workflow Automation</h3>
+            <div class="text-gray-700 space-y-3">
+              <h4 class="font-bold text-gray-900 mb-2">What is AI Workflow Automation?</h4>
+              <p>AI Workflow Automation uses intelligent systems to handle repetitive business tasks automatically. We automate marketing tasks (social media posting, blog publishing, email campaigns), customer engagement (review responses, social media replies, 24/7 chat support), and SEO tasks (automated updates, content optimization, competitor tracking).</p>
+              
+              <h4 class="font-bold text-gray-900 mb-2 mt-4">Will automation replace my staff?</h4>
+              <p>No. Automation handles repetitive tasks like data entry, form filling, and email responses. Your staff keeps their jobs and focuses on work that needs human judgment - like customer relationships, strategy, and problem-solving. Research shows 88% of employees report higher job satisfaction after automation because they can focus on more meaningful work.</p>
+              
+              <h4 class="font-bold text-gray-900 mb-2 mt-4">Do I need technical skills?</h4>
+              <p>Not at all. You tell us what tasks consume your time, and we handle all technical implementation. Your team uses the automation through familiar tools and interfaces - we make it simple and intuitive.</p>
+              
+              <h4 class="font-bold text-gray-900 mb-2 mt-4">How secure is it?</h4>
+              <p>We build automation with bank-level security including encrypted connections, GDPR-compliant data handling, secure API authentication, and human approval checkpoints for important decisions. Your data never leaves your systems.</p>
+              
+              <h4 class="font-bold text-gray-900 mb-2 mt-4">What if automation makes an error?</h4>
+              <p>We implement human approval checkpoints for critical workflows. When uncertain, the system routes decisions to your team. Important actions always require human authorization, keeping you in complete control.</p>
+              
+              <h4 class="font-bold text-gray-900 mb-2 mt-4">How long does setup take?</h4>
+              <p>Simple automations: 1-4 hours (same day to 1 week). Complex systems: 20-40 hours (2-6 weeks). We provide exact timelines during your free consultation.</p>
+              
+              <h4 class="font-bold text-gray-900 mb-2 mt-4">How much does it cost?</h4>
+              <p>Most automation projects cost £400-2,000 one-time to build at £40/hour, then run 24/7 forever at no extra cost except minor tweaks. Simple automations take 1-4 hours, complex systems take 20-40 hours.</p>
+              
+              <h4 class="font-bold text-gray-900 mb-2 mt-4">What if something breaks?</h4>
+              <p>Our no-contract support is available whenever needed. Minor fixes typically take under one hour at £40/hour. We keep your automation running smoothly.</p>
+              
+              <h4 class="font-bold text-gray-900 mb-2 mt-4">What happens in the free consultation?</h4>
+              <p>We spend 30 minutes analyzing your processes and identifying time drains. You receive an automation roadmap, estimated time savings, and project costs. No obligation - valuable insights either way.</p>
+              
+              <p class="mt-4"><a href="/services/ai-workflow-automation/" class="text-blue-600 hover:text-blue-700 font-semibold">Learn more about AI Workflow Automation →</a></p>
             </div>
           </article>
 

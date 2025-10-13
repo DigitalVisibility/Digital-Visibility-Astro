@@ -2,44 +2,200 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+
+export const prerender = true;
 ---
 
 <MainLayout title="SEO Birmingham | Search Engine Optimization Services in Birmingham">
-  <meta name="description" content="Expert SEO services in Birmingham helping businesses get found on Google, ChatGPT & AI platforms. From city centre to suburbs, we help Birmingham businesses dominate local and regional search. £40/hour, no contracts." slot="head">
-  <meta name="keywords" content="SEO Birmingham, search engine optimization Birmingham, SEO agency Birmingham, search engine agency Birmingham, SEO company Birmingham, local SEO Birmingham, SEO expert Birmingham, SEO services Birmingham, Birmingham SEO specialist, AEO Birmingham, GEO Birmingham, ChatGPT optimization Birmingham, AI search optimization Birmingham" slot="head">
+  <!-- SEO and Canonical Tags -->
   <link rel="canonical" href="https://digitalvisibility.com/services/seo-birmingham/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  
+  <!-- Core Meta Tags -->
+  <meta name="description" content="Expert SEO services in Birmingham helping businesses get found on Google, ChatGPT & AI platforms. From city centre to suburbs, we help Birmingham businesses dominate local and regional search. £40/hour, no contracts." slot="head">
+  <meta name="keywords" content="SEO Birmingham, Birmingham SEO agency, Midlands SEO, Birmingham city centre SEO, Bullring SEO, Jewellery Quarter SEO, Digbeth SEO, West Midlands digital marketing, enterprise SEO Birmingham, competitive Birmingham SEO" slot="head">
+  
+  <!-- OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="SEO Birmingham | UK's Second City Search Domination" slot="head">
+  <meta property="og:description" content="High-performance SEO for Birmingham businesses. Compete in ultra-competitive markets, rank nationally, and dominate Midlands search. Serving city centre, suburbs, and wider West Midlands." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/services/seo-birmingham/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/webp" slot="head">
+  
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="SEO Birmingham | Major City Search Optimization" slot="head">
+  <meta name="twitter:description" content="Professional SEO for Birmingham businesses. Dominate competitive city markets, expand nationally, outrank Midlands competitors." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  
+  <!-- Publisher and Author -->
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- Geographic Meta Tags -->
+  <meta name="geo.region" content="GB-BIR" slot="head">
+  <meta name="geo.placename" content="Birmingham" slot="head">
+  <meta name="geo.position" content="52.4862;-1.8904" slot="head">
+  <meta name="ICBM" content="52.4862, -1.8904" slot="head">
+  
+  <!-- AI-Specific Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="major-city-seo-birmingham,enterprise-search-optimization,midlands-business-marketing,competitive-market-seo" slot="head">
+  <meta name="ai-target" content="birmingham-businesses,city-centre-companies,midlands-enterprises,bullring-retailers,jewellery-quarter-businesses,digbeth-startups" slot="head">
+  <meta name="ai-keywords" content="SEO Birmingham, Birmingham city SEO, Midlands search optimization, enterprise SEO UK, competitive Birmingham markets, national SEO from Birmingham, West Midlands digital marketing" slot="head">
+  <meta name="ai-content-type" content="major city SEO provider, enterprise optimization specialist, competitive market strategist" slot="head">
+  <meta name="ai-business-type" content="Enterprise SEO Agency, Major City Search Marketing, Midlands Digital Services" slot="head">
+  <meta name="ai-service-area" content="Birmingham, Bullring, Jewellery Quarter, Digbeth, West Midlands, Midlands region, UK-wide" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="major UK city SEO services, highly competitive market optimization, enterprise-level search strategies" slot="head">
+  <meta name="ai-industry" content="enterprise SEO, major city search marketing, competitive market optimization, multi-location SEO" slot="head">
+  <meta name="ai-services" content="major city SEO tactics, national expansion strategies, multi-location Birmingham optimization, high-volume keyword targeting, reputation management at scale, enterprise SEO solutions, cross-border visibility, competitive displacement campaigns" slot="head">
+  <meta name="ai-audience" content="Birmingham business owners, enterprise companies, retail chains, multi-location businesses, Midlands startups, scaling companies, city centre retailers, professional services Birmingham" slot="head">
+  <meta name="ai-intent" content="Birmingham SEO agency, dominate competitive markets, enterprise search optimization, multi-location SEO, national expansion from Birmingham, beat established competitors, high-volume traffic generation" slot="head">
+  <meta name="ai-unique-value" content="Major city expertise, enterprise-scale strategies, competitive displacement tactics, multi-location coordination, reputation management, £40/hour scalable pricing, flexible for growing businesses" slot="head">
 
   <!-- Schema Markup -->
   <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "SEO Birmingham - Search Engine Optimization Services",
-    "description": "Professional SEO services for Birmingham businesses including traditional SEO, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO). Helping businesses in Birmingham get found on Google and AI platforms like ChatGPT.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "url": "https://digitalvisibility.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "235 Peniel Green Road",
-        "addressLocality": "Llansamlet",
-        "addressRegion": "Swansea",
-        "postalCode": "SA7 9BA",
-        "addressCountry": "GB"
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://digitalvisibility.com/services/seo-birmingham/#service",
+        "name": "Birmingham SEO - UK's Second City Search Domination",
+        "alternateName": ["SEO Birmingham UK", "Birmingham Search Agency", "Midlands SEO Services", "Birmingham Digital Strategy"],
+        "description": "High-performance SEO for Birmingham businesses competing in the UK's second largest city. We help Birmingham companies rank nationally while dominating ultra-competitive local markets. Proven strategies for retail, hospitality, professional services, and tech sectors across the Midlands.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "keywords": "SEO Birmingham, Birmingham SEO agency, Midlands SEO, Birmingham city centre SEO, SEO services Birmingham UK, digital marketing Birmingham, search optimization Midlands, Birmingham business growth, competitive SEO Birmingham, national SEO from Birmingham",
+        "category": ["Enterprise SEO", "Major City SEO", "Competitive Search Marketing", "National SEO"],
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Birmingham",
+            "sameAs": "https://en.wikipedia.org/wiki/Birmingham"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Bullring"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Jewellery Quarter"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Digbeth"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "West Midlands"
+          }
+        ],
+        "serviceOutput": [
+          "Major city SEO tactics - stand out in highly competitive Birmingham markets",
+          "National expansion strategies - leverage Birmingham base for UK-wide reach",
+          "Multi-location Birmingham optimization - businesses with multiple Midlands sites",
+          "High-volume keyword targeting - rank for thousands of Birmingham searches",
+          "Reputation management at scale - control narrative in crowded markets",
+          "Enterprise SEO solutions - comprehensive strategies for growing companies",
+          "Cross-border visibility - attract customers from surrounding counties",
+          "Competitive displacement campaigns - steal traffic from established rivals"
+        ],
+        "offers": [
+          {
+            "@type": "Offer",
+            "url": "https://digitalvisibility.com/pricing/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "40.00",
+              "priceCurrency": "GBP",
+              "unitText": "hour"
+            },
+            "availability": "https://schema.org/InStock",
+            "description": "Enterprise-grade SEO for Birmingham and Midlands businesses starting at £40/hour, scalable for growing companies",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
+          },
+          {
+            "@id": "https://digitalvisibility.com/pricing/#free-website-offer"
+          }
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/contact/",
+          "servicePhone": "+44-01792-002497"
+        },
+        "additionalType": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/",
+        "mainEntityOfPage": {
+          "@type": "FAQPage",
+          "@id": "https://digitalvisibility.com/faq/#seo-birmingham"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/services/seo-birmingham/#webpage",
+        "url": "https://digitalvisibility.com/services/seo-birmingham/",
+        "name": "SEO Birmingham | Major City Search Optimization",
+        "description": "Professional SEO for Birmingham businesses. Dominate competitive city markets, expand nationally, and outrank established Midlands competitors.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "inLanguage": "en-GB",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "about": {
+          "@id": "https://digitalvisibility.com/services/seo-birmingham/#service"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp",
+          "width": "1200",
+          "height": "630"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://digitalvisibility.com/services/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "SEO Birmingham",
+              "item": "https://digitalvisibility.com/services/seo-birmingham/"
+            }
+          ]
+        }
       }
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Birmingham",
-      "sameAs": "https://en.wikipedia.org/wiki/Birmingham"
-    },
-    "serviceType": "Search Engine Optimization SEO",
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://digitalvisibility.com/contact/",
-      "servicePhone": "+44-01792-002497"
-    }
+    ]
   }
   </script>
 

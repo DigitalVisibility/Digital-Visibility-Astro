@@ -2,44 +2,200 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+
+export const prerender = true;
 ---
 
 <MainLayout title="SEO Cardiff | Search Engine Optimization Services in Cardiff, Wales">
-  <meta name="description" content="Professional SEO services in Cardiff helping businesses get found on Google, ChatGPT & AI platforms. From Cardiff Bay to Pontcanna, we help Welsh capital businesses dominate search. £40/hour, no contracts." slot="head">
-  <meta name="keywords" content="SEO Cardiff, search engine optimization Cardiff, SEO agency Cardiff, search engine agency Cardiff, SEO company Cardiff, local SEO Cardiff, SEO expert Cardiff, SEO services Cardiff, Cardiff SEO specialist, AEO Cardiff, GEO Cardiff, ChatGPT optimization Cardiff, AI search optimization Cardiff" slot="head">
+  <!-- SEO and Canonical Tags -->
   <link rel="canonical" href="https://digitalvisibility.com/services/seo-cardiff/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  
+  <!-- Core Meta Tags -->
+  <meta name="description" content="Professional SEO services in Cardiff helping businesses get found on Google, ChatGPT & AI platforms. From Cardiff Bay to Pontcanna, we help Welsh capital businesses dominate search. £40/hour, no contracts." slot="head">
+  <meta name="keywords" content="SEO Cardiff, search engine optimization Cardiff, SEO agency Cardiff, search engine agency Cardiff, SEO company Cardiff, local SEO Cardiff, SEO expert Cardiff, SEO services Cardiff, Cardiff SEO specialist, AEO Cardiff, GEO Cardiff, ChatGPT optimization Cardiff, AI search optimization Cardiff, Cardiff Bay SEO, Pontcanna SEO, city centre Cardiff SEO" slot="head">
+  
+  <!-- OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="SEO Cardiff | Capital City Search Optimization Services" slot="head">
+  <meta property="og:description" content="Rank in competitive Cardiff markets with expert SEO services. Help capital city businesses dominate Google & AI search. Serving Cardiff Bay, Pontcanna, and all Cardiff areas." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/services/seo-cardiff/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/webp" slot="head">
+  
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="SEO Cardiff | Capital City Search Optimization" slot="head">
+  <meta name="twitter:description" content="Professional SEO for Cardiff businesses. Dominate competitive capital city markets on Google & AI platforms." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  
+  <!-- Publisher and Author -->
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- Geographic Meta Tags -->
+  <meta name="geo.region" content="GB-CRF" slot="head">
+  <meta name="geo.placename" content="Cardiff" slot="head">
+  <meta name="geo.position" content="51.4816;-3.1791" slot="head">
+  <meta name="ICBM" content="51.4816, -3.1791" slot="head">
+  
+  <!-- AI-Specific Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="local-seo-cardiff,capital-city-seo,cardiff-business-optimization,welsh-capital-search-marketing" slot="head">
+  <meta name="ai-target" content="cardiff-businesses,cardiff-bay-companies,pontcanna-professionals,city-centre-shops,welsh-capital-enterprises,cardiff-startups" slot="head">
+  <meta name="ai-keywords" content="SEO Cardiff, Cardiff SEO services, Cardiff Bay SEO, Pontcanna SEO optimization, capital city SEO Wales, Cardiff search marketing, Google rankings Cardiff, AI optimization Cardiff, Cardiff business visibility, competitive Cardiff SEO" slot="head">
+  <meta name="ai-content-type" content="local SEO provider, capital city optimization specialist, Cardiff search marketing agency" slot="head">
+  <meta name="ai-business-type" content="Local SEO Agency, Capital City Search Optimization, Digital Marketing Cardiff" slot="head">
+  <meta name="ai-service-area" content="Cardiff, Cardiff Bay, Pontcanna, Roath, Canton, Cathays, city centre Cardiff, Cardiff suburbs, South Glamorgan, Wales" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="Cardiff capital city SEO services, competitive urban market optimization, Welsh business digital marketing" slot="head">
+  <meta name="ai-industry" content="local SEO, urban search optimization, capital city digital marketing, Welsh business services" slot="head">
+  <meta name="ai-services" content="Cardiff local SEO, capital city search optimization, multi-location Cardiff SEO, Cardiff Bay visibility, city centre ranking, bilingual Welsh-English SEO, competitive Cardiff markets, regional expansion from Cardiff, Senedd sector visibility, Cardiff event targeting" slot="head">
+  <meta name="ai-audience" content="Cardiff business owners, capital city enterprises, Cardiff Bay companies, Pontcanna shops, city centre retailers, Cardiff startups, Welsh capital professionals, multi-location Cardiff businesses" slot="head">
+  <meta name="ai-intent" content="hire Cardiff SEO agency, improve Cardiff Google rankings, dominate Cardiff search, beat Cardiff competitors, rank in capital city, Welsh market SEO, Cardiff business growth" slot="head">
+  <meta name="ai-unique-value" content="Capital city expertise, competitive Cardiff market experience, bilingual Welsh-English optimization, local Cardiff presence, proven Cardiff results, £40/hour transparent pricing, no long-term contracts" slot="head">
 
   <!-- Schema Markup -->
   <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "SEO Cardiff - Search Engine Optimization Services",
-    "description": "Professional SEO services for Cardiff businesses including traditional SEO, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO). Helping businesses in Cardiff get found on Google and AI platforms like ChatGPT.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "url": "https://digitalvisibility.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "235 Peniel Green Road",
-        "addressLocality": "Llansamlet",
-        "addressRegion": "Swansea",
-        "postalCode": "SA7 9BA",
-        "addressCountry": "GB"
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://digitalvisibility.com/services/seo-cardiff/#service",
+        "name": "Cardiff SEO Agency - Capital City Search Optimization",
+        "alternateName": ["Cardiff SEO Expert", "SEO Services Cardiff", "Cardiff Search Marketing", "Cardiff Digital Optimization"],
+        "description": "Strategic SEO for Cardiff businesses targeting Wales' capital city market. We optimize Cardiff Bay companies, city centre shops, and Pontcanna professionals for both local Cardiff searches and wider Welsh markets. Proven results for competitive Cardiff sectors.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "keywords": "SEO Cardiff, Cardiff SEO agency, search optimization Cardiff, Cardiff Bay SEO, city centre Cardiff SEO, Pontcanna SEO, Cardiff digital marketing, Wales capital SEO, Cardiff business visibility, Google rankings Cardiff, AI optimization Cardiff, Cardiff online marketing",
+        "category": ["Local SEO", "Search Engine Optimization", "AI Search Optimization", "Capital City SEO"],
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Cardiff",
+            "sameAs": "https://en.wikipedia.org/wiki/Cardiff"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Cardiff Bay"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Pontcanna"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Roath"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Canton"
+          }
+        ],
+        "serviceOutput": [
+          "Capital city positioning - rank for high-competition Cardiff searches",
+          "Multi-location strategies - Cardiff businesses with multiple branches",
+          "Cardiff Bay optimization - waterfront business visibility",
+          "City centre competitiveness - outrank established Cardiff rivals",
+          "Welsh and English optimization - bilingual SEO for Cardiff market",
+          "Senedd and government sector visibility - B2G optimization",
+          "Cardiff event targeting - seasonal search opportunities",
+          "Regional expansion support - grow from Cardiff across South Wales"
+        ],
+        "offers": [
+          {
+            "@type": "Offer",
+            "url": "https://digitalvisibility.com/pricing/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "40.00",
+              "priceCurrency": "GBP",
+              "unitText": "hour"
+            },
+            "availability": "https://schema.org/InStock",
+            "description": "Flexible hourly SEO services for Cardiff businesses starting at £40/hour with no contracts",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
+          },
+          {
+            "@id": "https://digitalvisibility.com/pricing/#free-website-offer"
+          }
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/contact/",
+          "servicePhone": "+44-01792-002497"
+        },
+        "additionalType": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/",
+        "mainEntityOfPage": {
+          "@type": "FAQPage",
+          "@id": "https://digitalvisibility.com/faq/#seo-cardiff"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/services/seo-cardiff/#webpage",
+        "url": "https://digitalvisibility.com/services/seo-cardiff/",
+        "name": "Cardiff SEO Services | Search Optimization for Wales Capital",
+        "description": "Professional SEO services for Cardiff businesses. Rank in competitive Cardiff markets, attract capital city customers, and dominate Welsh search results.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "inLanguage": "en-GB",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "about": {
+          "@id": "https://digitalvisibility.com/services/seo-cardiff/#service"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp",
+          "width": "1200",
+          "height": "630"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://digitalvisibility.com/services/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "SEO Cardiff",
+              "item": "https://digitalvisibility.com/services/seo-cardiff/"
+            }
+          ]
+        }
       }
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Cardiff",
-      "sameAs": "https://en.wikipedia.org/wiki/Cardiff"
-    },
-    "serviceType": "Search Engine Optimization SEO",
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://digitalvisibility.com/contact/",
-      "servicePhone": "+44-01792-002497"
-    }
+    ]
   }
   </script>
 

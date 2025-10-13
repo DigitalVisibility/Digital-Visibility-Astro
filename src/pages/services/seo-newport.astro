@@ -2,44 +2,196 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+
+export const prerender = true;
 ---
 
 <MainLayout title="SEO Newport | Search Engine Optimization Services in Newport, Wales">
-  <meta name="description" content="Professional SEO services in Newport helping businesses get found on Google, ChatGPT & AI platforms. From city centre to Cwmbran, we help Newport businesses dominate local search. £40/hour, no contracts." slot="head">
-  <meta name="keywords" content="SEO Newport, search engine optimization Newport, SEO agency Newport, search engine agency Newport, SEO company Newport, local SEO Newport, SEO expert Newport, SEO services Newport, Newport SEO specialist, AEO Newport, GEO Newport, ChatGPT optimization Newport, AI search optimization Newport" slot="head">
+  <!-- SEO and Canonical Tags -->
   <link rel="canonical" href="https://digitalvisibility.com/services/seo-newport/" slot="head">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" slot="head">
+  
+  <!-- Core Meta Tags -->
+  <meta name="description" content="Professional SEO services in Newport helping businesses get found on Google, ChatGPT & AI platforms. From city centre to Cwmbran, we help Newport businesses dominate local search. £40/hour, no contracts." slot="head">
+  <meta name="keywords" content="SEO Newport, search engine optimization Newport Wales, B2B SEO Newport, industrial SEO Newport, tech company SEO Newport, manufacturing SEO Newport, Cwmbran SEO, Caerleon SEO, Newport digital visibility" slot="head">
+  
+  <!-- OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content="SEO Newport | B2B & Industrial Search Optimization" slot="head">
+  <meta property="og:description" content="Specialist SEO for Newport's tech and industrial sectors. Help B2B companies, manufacturers, and tech startups rank nationally while dominating local Newport markets." slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/services/seo-newport/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/webp" slot="head">
+  
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content="SEO Newport | B2B & Tech Sector SEO" slot="head">
+  <meta name="twitter:description" content="Results-driven SEO for Newport manufacturers, tech companies, and B2B businesses. National reach with local Newport presence." slot="head">
+  <meta name="twitter:image" content="https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp" slot="head">
+  
+  <!-- Publisher and Author -->
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  <meta name="author" content="Darran Goulding" slot="head">
+  
+  <!-- Geographic Meta Tags -->
+  <meta name="geo.region" content="GB-NWP" slot="head">
+  <meta name="geo.placename" content="Newport" slot="head">
+  <meta name="geo.position" content="51.5842;-2.9977" slot="head">
+  <meta name="ICBM" content="51.5842, -2.9977" slot="head">
+  
+  <!-- AI-Specific Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="b2b-seo-newport,industrial-search-optimization,tech-company-visibility,manufacturing-seo-wales" slot="head">
+  <meta name="ai-target" content="newport-manufacturers,tech-startups-newport,b2b-companies-wales,industrial-businesses,procurement-managers,decision-makers-newport" slot="head">
+  <meta name="ai-keywords" content="B2B SEO Newport, industrial SEO Wales, tech company optimization Newport, manufacturing search marketing, supply chain SEO, Newport business visibility, professional network targeting" slot="head">
+  <meta name="ai-content-type" content="B2B SEO provider, industrial optimization specialist, tech sector marketing agency" slot="head">
+  <meta name="ai-business-type" content="B2B SEO Agency, Industrial Search Marketing, Tech Sector SEO Newport" slot="head">
+  <meta name="ai-service-area" content="Newport, Cwmbran, Caerleon, Risca, Gwent, South Wales, UK-wide B2B" slot="head">
+  
+  <!-- Advanced AI Optimization -->
+  <meta name="ai-language" content="en-GB" slot="head">
+  <meta name="ai-context" content="B2B and industrial sector SEO services, tech company growth marketing, manufacturing visibility strategies" slot="head">
+  <meta name="ai-industry" content="B2B SEO, industrial search marketing, technology sector optimization, manufacturing digital marketing" slot="head">
+  <meta name="ai-services" content="B2B search strategies, industrial sector optimization, tech startup visibility, supply chain SEO, national reach from Newport, trade and export optimization, LinkedIn integration, quarterly industry benchmarking" slot="head">
+  <meta name="ai-audience" content="manufacturing managers, tech founders, procurement professionals, B2B decision makers, industrial companies, software companies Newport, engineering firms" slot="head">
+  <meta name="ai-intent" content="B2B SEO agency Newport, industrial marketing, tech company visibility, reach business buyers, national B2B expansion, manufacturing leads, supplier search optimization" slot="head">
+  <meta name="ai-unique-value" content="B2B and industrial sector expertise, tech startup experience, national reach strategies, procurement-focused optimization, LinkedIn integration, £40/hour business-friendly pricing, no long commitments" slot="head">
 
   <!-- Schema Markup -->
   <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "SEO Newport - Search Engine Optimization Services",
-    "description": "Professional SEO services for Newport businesses including traditional SEO, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO). Helping businesses in Newport get found on Google and AI platforms like ChatGPT.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Digital Visibility",
-      "url": "https://digitalvisibility.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "235 Peniel Green Road",
-        "addressLocality": "Llansamlet",
-        "addressRegion": "Swansea",
-        "postalCode": "SA7 9BA",
-        "addressCountry": "GB"
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://digitalvisibility.com/services/seo-newport/#service",
+        "name": "Newport SEO Services - Industrial & Tech Sector Specialists",
+        "alternateName": ["SEO Newport Wales", "Newport Search Optimization", "Newport Digital Marketing", "SEO Agency Newport"],
+        "description": "Results-driven SEO for Newport's growing tech and industrial sectors. We help Newport manufacturers, tech startups, and B2B companies rank nationally while maintaining strong local Newport presence. Expertise in competitive industrial search markets.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "keywords": "SEO Newport, Newport SEO services, Newport business SEO, industrial SEO Newport, B2B SEO Newport, tech company SEO Newport, manufacturing SEO Newport, Newport digital visibility, search optimization Newport Wales, Google ranking Newport, Newport online marketing",
+        "category": ["B2B SEO", "Industrial SEO", "Tech Sector Optimization", "Manufacturing Search Marketing"],
+        "provider": {
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Newport",
+            "sameAs": "https://en.wikipedia.org/wiki/Newport,_Wales"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Cwmbran"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Caerleon"
+          },
+          {
+            "@type": "Neighborhood",
+            "name": "Risca"
+          }
+        ],
+        "serviceOutput": [
+          "B2B search strategies - reach procurement managers and decision makers",
+          "Industrial sector optimization - rank for specialized manufacturing terms",
+          "Tech startup visibility - compete in crowded software and SaaS markets",
+          "Supply chain SEO - attract business customers searching for suppliers",
+          "National reach from Newport base - expand beyond local to UK-wide",
+          "Trade and export optimization - international business opportunities",
+          "LinkedIn and professional network integration - B2B audience targeting",
+          "Quarterly industry benchmarking - compare against sector competitors"
+        ],
+        "offers": [
+          {
+            "@type": "Offer",
+            "url": "https://digitalvisibility.com/pricing/",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "40.00",
+              "priceCurrency": "GBP",
+              "unitText": "hour"
+            },
+            "availability": "https://schema.org/InStock",
+            "description": "B2B-focused SEO services for Newport industrial and tech sector businesses at £40/hour",
+            "validFrom": "2023-01-01",
+            "seller": {
+              "@id": "https://digitalvisibility.com/#organization"
+            }
+          },
+          {
+            "@id": "https://digitalvisibility.com/pricing/#free-website-offer"
+          }
+        ],
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://digitalvisibility.com/contact/",
+          "servicePhone": "+44-01792-002497"
+        },
+        "additionalType": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+        "termsOfService": "https://digitalvisibility.com/terms-conditions/",
+        "mainEntityOfPage": {
+          "@type": "FAQPage",
+          "@id": "https://digitalvisibility.com/faq/#seo-newport"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/services/seo-newport/#webpage",
+        "url": "https://digitalvisibility.com/services/seo-newport/",
+        "name": "SEO Newport | B2B & Industrial Search Optimization",
+        "description": "Specialist SEO for Newport businesses. Dominate industrial and tech searches, reach B2B buyers, and grow your Newport company nationally.",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-10-13",
+        "inLanguage": "en-GB",
+        "isPartOf": {
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "about": {
+          "@id": "https://digitalvisibility.com/services/seo-newport/#service"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/get found everywhere with supercharged engine optimization.webp",
+          "width": "1200",
+          "height": "630"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://digitalvisibility.com/services/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "SEO Newport",
+              "item": "https://digitalvisibility.com/services/seo-newport/"
+            }
+          ]
+        }
       }
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Newport",
-      "sameAs": "https://en.wikipedia.org/wiki/Newport,_Wales"
-    },
-    "serviceType": "Search Engine Optimization SEO",
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://digitalvisibility.com/contact/",
-      "servicePhone": "+44-01792-002497"
-    }
+    ]
   }
   </script>
 
