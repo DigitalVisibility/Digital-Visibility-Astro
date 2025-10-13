@@ -23,7 +23,13 @@ export default defineConfig({
     react()
   ],
   output: 'hybrid',
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    mode: 'directory',
+    runtime: {
+      mode: 'local',
+      type: 'pages'
+    }
+  }),
   trailingSlash: 'always',
   // Enable built-in image optimization for static sites
   image: {
