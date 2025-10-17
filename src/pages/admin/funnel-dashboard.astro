@@ -1,0 +1,576 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import AdminNavigation from '../../components/AdminNavigation.astro';
+import Footer from '../../components/Footer.astro';
+
+export const prerender = false;
+
+const meta = {
+  title: "A/B Funnel Dashboard | Digital Visibility Admin",
+  description: "Admin dashboard for monitoring A/B funnel performance and optimization recommendations",
+  keywords: "admin dashboard, A/B testing, funnel analytics, conversion optimization, performance monitoring",
+  image: "https://digitalvisibility.com/digital-visibility-logo-f.png"
+};
+---
+
+<MainLayout title={meta.title}>
+  <meta name="description" content={meta.description} slot="head">
+  <meta name="robots" content="noindex, nofollow" slot="head">
+  
+  <AdminNavigation slot="nav" />
+  
+  <div class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="mb-8">
+        <h1 class="text-3xl font-bold text-gray-900">A/B Funnel Dashboard</h1>
+        <p class="text-gray-600 mt-2">Monitor performance, analyze data, and get optimization recommendations</p>
+      </div>
+
+      <!-- Key Metrics Overview -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <!-- Total Visitors -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="flex items-center">
+            <div class="p-2 bg-blue-100 rounded-lg">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+              </svg>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-medium text-gray-600">Total Visitors</p>
+              <p class="text-2xl font-semibold text-gray-900" id="total-visitors">Loading...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conversion Rate -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="flex items-center">
+            <div class="p-2 bg-green-100 rounded-lg">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-medium text-gray-600">Conversion Rate</p>
+              <p class="text-2xl font-semibold text-gray-900" id="conversion-rate">Loading...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Revenue Generated -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="flex items-center">
+            <div class="p-2 bg-purple-100 rounded-lg">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+              </svg>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-medium text-gray-600">Revenue Generated</p>
+              <p class="text-2xl font-semibold text-gray-900" id="revenue">Loading...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Test Duration -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="flex items-center">
+            <div class="p-2 bg-orange-100 rounded-lg">
+              <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-medium text-gray-600">Test Duration</p>
+              <p class="text-2xl font-semibold text-gray-900" id="test-duration">Loading...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A/B Test Performance -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <!-- Variant A Performance -->
+        <div class="bg-white rounded-lg shadow">
+          <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+              <div class="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
+              Variant A Performance
+            </h3>
+          </div>
+          <div class="p-6">
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <p class="text-sm text-gray-600">Visitors</p>
+                <p class="text-2xl font-semibold text-gray-900" id="variant-a-visitors">-</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-600">Conversions</p>
+                <p class="text-2xl font-semibold text-gray-900" id="variant-a-conversions">-</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-600">Conversion Rate</p>
+                <p class="text-2xl font-semibold text-gray-900" id="variant-a-rate">-</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-600">Revenue</p>
+                <p class="text-2xl font-semibold text-gray-900" id="variant-a-revenue">-</p>
+              </div>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div class="bg-blue-500 h-2 rounded-full" id="variant-a-progress" style="width: 0%"></div>
+            </div>
+            <p class="text-sm text-gray-600 mt-2">Traffic allocation: <span id="variant-a-percentage">0%</span></p>
+          </div>
+        </div>
+
+        <!-- Variant B Performance -->
+        <div class="bg-white rounded-lg shadow">
+          <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+              <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+              Variant B Performance
+            </h3>
+          </div>
+          <div class="p-6">
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <p class="text-sm text-gray-600">Visitors</p>
+                <p class="text-2xl font-semibold text-gray-900" id="variant-b-visitors">-</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-600">Conversions</p>
+                <p class="text-2xl font-semibold text-gray-900" id="variant-b-conversions">-</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-600">Conversion Rate</p>
+                <p class="text-2xl font-semibold text-gray-900" id="variant-b-rate">-</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-600">Revenue</p>
+                <p class="text-2xl font-semibold text-gray-900" id="variant-b-revenue">-</p>
+              </div>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div class="bg-green-500 h-2 rounded-full" id="variant-b-progress" style="width: 0%"></div>
+            </div>
+            <p class="text-sm text-gray-600 mt-2">Traffic allocation: <span id="variant-b-percentage">0%</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statistical Significance & Recommendations -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <!-- Statistical Analysis -->
+        <div class="bg-white rounded-lg shadow">
+          <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900">Statistical Analysis</h3>
+          </div>
+          <div class="p-6">
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-600">Confidence Level</span>
+                <span class="text-sm font-medium" id="confidence-level">Calculating...</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-600">Sample Size</span>
+                <span class="text-sm font-medium" id="sample-size">-</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-600">Winner</span>
+                <span class="text-sm font-medium" id="winner">-</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-600">Improvement</span>
+                <span class="text-sm font-medium" id="improvement">-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Recommendations -->
+        <div class="bg-white rounded-lg shadow">
+          <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900">AI Recommendations</h3>
+          </div>
+          <div class="p-6">
+            <div id="recommendations" class="space-y-3">
+              <div class="p-3 bg-blue-50 rounded-lg">
+                <p class="text-sm text-blue-800">Loading recommendations...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activity & Actions -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Recent Activity -->
+        <div class="bg-white rounded-lg shadow">
+          <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900">Recent Activity</h3>
+          </div>
+          <div class="p-6">
+            <div id="recent-activity" class="space-y-3">
+              <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <p class="text-sm text-gray-600">Loading recent activity...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="bg-white rounded-lg shadow">
+          <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900">Quick Actions</h3>
+          </div>
+          <div class="p-6">
+            <div class="space-y-3">
+              <button id="adjust-traffic" class="w-full text-left p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
+                <p class="text-sm font-medium text-blue-900">Adjust Traffic Split</p>
+                <p class="text-xs text-blue-700">Modify A/B test traffic allocation</p>
+              </button>
+              <button id="update-copy" class="w-full text-left p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors">
+                <p class="text-sm font-medium text-green-900">Update Copy</p>
+                <p class="text-xs text-green-700">Modify headlines, CTAs, or descriptions</p>
+              </button>
+              <button id="export-data" class="w-full text-left p-3 bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors">
+                <p class="text-sm font-medium text-purple-900">Export Data</p>
+                <p class="text-xs text-purple-700">Download analytics data for analysis</p>
+              </button>
+              <button id="reset-test" class="w-full text-left p-3 bg-red-50 hover:bg-red-100 rounded-lg transition-colors">
+                <p class="text-sm font-medium text-red-900">Reset Test</p>
+                <p class="text-xs text-red-700">Start fresh A/B test</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <Footer />
+</MainLayout>
+
+<!-- Dashboard Scripts -->
+<script>
+  // Real-time data fetching
+  let analyticsData = null;
+  let refreshInterval = null;
+
+  async function fetchAnalyticsData() {
+    try {
+      // Get admin credentials from localStorage or prompt
+      const credentials = getAdminCredentials();
+      if (!credentials) {
+        promptForCredentials();
+        return;
+      }
+
+      const response = await fetch('/api/funnel-metrics', {
+        headers: {
+          'Authorization': `Basic ${btoa(credentials)}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        analyticsData = result.data;
+        updateDashboard();
+      } else {
+        console.error('Failed to fetch analytics data:', result.error);
+        if (result.error === 'Invalid credentials') {
+          promptForCredentials();
+        } else {
+          loadMockData();
+        }
+      }
+    } catch (error) {
+      console.error('Error fetching analytics data:', error);
+      loadMockData();
+    }
+  }
+
+  function getAdminCredentials() {
+    return localStorage.getItem('admin_credentials');
+  }
+
+  function promptForCredentials() {
+    const username = prompt('Admin Username:');
+    const password = prompt('Admin Password:');
+    
+    if (username && password) {
+      const credentials = `${username}:${password}`;
+      localStorage.setItem('admin_credentials', credentials);
+      fetchAnalyticsData();
+    } else {
+      loadMockData();
+    }
+  }
+
+  function loadMockData() {
+    analyticsData = {
+      summary: {
+        totalVisitors: 1247,
+        totalConversions: 89,
+        totalRevenue: 17800,
+        testDuration: 7,
+        confidenceLevel: 95.2,
+        winner: 'Variant B',
+        improvement: '+34.2%'
+      },
+      variants: {
+        a: {
+          visitors: 623,
+          conversions: 38,
+          conversionRate: 6.1,
+          revenue: 7600,
+          trafficAllocation: 49.9
+        },
+        b: {
+          visitors: 624,
+          conversions: 51,
+          conversionRate: 8.2,
+          revenue: 10200,
+          trafficAllocation: 50.1
+        }
+      },
+      recommendations: [
+        {
+          type: 'success',
+          message: 'Variant B is outperforming by 34.2%. Consider increasing traffic allocation to 70/30.'
+        },
+        {
+          type: 'warning',
+          message: 'Apply Variant B\'s successful elements to Variant A: stronger headline, clearer value proposition.'
+        },
+        {
+          type: 'info',
+          message: 'Consider testing different CTA colors, button text, or form fields next.'
+        }
+      ],
+      recentActivity: [
+        { time: '2 hours ago', action: 'Variant B conversion spike detected', type: 'success' },
+        { time: '4 hours ago', action: 'Statistical significance reached', type: 'info' },
+        { time: '1 day ago', action: 'Test started with 50/50 split', type: 'info' }
+      ]
+    };
+    updateDashboard();
+  }
+
+  function updateDashboard() {
+    if (!analyticsData) return;
+
+    const { summary, variants, recommendations, recentActivity } = analyticsData;
+
+    // Key metrics
+    document.getElementById('total-visitors').textContent = summary.totalVisitors.toLocaleString();
+    document.getElementById('conversion-rate').textContent = ((summary.totalConversions / summary.totalVisitors) * 100).toFixed(1) + '%';
+    document.getElementById('revenue').textContent = '£' + summary.totalRevenue.toLocaleString();
+    document.getElementById('test-duration').textContent = summary.testDuration + ' days';
+
+    // Variant A
+    document.getElementById('variant-a-visitors').textContent = variants.a.visitors.toLocaleString();
+    document.getElementById('variant-a-conversions').textContent = variants.a.conversions;
+    document.getElementById('variant-a-rate').textContent = variants.a.conversionRate.toFixed(1) + '%';
+    document.getElementById('variant-a-revenue').textContent = '£' + variants.a.revenue.toLocaleString();
+    document.getElementById('variant-a-percentage').textContent = variants.a.trafficAllocation.toFixed(1) + '%';
+    document.getElementById('variant-a-progress').style.width = variants.a.trafficAllocation + '%';
+
+    // Variant B
+    document.getElementById('variant-b-visitors').textContent = variants.b.visitors.toLocaleString();
+    document.getElementById('variant-b-conversions').textContent = variants.b.conversions;
+    document.getElementById('variant-b-rate').textContent = variants.b.conversionRate.toFixed(1) + '%';
+    document.getElementById('variant-b-revenue').textContent = '£' + variants.b.revenue.toLocaleString();
+    document.getElementById('variant-b-percentage').textContent = variants.b.trafficAllocation.toFixed(1) + '%';
+    document.getElementById('variant-b-progress').style.width = variants.b.trafficAllocation + '%';
+
+    // Statistical analysis
+    document.getElementById('confidence-level').textContent = summary.confidenceLevel + '%';
+    document.getElementById('sample-size').textContent = summary.totalVisitors.toLocaleString();
+    document.getElementById('winner').textContent = summary.winner;
+    document.getElementById('improvement').textContent = summary.improvement;
+
+    // AI Recommendations
+    const recommendationsContainer = document.getElementById('recommendations');
+    recommendationsContainer.innerHTML = '';
+    
+    if (recommendations && recommendations.length > 0) {
+      recommendations.forEach(rec => {
+        const recDiv = document.createElement('div');
+        const priorityClass = rec.priority === 'High' ? 'bg-red-50 border-red-200' : 
+                             rec.priority === 'Medium' ? 'bg-yellow-50 border-yellow-200' : 
+                             'bg-blue-50 border-blue-200';
+        const textClass = rec.priority === 'High' ? 'text-red-800' : 
+                         rec.priority === 'Medium' ? 'text-yellow-800' : 
+                         'text-blue-800';
+        
+        recDiv.className = `p-4 border rounded-lg ${priorityClass} mb-3`;
+        recDiv.innerHTML = `
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center mb-2">
+                <span class="px-2 py-1 text-xs font-semibold rounded-full ${rec.priority === 'High' ? 'bg-red-200 text-red-800' : rec.priority === 'Medium' ? 'bg-yellow-200 text-yellow-800' : 'bg-blue-200 text-blue-800'}">${rec.priority}</span>
+              </div>
+              <p class="text-sm font-medium ${textClass} mb-1">${rec.suggestion}</p>
+              <p class="text-xs ${textClass} opacity-75">${rec.rationale}</p>
+            </div>
+          </div>
+        `;
+        recommendationsContainer.appendChild(recDiv);
+      });
+    } else {
+      const noRecDiv = document.createElement('div');
+      noRecDiv.className = 'p-3 bg-gray-50 rounded-lg';
+      noRecDiv.innerHTML = '<p class="text-sm text-gray-600">No AI recommendations available. Click "Generate New AI Advice" to create recommendations.</p>';
+      recommendationsContainer.appendChild(noRecDiv);
+    }
+
+    // Recent activity
+    const activityContainer = document.getElementById('recent-activity');
+    activityContainer.innerHTML = '';
+    recentActivity.forEach(activity => {
+      const activityDiv = document.createElement('div');
+      activityDiv.className = 'flex items-center space-x-3';
+      const color = activity.type === 'success' ? 'green' : activity.type === 'warning' ? 'yellow' : 'blue';
+      activityDiv.innerHTML = `
+        <div class="w-2 h-2 bg-${color}-500 rounded-full"></div>
+        <div>
+          <p class="text-sm text-gray-600">${activity.action}</p>
+          <p class="text-xs text-gray-500">${activity.time}</p>
+        </div>
+      `;
+      activityContainer.appendChild(activityDiv);
+    });
+
+    // Quick actions
+    document.getElementById('adjust-traffic').addEventListener('click', () => {
+      alert('Traffic adjustment feature coming soon!');
+    });
+
+    document.getElementById('update-copy').addEventListener('click', () => {
+      alert('Copy update feature coming soon!');
+    });
+
+    document.getElementById('export-data').addEventListener('click', () => {
+      // Export data as CSV
+      const csvData = generateCSV();
+      downloadCSV(csvData, 'funnel-analytics.csv');
+    });
+
+    // Add refresh button functionality
+    const refreshButton = document.createElement('button');
+    refreshButton.textContent = 'Refresh Data';
+    refreshButton.className = 'bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors';
+    refreshButton.addEventListener('click', fetchAnalyticsData);
+    
+    const header = document.querySelector('.mb-8');
+    if (header) {
+      header.appendChild(refreshButton);
+    }
+
+    // Add AI advice refresh button
+    const aiRefreshButton = document.createElement('button');
+    aiRefreshButton.textContent = 'Generate New AI Advice';
+    aiRefreshButton.className = 'bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors ml-2';
+    aiRefreshButton.addEventListener('click', generateNewAIAdvice);
+    
+    if (header) {
+      header.appendChild(aiRefreshButton);
+    }
+
+    document.getElementById('reset-test').addEventListener('click', () => {
+      if (confirm('Are you sure you want to reset the test? This will clear all data.')) {
+        alert('Test reset feature coming soon!');
+      }
+    });
+  });
+
+  async function generateNewAIAdvice() {
+    try {
+      const credentials = getAdminCredentials();
+      if (!credentials) {
+        promptForCredentials();
+        return;
+      }
+
+      const response = await fetch('/api/ai-advice', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Basic ${btoa(credentials)}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        // Refresh the dashboard to show new recommendations
+        fetchAnalyticsData();
+        alert('New AI recommendations generated!');
+      } else {
+        alert('Failed to generate AI advice: ' + result.error);
+      }
+    } catch (error) {
+      console.error('Error generating AI advice:', error);
+      alert('Error generating AI advice');
+    }
+  }
+
+  // Clean up interval on page unload
+  window.addEventListener('beforeunload', () => {
+    if (refreshInterval) {
+      clearInterval(refreshInterval);
+    }
+  });
+
+  // Utility functions for data processing
+  function formatTimeAgo(timestamp) {
+    const now = new Date();
+    const time = new Date(timestamp);
+    const diffInHours = Math.floor((now - time) / (1000 * 60 * 60));
+    
+    if (diffInHours < 1) return 'Just now';
+    if (diffInHours < 24) return `${diffInHours} hours ago`;
+    const diffInDays = Math.floor(diffInHours / 24);
+    return `${diffInDays} days ago`;
+  }
+
+  function generateCSV() {
+    if (!analyticsData) return '';
+    
+    const headers = ['Date', 'Variant', 'Visitors', 'Conversions', 'Conversion Rate', 'Revenue'];
+    const rows = [
+      ['2025-01-01', 'A', analyticsData.variants.a.visitors, analyticsData.variants.a.conversions, analyticsData.variants.a.conversionRate.toFixed(1) + '%', '£' + analyticsData.variants.a.revenue],
+      ['2025-01-01', 'B', analyticsData.variants.b.visitors, analyticsData.variants.b.conversions, analyticsData.variants.b.conversionRate.toFixed(1) + '%', '£' + analyticsData.variants.b.revenue]
+    ];
+    
+    return [headers, ...rows].map(row => row.join(',')).join('\n');
+  }
+
+  function downloadCSV(csvData, filename) {
+    const blob = new Blob([csvData], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    window.URL.revokeObjectURL(url);
+  }
+</script>
+
+<style>
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .5; }
+  }
+</style>

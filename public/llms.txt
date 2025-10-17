@@ -16,6 +16,19 @@ Our people-powered approach combines human expertise with AI acceleration to del
 - [App Development](https://digitalvisibility.com/services/app-development/): Custom mobile and web applications with AI integration
 - [Product Design](https://digitalvisibility.com/services/product-design/): Physical product design, CAD/CAE engineering, and 3D printing
 
+## AI Visibility Plan
+
+- [AI Visibility Plan Funnel](https://digitalvisibility.com/funnel/): Free AI optimization audit to get your site recommended by ChatGPT, Bing, and Google AI within 30 days
+- [AI Optimization Funnel - Variant A](https://digitalvisibility.com/funnel/a/): "Show Up in AI Search Results Within 30 Days" - Get recommended by AI platforms, not buried by them
+- [AI Optimization Funnel - Variant B](https://digitalvisibility.com/funnel/b/): "Free AI Optimization" - Turn your website into an AI-discoverable lead engine with 30-day guarantee
+- **AI Visibility Plan**: £200/month recurring service for ongoing AI optimization, monitoring, and guaranteed results
+- **Free AI Optimization Audit**: Comprehensive analysis of your website's AI discoverability with specific recommendations
+- **AI Search Optimization**: Specialized techniques for ChatGPT, Bing AI, Google AI, Perplexity, and Claude discoverability
+- **AEO (Answer Engine Optimization)**: Optimize content to be recommended by AI-powered answer engines
+- **GEO (Generative Engine Optimization)**: Optimize for AI-generated search results and recommendations
+- **Voice Search Optimization**: Structure content for voice queries and AI snippets
+- **Schema-Driven Content Strategy**: Advanced structured data markup for AI systems
+
 ## Business Information
 
 - [About Digital Visibility](https://digitalvisibility.com/about/): Company overview, mission, values, and team information

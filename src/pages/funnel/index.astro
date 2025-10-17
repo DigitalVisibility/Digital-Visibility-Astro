@@ -1,0 +1,92 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+
+// Local development fallback for A/B funnel routing
+// This will redirect to a random variant for testing
+// In production, this will be handled by the Cloudflare Pages Function
+
+export const prerender = false;
+
+// Simple client-side A/B routing for local development
+const variants = ['a', 'b'];
+const randomVariant = variants[Math.floor(Math.random() * variants.length)];
+---
+
+<MainLayout title="AI Visibility Funnel - Loading...">
+  <meta name="description" content="Redirecting to AI optimization funnel..." slot="head">
+  <meta name="robots" content="noindex, nofollow" slot="head">
+  
+  <Navigation slot="nav" />
+  
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-blue-600 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+          </svg>
+        </div>
+        
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">
+          Loading AI Optimization Funnel...
+        </h1>
+        
+        <p class="text-lg text-gray-600 mb-6">
+          Redirecting you to your personalized AI optimization experience
+        </p>
+        
+        <div class="text-sm text-gray-500">
+          If you're not redirected automatically, 
+          <a href="/funnel/a/" class="text-blue-600 hover:text-blue-700 font-medium">click here for Variant A</a> or 
+          <a href="/funnel/b/" class="text-green-600 hover:text-green-700 font-medium">click here for Variant B</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</MainLayout>
+
+<script>
+  // Client-side A/B routing for local development
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if user already has a variant cookie
+    const existingVariant = document.cookie
+      .split('; ')
+      .find(row => row.startsWith('funnel_variant='))
+      ?.split('=')[1];
+    
+    let variant;
+    
+    if (existingVariant && (existingVariant === 'a' || existingVariant === 'b')) {
+      // User already has a variant assigned, use it
+      variant = existingVariant;
+    } else {
+      // New user - assign variant based on 50/50 split
+      variant = Math.random() < 0.5 ? 'a' : 'b';
+      
+      // Set cookie for 30 days to maintain consistency
+      const expiryDate = new Date();
+      expiryDate.setTime(expiryDate.getTime() + (30 * 24 * 60 * 60 * 1000)); // 30 days
+      document.cookie = `funnel_variant=${variant}; expires=${expiryDate.toUTCString()}; path=/; SameSite=Lax`;
+    }
+    
+    // Redirect to appropriate variant after a short delay for UX
+    setTimeout(() => {
+      window.location.href = `/funnel/${variant}/`;
+    }, 1500);
+  });
+</script>
+
+<style>
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+</style>

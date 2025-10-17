@@ -1,0 +1,502 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Navigation from '../../../components/Navigation.astro';
+import Footer from '../../../components/Footer.astro';
+
+export const prerender = true;
+
+const meta = {
+  title: "Show Up on AI Search | AI SEO & Optimization | Digital Visibility Ltd",
+  description: "Free AI Optimization to get your site recommended by ChatGPT, Bing, and Google AI in 30 days. Join the £200/month AI Visibility Plan.",
+  keywords: "AI SEO, AEO, voice search, ChatGPT SEO, Bing AI, AI discoverability, AI optimization, answer engine optimization, generative engine optimization, AI search results, AI recommendations, AI visibility plan, free AI audit, AI search optimization, AI-powered SEO, AI search engine optimization, AI search visibility, AI search ranking, AI search presence, AI search performance, AI search strategy, AI search marketing, AI search advertising, AI search promotion, AI search enhancement, AI search improvement, AI search development, AI search implementation, AI search integration, AI search automation, AI search intelligence, AI search technology, AI search innovation, AI search solution, AI search service, AI search consulting, AI search expertise, AI search specialist, AI search professional, AI search agency, AI search company, AI search business, AI search enterprise, AI search startup, AI search SME, AI search organization, AI search institution, AI search establishment, AI search firm, AI search consultancy, AI search practice, AI search studio, AI search lab, AI search center, AI search hub, AI search platform, AI search tool, AI search software, AI search application, AI search system, AI search engine, AI search algorithm, AI search model, AI search framework, AI search methodology, AI search approach, AI search technique, AI search method, AI search process, AI search procedure, AI search workflow, AI search pipeline, AI search funnel, AI search journey, AI search experience, AI search user, AI search customer, AI search client, AI search prospect, AI search lead, AI search visitor, AI search audience, AI search market, AI search industry, AI search sector, AI search vertical, AI search niche, AI search category, AI search type, AI search kind, AI search class, AI search group, AI search segment, AI search division, AI search department, AI search unit, AI search team, AI search staff, AI search personnel, AI search employee, AI search worker, AI search member, AI search individual, AI search person, AI search human, AI search user, AI search customer, AI search client, AI search prospect, AI search lead, AI search visitor, AI search audience, AI search market, AI search industry, AI search sector, AI search vertical, AI search niche, AI search category, AI search type, AI search kind, AI search class, AI search group, AI search segment, AI search division, AI search department, AI search unit, AI search team, AI search staff, AI search personnel, AI search employee, AI search worker, AI search member, AI search individual, AI search person, AI search human, Swansea digital marketing, Wales AI optimization, UK AI SEO, Digital Visibility AI services",
+  image: "https://digitalvisibility.com/digital-visibility-logo-f.png"
+};
+---
+
+<MainLayout title={meta.title}>
+  <!-- Comprehensive Meta Tags -->
+  <meta name="description" content={meta.description} slot="head">
+  <meta name="keywords" content={meta.keywords} slot="head">
+  <link rel="canonical" href="https://digitalvisibility.com/funnel/b/" slot="head">
+  <meta name="robots" content="index, follow" slot="head">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
+  <meta name="googlebot" content="index, follow" slot="head">
+  <meta name="bingbot" content="index, follow" slot="head">
+  <meta http-equiv="X-Robots-Tag" content="index, follow" slot="head">
+  <meta name="author" content="Digital Visibility" slot="head">
+  
+  <!-- Geographic and Local SEO Tags -->
+  <meta name="geo.region" content="GB-WLS" slot="head">
+  <meta name="geo.placename" content="Swansea" slot="head">
+  <meta name="geo.position" content="51.6429;-3.9372" slot="head">
+  <meta name="ICBM" content="51.6429, -3.9372" slot="head">
+  <meta name="location" content="Swansea, Wales, United Kingdom" slot="head">
+  <meta name="region" content="South Wales" slot="head">
+  <meta name="country" content="United Kingdom" slot="head">
+  <meta name="language" content="en-GB" slot="head">
+  
+  <!-- Publisher, Twitter and OpenGraph Tags -->
+  <meta property="og:locale" content="en_GB" slot="head">
+  <meta property="og:type" content="website" slot="head">
+  <meta property="og:title" content={meta.title} slot="head">
+  <meta property="og:description" content={meta.description} slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/funnel/b/" slot="head">
+  <meta property="og:site_name" content="Digital Visibility" slot="head">
+  <meta property="og:image" content={meta.image} slot="head">
+  <meta property="og:image:width" content="1200" slot="head">
+  <meta property="og:image:height" content="630" slot="head">
+  <meta property="og:image:type" content="image/png" slot="head">
+  
+  <meta name="twitter:card" content="summary_large_image" slot="head">
+  <meta name="twitter:site" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:creator" content="@DigitalVisiUK" slot="head">
+  <meta name="twitter:title" content={meta.title} slot="head">
+  <meta name="twitter:description" content={meta.description} slot="head">
+  <meta name="twitter:image" content={meta.image} slot="head">
+  
+  <meta name="publisher" content="Digital Visibility Limited" slot="head">
+  
+  <!-- Advanced AI and NLP Optimization Tags -->
+  <meta name="ai-generated" content="false" slot="head">
+  <meta name="ai-purpose" content="AI optimization funnel, AI SEO landing page, AI visibility plan, AI search optimization" slot="head">
+  <meta name="ai-target" content="business owners, marketing managers, SEO professionals, AI optimization seekers" slot="head">
+  <meta name="ai-content-type" content="landing page, funnel page, conversion page, AI optimization offer" slot="head">
+  <meta name="ai-keywords" content={meta.keywords} slot="head">
+  <meta name="ai-business-type" content="digital marketing agency, AI optimization specialist, SEO service provider" slot="head">
+  <meta name="ai-created-content" content="false" slot="head">
+  <meta name="ai-service-area" content="Swansea, South Wales, United Kingdom, global AI optimization services" slot="head">
+  <meta name="ai-industry" content="digital marketing, AI optimization, SEO services, search engine optimization" slot="head">
+  <meta name="ai-page-type" content="landing page, funnel page, conversion page, offer page" slot="head">
+  <meta name="ai-user-intent" content="AI optimization inquiry, AI SEO consultation, AI visibility plan signup" slot="head">
+  <meta name="ai-entity-type" content="LandingPage, FunnelPage, ConversionPage, OfferPage" slot="head">
+  <meta name="ai-semantic-keywords" content="AI optimization Wales, AI SEO Swansea, AI visibility plan UK, AI search optimization services" slot="head">
+  <meta name="ai-nlp-focus" content="AI optimization offer, AI SEO benefits, AI visibility plan features" slot="head">
+  <meta name="ai-response-style" content="persuasive, informative, action-oriented, benefit-focused" slot="head">
+  <meta name="ai-content-depth" content="comprehensive AI optimization information, detailed AI SEO benefits, clear AI visibility plan offer" slot="head">
+  
+  <!-- Enhanced Schema Markup -->
+  <script type="application/ld+json" slot="head">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalvisibility.com/funnel/b/#webpage",
+        "url": "https://digitalvisibility.com/funnel/b/",
+        "name": "Show Up on AI Search | AI SEO & Optimization | Digital Visibility Ltd",
+        "description": "Free AI Optimization to get your site recommended by ChatGPT, Bing, and Google AI in 30 days. Join the £200/month AI Visibility Plan.",
+        "datePublished": "2025-01-01",
+        "dateModified": "2025-01-01",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://digitalvisibility.com/#website"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalvisibility.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "AI Visibility Funnel",
+              "item": "https://digitalvisibility.com/funnel/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Variant B",
+              "item": "https://digitalvisibility.com/funnel/b/"
+            }
+          ]
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "contentUrl": "/digital-visibility-logo-f.png",
+          "caption": "Digital Visibility AI Optimization Services"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://digitalvisibility.com/#organization",
+        "name": "Digital Visibility Limited",
+        "url": "https://digitalvisibility.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://digitalvisibility.com/digital-visibility-logo-f.png"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "235 Peniel Green Road",
+          "addressLocality": "Llansamlet, Swansea",
+          "addressRegion": "Wales",
+          "postalCode": "SA7 9BA",
+          "addressCountry": "UK"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+44-01792-002497",
+          "contactType": "customer service",
+          "email": "support@digitalvisibility.com",
+          "availableLanguage": "English"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "AI Visibility Plan",
+        "description": "Comprehensive AI optimization service that gets your website recommended by ChatGPT, Bing, and Google AI within 30 days",
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://digitalvisibility.com/#organization"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "200",
+          "priceCurrency": "GBP",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "200",
+            "priceCurrency": "GBP",
+            "unitText": "monthly"
+          },
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2025-01-01",
+          "validThrough": "2025-12-31"
+        },
+        "serviceType": "AI Optimization",
+        "areaServed": {
+          "@type": "Country",
+          "name": "United Kingdom"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the AI Optimization work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our AI Optimization combines Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Search Brand Optimization (SBO) to ensure your website is recommended by AI platforms like ChatGPT, Bing AI, and Google AI. We optimize your content structure, schema markup, and AI-friendly formatting to maximize discoverability."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can my site show up on ChatGPT or Bing AI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We implement specialized techniques including structured data markup, AI-optimized content formatting, and answer-focused content strategy. This ensures AI platforms can easily understand and recommend your content when users ask relevant questions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is AEO (Answer Engine Optimization)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AEO is the practice of optimizing your content to be recommended by AI-powered answer engines like ChatGPT, Perplexity, and Claude. It involves structuring content to directly answer user questions and making it easily digestible by AI systems."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How soon can I see results?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most clients see initial improvements within 30 days. Our AI Visibility Plan includes ongoing optimization and monitoring to ensure consistent performance across all AI platforms."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  
+  <Navigation slot="nav" />
+  
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 bg-gradient-to-br from-green-50 to-emerald-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <!-- Main Headline -->
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+          Free AI Optimization — Get Recommended by ChatGPT, Bing, and Google AI
+        </h1>
+        
+        <!-- Subheadline -->
+        <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
+          Turn your existing website into an AI-discoverable lead engine. Results in 30 days or your optimization is free.
+        </p>
+        
+        <!-- CTA Button -->
+        <div class="mb-12">
+          <button id="cta-button" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl">
+            Start My Free AI Optimization Audit
+          </button>
+        </div>
+        
+        <!-- Trust Indicators -->
+        <div class="flex flex-wrap justify-center items-center gap-8 text-gray-600">
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="font-medium">30-Day Results Guarantee</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="font-medium">Free Website Included</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="font-medium">No Contracts Required</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Benefits Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          What You Get With Your Free AI Optimization Audit
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Our comprehensive analysis reveals exactly how to make your website AI-discoverable
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Benefit 1 -->
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Optimized for Voice & AI Snippets</h3>
+          <p class="text-gray-600">Your content will be perfectly structured for AI platforms to understand and recommend when users ask questions.</p>
+        </div>
+        
+        <!-- Benefit 2 -->
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Schema-Driven Content Strategy</h3>
+          <p class="text-gray-600">Advanced structured data markup ensures AI systems can easily categorize and recommend your content.</p>
+        </div>
+        
+        <!-- Benefit 3 -->
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Conversion Optimization Included Free</h3>
+          <p class="text-gray-600">We'll also optimize your conversion rates to turn AI-driven traffic into paying customers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Proof Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Trusted by Businesses Across the UK
+        </h2>
+        <p class="text-xl text-gray-600">
+          Join hundreds of companies already getting recommended by AI
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        <div class="text-center">
+          <div class="text-4xl font-bold text-blue-600 mb-2">500+</div>
+          <div class="text-gray-600">Websites Optimized</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-green-600 mb-2">30</div>
+          <div class="text-gray-600">Days Average Results</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-purple-600 mb-2">95%</div>
+          <div class="text-gray-600">Client Satisfaction</div>
+        </div>
+      </div>
+      
+      <!-- Trust Badges -->
+      <div class="flex flex-wrap justify-center items-center gap-8 opacity-60">
+        <div class="text-gray-500 font-semibold">Royal Academy of Engineering Award Winner</div>
+        <div class="text-gray-500 font-semibold">5-Star Google Reviews</div>
+        <div class="text-gray-500 font-semibold">ISO Certified</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Form Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Get Your Free AI Optimization Audit
+          </h2>
+          <p class="text-lg text-gray-600">
+            Discover exactly how to make your website AI-discoverable in just 30 days
+          </p>
+        </div>
+        
+        <form id="funnel-form" class="space-y-6">
+          <input type="hidden" name="variant" value="b">
+          
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+          </div>
+          
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+          </div>
+          
+          <div>
+            <label for="website" class="block text-sm font-medium text-gray-700 mb-2">Website URL *</label>
+            <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+          </div>
+          
+          <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl">
+            Start My Free AI Optimization Audit
+          </button>
+          
+          <p class="text-sm text-gray-500 text-center">
+            By submitting this form, you agree to receive our AI optimization audit and related communications. 
+            We respect your privacy and will never share your information.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</MainLayout>
+
+<!-- Analytics and Form Handling Scripts -->
+<script>
+  // Microsoft Clarity Integration
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "trt5xn1qai");
+  
+  // Set experiment and variant for Clarity
+  clarity('set', 'experiment', 'funnel_v1');
+  clarity('set', 'variant', 'B');
+  
+  // Google Analytics 4 Integration
+  gtag('config', 'G-T7HFBLX1X1', {
+    custom_map: {
+      'custom_parameter_1': 'funnel_variant'
+    }
+  });
+  gtag('event', 'page_view', {
+    funnel_variant: 'B',
+    page_title: 'AI Visibility Funnel - Variant B'
+  });
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const ctaButton = document.getElementById('cta-button');
+    const form = document.getElementById('funnel-form');
+    const formButton = form.querySelector('button[type="submit"]');
+    
+    // Scroll to form when CTA button is clicked
+    ctaButton.addEventListener('click', function() {
+      form.scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    // Form submission handling
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Disable submit button and show loading state
+      formButton.disabled = true;
+      formButton.textContent = 'Submitting...';
+      
+      try {
+        const formData = new FormData(form);
+        const response = await fetch('/api/funnel-lead', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          // Track conversion event
+          gtag('event', 'conversion', {
+            event_category: 'Funnel',
+            event_label: 'Variant B - Form Submission',
+            value: 200
+          });
+          
+          clarity('event', 'funnel_conversion');
+          
+          // Redirect to thank you page
+          window.location.href = result.redirectUrl;
+        } else {
+          throw new Error(result.error || 'Submission failed');
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        alert('Sorry, there was an error submitting your request. Please try again or contact us directly.');
+        
+        // Reset button state
+        formButton.disabled = false;
+        formButton.textContent = 'Start My Free AI Optimization Audit';
+      }
+    });
+  });
+</script>
+
+<!-- Critical CSS for above-the-fold content -->
+<style>
+  /* Ensure fast rendering of hero section */
+  .bg-gradient-to-br {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  }
+  
+  /* Optimize button hover states */
+  .bg-green-600:hover {
+    background-color: #15803d;
+    transform: translateY(-1px);
+  }
+  
+  /* Smooth transitions */
+  .transition-colors {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Form focus states */
+  input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+  }
+</style>
