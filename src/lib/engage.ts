@@ -59,15 +59,62 @@ class EngageTracker {
   private rageClickCounts: Map<string, number> = new Map();
   private formStartTime: number = 0;
   private flushInterval: NodeJS.Timeout | null = null;
+  private consentGranted: boolean = false;
 
   constructor(config: EngageConfig) {
     this.config = config;
     this.sessionId = this.generateSessionId();
-    this.init();
+    this.checkConsentAndInit();
   }
 
   private generateSessionId(): string {
     return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  }
+
+  private checkConsentAndInit(): void {
+    // Check if consent has been granted
+    this.consentGranted = this.hasAnalyticsConsent();
+
+    if (this.consentGranted) {
+      this.init();
+    }
+
+    // Listen for consent changes
+    document.addEventListener('cookieConsentUpdate', (e: CustomEvent) => {
+      const wasGranted = this.consentGranted;
+      this.consentGranted = e.detail?.analytics || false;
+
+      // If consent just granted, initialize tracking
+      if (!wasGranted && this.consentGranted) {
+        this.init();
+      }
+
+      // If consent withdrawn, stop tracking and clear data
+      if (wasGranted && !this.consentGranted) {
+        this.destroy();
+      }
+    });
+  }
+
+  private hasAnalyticsConsent(): boolean {
+    // Check if cookieConsent manager exists
+    if (typeof window !== 'undefined' && (window as any).cookieConsent) {
+      return (window as any).cookieConsent.isAllowed('analytics');
+    }
+
+    // Check localStorage directly as fallback
+    try {
+      const consent = localStorage.getItem('digitalvisibility_cookie_consent');
+      if (consent) {
+        const parsed = JSON.parse(consent);
+        return parsed.analytics === true;
+      }
+    } catch (e) {
+      // Ignore errors
+    }
+
+    // Default to no consent
+    return false;
   }
 
   private init(): void {
@@ -77,7 +124,7 @@ class EngageTracker {
     this.setupScrollTracking();
     this.setupFlushInterval();
     this.setupVisibilityChange();
-    
+
     // Track page load
     this.trackEvent('section', {
       section: 'page',
@@ -279,6 +326,11 @@ class EngageTracker {
   }
 
   private trackEvent(type: EngageEvent['type'], data: any): void {
+    // Don't track if consent not granted
+    if (!this.consentGranted) {
+      return;
+    }
+
     const event: EngageEvent = {
       type,
       timestamp: Date.now(),

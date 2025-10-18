@@ -238,6 +238,10 @@ const meta = {
         </div>
         <div class="p-6">
           <div class="space-y-3">
+            <button id="process-engagement" class="w-full text-left p-3 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition-colors">
+              <p class="text-sm font-medium text-indigo-900">⚡ Process Engagement Data Now</p>
+              <p class="text-xs text-indigo-700">Manually trigger engagement data aggregation (normally runs every 15 min)</p>
+            </button>
             <button id="adjust-traffic" class="w-full text-left p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
               <p class="text-sm font-medium text-blue-900">Adjust Traffic Split</p>
               <p class="text-xs text-blue-700">Modify A/B test traffic allocation</p>
@@ -283,15 +287,15 @@ const meta = {
         updateDashboard();
       } else {
         console.error('Failed to fetch analytics data:', result.error);
-        loadMockData();
+        showEmptyState();
       }
     } catch (error) {
       console.error('Error fetching analytics data:', error);
-      loadMockData();
+      showEmptyState();
     }
   }
 
-  function loadMockData() {
+  function showEmptyState() {
     // Show empty state when no real data is available
     analyticsData = {
       summary: {
@@ -321,7 +325,7 @@ const meta = {
       },
       recommendations: [],
       recentActivity: [
-        { time: 'Just now', action: 'Waiting for real data from analytics APIs', type: 'info' }
+        { time: 'Just now', action: 'Waiting for funnel submissions', type: 'info' }
       ]
     };
     updateDashboard();
@@ -462,14 +466,57 @@ const meta = {
     window.URL.revokeObjectURL(url);
   }
 
+  async function processEngagementNow() {
+    const button = document.getElementById('process-engagement');
+    const originalText = button.innerHTML;
+
+    try {
+      // Disable button and show processing state
+      button.disabled = true;
+      button.innerHTML = `
+        <p class="text-sm font-medium text-indigo-900">⏳ Processing...</p>
+        <p class="text-xs text-indigo-700">This may take a few seconds</p>
+      `;
+
+      const response = await fetch('/api/process-engagement', {
+        method: 'POST',
+        credentials: 'include'
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert(`✅ Success!\n\nProcessed ${result.totalEvents} engagement events.\n\nDetails:\n${result.processed.join('\n')}\n\nRefreshing dashboard...`);
+
+        // Wait a second then refresh dashboard
+        setTimeout(() => {
+          fetchAnalyticsData();
+          // Also refresh heatmaps
+          document.querySelectorAll('#refresh-heatmap').forEach(btn => btn.click());
+        }, 1000);
+      } else {
+        alert(`❌ Error: ${result.error}`);
+      }
+    } catch (error) {
+      console.error('Error processing engagement:', error);
+      alert(`❌ Error processing engagement data: ${error.message}`);
+    } finally {
+      // Re-enable button
+      button.disabled = false;
+      button.innerHTML = originalText;
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     // Load initial data
     fetchAnalyticsData();
-    
+
     // Set up auto-refresh every 5 minutes
     refreshInterval = setInterval(fetchAnalyticsData, 5 * 60 * 1000);
 
     // Quick actions
+    document.getElementById('process-engagement').addEventListener('click', processEngagementNow);
+
     document.getElementById('adjust-traffic').addEventListener('click', () => {
       alert('Traffic adjustment feature coming soon!');
     });
