@@ -172,13 +172,27 @@ export const POST: APIRoute = async ({ request, locals }) => {
                   We've received your request for a <strong>Free AI Optimization Audit</strong> for ${website}.
                 </p>
 
+                <div style="background: #dcfce7; padding: 25px; border-radius: 8px; margin: 20px 0; text-align: center; border: 2px solid #16a34a;">
+                  <h2 style="margin-top: 0; color: #15803d;">📅 Book Your FREE 30-Minute Discovery Call</h2>
+                  <p style="color: #1f2937; font-size: 16px; margin: 15px 0;">
+                    Want to fast-track your results? Book a time that works for you and we'll walk through your audit live, answer your questions, and create a custom AI optimization roadmap.
+                  </p>
+                  <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/YOUR_CALENDAR_ID"
+                     style="display: inline-block; background: #16a34a; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; margin: 10px 0;">
+                    Book Your Discovery Call Now →
+                  </a>
+                  <p style="color: #6b7280; font-size: 13px; margin-top: 10px;">
+                    No obligation • No pressure • Just valuable insights
+                  </p>
+                </div>
+
                 <div style="background: #eff6ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2563eb;">
                   <h2 style="margin-top: 0; color: #1e40af;">What Happens Next?</h2>
                   <ol style="color: #1f2937; line-height: 1.8;">
                     <li><strong>Within 24 hours:</strong> We'll analyze your website and prepare your personalized AI Optimization Audit</li>
                     <li><strong>AI Discoverability Report:</strong> You'll receive a detailed report showing how your site currently performs on ChatGPT, Bing AI, and Google AI</li>
                     <li><strong>Custom Recommendations:</strong> We'll provide specific actions to get your website recommended by AI platforms</li>
-                    <li><strong>Discovery Call:</strong> We'll schedule a call to walk through the findings and discuss the AI Visibility Plan</li>
+                    <li><strong>Discovery Call (Optional):</strong> Book a time above or we'll follow up to schedule a call to discuss your strategy</li>
                   </ol>
                 </div>
 
