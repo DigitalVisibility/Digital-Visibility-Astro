@@ -4,46 +4,62 @@
 // Supports AI-driven traffic allocation via KV store
 
 export async function onRequest(context) {
-  const { request } = context;
-  const url = new URL(request.url);
-  
-  // Check if user already has a variant cookie
-  const existingVariant = context.cookies.get('funnel_variant')?.value;
-  
-  let variant;
-  
-  if (existingVariant && (existingVariant === 'a' || existingVariant === 'b')) {
-    // User already has a variant assigned, use it
-    variant = existingVariant;
-  } else {
-    // New user - assign variant based on traffic allocation
-    variant = await getVariantAssignment(context);
-    
-    // Set cookie for 30 days to maintain consistency
-    context.cookies.set('funnel_variant', variant, {
-      path: '/',
-      maxAge: 60 * 60 * 24 * 30, // 30 days
-      httpOnly: false, // Allow JavaScript access for analytics
-      secure: true,
-      sameSite: 'Lax'
-    });
-  }
-  
-  // Track variant assignment in analytics
-  await trackVariantAssignment(variant, context);
-  
-  // Redirect to appropriate variant
-  const redirectUrl = new URL(`/funnel/${variant}/`, url.origin);
-  
-  // Add utm parameters if present
-  const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
-  utmParams.forEach(param => {
-    if (url.searchParams.has(param)) {
-      redirectUrl.searchParams.set(param, url.searchParams.get(param));
+  try {
+    const { request } = context;
+    const url = new URL(request.url);
+
+    // Get existing variant from cookie header
+    const cookieHeader = request.headers.get('Cookie') || '';
+    const existingVariant = getCookieValue(cookieHeader, 'funnel_variant');
+
+    let variant;
+
+    if (existingVariant && (existingVariant === 'a' || existingVariant === 'b')) {
+      // User already has a variant assigned, use it
+      variant = existingVariant;
+    } else {
+      // New user - assign variant based on traffic allocation
+      variant = await getVariantAssignment(context);
     }
-  });
-  
-  return Response.redirect(redirectUrl.toString(), 302);
+
+    // Track variant assignment in analytics (non-blocking)
+    trackVariantAssignment(variant, context).catch(err =>
+      console.error('Error tracking variant:', err)
+    );
+
+    // Redirect to appropriate variant
+    const redirectUrl = new URL(`/funnel/${variant}/`, url.origin);
+
+    // Add utm parameters if present
+    const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+    utmParams.forEach(param => {
+      if (url.searchParams.has(param)) {
+        redirectUrl.searchParams.set(param, url.searchParams.get(param));
+      }
+    });
+
+    // Create redirect response with cookie
+    const response = Response.redirect(redirectUrl.toString(), 302);
+
+    // Set cookie if new variant was assigned
+    if (!existingVariant) {
+      const cookieValue = `funnel_variant=${variant}; Path=/; Max-Age=${60 * 60 * 24 * 30}; SameSite=Lax`;
+      response.headers.set('Set-Cookie', cookieValue);
+    }
+
+    return response;
+  } catch (error) {
+    console.error('Error in funnel function:', error);
+    // Fallback: redirect to variant A on error
+    const fallbackUrl = new URL('/funnel/a/', new URL(context.request.url).origin);
+    return Response.redirect(fallbackUrl.toString(), 302);
+  }
+}
+
+// Helper function to parse cookie value from header
+function getCookieValue(cookieHeader, name) {
+  const match = cookieHeader.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  return match ? match[2] : null;
 }
 
 async function getVariantAssignment(context) {

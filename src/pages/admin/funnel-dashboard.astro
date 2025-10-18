@@ -271,52 +271,22 @@ const meta = {
 
   async function fetchAnalyticsData() {
     try {
-      // Get admin credentials from localStorage or prompt
-      const credentials = getAdminCredentials();
-      if (!credentials) {
-        promptForCredentials();
-        return;
-      }
-
+      // Use browser's built-in basic auth - same as heatmap
       const response = await fetch('/api/funnel-metrics', {
-        headers: {
-          'Authorization': `Basic ${btoa(credentials)}`,
-          'Content-Type': 'application/json'
-        }
+        credentials: 'include'
       });
-      
+
       const result = await response.json();
-      
+
       if (result.success) {
         analyticsData = result.data;
         updateDashboard();
       } else {
         console.error('Failed to fetch analytics data:', result.error);
-        if (result.error === 'Invalid credentials') {
-          promptForCredentials();
-        } else {
-          loadMockData();
-        }
+        loadMockData();
       }
     } catch (error) {
       console.error('Error fetching analytics data:', error);
-      loadMockData();
-    }
-  }
-
-  function getAdminCredentials() {
-    return localStorage.getItem('admin_credentials');
-  }
-
-  function promptForCredentials() {
-    const username = prompt('Admin Username:');
-    const password = prompt('Admin Password:');
-    
-    if (username && password) {
-      const credentials = `${username}:${password}`;
-      localStorage.setItem('admin_credentials', credentials);
-      fetchAnalyticsData();
-    } else {
       loadMockData();
     }
   }
@@ -445,22 +415,13 @@ const meta = {
 
   async function generateNewAIAdvice() {
     try {
-      const credentials = getAdminCredentials();
-      if (!credentials) {
-        promptForCredentials();
-        return;
-      }
-
       const response = await fetch('/api/ai-advice', {
         method: 'POST',
-        headers: {
-          'Authorization': `Basic ${btoa(credentials)}`,
-          'Content-Type': 'application/json'
-        }
+        credentials: 'include'
       });
-      
+
       const result = await response.json();
-      
+
       if (result.success) {
         // Refresh the dashboard to show new recommendations
         fetchAnalyticsData();
