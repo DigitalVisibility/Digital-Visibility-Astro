@@ -36,20 +36,22 @@ async function fetchGA4Data(env) {
     throw new Error('GA4_ID not configured');
   }
   
-  // For now, return mock data structure
-  // In production, implement GA4 Reporting API v1
+  // TODO: Implement real GA4 Reporting API v1 integration
+  // This is a placeholder - you need to implement actual GA4 API calls
+  console.log('GA4 API integration not implemented yet');
+  
   return {
     date: new Date().toISOString().split('T')[0],
     variants: {
       A: {
-        visitors: Math.floor(Math.random() * 100) + 200,
-        conversions: Math.floor(Math.random() * 20) + 30,
-        pageviews: Math.floor(Math.random() * 150) + 300
+        visitors: 0,
+        conversions: 0,
+        pageviews: 0
       },
       B: {
-        visitors: Math.floor(Math.random() * 100) + 200,
-        conversions: Math.floor(Math.random() * 25) + 35,
-        pageviews: Math.floor(Math.random() * 150) + 300
+        visitors: 0,
+        conversions: 0,
+        pageviews: 0
       }
     },
     total: {
@@ -66,19 +68,21 @@ async function fetchClarityData(env) {
     throw new Error('CLARITY_ID not configured');
   }
   
-  // For now, return mock data structure
-  // In production, implement Clarity Export API
+  // TODO: Implement real Clarity Export API integration
+  // This is a placeholder - you need to implement actual Clarity API calls
+  console.log('Clarity API integration not implemented yet');
+  
   return {
     date: new Date().toISOString().split('T')[0],
     engagement: {
-      averageSessionDuration: Math.floor(Math.random() * 60) + 120,
-      bounceRate: Math.random() * 0.3 + 0.4,
-      rageClicks: Math.floor(Math.random() * 10) + 5,
-      scrollDepth: Math.random() * 0.3 + 0.6
+      averageSessionDuration: 0,
+      bounceRate: 0,
+      rageClicks: 0,
+      scrollDepth: 0
     },
     heatmap: {
-      ctaClicks: Math.floor(Math.random() * 50) + 20,
-      formInteractions: Math.floor(Math.random() * 30) + 15
+      ctaClicks: 0,
+      formInteractions: 0
     }
   };
 }

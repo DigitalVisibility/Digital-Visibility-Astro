@@ -315,53 +315,36 @@ const meta = {
   }
 
   function loadMockData() {
+    // Show empty state when no real data is available
     analyticsData = {
       summary: {
-        totalVisitors: 1247,
-        totalConversions: 89,
-        totalRevenue: 17800,
-        testDuration: 7,
-        confidenceLevel: 95.2,
-        winner: 'Variant B',
-        improvement: '+34.2%'
+        totalVisitors: 0,
+        totalConversions: 0,
+        totalRevenue: 0,
+        testDuration: 0,
+        confidenceLevel: 0,
+        winner: 'No Data',
+        improvement: '0%'
       },
       variants: {
         a: {
-          visitors: 623,
-          conversions: 38,
-          conversionRate: 6.1,
-          revenue: 7600,
-          trafficAllocation: 49.9
+          visitors: 0,
+          conversions: 0,
+          conversionRate: 0,
+          revenue: 0,
+          trafficAllocation: 50
         },
         b: {
-          visitors: 624,
-          conversions: 51,
-          conversionRate: 8.2,
-          revenue: 10200,
-          trafficAllocation: 50.1
+          visitors: 0,
+          conversions: 0,
+          conversionRate: 0,
+          revenue: 0,
+          trafficAllocation: 50
         }
       },
-      recommendations: [
-        {
-          priority: 'High',
-          suggestion: 'Variant B is outperforming by 34.2%. Consider increasing traffic allocation to 70/30.',
-          rationale: 'Higher conversion rate with stronger call to action.'
-        },
-        {
-          priority: 'Medium',
-          suggestion: 'Apply Variant B\'s successful elements to Variant A: stronger headline, clearer value proposition.',
-          rationale: 'Consistent messaging across variants can improve overall performance.'
-        },
-        {
-          priority: 'Low',
-          suggestion: 'Consider testing different CTA colors, button text, or form fields next.',
-          rationale: 'Small changes can lead to significant improvements.'
-        }
-      ],
+      recommendations: [],
       recentActivity: [
-        { time: '2 hours ago', action: 'Variant B conversion spike detected', type: 'success' },
-        { time: '4 hours ago', action: 'Statistical significance reached', type: 'info' },
-        { time: '1 day ago', action: 'Test started with 50/50 split', type: 'info' }
+        { time: 'Just now', action: 'Waiting for real data from analytics APIs', type: 'info' }
       ]
     };
     updateDashboard();
@@ -485,12 +468,15 @@ const meta = {
   }
 
   function generateCSV() {
-    if (!analyticsData) return '';
+    if (!analyticsData || analyticsData.summary.totalVisitors === 0) {
+      return 'Date,Variant,Visitors,Conversions,Conversion Rate,Revenue\nNo data available';
+    }
     
     const headers = ['Date', 'Variant', 'Visitors', 'Conversions', 'Conversion Rate', 'Revenue'];
+    const today = new Date().toISOString().split('T')[0];
     const rows = [
-      ['2025-01-01', 'A', analyticsData.variants.a.visitors, analyticsData.variants.a.conversions, analyticsData.variants.a.conversionRate.toFixed(1) + '%', '£' + analyticsData.variants.a.revenue],
-      ['2025-01-01', 'B', analyticsData.variants.b.visitors, analyticsData.variants.b.conversions, analyticsData.variants.b.conversionRate.toFixed(1) + '%', '£' + analyticsData.variants.b.revenue]
+      [today, 'A', analyticsData.variants.a.visitors, analyticsData.variants.a.conversions, analyticsData.variants.a.conversionRate.toFixed(1) + '%', '£' + analyticsData.variants.a.revenue],
+      [today, 'B', analyticsData.variants.b.visitors, analyticsData.variants.b.conversions, analyticsData.variants.b.conversionRate.toFixed(1) + '%', '£' + analyticsData.variants.b.revenue]
     ];
     
     return [headers, ...rows].map(row => row.join(',')).join('\n');
