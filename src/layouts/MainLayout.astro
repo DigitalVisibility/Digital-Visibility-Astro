@@ -1,6 +1,7 @@
 ---
 // Main layout component that will be used across all pages
 import CookieConsent from '../components/CookieConsent.astro';
+import '../styles/global.css';
 
 const { title = "Digital Visibility - AI Powered Business Optimization", meta } = Astro.props;
 
@@ -42,8 +43,7 @@ const pageImage = meta?.image || "/digital-visibility-logo-f.png";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://imagedelivery.net" crossorigin>
     <title>{pageTitle}</title>
-    <!-- Global CSS stylesheet -->
-    <link rel="stylesheet" href="/global.css">
+    <!-- Global CSS stylesheet loaded via Astro import -->
     <!-- Individual pages handle their own meta descriptions to avoid duplicates -->
     <meta name="keywords" content={pageKeywords}>
     

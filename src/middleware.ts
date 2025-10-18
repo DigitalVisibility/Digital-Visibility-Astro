@@ -5,11 +5,7 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
   
   // Check if this is an admin route
   if (url.pathname.startsWith('/admin/')) {
-    // Add noindex header for all admin pages
-    const response = await next();
-    response.headers.set('X-Robots-Tag', 'noindex, nofollow');
-    
-    // Check for Basic Auth
+    // Check for Basic Auth FIRST
     const authHeader = request.headers.get('authorization');
     
     if (!authHeader || !authHeader.startsWith('Basic ')) {
@@ -53,6 +49,11 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
         }
       });
     }
+    
+    // If authentication passes, proceed and add noindex header
+    const response = await next();
+    response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+    return response;
   }
   
   return next();
