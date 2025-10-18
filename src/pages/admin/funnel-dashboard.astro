@@ -491,6 +491,14 @@ const meta = {
     });
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    // Load initial data
+    fetchAnalyticsData();
+    
+    // Set up auto-refresh every 5 minutes
+    refreshInterval = setInterval(fetchAnalyticsData, 5 * 60 * 1000);
+  });
+
   async function generateNewAIAdvice() {
     try {
       const credentials = getAdminCredentials();

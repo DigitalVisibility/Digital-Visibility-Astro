@@ -2,11 +2,10 @@ name = "digital-visibility-astro"
 compatibility_date = "2024-01-01"
 
 # KV Namespace for funnel data
-# Replace with your actual KV namespace ID from Cloudflare dashboard
 [[kv_namespaces]]
 binding = "FUNNEL_DATA"
-id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
-preview_id = "REPLACE_WITH_YOUR_PREVIEW_KV_NAMESPACE_ID"
+id = "7a8832a631674679aa52f4f490e0c769"
+preview_id = "7a8832a631674679aa52f4f490e0c769"
 
 # Cron Triggers for data aggregation
 [[triggers]]
