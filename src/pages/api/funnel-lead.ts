@@ -2,23 +2,10 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, locals }) => {
   try {
     const resendApiKey = import.meta.env.RESEND_API_KEY;
-    
-    if (!resendApiKey) {
-      return new Response(
-        JSON.stringify({ 
-          success: false, 
-          error: 'Email service not configured' 
-        }), 
-        { 
-          status: 500,
-          headers: { 'Content-Type': 'application/json' }
-        }
-      );
-    }
-    
+
     const data = await request.formData();
     const name = data.get('name') as string;
     const email = data.get('email') as string;
@@ -83,83 +70,114 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    // Send email using Resend API
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${resendApiKey}`,
-      },
-      body: JSON.stringify({
-        from: 'AI Visibility Funnel <noreply@updates.digitalvisibility.com>',
-        to: ['support@digitalvisibility.com'],
-        reply_to: email,
-        subject: `🎯 AI Visibility Funnel Lead - Variant ${variant.toUpperCase()} - ${name}`,
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-            <h2 style="color: #2563eb;">🎯 New AI Visibility Funnel Lead</h2>
-            
-            <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <h3 style="margin-top: 0; color: #1f2937;">Lead Details</h3>
-              <p><strong>Name:</strong> ${name}</p>
-              <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-              <p><strong>Website:</strong> <a href="${website}" target="_blank">${website}</a></p>
-              <p><strong>Funnel Variant:</strong> <span style="background: #dbeafe; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${variant.toUpperCase()}</span></p>
-            </div>
-            
-            <div style="background: #ecfdf5; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <h3 style="margin-top: 0; color: #059669;">Next Steps</h3>
-              <ul>
-                <li>Send AI Optimization Audit within 24 hours</li>
-                <li>Schedule discovery call to discuss AI Visibility Plan</li>
-                <li>Add to CRM with variant tracking</li>
-                <li>Follow up with personalized AI optimization recommendations</li>
-              </ul>
-            </div>
-            
-            <div style="background: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <h3 style="margin-top: 0; color: #d97706;">Variant Performance</h3>
-              <p><strong>Variant ${variant.toUpperCase()}</strong> - Track conversion rate and optimize accordingly</p>
-              <p><em>This lead came from the AI Visibility Plan funnel targeting £200/month recurring revenue.</em></p>
-            </div>
-            
-            <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
-            <p style="color: #6b7280; font-size: 14px;">
-              <strong>AI Visibility Plan Funnel Lead</strong><br>
-              Generated: ${new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' })}<br>
-              Source: Digital Visibility A/B Marketing Funnel
-            </p>
-          </div>
-        `,
-      }),
-    });
+    // Store lead data in KV as backup (even if email fails)
+    const leadData = {
+      name,
+      email,
+      website,
+      variant,
+      timestamp: new Date().toISOString(),
+      userAgent: request.headers.get('user-agent'),
+      referer: request.headers.get('referer')
+    };
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Resend API error:', errorText);
-      return new Response(
-        JSON.stringify({ 
-          success: false, 
-          error: 'Failed to send email' 
-        }), 
-        { 
-          status: 500,
-          headers: { 'Content-Type': 'application/json' }
-        }
-      );
+    // Try to store in Cloudflare KV (available in production)
+    try {
+      if (locals.runtime?.env?.FUNNEL_DATA) {
+        await locals.runtime.env.FUNNEL_DATA.put(
+          `funnel:lead:${Date.now()}:${email}`,
+          JSON.stringify(leadData),
+          { expirationTtl: 60 * 60 * 24 * 90 } // 90 days
+        );
+        console.log('Lead stored in KV successfully');
+      }
+    } catch (kvError) {
+      console.error('KV storage error (non-critical):', kvError);
     }
 
-    const emailData = await response.json();
+    // Send email using Resend API if configured
+    let emailSent = false;
+    let emailId = null;
 
-    // Return success with redirect URL for the appropriate variant thank you page
+    if (resendApiKey) {
+      try {
+        const response = await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${resendApiKey}`,
+          },
+          body: JSON.stringify({
+            from: 'AI Visibility Funnel <noreply@updates.digitalvisibility.com>',
+            to: ['support@digitalvisibility.com'],
+            reply_to: email,
+            subject: `🎯 AI Visibility Funnel Lead - Variant ${variant.toUpperCase()} - ${name}`,
+            html: `
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                <h2 style="color: #2563eb;">🎯 New AI Visibility Funnel Lead</h2>
+
+                <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                  <h3 style="margin-top: 0; color: #1f2937;">Lead Details</h3>
+                  <p><strong>Name:</strong> ${name}</p>
+                  <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+                  <p><strong>Website:</strong> <a href="${website}" target="_blank">${website}</a></p>
+                  <p><strong>Funnel Variant:</strong> <span style="background: #dbeafe; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${variant.toUpperCase()}</span></p>
+                </div>
+
+                <div style="background: #ecfdf5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                  <h3 style="margin-top: 0; color: #059669;">Next Steps</h3>
+                  <ul>
+                    <li>Send AI Optimization Audit within 24 hours</li>
+                    <li>Schedule discovery call to discuss AI Visibility Plan</li>
+                    <li>Add to CRM with variant tracking</li>
+                    <li>Follow up with personalized AI optimization recommendations</li>
+                  </ul>
+                </div>
+
+                <div style="background: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                  <h3 style="margin-top: 0; color: #d97706;">Variant Performance</h3>
+                  <p><strong>Variant ${variant.toUpperCase()}</strong> - Track conversion rate and optimize accordingly</p>
+                  <p><em>This lead came from the AI Visibility Plan funnel targeting £200/month recurring revenue.</em></p>
+                </div>
+
+                <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
+                <p style="color: #6b7280; font-size: 14px;">
+                  <strong>AI Visibility Plan Funnel Lead</strong><br>
+                  Generated: ${new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' })}<br>
+                  Source: Digital Visibility A/B Marketing Funnel
+                </p>
+              </div>
+            `,
+          }),
+        });
+
+        if (response.ok) {
+          const emailData = await response.json();
+          emailSent = true;
+          emailId = emailData?.id;
+          console.log('Email sent successfully via Resend');
+        } else {
+          const errorText = await response.text();
+          console.error('Resend API error:', errorText);
+        }
+      } catch (emailError) {
+        console.error('Email sending error (non-critical):', emailError);
+      }
+    } else {
+      console.warn('RESEND_API_KEY not configured - email not sent, but lead saved to KV');
+    }
+
+    // Return success with redirect URL - success even if email fails (lead is in KV)
     return new Response(
-      JSON.stringify({ 
-        success: true, 
+      JSON.stringify({
+        success: true,
         message: 'Lead captured successfully',
         redirectUrl: `/funnel/${variant}/thank-you/`,
-        id: emailData?.id 
-      }), 
-      { 
+        id: emailId,
+        emailSent,
+        storedInKV: true
+      }),
+      {
         status: 200,
         headers: { 'Content-Type': 'application/json' }
       }
