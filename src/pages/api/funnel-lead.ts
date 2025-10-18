@@ -95,13 +95,14 @@ export const POST: APIRoute = async ({ request, locals }) => {
       console.error('KV storage error (non-critical):', kvError);
     }
 
-    // Send email using Resend API if configured
+    // Send emails using Resend API if configured
     let emailSent = false;
     let emailId = null;
 
     if (resendApiKey) {
       try {
-        const response = await fetch('https://api.resend.com/emails', {
+        // Send notification email to you (support@digitalvisibility.com)
+        const notificationResponse = await fetch('https://api.resend.com/emails', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -151,14 +152,82 @@ export const POST: APIRoute = async ({ request, locals }) => {
           }),
         });
 
-        if (response.ok) {
-          const emailData = await response.json();
+        // Send confirmation email to the customer
+        const customerResponse = await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${resendApiKey}`,
+          },
+          body: JSON.stringify({
+            from: 'Digital Visibility <hello@updates.digitalvisibility.com>',
+            to: [email],
+            reply_to: 'support@digitalvisibility.com',
+            subject: '🎉 Your Free AI Optimization Audit is Being Prepared!',
+            html: `
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                <h1 style="color: #2563eb;">Thank You, ${name}!</h1>
+
+                <p style="font-size: 16px; color: #1f2937;">
+                  We've received your request for a <strong>Free AI Optimization Audit</strong> for ${website}.
+                </p>
+
+                <div style="background: #eff6ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2563eb;">
+                  <h2 style="margin-top: 0; color: #1e40af;">What Happens Next?</h2>
+                  <ol style="color: #1f2937; line-height: 1.8;">
+                    <li><strong>Within 24 hours:</strong> We'll analyze your website and prepare your personalized AI Optimization Audit</li>
+                    <li><strong>AI Discoverability Report:</strong> You'll receive a detailed report showing how your site currently performs on ChatGPT, Bing AI, and Google AI</li>
+                    <li><strong>Custom Recommendations:</strong> We'll provide specific actions to get your website recommended by AI platforms</li>
+                    <li><strong>Discovery Call:</strong> We'll schedule a call to walk through the findings and discuss the AI Visibility Plan</li>
+                  </ol>
+                </div>
+
+                <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                  <h3 style="margin-top: 0; color: #059669;">🚀 What Makes AI Optimization Different?</h3>
+                  <p style="color: #1f2937;">
+                    Traditional SEO focuses on ranking in search results. <strong>AI Optimization</strong> ensures your business
+                    is recommended when people ask ChatGPT, Bing, Claude, or Google AI for help in your industry.
+                  </p>
+                </div>
+
+                <div style="background: #fef3c7; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                  <p style="margin: 0; color: #78350f;">
+                    <strong>💡 Quick Tip:</strong> While you wait, think about the questions your ideal customers ask.
+                    We'll show you how to make sure AI recommends YOUR business when people ask those questions.
+                  </p>
+                </div>
+
+                <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
+
+                <p style="color: #6b7280; font-size: 14px;">
+                  <strong>Questions?</strong> Reply to this email or call us at <a href="tel:+441792002497" style="color: #2563eb;">01792 002 497</a>
+                </p>
+
+                <p style="color: #6b7280; font-size: 14px;">
+                  Best regards,<br>
+                  <strong>The Digital Visibility Team</strong><br>
+                  <a href="https://digitalvisibility.com" style="color: #2563eb;">digitalvisibility.com</a>
+                </p>
+              </div>
+            `,
+          }),
+        });
+
+        // Check if both emails were sent successfully
+        if (notificationResponse.ok && customerResponse.ok) {
+          const emailData = await notificationResponse.json();
           emailSent = true;
           emailId = emailData?.id;
-          console.log('Email sent successfully via Resend');
+          console.log('Both notification and customer emails sent successfully');
         } else {
-          const errorText = await response.text();
-          console.error('Resend API error:', errorText);
+          if (!notificationResponse.ok) {
+            const errorText = await notificationResponse.text();
+            console.error('Notification email error:', errorText);
+          }
+          if (!customerResponse.ok) {
+            const errorText = await customerResponse.text();
+            console.error('Customer email error:', errorText);
+          }
         }
       } catch (emailError) {
         console.error('Email sending error (non-critical):', emailError);
