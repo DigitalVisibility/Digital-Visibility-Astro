@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import AdminNavigation from '../../components/AdminNavigation.astro';
+  import AdminNavigation from '../../components/AdminNavigation.astro';
+  import HeatmapPanel from '../../components/HeatmapPanel.astro';
 import Footer from '../../components/Footer.astro';
 
 export const prerender = false;
@@ -222,6 +223,12 @@ const meta = {
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Heatmap Visualization -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <HeatmapPanel page="/funnel/a/" variant="A" dateRange="24h" />
+        <HeatmapPanel page="/funnel/b/" variant="B" dateRange="24h" />
       </div>
 
       <!-- Quick Actions -->

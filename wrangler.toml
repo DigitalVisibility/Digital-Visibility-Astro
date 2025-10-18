@@ -7,9 +7,19 @@ binding = "FUNNEL_DATA"
 id = "7a8832a631674679aa52f4f490e0c769"
 preview_id = "7a8832a631674679aa52f4f490e0c769"
 
+# Durable Object for engagement tracking
+[[durable_objects.bindings]]
+name = "ENGAGE_STORE"
+class_name = "EngageStore"
+
+# Durable Object migration
+[[migrations]]
+tag = "v1"
+new_classes = ["EngageStore"]
+
 # Cron Triggers for data aggregation
 [[triggers]]
-crons = ["0 */12 * * *"]  # Every 12 hours
+crons = ["*/15 * * * *"]  # Every 15 minutes for engagement data processing
 
 # Environment variables (set these in Cloudflare dashboard)
 [vars]

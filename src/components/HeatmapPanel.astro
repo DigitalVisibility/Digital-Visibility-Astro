@@ -1,0 +1,321 @@
+---
+interface Props {
+  page: string;
+  variant: 'A' | 'B';
+  dateRange?: string;
+}
+
+const { page = '/funnel/a/', variant = 'A', dateRange = '24h' } = Astro.props;
+---
+
+<div class="heatmap-panel bg-white rounded-lg shadow-lg p-6">
+  <div class="flex justify-between items-center mb-4">
+    <h3 class="text-lg font-semibold text-gray-900">
+      Heatmap - Variant {variant}
+    </h3>
+    <div class="flex space-x-2">
+      <select id="heatmap-period" class="px-3 py-1 border border-gray-300 rounded text-sm">
+        <option value="24h" selected={dateRange === '24h'}>Last 24h</option>
+        <option value="7d" selected={dateRange === '7d'}>Last 7 days</option>
+      </select>
+      <button id="refresh-heatmap" class="px-3 py-1 bg-blue-600 text-white rounded text-sm hover:bg-blue-700">
+        Refresh
+      </button>
+    </div>
+  </div>
+  
+  <div class="heatmap-container relative">
+    <!-- Loading state -->
+    <div id="heatmap-loading" class="flex items-center justify-center h-64 bg-gray-50 rounded-lg">
+      <div class="text-gray-500">Loading heatmap data...</div>
+    </div>
+    
+    <!-- Heatmap canvas -->
+    <div id="heatmap-canvas" class="hidden relative bg-white border border-gray-200 rounded-lg overflow-hidden" style="min-height: 400px;">
+      <!-- Page preview will be rendered here -->
+      <div id="page-preview" class="relative w-full h-full bg-gradient-to-br from-blue-50 to-indigo-100">
+        <!-- Hero section -->
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 text-center">
+          <h1 class="text-2xl font-bold text-gray-900 mb-4">Hero Section</h1>
+          <button class="bg-blue-600 text-white px-6 py-3 rounded-lg">CTA Button</button>
+        </div>
+        
+        <!-- Benefits section -->
+        <div class="bg-white p-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-4">Benefits Section</h2>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-gray-50 p-4 rounded">Benefit 1</div>
+            <div class="bg-gray-50 p-4 rounded">Benefit 2</div>
+            <div class="bg-gray-50 p-4 rounded">Benefit 3</div>
+          </div>
+        </div>
+        
+        <!-- Proof section -->
+        <div class="bg-gray-50 p-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-4">Proof Section</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white p-4 rounded shadow">Testimonial 1</div>
+            <div class="bg-white p-4 rounded shadow">Testimonial 2</div>
+          </div>
+        </div>
+        
+        <!-- Form section -->
+        <div class="bg-blue-600 p-8 text-white">
+          <h2 class="text-xl font-bold mb-4">Form Section</h2>
+          <div class="max-w-md mx-auto bg-white rounded-lg p-6">
+            <input class="w-full p-3 border rounded mb-3 text-gray-900" placeholder="Name" />
+            <input class="w-full p-3 border rounded mb-3 text-gray-900" placeholder="Email" />
+            <input class="w-full p-3 border rounded mb-3 text-gray-900" placeholder="Website" />
+            <button class="w-full bg-blue-600 text-white py-3 rounded">Submit</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Heatmap overlay -->
+      <canvas id="heatmap-overlay" class="absolute top-0 left-0 w-full h-full pointer-events-none"></canvas>
+    </div>
+    
+    <!-- No data state -->
+    <div id="heatmap-no-data" class="hidden flex items-center justify-center h-64 bg-gray-50 rounded-lg">
+      <div class="text-center text-gray-500">
+        <div class="text-lg mb-2">No heatmap data available</div>
+        <div class="text-sm">Data will appear once users start interacting with the funnel</div>
+      </div>
+    </div>
+    
+    <!-- Error state -->
+    <div id="heatmap-error" class="hidden flex items-center justify-center h-64 bg-red-50 rounded-lg">
+      <div class="text-center text-red-500">
+        <div class="text-lg mb-2">Error loading heatmap</div>
+        <div class="text-sm">Please try refreshing the data</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Heatmap stats -->
+  <div id="heatmap-stats" class="hidden mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="bg-gray-50 p-3 rounded text-center">
+      <div class="text-2xl font-bold text-blue-600" id="total-clicks">0</div>
+      <div class="text-sm text-gray-600">Total Clicks</div>
+    </div>
+    <div class="bg-gray-50 p-3 rounded text-center">
+      <div class="text-2xl font-bold text-green-600" id="unique-elements">0</div>
+      <div class="text-sm text-gray-600">Elements Clicked</div>
+    </div>
+    <div class="bg-gray-50 p-3 rounded text-center">
+      <div class="text-2xl font-bold text-purple-600" id="hot-spots">0</div>
+      <div class="text-sm text-gray-600">Hot Spots</div>
+    </div>
+    <div class="bg-gray-50 p-3 rounded text-center">
+      <div class="text-2xl font-bold text-orange-600" id="data-period">24h</div>
+      <div class="text-sm text-gray-600">Period</div>
+    </div>
+  </div>
+  
+  <!-- Clarity integration -->
+  <div class="mt-4 flex justify-between items-center">
+    <div class="text-sm text-gray-600">
+      Heatmap data from enhanced engagement tracking
+    </div>
+    <a 
+      href={`https://clarity.microsoft.com/projects/trt5xn1qai`} 
+      target="_blank" 
+      class="px-4 py-2 bg-gray-600 text-white rounded text-sm hover:bg-gray-700"
+    >
+      Open in Clarity
+    </a>
+  </div>
+</div>
+
+<script>
+  // Heatmap.js library
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/heatmapjs@2.0.5/heatmap.min.js';
+  script.onload = initializeHeatmap;
+  document.head.appendChild(script);
+  
+  let heatmapInstance = null;
+  let currentData = null;
+  
+  function initializeHeatmap() {
+    const page = '${page}';
+    const variant = '${variant}';
+    const dateRange = '${dateRange}';
+    
+    // Initialize heatmap
+    const config = {
+      container: document.getElementById('heatmap-canvas'),
+      radius: 30,
+      maxOpacity: 0.8,
+      minOpacity: 0.1,
+      blur: 0.75,
+      gradient: {
+        0.4: 'blue',
+        0.6: 'cyan',
+        0.7: 'lime',
+        0.8: 'yellow',
+        1.0: 'red'
+      }
+    };
+    
+    heatmapInstance = h337.create(config);
+    
+    // Load initial data
+    loadHeatmapData(page, variant, dateRange);
+    
+    // Set up event listeners
+    document.getElementById('refresh-heatmap')?.addEventListener('click', () => {
+      const period = document.getElementById('heatmap-period')?.value || '24h';
+      loadHeatmapData(page, variant, period);
+    });
+    
+    document.getElementById('heatmap-period')?.addEventListener('change', (e) => {
+      loadHeatmapData(page, variant, e.target.value);
+    });
+  }
+  
+  async function loadHeatmapData(page, variant, period) {
+    try {
+      showLoading();
+      
+      // Get admin credentials
+      const credentials = getAdminCredentials();
+      if (!credentials) {
+        showError('Admin credentials required');
+        return;
+      }
+      
+      const response = await fetch(`/api/heatmap?page=${encodeURIComponent(page)}&variant=${variant}&period=${period}`, {
+        headers: {
+          'Authorization': `Basic ${btoa(`${credentials.username}:${credentials.password}`)}`
+        }
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+      
+      const data = await response.json();
+      currentData = data;
+      
+      if (data.points && data.points.length > 0) {
+        renderHeatmap(data);
+        updateStats(data);
+        showHeatmap();
+      } else {
+        showNoData();
+      }
+      
+    } catch (error) {
+      console.error('Error loading heatmap data:', error);
+      showError('Failed to load heatmap data');
+    }
+  }
+  
+  function renderHeatmap(data) {
+    if (!heatmapInstance) return;
+    
+    // Convert percentage coordinates to pixel coordinates
+    const canvas = document.getElementById('heatmap-canvas');
+    const canvasRect = canvas.getBoundingClientRect();
+    
+    const points = data.points.map(point => ({
+      x: Math.round((point.x / 100) * canvasRect.width),
+      y: Math.round((point.y / 100) * canvasRect.height),
+      value: point.value
+    }));
+    
+    heatmapInstance.setData({
+      max: data.max,
+      data: points
+    });
+  }
+  
+  function updateStats(data) {
+    document.getElementById('total-clicks').textContent = data.totalPoints || 0;
+    document.getElementById('unique-elements').textContent = data.aggregatedPoints || 0;
+    document.getElementById('hot-spots').textContent = data.points?.filter(p => p.value > 3).length || 0;
+    document.getElementById('data-period').textContent = document.getElementById('heatmap-period')?.value || '24h';
+  }
+  
+  function showLoading() {
+    document.getElementById('heatmap-loading').classList.remove('hidden');
+    document.getElementById('heatmap-canvas').classList.add('hidden');
+    document.getElementById('heatmap-no-data').classList.add('hidden');
+    document.getElementById('heatmap-error').classList.add('hidden');
+    document.getElementById('heatmap-stats').classList.add('hidden');
+  }
+  
+  function showHeatmap() {
+    document.getElementById('heatmap-loading').classList.add('hidden');
+    document.getElementById('heatmap-canvas').classList.remove('hidden');
+    document.getElementById('heatmap-no-data').classList.add('hidden');
+    document.getElementById('heatmap-error').classList.add('hidden');
+    document.getElementById('heatmap-stats').classList.remove('hidden');
+  }
+  
+  function showNoData() {
+    document.getElementById('heatmap-loading').classList.add('hidden');
+    document.getElementById('heatmap-canvas').classList.add('hidden');
+    document.getElementById('heatmap-no-data').classList.remove('hidden');
+    document.getElementById('heatmap-error').classList.add('hidden');
+    document.getElementById('heatmap-stats').classList.add('hidden');
+  }
+  
+  function showError(message) {
+    document.getElementById('heatmap-loading').classList.add('hidden');
+    document.getElementById('heatmap-canvas').classList.add('hidden');
+    document.getElementById('heatmap-no-data').classList.add('hidden');
+    document.getElementById('heatmap-error').classList.remove('hidden');
+    document.getElementById('heatmap-stats').classList.add('hidden');
+    
+    const errorDiv = document.getElementById('heatmap-error');
+    errorDiv.querySelector('.text-lg').textContent = message;
+  }
+  
+  function getAdminCredentials() {
+    const stored = localStorage.getItem('admin_credentials');
+    if (stored) {
+      return JSON.parse(stored);
+    }
+    
+    const username = prompt('Admin Username:');
+    const password = prompt('Admin Password:');
+    
+    if (username && password) {
+      const credentials = { username, password };
+      localStorage.setItem('admin_credentials', JSON.stringify(credentials));
+      return credentials;
+    }
+    
+    return null;
+  }
+</script>
+
+<style>
+  .heatmap-panel {
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  
+  .heatmap-container {
+    position: relative;
+  }
+  
+  #heatmap-canvas {
+    position: relative;
+  }
+  
+  #heatmap-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  #page-preview {
+    position: relative;
+    z-index: 1;
+  }
+</style>

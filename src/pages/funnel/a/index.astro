@@ -221,7 +221,7 @@ const meta = {
   <Navigation slot="nav" />
   
   <!-- Hero Section -->
-  <section class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-indigo-100">
+  <section data-section="hero" class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-indigo-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <!-- Main Headline -->
@@ -236,7 +236,7 @@ const meta = {
         
         <!-- CTA Button -->
         <div class="mb-12">
-          <button id="cta-button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl">
+          <button id="cta-button" data-el="cta-primary" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl">
             Claim My Free AI Optimization Audit
           </button>
         </div>
@@ -267,7 +267,7 @@ const meta = {
   </section>
   
   <!-- Benefits Section -->
-  <section class="py-16 bg-white">
+  <section data-section="benefits" class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -316,7 +316,7 @@ const meta = {
   </section>
   
   <!-- Proof Section -->
-  <section class="py-16 bg-gray-50">
+  <section data-section="proof" class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -364,7 +364,7 @@ const meta = {
           </p>
         </div>
         
-        <form id="funnel-form" class="space-y-6">
+        <form id="funnel-form" data-el="form-main" class="space-y-6">
           <input type="hidden" name="variant" value="a">
           
           <div>
@@ -400,27 +400,146 @@ const meta = {
 
 <!-- Analytics and Form Handling Scripts -->
 <script>
-  // Microsoft Clarity Integration
-  (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "trt5xn1qai");
+      // Microsoft Clarity Integration
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "trt5xn1qai");
+
+      // Set experiment and variant for Clarity
+      clarity('set', 'experiment', 'funnel_v1');
+      clarity('set', 'variant', 'A');
+
+      // Custom Clarity tracking
+      let sessionStartTime = Date.now();
+      let maxScrollDepth = 0;
+      let rageClickCount = 0;
+
+      // Track session start
+      fetch('/api/clarity-track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event: 'sessionStart',
+          data: { variant: 'A', timestamp: new Date().toISOString() },
+          variant: 'A'
+        })
+      });
+
+      // Track scroll depth
+      window.addEventListener('scroll', () => {
+        const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        if (scrollDepth > maxScrollDepth) {
+          maxScrollDepth = scrollDepth;
+          fetch('/api/clarity-track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              event: 'scrollDepth',
+              data: { depth: maxScrollDepth, variant: 'A' },
+              variant: 'A'
+            })
+          });
+        }
+      });
+
+      // Track rage clicks (rapid clicks)
+      let clickTimes = [];
+      document.addEventListener('click', (e) => {
+        const now = Date.now();
+        clickTimes.push(now);
+        clickTimes = clickTimes.filter(time => now - time < 1000); // Keep last second
+        
+        if (clickTimes.length > 5) {
+          rageClickCount++;
+          fetch('/api/clarity-track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              event: 'rageClick',
+              data: { count: rageClickCount, element: e.target.tagName, variant: 'A' },
+              variant: 'A'
+            })
+          });
+        }
+      });
+
+      // Track CTA clicks
+      document.querySelectorAll('button, a[href*="mailto"], input[type="submit"]').forEach(element => {
+        element.addEventListener('click', () => {
+          fetch('/api/clarity-track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              event: 'ctaClick',
+              data: { element: element.tagName, text: element.textContent, variant: 'A' },
+              variant: 'A'
+            })
+          });
+        });
+      });
+
+      // Track form interactions
+      document.querySelectorAll('input, textarea, select').forEach(element => {
+        element.addEventListener('focus', () => {
+          fetch('/api/clarity-track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              event: 'formInteraction',
+              data: { field: element.name || element.id, variant: 'A' },
+              variant: 'A'
+            })
+          });
+        });
+      });
+
+      // Track session end
+      window.addEventListener('beforeunload', () => {
+        const sessionDuration = Date.now() - sessionStartTime;
+        fetch('/api/clarity-track', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            event: 'sessionEnd',
+            data: { duration: sessionDuration, scrollDepth: maxScrollDepth, variant: 'A' },
+            variant: 'A'
+          })
+        });
+      });
   
-  // Set experiment and variant for Clarity
-  clarity('set', 'experiment', 'funnel_v1');
-  clarity('set', 'variant', 'A');
-  
-  // Google Analytics 4 Integration
-  gtag('config', 'G-T7HFBLX1X1', {
-    custom_map: {
-      'custom_parameter_1': 'funnel_variant'
-    }
-  });
-  gtag('event', 'page_view', {
-    funnel_variant: 'A',
-    page_title: 'AI Visibility Funnel - Variant A'
-  });
+      // Google Analytics 4 Integration
+      gtag('config', 'G-T7HFBLX1X1', {
+        custom_map: {
+          'custom_parameter_1': 'funnel_variant'
+        }
+      });
+      gtag('event', 'page_view', {
+        funnel_variant: 'A',
+        page_title: 'AI Visibility Funnel - Variant A'
+      });
+
+      // Custom GA4 tracking
+      fetch('/api/ga4-track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event: 'page_view',
+          data: { variant: 'A', page_title: 'AI Visibility Funnel - Variant A' },
+          variant: 'A'
+        })
+      });
+
+      fetch('/api/ga4-track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event: 'session_start',
+          data: { variant: 'A', timestamp: new Date().toISOString() },
+          variant: 'A'
+        })
+      });
   
   document.addEventListener('DOMContentLoaded', function() {
     const ctaButton = document.getElementById('cta-button');
@@ -459,6 +578,17 @@ const meta = {
           
           clarity('event', 'funnel_conversion');
           
+          // Custom GA4 conversion tracking
+          fetch('/api/ga4-track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              event: 'conversion',
+              data: { variant: 'A', value: 200, form_data: formData },
+              variant: 'A'
+            })
+          });
+          
           // Redirect to thank you page
           window.location.href = result.redirectUrl;
         } else {
@@ -472,6 +602,15 @@ const meta = {
         formButton.disabled = false;
         formButton.textContent = 'Claim My Free AI Optimization Audit';
       }
+    });
+  });
+
+  // Enhanced engagement tracking
+  import('/src/lib/engage.ts').then(module => {
+    module.default({
+      variant: 'A',
+      page: window.location.pathname,
+      sections: ['hero', 'benefits', 'proof', 'form']
     });
   });
 </script>

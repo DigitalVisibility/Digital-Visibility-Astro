@@ -90,7 +90,7 @@ async function generateClaudeRecommendations(data, env) {
     throw new Error('Claude API key not configured');
   }
 
-  const prompt = `Analyze this A/B test data for an AI Visibility Plan funnel and provide three clear, actionable CRO recommendations. Focus on copy, layout, CTA clarity, and conversion psychology. Avoid code suggestions.
+    const prompt = `Analyze this A/B test data for an AI Visibility Plan funnel and provide three clear, actionable CRO recommendations. Focus on copy, layout, CTA clarity, and conversion psychology. Avoid code suggestions.
 
 Data:
 - Variant A: ${data.variants.A.visitors} visitors, ${data.variants.A.conversions} conversions (${(data.variants.A.conversionRate * 100).toFixed(1)}% CR), £${data.variants.A.revenue} revenue
@@ -98,14 +98,25 @@ Data:
 - Winner: Variant ${data.summary.winner} (${data.summary.improvement} improvement)
 - Confidence: ${data.summary.confidenceLevel.toFixed(1)}%
 - Engagement: ${data.engagement?.averageSessionDuration || 0}s avg session, ${((data.engagement?.bounceRate || 0) * 100).toFixed(1)}% bounce rate
-- CTA Clicks: ${data.heatmap?.ctaClicks || 0}, Form Interactions: ${data.heatmap?.formInteractions || 0}
+
+Enhanced Engagement Data:
+- Variant A Section Reach: ${JSON.stringify(data.variants.A.engagement?.section_reach || {})}
+- Variant B Section Reach: ${JSON.stringify(data.variants.B.engagement?.section_reach || {})}
+- Variant A Section Time: ${JSON.stringify(data.variants.A.engagement?.section_time_ms_avg || {})}
+- Variant B Section Time: ${JSON.stringify(data.variants.B.engagement?.section_time_ms_avg || {})}
+- Variant A Rage Clicks: ${JSON.stringify(data.variants.A.engagement?.rage || {})}
+- Variant B Rage Clicks: ${JSON.stringify(data.variants.B.engagement?.rage || {})}
+- Variant A Form Stats: ${JSON.stringify(data.variants.A.engagement?.form || {})}
+- Variant B Form Stats: ${JSON.stringify(data.variants.B.engagement?.form || {})}
+- Variant A Scroll Milestones: ${JSON.stringify(data.variants.A.engagement?.scroll_milestones || {})}
+- Variant B Scroll Milestones: ${JSON.stringify(data.variants.B.engagement?.scroll_milestones || {})}
 
 Respond with JSON format:
 {
   "recommendations": [
-    {"priority": "High/Medium/Low", "suggestion": "actionable advice", "rationale": "why this helps"},
-    {"priority": "High/Medium/Low", "suggestion": "actionable advice", "rationale": "why this helps"},
-    {"priority": "High/Medium/Low", "suggestion": "actionable advice", "rationale": "why this helps"}
+    {"priority": "High/Medium/Low", "suggestion": "actionable advice", "rationale": "why this helps", "affected_atoms": ["headline", "cta", "form_position"]},
+    {"priority": "High/Medium/Low", "suggestion": "actionable advice", "rationale": "why this helps", "affected_atoms": ["headline", "cta", "form_position"]},
+    {"priority": "High/Medium/Low", "suggestion": "actionable advice", "rationale": "why this helps", "affected_atoms": ["headline", "cta", "form_position"]}
   ]
 }`;
 
