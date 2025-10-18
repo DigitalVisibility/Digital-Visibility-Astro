@@ -7,9 +7,7 @@ export const prerender = false;
 
 const meta = {
   title: "A/B Funnel Dashboard | Digital Visibility Admin",
-  description: "Admin dashboard for monitoring A/B funnel performance and optimization recommendations",
-  keywords: "admin dashboard, A/B testing, funnel analytics, conversion optimization, performance monitoring",
-  image: "https://digitalvisibility.com/digital-visibility-logo-f.png"
+  description: "Real-time analytics and AI-powered recommendations for the A/B marketing funnel"
 };
 ---
 
@@ -24,228 +22,231 @@ const meta = {
       <!-- Header -->
       <div class="mb-8">
         <h1 class="text-3xl font-bold text-gray-900">A/B Funnel Dashboard</h1>
-        <p class="text-gray-600 mt-2">Monitor performance, analyze data, and get optimization recommendations</p>
+        <p class="mt-2 text-gray-600">Real-time analytics and AI-powered recommendations</p>
       </div>
 
-      <!-- Key Metrics Overview -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <!-- Total Visitors -->
+      <!-- Key Metrics -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
         <div class="bg-white rounded-lg shadow p-6">
           <div class="flex items-center">
-            <div class="p-2 bg-blue-100 rounded-lg">
-              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
-              </svg>
+            <div class="flex-shrink-0">
+              <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+              </div>
             </div>
             <div class="ml-4">
-              <p class="text-sm font-medium text-gray-600">Total Visitors</p>
-              <p class="text-2xl font-semibold text-gray-900" id="total-visitors">Loading...</p>
+              <p class="text-sm font-medium text-gray-500">Total Visitors</p>
+              <p class="text-2xl font-semibold text-gray-900" id="total-visitors">0</p>
             </div>
           </div>
         </div>
 
-        <!-- Conversion Rate -->
         <div class="bg-white rounded-lg shadow p-6">
           <div class="flex items-center">
-            <div class="p-2 bg-green-100 rounded-lg">
-              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-              </svg>
+            <div class="flex-shrink-0">
+              <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+              </div>
             </div>
             <div class="ml-4">
-              <p class="text-sm font-medium text-gray-600">Conversion Rate</p>
-              <p class="text-2xl font-semibold text-gray-900" id="conversion-rate">Loading...</p>
+              <p class="text-sm font-medium text-gray-500">Conversion Rate</p>
+              <p class="text-2xl font-semibold text-gray-900" id="conversion-rate">0%</p>
             </div>
           </div>
         </div>
 
-        <!-- Revenue Generated -->
         <div class="bg-white rounded-lg shadow p-6">
           <div class="flex items-center">
-            <div class="p-2 bg-purple-100 rounded-lg">
-              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-              </svg>
+            <div class="flex-shrink-0">
+              <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                </svg>
+              </div>
             </div>
             <div class="ml-4">
-              <p class="text-sm font-medium text-gray-600">Revenue Generated</p>
-              <p class="text-2xl font-semibold text-gray-900" id="revenue">Loading...</p>
+              <p class="text-sm font-medium text-gray-500">Revenue</p>
+              <p class="text-2xl font-semibold text-gray-900" id="revenue">£0</p>
             </div>
           </div>
         </div>
 
-        <!-- Test Duration -->
         <div class="bg-white rounded-lg shadow p-6">
           <div class="flex items-center">
-            <div class="p-2 bg-orange-100 rounded-lg">
-              <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
+            <div class="flex-shrink-0">
+              <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
             </div>
             <div class="ml-4">
-              <p class="text-sm font-medium text-gray-600">Test Duration</p>
-              <p class="text-2xl font-semibold text-gray-900" id="test-duration">Loading...</p>
+              <p class="text-sm font-medium text-gray-500">Test Duration</p>
+              <p class="text-2xl font-semibold text-gray-900" id="test-duration">0 days</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- A/B Test Performance -->
+      <!-- Variant Performance -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-        <!-- Variant A Performance -->
+        <!-- Variant A -->
         <div class="bg-white rounded-lg shadow">
           <div class="px-6 py-4 border-b border-gray-200">
-            <h3 class="text-lg font-semibold text-gray-900 flex items-center">
-              <div class="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
-              Variant A Performance
-            </h3>
+            <h3 class="text-lg font-semibold text-gray-900">Variant A</h3>
+            <p class="text-sm text-gray-600">"Show Up in AI Search Results Within 30 Days"</p>
           </div>
           <div class="p-6">
             <div class="grid grid-cols-2 gap-4 mb-4">
               <div>
-                <p class="text-sm text-gray-600">Visitors</p>
-                <p class="text-2xl font-semibold text-gray-900" id="variant-a-visitors">-</p>
+                <p class="text-sm font-medium text-gray-500">Visitors</p>
+                <p class="text-xl font-semibold text-gray-900" id="variant-a-visitors">0</p>
               </div>
               <div>
-                <p class="text-sm text-gray-600">Conversions</p>
-                <p class="text-2xl font-semibold text-gray-900" id="variant-a-conversions">-</p>
+                <p class="text-sm font-medium text-gray-500">Conversions</p>
+                <p class="text-xl font-semibold text-gray-900" id="variant-a-conversions">0</p>
               </div>
               <div>
-                <p class="text-sm text-gray-600">Conversion Rate</p>
-                <p class="text-2xl font-semibold text-gray-900" id="variant-a-rate">-</p>
+                <p class="text-sm font-medium text-gray-500">Conversion Rate</p>
+                <p class="text-xl font-semibold text-gray-900" id="variant-a-rate">0%</p>
               </div>
               <div>
-                <p class="text-sm text-gray-600">Revenue</p>
-                <p class="text-2xl font-semibold text-gray-900" id="variant-a-revenue">-</p>
+                <p class="text-sm font-medium text-gray-500">Revenue</p>
+                <p class="text-xl font-semibold text-gray-900" id="variant-a-revenue">£0</p>
               </div>
             </div>
-            <div class="w-full bg-gray-200 rounded-full h-2">
-              <div class="bg-blue-500 h-2 rounded-full" id="variant-a-progress" style="width: 0%"></div>
+            <div class="mb-2">
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">Traffic Allocation</span>
+                <span class="text-gray-900" id="variant-a-percentage">0%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div class="bg-blue-600 h-2 rounded-full" id="variant-a-progress" style="width: 0%"></div>
+              </div>
             </div>
-            <p class="text-sm text-gray-600 mt-2">Traffic allocation: <span id="variant-a-percentage">0%</span></p>
           </div>
         </div>
 
-        <!-- Variant B Performance -->
+        <!-- Variant B -->
         <div class="bg-white rounded-lg shadow">
           <div class="px-6 py-4 border-b border-gray-200">
-            <h3 class="text-lg font-semibold text-gray-900 flex items-center">
-              <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-              Variant B Performance
-            </h3>
+            <h3 class="text-lg font-semibold text-gray-900">Variant B</h3>
+            <p class="text-sm text-gray-600">"Free AI Optimization — Get Recommended by ChatGPT, Bing, and Google AI"</p>
           </div>
           <div class="p-6">
             <div class="grid grid-cols-2 gap-4 mb-4">
               <div>
-                <p class="text-sm text-gray-600">Visitors</p>
-                <p class="text-2xl font-semibold text-gray-900" id="variant-b-visitors">-</p>
+                <p class="text-sm font-medium text-gray-500">Visitors</p>
+                <p class="text-xl font-semibold text-gray-900" id="variant-b-visitors">0</p>
               </div>
               <div>
-                <p class="text-sm text-gray-600">Conversions</p>
-                <p class="text-2xl font-semibold text-gray-900" id="variant-b-conversions">-</p>
+                <p class="text-sm font-medium text-gray-500">Conversions</p>
+                <p class="text-xl font-semibold text-gray-900" id="variant-b-conversions">0</p>
               </div>
               <div>
-                <p class="text-sm text-gray-600">Conversion Rate</p>
-                <p class="text-2xl font-semibold text-gray-900" id="variant-b-rate">-</p>
+                <p class="text-sm font-medium text-gray-500">Conversion Rate</p>
+                <p class="text-xl font-semibold text-gray-900" id="variant-b-rate">0%</p>
               </div>
               <div>
-                <p class="text-sm text-gray-600">Revenue</p>
-                <p class="text-2xl font-semibold text-gray-900" id="variant-b-revenue">-</p>
+                <p class="text-sm font-medium text-gray-500">Revenue</p>
+                <p class="text-xl font-semibold text-gray-900" id="variant-b-revenue">£0</p>
               </div>
             </div>
-            <div class="w-full bg-gray-200 rounded-full h-2">
-              <div class="bg-green-500 h-2 rounded-full" id="variant-b-progress" style="width: 0%"></div>
+            <div class="mb-2">
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">Traffic Allocation</span>
+                <span class="text-gray-900" id="variant-b-percentage">0%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div class="bg-green-600 h-2 rounded-full" id="variant-b-progress" style="width: 0%"></div>
+              </div>
             </div>
-            <p class="text-sm text-gray-600 mt-2">Traffic allocation: <span id="variant-b-percentage">0%</span></p>
           </div>
         </div>
       </div>
 
-      <!-- Statistical Significance & Recommendations -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-        <!-- Statistical Analysis -->
-        <div class="bg-white rounded-lg shadow">
-          <div class="px-6 py-4 border-b border-gray-200">
-            <h3 class="text-lg font-semibold text-gray-900">Statistical Analysis</h3>
-          </div>
-          <div class="p-6">
-            <div class="space-y-4">
-              <div class="flex justify-between items-center">
-                <span class="text-sm text-gray-600">Confidence Level</span>
-                <span class="text-sm font-medium" id="confidence-level">Calculating...</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-sm text-gray-600">Sample Size</span>
-                <span class="text-sm font-medium" id="sample-size">-</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-sm text-gray-600">Winner</span>
-                <span class="text-sm font-medium" id="winner">-</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-sm text-gray-600">Improvement</span>
-                <span class="text-sm font-medium" id="improvement">-</span>
-              </div>
+      <!-- Statistical Analysis -->
+      <div class="bg-white rounded-lg shadow mb-8">
+        <div class="px-6 py-4 border-b border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-900">Statistical Analysis</h3>
+        </div>
+        <div class="p-6">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div>
+              <p class="text-sm font-medium text-gray-500">Confidence Level</p>
+              <p class="text-2xl font-semibold text-gray-900" id="confidence-level">0%</p>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-500">Sample Size</p>
+              <p class="text-2xl font-semibold text-gray-900" id="sample-size">0</p>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-500">Winner</p>
+              <p class="text-2xl font-semibold text-gray-900" id="winner">-</p>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-500">Improvement</p>
+              <p class="text-2xl font-semibold text-gray-900" id="improvement">-</p>
             </div>
           </div>
         </div>
+      </div>
 
+      <!-- AI Recommendations & Recent Activity -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
         <!-- AI Recommendations -->
         <div class="bg-white rounded-lg shadow">
           <div class="px-6 py-4 border-b border-gray-200">
             <h3 class="text-lg font-semibold text-gray-900">AI Recommendations</h3>
+            <p class="text-sm text-gray-600">Powered by Claude AI</p>
           </div>
           <div class="p-6">
             <div id="recommendations" class="space-y-3">
-              <div class="p-3 bg-blue-50 rounded-lg">
-                <p class="text-sm text-blue-800">Loading recommendations...</p>
-              </div>
+              <!-- Recommendations will be populated by JavaScript -->
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Recent Activity & Actions -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <!-- Recent Activity -->
         <div class="bg-white rounded-lg shadow">
           <div class="px-6 py-4 border-b border-gray-200">
             <h3 class="text-lg font-semibold text-gray-900">Recent Activity</h3>
           </div>
           <div class="p-6">
-            <div id="recent-activity" class="space-y-3">
-              <div class="flex items-center space-x-3">
-                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
-                <p class="text-sm text-gray-600">Loading recent activity...</p>
-              </div>
+            <div id="recent-activity" class="space-y-4">
+              <!-- Activity will be populated by JavaScript -->
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Quick Actions -->
-        <div class="bg-white rounded-lg shadow">
-          <div class="px-6 py-4 border-b border-gray-200">
-            <h3 class="text-lg font-semibold text-gray-900">Quick Actions</h3>
-          </div>
-          <div class="p-6">
-            <div class="space-y-3">
-              <button id="adjust-traffic" class="w-full text-left p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
-                <p class="text-sm font-medium text-blue-900">Adjust Traffic Split</p>
-                <p class="text-xs text-blue-700">Modify A/B test traffic allocation</p>
-              </button>
-              <button id="update-copy" class="w-full text-left p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors">
-                <p class="text-sm font-medium text-green-900">Update Copy</p>
-                <p class="text-xs text-green-700">Modify headlines, CTAs, or descriptions</p>
-              </button>
-              <button id="export-data" class="w-full text-left p-3 bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors">
-                <p class="text-sm font-medium text-purple-900">Export Data</p>
-                <p class="text-xs text-purple-700">Download analytics data for analysis</p>
-              </button>
-              <button id="reset-test" class="w-full text-left p-3 bg-red-50 hover:bg-red-100 rounded-lg transition-colors">
-                <p class="text-sm font-medium text-red-900">Reset Test</p>
-                <p class="text-xs text-red-700">Start fresh A/B test</p>
-              </button>
-            </div>
+      <!-- Quick Actions -->
+      <div class="bg-white rounded-lg shadow">
+        <div class="px-6 py-4 border-b border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-900">Quick Actions</h3>
+        </div>
+        <div class="p-6">
+          <div class="space-y-3">
+            <button id="adjust-traffic" class="w-full text-left p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
+              <p class="text-sm font-medium text-blue-900">Adjust Traffic Split</p>
+              <p class="text-xs text-blue-700">Modify A/B test traffic allocation</p>
+            </button>
+            <button id="update-copy" class="w-full text-left p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors">
+              <p class="text-sm font-medium text-green-900">Update Copy</p>
+              <p class="text-xs text-green-700">Modify headlines, CTAs, or descriptions</p>
+            </button>
+            <button id="export-data" class="w-full text-left p-3 bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors">
+              <p class="text-sm font-medium text-purple-900">Export Data</p>
+              <p class="text-xs text-purple-700">Download analytics data for analysis</p>
+            </button>
+            <button id="reset-test" class="w-full text-left p-3 bg-red-50 hover:bg-red-100 rounded-lg transition-colors">
+              <p class="text-sm font-medium text-red-900">Reset Test</p>
+              <p class="text-xs text-red-700">Start fresh A/B test</p>
+            </button>
           </div>
         </div>
       </div>
@@ -342,16 +343,19 @@ const meta = {
       },
       recommendations: [
         {
-          type: 'success',
-          message: 'Variant B is outperforming by 34.2%. Consider increasing traffic allocation to 70/30.'
+          priority: 'High',
+          suggestion: 'Variant B is outperforming by 34.2%. Consider increasing traffic allocation to 70/30.',
+          rationale: 'Higher conversion rate with stronger call to action.'
         },
         {
-          type: 'warning',
-          message: 'Apply Variant B\'s successful elements to Variant A: stronger headline, clearer value proposition.'
+          priority: 'Medium',
+          suggestion: 'Apply Variant B\'s successful elements to Variant A: stronger headline, clearer value proposition.',
+          rationale: 'Consistent messaging across variants can improve overall performance.'
         },
         {
-          type: 'info',
-          message: 'Consider testing different CTA colors, button text, or form fields next.'
+          priority: 'Low',
+          suggestion: 'Consider testing different CTA colors, button text, or form fields next.',
+          rationale: 'Small changes can lead to significant improvements.'
         }
       ],
       recentActivity: [
@@ -447,57 +451,7 @@ const meta = {
       `;
       activityContainer.appendChild(activityDiv);
     });
-
-    // Quick actions
-    document.getElementById('adjust-traffic').addEventListener('click', () => {
-      alert('Traffic adjustment feature coming soon!');
-    });
-
-    document.getElementById('update-copy').addEventListener('click', () => {
-      alert('Copy update feature coming soon!');
-    });
-
-    document.getElementById('export-data').addEventListener('click', () => {
-      // Export data as CSV
-      const csvData = generateCSV();
-      downloadCSV(csvData, 'funnel-analytics.csv');
-    });
-
-    // Add refresh button functionality
-    const refreshButton = document.createElement('button');
-    refreshButton.textContent = 'Refresh Data';
-    refreshButton.className = 'bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors';
-    refreshButton.addEventListener('click', fetchAnalyticsData);
-    
-    const header = document.querySelector('.mb-8');
-    if (header) {
-      header.appendChild(refreshButton);
-    }
-
-    // Add AI advice refresh button
-    const aiRefreshButton = document.createElement('button');
-    aiRefreshButton.textContent = 'Generate New AI Advice';
-    aiRefreshButton.className = 'bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors ml-2';
-    aiRefreshButton.addEventListener('click', generateNewAIAdvice);
-    
-    if (header) {
-      header.appendChild(aiRefreshButton);
-    }
-
-    document.getElementById('reset-test').addEventListener('click', () => {
-      if (confirm('Are you sure you want to reset the test? This will clear all data.')) {
-        alert('Test reset feature coming soon!');
-      }
-    });
-  });
-
-  document.addEventListener('DOMContentLoaded', function() {
-    // Load initial data
-    fetchAnalyticsData();
-    
-    // Set up auto-refresh every 5 minutes
-    refreshInterval = setInterval(fetchAnalyticsData, 5 * 60 * 1000);
-  });
+  }
 
   async function generateNewAIAdvice() {
     try {
@@ -530,25 +484,6 @@ const meta = {
     }
   }
 
-  // Clean up interval on page unload
-  window.addEventListener('beforeunload', () => {
-    if (refreshInterval) {
-      clearInterval(refreshInterval);
-    }
-  });
-
-  // Utility functions for data processing
-  function formatTimeAgo(timestamp) {
-    const now = new Date();
-    const time = new Date(timestamp);
-    const diffInHours = Math.floor((now - time) / (1000 * 60 * 60));
-    
-    if (diffInHours < 1) return 'Just now';
-    if (diffInHours < 24) return `${diffInHours} hours ago`;
-    const diffInDays = Math.floor(diffInHours / 24);
-    return `${diffInDays} days ago`;
-  }
-
   function generateCSV() {
     if (!analyticsData) return '';
     
@@ -567,18 +502,66 @@ const meta = {
     const a = document.createElement('a');
     a.href = url;
     a.download = filename;
+    document.body.appendChild(a);
     a.click();
+    document.body.removeChild(a);
     window.URL.revokeObjectURL(url);
   }
-</script>
 
-<style>
-  .animate-pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-  
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: .5; }
-  }
-</style>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Load initial data
+    fetchAnalyticsData();
+    
+    // Set up auto-refresh every 5 minutes
+    refreshInterval = setInterval(fetchAnalyticsData, 5 * 60 * 1000);
+
+    // Quick actions
+    document.getElementById('adjust-traffic').addEventListener('click', () => {
+      alert('Traffic adjustment feature coming soon!');
+    });
+
+    document.getElementById('update-copy').addEventListener('click', () => {
+      alert('Copy update feature coming soon!');
+    });
+
+    document.getElementById('export-data').addEventListener('click', () => {
+      // Export data as CSV
+      const csvData = generateCSV();
+      downloadCSV(csvData, 'funnel-analytics.csv');
+    });
+
+    document.getElementById('reset-test').addEventListener('click', () => {
+      if (confirm('Are you sure you want to reset the test? This will clear all data.')) {
+        alert('Test reset feature coming soon!');
+      }
+    });
+
+    // Add refresh button functionality
+    const refreshButton = document.createElement('button');
+    refreshButton.textContent = 'Refresh Data';
+    refreshButton.className = 'bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors';
+    refreshButton.addEventListener('click', fetchAnalyticsData);
+    
+    const header = document.querySelector('.mb-8');
+    if (header) {
+      header.appendChild(refreshButton);
+    }
+
+    // Add AI advice refresh button
+    const aiRefreshButton = document.createElement('button');
+    aiRefreshButton.textContent = 'Generate New AI Advice';
+    aiRefreshButton.className = 'bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors ml-2';
+    aiRefreshButton.addEventListener('click', generateNewAIAdvice);
+    
+    if (header) {
+      header.appendChild(aiRefreshButton);
+    }
+  });
+
+  // Clean up interval on page unload
+  window.addEventListener('beforeunload', () => {
+    if (refreshInterval) {
+      clearInterval(refreshInterval);
+    }
+  });
+</script>
