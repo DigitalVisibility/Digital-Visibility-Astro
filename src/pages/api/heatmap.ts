@@ -7,15 +7,25 @@ export const GET: APIRoute = async ({ request, platform, url }) => {
     // Basic auth check
     const auth = request.headers.get('authorization');
     if (!auth || !auth.startsWith('Basic ')) {
-      return new Response('Unauthorized', { status: 401 });
+      return new Response('Unauthorized', { 
+        status: 401,
+        headers: {
+          'WWW-Authenticate': 'Basic realm="Admin Area"'
+        }
+      });
     }
 
     const credentials = atob(auth.substring(6)).split(':');
-    const adminUser = platform?.env?.ADMIN_USER;
-    const adminPass = platform?.env?.ADMIN_PASS;
+    const adminUser = process.env.ADMIN_USER;
+    const adminPass = process.env.ADMIN_PASS;
     
     if (credentials[0] !== adminUser || credentials[1] !== adminPass) {
-      return new Response('Unauthorized', { status: 401 });
+      return new Response('Unauthorized', { 
+        status: 401,
+        headers: {
+          'WWW-Authenticate': 'Basic realm="Admin Area"'
+        }
+      });
     }
 
     // Get query parameters

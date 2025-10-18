@@ -178,17 +178,9 @@ const { page = '/funnel/a/', variant = 'A', dateRange = '24h' } = Astro.props;
     try {
       showLoading();
       
-      // Get admin credentials
-      const credentials = getAdminCredentials();
-      if (!credentials) {
-        showError('Admin credentials required');
-        return;
-      }
-      
+      // Use credentials: 'include' to send existing auth headers automatically
       const response = await fetch(`/api/heatmap?page=${encodeURIComponent(page)}&variant=${variant}&period=${period}`, {
-        headers: {
-          'Authorization': `Basic ${btoa(`${credentials.username}:${credentials.password}`)}`
-        }
+        credentials: 'include'
       });
       
       if (!response.ok) {
@@ -273,23 +265,6 @@ const { page = '/funnel/a/', variant = 'A', dateRange = '24h' } = Astro.props;
     errorDiv.querySelector('.text-lg').textContent = message;
   }
   
-  function getAdminCredentials() {
-    const stored = localStorage.getItem('admin_credentials');
-    if (stored) {
-      return JSON.parse(stored);
-    }
-    
-    const username = prompt('Admin Username:');
-    const password = prompt('Admin Password:');
-    
-    if (username && password) {
-      const credentials = { username, password };
-      localStorage.setItem('admin_credentials', JSON.stringify(credentials));
-      return credentials;
-    }
-    
-    return null;
-  }
 </script>
 
 <style>
