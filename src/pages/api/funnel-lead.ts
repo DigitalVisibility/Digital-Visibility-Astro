@@ -177,7 +177,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
                   <p style="color: #1f2937; font-size: 16px; margin: 15px 0;">
                     Want to fast-track your results? Book a time that works for you and we'll walk through your audit live, answer your questions, and create a custom AI optimization roadmap.
                   </p>
-                  <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/YOUR_CALENDAR_ID"
+                  <a href="https://calendar.app.google/jwi4bhf54UUxD9tg9"
                      style="display: inline-block; background: #16a34a; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; margin: 10px 0;">
                     Book Your Discovery Call Now →
                   </a>
