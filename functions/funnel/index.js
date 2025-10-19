@@ -4,13 +4,24 @@
 // Supports AI-driven traffic allocation via KV store
 
 export async function onRequest(context) {
+  console.log('=== FUNNEL FUNCTION STARTED ===');
+
   try {
     const { request } = context;
     const url = new URL(request.url);
 
-    console.log('FUNNEL FUNCTION CALLED - URL:', url.toString());
+    console.log('URL:', url.toString());
 
-    // Get existing variant from cookie header
+    // SIMPLIFIED: Just do 50/50 split, ignore cookies and KV for now
+    const random = Math.random();
+    console.log('Random value generated:', random);
+
+    const variant = random < 0.5 ? 'a' : 'b';
+    console.log('Variant assigned:', variant);
+    console.log('Logic check: random < 0.5 =', random < 0.5);
+
+    /*
+    // DISABLED FOR DEBUGGING - Cookie checking
     const cookieHeader = request.headers.get('Cookie') || '';
     const existingVariant = getCookieValue(cookieHeader, 'funnel_variant');
 
@@ -29,14 +40,16 @@ export async function onRequest(context) {
       variant = await getVariantAssignment(context);
       console.log('Assigned variant:', variant);
     }
+    */
 
-    // Track variant assignment in analytics (non-blocking)
-    trackVariantAssignment(variant, context).catch(err =>
-      console.error('Error tracking variant:', err)
-    );
+    // DISABLED FOR DEBUGGING - Analytics tracking
+    // trackVariantAssignment(variant, context).catch(err =>
+    //   console.error('Error tracking variant:', err)
+    // );
 
     // Redirect to appropriate variant
     const redirectUrl = new URL(`/funnel/${variant}/`, url.origin);
+    console.log('Redirect URL:', redirectUrl.toString());
 
     // Add utm parameters if present
     const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
@@ -49,12 +62,12 @@ export async function onRequest(context) {
     // Create redirect response with cookie
     const response = Response.redirect(redirectUrl.toString(), 302);
 
-    // Set cookie if new variant was assigned
-    if (!existingVariant) {
-      const cookieValue = `funnel_variant=${variant}; Path=/; Max-Age=${60 * 60 * 24 * 30}; SameSite=Lax`;
-      response.headers.set('Set-Cookie', cookieValue);
-    }
+    // ALWAYS set cookie for debugging
+    const cookieValue = `funnel_variant=${variant}; Path=/; Max-Age=${60 * 60 * 24 * 30}; SameSite=Lax`;
+    response.headers.set('Set-Cookie', cookieValue);
+    console.log('Set cookie:', cookieValue);
 
+    console.log('=== FUNNEL FUNCTION COMPLETED - Variant:', variant, '===');
     return response;
   } catch (error) {
     console.error('ERROR in funnel function - falling back to A:', error);
