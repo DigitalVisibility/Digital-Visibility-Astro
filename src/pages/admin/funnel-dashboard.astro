@@ -6,6 +6,32 @@ import Footer from '../../components/Footer.astro';
 
 export const prerender = false;
 
+// Check for admin authentication
+const authHeader = Astro.request.headers.get('authorization');
+
+if (!authHeader || !authHeader.startsWith('Basic ')) {
+  return new Response('Unauthorized', {
+    status: 401,
+    headers: {
+      'WWW-Authenticate': 'Basic realm="Admin Dashboard"'
+    }
+  });
+}
+
+// Verify credentials
+const credentials = atob(authHeader.substring(6)).split(':');
+const adminUser = import.meta.env.ADMIN_USER;
+const adminPass = import.meta.env.ADMIN_PASS;
+
+if (credentials[0] !== adminUser || credentials[1] !== adminPass) {
+  return new Response('Unauthorized', {
+    status: 401,
+    headers: {
+      'WWW-Authenticate': 'Basic realm="Admin Dashboard"'
+    }
+  });
+}
+
 const meta = {
   title: "A/B Funnel Dashboard | Digital Visibility Admin",
   description: "Real-time analytics and AI-powered recommendations for the A/B marketing funnel"
