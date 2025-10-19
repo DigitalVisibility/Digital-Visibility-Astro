@@ -292,8 +292,10 @@ const meta = {
       value: 200
     });
     
-    // Microsoft Clarity conversion tracking
-    clarity('event', 'funnel_conversion_complete');
+    // Microsoft Clarity conversion tracking (only if loaded)
+    if (typeof clarity !== 'undefined') {
+      clarity('event', 'funnel_conversion_complete');
+    }
     
     // Track time on page for conversion quality
     const startTime = Date.now();
