@@ -26,8 +26,8 @@ crons = ["*/15 * * * *"]  # Every 15 minutes for engagement data processing
 # GA4_ID = "G-T7HFBLX1X1"
 # CLARITY_ID = "trt5xn1qai"
 # CLAUDE_API_KEY = "your-claude-api-key"
-# ADMIN_USER = "admin"
-# ADMIN_PASS = "your-secure-password"
+ADMIN_USER = "admin"
+ADMIN_PASS = "changeme123"
 
 # Pages configuration
 [env.production]

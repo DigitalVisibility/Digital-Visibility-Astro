@@ -20,7 +20,10 @@ export const POST: APIRoute = async ({ request, platform }) => {
     const credentials = atob(authHeader.split(' ')[1]);
     const [username, password] = credentials.split(':');
 
-    if (username !== import.meta.env.ADMIN_USER || password !== import.meta.env.ADMIN_PASS) {
+    const adminUser = platform?.env?.ADMIN_USER || import.meta.env.ADMIN_USER;
+    const adminPass = platform?.env?.ADMIN_PASS || import.meta.env.ADMIN_PASS;
+
+    if (username !== adminUser || password !== adminPass) {
       return new Response(
         JSON.stringify({ success: false, error: 'Invalid credentials' }),
         {

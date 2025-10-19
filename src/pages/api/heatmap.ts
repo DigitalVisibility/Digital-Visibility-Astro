@@ -16,8 +16,8 @@ export const GET: APIRoute = async ({ request, platform, url }) => {
     }
 
     const credentials = atob(auth.substring(6)).split(':');
-    const adminUser = import.meta.env.ADMIN_USER;
-    const adminPass = import.meta.env.ADMIN_PASS;
+    const adminUser = platform?.env?.ADMIN_USER || import.meta.env.ADMIN_USER;
+    const adminPass = platform?.env?.ADMIN_PASS || import.meta.env.ADMIN_PASS;
 
     if (credentials[0] !== adminUser || credentials[1] !== adminPass) {
       return new Response('Unauthorized', {
