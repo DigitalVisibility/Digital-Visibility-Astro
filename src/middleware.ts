@@ -3,26 +3,16 @@ import type { MiddlewareHandler } from 'astro';
 export const onRequest: MiddlewareHandler = async (context, next) => {
   const { url, request } = context;
 
-  // Handle funnel A/B split routing BEFORE anything else
+  // Handle funnel routing - FORCE TO B FOR TESTING
   if (url.pathname === '/funnel' || url.pathname === '/funnel/') {
-    console.log('=== MIDDLEWARE: Funnel route detected ===');
-    console.log('Path:', url.pathname);
+    console.log('=== MIDDLEWARE: FORCING REDIRECT TO FUNNEL B ===');
 
-    // Simple 50/50 random split - NO cookies, NO KV for debugging
-    const random = Math.random();
-    const variant = random < 0.5 ? 'a' : 'b';
-
-    console.log('Random:', random);
-    console.log('Variant:', variant);
-    console.log('Logic: random < 0.5 =', random < 0.5);
-
-    const redirectUrl = new URL(`/funnel/${variant}/`, url.origin);
+    const redirectUrl = new URL('/funnel/b/', url.origin);
     console.log('Redirecting to:', redirectUrl.toString());
 
     const response = Response.redirect(redirectUrl.toString(), 302);
-    response.headers.set('Set-Cookie', `funnel_variant=${variant}; Path=/; Max-Age=${60 * 60 * 24 * 30}; SameSite=Lax`);
+    response.headers.set('Set-Cookie', 'funnel_variant=b; Path=/; Max-Age=2592000; SameSite=Lax');
 
-    console.log('=== MIDDLEWARE: Redirect response created ===');
     return response;
   }
 
