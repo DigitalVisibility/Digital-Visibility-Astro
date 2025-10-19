@@ -21,6 +21,21 @@ export const GET: APIRoute = async ({ request }) => {
       );
     }
 
+    // Build the email payload
+    const emailPayload = {
+      from: 'Digital Visibility Test <noreply@updates.digitalvisibility.com>',
+      to: ['support@digitalvisibility.com'],
+      subject: 'Test Email - Funnel Email Debugging',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2>Test Email</h2>
+          <p>This is a test email to verify Resend API is working correctly.</p>
+          <p><strong>Sent at:</strong> ${new Date().toISOString()}</p>
+          <p><strong>API Key configured:</strong> Yes</p>
+        </div>
+      `,
+    };
+
     // Try to send a test email
     const testResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -28,19 +43,7 @@ export const GET: APIRoute = async ({ request }) => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${resendApiKey}`,
       },
-      body: JSON.stringify({
-        from: 'Test <noreply@updates.digitalvisibility.com>',
-        to: ['support@digitalvisibility.com'],
-        subject: 'Test Email - Funnel Email Debugging',
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-            <h2>Test Email</h2>
-            <p>This is a test email to verify Resend API is working correctly.</p>
-            <p><strong>Sent at:</strong> ${new Date().toISOString()}</p>
-            <p><strong>API Key exists:</strong> Yes (first 10 chars: ${resendApiKey.substring(0, 10)}...)</p>
-          </div>
-        `,
-      }),
+      body: JSON.stringify(emailPayload),
     });
 
     const responseText = await testResponse.text();

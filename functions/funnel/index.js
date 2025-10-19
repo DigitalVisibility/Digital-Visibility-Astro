@@ -67,7 +67,7 @@ export async function onRequest(context) {
 
 // Helper function to parse cookie value from header
 function getCookieValue(cookieHeader, name) {
-  const match = cookieHeader.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  const match = cookieHeader.match(new RegExp('(^|; )' + name + '=([^;]+)'));
   return match ? match[2] : null;
 }
 

@@ -11,7 +11,12 @@
       "WebFetch(domain:developers.cloudflare.com)",
       "Bash(git grep:*)",
       "Bash(git log:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(for i in {1..10})",
+      "Bash(do curl -s -I https://digitalvisibility.com/funnel/)",
+      "Bash(done)",
+      "Bash(python3:*)",
+      "Bash(for i in {1..20})"
     ],
     "deny": [],
     "ask": []
