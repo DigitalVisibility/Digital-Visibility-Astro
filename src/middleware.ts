@@ -2,7 +2,30 @@ import type { MiddlewareHandler } from 'astro';
 
 export const onRequest: MiddlewareHandler = async (context, next) => {
   const { url, request } = context;
-  
+
+  // Handle funnel A/B split routing BEFORE anything else
+  if (url.pathname === '/funnel' || url.pathname === '/funnel/') {
+    console.log('=== MIDDLEWARE: Funnel route detected ===');
+    console.log('Path:', url.pathname);
+
+    // Simple 50/50 random split - NO cookies, NO KV for debugging
+    const random = Math.random();
+    const variant = random < 0.5 ? 'a' : 'b';
+
+    console.log('Random:', random);
+    console.log('Variant:', variant);
+    console.log('Logic: random < 0.5 =', random < 0.5);
+
+    const redirectUrl = new URL(`/funnel/${variant}/`, url.origin);
+    console.log('Redirecting to:', redirectUrl.toString());
+
+    const response = Response.redirect(redirectUrl.toString(), 302);
+    response.headers.set('Set-Cookie', `funnel_variant=${variant}; Path=/; Max-Age=${60 * 60 * 24 * 30}; SameSite=Lax`);
+
+    console.log('=== MIDDLEWARE: Redirect response created ===');
+    return response;
+  }
+
   // Check if this is an admin route
   if (url.pathname.startsWith('/admin/')) {
     // Check for Basic Auth FIRST
