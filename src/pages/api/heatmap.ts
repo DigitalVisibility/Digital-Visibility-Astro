@@ -16,11 +16,11 @@ export const GET: APIRoute = async ({ request, platform, url }) => {
     }
 
     const credentials = atob(auth.substring(6)).split(':');
-    const adminUser = process.env.ADMIN_USER;
-    const adminPass = process.env.ADMIN_PASS;
-    
+    const adminUser = import.meta.env.ADMIN_USER;
+    const adminPass = import.meta.env.ADMIN_PASS;
+
     if (credentials[0] !== adminUser || credentials[1] !== adminPass) {
-      return new Response('Unauthorized', { 
+      return new Response('Unauthorized', {
         status: 401,
         headers: {
           'WWW-Authenticate': 'Basic realm="Admin Area"'

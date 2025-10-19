@@ -19,11 +19,11 @@ export const GET: APIRoute = async ({ request, platform }) => {
     // Verify Basic Auth
     const credentials = atob(authHeader.split(' ')[1]);
     const [username, password] = credentials.split(':');
-    
-    if (username !== process.env.ADMIN_USER || password !== process.env.ADMIN_PASS) {
+
+    if (username !== import.meta.env.ADMIN_USER || password !== import.meta.env.ADMIN_PASS) {
       return new Response(
         JSON.stringify({ success: false, error: 'Invalid credentials' }),
-        { 
+        {
           status: 401,
           headers: { 'Content-Type': 'application/json' }
         }
