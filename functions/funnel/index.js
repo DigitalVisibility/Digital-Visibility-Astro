@@ -8,18 +8,26 @@ export async function onRequest(context) {
     const { request } = context;
     const url = new URL(request.url);
 
+    console.log('FUNNEL FUNCTION CALLED - URL:', url.toString());
+
     // Get existing variant from cookie header
     const cookieHeader = request.headers.get('Cookie') || '';
     const existingVariant = getCookieValue(cookieHeader, 'funnel_variant');
+
+    console.log('Cookie header:', cookieHeader);
+    console.log('Existing variant from cookie:', existingVariant);
 
     let variant;
 
     if (existingVariant && (existingVariant === 'a' || existingVariant === 'b')) {
       // User already has a variant assigned, use it
       variant = existingVariant;
+      console.log('Using existing variant from cookie:', variant);
     } else {
       // New user - assign variant based on traffic allocation
+      console.log('New user - assigning variant...');
       variant = await getVariantAssignment(context);
+      console.log('Assigned variant:', variant);
     }
 
     // Track variant assignment in analytics (non-blocking)
@@ -88,7 +96,10 @@ async function getVariantAssignment(context) {
   // Fallback to 50/50 split
   const random = Math.random();
   const variant = random < 0.5 ? 'a' : 'b';
-  console.log('Using fallback 50/50 split - random:', random, 'variant:', variant);
+  console.log('=== FALLBACK 50/50 SPLIT ===');
+  console.log('Random value:', random);
+  console.log('Assigned variant:', variant);
+  console.log('Logic: random < 0.5 =', random < 0.5, '→ variant:', variant);
   return variant;
 }
 
