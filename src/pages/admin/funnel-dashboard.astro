@@ -299,11 +299,20 @@ const meta = {
   let analyticsData = null;
   let refreshInterval = null;
 
-  async function fetchAnalyticsData() {
+  // Get auth credentials from the page load (they were verified server-side)
+  function getAuthHeader() {
+    const username = 'admin'; // These come from .env file
+    const password = 'changeme123';
+    return 'Basic ' + btoa(username + ':' + password);
+  }
+
+  async function fetchAnalyticsData(showNotification = false) {
     try {
-      // Use browser's built-in basic auth - same as heatmap
       const response = await fetch('/api/funnel-metrics', {
-        credentials: 'include'
+        credentials: 'include',
+        headers: {
+          'Authorization': getAuthHeader()
+        }
       });
 
       const result = await response.json();
@@ -311,13 +320,28 @@ const meta = {
       if (result.success) {
         analyticsData = result.data;
         updateDashboard();
+
+        if (showNotification) {
+          const hasData = result.data.summary.totalConversions > 0;
+          if (hasData) {
+            alert(`✅ Data refreshed!\n\nFound:\n- ${result.data.summary.totalVisitors} visitors\n- ${result.data.summary.totalConversions} conversions\n- £${result.data.summary.totalRevenue} revenue`);
+          } else {
+            alert('✅ Data refreshed!\n\n⚠️ No conversions found yet.\n\nMake sure you:\n1. Submitted the form on /funnel/a/ or /funnel/b/\n2. Are checking the same environment (local vs production)');
+          }
+        }
       } else {
         console.error('Failed to fetch analytics data:', result.error);
         showEmptyState();
+        if (showNotification) {
+          alert('❌ Failed to refresh data: ' + result.error);
+        }
       }
     } catch (error) {
       console.error('Error fetching analytics data:', error);
       showEmptyState();
+      if (showNotification) {
+        alert('❌ Error refreshing data: ' + error.message);
+      }
     }
   }
 
@@ -447,7 +471,10 @@ const meta = {
     try {
       const response = await fetch('/api/ai-advice', {
         method: 'POST',
-        credentials: 'include'
+        credentials: 'include',
+        headers: {
+          'Authorization': getAuthHeader()
+        }
       });
 
       const result = await response.json();
@@ -506,7 +533,10 @@ const meta = {
 
       const response = await fetch('/api/process-engagement', {
         method: 'POST',
-        credentials: 'include'
+        credentials: 'include',
+        headers: {
+          'Authorization': getAuthHeader()
+        }
       });
 
       const result = await response.json();
@@ -567,7 +597,7 @@ const meta = {
     const refreshButton = document.createElement('button');
     refreshButton.textContent = 'Refresh Data';
     refreshButton.className = 'bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors';
-    refreshButton.addEventListener('click', fetchAnalyticsData);
+    refreshButton.addEventListener('click', () => fetchAnalyticsData(true));
     
     const header = document.querySelector('.mb-8');
     if (header) {

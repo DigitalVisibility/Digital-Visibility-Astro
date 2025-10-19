@@ -22,15 +22,15 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
     try {
       const credentials = atob(authHeader.split(' ')[1]);
       const [username, password] = credentials.split(':');
-      
-      const adminUser = process.env.ADMIN_USER;
-      const adminPass = process.env.ADMIN_PASS;
-      
+
+      const adminUser = import.meta.env.ADMIN_USER;
+      const adminPass = import.meta.env.ADMIN_PASS;
+
       if (!adminUser || !adminPass) {
-        console.error('Admin credentials not configured');
+        console.error('Admin credentials not configured. Make sure ADMIN_USER and ADMIN_PASS are set in .env');
         return new Response('Admin area not configured', { status: 500 });
       }
-      
+
       if (username !== adminUser || password !== adminPass) {
         return new Response('Invalid credentials', {
           status: 401,
