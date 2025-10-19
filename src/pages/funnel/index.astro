@@ -1,0 +1,17 @@
+---
+// This page should NEVER render - middleware will intercept and redirect
+// If you see this page, the middleware is not working
+export const prerender = false;
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ERROR - Middleware Not Working</title>
+</head>
+<body>
+    <h1>ERROR: This page should not be visible</h1>
+    <p>If you're seeing this, the middleware redirect is not working.</p>
+    <p>The middleware should have redirected you to /funnel/b/</p>
+</body>
+</html>
