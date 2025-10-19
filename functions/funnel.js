@@ -49,7 +49,8 @@ export async function onRequest(context) {
 
     return response;
   } catch (error) {
-    console.error('Error in funnel function:', error);
+    console.error('ERROR in funnel function - falling back to A:', error);
+    console.error('Error stack:', error.stack);
     // Fallback: redirect to variant A on error
     const fallbackUrl = new URL('/funnel/a/', new URL(context.request.url).origin);
     return Response.redirect(fallbackUrl.toString(), 302);
@@ -66,11 +67,13 @@ async function getVariantAssignment(context) {
   try {
     // Try to get traffic allocation from KV store
     const trafficConfig = await context.env.FUNNEL_DATA?.get('funnel:traffic_config');
-    
+
     if (trafficConfig) {
       const config = JSON.parse(trafficConfig);
       const random = Math.random();
-      
+
+      console.log('Using KV traffic config:', config, 'random:', random);
+
       // Use AI-optimized traffic allocation
       if (random < config.variantAWeight) {
         return 'a';
@@ -81,9 +84,12 @@ async function getVariantAssignment(context) {
   } catch (error) {
     console.error('Error getting traffic config:', error);
   }
-  
+
   // Fallback to 50/50 split
-  return Math.random() < 0.5 ? 'a' : 'b';
+  const random = Math.random();
+  const variant = random < 0.5 ? 'a' : 'b';
+  console.log('Using fallback 50/50 split - random:', random, 'variant:', variant);
+  return variant;
 }
 
 async function trackVariantAssignment(variant, context) {
