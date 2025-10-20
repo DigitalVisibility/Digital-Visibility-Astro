@@ -10,10 +10,14 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
     const redirectUrl = new URL('/funnel/b/', url.origin);
     console.log('Redirecting to:', redirectUrl.toString());
 
-    const response = Response.redirect(redirectUrl.toString(), 302);
-    response.headers.set('Set-Cookie', 'funnel_variant=b; Path=/; Max-Age=2592000; SameSite=Lax');
-
-    return response;
+    // Create response with headers in constructor (headers are immutable after creation)
+    return new Response(null, {
+      status: 302,
+      headers: {
+        'Location': redirectUrl.toString(),
+        'Set-Cookie': 'funnel_variant=b; Path=/; Max-Age=2592000; SameSite=Lax'
+      }
+    });
   }
 
   // Check if this is an admin route
