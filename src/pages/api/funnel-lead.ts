@@ -82,17 +82,37 @@ export const POST: APIRoute = async ({ request, locals }) => {
     };
 
     // Try to store in Cloudflare KV (available in production)
+    let kvStorageSuccess = false;
+    console.log('[KV DEBUG] Starting KV storage attempt');
+    console.log('[KV DEBUG] locals exists:', !!locals);
+    console.log('[KV DEBUG] locals.runtime exists:', !!locals.runtime);
+    console.log('[KV DEBUG] locals.runtime.env exists:', !!locals.runtime?.env);
+    console.log('[KV DEBUG] FUNNEL_DATA binding exists:', !!locals.runtime?.env?.FUNNEL_DATA);
+
     try {
       if (locals.runtime?.env?.FUNNEL_DATA) {
+        const kvKey = `funnel:lead:${Date.now()}:${email}`;
+        console.log('[KV DEBUG] Attempting to write to key:', kvKey);
+
         await locals.runtime.env.FUNNEL_DATA.put(
-          `funnel:lead:${Date.now()}:${email}`,
+          kvKey,
           JSON.stringify(leadData),
           { expirationTtl: 60 * 60 * 24 * 90 } // 90 days
         );
-        console.log('Lead stored in KV successfully');
+
+        kvStorageSuccess = true;
+        console.log('[KV SUCCESS] Lead stored in KV successfully, key:', kvKey);
+
+        // Verify by reading back
+        const verifyRead = await locals.runtime.env.FUNNEL_DATA.get(kvKey);
+        console.log('[KV DEBUG] Verification read:', verifyRead ? 'SUCCESS' : 'FAILED');
+      } else {
+        console.error('[KV ERROR] FUNNEL_DATA binding not available!');
+        console.error('[KV ERROR] Available env keys:', locals.runtime?.env ? Object.keys(locals.runtime.env) : 'env not available');
       }
     } catch (kvError) {
-      console.error('KV storage error (non-critical):', kvError);
+      console.error('[KV ERROR] KV storage error (non-critical):', kvError);
+      console.error('[KV ERROR] Error details:', JSON.stringify(kvError, Object.getOwnPropertyNames(kvError)));
     }
 
     // Send emails using Resend API if configured
@@ -258,7 +278,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
         redirectUrl: `/funnel/${variant}/thank-you/`,
         id: emailId,
         emailSent,
-        storedInKV: true
+        storedInKV: kvStorageSuccess
       }),
       {
         status: 200,

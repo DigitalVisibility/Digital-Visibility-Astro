@@ -16,7 +16,8 @@
       "Bash(do curl -s -I https://digitalvisibility.com/funnel/)",
       "Bash(done)",
       "Bash(python3:*)",
-      "Bash(for i in {1..20})"
+      "Bash(for i in {1..20})",
+      "Bash(wrangler kv:key list:*)"
     ],
     "deny": [],
     "ask": []
