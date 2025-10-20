@@ -5,8 +5,6 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
 
   // Handle funnel A/B routing
   if (url.pathname === '/funnel' || url.pathname === '/funnel/') {
-    console.log('=== MIDDLEWARE: Funnel A/B Split ===');
-
     // Check for existing variant cookie
     const cookieHeader = request.headers.get('Cookie') || '';
     const existingVariant = cookieHeader
@@ -19,16 +17,12 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
     if (existingVariant && (existingVariant === 'a' || existingVariant === 'b')) {
       // User already has a variant assigned, use it
       variant = existingVariant;
-      console.log('Existing variant from cookie:', variant);
     } else {
       // New user - assign variant based on 50/50 random split
-      const random = Math.random();
-      variant = random < 0.5 ? 'a' : 'b';
-      console.log('New assignment - Random:', random, 'Variant:', variant);
+      variant = Math.random() < 0.5 ? 'a' : 'b';
     }
 
     const redirectUrl = new URL(`/funnel/${variant}/`, url.origin);
-    console.log('Redirecting to:', redirectUrl.toString());
 
     // Create response with headers (set cookie only for new users)
     const headers: Record<string, string> = {
