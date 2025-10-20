@@ -2,14 +2,14 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
-export const GET: APIRoute = async ({ request, platform }) => {
+export const GET: APIRoute = async ({ request, locals }) => {
   try {
     // Check for admin authentication
     const authHeader = request.headers.get('authorization');
     if (!authHeader || !authHeader.startsWith('Basic ')) {
       return new Response(
         JSON.stringify({ success: false, error: 'Authentication required' }),
-        { 
+        {
           status: 401,
           headers: { 'Content-Type': 'application/json' }
         }
@@ -20,8 +20,8 @@ export const GET: APIRoute = async ({ request, platform }) => {
     const credentials = atob(authHeader.split(' ')[1]);
     const [username, password] = credentials.split(':');
 
-    const adminUser = platform?.env?.ADMIN_USER || import.meta.env.ADMIN_USER;
-    const adminPass = platform?.env?.ADMIN_PASS || import.meta.env.ADMIN_PASS;
+    const adminUser = locals.runtime?.env?.ADMIN_USER || import.meta.env.ADMIN_USER;
+    const adminPass = locals.runtime?.env?.ADMIN_PASS || import.meta.env.ADMIN_PASS;
 
     if (username !== adminUser || password !== adminPass) {
       return new Response(
@@ -36,35 +36,42 @@ export const GET: APIRoute = async ({ request, platform }) => {
     // Aggregate real-time data from KV leads
     let data;
 
+    console.log('[METRICS DEBUG] Starting metrics fetch');
+    console.log('[METRICS DEBUG] locals.runtime exists:', !!locals.runtime);
+    console.log('[METRICS DEBUG] FUNNEL_DATA binding exists:', !!locals.runtime?.env?.FUNNEL_DATA);
+
     try {
       // Try to get cached live data first
-      const cachedData = await platform?.env?.FUNNEL_DATA?.get('funnel:live');
+      const cachedData = await locals.runtime?.env?.FUNNEL_DATA?.get('funnel:live');
 
       if (cachedData) {
+        console.log('[METRICS DEBUG] Using cached data');
         data = JSON.parse(cachedData);
       } else {
+        console.log('[METRICS DEBUG] No cache, aggregating from leads');
         // If no cached data, aggregate from leads
-        data = await aggregateFunnelData(platform);
+        data = await aggregateFunnelData(locals.runtime);
 
         // Cache the aggregated data for 5 minutes
-        if (platform?.env?.FUNNEL_DATA) {
-          await platform.env.FUNNEL_DATA.put(
+        if (locals.runtime?.env?.FUNNEL_DATA) {
+          await locals.runtime.env.FUNNEL_DATA.put(
             'funnel:live',
             JSON.stringify(data),
             { expirationTtl: 300 } // 5 minutes
           );
+          console.log('[METRICS DEBUG] Cached aggregated data');
         }
       }
     } catch (error) {
-      console.error('Error getting funnel data:', error);
+      console.error('[METRICS ERROR] Error getting funnel data:', error);
       // Return empty state if no data available
       data = getEmptyFunnelData();
     }
 
     // Get latest AI recommendations
-    const aiAdvice = await platform?.env?.FUNNEL_DATA?.get('funnel:ai_advice:latest');
+    const aiAdvice = await locals.runtime?.env?.FUNNEL_DATA?.get('funnel:ai_advice:latest');
     let recommendations = [];
-    
+
     if (aiAdvice) {
       try {
         const advice = JSON.parse(aiAdvice);
@@ -83,10 +90,10 @@ export const GET: APIRoute = async ({ request, platform }) => {
     // Get historical data for trends
     const today = new Date().toISOString().split('T')[0];
     const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString().split('T')[0];
-    
+
     const [todayData, yesterdayData] = await Promise.all([
-      platform?.env?.FUNNEL_DATA?.get(`funnel:daily:${today}`),
-      platform?.env?.FUNNEL_DATA?.get(`funnel:daily:${yesterday}`)
+      locals.runtime?.env?.FUNNEL_DATA?.get(`funnel:daily:${today}`),
+      locals.runtime?.env?.FUNNEL_DATA?.get(`funnel:daily:${yesterday}`)
     ]);
 
     const trends = {
@@ -166,19 +173,28 @@ function calculateDailyChanges(today, yesterday) {
   };
 }
 
-async function aggregateFunnelData(platform: any) {
+async function aggregateFunnelData(runtime: any) {
   try {
+    console.log('[METRICS DEBUG] Starting aggregateFunnelData');
+    console.log('[METRICS DEBUG] runtime exists:', !!runtime);
+    console.log('[METRICS DEBUG] runtime.env exists:', !!runtime?.env);
+    console.log('[METRICS DEBUG] FUNNEL_DATA exists:', !!runtime?.env?.FUNNEL_DATA);
+
     // Get all leads from KV
-    const leadList = await platform?.env?.FUNNEL_DATA?.list({ prefix: 'funnel:lead:' });
+    const leadList = await runtime?.env?.FUNNEL_DATA?.list({ prefix: 'funnel:lead:' });
+
+    console.log('[METRICS DEBUG] leadList:', leadList);
+    console.log('[METRICS DEBUG] leadList.keys length:', leadList?.keys?.length || 0);
 
     if (!leadList || !leadList.keys || leadList.keys.length === 0) {
+      console.log('[METRICS DEBUG] No leads found, returning empty data');
       return getEmptyFunnelData();
     }
 
     // Fetch all lead data
     const leads = await Promise.all(
       leadList.keys.slice(0, 100).map(async (key: { name: string }) => {
-        const data = await platform.env.FUNNEL_DATA.get(key.name);
+        const data = await runtime.env.FUNNEL_DATA.get(key.name);
         return data ? JSON.parse(data) : null;
       })
     );
