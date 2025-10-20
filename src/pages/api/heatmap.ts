@@ -2,12 +2,12 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
-export const GET: APIRoute = async ({ request, platform, url }) => {
+export const GET: APIRoute = async ({ request, locals, url }) => {
   try {
     // Basic auth check
     const auth = request.headers.get('authorization');
     if (!auth || !auth.startsWith('Basic ')) {
-      return new Response('Unauthorized', { 
+      return new Response('Unauthorized', {
         status: 401,
         headers: {
           'WWW-Authenticate': 'Basic realm="Admin Area"'
@@ -16,8 +16,8 @@ export const GET: APIRoute = async ({ request, platform, url }) => {
     }
 
     const credentials = atob(auth.substring(6)).split(':');
-    const adminUser = platform?.env?.ADMIN_USER || import.meta.env.ADMIN_USER;
-    const adminPass = platform?.env?.ADMIN_PASS || import.meta.env.ADMIN_PASS;
+    const adminUser = locals.runtime?.env?.ADMIN_USER || import.meta.env.ADMIN_USER;
+    const adminPass = locals.runtime?.env?.ADMIN_PASS || import.meta.env.ADMIN_PASS;
 
     if (credentials[0] !== adminUser || credentials[1] !== adminPass) {
       return new Response('Unauthorized', {
@@ -37,7 +37,7 @@ export const GET: APIRoute = async ({ request, platform, url }) => {
     // Calculate date range
     let startDate: string;
     let endDate: string;
-    
+
     if (date) {
       // Specific date
       startDate = date;
@@ -46,7 +46,7 @@ export const GET: APIRoute = async ({ request, platform, url }) => {
       // Period-based
       const now = new Date();
       endDate = now.toISOString().split('T')[0];
-      
+
       if (period === '24h') {
         const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000);
         startDate = yesterday.toISOString().split('T')[0];
@@ -60,8 +60,10 @@ export const GET: APIRoute = async ({ request, platform, url }) => {
       }
     }
 
+    console.log('[HEATMAP DEBUG] Fetching heatmap data for:', { startDate, endDate, page, variant });
+
     // Fetch heatmap data for the date range
-    const heatmapData = await fetchHeatmapData(platform?.env, startDate, endDate, page, variant);
+    const heatmapData = await fetchHeatmapData(locals.runtime?.env, startDate, endDate, page, variant);
     
     return new Response(JSON.stringify(heatmapData), {
       status: 200,

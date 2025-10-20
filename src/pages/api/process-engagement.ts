@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
-export const POST: APIRoute = async ({ request, platform }) => {
+export const POST: APIRoute = async ({ request, locals }) => {
   try {
     // Check for admin authentication
     const authHeader = request.headers.get('authorization');
@@ -20,8 +20,8 @@ export const POST: APIRoute = async ({ request, platform }) => {
     const credentials = atob(authHeader.split(' ')[1]);
     const [username, password] = credentials.split(':');
 
-    const adminUser = platform?.env?.ADMIN_USER || import.meta.env.ADMIN_USER;
-    const adminPass = platform?.env?.ADMIN_PASS || import.meta.env.ADMIN_PASS;
+    const adminUser = locals.runtime?.env?.ADMIN_USER || import.meta.env.ADMIN_USER;
+    const adminPass = locals.runtime?.env?.ADMIN_PASS || import.meta.env.ADMIN_PASS;
 
     if (username !== adminUser || password !== adminPass) {
       return new Response(
@@ -33,8 +33,10 @@ export const POST: APIRoute = async ({ request, platform }) => {
       );
     }
 
+    console.log('[PROCESS ENGAGEMENT DEBUG] Starting engagement processing');
+
     // Import and run the engagement processing logic from cron
-    const result = await processEngagementData(platform?.env);
+    const result = await processEngagementData(locals.runtime?.env);
 
     return new Response(
       JSON.stringify({
@@ -131,28 +133,37 @@ async function processEngagementForPageVariant(env: any, date: string, page: str
 
 async function getEngagementEvents(env: any, date: string, page: string, variant: string) {
   try {
+    console.log(`[ENGAGE DEBUG] Getting events for ${date} ${page} ${variant}`);
+    console.log('[ENGAGE DEBUG] ENGAGE_STORE available:', !!env?.ENGAGE_STORE);
+
     // Try to get events from Durable Object first
     const durableObjectId = env?.ENGAGE_STORE?.idFromName(`${date}:${page}:${variant}`);
     if (durableObjectId) {
+      console.log('[ENGAGE DEBUG] Using Durable Object');
       const durableObject = env?.ENGAGE_STORE?.get(durableObjectId);
       const response = await durableObject.fetch(`http://internal/get?date=${date}&page=${page}&variant=${variant}`);
       const data = await response.json();
+      console.log('[ENGAGE DEBUG] Durable Object returned', data.events?.length || 0, 'events');
       return data.events || [];
     }
 
+    console.log('[ENGAGE DEBUG] Trying KV fallback');
     // Fallback to KV storage
     const kvKey = `engage:raw:${date}:${page}:${variant}`;
     const rawData = await env?.FUNNEL_DATA?.get(kvKey);
 
     if (rawData) {
-      return rawData.split('\n')
+      const events = rawData.split('\n')
         .filter(line => line.trim())
         .map(line => JSON.parse(line));
+      console.log('[ENGAGE DEBUG] KV returned', events.length, 'events');
+      return events;
     }
 
+    console.log('[ENGAGE DEBUG] No events found');
     return [];
   } catch (error) {
-    console.error('Error getting engagement events:', error);
+    console.error('[ENGAGE ERROR] Error getting engagement events:', error);
     return [];
   }
 }
