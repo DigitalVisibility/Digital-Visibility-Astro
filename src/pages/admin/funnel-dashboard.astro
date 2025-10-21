@@ -587,9 +587,39 @@ const meta = {
       downloadCSV(csvData, 'funnel-analytics.csv');
     });
 
-    document.getElementById('reset-test').addEventListener('click', () => {
-      if (confirm('Are you sure you want to reset the test? This will clear all data.')) {
-        alert('Test reset feature coming soon!');
+    document.getElementById('reset-test').addEventListener('click', async () => {
+      if (confirm('⚠️ WARNING: This will permanently delete ALL funnel data!\n\nThis includes:\n• All visitor tracking data\n• All form submissions/leads\n• All pageview history\n• All cached metrics\n\nAre you absolutely sure you want to reset everything to zero?')) {
+        const button = document.getElementById('reset-test');
+        const originalHTML = button.innerHTML;
+
+        try {
+          button.disabled = true;
+          button.innerHTML = '<p class="text-sm font-medium text-red-900">🔄 Resetting...</p><p class="text-xs text-red-700">Please wait</p>';
+
+          const response = await fetch('/api/reset-funnel', {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+              'Authorization': getAuthHeader()
+            }
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            alert(`✅ Funnel data reset successfully!\n\n${result.keysDeleted} keys deleted from database.\n\nThe dashboard will now show zero for all metrics.`);
+            // Refresh dashboard to show empty state
+            fetchAnalyticsData();
+          } else {
+            alert('❌ Failed to reset data: ' + result.error);
+          }
+        } catch (error) {
+          console.error('Error resetting funnel:', error);
+          alert('❌ Error resetting funnel: ' + error.message);
+        } finally {
+          button.disabled = false;
+          button.innerHTML = originalHTML;
+        }
       }
     });
 
