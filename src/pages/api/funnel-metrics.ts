@@ -204,10 +204,12 @@ async function aggregateFunnelData(runtime: any) {
     const leadsA = validLeads.filter(l => l.variant === 'a');
     const leadsB = validLeads.filter(l => l.variant === 'b');
 
-    // For now, estimate visitors as leads * 20 (5% conversion rate estimate)
-    // In a real implementation, you'd track actual page views
-    const visitorsA = Math.max(leadsA.length * 20, leadsA.length);
-    const visitorsB = Math.max(leadsB.length * 20, leadsB.length);
+    // Get REAL pageview counts from tracking data
+    const { visitorsA, visitorsB } = await getRealPageviews(runtime);
+
+    console.log('[METRICS DEBUG] Real pageviews - Variant A:', visitorsA, 'Variant B:', visitorsB);
+    console.log('[METRICS DEBUG] Conversions - Variant A:', leadsA.length, 'Variant B:', leadsB.length);
+
     const totalVisitors = visitorsA + visitorsB;
     const totalConversions = leadsA.length + leadsB.length;
 
@@ -268,6 +270,53 @@ async function aggregateFunnelData(runtime: any) {
   } catch (error) {
     console.error('Error aggregating funnel data:', error);
     return getEmptyFunnelData();
+  }
+}
+
+async function getRealPageviews(runtime: any): Promise<{ visitorsA: number; visitorsB: number }> {
+  try {
+    // Get pageview data for last 30 days to get cumulative count
+    const dates: string[] = [];
+    const now = new Date();
+
+    for (let i = 0; i < 30; i++) {
+      const date = new Date(now);
+      date.setDate(date.getDate() - i);
+      dates.push(date.toISOString().split('T')[0]);
+    }
+
+    let visitorsA = 0;
+    let visitorsB = 0;
+    const allSessionsA = new Set<string>();
+    const allSessionsB = new Set<string>();
+
+    // Fetch pageview data for each date
+    await Promise.all(dates.map(async (date) => {
+      const [pageviewDataA, pageviewDataB] = await Promise.all([
+        runtime?.env?.FUNNEL_DATA?.get(`funnel:pageviews:${date}:a`),
+        runtime?.env?.FUNNEL_DATA?.get(`funnel:pageviews:${date}:b`)
+      ]);
+
+      if (pageviewDataA) {
+        const parsed = JSON.parse(pageviewDataA);
+        parsed.sessions?.forEach((s: string) => allSessionsA.add(s));
+      }
+
+      if (pageviewDataB) {
+        const parsed = JSON.parse(pageviewDataB);
+        parsed.sessions?.forEach((s: string) => allSessionsB.add(s));
+      }
+    }));
+
+    visitorsA = allSessionsA.size;
+    visitorsB = allSessionsB.size;
+
+    console.log('[PAGEVIEW DEBUG] Total unique visitors - A:', visitorsA, 'B:', visitorsB);
+
+    return { visitorsA, visitorsB };
+  } catch (error) {
+    console.error('[PAGEVIEW ERROR] Error getting real pageviews:', error);
+    return { visitorsA: 0, visitorsB: 0 };
   }
 }
 

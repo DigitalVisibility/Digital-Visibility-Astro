@@ -540,7 +540,25 @@ const meta = {
           variant: 'B'
         })
       });
-  
+
+      // Track REAL pageview for conversion rate calculation
+      const sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      fetch('/api/pageview', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          variant: 'b',
+          page: window.location.pathname,
+          sessionId: sessionId
+        })
+      }).then(response => response.json())
+        .then(data => {
+          console.log('[PAGEVIEW] Tracked:', data);
+        })
+        .catch(error => {
+          console.error('[PAGEVIEW] Error:', error);
+        });
+
   document.addEventListener('DOMContentLoaded', function() {
     const ctaButton = document.getElementById('cta-button');
     const form = document.getElementById('funnel-form');
