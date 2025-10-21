@@ -404,43 +404,40 @@ const meta = {
       (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          t.onload = function() {
+            console.log('[CLARITY] Script loaded successfully');
+            // Set experiment and variant after Clarity loads
+            if (typeof clarity !== 'undefined') {
+              clarity('set', 'experiment', 'funnel_v1');
+              clarity('set', 'variant', 'A');
+            }
+          };
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "trt5xn1qai");
 
-      // Set experiment and variant for Clarity
-      clarity('set', 'experiment', 'funnel_v1');
-      clarity('set', 'variant', 'A');
-
-      // Custom Clarity tracking
+      // Custom Clarity tracking - wrapped in function to avoid blocking
       let sessionStartTime = Date.now();
       let maxScrollDepth = 0;
       let rageClickCount = 0;
 
+      // Safe Clarity tracking helper
+      function trackClarityEvent(event, data) {
+        fetch('/api/clarity-track', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ event, data, variant: 'A' })
+        }).catch(err => console.log('[CLARITY] Tracking error:', err));
+      }
+
       // Track session start
-      fetch('/api/clarity-track', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          event: 'sessionStart',
-          data: { variant: 'A', timestamp: new Date().toISOString() },
-          variant: 'A'
-        })
-      });
+      trackClarityEvent('sessionStart', { variant: 'A', timestamp: new Date().toISOString() });
 
       // Track scroll depth
       window.addEventListener('scroll', () => {
         const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
         if (scrollDepth > maxScrollDepth) {
           maxScrollDepth = scrollDepth;
-          fetch('/api/clarity-track', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              event: 'scrollDepth',
-              data: { depth: maxScrollDepth, variant: 'A' },
-              variant: 'A'
-            })
-          });
+          trackClarityEvent('scrollDepth', { depth: maxScrollDepth, variant: 'A' });
         }
       });
 
@@ -449,97 +446,66 @@ const meta = {
       document.addEventListener('click', (e) => {
         const now = Date.now();
         clickTimes.push(now);
-        clickTimes = clickTimes.filter(time => now - time < 1000); // Keep last second
-        
+        clickTimes = clickTimes.filter(time => now - time < 1000);
+
         if (clickTimes.length > 5) {
           rageClickCount++;
-          fetch('/api/clarity-track', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              event: 'rageClick',
-              data: { count: rageClickCount, element: e.target.tagName, variant: 'A' },
-              variant: 'A'
-            })
-          });
+          trackClarityEvent('rageClick', { count: rageClickCount, element: e.target.tagName, variant: 'A' });
         }
       });
 
       // Track CTA clicks
       document.querySelectorAll('button, a[href*="mailto"], input[type="submit"]').forEach(element => {
         element.addEventListener('click', () => {
-          fetch('/api/clarity-track', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              event: 'ctaClick',
-              data: { element: element.tagName, text: element.textContent, variant: 'A' },
-              variant: 'A'
-            })
-          });
+          trackClarityEvent('ctaClick', { element: element.tagName, text: element.textContent, variant: 'A' });
         });
       });
 
       // Track form interactions
       document.querySelectorAll('input, textarea, select').forEach(element => {
         element.addEventListener('focus', () => {
-          fetch('/api/clarity-track', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              event: 'formInteraction',
-              data: { field: element.name || element.id, variant: 'A' },
-              variant: 'A'
-            })
-          });
+          trackClarityEvent('formInteraction', { field: element.name || element.id, variant: 'A' });
         });
       });
 
       // Track session end
       window.addEventListener('beforeunload', () => {
         const sessionDuration = Date.now() - sessionStartTime;
-        fetch('/api/clarity-track', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            event: 'sessionEnd',
-            data: { duration: sessionDuration, scrollDepth: maxScrollDepth, variant: 'A' },
-            variant: 'A'
-          })
-        });
+        trackClarityEvent('sessionEnd', { duration: sessionDuration, scrollDepth: maxScrollDepth, variant: 'A' });
       });
   
-      // Google Analytics 4 Integration
-      gtag('config', 'G-T7HFBLX1X1', {
-        custom_map: {
-          'custom_parameter_1': 'funnel_variant'
+      // Google Analytics 4 Integration - safe wrapper
+      function safeGtag() {
+        if (typeof gtag !== 'undefined') {
+          gtag.apply(null, arguments);
+        } else {
+          console.log('[GTAG] Not loaded yet, skipping:', arguments[0]);
         }
-      });
-      gtag('event', 'page_view', {
-        funnel_variant: 'A',
-        page_title: 'AI Visibility Funnel - Variant A'
-      });
+      }
 
-      // Custom GA4 tracking
-      fetch('/api/ga4-track', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          event: 'page_view',
-          data: { variant: 'A', page_title: 'AI Visibility Funnel - Variant A' },
-          variant: 'A'
-        })
-      });
+      // Track pageview when gtag is available
+      if (typeof gtag !== 'undefined') {
+        gtag('config', 'G-T7HFBLX1X1', {
+          custom_map: { 'custom_parameter_1': 'funnel_variant' }
+        });
+        gtag('event', 'page_view', {
+          funnel_variant: 'A',
+          page_title: 'AI Visibility Funnel - Variant A'
+        });
+      }
 
-      fetch('/api/ga4-track', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          event: 'session_start',
-          data: { variant: 'A', timestamp: new Date().toISOString() },
-          variant: 'A'
-        })
-      });
+      // Custom GA4 tracking helper
+      function trackGA4Event(event, data) {
+        fetch('/api/ga4-track', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ event, data, variant: 'A' })
+        }).catch(err => console.log('[GA4] Tracking error:', err));
+      }
+
+      // Track events
+      trackGA4Event('page_view', { variant: 'A', page_title: 'AI Visibility Funnel - Variant A' });
+      trackGA4Event('session_start', { variant: 'A', timestamp: new Date().toISOString() });
 
       // Track REAL pageview for conversion rate calculation
       (function trackPageview() {
@@ -613,26 +579,22 @@ const meta = {
         const result = await response.json();
         
         if (result.success) {
-          // Track conversion event
-          gtag('event', 'conversion', {
-            event_category: 'Funnel',
-            event_label: 'Variant A - Form Submission',
-            value: 200
-          });
-          
-          clarity('event', 'funnel_conversion');
-          
+          // Track conversion event - safe wrappers
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'conversion', {
+              event_category: 'Funnel',
+              event_label: 'Variant A - Form Submission',
+              value: 200
+            });
+          }
+
+          if (typeof clarity !== 'undefined') {
+            clarity('event', 'funnel_conversion');
+          }
+
           // Custom GA4 conversion tracking
-          fetch('/api/ga4-track', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              event: 'conversion',
-              data: { variant: 'A', value: 200, form_data: formData },
-              variant: 'A'
-            })
-          });
-          
+          trackGA4Event('conversion', { variant: 'A', value: 200 });
+
           // Redirect to thank you page
           window.location.href = result.redirectUrl;
         } else {
