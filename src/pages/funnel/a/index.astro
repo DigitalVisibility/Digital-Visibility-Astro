@@ -542,28 +542,48 @@ const meta = {
       });
 
       // Track REAL pageview for conversion rate calculation
-      // Get or create session ID (persists for browser session, not across refreshes)
-      let sessionId = sessionStorage.getItem('funnel_session_id');
-      if (!sessionId) {
-        sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-        sessionStorage.setItem('funnel_session_id', sessionId);
-      }
+      (function trackPageview() {
+        try {
+          // Get or create session ID (persists for browser session)
+          let sessionId = sessionStorage.getItem('funnel_session_id');
+          if (!sessionId) {
+            sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            sessionStorage.setItem('funnel_session_id', sessionId);
+            console.log('[PAGEVIEW] New session created:', sessionId);
+          } else {
+            console.log('[PAGEVIEW] Existing session:', sessionId);
+          }
 
-      fetch('/api/pageview', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          variant: 'a',
-          page: window.location.pathname,
-          sessionId: sessionId
-        })
-      }).then(response => response.json())
-        .then(data => {
-          console.log('[PAGEVIEW] Tracked:', data);
-        })
-        .catch(error => {
-          console.error('[PAGEVIEW] Error:', error);
-        });
+          console.log('[PAGEVIEW] Sending tracking request...');
+
+          fetch('/api/pageview', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              variant: 'a',
+              page: window.location.pathname,
+              sessionId: sessionId
+            })
+          })
+          .then(response => {
+            console.log('[PAGEVIEW] Response status:', response.status);
+            return response.json();
+          })
+          .then(data => {
+            console.log('[PAGEVIEW] ✅ Successfully tracked:', data);
+            if (data.isNewSession) {
+              console.log('[PAGEVIEW] 🎉 New visitor counted! Total:', data.totalVisitors);
+            } else {
+              console.log('[PAGEVIEW] Returning visitor (same session)');
+            }
+          })
+          .catch(error => {
+            console.error('[PAGEVIEW] ❌ Error:', error);
+          });
+        } catch (error) {
+          console.error('[PAGEVIEW] ❌ Exception:', error);
+        }
+      })();
 
   document.addEventListener('DOMContentLoaded', function() {
     const ctaButton = document.getElementById('cta-button');

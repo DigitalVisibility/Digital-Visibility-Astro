@@ -1,0 +1,6 @@
+# Redirect /funnel to /funnel/ (with trailing slash)
+/funnel /funnel/a/ 302
+
+# Ensure trailing slashes are added for funnel paths
+/funnel/a /funnel/a/ 301
+/funnel/b /funnel/b/ 301
