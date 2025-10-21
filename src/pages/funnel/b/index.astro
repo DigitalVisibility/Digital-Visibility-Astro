@@ -542,7 +542,13 @@ const meta = {
       });
 
       // Track REAL pageview for conversion rate calculation
-      const sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      // Get or create session ID (persists for browser session, not across refreshes)
+      let sessionId = sessionStorage.getItem('funnel_session_id');
+      if (!sessionId) {
+        sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        sessionStorage.setItem('funnel_session_id', sessionId);
+      }
+
       fetch('/api/pageview', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
