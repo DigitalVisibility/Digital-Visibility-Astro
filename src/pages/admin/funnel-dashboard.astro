@@ -258,32 +258,63 @@ const meta = {
       </div>
 
       <!-- Quick Actions -->
-      <div class="bg-white rounded-lg shadow">
-        <div class="px-6 py-4 border-b border-gray-200">
-          <h3 class="text-lg font-semibold text-gray-900">Quick Actions</h3>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <!-- General Actions -->
+        <div class="bg-white rounded-lg shadow">
+          <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900">Quick Actions</h3>
+          </div>
+          <div class="p-6">
+            <div class="space-y-3">
+              <button id="process-engagement" class="w-full text-left p-3 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition-colors">
+                <p class="text-sm font-medium text-indigo-900">⚡ Process Engagement Data Now</p>
+                <p class="text-xs text-indigo-700">Manually trigger engagement data aggregation (normally runs every 15 min)</p>
+              </button>
+              <button id="adjust-traffic" class="w-full text-left p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
+                <p class="text-sm font-medium text-blue-900">Adjust Traffic Split</p>
+                <p class="text-xs text-blue-700">Modify A/B test traffic allocation</p>
+              </button>
+              <button id="update-copy" class="w-full text-left p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors">
+                <p class="text-sm font-medium text-green-900">Update Copy</p>
+                <p class="text-xs text-green-700">Modify headlines, CTAs, or descriptions</p>
+              </button>
+              <button id="export-data" class="w-full text-left p-3 bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors">
+                <p class="text-sm font-medium text-purple-900">Export Data</p>
+                <p class="text-xs text-purple-700">Download analytics data for analysis</p>
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="p-6">
-          <div class="space-y-3">
-            <button id="process-engagement" class="w-full text-left p-3 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition-colors">
-              <p class="text-sm font-medium text-indigo-900">⚡ Process Engagement Data Now</p>
-              <p class="text-xs text-indigo-700">Manually trigger engagement data aggregation (normally runs every 15 min)</p>
-            </button>
-            <button id="adjust-traffic" class="w-full text-left p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
-              <p class="text-sm font-medium text-blue-900">Adjust Traffic Split</p>
-              <p class="text-xs text-blue-700">Modify A/B test traffic allocation</p>
-            </button>
-            <button id="update-copy" class="w-full text-left p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors">
-              <p class="text-sm font-medium text-green-900">Update Copy</p>
-              <p class="text-xs text-green-700">Modify headlines, CTAs, or descriptions</p>
-            </button>
-            <button id="export-data" class="w-full text-left p-3 bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors">
-              <p class="text-sm font-medium text-purple-900">Export Data</p>
-              <p class="text-xs text-purple-700">Download analytics data for analysis</p>
-            </button>
-            <button id="reset-test" class="w-full text-left p-3 bg-red-50 hover:bg-red-100 rounded-lg transition-colors">
-              <p class="text-sm font-medium text-red-900">Reset Test</p>
-              <p class="text-xs text-red-700">Start fresh A/B test</p>
-            </button>
+
+        <!-- Granular Reset Controls -->
+        <div class="bg-white rounded-lg shadow">
+          <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900">Reset Controls</h3>
+            <p class="text-xs text-gray-500 mt-1">Clear specific data without affecting other metrics</p>
+          </div>
+          <div class="p-6">
+            <div class="space-y-3">
+              <button id="reset-visitors" class="w-full text-left p-3 bg-orange-50 hover:bg-orange-100 rounded-lg transition-colors">
+                <p class="text-sm font-medium text-orange-900">🔄 Reset Visitor Tracking</p>
+                <p class="text-xs text-orange-700">Clear pageview data only - keeps conversions intact</p>
+              </button>
+              <button id="reset-leads" class="w-full text-left p-3 bg-yellow-50 hover:bg-yellow-100 rounded-lg transition-colors">
+                <p class="text-sm font-medium text-yellow-900">🔄 Reset Leads/Conversions</p>
+                <p class="text-xs text-yellow-700">Clear form submissions only - keeps visitor counts intact</p>
+              </button>
+              <button id="reset-ai" class="w-full text-left p-3 bg-pink-50 hover:bg-pink-100 rounded-lg transition-colors">
+                <p class="text-sm font-medium text-pink-900">🔄 Reset AI Recommendations</p>
+                <p class="text-xs text-pink-700">Clear AI advice - use "Generate New AI Advice" to refresh</p>
+              </button>
+              <button id="reset-cache" class="w-full text-left p-3 bg-cyan-50 hover:bg-cyan-100 rounded-lg transition-colors">
+                <p class="text-sm font-medium text-cyan-900">🔄 Reset Cache Only</p>
+                <p class="text-xs text-cyan-700">Force metrics recalculation - keeps raw data intact</p>
+              </button>
+              <button id="reset-test" class="w-full text-left p-3 bg-red-50 hover:bg-red-100 rounded-lg transition-colors">
+                <p class="text-sm font-medium text-red-900">⚠️ Reset Everything</p>
+                <p class="text-xs text-red-700">Complete reset - clears ALL funnel data permanently</p>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -587,41 +618,70 @@ const meta = {
       downloadCSV(csvData, 'funnel-analytics.csv');
     });
 
-    document.getElementById('reset-test').addEventListener('click', async () => {
-      if (confirm('⚠️ WARNING: This will permanently delete ALL funnel data!\n\nThis includes:\n• All visitor tracking data\n• All form submissions/leads\n• All pageview history\n• All cached metrics\n\nAre you absolutely sure you want to reset everything to zero?')) {
-        const button = document.getElementById('reset-test');
-        const originalHTML = button.innerHTML;
-
-        try {
-          button.disabled = true;
-          button.innerHTML = '<p class="text-sm font-medium text-red-900">🔄 Resetting...</p><p class="text-xs text-red-700">Please wait</p>';
-
-          const response = await fetch('/api/reset-funnel', {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-              'Authorization': getAuthHeader()
-            }
-          });
-
-          const result = await response.json();
-
-          if (result.success) {
-            alert(`✅ Funnel data reset successfully!\n\n${result.keysDeleted} keys deleted from database.\n\nThe dashboard will now show zero for all metrics.`);
-            // Refresh dashboard to show empty state
-            fetchAnalyticsData();
-          } else {
-            alert('❌ Failed to reset data: ' + result.error);
-          }
-        } catch (error) {
-          console.error('Error resetting funnel:', error);
-          alert('❌ Error resetting funnel: ' + error.message);
-        } finally {
-          button.disabled = false;
-          button.innerHTML = originalHTML;
-        }
+    // Granular reset handlers
+    document.getElementById('reset-visitors').addEventListener('click', async () => {
+      if (confirm('Reset visitor tracking data?\n\nThis will clear:\n• All pageview counts\n• Unique visitor sessions\n\nThis will NOT affect:\n• Form submissions/leads\n• AI recommendations\n\nConversion rates will recalculate based on remaining data.')) {
+        await handleReset('reset-visitors', '/api/reset-visitors', 'Visitor tracking');
       }
     });
+
+    document.getElementById('reset-leads').addEventListener('click', async () => {
+      if (confirm('Reset leads/conversions data?\n\nThis will clear:\n• All form submissions\n• All lead records\n\nThis will NOT affect:\n• Visitor tracking\n• Pageview counts\n\nConversion rates will recalculate based on remaining data.')) {
+        await handleReset('reset-leads', '/api/reset-leads', 'Leads/conversions');
+      }
+    });
+
+    document.getElementById('reset-ai').addEventListener('click', async () => {
+      if (confirm('Clear AI recommendations?\n\nThis will remove current AI advice.\n\nUse "Generate New AI Advice" button to create fresh recommendations.')) {
+        await handleReset('reset-ai', '/api/reset-ai', 'AI recommendations');
+      }
+    });
+
+    document.getElementById('reset-cache').addEventListener('click', async () => {
+      if (confirm('Clear cached metrics?\n\nThis will force recalculation of all metrics on next refresh.\n\nRaw data (visitors, leads) will remain intact.')) {
+        await handleReset('reset-cache', '/api/reset-cache', 'Cache');
+      }
+    });
+
+    document.getElementById('reset-test').addEventListener('click', async () => {
+      if (confirm('⚠️ WARNING: This will permanently delete ALL funnel data!\n\nThis includes:\n• All visitor tracking data\n• All form submissions/leads\n• All pageview history\n• All cached metrics\n• All AI recommendations\n\nAre you absolutely sure you want to reset everything to zero?')) {
+        await handleReset('reset-test', '/api/reset-funnel', 'Everything');
+      }
+    });
+
+    // Generic reset handler
+    async function handleReset(buttonId, endpoint, dataType) {
+      const button = document.getElementById(buttonId);
+      const originalHTML = button.innerHTML;
+
+      try {
+        button.disabled = true;
+        button.innerHTML = '<p class="text-sm">🔄 Resetting...</p><p class="text-xs">Please wait</p>';
+
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          credentials: 'include',
+          headers: {
+            'Authorization': getAuthHeader()
+          }
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          alert(`✅ ${dataType} reset successfully!\n\n${result.keysDeleted} keys deleted.\n\nRefreshing dashboard...`);
+          fetchAnalyticsData();
+        } else {
+          alert('❌ Failed to reset: ' + result.error);
+        }
+      } catch (error) {
+        console.error('Error resetting:', error);
+        alert('❌ Error: ' + error.message);
+      } finally {
+        button.disabled = false;
+        button.innerHTML = originalHTML;
+      }
+    }
 
     // Add refresh button functionality
     const refreshButton = document.createElement('button');
