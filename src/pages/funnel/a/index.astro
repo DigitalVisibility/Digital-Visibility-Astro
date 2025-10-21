@@ -474,27 +474,7 @@ const meta = {
         trackClarityEvent('sessionEnd', { duration: sessionDuration, scrollDepth: maxScrollDepth, variant: 'A' });
       });
   
-      // Google Analytics 4 Integration - safe wrapper
-      function safeGtag() {
-        if (typeof gtag !== 'undefined') {
-          gtag.apply(null, arguments);
-        } else {
-          console.log('[GTAG] Not loaded yet, skipping:', arguments[0]);
-        }
-      }
-
-      // Track pageview when gtag is available
-      if (typeof gtag !== 'undefined') {
-        gtag('config', 'G-T7HFBLX1X1', {
-          custom_map: { 'custom_parameter_1': 'funnel_variant' }
-        });
-        gtag('event', 'page_view', {
-          funnel_variant: 'A',
-          page_title: 'AI Visibility Funnel - Variant A'
-        });
-      }
-
-      // Custom GA4 tracking helper
+      // Custom GA4 tracking helper - doesn't depend on gtag
       function trackGA4Event(event, data) {
         fetch('/api/ga4-track', {
           method: 'POST',
@@ -503,9 +483,23 @@ const meta = {
         }).catch(err => console.log('[GA4] Tracking error:', err));
       }
 
-      // Track events
+      // Track events via our API (independent of cookie consent)
       trackGA4Event('page_view', { variant: 'A', page_title: 'AI Visibility Funnel - Variant A' });
       trackGA4Event('session_start', { variant: 'A', timestamp: new Date().toISOString() });
+
+      // Also send to gtag when it becomes available (after cookie consent)
+      document.addEventListener('cookieConsentUpdate', function(e) {
+        if (e.detail.analytics && typeof gtag !== 'undefined') {
+          console.log('[GTAG] Cookie consent granted, sending pageview');
+          gtag('config', 'G-T7HFBLX1X1', {
+            custom_map: { 'custom_parameter_1': 'funnel_variant' }
+          });
+          gtag('event', 'page_view', {
+            funnel_variant: 'A',
+            page_title: 'AI Visibility Funnel - Variant A'
+          });
+        }
+      });
 
       // Track REAL pageview for conversion rate calculation
       (function trackPageview() {
@@ -579,7 +573,10 @@ const meta = {
         const result = await response.json();
         
         if (result.success) {
-          // Track conversion event - safe wrappers
+          // Custom GA4 conversion tracking (always works)
+          trackGA4Event('conversion', { variant: 'A', value: 200 });
+
+          // Also track via gtag/clarity if they're loaded (after cookie consent)
           if (typeof gtag !== 'undefined') {
             gtag('event', 'conversion', {
               event_category: 'Funnel',
@@ -591,9 +588,6 @@ const meta = {
           if (typeof clarity !== 'undefined') {
             clarity('event', 'funnel_conversion');
           }
-
-          // Custom GA4 conversion tracking
-          trackGA4Event('conversion', { variant: 'A', value: 200 });
 
           // Redirect to thank you page
           window.location.href = result.redirectUrl;
