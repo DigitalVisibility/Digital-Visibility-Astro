@@ -216,8 +216,12 @@ class CookieConsentManager {
     };
 
     this.saveConsent(consent);
-    this.applyCookieSettings(consent);
     this.hideBanner();
+
+    // Reload page to reinitialize scripts with analytics enabled
+    setTimeout(() => {
+      window.location.reload();
+    }, 300);
   }
 
   rejectAllCookies() {
@@ -230,8 +234,12 @@ class CookieConsentManager {
     };
 
     this.saveConsent(consent);
-    this.applyCookieSettings(consent);
     this.hideBanner();
+
+    // Reload page to ensure clean state without analytics
+    setTimeout(() => {
+      window.location.reload();
+    }, 300);
   }
 
   savePreferences() {
@@ -244,9 +252,13 @@ class CookieConsentManager {
     };
 
     this.saveConsent(consent);
-    this.applyCookieSettings(consent);
     this.closeSettings();
     this.hideBanner();
+
+    // Reload page to apply new preferences
+    setTimeout(() => {
+      window.location.reload();
+    }, 300);
   }
 
   saveConsent(consent) {
