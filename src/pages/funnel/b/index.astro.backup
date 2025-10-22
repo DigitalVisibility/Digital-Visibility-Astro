@@ -17,7 +17,7 @@ const meta = {
   <!-- Comprehensive Meta Tags -->
   <meta name="description" content={meta.description} slot="head">
   <meta name="keywords" content={meta.keywords} slot="head">
-  <link rel="canonical" href="https://digitalvisibility.com/funnel/b/" slot="head">
+  <link rel="canonical" href="https://digitalvisibility.com/funnel/a/" slot="head">
   <meta name="robots" content="index, follow" slot="head">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" slot="head">
   <meta name="googlebot" content="index, follow" slot="head">
@@ -40,7 +40,7 @@ const meta = {
   <meta property="og:type" content="website" slot="head">
   <meta property="og:title" content={meta.title} slot="head">
   <meta property="og:description" content={meta.description} slot="head">
-  <meta property="og:url" content="https://digitalvisibility.com/funnel/b/" slot="head">
+  <meta property="og:url" content="https://digitalvisibility.com/funnel/a/" slot="head">
   <meta property="og:site_name" content="Digital Visibility" slot="head">
   <meta property="og:image" content={meta.image} slot="head">
   <meta property="og:image:width" content="1200" slot="head">
@@ -81,8 +81,8 @@ const meta = {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://digitalvisibility.com/funnel/b/#webpage",
-        "url": "https://digitalvisibility.com/funnel/b/",
+        "@id": "https://digitalvisibility.com/funnel/a/#webpage",
+        "url": "https://digitalvisibility.com/funnel/a/",
         "name": "Show Up on AI Search | AI SEO & Optimization | Digital Visibility Ltd",
         "description": "Free AI Optimization to get your site recommended by ChatGPT, Bing, and Google AI in 30 days. Join the £200/month AI Visibility Plan.",
         "datePublished": "2025-01-01",
@@ -113,8 +113,8 @@ const meta = {
             {
               "@type": "ListItem",
               "position": 3,
-              "name": "Variant B",
-              "item": "https://digitalvisibility.com/funnel/b/"
+              "name": "Variant A",
+              "item": "https://digitalvisibility.com/funnel/a/"
             }
           ]
         },
@@ -221,23 +221,23 @@ const meta = {
   <Navigation slot="nav" />
   
   <!-- Hero Section -->
-  <section data-section="hero" class="py-16 md:py-24 bg-gradient-to-br from-green-50 to-emerald-100">
+  <section data-section="hero" class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-indigo-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <!-- Main Headline -->
         <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-          Free AI Optimization — Get Recommended by ChatGPT, Bing, and Google AI
+          Show Up in AI Search Results Within 30 Days
         </h1>
         
         <!-- Subheadline -->
         <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
-          Turn your existing website into an AI-discoverable lead engine. Results in 30 days or your optimization is free.
+          We optimize your website so it's recommended by ChatGPT, Bing, and Google AI — not buried by them.
         </p>
         
         <!-- CTA Button -->
         <div class="mb-12">
-          <button id="cta-button" data-el="cta-primary" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl">
-            Start My Free AI Optimization Audit
+          <button id="cta-button" data-el="cta-primary" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl">
+            Claim My Free AI Optimization Audit
           </button>
         </div>
         
@@ -365,25 +365,25 @@ const meta = {
         </div>
         
         <form id="funnel-form" data-el="form-main" class="space-y-6">
-          <input type="hidden" name="variant" value="b">
+          <input type="hidden" name="variant" value="a">
           
           <div>
             <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
           </div>
           
           <div>
             <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
           </div>
           
           <div>
             <label for="website" class="block text-sm font-medium text-gray-700 mb-2">Website URL *</label>
-            <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+            <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
           </div>
           
-          <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl">
-            Start My Free AI Optimization Audit
+          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl">
+            Claim My Free AI Optimization Audit
           </button>
           
           <p class="text-sm text-gray-500 text-center">
@@ -409,35 +409,35 @@ const meta = {
             // Set experiment and variant after Clarity loads
             if (typeof clarity !== 'undefined') {
               clarity('set', 'experiment', 'funnel_v1');
-              clarity('set', 'variant', 'B');
+              clarity('set', 'variant', 'A');
             }
           };
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "trt5xn1qai");
+
+      // Custom Clarity tracking - wrapped in function to avoid blocking
+      let sessionStartTime = Date.now();
+      let maxScrollDepth = 0;
+      let rageClickCount = 0;
 
       // Safe Clarity tracking helper
       function trackClarityEvent(event, data) {
         fetch('/api/clarity-track', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ event, data, variant: 'B' })
+          body: JSON.stringify({ event, data, variant: 'A' })
         }).catch(err => console.log('[CLARITY] Tracking error:', err));
       }
 
-      // Custom Clarity tracking
-      let sessionStartTime = Date.now();
-      let maxScrollDepth = 0;
-      let rageClickCount = 0;
-
       // Track session start
-      trackClarityEvent('sessionStart', { variant: 'B', timestamp: new Date().toISOString() });
+      trackClarityEvent('sessionStart', { variant: 'A', timestamp: new Date().toISOString() });
 
       // Track scroll depth
       window.addEventListener('scroll', () => {
         const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
         if (scrollDepth > maxScrollDepth) {
           maxScrollDepth = scrollDepth;
-          trackClarityEvent('scrollDepth', { depth: maxScrollDepth, variant: 'B' });
+          trackClarityEvent('scrollDepth', { depth: maxScrollDepth, variant: 'A' });
         }
       });
 
@@ -446,32 +446,32 @@ const meta = {
       document.addEventListener('click', (e) => {
         const now = Date.now();
         clickTimes.push(now);
-        clickTimes = clickTimes.filter(time => now - time < 1000); // Keep last second
+        clickTimes = clickTimes.filter(time => now - time < 1000);
 
         if (clickTimes.length > 5) {
           rageClickCount++;
-          trackClarityEvent('rageClick', { count: rageClickCount, element: e.target.tagName, variant: 'B' });
+          trackClarityEvent('rageClick', { count: rageClickCount, element: e.target.tagName, variant: 'A' });
         }
       });
 
       // Track CTA clicks
       document.querySelectorAll('button, a[href*="mailto"], input[type="submit"]').forEach(element => {
         element.addEventListener('click', () => {
-          trackClarityEvent('ctaClick', { element: element.tagName, text: element.textContent, variant: 'B' });
+          trackClarityEvent('ctaClick', { element: element.tagName, text: element.textContent, variant: 'A' });
         });
       });
 
       // Track form interactions
       document.querySelectorAll('input, textarea, select').forEach(element => {
         element.addEventListener('focus', () => {
-          trackClarityEvent('formInteraction', { field: element.name || element.id, variant: 'B' });
+          trackClarityEvent('formInteraction', { field: element.name || element.id, variant: 'A' });
         });
       });
 
       // Track session end
       window.addEventListener('beforeunload', () => {
         const sessionDuration = Date.now() - sessionStartTime;
-        trackClarityEvent('sessionEnd', { duration: sessionDuration, scrollDepth: maxScrollDepth, variant: 'B' });
+        trackClarityEvent('sessionEnd', { duration: sessionDuration, scrollDepth: maxScrollDepth, variant: 'A' });
       });
   
       // Custom GA4 tracking helper - doesn't depend on gtag
@@ -479,13 +479,13 @@ const meta = {
         fetch('/api/ga4-track', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ event, data, variant: 'B' })
+          body: JSON.stringify({ event, data, variant: 'A' })
         }).catch(err => console.log('[GA4] Tracking error:', err));
       }
 
       // Track events via our API (independent of cookie consent)
-      trackGA4Event('page_view', { variant: 'B', page_title: 'AI Visibility Funnel - Variant B' });
-      trackGA4Event('session_start', { variant: 'B', timestamp: new Date().toISOString() });
+      trackGA4Event('page_view', { variant: 'A', page_title: 'AI Visibility Funnel - Variant A' });
+      trackGA4Event('session_start', { variant: 'A', timestamp: new Date().toISOString() });
 
       // Also send to gtag when it becomes available (after cookie consent)
       document.addEventListener('cookieConsentUpdate', function(e) {
@@ -495,8 +495,8 @@ const meta = {
             custom_map: { 'custom_parameter_1': 'funnel_variant' }
           });
           gtag('event', 'page_view', {
-            funnel_variant: 'B',
-            page_title: 'AI Visibility Funnel - Variant B'
+            funnel_variant: 'A',
+            page_title: 'AI Visibility Funnel - Variant A'
           });
         }
       });
@@ -520,7 +520,7 @@ const meta = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              variant: 'b',
+              variant: 'a',
               page: window.location.pathname,
               sessionId: sessionId
             })
@@ -574,13 +574,13 @@ const meta = {
         
         if (result.success) {
           // Custom GA4 conversion tracking (always works)
-          trackGA4Event('conversion', { variant: 'B', value: 200 });
+          trackGA4Event('conversion', { variant: 'A', value: 200 });
 
           // Also track via gtag/clarity if they're loaded (after cookie consent)
           if (typeof gtag !== 'undefined') {
             gtag('event', 'conversion', {
               event_category: 'Funnel',
-              event_label: 'Variant B - Form Submission',
+              event_label: 'Variant A - Form Submission',
               value: 200
             });
           }
@@ -600,7 +600,7 @@ const meta = {
         
         // Reset button state
         formButton.disabled = false;
-        formButton.textContent = 'Start My Free AI Optimization Audit';
+        formButton.textContent = 'Claim My Free AI Optimization Audit';
       }
     });
   });
@@ -608,7 +608,7 @@ const meta = {
   // Enhanced engagement tracking
   import('/src/lib/engage.ts').then(module => {
     module.default({
-      variant: 'B',
+      variant: 'A',
       page: window.location.pathname,
       sections: ['hero', 'benefits', 'proof', 'form']
     });
@@ -619,12 +619,12 @@ const meta = {
 <style>
   /* Ensure fast rendering of hero section */
   .bg-gradient-to-br {
-    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
   }
   
   /* Optimize button hover states */
-  .bg-green-600:hover {
-    background-color: #15803d;
+  .bg-blue-600:hover {
+    background-color: #1d4ed8;
     transform: translateY(-1px);
   }
   
@@ -636,6 +636,6 @@ const meta = {
   /* Form focus states */
   input:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
   }
 </style>
