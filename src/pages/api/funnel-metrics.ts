@@ -36,19 +36,26 @@ export const GET: APIRoute = async ({ request, locals }) => {
     // Aggregate real-time data from KV leads
     let data;
 
-    console.log('[METRICS DEBUG] Starting metrics fetch');
-    console.log('[METRICS DEBUG] locals.runtime exists:', !!locals.runtime);
-    console.log('[METRICS DEBUG] FUNNEL_DATA binding exists:', !!locals.runtime?.env?.FUNNEL_DATA);
+    console.log('[METRICS] ====== START METRICS REQUEST ======');
+    console.log('[METRICS] Request time:', new Date().toISOString());
+    console.log('[METRICS] KV Storage check:');
+    console.log('[METRICS] - locals.runtime exists:', !!locals.runtime);
+    console.log('[METRICS] - FUNNEL_DATA exists:', !!locals.runtime?.env?.FUNNEL_DATA);
 
     try {
       // Try to get cached live data first
       const cachedData = await locals.runtime?.env?.FUNNEL_DATA?.get('funnel:live');
 
       if (cachedData) {
-        console.log('[METRICS DEBUG] Using cached data');
+        console.log('[METRICS] ✅ Using cached data');
         data = JSON.parse(cachedData);
+        console.log('[METRICS] Cached data summary:', {
+          totalVisitors: data.summary?.totalVisitors || 0,
+          totalConversions: data.summary?.totalConversions || 0,
+          lastUpdated: data.lastUpdated
+        });
       } else {
-        console.log('[METRICS DEBUG] No cache, aggregating from leads');
+        console.log('[METRICS] No cache found, aggregating fresh data...');
         // If no cached data, aggregate from leads
         data = await aggregateFunnelData(locals.runtime);
 
@@ -59,11 +66,11 @@ export const GET: APIRoute = async ({ request, locals }) => {
             JSON.stringify(data),
             { expirationTtl: 300 } // 5 minutes
           );
-          console.log('[METRICS DEBUG] Cached aggregated data');
+          console.log('[METRICS] ✅ Cached aggregated data for 5 minutes');
         }
       }
     } catch (error) {
-      console.error('[METRICS ERROR] Error getting funnel data:', error);
+      console.error('[METRICS] ❌ Error getting funnel data:', error);
       // Return empty state if no data available
       data = getEmptyFunnelData();
     }
@@ -114,6 +121,15 @@ export const GET: APIRoute = async ({ request, locals }) => {
         lastUpdated: data.lastUpdated || new Date().toISOString()
       }
     };
+
+    console.log('[METRICS] Response summary:', {
+      success: true,
+      totalVisitors: data.summary?.totalVisitors || 0,
+      totalConversions: data.summary?.totalConversions || 0,
+      recommendationsCount: recommendations.length,
+      hasTrends: !!trends.today || !!trends.yesterday
+    });
+    console.log('[METRICS] ====== END METRICS REQUEST ======');
 
     return new Response(
       JSON.stringify(response),
@@ -175,19 +191,30 @@ function calculateDailyChanges(today, yesterday) {
 
 async function aggregateFunnelData(runtime: any) {
   try {
-    console.log('[METRICS DEBUG] Starting aggregateFunnelData');
-    console.log('[METRICS DEBUG] runtime exists:', !!runtime);
-    console.log('[METRICS DEBUG] runtime.env exists:', !!runtime?.env);
-    console.log('[METRICS DEBUG] FUNNEL_DATA exists:', !!runtime?.env?.FUNNEL_DATA);
+    console.log('[AGGREGATE] Starting data aggregation...');
+    console.log('[AGGREGATE] KV availability:', {
+      runtime: !!runtime,
+      env: !!runtime?.env,
+      FUNNEL_DATA: !!runtime?.env?.FUNNEL_DATA
+    });
+
+    if (!runtime?.env?.FUNNEL_DATA) {
+      console.error('[AGGREGATE] ⚠️ KV not available, returning demo data for local development');
+      return getDemoFunnelData();
+    }
 
     // Get all leads from KV
-    const leadList = await runtime?.env?.FUNNEL_DATA?.list({ prefix: 'funnel:lead:' });
+    console.log('[AGGREGATE] Fetching leads with prefix: funnel:lead:');
+    const leadList = await runtime.env.FUNNEL_DATA.list({ prefix: 'funnel:lead:' });
 
-    console.log('[METRICS DEBUG] leadList:', leadList);
-    console.log('[METRICS DEBUG] leadList.keys length:', leadList?.keys?.length || 0);
+    console.log('[AGGREGATE] Lead list results:', {
+      found: !!leadList,
+      keyCount: leadList?.keys?.length || 0,
+      cursor: leadList?.cursor || 'none'
+    });
 
     if (!leadList || !leadList.keys || leadList.keys.length === 0) {
-      console.log('[METRICS DEBUG] No leads found, returning empty data');
+      console.log('[AGGREGATE] No leads found in KV storage');
       return getEmptyFunnelData();
     }
 
@@ -205,13 +232,17 @@ async function aggregateFunnelData(runtime: any) {
     const leadsB = validLeads.filter(l => l.variant === 'b');
 
     // Get REAL pageview counts from tracking data
+    console.log('[AGGREGATE] Fetching pageview data...');
     const { visitorsA, visitorsB } = await getRealPageviews(runtime);
 
-    console.log('[METRICS DEBUG] Real pageviews - Variant A:', visitorsA, 'Variant B:', visitorsB);
-    console.log('[METRICS DEBUG] Conversions - Variant A:', leadsA.length, 'Variant B:', leadsB.length);
+    console.log('[AGGREGATE] Data summary:');
+    console.log('[AGGREGATE] - Variant A: ' + visitorsA + ' visitors, ' + leadsA.length + ' conversions');
+    console.log('[AGGREGATE] - Variant B: ' + visitorsB + ' visitors, ' + leadsB.length + ' conversions');
 
     const totalVisitors = visitorsA + visitorsB;
     const totalConversions = leadsA.length + leadsB.length;
+    
+    console.log('[AGGREGATE] Totals: ' + totalVisitors + ' visitors, ' + totalConversions + ' conversions');
 
     const conversionRateA = visitorsA > 0 ? (leadsA.length / visitorsA) * 100 : 0;
     const conversionRateB = visitorsB > 0 ? (leadsB.length / visitorsB) * 100 : 0;
@@ -275,6 +306,8 @@ async function aggregateFunnelData(runtime: any) {
 
 async function getRealPageviews(runtime: any): Promise<{ visitorsA: number; visitorsB: number }> {
   try {
+    console.log('[PAGEVIEWS] Fetching pageview data for last 30 days...');
+    
     // Get pageview data for last 30 days to get cumulative count
     const dates: string[] = [];
     const now = new Date();
@@ -285,10 +318,13 @@ async function getRealPageviews(runtime: any): Promise<{ visitorsA: number; visi
       dates.push(date.toISOString().split('T')[0]);
     }
 
+    console.log('[PAGEVIEWS] Checking dates:', dates.slice(0, 3), '... (30 days total)');
+
     let visitorsA = 0;
     let visitorsB = 0;
     const allSessionsA = new Set<string>();
     const allSessionsB = new Set<string>();
+    let dataFoundDays = 0;
 
     // Fetch pageview data for each date
     await Promise.all(dates.map(async (date) => {
@@ -296,6 +332,10 @@ async function getRealPageviews(runtime: any): Promise<{ visitorsA: number; visi
         runtime?.env?.FUNNEL_DATA?.get(`funnel:pageviews:${date}:a`),
         runtime?.env?.FUNNEL_DATA?.get(`funnel:pageviews:${date}:b`)
       ]);
+
+      if (pageviewDataA || pageviewDataB) {
+        dataFoundDays++;
+      }
 
       if (pageviewDataA) {
         const parsed = JSON.parse(pageviewDataA);
@@ -311,11 +351,16 @@ async function getRealPageviews(runtime: any): Promise<{ visitorsA: number; visi
     visitorsA = allSessionsA.size;
     visitorsB = allSessionsB.size;
 
-    console.log('[PAGEVIEW DEBUG] Total unique visitors - A:', visitorsA, 'B:', visitorsB);
+    console.log('[PAGEVIEWS] Results:', {
+      daysWithData: dataFoundDays,
+      uniqueVisitorsA: visitorsA,
+      uniqueVisitorsB: visitorsB,
+      totalVisitors: visitorsA + visitorsB
+    });
 
     return { visitorsA, visitorsB };
   } catch (error) {
-    console.error('[PAGEVIEW ERROR] Error getting real pageviews:', error);
+    console.error('[PAGEVIEWS] ❌ Error:', error);
     return { visitorsA: 0, visitorsB: 0 };
   }
 }
@@ -354,5 +399,72 @@ function getEmptyFunnelData() {
       type: 'info'
     }],
     lastUpdated: new Date().toISOString()
+  };
+}
+
+function getDemoFunnelData() {
+  // Return realistic demo data for local development
+  const now = new Date();
+  const visitorsA = 156;
+  const visitorsB = 144;
+  const conversionsA = 12;
+  const conversionsB = 18;
+  
+  return {
+    summary: {
+      totalVisitors: visitorsA + visitorsB,
+      totalConversions: conversionsA + conversionsB,
+      totalRevenue: (conversionsA + conversionsB) * 200,
+      testDuration: 3,
+      confidenceLevel: 89,
+      winner: 'Variant B',
+      improvement: '+50%'
+    },
+    variants: {
+      a: {
+        visitors: visitorsA,
+        conversions: conversionsA,
+        conversionRate: (conversionsA / visitorsA) * 100,
+        revenue: conversionsA * 200,
+        trafficAllocation: 52
+      },
+      b: {
+        visitors: visitorsB,
+        conversions: conversionsB,
+        conversionRate: (conversionsB / visitorsB) * 100,
+        revenue: conversionsB * 200,
+        trafficAllocation: 48
+      }
+    },
+    recommendations: [
+      {
+        priority: 'High',
+        suggestion: 'Variant B is showing 50% better conversion rate. Consider increasing traffic allocation.',
+        rationale: 'Statistical significance approaching 90% confidence level'
+      },
+      {
+        priority: 'Medium',
+        suggestion: 'The "Free AI Optimization" headline in Variant B resonates better with visitors',
+        rationale: 'Direct value proposition performs better than feature-focused messaging'
+      }
+    ],
+    recentActivity: [
+      {
+        time: new Date(now.getTime() - 5 * 60000).toLocaleString('en-GB'),
+        action: 'New lead from Variant B: John Smith (Demo)',
+        type: 'success'
+      },
+      {
+        time: new Date(now.getTime() - 15 * 60000).toLocaleString('en-GB'),
+        action: 'New lead from Variant A: Jane Doe (Demo)',
+        type: 'success'
+      },
+      {
+        time: new Date(now.getTime() - 30 * 60000).toLocaleString('en-GB'),
+        action: 'Running in local demo mode - no KV storage available',
+        type: 'warning'
+      }
+    ],
+    lastUpdated: now.toISOString()
   };
 }

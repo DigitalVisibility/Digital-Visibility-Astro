@@ -83,16 +83,20 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
     // Try to store in Cloudflare KV (available in production)
     let kvStorageSuccess = false;
-    console.log('[KV DEBUG] Starting KV storage attempt');
-    console.log('[KV DEBUG] locals exists:', !!locals);
-    console.log('[KV DEBUG] locals.runtime exists:', !!locals.runtime);
-    console.log('[KV DEBUG] locals.runtime.env exists:', !!locals.runtime?.env);
-    console.log('[KV DEBUG] FUNNEL_DATA binding exists:', !!locals.runtime?.env?.FUNNEL_DATA);
+    console.log('[LEAD] ====== START LEAD SUBMISSION ======');
+    console.log('[LEAD] Lead data:', { name, email, website, variant });
+    console.log('[LEAD] Timestamp:', new Date().toISOString());
+    
+    console.log('[LEAD] KV Storage check:');
+    console.log('[LEAD] - locals exists:', !!locals);
+    console.log('[LEAD] - locals.runtime exists:', !!locals.runtime);
+    console.log('[LEAD] - locals.runtime.env exists:', !!locals.runtime?.env);
+    console.log('[LEAD] - FUNNEL_DATA exists:', !!locals.runtime?.env?.FUNNEL_DATA);
 
     try {
       if (locals.runtime?.env?.FUNNEL_DATA) {
         const kvKey = `funnel:lead:${Date.now()}:${email}`;
-        console.log('[KV DEBUG] Attempting to write to key:', kvKey);
+        console.log('[LEAD] Storing lead with key:', kvKey);
 
         await locals.runtime.env.FUNNEL_DATA.put(
           kvKey,
@@ -101,18 +105,23 @@ export const POST: APIRoute = async ({ request, locals }) => {
         );
 
         kvStorageSuccess = true;
-        console.log('[KV SUCCESS] Lead stored in KV successfully, key:', kvKey);
+        console.log('[LEAD] ✅ Lead stored successfully');
 
         // Verify by reading back
         const verifyRead = await locals.runtime.env.FUNNEL_DATA.get(kvKey);
-        console.log('[KV DEBUG] Verification read:', verifyRead ? 'SUCCESS' : 'FAILED');
+        console.log('[LEAD] Storage verification:', verifyRead ? '✅ SUCCESS' : '❌ FAILED');
+        
+        // List all leads to verify storage
+        const leadList = await locals.runtime.env.FUNNEL_DATA.list({ prefix: 'funnel:lead:', limit: 5 });
+        console.log('[LEAD] Recent leads count:', leadList?.keys?.length || 0);
+        
       } else {
-        console.error('[KV ERROR] FUNNEL_DATA binding not available!');
-        console.error('[KV ERROR] Available env keys:', locals.runtime?.env ? Object.keys(locals.runtime.env) : 'env not available');
+        console.error('[LEAD] ⚠️ FUNNEL_DATA not available - running in local environment?');
+        console.error('[LEAD] Available env keys:', locals.runtime?.env ? Object.keys(locals.runtime.env) : 'env not available');
       }
     } catch (kvError) {
-      console.error('[KV ERROR] KV storage error (non-critical):', kvError);
-      console.error('[KV ERROR] Error details:', JSON.stringify(kvError, Object.getOwnPropertyNames(kvError)));
+      console.error('[LEAD] ❌ KV storage error:', kvError);
+      console.error('[LEAD] Error details:', JSON.stringify(kvError, Object.getOwnPropertyNames(kvError)));
     }
 
     // Send emails using Resend API if configured
@@ -267,10 +276,19 @@ export const POST: APIRoute = async ({ request, locals }) => {
         console.error('Email sending error (non-critical):', emailError);
       }
     } else {
-      console.warn('RESEND_API_KEY not configured - email not sent, but lead saved to KV');
+      console.warn('RESEND_API_KEY not configured - email not sent');
     }
 
-    // Return success with redirect URL - success even if email fails (lead is in KV)
+    // Return success with redirect URL - success even if storage/email fails (for better UX)
+    console.log('[LEAD] Final status:', {
+      kvStorageSuccess,
+      emailSent,
+      variant,
+      redirectUrl: `/funnel/${variant}/thank-you/`,
+      mode: locals.runtime?.env?.FUNNEL_DATA ? 'production' : 'local'
+    });
+    console.log('[LEAD] ====== END LEAD SUBMISSION ======');
+    
     return new Response(
       JSON.stringify({
         success: true,
@@ -278,7 +296,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
         redirectUrl: `/funnel/${variant}/thank-you/`,
         id: emailId,
         emailSent,
-        storedInKV: kvStorageSuccess
+        storedInKV: kvStorageSuccess,
+        mode: locals.runtime?.env?.FUNNEL_DATA ? 'production' : 'local'
       }),
       {
         status: 200,
