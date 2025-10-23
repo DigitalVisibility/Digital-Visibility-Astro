@@ -1,6 +1,6 @@
-# Redirect /funnel to /funnel/ (with trailing slash)
-/funnel /funnel/a/ 302
+# Funnel A/B redirect is handled by middleware (src/middleware.ts)
+# Do not add /funnel redirects here - they will override the 50/50 split logic
 
-# Ensure trailing slashes are added for funnel paths
+# Ensure trailing slashes are added for funnel variant paths
 /funnel/a /funnel/a/ 301
 /funnel/b /funnel/b/ 301
