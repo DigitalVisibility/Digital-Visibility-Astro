@@ -6,13 +6,15 @@ const FUNNEL_COOKIE_MAX_AGE = 2592000; // 30 days
 
 /**
  * Test endpoint to verify middleware is working
+ * DEPLOYMENT MARKER: 2025-10-26-11:05-UTC
  */
 const handleMiddlewareTest = () => {
-  return new Response('✓ Middleware is working! Cloudflare Pages Functions are active.', {
+  return new Response('✓ Middleware is working! Deployment: 2025-10-26-11:05-UTC | Cloudflare Pages Functions are active.', {
     status: 200,
     headers: {
       'Content-Type': 'text/plain',
       'X-Middleware-Test': 'true',
+      'X-Deployment-Version': '2025-10-26-11:05-UTC',
       'X-Powered-By': 'Cloudflare Pages Functions'
     }
   });
