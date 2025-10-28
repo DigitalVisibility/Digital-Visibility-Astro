@@ -1,6 +1,9 @@
-# Funnel A/B redirect is handled by middleware (src/middleware.ts)
-# Do not add /funnel redirects here - they will override the 50/50 split logic
+# Funnel A/B routing is handled by SSR page (src/pages/funnel/index.astro)
+# This handles the 50/50 split and cookie-based variant persistence
 
-# Ensure trailing slashes are added for funnel variant paths
+# Redirect /funnel (no trailing slash) to /funnel/ so Astro SSR page can handle it
+/funnel /funnel/ 301
+
+# Ensure trailing slashes for funnel variant paths
 /funnel/a /funnel/a/ 301
 /funnel/b /funnel/b/ 301
