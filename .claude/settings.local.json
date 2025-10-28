@@ -22,7 +22,8 @@
       "Bash(cat:*)",
       "Bash(gh api:*)",
       "Bash(do curl -s -I https://digitalvisibility.com/funnel)",
-      "Bash(/tmp/check-deployment.sh)"
+      "Bash(/tmp/check-deployment.sh)",
+      "Bash(/dev/null)"
     ],
     "deny": [],
     "ask": []

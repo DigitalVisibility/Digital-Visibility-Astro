@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "include": [
+    "/_image",
+    "/funnel",
+    "/api/*",
+    "/roi-calculator",
+    "/admin/funnel-dashboard"
+  ],
+  "exclude": []
+}
