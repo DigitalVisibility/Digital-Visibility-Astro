@@ -1,0 +1,37 @@
+---
+// Funnel A/B Testing - SSR Page
+// This page handles 50/50 traffic split between Funnel A and Funnel B
+
+const FUNNEL_COOKIE_NAME = 'funnel_variant';
+const FUNNEL_COOKIE_MAX_AGE = 2592000; // 30 days in seconds
+
+// Check for existing variant cookie
+const cookieHeader = Astro.request.headers.get('Cookie') || '';
+const existingVariant = cookieHeader
+  .split('; ')
+  .find(row => row.startsWith(`${FUNNEL_COOKIE_NAME}=`))
+  ?.split('=')[1];
+
+let variant: string;
+
+if (existingVariant && (existingVariant === 'a' || existingVariant === 'b')) {
+  // User already has a variant assigned
+  variant = existingVariant;
+} else {
+  // New user - assign variant based on 50/50 random split
+  variant = Math.random() < 0.5 ? 'a' : 'b';
+
+  // Set cookie for new users
+  Astro.cookies.set(FUNNEL_COOKIE_NAME, variant, {
+    path: '/',
+    maxAge: FUNNEL_COOKIE_MAX_AGE,
+    sameSite: 'lax',
+    secure: true,
+    httpOnly: false
+  });
+}
+
+// Redirect to the appropriate funnel variant
+const redirectUrl = `/funnel/${variant}/`;
+return Astro.redirect(redirectUrl, 302);
+---
