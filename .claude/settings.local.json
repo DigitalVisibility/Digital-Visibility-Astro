@@ -17,7 +17,12 @@
       "Bash(done)",
       "Bash(python3:*)",
       "Bash(for i in {1..20})",
-      "Bash(wrangler kv:key list:*)"
+      "Bash(wrangler kv:key list:*)",
+      "Bash(npx wrangler:*)",
+      "Bash(cat:*)",
+      "Bash(gh api:*)",
+      "Bash(do curl -s -I https://digitalvisibility.com/funnel)",
+      "Bash(/tmp/check-deployment.sh)"
     ],
     "deny": [],
     "ask": []
