@@ -3,10 +3,12 @@
   "include": [
     "/_image",
     "/funnel",
-    "/funnel/*",
     "/api/*",
     "/roi-calculator",
     "/admin/funnel-dashboard"
   ],
-  "exclude": []
+  "exclude": [
+    "/funnel/a/*",
+    "/funnel/b/*"
+  ]
 }
