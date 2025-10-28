@@ -2,6 +2,9 @@
 // Funnel A/B Testing - SSR Page
 // This page handles 50/50 traffic split between Funnel A and Funnel B
 
+// Explicitly mark this page for server-side rendering (required in hybrid mode)
+export const prerender = false;
+
 const FUNNEL_COOKIE_NAME = 'funnel_variant';
 const FUNNEL_COOKIE_MAX_AGE = 2592000; // 30 days in seconds
 
