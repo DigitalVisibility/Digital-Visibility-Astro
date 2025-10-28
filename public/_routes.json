@@ -2,7 +2,7 @@
   "version": 1,
   "include": [
     "/_image",
-    "/funnel",
+    "/funnel/*",
     "/api/*",
     "/roi-calculator",
     "/admin/funnel-dashboard"
