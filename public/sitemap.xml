@@ -3,29 +3,29 @@
   <!-- Homepage -->
   <url>
     <loc>https://digitalvisibility.com/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
+
   <!-- Analyzer Tool (New) -->
   <url>
     <loc>https://digitalvisibility.com/analyzer/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  
+
   <!-- About Pages -->
   <url>
     <loc>https://digitalvisibility.com/about/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://digitalvisibility.com/about/darran-goulding/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -33,98 +33,156 @@
   <!-- Services Pages -->
   <url>
     <loc>https://digitalvisibility.com/services/digital-marketing/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://digitalvisibility.com/services/supercharged-engine-optimization/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://digitalvisibility.com/services/search-engine-optimization/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://digitalvisibility.com/services/answer-engine-optimization/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://digitalvisibility.com/services/generative-engine-optimization/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://digitalvisibility.com/services/search-brand-optimization/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://digitalvisibility.com/services/ai-conversation-automation/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <loc>https://digitalvisibility.com/services/ai-workflow-automation/</loc>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://digitalvisibility.com/services/app-development/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://digitalvisibility.com/services/product-design/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- SEO Services - Main -->
+  <url>
+    <loc>https://digitalvisibility.com/services/seo/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- SEO Services - Location Pages -->
+  <url>
+    <loc>https://digitalvisibility.com/services/seo-uk/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalvisibility.com/services/seo-wales/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalvisibility.com/services/seo-swansea/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalvisibility.com/services/seo-cardiff/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalvisibility.com/services/seo-newport/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalvisibility.com/services/seo-carmarthen/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalvisibility.com/services/seo-birmingham/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalvisibility.com/services/seo-wrexham/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   
   <!-- Apps Platform -->
   <url>
     <loc>https://digitalvisibility.com/apps/apps-platform/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
+
   <!-- FAQ -->
   <url>
     <loc>https://digitalvisibility.com/faq/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <!-- Contact Page -->
   <url>
     <loc>https://digitalvisibility.com/contact/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <!-- Pricing Page -->
   <url>
     <loc>https://digitalvisibility.com/pricing/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
+
   <!-- ROI Calculator -->
-      <url>
-        <loc>https://digitalvisibility.com/roi-calculator/</loc>
-        <lastmod>2025-10-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
+  <url>
+    <loc>https://digitalvisibility.com/roi-calculator/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
   <!-- Legal Pages -->
   <url>
@@ -155,41 +213,79 @@
   <!-- Blog Index -->
   <url>
     <loc>https://digitalvisibility.com/blog/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <!-- Individual Blog Posts -->
   <url>
     <loc>https://digitalvisibility.com/blog/how-should-your-business-adapt-to-googles-latest-search-engine-update/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://digitalvisibility.com/blog/how-local-businesses-can-crush-competitors-using-claude-4-extended-thinking-capabilities/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://digitalvisibility.com/blog/how-ai-is-revolutionizing-website-design/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://digitalvisibility.com/blog/10-essential-seo-strategies-2025/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://digitalvisibility.com/blog/why-uk-businesses-ditching-zapier-ai-conversation-automation/</loc>
-    <lastmod>2025-10-10</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Category Pages -->
+  <url>
+    <loc>https://digitalvisibility.com/blog/category/seo/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://digitalvisibility.com/blog/category/digital-marketing/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://digitalvisibility.com/blog/category/ai-automation/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://digitalvisibility.com/blog/category/web-design/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://digitalvisibility.com/blog/category/app-development/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://digitalvisibility.com/blog/category/product-design/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <!-- Privacy Policy Subpages -->
