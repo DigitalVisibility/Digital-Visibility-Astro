@@ -1,35 +1,11 @@
 ---
-// BlogPost.astro Layout
-// Location: src/layouts/BlogPost.astro
-
-import { getCollection } from 'astro:content';
+// BlogPost-Reference.astro Layout - FIXED VERSION
+// Location: src/layouts/BlogPost-Reference.astro
 
 const { frontmatter } = Astro.props;
-const { Content } = Astro.props;
 
-// Generate TOC from content headings
-function generateTOC(content: string) {
-  const headingRegex = /^## (.+)$/gm;
-  const headings = [];
-  let match;
-  
-  while ((match = headingRegex.exec(content)) !== null) {
-    const text = match[1].replace(/\{#[^}]+\}/, '').trim(); // Remove ID syntax
-    const id = text
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-')
-      .trim();
-    
-    headings.push({ text, id });
-  }
-  
-  return headings;
-}
-
-// Get raw content for TOC generation (you'll need to pass this from your content)
-const tocItems = frontmatter.enableTOC ? generateTOC(Astro.props.rawContent || '') : [];
+// TOC will be in the content itself (we inject it in the markdown)
+// No need to generate it here since Generate TOC node already did it
 
 ---
 
@@ -67,16 +43,17 @@ const tocItems = frontmatter.enableTOC ? generateTOC(Astro.props.rawContent || '
   {frontmatter.pubDate && <meta property="article:published_time" content={frontmatter.pubDate} />}
   {frontmatter.updatedDate && <meta property="article:modified_time" content={frontmatter.updatedDate} />}
   
-  <!-- Your main CSS files -->
-  <link rel="stylesheet" href="/styles/global.css" />
-  <link rel="stylesheet" href="/styles/blog.css" />
+  <!-- CSS Files - CRITICAL: These must load -->
+  <link rel="stylesheet" href="/src/styles/global.css" />
+  <link rel="stylesheet" href="/src/styles/blog.css" />
 </head>
 
 <body class="blog-post">
-  <!-- Navigation (your existing nav component) -->
+  <!-- Navigation -->
   <nav class="site-navigation">
     <a href="/">Home</a>
     <a href="/blog">Blog</a>
+    <a href="/services">Services</a>
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
   </nav>
@@ -85,7 +62,7 @@ const tocItems = frontmatter.enableTOC ? generateTOC(Astro.props.rawContent || '
   <div class="breadcrumbs">
     <a href="/">Home</a> / 
     <a href="/blog">Blog</a> / 
-    <span>{frontmatter.category || 'A/B Testing'}</span>
+    <span>{frontmatter.category || 'Digital Marketing'}</span>
   </div>
   
   <!-- Main Content Area -->
@@ -104,9 +81,6 @@ const tocItems = frontmatter.enableTOC ? generateTOC(Astro.props.rawContent || '
             <img src={frontmatter.author.image} alt={frontmatter.author.name} class="author-avatar" />
             <div>
               <span class="author-name">By <a href={frontmatter.author.url}>{frontmatter.author.name}</a></span>
-              {frontmatter.author2 && (
-                <span> and <a href={frontmatter.author2.url}>{frontmatter.author2.name}</a></span>
-              )}
             </div>
           </div>
         )}
@@ -114,7 +88,7 @@ const tocItems = frontmatter.enableTOC ? generateTOC(Astro.props.rawContent || '
         <!-- Article Meta -->
         <div class="article-meta">
           <time datetime={frontmatter.pubDate}>
-            {new Date(frontmatter.pubDate).toLocaleDateString('en-US', { 
+            {new Date(frontmatter.pubDate).toLocaleDateString('en-GB', { 
               year: 'numeric', 
               month: 'long', 
               day: 'numeric' 
@@ -122,17 +96,10 @@ const tocItems = frontmatter.enableTOC ? generateTOC(Astro.props.rawContent || '
           </time>
           {frontmatter.readTime && <span>· {frontmatter.readTime}</span>}
         </div>
-        
-        <!-- "Not by AI" Badge (if present) -->
-        {frontmatter.notByAI && (
-          <div class="not-by-ai-badge">
-            <span>✍️ Written by Human</span>
-          </div>
-        )}
       </header>
       
       <!-- Hero Image -->
-      {frontmatter.heroImage && (
+      {frontmatter.heroImage && frontmatter.heroImage.url && (
         <figure class="hero-image">
           <img 
             src={frontmatter.heroImage.url} 
@@ -203,24 +170,6 @@ const tocItems = frontmatter.enableTOC ? generateTOC(Astro.props.rawContent || '
         </div>
       )}
       
-      <!-- Table of Contents -->
-      {frontmatter.enableTOC && tocItems.length > 0 && (
-        <div class="toc-section sticky-section">
-          <h3>Sections</h3>
-          <nav class="table-of-contents" aria-label="Table of Contents">
-            <ul>
-              {tocItems.map(item => (
-                <li>
-                  <a href={`#${item.id}`} class="toc-link">
-                    {item.text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      )}
-      
       <!-- CTA Box -->
       {frontmatter.cta?.enable && (
         <div class="cta-box sticky-section">
@@ -249,6 +198,7 @@ const tocItems = frontmatter.enableTOC ? generateTOC(Astro.props.rawContent || '
   <!-- Footer -->
   <footer class="site-footer">
     <p>&copy; 2025 Digital Visibility. All rights reserved.</p>
+    <p><a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
   </footer>
   
   <!-- Smooth Scroll Script for TOC -->
@@ -265,7 +215,6 @@ const tocItems = frontmatter.enableTOC ? generateTOC(Astro.props.rawContent || '
             block: 'start'
           });
           
-          // Update URL without jumping
           history.pushState(null, null, `#${targetId}`);
         }
       });
@@ -302,312 +251,3 @@ const tocItems = frontmatter.enableTOC ? generateTOC(Astro.props.rawContent || '
   
 </body>
 </html>
-
-<style>
-/* Basic Layout Structure */
-.blog-container {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 3rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-/* Main Content */
-.blog-content {
-  max-width: 800px;
-}
-
-.article-header {
-  margin-bottom: 2rem;
-}
-
-.article-header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  color: #1a1a1a;
-}
-
-.author-meta {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-.author-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-}
-
-.article-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.hero-image {
-  margin: 2rem 0;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.hero-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Prose Styling (main content) */
-.prose {
-  font-size: 1.125rem;
-  line-height: 1.75;
-  color: #333;
-}
-
-.prose h2 {
-  font-size: 1.875rem;
-  font-weight: 700;
-  margin: 2.5rem 0 1rem;
-  color: #1a1a1a;
-  scroll-margin-top: 100px; /* Account for sticky header */
-}
-
-.prose h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 2rem 0 1rem;
-}
-
-.prose p {
-  margin: 1.25rem 0;
-}
-
-.prose ul, .prose ol {
-  margin: 1.25rem 0;
-  padding-left: 1.5rem;
-}
-
-.prose li {
-  margin: 0.5rem 0;
-}
-
-.prose a {
-  color: #0066cc;
-  text-decoration: underline;
-}
-
-.prose a:hover {
-  color: #0052a3;
-}
-
-.prose strong {
-  font-weight: 600;
-}
-
-/* Sidebar */
-.blog-sidebar {
-  position: relative;
-}
-
-.sticky-section {
-  position: sticky;
-  top: 2rem;
-  margin-bottom: 2rem;
-  background: white;
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
-  padding: 1.5rem;
-}
-
-/* Share Buttons */
-.share-section h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.share-buttons {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.share-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  transition: all 0.2s;
-}
-
-.share-button.twitter {
-  background: #1da1f2;
-  color: white;
-}
-
-.share-button.facebook {
-  background: #1877f2;
-  color: white;
-}
-
-.share-button.linkedin {
-  background: #0a66c2;
-  color: white;
-}
-
-.share-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* Table of Contents */
-.toc-section h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.table-of-contents ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.table-of-contents li {
-  margin: 0;
-}
-
-.toc-link {
-  display: block;
-  padding: 0.5rem 0;
-  color: #666;
-  text-decoration: none;
-  font-size: 0.9rem;
-  border-left: 2px solid transparent;
-  padding-left: 1rem;
-  transition: all 0.2s;
-}
-
-.toc-link:hover {
-  color: #0066cc;
-  border-left-color: #0066cc;
-  background: #f8f9fa;
-}
-
-.toc-link.active {
-  color: #0066cc;
-  font-weight: 600;
-  border-left-color: #0066cc;
-  background: #f0f7ff;
-}
-
-/* CTA Box */
-.cta-box {
-  text-align: center;
-}
-
-.cta-box h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.cta-box p {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: #0066cc;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: all 0.2s;
-}
-
-.cta-button:hover {
-  background: #0052a3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,102,204,0.3);
-}
-
-/* Author Bio Card */
-.author-bio-card {
-  text-align: center;
-}
-
-.author-bio-card img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin: 0 auto 1rem;
-}
-
-.author-bio-card h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
-.author-bio-card .author-title {
-  font-size: 0.85rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-.view-profile-link {
-  color: #0066cc;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.view-profile-link:hover {
-  text-decoration: underline;
-}
-
-/* Mobile Responsive */
-@media (max-width: 1024px) {
-  .blog-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .blog-sidebar {
-    order: 1;
-  }
-  
-  .blog-content {
-    order: 2;
-  }
-  
-  .sticky-section {
-    position: relative;
-    top: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .article-header h1 {
-    font-size: 2rem;
-  }
-  
-  .prose {
-    font-size: 1rem;
-  }
-  
-  .prose h2 {
-    font-size: 1.5rem;
-  }
-}
-</style>
