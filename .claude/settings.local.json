@@ -23,7 +23,11 @@
       "Bash(gh api:*)",
       "Bash(do curl -s -I https://digitalvisibility.com/funnel)",
       "Bash(/tmp/check-deployment.sh)",
-      "Bash(/dev/null)"
+      "Bash(/dev/null)",
+      "Bash(do curl -s -I \"https://digitalvisibility.com/funnel/?t=$RANDOM\")",
+      "Bash(bash test-funnel-persistence.sh:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)"
     ],
     "deny": [],
     "ask": []
