@@ -275,22 +275,14 @@ const shareText = encodeURIComponent(title);
                 </span>
               </div>
               
-              <!-- Table of Contents -->
-              {enableTOC && tocItems.length > 0 && (
-                <div class="bg-gray-50 rounded-lg p-6">
-                  <h2 class="text-lg font-bold text-gray-900 mb-4">Table of Contents</h2>
-                  <nav class="space-y-2 text-sm">
-                    {tocItems.map((item) => (
-                      <a 
-                        href={`#${item.id}`}
-                        class={`block text-gray-700 hover:text-blue-600 transition-colors ${item.level === 3 ? 'pl-4' : ''}`}
-                      >
-                        {item.title}
-                      </a>
-                    ))}
-                  </nav>
-                </div>
-              )}
+			  <!-- Table of Contents -->
+{frontmatter.enableTOC && frontmatter.tocHtml && (
+  <div class="bg-white border border-gray-200 rounded-lg p-6 mb-8">
+    <h3 class="text-lg font-bold text-gray-900 mb-4">Table of Contents</h3>
+    <div class="toc-content text-sm space-y-2" set:html={frontmatter.tocHtml} />
+  </div>
+)}
+			  
               
               <!-- Testimonial Card (from workflow) -->
               {testimonial && (
@@ -325,12 +317,13 @@ const shareText = encodeURIComponent(title);
               
               <!-- Author Bio Card -->
               <div class="border border-gray-200 rounded-lg p-6 text-center">
-                <img 
-                  src={author?.image || '/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp'}
-                  alt={author?.name || 'Darran Goulding'} 
-                  class="w-16 h-16 rounded-full mx-auto mb-3 object-cover"
-                  loading="lazy"
-                />
+<img 
+  src={frontmatter.author.image}
+  alt={frontmatter.author.name}
+  class="w-16 h-16 rounded-full mx-auto mb-3 object-cover"
+  loading="lazy"
+>
+				
                 <h4 class="font-bold text-gray-900 mb-1">{author?.name || 'Darran Goulding'}</h4>
                 <p class="text-sm text-gray-600 mb-3">SEO Expert & Founder</p>
                 <a href={author?.url || '/about/darran-goulding/'} class="text-blue-600 hover:text-blue-800 text-sm font-medium">
