@@ -2,10 +2,12 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import cloudflare from '@astrojs/cloudflare';
+import sitemap from '@astrojs/sitemap';
 import cssnano from 'cssnano';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://digitalvisibility.com',
   integrations: [
     tailwind({
       // Enable JIT mode for faster CSS
@@ -20,7 +22,13 @@ export default defineConfig({
         }
       }
     }),
-    react()
+    react(),
+    sitemap({
+      filter: (page) => !page.includes('/draft/'), // Exclude drafts
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date(),
+    })
   ],
   output: 'hybrid',
   adapter: cloudflare({

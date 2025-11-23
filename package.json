@@ -16,6 +16,8 @@
   "dependencies": {
     "@astrojs/cloudflare": "^7.0.2",
     "@astrojs/react": "^4.3.0",
+    "@astrojs/rss": "^4.0.14",
+    "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^5.0.4",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
