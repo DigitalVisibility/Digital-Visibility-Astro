@@ -94,11 +94,29 @@ export const categoryInfo = {
     keywords: 'SEO strategies, search engine optimization, AEO, GEO, local SEO, SEO tips, Swansea SEO',
     color: 'green'
   },
+  'aeo': {
+    name: 'AEO',
+    description: 'Answer Engine Optimization strategies to rank in AI-powered search engines like ChatGPT, Perplexity & Claude. Optimize for AI answers.',
+    keywords: 'AEO, answer engine optimization, AI search, ChatGPT optimization, Perplexity SEO, AI engine optimization',
+    color: 'teal'
+  },
   'digital-marketing': {
     name: 'Digital Marketing',
     description: 'Comprehensive digital marketing insights covering strategy, implementation & optimization for maximum business growth and ROI.',
     keywords: 'digital marketing, marketing strategy, online marketing, marketing automation, UK digital marketing',
     color: 'orange'
+  },
+  'local-seo': {
+    name: 'Local SEO',
+    description: 'Local SEO strategies, Google Business Profile optimization & location-based marketing to dominate local search results.',
+    keywords: 'local SEO, local search optimization, Google Business Profile, local rankings, Swansea local SEO, Wales SEO',
+    color: 'emerald'
+  },
+  'content-strategy': {
+    name: 'Content Strategy',
+    description: 'Content marketing strategies, planning & optimization techniques to create engaging content that drives traffic and conversions.',
+    keywords: 'content strategy, content marketing, content planning, content creation, editorial strategy, content optimization',
+    color: 'pink'
   },
   'app-development': {
     name: 'App Development',
@@ -115,8 +133,29 @@ export const categoryInfo = {
 };
 
 // Helper functions
+
+// Normalize category for case-insensitive matching
+export function normalizeCategorySlug(category) {
+  if (!category) return 'digital-marketing'; // Default fallback
+
+  // Convert to lowercase and replace spaces with hyphens
+  const normalized = category.toLowerCase().replace(/\s+/g, '-');
+
+  // Check if normalized category exists in categoryInfo
+  if (categoryInfo[normalized]) {
+    return normalized;
+  }
+
+  // Fallback to digital-marketing if category not recognized
+  return 'digital-marketing';
+}
+
 export function getPostsByCategory(categorySlug) {
-  return blogPosts.filter(post => post.categorySlug === categorySlug);
+  const normalizedSlug = normalizeCategorySlug(categorySlug);
+  return blogPosts.filter(post => {
+    const postCategory = normalizeCategorySlug(post.categorySlug || post.category);
+    return postCategory === normalizedSlug;
+  });
 }
 
 export function getFeaturedPosts() {
@@ -134,12 +173,26 @@ export function getPostBySlug(slug) {
 }
 
 export function getAllCategories() {
-  const categories = [...new Set(blogPosts.map(post => post.categorySlug))];
-  return categories.map(slug => ({
-    slug,
-    ...categoryInfo[slug],
-    count: getPostsByCategory(slug).length
-  }));
+  // Get all unique category slugs from posts, normalized
+  const categorySet = new Set();
+  blogPosts.forEach(post => {
+    const normalizedSlug = normalizeCategorySlug(post.categorySlug || post.category);
+    categorySet.add(normalizedSlug);
+  });
+
+  const categories = Array.from(categorySet);
+
+  return categories
+    .map(slug => ({
+      slug,
+      name: categoryInfo[slug]?.name || 'Uncategorized',
+      description: categoryInfo[slug]?.description || '',
+      keywords: categoryInfo[slug]?.keywords || '',
+      color: categoryInfo[slug]?.color || 'gray',
+      count: getPostsByCategory(slug).length
+    }))
+    .filter(cat => cat.count > 0) // Only show categories with posts
+    .sort((a, b) => b.count - a.count); // Sort by post count
 }
 
 // Instructions for adding new blog posts:
