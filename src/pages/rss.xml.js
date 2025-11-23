@@ -23,11 +23,15 @@ export async function GET(context) {
 
     // Handle .md files with frontmatter
     if (post.frontmatter) {
+      // Get full content for AI crawlers
+      const content = post.compiledContent ? await post.compiledContent() : '';
+
       postData = {
         title: post.frontmatter.title,
         pubDate: new Date(post.frontmatter.pubDate || post.frontmatter.publishDate),
         description: post.frontmatter.description,
         link: `/blog/${post.frontmatter.slug || slug}/`,
+        content: content, // Full content for AI crawlers
         author: post.frontmatter.author?.name || 'Darran Goulding',
         categories: post.frontmatter.tags || post.frontmatter.category ? [post.frontmatter.category] : [],
       };
@@ -39,6 +43,7 @@ export async function GET(context) {
         pubDate: new Date(post.post.publishDate || post.post.pubDate),
         description: post.post.description,
         link: `/blog/${post.post.slug || slug}/`,
+        content: post.post.description, // Use description as fallback for .astro files
         author: post.post.author || 'Darran Goulding',
         categories: post.post.category ? [post.post.category] : [],
       };
