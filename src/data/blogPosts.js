@@ -3,6 +3,20 @@
 
 export const blogPosts = [
   {
+    title: "How Google Uses Gemini III for Complex Queries",
+    slug: "google-gemini-iii-complex-queries",
+    excerpt: "Discover how Google's Gemini III is transforming complex search queries with innovative AI solutions. Learn about its impact on search experiences.",
+    category: "Digital Marketing",
+    categorySlug: "digital-marketing",
+    image: "https://tempfile.aiquickdraw.com/s/6079b6b4e6813b82c0746a7908935b6c_0_1763939226_7755.png",
+    alt: "How Google Uses Gemini III for Complex Queries",
+    date: "November 23, 2025",
+    author: "Darran Goulding",
+    authorImage: "/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
+    featured: false,
+    tags: ["Gemini III", "Google Search", "AI Search", "Complex Queries", "Search Technology"]
+  },
+  {
     title: "How Local Businesses Can Crush Competitors Using Claude 4 Extended Thinking Capabilities",
     slug: "how-local-businesses-can-crush-competitors-using-claude-4-extended-thinking-capabilities",
     excerpt: "Discover how Claude 4's extended thinking capabilities help local businesses outperform competitors through AI-driven strategies, automated competitor analysis, and smart pricing optimization.",
