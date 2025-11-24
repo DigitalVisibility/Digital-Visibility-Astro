@@ -2,16 +2,38 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
-import { blogPosts, categoryInfo, getAllCategories, getFeaturedPosts } from '../../data/blogPosts.js';
+import { manualBlogPosts, loadMarkdownPosts, categoryInfo, getAllCategories, getFeaturedPosts } from '../../data/blogPosts.js';
 
 export const prerender = true;
 
-// Get all posts and categories
-const allPosts = blogPosts;
-const featuredPosts = getFeaturedPosts();
+// Load markdown blog posts automatically
+const markdownFiles = import.meta.glob('./*.md', { eager: true });
+const markdownPosts = loadMarkdownPosts(markdownFiles);
+
+// Combine manual and markdown posts
+const allPosts = [...manualBlogPosts, ...markdownPosts]
+  .sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date
+
+// Get featured posts
+const featuredPosts = allPosts.filter(post => post.featured);
+
+// Build categories dynamically from all posts
+const categoryMap = new Map();
+allPosts.forEach(post => {
+  const slug = post.categorySlug;
+  if (!categoryMap.has(slug)) {
+    categoryMap.set(slug, {
+      name: post.category,
+      slug: slug,
+      count: 0
+    });
+  }
+  categoryMap.get(slug).count++;
+});
+
 const categories = [
   { name: 'All', slug: 'all', count: allPosts.length },
-  ...getAllCategories()
+  ...Array.from(categoryMap.values()).sort((a, b) => b.count - a.count)
 ];
 
 // SEO Meta Data

@@ -1,21 +1,9 @@
 // Centralized blog posts data
 // Add new blog posts here and they'll automatically appear on the blog page and relevant category pages
+// Note: .md files in src/pages/blog/ are automatically discovered and added to the listing
 
-export const blogPosts = [
-  {
-    title: "How Google Uses Gemini III for Complex Queries",
-    slug: "google-gemini-iii-complex-queries",
-    excerpt: "Discover how Google's Gemini III is transforming complex search queries with innovative AI solutions. Learn about its impact on search experiences.",
-    category: "Digital Marketing",
-    categorySlug: "digital-marketing",
-    image: "https://tempfile.aiquickdraw.com/s/6079b6b4e6813b82c0746a7908935b6c_0_1763939226_7755.png",
-    alt: "How Google Uses Gemini III for Complex Queries",
-    date: "November 23, 2025",
-    author: "Darran Goulding",
-    authorImage: "/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp",
-    featured: false,
-    tags: ["Gemini III", "Google Search", "AI Search", "Complex Queries", "Search Technology"]
-  },
+// Manually defined blog posts (for .astro files)
+export const manualBlogPosts = [
   {
     title: "How Local Businesses Can Crush Competitors Using Claude 4 Extended Thinking Capabilities",
     slug: "how-local-businesses-can-crush-competitors-using-claude-4-extended-thinking-capabilities",
@@ -209,9 +197,68 @@ export function getAllCategories() {
     .sort((a, b) => b.count - a.count); // Sort by post count
 }
 
+// Function to load markdown blog posts dynamically
+// This should be called from Astro pages with import.meta.glob
+export function loadMarkdownPosts(markdownFiles) {
+  const mdPosts = [];
+
+  for (const path in markdownFiles) {
+    const post = markdownFiles[path];
+
+    // Skip index and category files
+    if (path.includes('index.') || path.includes('category/')) {
+      continue;
+    }
+
+    // Extract frontmatter
+    const frontmatter = post.frontmatter || {};
+
+    // Skip drafts
+    if (frontmatter.draft === true) {
+      continue;
+    }
+
+    // Convert pubDate to readable format
+    let dateString = 'Recent';
+    if (frontmatter.pubDate) {
+      const date = new Date(frontmatter.pubDate);
+      dateString = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    // Create blog post entry
+    const blogPost = {
+      title: frontmatter.title || 'Untitled',
+      slug: frontmatter.slug || path.split('/').pop().replace('.md', ''),
+      excerpt: frontmatter.description || '',
+      category: categoryInfo[normalizeCategorySlug(frontmatter.category)]?.name || 'Digital Marketing',
+      categorySlug: normalizeCategorySlug(frontmatter.category),
+      image: frontmatter.heroImage?.url || frontmatter.image || '/default-blog-image.webp',
+      alt: frontmatter.heroImage?.alt || frontmatter.alt || frontmatter.title || 'Blog post image',
+      date: dateString,
+      author: frontmatter.author?.name || 'Darran Goulding',
+      authorImage: frontmatter.author?.image || '/Darran-Goulding-Royal-Academy-of-Engineering-Image.webp',
+      featured: frontmatter.featured === true,
+      tags: frontmatter.tags || []
+    };
+
+    mdPosts.push(blogPost);
+  }
+
+  return mdPosts;
+}
+
+// Export combined blog posts (manual + markdown)
+// Note: In Astro pages, call loadMarkdownPosts() and merge with manualBlogPosts
+export const blogPosts = manualBlogPosts;
+
 // Instructions for adding new blog posts:
-// 1. Add your new blog post object to the blogPosts array above
+// FOR .MD FILES (AUTOMATIC):
+// - Just create a new .md file in src/pages/blog/ with proper frontmatter
+// - It will automatically appear in the blog listing (no code changes needed!)
+// - Required frontmatter: title, slug, description, category, pubDate, author, heroImage
+//
+// FOR .ASTRO FILES (MANUAL):
+// 1. Add your new blog post object to the manualBlogPosts array above
 // 2. Make sure to include all required fields: title, slug, excerpt, category, categorySlug, image, alt, date, author, authorImage
 // 3. Add appropriate tags for better organization
-// 4. Set featured: true if you want it to appear in featured sections
-// 5. The blog post will automatically appear on the main blog page and relevant category page 
+// 4. Set featured: true if you want it to appear in featured sections 
