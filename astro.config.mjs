@@ -24,7 +24,24 @@ export default defineConfig({
     }),
     react(),
     sitemap({
-      filter: (page) => !page.includes('/draft/'), // Exclude drafts
+      filter: (page) => {
+        // Exclude admin pages
+        if (page.includes('/admin/')) return false;
+
+        // Exclude blog category pages (they have noindex)
+        if (page.includes('/blog/category/')) return false;
+
+        // Exclude funnel pages (internal use)
+        if (page.includes('/funnel/')) return false;
+
+        // Exclude draft pages
+        if (page.includes('/draft/')) return false;
+
+        // Exclude pages with URL encoding issues or test pages
+        if (page.includes('%20') || page.toLowerCase().includes('copy')) return false;
+
+        return true;
+      },
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
